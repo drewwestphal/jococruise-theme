@@ -1,10 +1,12 @@
 <?php get_header(); ?>
+<?php $site_title 		  = get_bloginfo('name'); ?>
 <section id="content" role="main">
 <!--hero-->
 	<section id="hero">
 		<div class="container">
 			<div class="col-xs-12 col-md-12">
-				<h1 id="hero-site-title"><?php echo get_option('mac_settings')['mac_html_friendly_title'];?></h1>
+				<img src="<?php bloginfo('template_directory'); ?>/img/hero_JoCo_LoGo.png" alt="A styled JoCo Cruise logotype." id="hero-joco-logo">
+			<!--<h1 id="hero-site-title"><?php echo $site_title; ?></h1>
 				<h2 id="hero-site-desciption"><?php bloginfo( 'description' ); ?></h2>
 				<?php if (get_option('mac_settings')['mac_travel_dates']){ ?>
 				<h3 id="hero-travel-dates"><?php echo get_option('mac_settings')['mac_travel_dates'];?></h3>
@@ -23,7 +25,7 @@
 					    printf('<p class="orange-text" style="%s">%s</p>',//
                          $stylemodbkon,get_option('mac_settings')['mac_mailing_list_cta']);
 					    mc4wp_form();
-					} ?>
+					} ?>-->
 				<section id="hero-more-info">
 					<div id="hero-more-info-button">
 						<h1 class="orange-text">More Info</h1>

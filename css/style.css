@@ -205,6 +205,7 @@ header,
   -moz-transition: color .27s;
   -webkit-transition: color .27s;
 }
+
 /*
 	
 	
@@ -213,46 +214,16 @@ Hero
 
 */
 #hero {
-  background-image: url('../img/diver_background.png'), url('../img/ocean_background.jpg');
-  background-size: 430px,415%;
-  background-position: 75% 120%,bottom center;
-  background-repeat: no-repeat, no-repeat;
-  padding: 18px 0;
-  height: 684px;
+  background: url('../img/hero_bg.jpg') center center no-repeat;
+  background-size: cover;
+  height:400px;
+  text-align: center;
 }
-@media screen and (min-width: 321px) {
-  #hero {
-    background-size: 430px,cover;
-    background-position: 75% 120%,center center;
-  }
-}
-@media screen and (min-width: 481px) {
-  #hero {
-    background-size: 480px,cover;
-    background-position: right 120%,center center;
-  }
-}
-@media screen and (min-width: 581px) {
-  #hero {
-    background-size: 540px,cover;
-    background-position: 125% 120%,center center;
-  }
-}
-@media screen and (min-width: 768px) {
-  #hero {
-    height: 564px;
-    background-position: 125% 150%,center bottom;
-  }
-}
-@media screen and (min-width: 860px) {
-  #hero {
-    background-position: bottom right,center 75%;
-  }
-}
-@media screen and (min-width: 980px) {
-  #hero {
-    background-size: 680px,cover;
-  }
+#hero-joco-logo{
+	width: 390px;
+	height: auto;
+	position: relative;
+	top: 144px;
 }
 #hero h1 {
   font-size: 36px;
