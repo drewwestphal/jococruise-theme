@@ -38,36 +38,4 @@
 </head>
 <body <?php body_class(); ?>>
 <div id="wrapper" class="hfeed">
-    <?php if ( !current_theme_supports( 'headerless_operation' ) ) {?>
-	<div class="container-fluid" id="header-container">
-		<div class="row">
-			<header id="header" role="banner" class="">
-				<nav class="navbar navbar-default" role="navigation">
-					<div class="container-fluid">
-						<div class="navbar-header">
-						  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						    <span class="sr-only">Toggle navigation</span>
-						    <span class="icon-bar"></span>
-						    <span class="icon-bar"></span>
-						    <span class="icon-bar"></span>
-						  </button>
-						  <a class="navbar-brand" href="/"><h1><?php echo get_option('mac_settings')['mac_html_friendly_title'];?></h1></a>
-						</div>
-						
-						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						  <ul class="nav navbar-nav">
-							<?php 
-							if (isset(get_option('mac_settings')['mac_booking_enabled'])) {  ?>
-									<li class="visible-xs"><a href="<?php echo get_option('mac_settings')['mac_booking_url']; ?>" class="orange-text"><span class="glyphicon glyphicon-calendar"></span>Book Now</a></li>
-							<?php 
-							}
-								  mac_clean_menu();
-							  ?>
-						  </ul>
-						</div>
-					</div>
-				</nav>
-			</header>
-		</div>
-	</div>
-    <?php } ?>
+    
