@@ -16,24 +16,6 @@
 
 </script>
 
-<!--development
-<link rel="stylesheet/less" type="text/css" href="<?php bloginfo('template_directory'); ?>/style.less" />
-<script>
-  less = {
-    env: "development",
-    async: false,
-    fileAsync: false,
-    poll: 1000,
-    functions: {},
-    dumpLineNumbers: "comments",
-    relativeUrls: true
-  };
-</script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.0/less.min.js"></script>
-<script>less.watch();</script>
-<!--development-->
-
-
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
