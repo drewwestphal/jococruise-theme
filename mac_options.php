@@ -80,11 +80,27 @@ function mac_settings_init(  ) {
 		'pluginPage', 
 		'mac_hero_settings'
 	);
+	
+	add_settings_field( 
+		'mac_button_cta', 
+		__( 'Button Call to Action', 'wordpress' ), 
+		'mac_button_cta_render', 
+		'pluginPage', 
+		'mac_hero_settings'
+	);
 
 	add_settings_field( 
 		'mac_travel_description', 
 		__( 'Travel Description', 'wordpress' ), 
 		'mac_travel_description_render', 
+		'pluginPage', 
+		'mac_hero_settings' 
+	);
+	
+	add_settings_field( 
+		'mac_travel_description_more', 
+		__( 'Travel Description (More)', 'wordpress' ), 
+		'mac_travel_description_more_render', 
 		'pluginPage', 
 		'mac_hero_settings' 
 	);
@@ -172,6 +188,13 @@ function mac_travel_dates_render(  ) {
 	<?php 
 }
 
+function mac_button_cta_render(  ) { 
+
+	$options = get_option( 'mac_settings' );
+	?>
+	<input type='text' name='mac_settings[mac_button_cta]' value='<?php echo $options['mac_button_cta']; ?>'>
+	<?php 
+}
 
 function mac_travel_description_render(  ) { 
 
@@ -181,6 +204,16 @@ function mac_travel_description_render(  ) {
  	</textarea>
 	<?php 
 }
+
+function mac_travel_description_more_render(  ) { 
+
+	$options = get_option( 'mac_settings' );
+	?>
+	<textarea cols='40' rows='5' name='mac_settings[mac_travel_description_more]'><?php echo $options['mac_travel_description_more']; ?>
+ 	</textarea>
+	<?php 
+}
+
 
 function mac_mailing_list_cta_render(  ) { 
 
@@ -235,7 +268,7 @@ function mac_and_cruise_options_page(  ) {
 	?>
 	<form action='options.php' method='post'>
 		
-		<h2>Mac and Cruise</h2>
+		<h2>JoCo Cruise</h2>
 		<?php 		settings_fields( 'pluginPage' );
 		?>
 		<?php 		do_settings_sections( 'pluginPage' );
