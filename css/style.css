@@ -47,11 +47,59 @@ a:hover {
   padding: 0;
   z-index: 100;
 }
+.container {
+  width: 750px;
+  .center-block();
+}
+
+/*
+	
+	FONTS
+	
+*/
+
+/* surveyor */
+@font-face {
+    font-family: surveyorBook;
+    src: url(../fonts/SurveyorDisplay-Book-Pro.otf);
+}
+@font-face {
+    font-family: surveyorBookBold;
+    src: url(../fonts/SurveyorDisplay-Bold-Pro.otf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: surveyorBookItalic;
+    src: url(../fonts/SurveyorDisplay-BookItalic-Pro.otf);
+}
+
+/* gotham */
+@font-face {
+    font-family: gothamBook;
+    src: url(../fonts/Gotham-Book.otf);
+}
+
+
+/*
+
+COLORS	
+
+cream		: #f5f1e9
+dark blue	: #144662
+medium blue	: #005778
+light blue	: #6e96ab
+dark tan	: #cdc5a5
+
+*/
+
+
+
 /*
 	
 	NAV
 	
 */
+/*
 #header-container {
   position: fixed;
   width: 100%;
@@ -205,6 +253,7 @@ header,
   -moz-transition: color .27s;
   -webkit-transition: color .27s;
 }
+*/
 
 /*
 	
@@ -213,10 +262,11 @@ Hero
 
 
 */
-#hero {
+#hero{
   background: url('../img/hero_bg.jpg') center center no-repeat;
   background-size: cover;
   height:400px;
+  width:100%;
   text-align: center;
 }
 #hero-joco-logo{
@@ -225,7 +275,63 @@ Hero
 	position: relative;
 	top: 144px;
 }
-#hero h1 {
+#hero-more-info{
+	background:#f5f1e9;
+	font-family: surveyorBook, serif;
+	color:#144662;
+	width:100%;
+	height:auto;
+}
+#hero-more-info .container{
+	padding: 64px 38px;
+}
+p#hero-travel-description{
+	font-size: 38px;
+	line-height: 1.25em;
+	width:100%;
+	padding-bottom: 1em;
+}
+p#hero-travel-description-more{
+	font-size: 20px;
+	line-height: 1.25em;
+	width:50%;
+	float:left;
+	padding-bottom: 30px;
+}
+#hero-book-now{
+	float:left;
+	border:none;
+	color:#f5f1e9;
+	background:#144662;
+	text-transform: uppercase;
+	font-family: gothamBook, sans-serif;
+	font-size: 13px;
+	padding:.5em 1em;
+	transition: background .27s;
+	-moz-transition: background .27s;
+	-webkit-transition: background .27s;	
+}
+#hero-book-now:hover{
+	background:#005778;
+	cursor:pointer;
+	text-decoration: none;
+}
+#hero-boat{
+	width:33%;
+	height:auto;
+	margin-right: 40px;
+	float:right;
+}
+#hero-more-info .bold{
+	font-family: surveyorBookBold, serif;
+	font-style: bold;
+}
+
+#hero-more-info .italic{
+	font-family: surveyorBookItalic, serif;
+}
+
+/*#hero h1 {
   font-size: 36px;
   font-weight: 700;
   text-transform: uppercase;
@@ -285,6 +391,7 @@ h1#hero-site-title {
     padding-bottom: 10px;
   }
 }
+*//*
 #mc4wp_email {
   background: none;
   border: 1px solid white;
@@ -361,11 +468,7 @@ input:-moz-placeholder {
   -moz-transition: transform .27s;
   -webkit-transition: -webkit-transform 0.27s;
 }
-@media screen and (min-width: 768px) {
-  #hero-more-info {
-    display: none;
-  }
-}
+
 #hero-more-info:hover {
   cursor: pointer;
 }
@@ -386,7 +489,7 @@ input:-moz-placeholder {
   margin: 0 16px;
   padding-bottom: 20px;
   line-height: 1.5em;
-}
+}*/
 /*
 	
 	

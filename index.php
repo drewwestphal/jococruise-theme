@@ -1,5 +1,13 @@
 <?php get_header(); ?>
-<?php $site_title 		  = get_bloginfo('name'); ?>
+<?php 
+//variables
+$site_title 	  = get_bloginfo('name'); 
+$booking_url	  = get_option('mac_settings')['mac_booking_url'];
+$booking_enabled  = get_option('mac_settings')['mac_booking_enabled'];
+$booking_cta	  = get_option('mac_settings')['mac_button_cta'];
+$travel_desc	  = get_option('mac_settings')['mac_travel_description'];
+$travel_desc_more = get_option('mac_settings')['mac_travel_description_more'];
+?>
 <section id="content" role="main">
 <!--hero-->
 	<section id="hero">
@@ -26,13 +34,26 @@
                          $stylemodbkon,get_option('mac_settings')['mac_mailing_list_cta']);
 					    mc4wp_form();
 					} ?>-->
-				<section id="hero-more-info">
-					<div id="hero-more-info-button">
-						<h1 class="orange-text">More Info</h1>
-						<span class="glyphicon glyphicon-remove orange-text rotate"></span>
-					</div>
-					<div id="hero-travel-description_narrow" class="hidden"><p><?php echo get_option('mac_settings')['mac_travel_description'];?></p></div>
-				</section>
+			</div>
+		</div>
+	</section>
+	<section id="hero-more-info">
+		<div class="container">
+			<div class="col-xs-12 col-md-12">
+				<?php if (isset($travel_desc)){ ?>
+					<p id="hero-travel-description"><?php echo $travel_desc; ?></p>
+				<?php  }; ?>
+				<?php if (isset($travel_desc_more)){ ?>
+					<p id="hero-travel-description-more"><?php echo $travel_desc_more;?></p>
+					<img id="hero-boat" src="<?php bloginfo('template_directory'); ?>/img/hero_boat.png" alt="An animated cruise ship">
+				<?php  }; ?>
+				<?php if (isset($booking_enabled)) { ?>
+					<?php if (strlen($booking_cta) > 0) { ?>
+						<a href="<?php echo $booking_url; ?>" id="hero-book-now"><?php echo get_option('mac_settings')['mac_button_cta']; ?></a>
+					<?php } else { ?>
+						<a href="<?php echo $booking_url; ?>" id="hero-book-now">Book Now</a>
+					<?php }; ?>
+				<?php }; ?>
 			</div>
 		</div>
 	</section>
