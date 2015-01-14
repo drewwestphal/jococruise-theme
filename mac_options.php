@@ -4,7 +4,7 @@ add_action( 'admin_init', 'mac_settings_init' );
 
 function mac_add_admin_menu(  ) { 
 
-	add_submenu_page( 'themes.php', 'Mac and Cruise', 'Mac and Cruise', 'manage_options', 'mac_and_cruise', 'mac_and_cruise_options_page' );
+	add_submenu_page( 'themes.php', 'JoCo Cruise', 'JoCo Cruise', 'manage_options', 'mac_and_cruise', 'mac_and_cruise_options_page' );
 
 }
 
@@ -219,7 +219,8 @@ function mac_mailing_list_cta_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input type='text' name='mac_settings[mac_mailing_list_cta]' value='<?php echo $options['mac_mailing_list_cta']; ?>'>
+	<textarea cols='40' rows='3' name='mac_settings[mac_mailing_list_cta]'><?php echo $options['mac_mailing_list_cta']; ?>
+	</textarea>
 	<?php 
 }
 
