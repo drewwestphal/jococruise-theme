@@ -18,18 +18,14 @@ html {
   margin-top: 0;
 }
 body {
-  color: white;
+  color:#f5f1e9;
   width: 100%;
   height: 100%;
   font-family: 'Arvo', sans-serif;
   letter-spacing: .5px;
   background: #ffffff;
 }
-.orange-text {
-  color: #faa919;
-}
 a:hover {
-  color: #faa919;
 }
 .rotate {
   -ms-transform: rotate(-45deg);
@@ -84,11 +80,12 @@ a:hover {
 
 COLORS	
 
-cream		: #f5f1e9
-dark blue	: #144662
-medium blue	: #005778
-light blue	: #6e96ab
-dark tan	: #cdc5a5
+cream			: #f5f1e9
+dark blue		: #144662
+medium blue		: #005778
+light blue		: #6e96ab
+extra light blue: #a0b8c5
+dark tan		: #cdc5a5
 
 */
 
@@ -309,7 +306,7 @@ p#hero-travel-description-more{
 	padding:.5em 1em;
 	transition: background .27s;
 	-moz-transition: background .27s;
-	-webkit-transition: background .27s;	
+	-webkit-transition: background .27s;
 }
 #hero-book-now:hover{
 	background:#005778;
@@ -329,6 +326,66 @@ p#hero-travel-description-more{
 
 #hero-more-info .italic{
 	font-family: surveyorBookItalic, serif;
+}
+
+/*
+	
+MAILING LIST
+
+*/
+
+#mailing-list{
+	background: #cdc5a5;
+	text-align: center;
+	padding: 35px 0;
+}
+#mailing-list h1{
+	font-family:gothamBook, sans-serif;
+	font-size: 25px;
+	color:#144662;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	line-height: 1.25em;
+}
+
+#mailing-list h1 span{
+	font-family: surveyorBookItalic, serif;
+	font-size: 13px;
+	letter-spacing: 1px;
+}
+
+#mc4wp-form-1{
+	width:310px;
+	margin:1em auto;
+}
+#mc4wp_email,#submit{
+	font-size: 13px;
+	border-radius:2px;
+}
+#mc4wp_email{
+	background:#f5f1e9;
+	width:220px;
+	height:35px;
+	padding: 0 13px;
+	border:none;
+	font-family: surveyorBookItalic, serif;
+	letter-spacing: .5px;
+	text-transform: lowercase;
+	float:left;
+}
+#submit{
+	background:#6e96ab;
+	width:85px;
+	height:35px;
+	border:none;
+	font-family: surveyorBook, serif;
+	float:right;
+	transition: background .27s;
+	-moz-transition: background .27s;
+	-webkit-transition: background .27s;
+}
+#submit:hover,#submit:focus{
+	background:#a0b8c5;
 }
 
 /*#hero h1 {
@@ -496,7 +553,7 @@ input:-moz-placeholder {
 UPDATES
 
 
-*/
+
 #updates {
   background: #2a3a64;
   padding: 20px 0;
@@ -608,7 +665,7 @@ UPDATES
 ARTISTS
 
 
-*/
+
 #artists {
   background: #ffffff;
   color: #6280b5;
@@ -778,7 +835,7 @@ ARTISTS
 ABOUT
 
 
-*/
+
 .about-item {
   width: 100%;
   overflow: auto;
@@ -855,7 +912,7 @@ ABOUT
 CONTACT
 
 
-*/
+
 #contact {
   background: #2a3a64;
   text-align: center;
@@ -962,7 +1019,7 @@ CONTACT
 FAQ
 
 
-*/
+
 .faq {
   background: #ffffff;
 }
@@ -1058,7 +1115,7 @@ SPONSORS
 
 
 
-*/
+
 #sponsors {
   background: #bdbdbd;
   color: #ffffff;
@@ -1102,7 +1159,7 @@ SPONSORS
 pages	
 	
 	
-*/
+
 .page,
 .single-post {
   background: #2a3a64;

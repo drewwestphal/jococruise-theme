@@ -7,6 +7,8 @@ $booking_enabled  = get_option('mac_settings')['mac_booking_enabled'];
 $booking_cta	  = get_option('mac_settings')['mac_button_cta'];
 $travel_desc	  = get_option('mac_settings')['mac_travel_description'];
 $travel_desc_more = get_option('mac_settings')['mac_travel_description_more'];
+$mailing_cta	  = get_option('mac_settings')['mac_mailing_list_cta'];
+
 ?>
 <section id="content" role="main">
 <!--hero-->
@@ -29,11 +31,7 @@ $travel_desc_more = get_option('mac_settings')['mac_travel_description_more'];
                         printf('<a href="%s" style="width:250px; margin-top:8px; margin-left:33px" class="btn btn-lg btn-success">Book Now!</a>',$bkurl);
                         $stylemodbkon = 'padding-top:14px;padding-bottom:0;margin-bottom:-0.7em;'; 
 					} ?>
-					<?php if( function_exists( 'mc4wp_form' ) ) {
-					    printf('<p class="orange-text" style="%s">%s</p>',//
-                         $stylemodbkon,get_option('mac_settings')['mac_mailing_list_cta']);
-					    mc4wp_form();
-					} ?>-->
+					-->
 			</div>
 		</div>
 	</section>
@@ -57,7 +55,18 @@ $travel_desc_more = get_option('mac_settings')['mac_travel_description_more'];
 			</div>
 		</div>
 	</section>
-<!--updates-->	
+<!--mailing list-->	
+	<?php if(function_exists('mc4wp_form')) { ?>
+	<section id="mailing-list">
+		<div class="container">
+			<div class="col-xs-12 col-md-12">
+				<h1><?php echo $mailing_cta; ?></h1>
+				<?php mc4wp_form(); ?>
+			</div>
+		</div>
+	</section>
+	<?php }; ?>
+<!--updates
 	<section id="updates">
 		<div class="container">
 			<div class="col-xs-12 col-md-12">
@@ -94,7 +103,7 @@ $travel_desc_more = get_option('mac_settings')['mac_travel_description_more'];
 			</div>
 		</div>
 	</section>
-<!--artists-->	
+<!--artists
 	<section id="artists">
 		<div class="container">
 			<div class="col-xs-12 col-md-12">
@@ -171,7 +180,7 @@ $travel_desc_more = get_option('mac_settings')['mac_travel_description_more'];
 			</div>
 		</div>
 	</section>
-<!--about-->	
+<!--about	
 	<section id="about">
 				<?php 
 					$args = array(
@@ -204,7 +213,7 @@ $travel_desc_more = get_option('mac_settings')['mac_travel_description_more'];
 					$count = $artist_query->post_count;
 				?>
 	</section>
-<!--contact-->	
+<!--contact
 	<section id="contact">
 		<div class="container">
 			<div class="col-xs-12 col-md-12">
@@ -225,7 +234,7 @@ $travel_desc_more = get_option('mac_settings')['mac_travel_description_more'];
 			</div>
 		</div>
 	</section>
-<!--faq-->	
+<!--faq
 	<div class="faq container">
 	<div class="faq col-xs-12 col-md-12">
 	<section id="faq">
@@ -298,7 +307,7 @@ $travel_desc_more = get_option('mac_settings')['mac_travel_description_more'];
 	</section>
 			</div>
 			</div>
-<!--sponsors-->			
+<!--sponsors		
 	<section id="sponsors">
 		<div class="container">
 			<div class="col-xs-12 col-md-12">
@@ -322,7 +331,7 @@ $travel_desc_more = get_option('mac_settings')['mac_travel_description_more'];
 	</section>
 	
 </section>				
-<?php wp_footer(); ?>
+
 <style type="text/css">
     #news-cell{
 	    width:<?php echo $news_count; ?>00%;
@@ -364,4 +373,5 @@ $travel_desc_more = get_option('mac_settings')['mac_travel_description_more'];
 	}
 
 </style>
-
+-->
+<?php wp_footer(); ?>
