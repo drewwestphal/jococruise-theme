@@ -35,6 +35,7 @@ $mailing_cta	  = get_option('mac_settings')['mac_mailing_list_cta'];
 			</div>
 		</div>
 	</section>
+	<?php if (isset($travel_desc) || isset($travel_desc_more) || isset($booking_enabled)){ ?>
 	<section id="hero-more-info">
 		<div class="container">
 			<div class="col-xs-12 col-md-12">
@@ -55,6 +56,7 @@ $mailing_cta	  = get_option('mac_settings')['mac_mailing_list_cta'];
 			</div>
 		</div>
 	</section>
+	<?php }; ?>
 <!--mailing list-->	
 	<?php if(function_exists('mc4wp_form')) { ?>
 	<section id="mailing-list">
