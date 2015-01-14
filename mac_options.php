@@ -105,6 +105,7 @@ function mac_settings_init(  ) {
 		'mac_hero_settings' 
 	);
 	
+	//mailing list
 	add_settings_field( 
 		'mac_mailing_list_cta', 
 		__( 'Mailing List Call to Action', 'wordpress' ), 
@@ -113,6 +114,7 @@ function mac_settings_init(  ) {
 		'mac_hero_settings'
 	);
 
+	//social
 	add_settings_field( 
 		'mac_facebook_url', 
 		__( 'Link to Facebook Page', 'wordpress' ), 
@@ -246,7 +248,8 @@ function mac_talent_header_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input type='text' name='mac_settings[mac_talent_header]' value='<?php echo $options['mac_talent_header']; ?>'>
+	<textarea cols='40' rows='3' name='mac_settings[mac_talent_header]'><?php echo $options['mac_talent_header']; ?>
+	</textarea>
 	<?php 
 }
 
