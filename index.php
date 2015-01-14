@@ -8,6 +8,7 @@ $booking_cta	  = get_option('mac_settings')['mac_button_cta'];
 $travel_desc	  = get_option('mac_settings')['mac_travel_description'];
 $travel_desc_more = get_option('mac_settings')['mac_travel_description_more'];
 $mailing_cta	  = get_option('mac_settings')['mac_mailing_list_cta'];
+$artists_header	  = get_option('mac_settings')['mac_talent_header'];
 
 ?>
 <section id="content" role="main">
@@ -59,7 +60,7 @@ $mailing_cta	  = get_option('mac_settings')['mac_mailing_list_cta'];
 	<?php }; ?>
 <!--mailing list-->	
 	<?php if(function_exists('mc4wp_form')) { ?>
-	<section id="mailing-list">
+	<section id="mailing-list" class="headers">
 		<div class="container">
 			<div class="col-xs-12 col-md-12">
 				<h1><?php echo $mailing_cta; ?></h1>
@@ -68,6 +69,20 @@ $mailing_cta	  = get_option('mac_settings')['mac_mailing_list_cta'];
 		</div>
 	</section>
 	<?php }; ?>
+<!--artists-->
+	<section id="artists" class="headers">
+		<div class="container">
+			<div class="col-xs-12 col-md-12">
+				<div id="artists-header">
+					<img src="<?php bloginfo('template_directory'); ?>/img/artist_divider.png">
+					<?php if (strlen($artists_header) > 0){ ?>
+						<h1><?php echo $artists_header; ?></h1>
+					<? }; ?>
+				</div>
+			</div>
+		</div>
+	</section>
+			
 <!--updates
 	<section id="updates">
 		<div class="container">

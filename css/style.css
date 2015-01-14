@@ -47,6 +47,21 @@ a:hover {
   width: 750px;
   .center-block();
 }
+.headers h1{
+	font-family:gothamBook, sans-serif;
+	font-size: 25px;
+	color:#144662;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	line-height: 1.25em;
+}
+
+.headers h1 span{
+	font-family: surveyorBookItalic, serif;
+	font-size: 13px;
+	letter-spacing: 1px;
+	line-height: 1em;
+}
 
 /*
 	
@@ -337,21 +352,7 @@ MAILING LIST
 #mailing-list{
 	background: #cdc5a5;
 	text-align: center;
-	padding: 35px 0;
-}
-#mailing-list h1{
-	font-family:gothamBook, sans-serif;
-	font-size: 25px;
-	color:#144662;
-	text-transform: uppercase;
-	letter-spacing: 3px;
-	line-height: 1.25em;
-}
-
-#mailing-list h1 span{
-	font-family: surveyorBookItalic, serif;
-	font-size: 13px;
-	letter-spacing: 1px;
+	padding: 20px 0 45px;
 }
 
 #mc4wp-form-1{
@@ -387,6 +388,30 @@ MAILING LIST
 #submit:hover,#submit:focus{
 	background:#a0b8c5;
 }
+
+/*
+	
+ARTISTS
+
+*/
+#artists{
+	background:#f5f1e9;
+	color:#144662;
+}
+#artists .container{
+	padding:45px 70px;
+}
+#artists-header{
+	text-align: center;
+}
+#artists-header h1{
+	margin: 30px 0 65px;
+}
+#artists-header img{
+	width:100%;
+	height:auto;
+}
+
 
 /*#hero h1 {
   font-size: 36px;
