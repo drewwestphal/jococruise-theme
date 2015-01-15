@@ -111,17 +111,17 @@ $artists_header	  = get_option('mac_settings')['mac_talent_header'];
 								</div>
 								<div class="artists-social">
 								<?php  if (get_field('artist_facebook')){ ?>
-										<a href="<?php get_field('artist_facebook'); ?>" class="facebook">
+										<a href="<?php echo get_field('artist_facebook'); ?>" class="facebook">
 											<div class="social-icon facebook"></div>
 										</a>
 									<? };
 									   if (get_field('artist_twitter')){ ?>
-										<a href="<?php get_field('artist_twitter'); ?>" class="twitter">
+										<a href="<?php echo get_field('artist_twitter'); ?>" class="twitter">						
 											<div class="social-icon twitter"></div>
 										</a>
 									<? };
 									   if (get_field('artist_youtube')){ ?>
-										<a class="social-icon youtube" href="<?php get_field('artist_youtube'); ?>" class="youtube">
+										<a class="social-icon youtube" href="<?php echo get_field('artist_youtube'); ?>" class="youtube">
 											<div class="social-icon youtube"></div>
 										</a>
 									<? }; ?>
