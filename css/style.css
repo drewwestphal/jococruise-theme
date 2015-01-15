@@ -411,6 +411,24 @@ ARTISTS
 	width:100%;
 	height:auto;
 }
+.artist_unit{
+	width:150px;
+	text-align: center;
+}
+
+.artists-featured-image{
+	width:135px;
+	height:135px;
+	margin:0 auto;
+	overflow: hidden;
+	border-radius: 50%;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+}
+.artists-featured-image img{
+	width:100%;
+	height:auto;
+}
 
 
 /*#hero h1 {
