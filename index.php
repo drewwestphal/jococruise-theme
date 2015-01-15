@@ -79,6 +79,127 @@ $artists_header	  = get_option('mac_settings')['mac_talent_header'];
 						<h1><?php echo $artists_header; ?></h1>
 					<? }; ?>
 				</div>
+				<?php 
+					//get the artists
+					$args = array(
+						'post_type' 	 => 'artist',
+						'posts_per_page' => -1,
+						'order'			 => 'ASC',
+						'meta_query' => array(
+							array(
+								'key' => 'artist_type',
+								'value' => 'artist'
+							),
+						)
+					);
+					$artist_query = new WP_Query($args);
+
+					if ($artist_query->have_posts()) {
+						while ($artist_query->have_posts()) {
+							$artist_query->the_post();
+							?>
+							<div class="artist_unit">
+								<div class="artists-featured-image">
+									<?php the_post_thumbnail(); ?>
+								</div>
+								<div class="artists-name">
+									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+									<p><?php the_field('artist_subtitle'); ?></p>
+								</div>
+								<div class="artists-description">
+									<?php the_excerpt(); ?>
+								</div>
+								<div class="artists-social">
+								<?php  if (get_field('artist_facebook')){ ?>
+										<a href="<?php get_field('artist_facebook'); ?>" class="facebook"></a>
+									<? };
+									   if (get_field('artist_twitter')){ ?>
+										<a href="<?php get_field('artist_twitter'); ?>" class="twitter"></a>
+									<? };
+									   if (get_field('artist_youtube')){ ?>
+										<a href="<?php get_field('artist_youtube'); ?>" class="youtube"></a>
+									<? }; ?>
+									
+								</div>
+							<?php
+
+							echo '<br>';
+							
+							echo '<br>';
+							echo '<br>';
+						}
+					}
+
+					wp_reset_postdata();
+					
+					//get the featured artists
+					$args = array(
+						'post_type' 	 => 'artist',
+						'posts_per_page' => -1,
+						'order'			 => 'ASC',
+						'meta_query' => array(
+							array(
+								'key' => 'artist_type',
+								'value' => 'featured artist'
+							),
+						)
+					);
+					$feat_artist_query = new WP_Query($args);
+					$count = $feat_artist_query->post_count;
+					
+					if ($count > 0) {
+						echo '
+						<div class="artist_unit headers" id="featured guests">
+							<h1><span>And</span><br>Featured Guests</h1>
+						</div>
+						';	
+					};
+					if ($feat_artist_query->have_posts()) {
+						while ($feat_artist_query->have_posts()) {
+							$feat_artist_query->the_post();
+							
+
+							the_title();
+							echo '<br>';
+							
+							the_field('artist_type');
+							echo '<br>';
+							echo '<br>';
+						}
+					}
+
+					wp_reset_postdata();
+					
+					//get the office hours artists
+					$args = array(
+						'post_type' 	 => 'artist',
+						'posts_per_page' => -1,
+						'order'			 => 'ASC',
+						'meta_query' => array(
+							array(
+								'key' => 'artist_type',
+								'value' => 'office hours'
+							),
+						)
+					);
+					$oh_artist_query = new WP_Query($args);
+
+					if ($oh_artist_query->have_posts()) {
+						while ($oh_artist_query->have_posts()) {
+							$oh_artist_query->the_post();
+
+
+							the_title();
+							echo '<br>';
+							
+							the_field('artist_type');
+							echo '<br>';
+							echo '<br>';
+						}
+					}
+
+					wp_reset_postdata();
+				?>
 			</div>
 		</div>
 	</section>
@@ -137,11 +258,11 @@ $artists_header	  = get_option('mac_settings')['mac_talent_header'];
 							$artist_query = new WP_Query( $args );
 							$j=0;
 							$count = $artist_query->post_count;
-							?>
+						?>
 				<div id="artists-artist-container">
 					<div id="overflow">
 						<div class="inner">
-							<?php 							if ( $artist_query->have_posts() ) {
+							<?php if ( $artist_query->have_posts() ) {
 								while ( $artist_query->have_posts() ) {
 									$artist_query->the_post();
 									?>
