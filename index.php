@@ -164,7 +164,40 @@ $artists_header	  = get_option('mac_settings')['mac_talent_header'];
 			</div>
 		</div>
 	</section>
-			
+<!--map-->
+	<section id="map">
+		<div class="container">
+			<div class="col-xs-12 col-md-12">
+				<div class="map-cities">
+					<div class="map-city">
+						<h1>Ft. Lauderdale</h1>
+						<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+						<p><span>Ft. Lauderdale</span>Maecenas sed diam eget risus varius blandit sit amet non magna. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+					</div>
+					<div class="map-city">
+						<h1>Ft. Lauderdale</h1>
+						<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+						<p><span>Ft. Lauderdale</span>Maecenas sed diam eget risus varius blandit sit amet non magna. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+					</div>
+					<div class="map-city">
+						<h1>Ft. Lauderdale</h1>
+						<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+						<p><span>Ft. Lauderdale</span>Maecenas sed diam eget risus varius blandit sit amet non magna. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+					</div>
+					<div class="map-city">
+						<h1>Ft. Lauderdale</h1>
+						<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+						<p><span>Ft. Lauderdale</span>Maecenas sed diam eget risus varius blandit sit amet non magna. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+					</div>
+					<div class="map-city">
+						<h1>Ft. Lauderdale</h1>
+						<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+						<p><span>Ft. Lauderdale</span>Maecenas sed diam eget risus varius blandit sit amet non magna. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 <!--updates
 	<section id="updates">
 		<div class="container">
