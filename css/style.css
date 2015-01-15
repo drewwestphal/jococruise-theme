@@ -466,6 +466,9 @@ ARTISTS
 	position: relative;
 	top:5px;
 }
+.artists-description{
+	padding: 0 0 15px;
+}
 .artists-description p{
 	width:100%;
 	height:40px;
@@ -494,6 +497,7 @@ ARTISTS
 	height:20px;
 	background-image:url('../img/artist_social.png');
 	background-size: 40px 60px;
+	margin: 0 5px;
 	position: relative;
 	display: inline-block;
 }
