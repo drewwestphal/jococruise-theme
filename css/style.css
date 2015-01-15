@@ -98,12 +98,14 @@ a:hover {
 
 COLORS	
 
+unwhite			: #f6f4ec
 cream			: #f5f1e9
 dark blue		: #144662
 medium blue		: #005778
 light blue		: #6e96ab
 extra light blue: #a0b8c5
 dark tan		: #cdc5a5
+unblack			: #050708
 
 */
 
@@ -545,6 +547,81 @@ ARTISTS
 	height:20px;
 }
 
+
+/*
+	
+MAP	
+	
+*/
+
+#map{
+	background: #cdc5a5;
+	color: #050708;
+}
+#map .container{
+	width:1024px;
+}
+#map-background{
+	width:100%;
+	height:auto;
+}
+.map-city{
+	position:absolute;
+	text-align: center;
+}
+.map-city-container{
+	width:100%;
+	height:100%;
+	position: relative;
+}
+.map-city h1{
+	font-family: gothamBook;
+	text-transform: uppercase;
+	font-size: 12px;
+	margin-left: -100%;
+	margin-top: -35px;
+}
+.map-city h1.down{
+	margin-top: 25px;
+}
+.map-city span{
+	position: absolute;
+	left:-20px;
+	top:-20px;
+	background:none;
+	background: rgba(2,60,92,.1);
+	font-size: 10px;
+	padding:15px;
+	color:#144662;
+	border:1px solid #144662;
+	text-align: center;
+	border-radius:50%;
+	-moz-border-radius:50%;
+	-webkit-border-radius:50%;
+}
+.map-city p{
+	display: none;
+}
+#ftl{
+	left:20.6%;
+	top:26.75%;
+}
+#lad{
+	left:50.12%;
+	top:65.12%;
+}
+#sj{
+	left:71.21%;
+	top:68.6%;
+}
+#bt{
+	left:83.4%;
+	top:75.6%;
+}
+#pb{
+	left:82.42%;
+	top:69.77%;
+}
 
 /*#hero h1 {
   font-size: 36px;

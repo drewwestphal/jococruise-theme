@@ -169,30 +169,31 @@ $artists_header	  = get_option('mac_settings')['mac_talent_header'];
 		<div class="container">
 			<div class="col-xs-12 col-md-12">
 				<div class="map-cities">
-					<div class="map-city">
+					<img src="<?php bloginfo('template_directory'); ?>/img/map.png" id="map-background">
+					<div class="map-city" id="ftl">
 						<h1>Ft. Lauderdale</h1>
-						<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 						<p><span>Ft. Lauderdale</span>Maecenas sed diam eget risus varius blandit sit amet non magna. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
 					</div>
-					<div class="map-city">
-						<h1>Ft. Lauderdale</h1>
-						<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-						<p><span>Ft. Lauderdale</span>Maecenas sed diam eget risus varius blandit sit amet non magna. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+					<div class="map-city" id="lad">
+						<h1>Labadee</h1>
+						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+						<p><span>Labadee</span>Maecenas sed diam eget risus varius blandit sit amet non magna. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
 					</div>
-					<div class="map-city">
-						<h1>Ft. Lauderdale</h1>
-						<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-						<p><span>Ft. Lauderdale</span>Maecenas sed diam eget risus varius blandit sit amet non magna. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+					<div class="map-city" id="sj">
+						<h1>San Juan</h1>
+						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+						<p><span>San Juan</span>Maecenas sed diam eget risus varius blandit sit amet non magna. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
 					</div>
-					<div class="map-city">
-						<h1>Ft. Lauderdale</h1>
-						<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-						<p><span>Ft. Lauderdale</span>Maecenas sed diam eget risus varius blandit sit amet non magna. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+					<div class="map-city" id="bt">
+						<h1 class="down">Basseterre</h1>
+						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+						<p><span>Basseterre</span>Maecenas sed diam eget risus varius blandit sit amet non magna. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
 					</div>
-					<div class="map-city">
-						<h1>Ft. Lauderdale</h1>
-						<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-						<p><span>Ft. Lauderdale</span>Maecenas sed diam eget risus varius blandit sit amet non magna. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+					<div class="map-city" id="pb">
+						<h1>Phillipsburg</h1>
+						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+						<p><span>Phillipsburg</span>Maecenas sed diam eget risus varius blandit sit amet non magna. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
 					</div>
 				</div>
 			</div>
