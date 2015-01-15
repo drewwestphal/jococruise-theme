@@ -72,17 +72,20 @@ a:hover {
 /* surveyor */
 @font-face {
     font-family: surveyorBook;
-    src: url(../fonts/SurveyorDisplay-Book-Pro.otf);
+    src: url(../fonts/SurveyorText-Book-Pro.otf);
 }
 @font-face {
     font-family: surveyorBookBold;
-    src: url(../fonts/SurveyorDisplay-Bold-Pro.otf);
+    src: url(../fonts/SurveyorText-Bold-Pro.otf);
     font-weight: bold;
 }
 @font-face {
     font-family: surveyorBookItalic;
     src: url(../fonts/SurveyorDisplay-BookItalic-Pro.otf);
 }
+
+/* surveyor text */
+
 
 /* gotham */
 @font-face {
@@ -413,14 +416,21 @@ ARTISTS
 	height:auto;
 }
 .artist_unit{
-	width:150px;
+	width:200px;
+	height:235px;
+	padding:0 25px;
 	text-align: center;
+	font-family:surveyorBook, serif;
+	color:#144662;
+	font-size: 10px;
+	float:left;
 }
 
 .artists-featured-image{
-	width:135px;
-	height:135px;
+	width:90px;
+	height:90px;
 	margin:0 auto;
+	margin-bottom: 30px;
 	overflow: hidden;
 	border-radius: 50%;
 	-moz-border-radius: 50%;
@@ -429,6 +439,50 @@ ARTISTS
 .artists-featured-image img{
 	width:100%;
 	height:auto;
+}
+.artists-name{
+	width:100%;
+	height:30px;
+	white-space: nowrap;
+	font-size: 14px;
+	margin: 0 0 10px;
+}
+.artists-name a{
+	font-family:surveyorBookBold, serif;
+	font-weight: bold;
+	color:#144662;
+	border-bottom:1px solid #144662;
+	transition: color .27s,border-bottom .27s;
+	-moz-transition: color .27s,border-bottom .27s;
+	-webkit-transition: color .27s,border-bottom .27s;
+}
+.artists-name a:hover{
+	text-decoration: none;
+	border-bottom:1px solid #6e96ab;
+	color:#6e96ab;
+}
+.artists-name p{
+	font-size: 12px;
+	position: relative;
+	top:5px;
+}
+.artists-description p{
+	width:100%;
+	height:40px;
+	line-height: 1.33em;
+	overflow: hidden;
+}
+#featured-guests{
+	padding:0 15px;
+}
+#featured-guests h1{
+	width:100%;
+	position: relative;
+	top:40px;
+	border-top: 1px solid #144662;
+	border-bottom: 1px solid #144662;
+	transform:skewY(170deg);
+	padding: 5px 0 15px 0;
 }
 
 
