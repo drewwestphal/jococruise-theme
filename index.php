@@ -121,13 +121,8 @@ $artists_header	  = get_option('mac_settings')['mac_talent_header'];
 									<? }; ?>
 									
 								</div>
-							<?php
-
-							echo '<br>';
-							
-							echo '<br>';
-							echo '<br>';
-						}
+							</div>
+				<?php	}
 					}
 
 					wp_reset_postdata();
@@ -149,7 +144,7 @@ $artists_header	  = get_option('mac_settings')['mac_talent_header'];
 					
 					if ($count > 0) {
 						echo '
-						<div class="artist_unit headers" id="featured guests">
+						<div class="artist_unit headers" id="featured-guests">
 							<h1><span>And</span><br>Featured Guests</h1>
 						</div>
 						';	
