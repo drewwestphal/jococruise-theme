@@ -169,32 +169,25 @@ $artists_header	  = get_option('mac_settings')['mac_talent_header'];
 		<div class="container">
 			<div class="col-xs-12 col-md-12">
 				<div class="map-cities">
-					<img src="<?php bloginfo('template_directory'); ?>/img/map.png" id="map-background">
-					<div class="map-city" id="ftl">
-						<h1>Ft. Lauderdale</h1>
-						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-						<p><span>Ft. Lauderdale</span>Maecenas sed diam eget risus varius blandit sit amet non magna. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
-					</div>
-					<div class="map-city" id="lad">
-						<h1>Labadee</h1>
-						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-						<p><span>Labadee</span>Maecenas sed diam eget risus varius blandit sit amet non magna. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
-					</div>
-					<div class="map-city" id="sj">
-						<h1>San Juan</h1>
-						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-						<p><span>San Juan</span>Maecenas sed diam eget risus varius blandit sit amet non magna. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
-					</div>
-					<div class="map-city" id="bt">
-						<h1 class="down">Basseterre</h1>
-						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-						<p><span>Basseterre</span>Maecenas sed diam eget risus varius blandit sit amet non magna. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
-					</div>
-					<div class="map-city" id="pb">
-						<h1>Phillipsburg</h1>
-						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-						<p><span>Phillipsburg</span>Maecenas sed diam eget risus varius blandit sit amet non magna. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
-					</div>
+					<img src="<?php bloginfo('template_directory'); ?>/img/map.png" id="map-background">		
+					<?php
+					//get the cities
+					$map_width = 1650;
+					$map_height = 860;
+					$args = array(
+						'post_type' 	 => 'city',
+						'posts_per_page' => -1
+					);
+					$cities_query = new WP_Query($args);
+
+					if ($cities_query->have_posts()) {
+						while ($cities_query->have_posts()) {
+							$cities_query->the_post();
+							
+							include 'map-city-logic.php';
+						}
+					}
+					?>
 				</div>
 			</div>
 		</div>
