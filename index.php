@@ -97,38 +97,9 @@ $artists_header	  = get_option('mac_settings')['mac_talent_header'];
 					if ($artist_query->have_posts()) {
 						while ($artist_query->have_posts()) {
 							$artist_query->the_post();
-							?>
-							<div class="artist_unit">
-								<div class="artists-featured-image">
-									<?php the_post_thumbnail(); ?>
-								</div>
-								<div class="artists-name">
-									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-									<p><?php the_field('artist_subtitle'); ?></p>
-								</div>
-								<div class="artists-description">
-									<?php the_excerpt(); ?>
-								</div>
-								<div class="artists-social">
-								<?php  if (get_field('artist_facebook')){ ?>
-										<a href="<?php echo get_field('artist_facebook'); ?>" class="facebook">
-											<div class="social-icon facebook"></div>
-										</a>
-									<? };
-									   if (get_field('artist_twitter')){ ?>
-										<a href="<?php echo get_field('artist_twitter'); ?>" class="twitter">						
-											<div class="social-icon twitter"></div>
-										</a>
-									<? };
-									   if (get_field('artist_youtube')){ ?>
-										<a class="social-icon youtube" href="<?php echo get_field('artist_youtube'); ?>" class="youtube">
-											<div class="social-icon youtube"></div>
-										</a>
-									<? }; ?>
-									
-								</div>
-							</div>
-				<?php	}
+
+							include 'artist_front_page.php';
+						}
 					}
 
 					wp_reset_postdata();
@@ -158,14 +129,7 @@ $artists_header	  = get_option('mac_settings')['mac_talent_header'];
 					if ($feat_artist_query->have_posts()) {
 						while ($feat_artist_query->have_posts()) {
 							$feat_artist_query->the_post();
-							
-
-							the_title();
-							echo '<br>';
-							
-							the_field('artist_type');
-							echo '<br>';
-							echo '<br>';
+							include 'artist_front_page.php';
 						}
 					}
 
