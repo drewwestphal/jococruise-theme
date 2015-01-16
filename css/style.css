@@ -747,6 +747,18 @@ CONTACT
 	border:1px solid #f6f4ec;
 	margin: 0 0 12px;
 }
+.contact-input input::-webkit-input-placeholder,.contact-input textarea::-webkit-input-placeholder {
+   color:#cdc5a5;
+}
+.contact-input input:-moz-input-placeholder,.contact-input textarea:-moz-input-placeholder {
+   color:#cdc5a5;
+}
+.contact-input input::-moz-input-placeholder,.contact-input textarea::-moz-input-placeholder {
+   color:#cdc5a5;
+}
+.contact-input input::-ms-input-placeholder,.contact-input textarea::-ms-input-placeholder {
+   color:#cdc5a5;
+}
 .contact-comments textarea{
 	margin: 0 0 10px;
 	height: 93px;
