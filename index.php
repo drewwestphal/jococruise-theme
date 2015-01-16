@@ -205,7 +205,7 @@ $artists_header	  = get_option('mac_settings')['mac_talent_header'];
 	<section id="contact">
 		<div class="container">
 			<div class="col-xs-12 col-md-12 headers">
-				<h1>Contact Us</h1>
+				<h1 id="contact-header">Contact Us</h1>
 				<div id="contact-info">
 					<div class="contact-info-group">
 						<div class="contact-icon" id="contact-icon-info">
@@ -236,8 +236,10 @@ $artists_header	  = get_option('mac_settings')['mac_talent_header'];
 							<p><a href="tel:2563465222">(256)3GO-JCCC</a> / <a href="tel:2563465222">(256)346-5222</a></p>
 						</div>
 					</div>
-					<div class="contact-info-group social">
-						
+					<div class="contact-info-group contact-social">
+						<a href="https://www.facebook.com/JoCoCruiseCrazy" class="contact-social-icon facebook" target="_blank"></a>
+						<a href="https://twitter.com/jococruisecrazy" class="contact-social-icon twitter" target="_blank"></a>
+						<a href="" class="contact-social-icon rss" target="_blank"></a>
 					</div>
 				</div>
 				<div id="contact-form">

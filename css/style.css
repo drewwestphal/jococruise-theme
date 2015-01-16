@@ -642,8 +642,12 @@ CONTACT
 	color:#f5f1e9;
 	text-align: center;
 }
-#contact h1{
+#contact .container{
+	padding: 60px 90px;
+}
+#contact-header{
 	color:#f5f1e9;
+	margin: 0 0 40px;
 }
 #contact-info,#contact-form{
 	text-align: left;
@@ -679,6 +683,7 @@ CONTACT
 	font-size: 13px;
 }
 .contact-text h1{
+	color:#f5f1e9;
 	font-size: 12px;
 	margin: 0 0 10px;
 }
@@ -694,6 +699,34 @@ CONTACT
 	color:#f6f4ec;
 	border-bottom: 1px solid #f6f4ec;
 	text-decoration: none;
+}
+.contact-social{
+	padding: 0 0 0 40px; 
+}
+.contact-social a{
+	background:url('../img/contact_social_sprite.png');
+	background-size:200%;
+	width:70px;
+	height:70px;
+	display: inline-block;
+}
+.contact-social a.facebook{
+	background-position: 0 0;
+}
+.contact-social a.facebook:hover{
+	background-position: -70px 0;
+}
+.contact-social a.twitter{
+	background-position: 0 -65px;
+}
+.contact-social a.twitter:hover{
+	background-position: -70px -65px;
+}
+.contact-social a.rss{
+	background-position: 0 -137px;
+}
+.contact-social a.rss:hover{
+	background-position: -70px -137px;
 }
 
 /*#hero h1 {
