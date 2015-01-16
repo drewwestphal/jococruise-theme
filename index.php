@@ -244,6 +244,17 @@ $artists_header	  = get_option('mac_settings')['mac_talent_header'];
 				</div>
 				<div id="contact-form">
 					<form name="form" action="<?php bloginfo('template_directory'); ?>/contact.php" method="post" id="contact-form" novalidate class="clearfix">
+						<div class="contact-input" id="contact-input-email">
+							<input name="email" type="email" id="email" placeholder="Your email address">
+						</div>
+						<div class="contact-input" id="contact-input-name">
+							<input type="text" id="name" name="name" placeholder="Your name">
+						</div>
+						<input type="text" id="honeypot" name="honeypot" aria-hidden="true" placeholder="Please leave blank.">
+						<div class="contact-comments" id="contact-comments">
+							<textarea name="comments" id="comments" placeholder="Your message"></textarea>
+						</div>
+						<button type="submit" value="Submit">Submit</button>
 					</form>
 				</div>
 			</div>
