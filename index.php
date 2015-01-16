@@ -206,7 +206,7 @@ $artists_header	  = get_option('mac_settings')['mac_talent_header'];
 		<div class="container">
 			<div class="col-xs-12 col-md-12 headers">
 				<h1 id="contact-header">Contact Us</h1>
-				<div id="contact-info">
+				<div id="contact-info-container">
 					<div class="contact-info-group">
 						<div class="contact-icon" id="contact-icon-info">
 							<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
@@ -242,17 +242,17 @@ $artists_header	  = get_option('mac_settings')['mac_talent_header'];
 						<a href="" class="contact-social-icon rss" target="_blank"></a>
 					</div>
 				</div>
-				<div id="contact-form">
+				<div id="contact-form-container">
 					<form name="form" action="<?php bloginfo('template_directory'); ?>/contact.php" method="post" id="contact-form" novalidate class="clearfix">
 						<div class="contact-input" id="contact-input-email">
-							<input name="email" type="email" id="email" placeholder="Your email address">
+							<input name="email" type="email" id="email" placeholder="your email address*">
 						</div>
 						<div class="contact-input" id="contact-input-name">
-							<input type="text" id="name" name="name" placeholder="Your name">
+							<input type="text" id="name" name="name" placeholder="your name*">
 						</div>
 						<input type="text" id="honeypot" name="honeypot" aria-hidden="true" placeholder="Please leave blank.">
 						<div class="contact-comments" id="contact-comments">
-							<textarea name="comments" id="comments" placeholder="Your message"></textarea>
+							<textarea name="comments" id="comments" placeholder="your message*"></textarea>
 						</div>
 						<button type="submit" value="Submit">Submit</button>
 					</form>
