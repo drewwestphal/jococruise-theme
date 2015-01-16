@@ -192,6 +192,15 @@ $artists_header	  = get_option('mac_settings')['mac_talent_header'];
 			</div>
 		</div>
 	</section>
+	<script>
+		$('.point').mouseover(function() {
+			$(this).siblings('.map-city-about').fadeIn('fast');
+			$(this).removeClass('glyphicon-plus').addClass('glyphicon-minus');
+		}).mouseleave(function() {
+			$(this).siblings('.map-city-about').fadeOut('fast');
+			$(this).removeClass('glyphicon-minus').addClass('glyphicon-plus');
+		});
+	</script>
 <!--updates
 	<section id="updates">
 		<div class="container">

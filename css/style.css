@@ -584,7 +584,7 @@ MAP
 .map-city h1.down{
 	margin-top: 25px;
 }
-.map-city span{
+.map-city span.glyphicon{
 	position: absolute;
 	left:-20px;
 	top:-20px;
@@ -593,34 +593,40 @@ MAP
 	font-size: 10px;
 	padding:15px;
 	color:#144662;
-	border:1px solid #144662;
 	text-align: center;
+	border:1px solid #144662;
 	border-radius:50%;
 	-moz-border-radius:50%;
 	-webkit-border-radius:50%;
+	z-index: 100;
 }
-.map-city p{
+.map-city span.glyphicon:hover{
+	cursor: pointer;
+}
+.map-city-about{
+	background:#FFF;
+	background:rgba(255,255,255,.75);
+	color:#144662;
+	font-family: surveyorBook;
+	font-size: 10px;
+	line-height: 1.5em;
+	text-align: left;
+	width:250px;
+	padding:20px;
+	position:relative;
+	top:30px;
+	left: 5px;
 	display: none;
+	z-index: 900;
 }
-#ftl{
-	left:20.6%;
-	top:26.75%;
+.map-city-about.up{
+	top:-30px;
 }
-#lad{
-	left:50.12%;
-	top:65.12%;
-}
-#sj{
-	left:71.21%;
-	top:68.6%;
-}
-#bt{
-	left:83.4%;
-	top:75.6%;
-}
-#pb{
-	left:82.42%;
-	top:69.77%;
+.map-city-about span{
+	font-family: gothamBook;
+	font-size: 14px;
+	line-height: 1.5em;
+	text-transform: uppercase;
 }
 
 /*#hero h1 {
