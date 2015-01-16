@@ -207,28 +207,37 @@ $artists_header	  = get_option('mac_settings')['mac_talent_header'];
 			<div class="col-xs-12 col-md-12 headers">
 				<h1>Contact Us</h1>
 				<div id="contact-info">
-					<div class="contact-icon" id="contact-icon-info">
-						<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-					</div>
-					<div class="contact-text headers">
-						<h1>General Questions</h1>
-						<a href="mailto:info@jococruisecrazy.com">info@jococruisecrazy.com</a>
+					<div class="contact-info-group">
+						<div class="contact-icon" id="contact-icon-info">
+							<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+						</div>
+						<div class="contact-text headers">
+							<h1>General Questions</h1>
+							<a href="mailto:info@jococruisecrazy.com">info@jococruisecrazy.com</a>
+						</div>
 					</div>
 					
-					<div class="contact-icon" id="contact-icon-booking">
-						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+					<div class="contact-info-group">
+						<div class="contact-icon" id="contact-icon-booking">
+							<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+						</div>
+						<div class="contact-text headers">
+							<h1>Cruise Bookings</h1>
+							<a href="mailto:bookings@jococruisecrazy.com">bookings@jococruisecrazy.com</a>
+						</div>					
 					</div>
-					<div class="contact-text headers">
-						<h1>Cruise Bookings</h1>
-						<a href="mailto:bookings@jococruisecrazy.com">bookings@jococruisecrazy.com</a>
-					</div>					
 					
-					<div class="contact-icon" id="contact-icon-phone">
-						<span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+					<div class="contact-info-group">
+						<div class="contact-icon" id="contact-icon-phone">
+							<span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+						</div>
+						<div class="contact-text headers">
+							<h1>Leave Us A Message</h1>
+							<p><a href="tel:2563465222">(256)3GO-JCCC</a> / <a href="tel:2563465222">(256)346-5222</a></p>
+						</div>
 					</div>
-					<div class="contact-text headers">
-						<h1>Leave Us A Message</h1>
-						<p><a href="tel:2563465222">(256)3GO-JCCC</a>/<a href="tel:2563465222">(256)346-5222</a></p>
+					<div class="contact-info-group social">
+						
 					</div>
 				</div>
 				<div id="contact-form">
