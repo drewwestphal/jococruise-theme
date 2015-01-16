@@ -5,10 +5,19 @@ $site_title 	  = get_bloginfo('name');
 $booking_url	  = get_option('mac_settings')['mac_booking_url'];
 $booking_enabled  = get_option('mac_settings')['mac_booking_enabled'];
 $booking_cta	  = get_option('mac_settings')['mac_button_cta'];
+$cruise_fb	  	  = get_option('mac_settings')['mac_facebook_url'];
+$cruise_twitter	  = get_option('mac_settings')['mac_twitter_url'];
+$cruise_rss		  = get_option('mac_settings')['mac_feed_url'];
 $travel_desc	  = get_option('mac_settings')['mac_travel_description'];
 $travel_desc_more = get_option('mac_settings')['mac_travel_description_more'];
 $mailing_cta	  = get_option('mac_settings')['mac_mailing_list_cta'];
 $artists_header	  = get_option('mac_settings')['mac_talent_header'];
+$cont_gen_q		  = get_option('mac_settings')['mac_general_questions_header'];
+$cont_gen_q_addy  = get_option('mac_settings')['mac_general_questions_address_header'];
+$cont_book_q	  = get_option('mac_settings')['mac_booking_questions_header'];
+$cont_book_q_addy = get_option('mac_settings')['mac_booking_questions_address_header'];
+$cont_tel		  = get_option('mac_settings')['mac_phone_questions_header'];
+$cont_tel_addy	  = get_option('mac_settings')['mac_phone_questions_address_header'];
 
 ?>
 <section id="content" role="main">
@@ -207,39 +216,49 @@ $artists_header	  = get_option('mac_settings')['mac_talent_header'];
 			<div class="col-xs-12 col-md-12 headers">
 				<h1 id="contact-header">Contact Us</h1>
 				<div id="contact-info-container">
+					<?php if (strlen($cont_gen_q_addy) > 0){ ?>
 					<div class="contact-info-group">
 						<div class="contact-icon" id="contact-icon-info">
 							<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
 						</div>
 						<div class="contact-text headers">
-							<h1>General Questions</h1>
-							<a href="mailto:info@jococruisecrazy.com">info@jococruisecrazy.com</a>
+							<h1><?php echo $cont_gen_q; ?></h1>
+							<?php echo $cont_gen_q_addy; ?>
 						</div>
 					</div>
-					
+					<? }; ?>
+					<?php if (strlen($cont_book_q_addy) > 0){ ?>
 					<div class="contact-info-group">
 						<div class="contact-icon" id="contact-icon-booking">
 							<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
 						</div>
 						<div class="contact-text headers">
-							<h1>Cruise Bookings</h1>
-							<a href="mailto:bookings@jococruisecrazy.com">bookings@jococruisecrazy.com</a>
+							<h1><?php echo $cont_book_q; ?></h1>
+							<?php echo $cont_book_q_addy; ?>
 						</div>					
 					</div>
-					
+					<? }; ?>
+					<?php if (strlen($cont_tel_addy) > 0){ ?>					
 					<div class="contact-info-group">
 						<div class="contact-icon" id="contact-icon-phone">
 							<span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
 						</div>
 						<div class="contact-text headers">
-							<h1>Leave Us A Message</h1>
-							<p><a href="tel:2563465222">(256)3GO-JCCC</a> / <a href="tel:2563465222">(256)346-5222</a></p>
+							<h1><?php echo $cont_tel; ?></h1>
+							<?php echo $cont_tel_addy; ?>
 						</div>
 					</div>
+					<? }; ?>
 					<div class="contact-info-group contact-social">
-						<a href="https://www.facebook.com/JoCoCruiseCrazy" class="contact-social-icon facebook" target="_blank"></a>
-						<a href="https://twitter.com/jococruisecrazy" class="contact-social-icon twitter" target="_blank"></a>
-						<a href="" class="contact-social-icon rss" target="_blank"></a>
+						<?php if (strlen($cruise_fb) > 0){ ?>
+						<a href="<?php echo $cruise_fb; ?>" class="contact-social-icon facebook" target="_blank"></a>
+						<? }; ?>
+						<?php if (strlen($cruise_twitter) > 0){ ?>
+						<a href="<?php echo $cruise_twitter; ?>" class="contact-social-icon twitter" target="_blank"></a>
+						<? }; ?>
+						<?php if (strlen($cruise_rss) > 0){ ?>
+						<a href="<?php echo $cruise_rss; ?>" class="contact-social-icon rss" target="_blank"></a>
+						<? }; ?>
 					</div>
 				</div>
 				<div id="contact-form-container">

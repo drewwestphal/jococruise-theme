@@ -131,10 +131,18 @@ function mac_settings_init(  ) {
 		'mac_hero_settings' 
 	);
 	
+	add_settings_field( 
+		'mac_feed_url', 
+		__( 'Link to RSS feed', 'wordpress' ), 
+		'mac_feed_url_render', 
+		'pluginPage', 
+		'mac_hero_settings' 
+	);
+	
 	//artist settings
 	add_settings_section(
 		'mac_artist_settings', 
-		__( 'Site Options:', 'wordpress' ), 
+		__( 'Artist Settings:', 'wordpress' ), 
 		'mac_artist_settings_callback', 
 		'pluginPage'
 	);
@@ -145,6 +153,62 @@ function mac_settings_init(  ) {
 		'mac_talent_header_render', 
 		'pluginPage', 
 		'mac_artist_settings' 
+	);
+	
+	//contact settings
+	add_settings_section(
+		'mac_contact_settings', 
+		__( 'Contact Settings:', 'wordpress' ), 
+		'mac_contact_settings_callback', 
+		'pluginPage'
+	);
+	
+	add_settings_field( 
+		'mac_general_questions_header', 
+		__( 'General Questions Header:', 'wordpress' ), 
+		'mac_general_questions_header_render', 
+		'pluginPage', 
+		'mac_contact_settings' 
+	);
+	
+	add_settings_field( 
+		'mac_general_questions_address', 
+		__( 'General Questions Address:', 'wordpress' ), 
+		'mac_general_questions_address_render', 
+		'pluginPage', 
+		'mac_contact_settings' 
+	);
+	
+	add_settings_field( 
+		'mac_booking_questions_header', 
+		__( 'Booking Questions Header:', 'wordpress' ), 
+		'mac_booking_questions_header_render', 
+		'pluginPage', 
+		'mac_contact_settings' 
+	);
+	
+	add_settings_field( 
+		'mac_booking_questions_address', 
+		__( 'Booking Questions Address:', 'wordpress' ), 
+		'mac_booking_questions_address_render', 
+		'pluginPage', 
+		'mac_contact_settings' 
+	);
+	
+	add_settings_field( 
+		'mac_phone_questions_header', 
+		__( 'Phone Questions Header:', 'wordpress' ), 
+		'mac_phone_questions_header_render', 
+		'pluginPage', 
+		'mac_contact_settings' 
+	);
+	
+	add_settings_field( 
+		'mac_phone_questions_address', 
+		__( 'Phone Questions Number:', 'wordpress' ), 
+		'mac_phone_questions_address_render', 
+		'pluginPage', 
+		'mac_contact_settings' 
 	);
 
 
@@ -226,7 +290,7 @@ function mac_mailing_list_cta_render(  ) {
 	<?php 
 }
 
-
+//social
 function mac_facebook_url_render(  ) { 
 
 	$options = get_option( 'mac_settings' );
@@ -244,6 +308,15 @@ function mac_twitter_url_render(  ) {
 	<?php 
 }
 
+function mac_feed_url_render(  ) { 
+
+	$options = get_option( 'mac_settings' );
+	?>
+	<input type='text' name='mac_settings[mac_feed_url]' value='<?php echo $options['mac_feed_url']; ?>'>
+	<?php 
+}
+
+//talent
 function mac_talent_header_render(  ) { 
 
 	$options = get_option( 'mac_settings' );
@@ -252,6 +325,63 @@ function mac_talent_header_render(  ) {
 	</textarea>
 	<?php 
 }
+
+//contact info
+function mac_general_questions_header_render(  ) { 
+
+	$options = get_option( 'mac_settings' );
+	?>
+	<input name='mac_settings[mac_general_questions_header]' value='<?php echo $options['mac_general_questions_header']; ?>'>
+	</input>
+	<?php 
+}
+
+function mac_general_questions_address_render(  ) { 
+
+	$options = get_option( 'mac_settings' );
+	?>
+	<input name='mac_settings[mac_general_questions_address_header]' value='<?php echo $options['mac_general_questions_address_header']; ?>'>
+	</input>
+	<?php 
+}
+
+function mac_booking_questions_header_render(  ) { 
+
+	$options = get_option( 'mac_settings' );
+	?>
+	<input name='mac_settings[mac_booking_questions_header]' value='<?php echo $options['mac_booking_questions_header']; ?>'>
+	</input>
+	<?php 
+}
+
+function mac_booking_questions_address_render(  ) { 
+
+	$options = get_option( 'mac_settings' );
+	?>
+	<input name='mac_settings[mac_booking_questions_address_header]' value='<?php echo $options['mac_booking_questions_address_header']; ?>'>
+	</input>
+	<?php 
+}
+
+function mac_phone_questions_header_render(  ) { 
+
+	$options = get_option( 'mac_settings' );
+	?>
+	<input name='mac_settings[mac_phone_questions_header]' value='<?php echo $options['mac_phone_questions_header']; ?>'>
+	</input>
+	<?php 
+}
+
+function mac_phone_questions_address_render(  ) { 
+
+	$options = get_option( 'mac_settings' );
+	?>
+	<input name='mac_settings[mac_phone_questions_address_header]' value='<?php echo $options['mac_phone_questions_address_header']; ?>'>
+	</input>
+	<?php 
+}
+
+
 
 
 function mac_site_settings_callback(  ) { 
@@ -264,6 +394,10 @@ function mac_hero_settings_callback(  ) {
 
 function mac_artist_settings_callback(  ) { 
 	echo __( 'settings for the artists section on the homepage', 'wordpress' );
+}
+
+function mac_contact_settings_callback(  ) { 
+	echo __( 'settings for the contact section on the homepage', 'wordpress' );
 }
 
 
