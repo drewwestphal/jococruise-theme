@@ -1526,7 +1526,7 @@ FAQ
 }
 .arrow:hover{
 	cursor: pointer;
-	background:url('../img/arrow.png') center center no-repeat,#a0b8c5;
+	background:url('../img/arrow.png') center center no-repeat,rgba(0,58,93,.1);
 	background-size: 33%, 100%;
 }
 .arrow-right{
