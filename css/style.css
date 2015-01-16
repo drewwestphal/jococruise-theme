@@ -777,6 +777,18 @@ CONTACT
 #contact-form button:hover{
 	background:#a0b8c5;
 }
+#contact-received{
+	font-family: surveyorBook,serif;
+	font-size: 14px;
+	line-height:1.25em;
+}
+#contact .plain-text{
+	font-family: surveyorBook,serif;
+	font-size: 12px;
+	line-height: 0;
+	position: relative;
+	top: -7px;
+}
 
 /*#hero h1 {
   font-size: 36px;
