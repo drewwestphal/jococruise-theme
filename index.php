@@ -53,16 +53,19 @@ $cont_tel_addy	  = get_option('mac_settings')['mac_phone_questions_address_heade
 					<p id="hero-travel-description"><?php echo $travel_desc; ?></p>
 				<?php  }; ?>
 				<?php if (isset($travel_desc_more)){ ?>
-					<p id="hero-travel-description-more"><?php echo $travel_desc_more;?></p>
+					<div id="hero-travel-description-more">
+						<p ><?php echo $travel_desc_more;?></p>
+						<?php if (isset($booking_enabled)) { ?>
+							<?php if (strlen($booking_cta) > 0) { ?>
+								<a href="<?php echo $booking_url; ?>" id="hero-book-now"><?php echo get_option('mac_settings')['mac_button_cta']; ?></a>
+							<?php } else { ?>
+								<a href="<?php echo $booking_url; ?>" id="hero-book-now">Book Now</a>
+							<?php }; ?>
+						<?php }; ?>						
+					</div>
 					<img id="hero-boat" src="<?php bloginfo('template_directory'); ?>/img/hero_boat.png" alt="An animated cruise ship">
 				<?php  }; ?>
-				<?php if (isset($booking_enabled)) { ?>
-					<?php if (strlen($booking_cta) > 0) { ?>
-						<a href="<?php echo $booking_url; ?>" id="hero-book-now"><?php echo get_option('mac_settings')['mac_button_cta']; ?></a>
-					<?php } else { ?>
-						<a href="<?php echo $booking_url; ?>" id="hero-book-now">Book Now</a>
-					<?php }; ?>
-				<?php }; ?>
+				
 			</div>
 		</div>
 	</section>
@@ -350,7 +353,9 @@ $cont_tel_addy	  = get_option('mac_settings')['mac_phone_questions_address_heade
 				<a id="faq-view-all" href="/faq">View All FAQS</a>
 	</section>
 			</div>
-			</div>					
+			</div>	
+<footer>
+</footer>							
 <!--updates
 	<section id="updates">
 		<div class="container">
