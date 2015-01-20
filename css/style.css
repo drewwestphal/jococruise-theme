@@ -753,6 +753,9 @@ CONTACT
 .contact-input input::-webkit-input-placeholder,.contact-input textarea::-webkit-input-placeholder {
    color:#cdc5a5;
 }
+textarea::-webkit-input-placeholder {
+	color:#cdc5a5;
+}
 .contact-input input:-moz-input-placeholder,.contact-input textarea:-moz-input-placeholder {
    color:#cdc5a5;
 }
