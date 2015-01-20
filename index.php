@@ -189,15 +189,6 @@ include 'theme_variables.php';
 			</div>
 		</div>
 	</section>
-	<script>
-		$('.point').mouseover(function() {
-			$(this).siblings('.map-city-about').fadeIn('fast');
-			$(this).removeClass('glyphicon-plus').addClass('glyphicon-minus');
-		}).mouseleave(function() {
-			$(this).siblings('.map-city-about').fadeOut('fast');
-			$(this).removeClass('glyphicon-minus').addClass('glyphicon-plus');
-		});
-	</script>
 <!--contact-->
 	<section id="contact">
 		<div class="container">
@@ -667,4 +658,14 @@ include 'theme_variables.php';
 	    }
 	}
 </style>
+<script>
+	$('.point').mouseover(function() {
+		$(this).siblings('.map-city-about').fadeIn('fast');
+		$(this).removeClass('glyphicon-plus').addClass('glyphicon-minus');
+	}).mouseleave(function() {
+		$(this).siblings('.map-city-about').fadeOut('fast');
+		$(this).removeClass('glyphicon-minus').addClass('glyphicon-plus');
+	});
+</script>
+
 <?php include 'footer.php' ?>
