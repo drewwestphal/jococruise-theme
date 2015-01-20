@@ -73,16 +73,16 @@ a:hover,a:focus,a:visited {
 /* surveyor */
 @font-face {
     font-family: surveyorBook;
-    src: url(../fonts/SurveyorText-Book-Pro.otf);
+    src: url(fonts/SurveyorText-Book-Pro.otf);
 }
 @font-face {
     font-family: surveyorBookBold;
-    src: url(../fonts/SurveyorText-Bold-Pro.otf);
+    src: url(fonts/SurveyorText-Bold-Pro.otf);
     font-weight: bold;
 }
 @font-face {
     font-family: surveyorBookItalic;
-    src: url(../fonts/SurveyorDisplay-BookItalic-Pro.otf);
+    src: url(fonts/SurveyorDisplay-BookItalic-Pro.otf);
 }
 
 /* surveyor text */
@@ -91,7 +91,7 @@ a:hover,a:focus,a:visited {
 /* gotham */
 @font-face {
     font-family: gothamBook;
-    src: url(../fonts/Gotham-Book.otf);
+    src: url(fonts/Gotham-Book.otf);
 }
 
 
@@ -281,7 +281,7 @@ Hero
 
 */
 #hero{
-  background: url('../img/hero_bg.jpg') center center no-repeat;
+  background: url('img/hero_bg.jpg') center center no-repeat;
   background-size: cover;
   height:400px;
   width:100%;
@@ -309,18 +309,20 @@ p#hero-travel-description{
 	width:100%;
 	padding-bottom: 1em;
 }
-p#hero-travel-description-more{
+#hero-travel-description-more{
+	float:left;
+	width:50%;
+}
+#hero-travel-description-more p{
 	font-size: 20px;
 	line-height: 1.25em;
-	width:50%;
-	float:left;
 	padding-bottom: 30px;
 }
 #hero-book-now{
 	float:left;
 	border:none;
 	color:#f5f1e9;
-	background:#144662;
+	background:#105677;
 	text-transform: uppercase;
 	font-family: gothamBook, sans-serif;
 	font-size: 13px;
@@ -330,7 +332,7 @@ p#hero-travel-description-more{
 	-webkit-transition: background .27s;
 }
 #hero-book-now:hover{
-	background:#005778;
+	background:#023C5D;
 	cursor:pointer;
 	text-decoration: none;
 }
@@ -489,6 +491,7 @@ ARTISTS
 	border-top: 1px solid #144662;
 	border-bottom: 1px solid #144662;
 	transform:skewY(170deg);
+	-webkit-transform:skewY(170deg);
 	padding: 5px 0 15px 0;
 }
 .artists-social{
@@ -499,7 +502,7 @@ ARTISTS
 .social-icon{
 	width:20px;
 	height:20px;
-	background-image:url('../img/artist_social.png');
+	background-image:url('img/artist_social.png');
 	background-size: 40px 60px;
 	margin: 0 5px;
 	position: relative;
@@ -637,7 +640,7 @@ CONTACT
 */
 
 #contact{
-	background:url('../img/contact_bg.jpg') center center no-repeat;
+	background:url('img/contact_bg.jpg') center center no-repeat;
 	background-size: cover;
 	color:#f5f1e9;
 	text-align: center;
@@ -706,7 +709,7 @@ CONTACT
 	padding: 0 0 0 40px; 
 }
 .contact-social a{
-	background:url('../img/contact_social_sprite.png');
+	background:url('img/contact_social_sprite.png');
 	background-size:200%;
 	width:70px;
 	height:70px;
@@ -1261,7 +1264,7 @@ ABOUT
   }
 }
 .about-item .about-info {
-  background: url('../img/bg_ocean.jpg') center bottom no-repeat;
+  background: url('img/bg_ocean.jpg') center bottom no-repeat;
   background-size: cover;
   min-height: 400px;
   padding: 15px;
@@ -1430,7 +1433,7 @@ FAQ
   background: #f5f1e9;
   color: #144662;
   text-align: center;
-  padding: 32px 15px;
+  padding: 32px 15px 50px;
   font-size: 20px;
   width: 100%;
   overflow: hidden;
@@ -1512,7 +1515,7 @@ FAQ
 }
 
 .arrow{
-	background:url('../img/arrow.png') center center no-repeat;
+	background:url('img/arrow.png') center center no-repeat;
 	background-size: 33%;
 	padding:10px;
 	border-radius: 50%;
@@ -1526,7 +1529,7 @@ FAQ
 }
 .arrow:hover{
 	cursor: pointer;
-	background:url('../img/arrow.png') center center no-repeat,rgba(0,58,93,.1);
+	background:url('img/arrow.png') center center no-repeat,rgba(0,58,93,.1);
 	background-size: 33%, 100%;
 }
 .arrow-right{
@@ -1534,6 +1537,7 @@ FAQ
 }
 .arrow-left{
 	transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
 	left:-20px;
 }
 
@@ -1719,4 +1723,9 @@ article ul,article li {
 }
 .m-invisible > span {
   color: rgba(0, 0, 0, 0.2) !important;
+}*/
+footer{
+	width:100%;
+	height:40px;
+	background:#144662;
 }

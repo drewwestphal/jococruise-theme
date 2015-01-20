@@ -106,7 +106,7 @@ function blankslate_load_scripts() {
     }
     
     wp_enqueue_style('macstyle', //
-    get_template_directory_uri() . '/css/style.css', //
+    get_template_directory_uri() . '/style.css', //
     $maindeps, 1, 'screen');
 
     // according to this place you don't wanna enqueue shit on the admin side...
