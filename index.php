@@ -354,8 +354,7 @@ $cont_tel_addy	  = get_option('mac_settings')['mac_phone_questions_address_heade
 	</section>
 			</div>
 			</div>	
-<footer>
-</footer>							
+							
 <!--updates
 	<section id="updates">
 		<div class="container">
@@ -683,4 +682,4 @@ $cont_tel_addy	  = get_option('mac_settings')['mac_phone_questions_address_heade
 	    }
 	}
 </style>
-<?php wp_footer(); ?>
+<?php include 'footer.php' ?>
