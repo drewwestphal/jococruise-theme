@@ -640,12 +640,6 @@ include 'theme_variables.php';
 </style>
 -->
 <style type="text/css">
-	#overflow{
-	    width:<?php echo $count; ?>00%;
-    }
-    .artists-artist{
-	    width:<?php echo 100/$count; ?>%;
-    }
     #faq-overflow{
 	    width:<?php echo $faq_count; ?>00%;
     }
