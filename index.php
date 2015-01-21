@@ -1,7 +1,6 @@
 <?php
 
 get_header(); 
-include 'theme_variables.php';
 
 ?>
 
@@ -640,6 +639,9 @@ include 'theme_variables.php';
 </style>
 -->
 <style type="text/css">
+    #wpadminbar{
+	    position: fixed !important;
+    }
     #faq-overflow{
 	    width:<?php echo $faq_count; ?>00%;
     }
