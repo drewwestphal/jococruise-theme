@@ -28,24 +28,11 @@ function mac_clean_menu() {
 	if (($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) {
 		$menu = wp_get_nav_menu_object($locations[$menu_name]);
 		$menu_items = wp_get_nav_menu_items($menu->term_id);
-		$midpoint =  floor(count($menu_items)/2);
 		$menu_list='';
-		$i=0;
 		foreach ((array) $menu_items as $key => $menu_item) {
-			if (@get_option('mac_settings')['mac_booking_enabled'] && $i==$midpoint) { 
-				$menu_list .= '<li class="hidden-xs" aria-hidden="true"><a href="'. get_option('mac_settings')['mac_booking_url'] .'" class="orange-text"><span class="glyphicon glyphicon-calendar"></span>Book Now</a></li>';
-			}
 			$title = $menu_item->title;
-			$orange = '';
-			$span = '';
-			if (stripos($menu_item->title, 'book') !== false) {
-				$orange = 'class="orange-text"';
-				$span = '<span class="glyphicon glyphicon-calendar"></span>';
-			};
 			$url = $menu_item->url;
-			$menu_list .= "\t\t\t\t\t". '<li><a href="'. $url .'"'. $orange .'>'. $span . $title .'</a></li>' ."\n";
-				
-			$i++;
+			$menu_list .= "\t\t\t\t\t". '<li><a href="'. $url .'">'. $title .'</a></li>' ."\n";
 		}
 	} else {
 		// $menu_list = '<!-- no list defined -->';
@@ -116,7 +103,8 @@ function blankslate_load_scripts() {
         wp_enqueue_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', array(), 1, false);
         
         // this is also just for the front-end
-        wp_enqueue_script('bootstrapjs', '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js', array(), 1, false);
+        //bootstrap.js is dependant on jquery
+        wp_enqueue_script('bootstrapjs', '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js', array('jquery'), 1, false);
         
     }
 
