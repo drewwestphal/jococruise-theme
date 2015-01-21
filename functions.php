@@ -60,7 +60,7 @@ add_action( 'wp_enqueue_scripts', 'blankslate_load_scripts' );
 
 
 function blankslate_load_scripts() {
-    wp_enqueue_style('bootstrapcss', '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css', array(), 1, 'screen');
+    wp_enqueue_style('bootstrapcss', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css', array(), 1, 'screen');
     wp_enqueue_style('googlefonts', //
     add_query_arg(array('family' => 'Lato:400,400italic,700|Arvo:400,700'), //
     "//fonts.googleapis.com/css"), array(), null);
