@@ -21,9 +21,23 @@
 			        <span class="icon-bar"></span>
 				</button>
 			</div>
-			<a id="navbar-title" href="#" class="navbar-item-left">
-				<img src="<?php bloginfo('template_directory'); ?>/img/hero_JoCo_LoGo.png" alt="A styled JoCo Cruise logotype." id="nav-joco-logo">
-			</a>
+			<?
+			$sticky = get_option('sticky_posts');
+			$args = array(
+				'posts_per_page' => 1,
+				'post__in'  => $sticky,
+				'ignore_sticky_posts' => 1
+			);
+			$stick_query = new WP_Query($args);
+			if (isset($sticky[0])) { ?>
+				<a id="navbar-title-headline" href="<?php the_permalink(); ?>" class="navbar-item-left">
+				<span class="nav-headline"><?php the_title(); ?></span><span class="glyphicon glyphicon glyphicon-menu-right"></span>
+				</a>
+	  <?php } else { ?>
+				<a id="navbar-title" href="#" class="navbar-item-left">
+					<img src="<?php bloginfo('template_directory'); ?>/img/hero_JoCo_LoGo.png" alt="A styled JoCo Cruise logotype." id="nav-joco-logo">
+				</a>
+	  <?php } ?>
 			<a href="#" id="nav-arrow-to-top" class="navbar-item-right">
 				<span class="glyphicon glyphicon-menu-up"></span>
 				<br>Top
