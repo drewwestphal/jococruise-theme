@@ -168,7 +168,7 @@ a:hover,a:focus,a:visited {
 	border-radius:0;
 	-moz-border-radius:none;
 	-webkit-border-radius:none;
-	background:none;
+	background:#022D46;
 	color:#FFF;
 	position: relative;
 	top:1px;
@@ -179,10 +179,16 @@ a:hover,a:focus,a:visited {
 		display: block;	
 	}
 }
+#nav-button-inner.collapsed{
+	background:none;
+}
 #nav-button-inner:hover, #nav-button-inner:active{
 	background:#022D46;
 }
 .navbar-default .navbar-toggle .icon-bar {
+	background-color:#6F97B0;
+}
+.navbar-default .navbar-toggle.collapsed .icon-bar {
 	background-color:#FFF;
 }
 .navbar-default .navbar-toggle:hover .icon-bar,.navbar-default .navbar-toggle:active .icon-bar {
@@ -229,9 +235,10 @@ a:hover,a:focus,a:visited {
 	text-transform: uppercase;
 }
 @media screen and (min-width:768px){
-	.navbar-default{
+	.navbar-collapse{
 		position: relative;
-		left: -30px;
+		left: -15px;
+		padding:0;
 	}
 }
 
