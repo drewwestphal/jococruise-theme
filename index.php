@@ -1,5 +1,5 @@
 <?php
-
+include 'theme_variables.php';
 get_header(); 
 
 ?>
