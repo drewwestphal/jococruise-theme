@@ -32,6 +32,7 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav">
 				<?php
+				$booking_enabled  = get_option('mac_settings')['mac_booking_enabled'];	
 				if ($booking_enabled == 1) {  ?>
 					<li><a href="<?php echo $booking_url; ?>">Book Now</a></li>
 				<?php 
