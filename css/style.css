@@ -212,9 +212,6 @@ a:hover,a:focus,a:visited {
 	color:#FFF;
 	letter-spacing: 2px;
 	overflow: hidden;
-}
-#navbar-title-headline .nav-headline{
-	width: 100%;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -287,6 +284,9 @@ display: block !important;
 visibility: visible !important;
 }
 
+.nav-hidden{
+	display: none;
+}
 
 /*
 	

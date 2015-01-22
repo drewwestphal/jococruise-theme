@@ -33,12 +33,15 @@
 				<a id="navbar-title-headline" href="<?php the_permalink(); ?>" class="navbar-item-left">
 				<span class="nav-headline"><?php the_title(); ?></span><span class="glyphicon glyphicon glyphicon-menu-right"></span>
 				</a>
+				<a id="navbar-title" href="#" class="navbar-item-left nav-hidden">
+					<img src="<?php bloginfo('template_directory'); ?>/img/hero_JoCo_LoGo.png" alt="A styled JoCo Cruise logotype." id="nav-joco-logo">
+				</a>
 	  <?php } else { ?>
 				<a id="navbar-title" href="#" class="navbar-item-left">
 					<img src="<?php bloginfo('template_directory'); ?>/img/hero_JoCo_LoGo.png" alt="A styled JoCo Cruise logotype." id="nav-joco-logo">
 				</a>
 	  <?php } ?>
-			<a href="#" id="nav-arrow-to-top" class="navbar-item-right">
+			<a href="#" id="nav-arrow-to-top" class="navbar-item-right<?php if (isset($sticky[0])) { echo ' nav-hidden'; }; ?>">
 				<span class="glyphicon glyphicon-menu-up"></span>
 				<br>Top
 			</a>
