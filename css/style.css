@@ -199,10 +199,29 @@ a:hover,a:focus,a:visited {
 	min-width:50px;
 	height:100%;
 }
-#navbar-title{
+#navbar-title,#navbar-title-headline{
 	width:80%;
 	height:100%;
 	text-align:center;
+}
+#navbar-title-headline{
+	font-family: gothamBook, sans-serif;
+	font-size: 16px;
+	line-height: 52px;
+	text-transform:uppercase;
+	color:#FFF;
+	letter-spacing: 2px;
+	overflow: hidden;
+}
+#navbar-title-headline .nav-headline{
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+#navbar-title-headline .glyphicon{
+	top:2px;
+	left:2px;
 }
 #navbar-title img{
 	width:120px;
