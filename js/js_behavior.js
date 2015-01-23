@@ -172,6 +172,35 @@ jQuery(document).ready(function(jQuery) {
 		}
 	});
 	
+	//menu swap behavior
+	var offset = jQuery('#about').offset();
+	if (jQuery(document).scrollTop() > offset.top) {
+		jQuery('#navbar-title-headline').hide(function(){
+			jQuery('#navbar-title').fadeIn('slow',function(){
+				jQuery('#nav-arrow-to-top').fadeIn('slow');
+			});
+		});
+		var toggled = true;	
+	} else {
+		var toggled = false;	
+	}
+	jQuery(document).scroll(function(){
+		if ((jQuery(document).scrollTop() > offset.top) && (!toggled)) {
+			jQuery('#navbar-title-headline').fadeOut('slow',function(){
+				jQuery('#navbar-title').fadeIn('slow',function(){
+					jQuery('#nav-arrow-to-top').fadeIn('slow');
+				});
+			});
+			toggled = true;
+		} else if ((jQuery(document).scrollTop() < offset.top)  && (toggled)) {
+			jQuery('#nav-arrow-to-top').fadeOut('slow');
+			jQuery('#navbar-title').fadeOut('slow',function(){
+				jQuery('#navbar-title-headline').fadeIn('slow');
+			});
+			toggled = false;
+		}
+	});
+	
 	//smooth scroll
 	jQuery(function() {
 	  jQuery('a[href*=#]:not([href=#])').click(function() {
@@ -181,7 +210,7 @@ jQuery(document).ready(function(jQuery) {
 	      target = target.length ? target : jQuery('[name=' + this.hash.slice(1) +']');
 	      if (target.length) {
 	        jQuery('html,body').animate({
-	          scrollTop: target.offset().top-jQuery('.navbar-nav').height()-jQuery('#wpadminbar').height()
+	          scrollTop: target.offset().top-jQuery('.navbar-top').height()-jQuery('#wpadminbar').height()
 	        }, 500);
 	        // set hash when the time is right
 	        // http://stackoverflow.com/questions/3870057/how-can-i-update-window-location-hash-without-jumping-the-document
@@ -203,24 +232,7 @@ jQuery(window).load(function(){
     }
 });
 
-var toggled = false;
-jQuery(document).scroll(function(){
-	var offset = jQuery('#hero-more-info').offset();
-	if ((jQuery(document).scrollTop() > offset.top) && (!toggled)) {
-		jQuery('#navbar-title-headline').fadeOut('slow',function(){
-			jQuery('#navbar-title').fadeIn('slow',function(){
-				jQuery('#nav-arrow-to-top').fadeIn('slow');
-			});
-		});
-		toggled = true;
-	} else if ((jQuery(document).scrollTop() < offset.top)  && (toggled)) {
-		jQuery('#nav-arrow-to-top').fadeOut('slow');
-		jQuery('#navbar-title').fadeOut('slow',function(){
-			jQuery('#navbar-title-headline').fadeIn('slow');
-		});
-		toggled = false;
-	}
-});
+
 
 jQuery(window).resize(function(){
 	//artist
