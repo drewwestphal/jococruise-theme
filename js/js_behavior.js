@@ -236,7 +236,7 @@ jQuery(window).load(function(){
     // scroll at doc ready is 0 if we have never been here before even though 
     // there is a hash. hash height gets computed at window load
     if(window.location.hash.length>1 && document.body.scrollTop!==scrollready){
-        window.scrollTo(0,document.body.scrollTop-jQuery('.navbar-nav').height()-jQuery('#wpadminbar').height());
+        window.scrollTo(0,document.body.scrollTop-jQuery('.navbar-top').height()-jQuery('#wpadminbar').height());
     }
 });
 
