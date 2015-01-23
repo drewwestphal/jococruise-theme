@@ -1,4 +1,4 @@
-$(document).ready(function(){
+jQuery(document).ready(function($) {
 	//hero
 	$('#hero-more-info-button').click(function(){
 		$('#hero-more-info-button span').toggleClass('rotate');
@@ -195,7 +195,7 @@ $(document).ready(function(){
 	});
 	scrollready = document.body.scrollTop; 
 });
-$(window).load(function(){
+jQuery(window).load(function($){
     // scroll at doc ready is 0 if we have never been here before even though 
     // there is a hash. hash height gets computed at window load
     if(window.location.hash.length>1 && document.body.scrollTop!==scrollready){
@@ -204,7 +204,7 @@ $(window).load(function(){
 });
 
 
-$(window).resize(function(){
+jQuery(window).resize(function($){
 	//artist
     if ($(window).width()>767){
 	    $('#overflow').css('left', 0);
