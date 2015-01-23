@@ -201,6 +201,13 @@ jQuery(document).ready(function(jQuery) {
 		}
 	});
 	
+	jQuery(document).click(function(e){
+	    if ((jQuery(e.target).closest("#nav-dropdown").length > 0) || (jQuery(e.target).closest("#nav-button").length > 0)) {
+	        return false;
+	    }
+	    jQuery('#nav-button-inner').click();
+	});
+	
 	//smooth scroll
 	jQuery(function() {
 	  jQuery('a[href*=#]:not([href=#])').click(function() {
