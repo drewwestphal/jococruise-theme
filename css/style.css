@@ -58,9 +58,7 @@ unblack			: #050708
 	PAGE STYLES
 	
 */
-*{
-	z-index: 100;
-}
+
 html {
   width: 100%;
   height: 100%;
@@ -134,7 +132,7 @@ a:hover,a:focus,a:visited {
 	top: 0;
 	background:#033250;
 	color:#FFF;
-	z-index: 1000;
+	z-index: 1000 !important;
 }
 #nav.logged-in{
 	top: 32px;
@@ -154,6 +152,7 @@ a:hover,a:focus,a:visited {
 	height:50px;
 	position: relative;
 	top:-1px;
+	z-index: 1000 !important;
 }
 .navbar-item-left{
 	float:left;
@@ -1544,7 +1543,7 @@ FAQ
 	height:30px;
 	position: absolute;
 	top:120px;
-	z-index: 900;
+	z-index: 900 !important;
 }
 .arrow:hover{
 	cursor: pointer;
