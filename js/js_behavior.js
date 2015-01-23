@@ -202,10 +202,12 @@ jQuery(document).ready(function(jQuery) {
 	});
 	
 	jQuery(document).click(function(e){
-	    if ((jQuery(e.target).closest('#nav-dropdown').length > 0) || (jQuery(e.target).closest('#nav-button').length > 0) || (!$('.navbar-collapse').hasClass('in'))) {
+	    if ((jQuery(e.target).closest("#nav-dropdown").length > 0) || (jQuery(e.target).closest('#nav-button').length > 0)) {
 	        return false;
 	    }
-	    jQuery('#nav-button-inner').click();
+	    if ($('.navbar-collapse').hasClass('in')){
+		    jQuery('#nav-button-inner').click();
+	    }
 	});
 	
 	//smooth scroll
