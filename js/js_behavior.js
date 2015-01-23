@@ -203,6 +203,25 @@ jQuery(window).load(function(){
     }
 });
 
+var toggled = false;
+jQuery(document).scroll(function(){
+	var offset = jQuery('#hero-more-info').offset();
+	if ((jQuery(document).scrollTop() > offset.top) && (!toggled)) {
+		jQuery('#navbar-title-headline').fadeOut('slow',function(){
+			jQuery('#navbar-title').fadeIn('slow',function(){
+				jQuery('#nav-arrow-to-top').fadeIn('slow');
+			});
+		});
+		toggled = true;
+	} else if ((jQuery(document).scrollTop() < offset.top)  && (toggled)) {
+		jQuery('#nav-arrow-to-top').fadeOut('slow');
+		jQuery('#navbar-title').fadeOut('slow',function(){
+			jQuery('#navbar-title-headline').fadeIn('slow');
+		});
+		toggled = false;
+	}
+});
+
 jQuery(window).resize(function(){
 	//artist
     if (jQuery(window).width()>767){
