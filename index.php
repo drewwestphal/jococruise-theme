@@ -30,7 +30,7 @@ get_header();
 		</div>
 	</section>
 	<?php if (isset($travel_desc) || isset($travel_desc_more) || isset($booking_enabled)){ ?>
-	<section id="hero-more-info">
+	<section id="about">
 		<div class="container">
 			<div class="col-xs-12 col-md-12">
 				<?php if (isset($travel_desc)){ ?>
