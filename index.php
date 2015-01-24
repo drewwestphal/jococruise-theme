@@ -58,7 +58,7 @@ get_header();
 <!--mailing list-->	
 	<?php if(function_exists('mc4wp_form')) { ?>
 	<section id="mailing-list" class="headers">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="col-xs-12 col-md-12">
 				<h1><?php echo $mailing_cta; ?></h1>
 				<?php mc4wp_form(); ?>
