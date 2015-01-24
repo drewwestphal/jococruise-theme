@@ -135,7 +135,13 @@ a:hover,a:focus,a:visited {
 	z-index: 1000 !important;
 }
 #nav.logged-in{
-	top: 32px;
+	top: 46px;
+}
+/* 783px is WP's menu height change breakpoint, everything else should be 768px */
+@media screen and (min-width:783px){
+	#nav.logged-in{
+		top: 32px;
+	}
 }
 .navbar-default{
 	border:none;
@@ -144,9 +150,15 @@ a:hover,a:focus,a:visited {
 	-webkit-border-radius:0;
 }
 #nav .container{
+	width:100%;
 	max-width:750px;
 	height:100%;
-	padding: 0 38px;
+	padding: 0;
+}
+@media screen and (min-width:768px){
+	#nav .container{
+		padding: 0 38px;
+	}
 }
 .navbar-top{
 	height:50px;
@@ -171,9 +183,12 @@ a:hover,a:focus,a:visited {
 	color:#FFF;
 	position: relative;
 	top:1px;
-	left:-15px;
+	left:0;
 }
 @media screen and (min-width:768px){
+	#nav-button-inner{
+		left:-15px;
+	}
 	.navbar-toggle{
 		display: block;	
 	}
@@ -204,8 +219,10 @@ a:hover,a:focus,a:visited {
 	text-align:center;
 }
 #navbar-title-headline{
+	position: relative;
+	left:10px;
 	font-family: gothamBook, sans-serif;
-	font-size: 16px;
+	font-size: 12px;
 	line-height: 52px;
 	text-transform:uppercase;
 	color:#FFF;
@@ -214,6 +231,12 @@ a:hover,a:focus,a:visited {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+@media screen and (min-width:768px){
+	#navbar-title-headline{
+		left:0;
+		font-size: 16px;
+	}
 }
 #navbar-title-headline .glyphicon{
 	top:2px;
@@ -226,10 +249,11 @@ a:hover,a:focus,a:visited {
 	top: 8px;
 }
 #nav-arrow-to-top{
-	width:10%;
+	width:6%;
 	height:100%;
 	color:#FFF;
 	padding:8px 0 0;
+	float:left;
 	font-size: 10px;
 	font-family: gothamBook,sans-serif;
 	text-align: right;
@@ -241,21 +265,30 @@ a:hover,a:focus,a:visited {
 	left:2px;
 	top:1px;
 }
+@media screen and (min-width:768px){
+	#nav-arrow-to-top{
+		width:10%;
+		float:right;
+	}
+}
 
 .navbar-default .navbar-collapse{
 	border:none;
 	background:#022D46;
 	width:200px;
-	padding: 0 0 15px;
 	font-family: gothamBook, sans-serif;
 	text-transform: uppercase;
+	margin-left: 0;
 }
 @media screen and (min-width:768px){
-	.navbar-collapse{
+	.container>.navbar-collapse{
 		position: relative;
 		left: -15px;
 		padding: 5px 0;
 	}
+}
+.navbar-nav{
+	margin: 7.5px 0;
 }
 
 .navbar-default .navbar-nav>li{
