@@ -477,7 +477,7 @@ MAILING LIST
 #mailing-list{
 	background: #cdc5a5;
 	text-align: center;
-	padding: 20px 0 45px;
+	padding: 20px 0 30px;
 }
 
 #mc4wp-form-1{
@@ -524,6 +524,9 @@ MAILING LIST
 	#submit{
 		float: right;
 		left: 0;
+	}
+	#mailing-list{
+		padding: 20px 0 45px;
 	}
 }
 /*
