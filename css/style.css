@@ -330,16 +330,26 @@ Hero
 #hero{
   background: url('img/hero_bg.jpg') center center no-repeat;
   background-size: cover;
-  height:400px;
+  height:300px;
   width:100%;
   text-align: center;
   margin: 50px 0 0;
 }
 #hero-joco-logo{
-	width: 390px;
+	width:75%;
+	max-width: 390px;
 	height: auto;
 	position: relative;
-	top: 144px;
+	top: 100px;
+}
+@media screen and (min-width:768px){
+	#hero{
+		height:400px;
+	}
+	#hero-joco-logo{
+		width:100%;
+		top: 144px;
+	}
 }
 #about{
 	background:#f5f1e9;

@@ -7,7 +7,7 @@ get_header();
 <section id="content" role="main">
 <!--hero-->
 	<section id="hero">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="col-xs-12 col-md-12">
 				<img src="<?php bloginfo('template_directory'); ?>/img/hero_JoCo_LoGo.png" alt="A styled JoCo Cruise logotype." id="hero-joco-logo">
 			<!--<h1 id="hero-site-title"><?php echo $site_title; ?></h1>
