@@ -163,7 +163,7 @@ get_header();
 	</section>
 <!--map-->
 	<section id="map">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="col-xs-12 col-md-12">
 				<div class="map-cities">
 					<img src="<?php bloginfo('template_directory'); ?>/img/map.png" id="map-background">		
@@ -191,7 +191,7 @@ get_header();
 	</section>
 <!--contact-->
 	<section id="contact">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="col-xs-12 col-md-12 headers">
 				<h1 id="contact-header">Contact Us</h1>
 				<div id="contact-info-container">
@@ -258,7 +258,7 @@ get_header();
 			</div>
 		</div>
 	</section>
-<div class="faq container">
+<div class="faq container-fluid">
 	<div class="faq col-xs-12 col-md-12">
 	<section id="faq" class="headers">
 				<h1><span>Frequently Asked</span><br>Questions</h1>
