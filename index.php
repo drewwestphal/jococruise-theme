@@ -68,7 +68,7 @@ get_header();
 	<?php }; ?>
 <!--artists-->
 	<section id="artists" class="headers">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="col-xs-12 col-md-12">
 				<div id="artists-header">
 					<img src="<?php bloginfo('template_directory'); ?>/img/artist_divider.png">
