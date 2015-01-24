@@ -31,25 +31,26 @@ get_header();
 	</section>
 	<?php if (isset($travel_desc) || isset($travel_desc_more) || isset($booking_enabled)){ ?>
 	<section id="about">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="col-xs-12 col-md-12">
 				<?php if (isset($travel_desc)){ ?>
 					<p id="hero-travel-description"><?php echo $travel_desc; ?></p>
 				<?php  }; ?>
 				<?php if (isset($travel_desc_more)){ ?>
 					<div id="hero-travel-description-more">
-						<p ><?php echo $travel_desc_more;?></p>
-						<?php if (isset($booking_enabled)) { ?>
-							<?php if (strlen($booking_cta) > 0) { ?>
-								<a href="<?php echo $booking_url; ?>" id="hero-book-now"><?php echo get_option('mac_settings')['mac_button_cta']; ?></a>
-							<?php } else { ?>
-								<a href="<?php echo $booking_url; ?>" id="hero-book-now">Book Now</a>
-							<?php }; ?>
-						<?php }; ?>						
+						<p ><?php echo $travel_desc_more;?></p>				
 					</div>
 					<img id="hero-boat" src="<?php bloginfo('template_directory'); ?>/img/hero_boat.png" alt="An animated cruise ship">
 				<?php  }; ?>
-				
+				<?php if (isset($booking_enabled)) { ?>
+					<div id="hero-booking">
+					<?php if (strlen($booking_cta) > 0) { ?>
+						<a href="<?php echo $booking_url; ?>" id="hero-book-now"><?php echo get_option('mac_settings')['mac_button_cta']; ?></a>
+					<?php } else { ?>
+						<a href="<?php echo $booking_url; ?>" id="hero-book-now">Book Now</a>
+					<?php }; ?>
+					</div>
+				<?php }; ?>
 			</div>
 		</div>
 	</section>

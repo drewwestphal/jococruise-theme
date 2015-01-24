@@ -358,33 +358,76 @@ Hero
 	width:100%;
 	height:auto;
 }
-#about .container{
-	padding: 64px 38px;
+#about .container-fluid{
+	max-width: 750px;
+	padding:24px;
 }
 p#hero-travel-description{
-	font-size: 38px;
+	font-size: 18px;
 	line-height: 1.25em;
 	width:100%;
-	padding-bottom: 1em;
+	padding: 0 0 1em;
+}
+@media screen and (min-width:768px){
+	#about .container-fluid{
+		padding: 64px 38px;
+	}
+	p#hero-travel-description{
+		font-size: 38px;
+	}
 }
 #hero-travel-description-more{
 	float:left;
-	width:50%;
+	width:60%;
 }
 #hero-travel-description-more p{
-	font-size: 20px;
+	font-size: 12px;
 	line-height: 1.25em;
-	padding-bottom: 30px;
+}
+@media screen and (min-width:768px){
+	#hero-travel-description-more{
+		width:50%;
+	}
+	#hero-travel-description-more p{
+		font-size: 20px;
+	}
+}
+#hero-boat{
+	width:39%;
+	max-width: 150px;
+	height:auto;
+	position: relative;
+	float:right;
+}
+@media screen and (min-width:768px){
+	#hero-boat{
+		max-width:none;
+		right:48px;
+	}
+}
+#hero-booking{
+	width:100%;
+	height:40px;
+	float:left;
+	text-align: center;
+	position: relative;
+	top:24px;
+}
+@media screen and (min-width:768px){
+	#hero-booking{
+		width:50%;
+		top:36px;
+		text-align: left;
+	}
 }
 #hero-book-now{
-	float:left;
 	border:none;
 	color:#f5f1e9;
 	background:#105677;
 	text-transform: uppercase;
 	font-family: gothamBook, sans-serif;
 	font-size: 13px;
-	padding:.5em 1em;
+	padding: .75em 1em;
 	transition: background .27s;
 	-moz-transition: background .27s;
 	-webkit-transition: background .27s;
@@ -394,12 +437,6 @@ p#hero-travel-description{
 	cursor:pointer;
 	text-decoration: none;
 }
-#hero-boat{
-	width:33%;
-	height:auto;
-	margin-right: 40px;
-	float:right;
-}
 #about .bold{
 	font-family: surveyorBookBold, serif;
 	font-style: bold;
@@ -408,7 +445,23 @@ p#hero-travel-description{
 #about .italic{
 	font-family: surveyorBookItalic, serif;
 }
+/*
 
+
+#hero-boat{
+	width:33%;
+	height:auto;
+	position: relative;
+	right:24px;
+	float:right;
+}
+@screen media and (min-width:768px){
+	#hero-boat{
+		right: 40px;
+	}
+}
+
+*/
 /*
 	
 MAILING LIST
