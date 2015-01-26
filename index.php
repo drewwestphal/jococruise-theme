@@ -76,88 +76,104 @@ get_header();
 						<h1><?php echo $artists_header; ?></h1>
 					<? }; ?>
 				</div>
-				<?php 
-					//get the artists
-					$args = array(
-						'post_type' 	 => 'artist',
-						'posts_per_page' => -1,
-						'order'			 => 'ASC',
-						'meta_query' => array(
-							array(
-								'key' => 'artist_type',
-								'value' => 'artist'
-							),
-						)
-					);
-					$artist_query = new WP_Query($args);
-
-					if ($artist_query->have_posts()) {
-						while ($artist_query->have_posts()) {
-							$artist_query->the_post();
-
-							include 'artist_unit.php';
-						}
-					}
-
-					wp_reset_postdata();
-					
-					//get the featured artists
-					$args = array(
-						'post_type' 	 => 'artist',
-						'posts_per_page' => -1,
-						'order'			 => 'ASC',
-						'meta_query' => array(
-							array(
-								'key' => 'artist_type',
-								'value' => 'featured artist'
-							),
-						)
-					);
-					$feat_artist_query = new WP_Query($args);
-					$feat_count = $feat_artist_query->post_count;
-					
-					if ($feat_count > 0) {
-						echo '
-						<div class="artist_unit headers" id="featured-guests">
-							<h1><span>And</span><br>Featured Guests</h1>
+				<div id="artists-artist-container">
+					<div id="overflow">
+						<div class="inner">
+							<?php 
+								$j=0;
+								//get the artists
+								$args = array(
+									'post_type' 	 => 'artist',
+									'posts_per_page' => -1,
+									'order'			 => 'ASC',
+									'meta_query' => array(
+										array(
+											'key' => 'artist_type',
+											'value' => 'artist'
+										),
+									)
+								);
+								$artist_query = new WP_Query($args);
+								$count = $artist_query->post_count;
+								if ($artist_query->have_posts()) {
+									while ($artist_query->have_posts()) {
+										$artist_query->the_post();
+			
+										include 'artist_unit.php';
+									}
+								}
+			
+								wp_reset_postdata();
+								
+								//get the featured artists
+								$args = array(
+									'post_type' 	 => 'artist',
+									'posts_per_page' => -1,
+									'order'			 => 'ASC',
+									'meta_query' => array(
+										array(
+											'key' => 'artist_type',
+											'value' => 'featured artist'
+										),
+									)
+								);
+								$feat_artist_query = new WP_Query($args);
+								$feat_count = $feat_artist_query->post_count;
+								$count += $feat_count;
+								if ($feat_count > 0) {
+									$count += 1;
+									echo '
+									<div class="artist_unit headers" id="featured-guests">
+										<h1><span>And</span><br>Featured Guests</h1>
+									</div>
+									';	
+								};
+								if ($feat_artist_query->have_posts()) {
+									while ($feat_artist_query->have_posts()) {
+										$feat_artist_query->the_post();
+										
+										include 'artist_unit.php';
+									}
+								}
+			
+								wp_reset_postdata();
+								
+								//get the office hours artists
+								$args = array(
+									'post_type' 	 => 'artist',
+									'posts_per_page' => -1,
+									'order'			 => 'ASC',
+									'meta_query' => array(
+										array(
+											'key' => 'artist_type',
+											'value' => 'office hours'
+										),
+									)
+								);
+								$oh_artist_query = new WP_Query($args);
+								$oh_count = $oh_artist_query->post_count;
+			
+								$i=-4;
+								if ($oh_artist_query->have_posts()) {
+									while ($oh_artist_query->have_posts()) {
+										$oh_artist_query->the_post();
+										
+										include 'artist_office_hours_logic.php';
+									}
+								}
+								wp_reset_postdata();
+							?>
 						</div>
-						';	
-					};
-					if ($feat_artist_query->have_posts()) {
-						while ($feat_artist_query->have_posts()) {
-							$feat_artist_query->the_post();
-							
-							include 'artist_unit.php';
-						}
-					}
-
-					wp_reset_postdata();
-					
-					//get the office hours artists
-					$args = array(
-						'post_type' 	 => 'artist',
-						'posts_per_page' => -1,
-						'order'			 => 'ASC',
-						'meta_query' => array(
-							array(
-								'key' => 'artist_type',
-								'value' => 'office hours'
-							),
-						)
-					);
-					$oh_artist_query = new WP_Query($args);
-					$oh_count = $oh_artist_query->post_count;
-
-					$i=-4;
-					if ($oh_artist_query->have_posts()) {
-						while ($oh_artist_query->have_posts()) {
-							$oh_artist_query->the_post();
-							
-							include 'artist_office_hours_logic.php';
-						}
-					}
-					wp_reset_postdata();
-				?>
+					</div>
+				</div>
+				<div class="carousel" id="artist-carousel">
+					<span class="glyphicon glyphicon-arrow-left"></span>
+					<?php for ($i=0;$i<$count;$i++){ ?>		
+							<a href="#item-<?php echo $i; ?>" <?php if ($i===0) { echo 'class="orange-text"'; };?>>&bull;</a>
+					<?php 						}
+					?>	
+					<span class="glyphicon glyphicon-arrow-right"></span>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -607,9 +623,7 @@ get_header();
     #overflow{
 	    width:<?php echo $count; ?>00%;
     }
-    .artists-artist{
-	    width:<?php echo 100/$count; ?>%;
-    }
+    
     #faq-overflow{
 	    width:<?php echo $faq_count; ?>00%;
     }
@@ -666,6 +680,20 @@ get_header();
 		    width:33%;
 	    }
 	}
+	#overflow{
+	    width:<?php echo $count; ?>00%;
+    }
+	.artists-artist{
+	    width:<?php echo 100/$count; ?>%;
+    }
+    @media screen and (min-width:768px){ 
+	    #overflow{
+	    	width:100%;
+	    }
+	    .artists-artist{
+		    width:200px;
+	    }
+    }
 </style>
 <script>
 	$('.point').mouseover(function() {

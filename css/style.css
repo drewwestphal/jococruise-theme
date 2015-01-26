@@ -162,7 +162,7 @@ a:hover,a:focus,a:visited {
 }
 @media screen and (min-width:768px){
 	#nav .container{
-		padding: 0 38px;
+		padding: 0 38px 0 23px;
 	}
 }
 .navbar-top{
@@ -193,7 +193,7 @@ a:hover,a:focus,a:visited {
 }
 @media screen and (min-width:768px){
 	#nav-button-inner{
-		left:-15px;
+		margin: 0 15px 0 0;
 	}
 	.navbar-toggle{
 		display: block;	
@@ -240,8 +240,11 @@ a:hover,a:focus,a:visited {
 }
 @media screen and (min-width:768px){
 	#navbar-title-headline{
-		left:0;
 		font-size: 16px;
+	}
+	#navbar-title{
+		position: relative;
+		left:10px;
 	}
 }
 #navbar-title-headline .glyphicon{
@@ -289,7 +292,6 @@ a:hover,a:focus,a:visited {
 @media screen and (min-width:768px){
 	.container>.navbar-collapse{
 		position: relative;
-		left: -15px;
 		padding: 5px 0;
 	}
 }
@@ -365,8 +367,8 @@ Hero
 	height:auto;
 }
 #about .container-fluid{
-	max-width: 750px;
-	padding:24px;
+	max-width: 480px;
+	padding:24px 24px 36px;
 }
 p#hero-travel-description{
 	font-size: 18px;
@@ -376,6 +378,7 @@ p#hero-travel-description{
 }
 @media screen and (min-width:768px){
 	#about .container-fluid{
+		max-width: 750px;
 		padding: 64px 38px;
 	}
 	p#hero-travel-description{
@@ -537,6 +540,11 @@ ARTISTS
 #artists{
 	background:#f5f1e9;
 	color:#144662;
+
+  text-align: center;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
 }
 #artists .container{
 	padding:45px 70px;
@@ -550,6 +558,26 @@ ARTISTS
 #artists-header img{
 	width:100%;
 	height:auto;
+}
+#artists-artist-container {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+#overflow {
+  height: 380px;
+  width: auto;
+  position: relative;
+  transition: left .27s;
+  -moz-transition: left .27s;
+  -webkit-transition: left .27s;
+}
+@media screen and (min-width: 768px) {
+  #overflow {
+    height: auto;
+    width: 100%;
+    left: 0;
+  }
 }
 .artist_unit{
 	width:200px;
@@ -693,8 +721,8 @@ MAP
 	background: #cdc5a5;
 	color: #050708;
 }
-#map .container{
-	width:1024px;
+#map .container-fluid{
+	max-width:1024px;
 }
 #map-background{
 	width:100%;

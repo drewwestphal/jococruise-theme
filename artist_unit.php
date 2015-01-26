@@ -1,4 +1,4 @@
-<div class="artist_unit">
+<div class="artist_unit artists-artist" id="item-<?php echo $j; ?>">
 	<div class="artists-featured-image">
 		<?php the_post_thumbnail(); ?>
 	</div>
@@ -25,3 +25,4 @@
 		
 	</div>
 </div>
+<?php $j++; ?>
