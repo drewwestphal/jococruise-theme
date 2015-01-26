@@ -546,8 +546,9 @@ ARTISTS
   height: auto;
   overflow: hidden;
 }
-#artists .container{
-	padding:45px 70px;
+#artists .container-fluid{
+	padding:30px 30px;
+	max-width: 750px;
 }
 #artists-header{
 	text-align: center;
@@ -573,6 +574,9 @@ ARTISTS
   -webkit-transition: left .27s;
 }
 @media screen and (min-width: 768px) {
+	#artists .container-fluid{
+		padding:45px 70px;
+	}
   #overflow {
     height: auto;
     width: 100%;
