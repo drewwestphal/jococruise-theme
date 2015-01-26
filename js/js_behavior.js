@@ -42,13 +42,13 @@ jQuery(document).ready(function(jQuery) {
 	var count = jQuery('#artist-carousel a').length;
 	var position = 1;
     jQuery('#artist-carousel a').click(function(event){
+		event.preventDefault();
+		
 	    position = jQuery(this).index();
 	    var adjusted = -(position-1)*100;
         jQuery('#overflow').css('left', adjusted+'%');
         jQuery('#artist-carousel a').removeClass('orange-text');
         jQuery(this).addClass('orange-text');
-        
-	    event.preventDefault();
     });
     jQuery('#artist-carousel span').click(function(){
 	    var overflowWidth = jQuery('#overflow').width();
@@ -208,30 +208,40 @@ jQuery(document).ready(function(jQuery) {
 		    jQuery('#nav-button-inner').click();
 	    }
 	});
-	
-	//smooth scroll
-	jQuery(function() {
-	  jQuery('a[href*=#]:not([href=#])').click(function() {
-	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-          var target_hash = this.hash;
-          var target = jQuery(this.hash);
-	      target = target.length ? target : jQuery('[name=' + this.hash.slice(1) +']');
-	      if (target.length) {
-	        jQuery('html,body').animate({
-	          scrollTop: target.offset().top-jQuery('.navbar-top').height()-jQuery('#wpadminbar').height()
-	        }, 500);
-	        // set hash when the time is right
-	        // http://stackoverflow.com/questions/3870057/how-can-i-update-window-location-hash-without-jumping-the-document
-	        // no workaround for older browsers.
-	        history.pushState(null, null, this.hash);
-	        
-	        return false;
-	      }
-	    }
-	  });
-	});
-	scrollready = document.body.scrollTop; 
 });
+
+jQuery(window).resize(function(){
+	//artist
+    if (jQuery(window).width()>767){
+	    jQuery('#overflow').css('left', 0);
+	    jQuery('#faq-overflow').css('left', 0);
+    }
+});
+
+/*
+//smooth scroll
+jQuery(function() {
+  jQuery('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target_hash = this.hash;
+      var target = jQuery(this.hash);
+      target = target.length ? target : jQuery('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        jQuery('html,body').animate({
+          scrollTop: target.offset().top-jQuery('.navbar-top').height()-jQuery('#wpadminbar').height()
+        }, 500);
+        // set hash when the time is right
+        // http://stackoverflow.com/questions/3870057/how-can-i-update-window-location-hash-without-jumping-the-document
+        // no workaround for older browsers.
+        history.pushState(null, null, this.hash);
+        
+        return false;
+      }
+    }
+  });
+});
+scrollready = document.body.scrollTop; 
+
 jQuery(window).load(function(){
     // scroll at doc ready is 0 if we have never been here before even though 
     // there is a hash. hash height gets computed at window load
@@ -239,13 +249,29 @@ jQuery(window).load(function(){
         window.scrollTo(0,document.body.scrollTop-jQuery('.navbar-top').height()-jQuery('#wpadminbar').height());
     }
 });
+*/
 
 
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname && !$('.carousel a')) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top-jQuery('.navbar-top').height()-jQuery('#wpadminbar').height()
+        }, 500);
+        return false;
+      }
+    }
+  });
+});
+scrollready = document.body.scrollTop; 
 
-jQuery(window).resize(function(){
-	//artist
-    if (jQuery(window).width()>767){
-	    jQuery('#overflow').css('left', 0);
-	    jQuery('#faq-overflow').css('left', 0);
+jQuery(window).load(function(){
+    // scroll at doc ready is 0 if we have never been here before even though 
+    // there is a hash. hash height gets computed at window load
+    if(window.location.hash.length>1 && document.body.scrollTop!==scrollready){
+        window.scrollTo(0,document.body.scrollTop-jQuery('.navbar-top').height()-jQuery('#wpadminbar').height());
     }
 });
