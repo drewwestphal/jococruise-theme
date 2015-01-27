@@ -203,6 +203,15 @@ get_header();
 					}
 					?>
 				</div>
+				<?php if (isset($booking_enabled)) { ?>
+				<div class="map-info visible-xs-block">
+					<p id="map-copy">
+						<?php echo $map_copy; ?>
+					<p>
+				</div>
+				<?php 
+					wp_reset_postdata();
+				}; ?>
 			</div>
 		</div>
 	</section>
