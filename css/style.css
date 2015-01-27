@@ -866,17 +866,33 @@ CONTACT
 	color:#f5f1e9;
 	text-align: center;
 }
-#contact .container{
-	padding: 50px 90px;
+#contact .container-fluid{
+	max-width: 780px;
+	padding: 0px 20px 30px;
 }
 #contact-header{
 	color:#f5f1e9;
-	margin: 0 0 40px;
+	margin: 30px 0 30px;
 }
 #contact-info-container,#contact-form-container{
-	width:50%;
-	float:left;
+	width:100%;
+	max-width: 300px;
+	margin: 0 auto;
+	display: block;
 	text-align: left;
+}
+@media screen and (min-width:768px){
+	#contact .container-fluid{
+		padding: 50px 90px;
+	}
+	#contact-header{
+		margin: 0 0 40px;
+	}
+	#contact-info-container,#contact-form-container{
+		width:50%;
+		float:left;
+		max-width: none;
+	}
 }
 .contact-info-group{
 	width:100%;
@@ -928,6 +944,11 @@ CONTACT
 }
 .contact-social{
 	padding: 0 0 0 40px; 
+	position: relative;
+	top: -20px;
+}
+@media screen and (min-width:768px){
+	top: 0;
 }
 .contact-social a{
 	background:url('img/contact_social_sprite.png');
