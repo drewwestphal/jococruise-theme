@@ -554,7 +554,37 @@ ARTISTS
 	text-align: center;
 }
 #artists-header h1{
-	margin: 30px 0 30px;
+	margin: 30px 0 15px;
+}
+#artist-carousel{
+	margin: 0 0 15px;
+}
+#artist-carousel a{
+	color:#144662;
+	padding:0 3px;
+}
+#artist-carousel span{
+	padding: 6px 5px 5px 6px;
+	border-radius: 50%;
+	cursor:pointer;
+}
+#artist-carousel span.js-positioned{
+	position: absolute;
+	top: 90px;
+	z-index: 900;
+}
+#artist-carousel span.glyphicon-menu-left{
+	left:0;
+}
+#artist-carousel span.glyphicon-menu-right{
+	right:0;
+}
+#artist-carousel span:hover{
+	background:rgba(0,58,93,.1);
+}
+#artists-header h1 span{
+	position: relative;
+	top: -5px;
 }
 #artists-header img{
 	width:100%;
@@ -566,7 +596,6 @@ ARTISTS
   overflow: hidden;
 }
 #overflow {
-  height: 380px;
   width: auto;
   position: relative;
   transition: left .27s;
@@ -574,6 +603,10 @@ ARTISTS
   -webkit-transition: left .27s;
 }
 @media screen and (min-width: 768px) {
+	#artists-header h1 span{
+		position: relative;
+		top:0;
+	}
 	#artists .container-fluid{
 		padding:45px 70px;
 	}
@@ -653,12 +686,14 @@ ARTISTS
 	line-height: 1.15em;
 	overflow: hidden;
 }
-#featured-guests{
+.featured-guests{
 	padding:0 15px;
 }
-#featured-guests h1{
+.featured-guests h1{
 	width:100%;
 	position: relative;
+	max-width: 180px;
+	margin: 0 auto;
 	top:40px;
 	border-top: 1px solid #144662;
 	border-bottom: 1px solid #144662;

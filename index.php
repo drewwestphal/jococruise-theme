@@ -123,10 +123,11 @@ get_header();
 								if ($feat_count > 0) {
 									$count += 1;
 									echo '
-									<div class="artist_unit headers" id="featured-guests">
+									<div class="artist_unit artists-artist headers featured-guests" id="item-'.$j.'">
 										<h1><span>And</span><br>Featured Guests</h1>
 									</div>
-									';	
+									';
+									$j++;	
 								};
 								if ($feat_artist_query->have_posts()) {
 									while ($feat_artist_query->have_posts()) {
@@ -167,12 +168,12 @@ get_header();
 					</div>
 				</div>
 				<div class="carousel" id="artist-carousel">
-					<span class="glyphicon glyphicon-arrow-left"></span>
+					<span class="glyphicon glyphicon-menu-left"></span>
 					<?php for ($i=0;$i<$count;$i++){ ?>		
 							<a href="#item-<?php echo $i; ?>" <?php if ($i===0) { echo 'class="orange-text unmove"';} else { echo 'class="unmove"'; };?>>&bull;</a>
 					<?php 						}
 					?>	
-					<span class="glyphicon glyphicon-arrow-right"></span>
+					<span class="glyphicon glyphicon-menu-right"></span>
 				</div>
 			</div>
 		</div>

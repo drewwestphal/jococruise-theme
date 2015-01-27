@@ -212,7 +212,7 @@ jQuery(document).ready(function(jQuery) {
 	//presentational move of the carousel to avoid rewriting and making messy DB calls
 	//JS disabled people will see carousel after (still looks nice, just doesn't match comp)
 	jQuery('#artist-carousel').insertAfter($('#artists-header'));
-	
+	jQuery('#artist-carousel span').addClass('js-positioned');
 	
 });
 
