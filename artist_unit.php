@@ -1,6 +1,6 @@
 <div class="artist_unit artists-artist" id="item-<?php echo $j; ?>">
 	<div class="artists-featured-image">
-		<?php the_post_thumbnail(); ?>
+		<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 	</div>
 	<div class="artists-name">
 		<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
