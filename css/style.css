@@ -870,6 +870,18 @@ MAP
 .map-city-about.up{
 	top:-30px;
 }
+.map-city-about.info-up{
+	top:auto;
+	position: absolute;
+	bottom: 5px;
+	left: -255px;
+}
+.map-city-about.up.info-up{
+	top:auto;
+	position: absolute;
+	bottom: 45px;
+	left: -255px;
+}
 .map-city-about span{
 	font-family: gothamBook;
 	font-size: 14px;
