@@ -169,7 +169,7 @@ get_header();
 				<div class="carousel" id="artist-carousel">
 					<span class="glyphicon glyphicon-arrow-left"></span>
 					<?php for ($i=0;$i<$count;$i++){ ?>		
-							<a href="#item-<?php echo $i; ?>" <?php if ($i===0) { echo 'class="orange-text"'; };?>>&bull;</a>
+							<a href="#item-<?php echo $i; ?>" <?php if ($i===0) { echo 'class="orange-text unmove"';} else { echo 'class="unmove"'; };?>>&bull;</a>
 					<?php 						}
 					?>	
 					<span class="glyphicon glyphicon-arrow-right"></span>
@@ -299,8 +299,8 @@ get_header();
 					
 					<div class="faq-carousel carousel visible-xs-block" id="faq-carousel-small">
 						<span class="glyphicon glyphicon-arrow-left"></span>
-						<?php 							for ($l=0;$l<$faq_count;$l++){ ?>		
-								<a href="#faq-item-small-<?php echo $l; ?>" <?php if ($l===0) { echo 'class="orange-text"'; };?>>&bull;</a>
+						<?php for ($l=0;$l<$faq_count;$l++){ ?>		
+								<a href="#faq-item-small-<?php echo $l; ?>" <?php if ($l===0) { echo 'class="orange-text unmove"'; } else { echo 'class="unmove"';};?>>&bull;</a>
 						<?php 							}
 						?>	
 						<span class="glyphicon glyphicon-arrow-right"></span>
