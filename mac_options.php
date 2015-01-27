@@ -210,6 +210,22 @@ function mac_settings_init(  ) {
 		'pluginPage', 
 		'mac_contact_settings' 
 	);
+	
+	//map settings
+	add_settings_section(
+		'mac_map_settings', 
+		__( 'Map Settings:', 'wordpress' ), 
+		'mac_map_settings_callback', 
+		'pluginPage'
+	);
+	
+	add_settings_field( 
+		'mac_map_copy', 
+		__( 'Map Info Copy (narrow-width only):', 'wordpress' ), 
+		'mac_map_copy_render', 
+		'pluginPage', 
+		'mac_map_settings' 
+	);
 
 
 }
@@ -381,7 +397,14 @@ function mac_phone_questions_address_render(  ) {
 	<?php 
 }
 
+function mac_map_copy_render(  ) { 
 
+	$options = get_option( 'mac_settings' );
+	?>
+	<textarea cols='40' rows='3' name='mac_settings[mac_map_copy]'><?php echo $options['mac_map_copy']; ?>
+	</textarea>
+	<?php 
+}
 
 
 function mac_site_settings_callback(  ) { 
@@ -398,6 +421,10 @@ function mac_artist_settings_callback(  ) {
 
 function mac_contact_settings_callback(  ) { 
 	echo __( 'settings for the contact section on the homepage', 'wordpress' );
+}
+
+function mac_map_settings_callback(  ) { 
+	echo __( 'settings for the map section on the homepage', 'wordpress' );
 }
 
 
