@@ -214,6 +214,16 @@ jQuery(document).ready(function(jQuery) {
 	jQuery('#artist-carousel').insertAfter($('#artists-header'));
 	jQuery('#artist-carousel span').addClass('js-positioned');
 	
+	//map behavior
+
+		$('.point').mouseover(function() {
+			$(this).siblings('.map-city-about').fadeIn('fast');
+			$(this).removeClass('glyphicon-plus').addClass('glyphicon-minus');
+		}).mouseleave(function() {
+			$(this).siblings('.map-city-about').fadeOut('fast');
+			$(this).removeClass('glyphicon-minus').addClass('glyphicon-plus');
+		});
+
 });
 
 jQuery(window).resize(function(){

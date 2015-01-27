@@ -705,14 +705,5 @@ get_header();
 	    }
     }
 </style>
-<script>
-	$('.point').mouseover(function() {
-		$(this).siblings('.map-city-about').fadeIn('fast');
-		$(this).removeClass('glyphicon-plus').addClass('glyphicon-minus');
-	}).mouseleave(function() {
-		$(this).siblings('.map-city-about').fadeOut('fast');
-		$(this).removeClass('glyphicon-minus').addClass('glyphicon-plus');
-	});
-</script>
 
 <?php include 'footer.php' ?>
