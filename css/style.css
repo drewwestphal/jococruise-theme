@@ -805,6 +805,8 @@ MAP
 #map{
 	background: #cdc5a5;
 	color: #050708;
+	padding: 16px 0;
+	overflow: hidden;
 }
 #map .container-fluid{
 	max-width:1024px;
@@ -817,6 +819,13 @@ MAP
 	position:absolute;
 	text-align: center;
 }
+.map-cities{
+	transform: scale(1.25);
+	-moz-transform: scale(1.25);
+	-webkit-transform: scale(1.25);
+	max-width: 320px;
+	margin: 0 auto;
+}
 .map-city-container{
 	width:100%;
 	height:100%;
@@ -825,21 +834,21 @@ MAP
 .map-city h1{
 	font-family: gothamBook;
 	text-transform: uppercase;
-	font-size: 12px;
+	font-size: 7px;
 	margin-left: -100%;
-	margin-top: -35px;
+	margin-top: -17px;
 }
 .map-city h1.down{
-	margin-top: 25px;
+	margin-top: 10px;
 }
 .map-city span.glyphicon{
 	position: absolute;
-	left:-20px;
-	top:-20px;
+	left: -7px;
+	top: -7px;
 	background:none;
 	background: rgba(2,60,92,.1);
-	font-size: 10px;
-	padding:15px;
+	font-size: 5px;
+	padding:3px;
 	color:#144662;
 	text-align: center;
 	border:1px solid #144662;
@@ -847,6 +856,30 @@ MAP
 	-moz-border-radius:50%;
 	-webkit-border-radius:50%;
 	z-index: 100;
+}
+@media screen and (min-width:768px){
+	#map{
+		padding:0;
+	}
+	.map-cities{
+		transform: none;
+		-moz-transform: none;
+		-webkit-transform: none;
+		max-width: none;
+	}
+	.map-city h1{
+		font-size: 12px;
+		margin-top: -35px;
+	}
+	.map-city h1.down{
+		margin-top: 25px;
+	}
+	.map-city span.glyphicon{
+		left:-20px;
+		top:-20px;
+		font-size: 10px;
+		padding:15px;
+	}
 }
 .map-city span.glyphicon:hover{
 	cursor: pointer;
