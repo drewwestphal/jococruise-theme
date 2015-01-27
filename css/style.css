@@ -641,9 +641,25 @@ ARTISTS
 	margin:0 auto;
 	margin-bottom: 30px;
 	overflow: hidden;
+	position: relative;
 	border-radius: 50%;
 	-moz-border-radius: 50%;
 	-webkit-border-radius: 50%;
+}
+.artists-featured-image:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #75ABD2;
+	background-blend-mode: multiply;
+	-moz-transition: background .27s;
+	-webkit-transition: background .27s;
+	-o-transition: background .27s;
+	transition: background .27s;
 }
 @media screen and (min-width:768px){
 	.artists-featured-image{
@@ -654,6 +670,13 @@ ARTISTS
 .artists-featured-image img{
 	width:100%;
 	height:auto;
+}
+.artists-featured-image img:hover{
+	cursor:pointer;
+	opacity: .66;
+	filter: grayscale(100%) contrast(1.5);
+	-moz-filter: grayscale(100%) contrast(1.5);
+	-webkit-filter: grayscale(100%) contrast(1.5);
 }
 .artists-name{
 	width:100%;
