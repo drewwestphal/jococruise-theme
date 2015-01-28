@@ -18,5 +18,6 @@ $cont_book_q_addy = get_option('mac_settings')['mac_booking_questions_address_he
 $cont_tel		  = get_option('mac_settings')['mac_phone_questions_header'];
 $cont_tel_addy	  = get_option('mac_settings')['mac_phone_questions_address_header'];
 $map_copy		  = get_option('mac_settings')['mac_map_copy'];
+$news_header		  = get_option('mac_settings')['mac_news_header'];
 
 ?>
