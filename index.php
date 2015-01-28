@@ -203,15 +203,26 @@ get_header();
 					}
 					?>
 				</div>
-				<?php if (isset($booking_enabled)) { ?>
 				<div class="map-info visible-xs-block">
+				<?php if (isset($map_copy)) { ?>
 					<p id="map-copy">
 						<?php echo $map_copy; ?>
 					<p>
+				<?php }; 
+				if ($cities_query->have_posts()) {
+					while ($cities_query->have_posts()) {
+						$cities_query->the_post();
+				?>
+					<div class="map-narrow-info headers" id="info-<?php echo $post->post_name; ?>">
+						<span class="glyphicon glyphicon-remove"></span>
+						<h1><?php the_title(); ?></h1>
+						<?php the_excerpt(); ?>
+					</div>
+					
+				<?php }
+				}?>
 				</div>
-				<?php 
-					wp_reset_postdata();
-				}; ?>
+				<?php wp_reset_postdata();?>
 			</div>
 		</div>
 	</section>
