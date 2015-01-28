@@ -30,16 +30,7 @@ function mac_settings_init(  ) {
 		__( 'Site Options:', 'wordpress' ), 
 		'mac_site_settings_callback', 
 		'pluginPage'
-	);
-	
-	add_settings_field( 
-		'mac_html_friendly_title', 
-		__( 'HTML-friendly Title', 'wordpress' ), 
-		'mac_html_friendly_title_render', 
-		'pluginPage', 
-		'mac_site_settings' 
-	);
-	
+	);	
 
 	add_settings_field( 
 		'mac_enable_booking', 
@@ -226,16 +217,25 @@ function mac_settings_init(  ) {
 		'pluginPage', 
 		'mac_map_settings' 
 	);
+	
+	//news settings
+	add_settings_section(
+		'mac_news_settings', 
+		__( 'News Settings:', 'wordpress' ), 
+		'mac_news_settings_callback', 
+		'pluginPage'
+	);
+	
+	add_settings_field( 
+		'mac_news_header', 
+		__( 'News Header:', 'wordpress' ), 
+		'mac_news_header_render', 
+		'pluginPage', 
+		'mac_news_settings' 
+	);
 
 
-}
 
-function mac_html_friendly_title_render(  ) { 
-
-	$options = get_option( 'mac_settings' );
-	?>
-	<input type='text' name='mac_settings[mac_html_friendly_title]' value='<?php echo $options['mac_html_friendly_title']; ?>'>
-	<?php 
 }
 
 function mac_booking_enabled_render(  ) { 
@@ -396,7 +396,7 @@ function mac_phone_questions_address_render(  ) {
 	</input>
 	<?php 
 }
-
+//map
 function mac_map_copy_render(  ) { 
 
 	$options = get_option( 'mac_settings' );
@@ -405,7 +405,16 @@ function mac_map_copy_render(  ) {
 	</textarea>
 	<?php 
 }
+//news
 
+function mac_news_header_render(  ) { 
+
+	$options = get_option( 'mac_settings' );
+	?>
+	<textarea cols='40' rows='3' name='mac_settings[mac_news_header]'><?php echo $options['mac_news_header']; ?>
+	</textarea>
+	<?php 
+}
 
 function mac_site_settings_callback(  ) { 
 	echo __( 'site-wide settings', 'wordpress' );
@@ -424,6 +433,10 @@ function mac_contact_settings_callback(  ) {
 }
 
 function mac_map_settings_callback(  ) { 
+	echo __( 'settings for the map section on the homepage', 'wordpress' );
+}
+
+function mac_news_settings_callback(  ) { 
 	echo __( 'settings for the map section on the homepage', 'wordpress' );
 }
 
