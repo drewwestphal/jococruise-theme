@@ -1,3 +1,39 @@
+var mapBehavior = function(){
+	if (jQuery(window).width()>767){
+		jQuery('.point').mouseover(function() {
+			jQuery(this).siblings('.map-city-about').fadeIn('fast');
+			jQuery(this).removeClass('glyphicon-plus').addClass('glyphicon-minus');
+		}).mouseleave(function() {
+			jQuery(this).siblings('.map-city-about').fadeOut('fast');
+			jQuery(this).removeClass('glyphicon-minus').addClass('glyphicon-plus');
+		});
+	} else {
+		jQuery('.point').click(function(){
+			jQuery('span.glyphicon.point').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+			var cityName = jQuery(this).parent().attr('id');
+			var infoCityName = '#info-'+cityName;
+			
+			if (jQuery(''+infoCityName+'').is(':visible')){
+				jQuery(''+infoCityName+'').slideUp('fast',function(){
+					jQuery('#'+cityName+' span.glyphicon').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+					jQuery('#map-copy').fadeIn('fast');
+				});
+			} else {
+				jQuery('.map-info').contents().hide();
+				jQuery(''+infoCityName+'').slideDown('fast');
+				jQuery('#'+cityName+' span.glyphicon').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+			}
+		});
+		jQuery('.map-narrow-info span.glyphicon').click(function(){
+			jQuery(this).closest('.map-narrow-info').slideUp('fast',function(){
+				jQuery('span.glyphicon.point').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+				jQuery('#map-copy').fadeIn('fast');
+			});
+		
+		});
+	}
+};
+
 jQuery(document).ready(function(jQuery) {
 	//hero
 	jQuery('#hero-more-info-button').click(function(){
@@ -204,35 +240,39 @@ jQuery(document).ready(function(jQuery) {
 	jQuery(document).click(function(e){
 	    if ((jQuery(e.target).closest("#nav-dropdown").length > 0) || (jQuery(e.target).closest('#nav-button').length > 0)) {
 	        
-	    } else if ($('.navbar-collapse').hasClass('in')){
+	    } else if (jQuery('.navbar-collapse').hasClass('in')){
 		    jQuery('#nav-button-inner').click();
 	    }
 	});
 	
 	//presentational move of the carousel to avoid rewriting and making messy DB calls
 	//JS disabled people will see carousel after (still looks nice, just doesn't match comp)
-	jQuery('#artist-carousel').insertAfter($('#artists-header'));
+	jQuery('#artist-carousel').insertAfter(jQuery('#artists-header'));
 	jQuery('#artist-carousel span').addClass('js-positioned');
 	
-	//map behavior
-
-		$('.point').mouseover(function() {
-			$(this).siblings('.map-city-about').fadeIn('fast');
-			$(this).removeClass('glyphicon-plus').addClass('glyphicon-minus');
-		}).mouseleave(function() {
-			$(this).siblings('.map-city-about').fadeOut('fast');
-			$(this).removeClass('glyphicon-minus').addClass('glyphicon-plus');
-		});
-
+	//initial call of mapBehavior()
+	mapBehavior();
+	
 });
 
 jQuery(window).resize(function(){
-	//artist
     if (jQuery(window).width()>767){
+	    //artist
 	    jQuery('#overflow').css('left', 0);
 	    jQuery('#faq-overflow').css('left', 0);
+	    
+	    //map
+	    jQuery('.map-city-about').hide();	    
+    }else{
+	    //map
+	    jQuery('.point').unbind('click')
+	    jQuery('.map-narrow-info').hide();
     }
+    //resize call on mapBehavior()
+	mapBehavior();
 });
+
+
 
 /*
 //smooth scroll
@@ -268,13 +308,13 @@ jQuery(window).load(function(){
 */
 
 
-$(function() {
-  $('a[href*=#]:not([href=#])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname && !$(this).hasClass('unmove')) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+jQuery(function() {
+  jQuery('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname && !jQuery(this).hasClass('unmove')) {
+      var target = jQuery(this.hash);
+      target = target.length ? target : jQuery('[name=' + this.hash.slice(1) +']');
       if (target.length) {
-        $('html,body').animate({
+        jQuery('html,body').animate({
           scrollTop: target.offset().top-jQuery('.navbar-top').height()-jQuery('#wpadminbar').height()
         }, 500);
         return false;
