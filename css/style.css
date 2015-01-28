@@ -805,7 +805,7 @@ MAP
 #map{
 	background: #cdc5a5;
 	color: #050708;
-	padding: 16px 0;
+	padding: 20px 0;
 	overflow: hidden;
 }
 #map .container-fluid{
@@ -823,7 +823,6 @@ MAP
 	transform: scale(1.25);
 	-moz-transform: scale(1.25);
 	-webkit-transform: scale(1.25);
-	max-width: 320px;
 	margin: 0 auto;
 }
 .map-city-container{
@@ -856,6 +855,11 @@ MAP
 	-moz-border-radius:50%;
 	-webkit-border-radius:50%;
 	z-index: 100;
+}
+@media screen and (min-width:480px){
+	#map{
+		padding:30px 0;
+	}
 }
 @media screen and (min-width:768px){
 	#map{
@@ -920,6 +924,24 @@ MAP
 	font-size: 14px;
 	line-height: 1.5em;
 	text-transform: uppercase;
+}
+.map-info{
+	min-height: 80px;
+	max-width:250px;
+	margin:0 auto;
+	font-size: 12px;
+	color:#144662;
+}
+.map-narrow-info{
+	display:none;
+	background:#f5f1e9;
+	padding:30px;
+}
+.map-narrow-info .glyphicon{
+	float: right;
+	position: relative;
+	top: -10px;
+	right: -10px;
 }
 
 /*
