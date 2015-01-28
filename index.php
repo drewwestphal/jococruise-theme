@@ -55,6 +55,45 @@ get_header();
 		</div>
 	</section>
 	<?php }; ?>
+<!--news-->
+<?php
+$args = array(
+	'post_type' 	 => 'post',
+	'posts_per_page' => 5,
+	'order'			 => 'ASC',
+);
+$news_query = new WP_Query($args);
+$count = $news_query->post_count;
+$n=0;
+echo $count;
+if ($news_query->have_posts()) {
+?>
+	<section id="news" class="headers">
+		<div class="container-fluid">
+			<div class="col-xs-12 col-md-12">
+				<div id="news-header">
+					<?php if (strlen($news_header) > 0){ ?>
+						<h1><?php echo $news_header; ?></h1>
+					<? }; ?>
+				</div>
+				<div id="news-carousel">
+				</div>
+				<div id="news-items">
+					<?php
+						while ($news_query->have_posts()) {
+							$news_query->the_post();
+							echo '<div class="news-item">';
+							include('news-unit.php');
+							echo '</div>';
+						}
+					?>
+				</div>
+			</div>
+		</div>
+	</section>
+<?php 
+wp_reset_postdata();
+}; ?>
 <!--mailing list-->	
 	<?php if(function_exists('mc4wp_form')) { ?>
 	<section id="mailing-list" class="headers">
