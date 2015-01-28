@@ -484,7 +484,8 @@ MAILING LIST
 }
 
 #mc4wp-form-1{
-	width:310px;
+	width:100%;
+	max-width:310px;
 	margin:1em auto;
 }
 #mc4wp_email,#submit{
@@ -493,7 +494,7 @@ MAILING LIST
 }
 #mc4wp_email{
 	background:#f5f1e9;
-	width:190px;
+	width:70%;
 	height:35px;
 	color:#144662;
 	padding: 0 13px;
@@ -506,7 +507,8 @@ MAILING LIST
 
 #submit{
 	background:#6e96ab;
-	width:85px;
+	width:25%;
+	max-width:85px;
 	height:35px;
 	border:none;
 	font-family: surveyorBook, serif;
@@ -527,6 +529,7 @@ MAILING LIST
 	#submit{
 		float: right;
 		left: 0;
+		width:85px;
 	}
 	#mailing-list{
 		padding: 20px 0 45px;
