@@ -18,104 +18,13 @@
 	<?php get_sidebar(); ?>
 	<?php get_footer(); ?>
 <?php } elseif ( is_page( 'FAQ' ) ){ ?>
-	<section class="mac-page" id="page-faq">
-		<div class="container">
-			<div class="col-xs-12 col-md-12">
-				<h1 class="orange-text"><?php the_title(); ?></h1>
-			    <?php if (have_posts()) : while (have_posts()) : the_post();?>
-		            <div class="mac-page-intro"><?php the_content(); ?></div>
-			    <?php endwhile; endif; 
-			    $args = array(
-					'post_type' => 'faq',
-					'posts_per_page' => -1 
-				);
-				?>
-			    <section class="mac-page-toc">
-                <?php 
-                    $faq_query = new WP_Query( array(
-                        'post_type' => 'faq',
-                        'posts_per_page' => -1
-                    ));
-                    $byHeader = array();
-                    while($faq_query -> have_posts()) {
-                        $faq_query -> the_post();
-                       
-                        $byHeader[get_field('faq_section_header', $post -> ID)][] = sprintf('
-                        <article class="faq-article" id="%s">
-                        <a class="faq-show-hide" href="#">%s</a><br/>
-                        <div style="display:none" class="faq-content">%s</div>
-                        </article>
-                        ', $post -> post_name, apply_filters( 'the_title', $post -> post_title), //
-                        $post -> post_content ? apply_filters( 'the_content', $post -> post_content) : apply_filters( 'the_excerpt', $post -> post_excerpt));
-                    }
-                    
-                    $allHeadersOrdered = array_unique(array_merge($faq_section_headers_ordered, array_keys($byHeader)));
-                    foreach($allHeadersOrdered as $header) {
-                        $posts = isset($byHeader[$header]) ? $byHeader[$header] : array();
-                        if(count($posts)) {
-                            printf('<h1 class="orange-text faq-section-header">%s</h1>', $header);
-                            // can't use print or echo as they are not real functions
-                            array_map(function($post) {
-                                file_put_contents('php://output', $post);
-                            }, $posts);
-                        }
-                    }
-                 ?> 
-			    <script type="text/javascript">
-			        function toggleFaq(item,animate){
-                       var mom = item.parent();
-                       var bro = item.siblings('.faq-content');
-                       // set this now... timing will affect result later
-                       var brovis = !bro.is(':visible');
-                       bro.slideToggle(animate?200:0);
-                       mom.toggleClass('faq-article-maximize');
-                       return mom.attr('id');
-			        }
-			    
-			        $('.faq-show-hide').click(function(){
-                        history.pushState(null, null, '#'+toggleFaq($(this),true));
-                       return false;
-			        });
-                    window.location.hash.length>1 && toggleFaq($('#'+location.hash.substr(1)+' a.faq-show-hide'), false);
-			    </script>
-			    </section>
-				<script src="<?php bloginfo('template_directory'); ?>/js/js_behavior.js"></script>
-				<?php wp_footer(); ?>
-			</div>
-		</div>
-	</section>
+		
+		<?php include(bloginfo('template_directory').'page-faq.php'); ?>
+		
 <?php } elseif ( is_page( 'News' ) ){ ?>
-	<section class="mac-page" id="page-news">
-		<div class="container">
-			<div class="col-xs-12 col-md-12">
-				<h1 class="orange-text">News</h1>
-			    <?php if (have_posts()) : while (have_posts()) : the_post();?>
-		            <p class="mac-page-intro"><?php the_content(); ?></p>
-			    <?php endwhile; endif; ?>
-			<?php 
-				$args = array(
-					'post_type' => 'post'
-				);
-				$post_query = new WP_Query( $args );
-				if ( $post_query->have_posts() ) {
-					while ( $post_query->have_posts() ) {
-						$post_query->the_post();
-						?>
-							<article>
-								<h1 class="orange-text"><?php the_title(); ?></h1>
-							<?php if ($post->post_content) {?>
-								<p><?php the_content(); ?></p>
-							<?php  } else { ?>
-								<p><?php the_excerpt(); ?></p>
-							<?php  }; ?>	
-							</article>
-					<?php  }; ?>	
-				<?php  }; ?>
-				<?php wp_footer(); ?>	
-			</div>
-		</div>
-	</section>
-
+		
+		<?php include(bloginfo('template_directory').'page-news.php'); ?>
+		
 <?php } else { 
     // regular old page style
     ?> 
