@@ -57,15 +57,15 @@ get_header();
 	<?php }; ?>
 <!--news-->
 <?php
-$args = array(
-	'post_type' 	 => 'post',
-	'posts_per_page' => 5,
-	'order'			 => 'ASC',
-);
-$news_query = new WP_Query($args);
-$count = $news_query->post_count;
 $n=0;
-echo $count;
+$news_args = array(
+	'post_type' 	 	 => 'post',
+	'posts_per_page' => 5,
+	'ignore_sticky_posts' => 1
+);
+$news_query = new WP_Query($news_args);
+$news_count = $news_query->post_count;
+
 if ($news_query->have_posts()) {
 ?>
 	<section id="news" class="headers">
@@ -76,18 +76,31 @@ if ($news_query->have_posts()) {
 						<h1><?php echo $news_header; ?></h1>
 					<? }; ?>
 				</div>
-				<div id="news-carousel">
+				<?php if ($news_count > 1) { ?>
+				<div class="carousel" id="news-carousel">
+					<span class="glyphicon glyphicon-menu-left"></span>
+					<?php for ($m=0;$m<$news_count;$m++){ ?>		
+							<a href="#news-item-<?php echo $m; ?>" <?php if ($m===0) { echo 'class="orange-text unmove"';} else { echo 'class="unmove"'; };?>>&bull;</a>
+					<?php 						}
+					?>	
+					<span class="glyphicon glyphicon-menu-right"></span>
 				</div>
-				<div id="news-items">
-					<?php
-						while ($news_query->have_posts()) {
-							$news_query->the_post();
-							echo '<div class="news-item">';
-							include('news-unit.php');
-							echo '</div>';
-						}
-					?>
+				<?php }; ?>
+				<div id="news-container">
+					<div id="news-items">
+						<?php
+							while ($news_query->have_posts()) {
+								$news_query->the_post();
+								echo '<div class="news-item">';
+								include('news-unit.php');
+								echo '</div>';
+							}
+						?>
+					</div>
 				</div>
+			<?php if ($news_count > 1) { ?>
+				<a id="news-view-all" href="<?php echo $news_view_url; ?>"><?php echo $news_view_all; ?></a>
+			<?php }; ?>
 			</div>
 		</div>
 	</section>
@@ -717,6 +730,7 @@ wp_reset_postdata();
     #wpadminbar{
 	    position: fixed !important;
     }
+    /* FAQ */
     #faq-overflow{
 	    width:<?php echo $faq_count; ?>00%;
     }
@@ -740,6 +754,7 @@ wp_reset_postdata();
 		    width:33%;
 	    }
 	}
+	/* Artists */
 	#overflow{
 	    width:<?php echo $count; ?>00%;
     }
@@ -754,6 +769,14 @@ wp_reset_postdata();
 		    width:200px;
 	    }
     }
+    /* Artists */
+    #news-items{
+	    width:<?php echo $news_count; ?>00%;
+    }
+    .news-item{
+	    width:<?php echo 100/$news_count; ?>%;
+    }
+
 </style>
 
 <?php include 'footer.php' ?>
