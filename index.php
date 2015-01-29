@@ -371,12 +371,12 @@ wp_reset_postdata();
 					?>
 					
 					<div class="faq-carousel carousel visible-xs-block" id="faq-carousel-small">
-						<span class="glyphicon glyphicon-arrow-left"></span>
+						<span class="glyphicon glyphicon-menu-left"></span>
 						<?php for ($l=0;$l<$faq_count;$l++){ ?>		
 								<a href="#faq-item-small-<?php echo $l; ?>" <?php if ($l===0) { echo 'class="orange-text unmove"'; } else { echo 'class="unmove"';};?>>&bull;</a>
 						<?php 							}
 						?>	
-						<span class="glyphicon glyphicon-arrow-right"></span>
+						<span class="glyphicon glyphicon-menu-right"></span>
 					</div>
 					<div class="faq-carousel carousel hidden-xs" id="faq-carousel-wide">
 						<span class="arrow arrow-left"></span>
