@@ -51,12 +51,12 @@
 		<?php if (!empty(get_previous_post())){ ?>
 			<div class="bumper-element bumper-left" id="bumper-left">
 				<span class="glyphicon glyphicon-menu-left"></span>
-				<a href="<?php echo get_permalink( $prev_post->ID );?>">Previous</a>
+				<a href="<?php echo get_permalink( get_previous_post()->ID );?>">Previous</a>
 			</div>
 		<?php }; ?>
 		<?php if (!empty(get_next_post())){ ?>
 			<div class="bumper-element bumper-right" id="bumper-right">
-				<a href="<?php echo get_permalink( $next_post->ID );?>">Next</a>
+				<a href="<?php echo get_permalink( get_next_post()->ID );?>">Next</a>
 				<span class="glyphicon glyphicon-menu-right"></span>
 			</div>
 		<?php }; ?>
