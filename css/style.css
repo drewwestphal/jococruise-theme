@@ -1063,6 +1063,7 @@ MAP
 	text-transform: uppercase;
 }
 .map-info{
+	position: relative;
 	min-height: 80px;
 	max-width:250px;
 	margin:0 auto;
