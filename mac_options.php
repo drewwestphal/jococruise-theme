@@ -233,8 +233,22 @@ function mac_settings_init(  ) {
 		'pluginPage', 
 		'mac_news_settings' 
 	);
+	
+	add_settings_field( 
+		'mac_news_view_all', 
+		__( 'News "View All" Copy:', 'wordpress' ), 
+		'mac_news_view_all_render', 
+		'pluginPage', 
+		'mac_news_settings' 
+	);
 
-
+	add_settings_field( 
+		'mac_news_view_all_url', 
+		__( 'News "View All" URL:', 'wordpress' ), 
+		'mac_news_view_all_url_render', 
+		'pluginPage', 
+		'mac_news_settings' 
+	);
 
 }
 
@@ -415,6 +429,21 @@ function mac_news_header_render(  ) {
 	</textarea>
 	<?php 
 }
+function mac_news_view_all_render(  ) { 
+
+	$options = get_option( 'mac_settings' );
+	?>
+	<input name='mac_settings[mac_news_view_all]' value='<?php echo $options['mac_news_view_all']; ?>'></input>
+	<?php 
+}
+function mac_news_view_all_url_render(  ) { 
+
+	$options = get_option( 'mac_settings' );
+	?>
+	<input name='mac_settings[mac_news_view_all_url]' value='<?php echo $options['mac_news_view_all_url']; ?>'></input>
+	<?php 
+}
+
 
 function mac_site_settings_callback(  ) { 
 	echo __( 'site-wide settings', 'wordpress' );
