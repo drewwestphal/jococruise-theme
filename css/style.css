@@ -1902,7 +1902,7 @@ FAQ
   background: #f5f1e9;
   font-family: surveyorBook, serif;
 }
-.faq .container-fluid{
+.faq.container-fluid{
 	max-width: 750px;
 }
 #faq {
@@ -2005,8 +2005,8 @@ FAQ
 }
 .arrow:hover{
 	cursor: pointer;
-	background:url('img/arrow.png') center center no-repeat,rgba(0,58,93,.1);
-	background-size: 33%, 100%;
+/*	background:url('img/arrow.png') center center no-repeat,rgba(0,58,93,.1);
+	background-size: 33%, 100%;*/
 }
 .arrow-right{
 	right:-20px;
