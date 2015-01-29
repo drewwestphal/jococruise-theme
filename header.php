@@ -23,12 +23,12 @@
 			</div>
 			<?
 			$sticky = get_option('sticky_posts');
-			$args = array(
+			$nav_args = array(
 				'posts_per_page' => 1,
 				'post__in'  => $sticky,
 				'ignore_sticky_posts' => 1
 			);
-			$stick_query = new WP_Query($args);
+			$stick_query = new WP_Query($nav_args);
 			if (isset($sticky[0])) { ?>
 				<a id="navbar-title-headline" href="<?php the_permalink(); ?>" class="navbar-item-left toggle">
 				<span class="nav-headline"><?php the_title(); ?></span><span class="glyphicon glyphicon glyphicon-menu-right"></span>
@@ -59,4 +59,5 @@
 			</ul>
 		</div>
 	</div>	
+<?php wp_reset_postdata(); ?>
 </nav>
