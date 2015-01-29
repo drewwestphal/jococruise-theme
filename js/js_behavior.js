@@ -42,28 +42,47 @@ jQuery(document).ready(function(jQuery) {
 	});
 	
 	//news
-	var newsCount = jQuery('#news-cell a').length;
+	jQuery('#news-items').css('left', 0);
+	var newsCount = jQuery('#news-carousel a').length;
 	var newsPosition = 1;
-	var newsMove = function(){
-		jQuery('#news-cell').css('left', -newsPosition+'00%');	
-	};
-	jQuery('.news-nav').click(function(){
-		var newsSpanPosition = jQuery('.news-nav').index(this);
-		if (newsSpanPosition > 0){
+    jQuery('#news-carousel a').click(function(event){
+		event.preventDefault();
+		
+	    newsPosition = jQuery(this).index();
+	    var adjusted = -(newsPosition-1)*100;
+        jQuery('#news-items').css('left', adjusted+'%');
+        jQuery('#news-carousel a').removeClass('orange-text');
+        jQuery(this).addClass('orange-text');
+    });
+    jQuery('#news-carousel span').click(function(){
+	    var newsOverflowWidth = jQuery('#news-items').width();
+	    var newsOverflowLeft = jQuery('#news-items').css('left');
+	    var windowWidth = jQuery(window).width();
+	    var spanNewsPosition = jQuery(this).index();
+	    var newsOrange = function(){
+		    jQuery('#news-carousel a').removeClass('orange-text');
+		    jQuery('#news-carousel a:nth-child('+(newsPosition+1)+')').addClass('orange-text');
+	    };
+		
+		if (spanNewsPosition > 0){
 			newsPosition++;
 			if (newsPosition > newsCount) {
-				jQuery('#news-cell').css('left', 0);
+				jQuery('#news-items').css('left', 0);
 				newsPosition=1;
+				newsOrange();
 			} else {
-				jQuery('#news-cell').css('left', -((newsPosition-1)*100)+'%');
+				jQuery('#news-items').css('left', -((newsPosition-1)*100)+'%');
+				newsOrange();
 			}
 		} else {
 			newsPosition--;
 			if (newsPosition < 1) {
-				jQuery('#news-cell').css('left', -((newsCount-1)*100)+'%');
+				jQuery('#news-items').css('left', -((newsCount-1)*100)+'%');
 				newsPosition=newsCount;
+				newsOrange();
 			} else {
-				jQuery('#news-cell').css('left', -((newsPosition-1)*100)+'%');
+				jQuery('#news-items').css('left', -((newsPosition-1)*100)+'%');
+				newsOrange();
 			}
 		}
 	});
