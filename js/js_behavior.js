@@ -271,6 +271,15 @@ jQuery(document).ready(function(jQuery) {
 	jQuery('#artist-carousel').insertAfter(jQuery('#artists-header'));
 	jQuery('#artist-carousel span').addClass('js-positioned');
 	
+	//presentational map copy placement on narrow
+	var $mapCopy = jQuery('#map-copy');
+	var mapCopyHeight = jQuery('#map-copy').height();
+	$mapCopy.css({
+		'position'	 : 'absolute',
+		'top'		 : '50%',
+		'margin-top' : -mapCopyHeight/2
+	});
+	
 	//initial call of mapBehavior()
 	mapBehavior();
 	
