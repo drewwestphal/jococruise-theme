@@ -32,7 +32,11 @@ function mac_clean_menu() {
 		foreach ((array) $menu_items as $key => $menu_item) {
 			$title = $menu_item->title;
 			$url = $menu_item->url;
-			$menu_list .= "\t\t\t\t\t". '<li><a href="'. $url .'"><span>'. $title .'</span></a></li>' ."\n";
+			if (is_front_page()){
+				$menu_list .= "\t\t\t\t\t". '<li><a href="'. $url .'"><span>'. $title .'</span></a></li>' ."\n";
+			} else {
+				$menu_list .= "\t\t\t\t\t". '<li><a href="/'. $url .'"><span>'. $title .'</span></a></li>' ."\n";
+			}
 		}
 	} else {
 		// $menu_list = '<!-- no list defined -->';
