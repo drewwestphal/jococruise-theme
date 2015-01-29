@@ -29,7 +29,7 @@
 				'ignore_sticky_posts' => 1
 			);
 			$stick_query = new WP_Query($nav_args);
-			if (isset($sticky[0])) { ?>
+			if (isset($sticky[0]) && is_home()) { ?>
 				<a id="navbar-title-headline" href="<?php the_permalink(); ?>" class="navbar-item-left toggle">
 				<span class="nav-headline"><?php the_title(); ?></span><span class="glyphicon glyphicon glyphicon-menu-right"></span>
 				</a>
