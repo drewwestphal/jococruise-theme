@@ -2209,7 +2209,7 @@ SINGLE PAGE
 
 
 */
-.single{
+.page,.single{
 	padding-top:50px;
 }
 .single-artist .container-fluid{
@@ -2314,6 +2314,55 @@ SINGLE PAGE
 		float: right;
 		min-height: 500px;
 	}
+}
+
+/*
+
+	
+FAQ	
+
+
+*/
+.mac-page .container-fluid{
+	max-width: 680px;	
+	color:#144662;
+	font-family: surveyorBook,serif;
+	padding: 36px 0;
+}
+.mac-page a {
+	color:#144662;
+}
+.faq-section-header{
+	text-align: center;
+	font-size: 14px !important;
+	padding:3em 0 1em;
+}
+.mac-page a.faq-title{
+	font-family: surveyorBookBold,serif;
+}
+.faq-article{
+	position: relative;
+	border-bottom: 1px solid #a0b8c5;
+	padding: 1.5em 0 1.5em 3em;
+}
+.faq-article span{
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top: -16px;
+	font-size: 18px;
+	padding: 7px 10px;
+	border:1px solid #a0b8c5;
+	border-radius: 50%;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	font-family: gothamBook,sans-serif;
+}
+.faq-content{
+	margin: 1em 0 0 0;
+}
+.mac-page-toc{
+	margin: 36px auto;
 }
 
 /*
