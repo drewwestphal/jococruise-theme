@@ -2232,6 +2232,11 @@ SINGLE PAGE
 	height:50px;
 	line-height: 50px;
 }
+.bumper-container{
+	position: relative;
+	max-width: 680px;
+	margin: 0 auto;
+}
 .bumper a{
 	color:#f6f4ec;
 }
@@ -2244,6 +2249,17 @@ SINGLE PAGE
 .bumper-right{
 	text-align: right;
 	float: right;
+}
+#post-artist-info{
+	max-width: 400px;
+	position: relative;
+	height: 100%;
+	margin: 0 auto 36px;
+}
+#post-artist-info:after{
+  content:"";
+  display:table;
+  clear:both;
 }
 #post-artist-info img{
 	width:100%;
@@ -2269,7 +2285,35 @@ SINGLE PAGE
 .post-artist-text p{
 	margin: 0 0 2em;
 }
-
+.post-artists-social{	
+	margin: -18px 0 0;
+}
+@media screen and (min-width:768px){
+	#post-artist-info{
+		max-width: 680px;
+	}
+	.post-artist-image{
+		margin: 36px 0 0;
+	}
+	.post-artist-text{
+		padding:36px 0 0 36px;
+	}
+	.post-artist-text h1{
+		font-size: 24px;
+	}
+	.post-artists-social{	
+		margin: 36px 0;
+	}
+	.post-left{
+		width:33%;
+		float: left;
+	}
+	.post-right{
+		width:66%;
+		float: right;
+		min-height: 500px;
+	}
+}
 
 /*
 	
