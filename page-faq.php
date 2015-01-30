@@ -1,5 +1,5 @@
-<section class="mac-page" id="page-faq">
-	<div class="container">
+<section class="mac-page headers" id="page-faq">
+	<div class="container-fluid">
 		<div class="col-xs-12 col-md-12">
 			<h1 class="orange-text"><?php the_title(); ?></h1>
 		    <?php if (have_posts()) : while (have_posts()) : the_post();?>
@@ -10,7 +10,7 @@
 				'posts_per_page' => -1 
 			);
 			?>
-		    <section class="mac-page-toc">
+		    <section class="mac-page-toc headers">
             <?php 
                 $faq_query = new WP_Query( array(
                     'post_type' => 'faq',
@@ -22,7 +22,8 @@
                    
                     $byHeader[get_field('faq_section_header', $post -> ID)][] = sprintf('
                     <article class="faq-article" id="%s">
-                    <a class="faq-show-hide" href="#">%s</a><br/>
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <a class="faq-show-hide faq-title" href="#">%s</a><br/>
                     <div style="display:none" class="faq-content">%s</div>
                     </article>
                     ', $post -> post_name, apply_filters( 'the_title', $post -> post_title), //
@@ -60,7 +61,7 @@
 		    </script>
 		    </section>
 			<script src="<?php bloginfo('template_directory'); ?>/js/js_behavior.js"></script>
-			<?php wp_footer(); ?>
 		</div>
 	</div>
 </section>
+<?php include 'footer.php'; ?>
