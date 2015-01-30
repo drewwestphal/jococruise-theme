@@ -46,10 +46,12 @@
 		        function toggleFaq(item,animate){
                    var mom = item.parent();
                    var bro = item.siblings('.faq-content');
+                   var plus = item.siblings('span');
                    // set this now... timing will affect result later
                    var brovis = !bro.is(':visible');
                    bro.slideToggle(animate?200:0);
                    mom.toggleClass('faq-article-maximize');
+                   plus.toggleClass('glyphicon-minus');
                    return mom.attr('id');
 		        }
 		    
