@@ -5,9 +5,9 @@ if (isset($_REQUEST['email']) && isset($_REQUEST['name']) && isset($_REQUEST['co
   $email = $_REQUEST['email'] ;
   $email = preg_replace("/[^A-Za-z0-9 ]/", '', $name) . ' <' . $email . '>' ;
   $comments = $_REQUEST['comments'] ;
-  $support = "Macaroni and Cruise Info <info@macaroniandcruise.com>" ;
+  $support = "JoCo Cruise Info <info@jococruisecrazy.com>" ;
     
-  mail($email, "Website Inquiry: Macaroni and Cruise",//
+  mail($email, "Website Inquiry: JoCo Cruise",//
   "Hi, thanks for writing. A real person will read this message and get back to you.
   \nName: $name
   \nComments: $comments\n", //
