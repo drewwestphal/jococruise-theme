@@ -1,3 +1,4 @@
+<?php include 'sponsors.php'; ?>
 <div class="clear"></div>
 </div>
 <footer>
