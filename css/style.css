@@ -256,6 +256,7 @@ a:hover,a:focus,a:visited {
 	height:auto;
 	position: relative;
 	top: 8px;
+	left: -10px;
 }
 #nav-arrow-to-top{
 	width:6%;
@@ -275,6 +276,9 @@ a:hover,a:focus,a:visited {
 	top:1px;
 }
 @media screen and (min-width:768px){
+	#navbar-title img{
+	left: 0;
+	}
 	#nav-arrow-to-top{
 		width:10%;
 		float:right;
@@ -2323,13 +2327,13 @@ FAQ
 
 
 */
-.mac-page .container-fluid{
+#page-faq .container-fluid{
 	max-width: 680px;	
 	color:#144662;
 	font-family: surveyorBook,serif;
 	padding: 36px;
 }
-.mac-page a {
+#page-faq a {
 	color:#144662;
 }
 .faq-section-header{
@@ -2364,8 +2368,8 @@ FAQ
 .mac-page-toc{
 	margin: 36px auto;
 }
-@media screen and (max-width:768px){
-	.mac-page .container-fluid{
+@media screen and (min-width:768px){
+	#page-faq .container-fluid{
 		padding: 36px 0;
 	}
 }
@@ -2385,6 +2389,7 @@ SPONSORS
 #sponsors .container-fluid{
 	padding:36px 0;
 	max-width:750px;
+	margin: 0 auto;
 }
 #sponsors h1{
 	padding:0 0 1em;
@@ -2393,15 +2398,21 @@ SPONSORS
 	width:100%;
 	padding:1em;
 }
+#sponsors img{
+	width:50%;
+	height:auto;
+	margin: 0 auto;
+}
 @media screen and (min-width:768px){
 	#sponsors p{
 		width:33%;
 		float:left;
 	}
-}
-#sponsors img{
-	width:100%;
-	height:auto;
+	#sponsors img{
+		width:100%;
+		height:auto;
+	}
+
 }
 
 /*
