@@ -2209,7 +2209,7 @@ SINGLE PAGE
 
 
 */
-.single-artist{
+.single{
 	padding-top:50px;
 }
 .single-artist .container-fluid{
@@ -2275,7 +2275,7 @@ SINGLE PAGE
 	margin: 0 0 1em;
 	font-family: surveyorBookBold, serif;
 	font-size: 18px;
-	border-bottom: 1px solid #144662;
+	text-decoration: underline;
 }
 .post-artist-text h2{
 	position: relative;
@@ -2284,6 +2284,7 @@ SINGLE PAGE
 }
 .post-artist-text p{
 	margin: 0 0 2em;
+	line-height: 1.25em;
 }
 .post-artists-social{	
 	margin: -18px 0 0;
