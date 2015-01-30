@@ -2327,7 +2327,7 @@ FAQ
 	max-width: 680px;	
 	color:#144662;
 	font-family: surveyorBook,serif;
-	padding: 36px 0;
+	padding: 36px;
 }
 .mac-page a {
 	color:#144662;
@@ -2364,7 +2364,11 @@ FAQ
 .mac-page-toc{
 	margin: 36px auto;
 }
-
+@media screen and (max-width:768px){
+	.mac-page .container-fluid{
+		padding: 36px 0;
+	}
+}
 /*
 	
 
