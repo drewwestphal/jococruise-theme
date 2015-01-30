@@ -46,9 +46,9 @@ function mac_clean_menu() {
 
 // sorry double quotes will break acf
 $faq_section_headers_ordered = array(
-    "What is a 'Macaroni and Cruise?'",
-    "Booking Questions",
-    "I'm Booked, So Now What?",
+    "About the Cruise'",
+    "Booking & Reservations",
+    "Planning for Your Cruise",
 );
 add_action( 'init', 'mac_register_theme_menu' );
 
