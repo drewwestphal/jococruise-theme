@@ -19,11 +19,11 @@
 	<?php get_footer(); ?>
 <?php } elseif ( is_page( 'FAQ' ) ){ ?>
 		
-		<?php include(bloginfo('template_directory').'page-faq.php'); ?>
+		<?php include('page-faq.php'); ?>
 		
 <?php } elseif ( is_page( 'News' ) ){ ?>
 		
-		<?php include(bloginfo('template_directory').'page-news.php'); ?>
+		<?php include('page-news.php'); ?>
 		
 <?php } else { 
     // regular old page style
