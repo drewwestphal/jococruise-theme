@@ -78,18 +78,21 @@ a:hover,a:focus,a:visited {
 	text-decoration: none;
 }
 .point-up{
+  transform: rotate(90deg);	
+  -o-transform: rotate(90deg);	
   -ms-transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);	
 }
 .rotate {
   -ms-transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
 }
 .hidden {
   height: 0;
   transition: height .27s;
+  -o-transition: height .27s;
   -moz-transition: height .27s;
   -webkit-transition: height .27s;
 }
@@ -441,6 +444,7 @@ p#hero-travel-description{
 	font-size: 13px;
 	padding: .75em 1em;
 	transition: background .27s;
+	-o-transition: background .27s;
 	-moz-transition: background .27s;
 	-webkit-transition: background .27s;
 }
@@ -513,6 +517,7 @@ NEWS
 	margin:5px auto 0px;
 	width:100%;
 	transition: left .27s;
+	-o-transition: left .27s;
 	-moz-transition: left .27s;
 	-webkit-transition: left .27s;
 }
@@ -558,6 +563,7 @@ NEWS
 	border-bottom: 1px solid #cdc5a5;
 	color:#cdc5a5;
 	transition: color .27s,border-bottom .27s;
+	-o-transition: color .27s,border-bottom .27s;
 	-moz-transition: color .27s,border-bottom .27s;
 	-webkit-transition: color .27s,border-bottom .27s;
 }
@@ -568,6 +574,7 @@ NEWS
 #news .more-link{
 	color:#cdc5a5;
 	transition: color .27s,border-bottom .27s;
+	-o-transition: color .27s,border-bottom .27s;
 	-moz-transition: color .27s,border-bottom .27s;
 	-webkit-transition: color .27s,border-bottom .27s;
 }
@@ -583,6 +590,7 @@ NEWS
 	top:15px;
 	text-transform: uppercase;
 	transition: color .27s,border-bottom .27s;
+	-o-transition: color .27s,border-bottom .27s;
 	-moz-transition: color .27s,border-bottom .27s;
 	-webkit-transition: color .27s,border-bottom .27s;
 }
@@ -654,6 +662,7 @@ MAILING LIST
 	position: relative;
 	left: 12px;
 	transition: background .27s;
+	-o-transition: background .27s;
 	-moz-transition: background .27s;
 	-webkit-transition: background .27s;
 }
@@ -741,6 +750,7 @@ ARTISTS
   width: auto;
   position: relative;
   transition: left .27s;
+  -o-transition: left .27s;
   -moz-transition: left .27s;
   -webkit-transition: left .27s;
 }
@@ -832,6 +842,7 @@ ARTISTS
 	color:#144662;
 	border-bottom:1px solid #144662;
 	transition: color .27s,border-bottom .27s;
+	-o-transition: color .27s,border-bottom .27s;
 	-moz-transition: color .27s,border-bottom .27s;
 	-webkit-transition: color .27s,border-bottom .27s;
 }
@@ -868,6 +879,7 @@ ARTISTS
 	border-top: 1px solid #144662;
 	border-bottom: 1px solid #144662;
 	transform:skewY(170deg);
+	-o-transform:skewY(170deg);
 	-webkit-transform:skewY(170deg);
 	padding: 5px 0 15px 0;
 }
@@ -962,6 +974,7 @@ MAP
 }
 .map-cities{
 	transform: scale(1.25);
+	-o-transform: scale(1.25);
 	-moz-transform: scale(1.25);
 	-webkit-transform: scale(1.25);
 	margin: 0 auto;
@@ -1008,6 +1021,7 @@ MAP
 	}
 	.map-cities{
 		transform: none;
+		-o-transform: none;
 		-moz-transform: none;
 		-webkit-transform: none;
 		max-width: none;
@@ -1166,6 +1180,7 @@ CONTACT
 	font-family: surveyorBook,serif;
 	border-bottom: 1px solid #cdc5a5;
 	transition: color .27s,border-bottom .27s;
+	-o-transition: color .27s,border-bottom .27s;
 	-moz-transition: color .27s,border-bottom .27s;
 	-webkit-transition: color .27s,border-bottom .27s;
 }
@@ -1251,6 +1266,7 @@ textarea::-webkit-input-placeholder {
 	border:0;
 	float: right;
 	transition: background .27s;
+	-o-transition: background .27s;
 	-moz-transition: background .27s;
 	-webkit-transition: background .27s;
 }
@@ -1945,6 +1961,7 @@ FAQ
   position: relative;
   left: 0;
   transition: left .27s;
+  -o-transition: left .27s;
   -moz-transition: left .27s;
   -webkit-transition: left .27s;
   overflow: hidden;
@@ -2017,6 +2034,7 @@ FAQ
 }
 .arrow-left{
 	transform: rotate(180deg);
+	-o-transform: rotate(180deg);
 	-webkit-transform: rotate(180deg);
 	left:-20px;
 }
