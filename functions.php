@@ -62,6 +62,9 @@ if (current_user_can('manage_options')) {
 
 add_action( 'wp_enqueue_scripts', 'blankslate_load_scripts' );
 
+//prevent creation of spacer p tags
+remove_filter( 'the_content', 'wpautop' );
+remove_filter( 'the_excerpt', 'wpautop' );
 
 function blankslate_load_scripts() {
     wp_enqueue_style('bootstrapcss', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css', array(), 1, 'screen');
