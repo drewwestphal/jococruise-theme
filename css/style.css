@@ -2471,9 +2471,12 @@ SPONSORS
 	margin: 0 auto;
 }
 @media screen and (min-width:768px){
-	#sponsors p,#sponsors img{
+	#sponsors p{
 		width:33%;
 		float:left;
+	}
+	#sponsors img{
+		width:100%;
 	}
 
 }
