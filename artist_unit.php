@@ -7,7 +7,11 @@
 		<p><?php the_field('artist_subtitle'); ?></p>
 	</div>
 	<div class="artists-description">
-		<?php the_excerpt(); ?>
+		<?php if ($post->post_content) {?>
+			<p><?php the_content('Read more&raquo;'); ?></p>
+		<?php  } else { ?>
+			<p><?php the_excerpt(); ?></p>
+		<?php  }; ?>	
 	</div>
 	<div class="artists-social">
 	<?php  if (get_field('artist_facebook')){ ?>
