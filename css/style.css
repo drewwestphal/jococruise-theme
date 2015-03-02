@@ -2404,7 +2404,7 @@ SPONSORS
 	text-align: center;
 }
 #sponsors .container-fluid{
-	padding:36px 0;
+	padding:36px 0 0;
 	max-width:750px;
 	margin: 0 auto;
 }
@@ -2421,13 +2421,9 @@ SPONSORS
 	margin: 0 auto;
 }
 @media screen and (min-width:768px){
-	#sponsors p{
+	#sponsors p,#sponsors img{
 		width:33%;
 		float:left;
-	}
-	#sponsors img{
-		width:100%;
-		height:auto;
 	}
 
 }
