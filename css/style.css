@@ -168,6 +168,11 @@ a:hover,a:focus,a:visited {
 		padding: 0 38px 0 23px;
 	}
 }
+@media screen and (min-width:1100px){
+	#nav .container{
+		max-width:960px;
+	}
+}
 .navbar-top{
 	overflow: hidden;
 	height:50px;
@@ -392,6 +397,11 @@ p#hero-travel-description{
 		font-size: 38px;
 	}
 }
+@media screen and (min-width:1100px){
+	#about .container-fluid{
+		max-width:960px;
+	}
+}
 #hero-travel-description-more{
 	float:left;
 	width:60%;
@@ -501,6 +511,11 @@ NEWS
 	max-width: 750px;
 	padding: 45px 15px;
 	text-align: center;
+}
+@media screen and (min-width:1100px){
+	#news .container-fluid{
+		max-width:960px;
+	}
 }
 #news-header h1{
 	color:#f5f1e9;
@@ -699,6 +714,11 @@ ARTISTS
 #artists .container-fluid{
 	padding:30px 30px;
 	max-width: 750px;
+}
+@media screen and (min-width:1100px){
+	#artists .container-fluid{
+		max-width:960px;
+	}
 }
 #artists-header{
 	text-align: center;
@@ -962,7 +982,7 @@ MAP
 	overflow: hidden;
 }
 #map .container-fluid{
-	max-width:1024px;
+	max-width:960px;
 }
 #map-background{
 	width:100%;
@@ -1115,6 +1135,11 @@ CONTACT
 #contact .container-fluid{
 	max-width: 780px;
 	padding: 0px 20px 30px;
+}
+@media screen and (min-width:1100px){
+	#contact .container-fluid{
+		max-width:960px;
+	}
 }
 #contact-header{
 	color:#f5f1e9;
@@ -1923,7 +1948,12 @@ FAQ
   font-family: surveyorBook, serif;
 }
 .faq.container-fluid{
-	max-width: 750px;
+	max-width: 925px;
+}
+@media screen and (min-width:1100px){
+	.faq .container-fluid{
+		max-width:960px;
+	}
 }
 #faq {
   background: #f5f1e9;
@@ -2259,6 +2289,11 @@ SINGLE PAGE
 	max-width: 680px;
 	margin: 0 auto;
 }
+@media screen and (min-width:1100px){
+	.bumper-container{
+		max-width:888px;
+	}
+}
 .bumper a{
 	color:#f6f4ec;
 }
@@ -2336,6 +2371,11 @@ SINGLE PAGE
 		min-height: 500px;
 	}
 }
+@media screen and (min-width:1100px){
+	#news .container-fluid{
+		max-width:768px;
+	}
+}
 
 /*
 
@@ -2349,6 +2389,11 @@ FAQ
 	color:#144662;
 	font-family: surveyorBook,serif;
 	padding: 36px;
+}
+@media screen and (min-width:1100px){
+	#page-faq .container-fluid{
+		max-width:768px;
+	}
 }
 #page-faq a {
 	color:#144662;
@@ -2407,6 +2452,11 @@ SPONSORS
 	padding:36px 0 0;
 	max-width:750px;
 	margin: 0 auto;
+}
+@media screen and (min-width:1100px){
+	#sponsors .container-fluid{
+		max-width:960px;
+	}
 }
 #sponsors h1{
 	padding:0 0 1em;
