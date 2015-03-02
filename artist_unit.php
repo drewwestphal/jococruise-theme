@@ -8,9 +8,9 @@
 	</div>
 	<div class="artists-description">
 		<?php if ($post->post_content) {?>
-			<p><?php the_content('Read more&raquo;'); ?></p>
+			<p><?php $content = get_the_content('Read more&raquo;'); echo $content; ?></p>
 		<?php  } else { ?>
-			<p><?php the_excerpt(); ?></p>
+			<p><?php $excerpt = get_the_excerpt(); echo $excerpt; ?></p>
 		<?php  }; ?>	
 	</div>
 	<div class="artists-social">
