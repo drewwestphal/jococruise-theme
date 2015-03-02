@@ -19,7 +19,7 @@
 						<?php the_post_thumbnail('full'); ?>
 					</div>
 					
-					<div class="post-artist-text post-right">
+					<div class="post-artist-text post-right headers">
 						<h1><?php the_title(); ?></h1>
 						<?php if (get_field('artist_subtitle')) {?>
 							<h2><?php the_field('artist_subtitle'); ?></h2>

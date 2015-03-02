@@ -2295,9 +2295,8 @@ SINGLE PAGE
 .post-artist-text h1{
 	width: intrinsic;
 	margin: 0 0 1em;
-	font-family: surveyorBookBold, serif;
 	font-size: 18px;
-	text-decoration: underline;
+	letter-spacing: 1px;
 }
 .post-artist-text h2{
 	position: relative;
