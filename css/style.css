@@ -2380,10 +2380,11 @@ SINGLE PAGE
 /*
 
 	
-FAQ	
+FAQ	and NEWS
 
 
 */
+#page-news .container-fluid,
 #page-faq .container-fluid{
 	max-width: 680px;	
 	color:#144662;
@@ -2431,10 +2432,24 @@ FAQ
 	margin: 36px auto;
 }
 @media screen and (min-width:768px){
+	#page-news .container-fluid,
 	#page-faq .container-fluid{
 		padding: 36px 0;
 	}
 }
+
+#page-news article{
+	margin:1em 0;
+}
+
+#page-news article h2 a{
+	font-size: 20px;
+	color:#23527c;
+	font-family: surveyorBookBold,serif;
+	border-bottom: 1px solid #23527c;
+	line-height:2em;
+}
+
 /*
 	
 
