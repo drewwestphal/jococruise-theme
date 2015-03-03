@@ -26,7 +26,7 @@
 						</article>
 				<?php  }; ?>	
 			<?php  }; ?>
-			<?php wp_footer(); ?>	
 		</div>
 	</div>
 </section>
+<?php get_footer(); ?>	
