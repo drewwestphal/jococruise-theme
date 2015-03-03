@@ -22,7 +22,7 @@
                    
                     $byHeader[get_field('faq_section_header', $post -> ID)][] = sprintf('
                     <article class="faq-article" id="%s">
-                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="faq-button glyphicon glyphicon-plus"></span>
                     <a class="faq-show-hide faq-title" href="#">%s</a><br/>
                     <div style="display:none" class="faq-content">%s</div>
                     </article>
@@ -59,6 +59,9 @@
                     history.pushState(null, null, '#'+toggleFaq($(this),true));
                    return false;
 		        });
+		        $('.faq-button').click(function(){
+			    		$(this).siblings('.faq-show-hide').click();
+			    });
                 window.location.hash.length>1 && toggleFaq($('#'+location.hash.substr(1)+' a.faq-show-hide'), false);
 		    </script>
 		    </section>
