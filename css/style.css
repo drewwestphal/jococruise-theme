@@ -2437,7 +2437,9 @@ FAQ	and NEWS
 		padding: 36px 0;
 	}
 }
-
+#page-news .container-fluid{
+	min-height: 500px;
+}
 #page-news article{
 	margin:1em 0;
 }
