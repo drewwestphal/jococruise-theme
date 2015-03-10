@@ -1,5 +1,4 @@
-<?php
-	$x = get_field('city_x_position');
+<?php 	$x = get_field('city_x_position');
 	$left_position = ($x/$map_width)*100;
 	$y = get_field('city_y_position');
 	$top_position = ($y/$map_height)*100;

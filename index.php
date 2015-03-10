@@ -1,5 +1,4 @@
-<?php
-include 'theme_variables.php';
+<?php include 'theme_variables.php';
 get_header(); 
 
 ?>
@@ -40,8 +39,7 @@ get_header();
 	</section>
 	<?php }; ?>
 <!--news-->
-<?php
-$n=0;
+<?php $n=0;
 $news_args = array(
 	'post_type' 	 	 => 'post',
 	'posts_per_page' => 5,
@@ -58,7 +56,7 @@ if ($news_query->have_posts()) {
 				<div id="news-header">
 					<?php if (strlen($news_header) > 0){ ?>
 						<h1><?php echo $news_header; ?></h1>
-					<? }; ?>
+					<?php  }; ?>
 				</div>
 				<?php if ($news_count > 1) { ?>
 				<div class="carousel" id="news-carousel">
@@ -72,8 +70,7 @@ if ($news_query->have_posts()) {
 				<?php }; ?>
 				<div id="news-container">
 					<div id="news-items">
-						<?php
-							while ($news_query->have_posts()) {
+						<?php 							while ($news_query->have_posts()) {
 								$news_query->the_post();
 								echo '<div class="news-item">';
 								include('news-unit.php');
@@ -110,7 +107,7 @@ wp_reset_postdata();
 					<img src="<?php bloginfo('template_directory'); ?>/img/artist_divider.png">
 					<?php if (strlen($artists_header) > 0){ ?>
 						<h1><?php echo $artists_header; ?></h1>
-					<? }; ?>
+					<?php  }; ?>
 				</div>
 				<div id="artists-artist-container">
 					<div id="overflow">
@@ -220,8 +217,7 @@ wp_reset_postdata();
 			<div class="col-xs-12 col-md-12">
 				<div class="map-cities">
 					<img src="<?php bloginfo('template_directory'); ?>/img/map.png" id="map-background">		
-					<?php
-					//get the cities
+					<?php 					//get the cities
 					$map_width = 1650;
 					$map_height = 860;
 					$args = array(
@@ -278,7 +274,7 @@ wp_reset_postdata();
 							<?php echo $cont_gen_q_addy; ?>
 						</div>
 					</div>
-					<? }; ?>
+					<?php  }; ?>
 					<?php if (strlen($cont_book_q_addy) > 0){ ?>
 					<div class="contact-info-group">
 						<div class="contact-icon" id="contact-icon-booking">
@@ -289,7 +285,7 @@ wp_reset_postdata();
 							<?php echo $cont_book_q_addy; ?>
 						</div>					
 					</div>
-					<? }; ?>
+					<?php  }; ?>
 					<?php if (strlen($cont_tel_addy) > 0){ ?>					
 					<div class="contact-info-group">
 						<div class="contact-icon" id="contact-icon-phone">
@@ -300,17 +296,17 @@ wp_reset_postdata();
 							<?php echo $cont_tel_addy; ?>
 						</div>
 					</div>
-					<? }; ?>
+					<?php  }; ?>
 					<div class="contact-info-group contact-social">
 						<?php if (strlen($cruise_fb) > 0){ ?>
 						<a href="<?php echo $cruise_fb; ?>" class="contact-social-icon facebook" target="_blank"></a>
-						<? }; ?>
+						<?php  }; ?>
 						<?php if (strlen($cruise_twitter) > 0){ ?>
 						<a href="<?php echo $cruise_twitter; ?>" class="contact-social-icon twitter" target="_blank"></a>
-						<? }; ?>
+						<?php  }; ?>
 						<?php if (strlen($cruise_rss) > 0){ ?>
 						<a href="<?php echo $cruise_rss; ?>" class="contact-social-icon rss" target="_blank"></a>
-						<? }; ?>
+						<?php  }; ?>
 					</div>
 				</div>
 				<div id="contact-form-container">
@@ -373,8 +369,7 @@ wp_reset_postdata();
 						<span class="arrow arrow-right"></span>
 					</div>	
 					<div id="faq-overflow" style="left:0;">
-						<?php
-						$faqlink = get_page_by_title('FAQ');
+						<?php 						$faqlink = get_page_by_title('FAQ');
                         $faqlink = get_permalink($faqlink -> ID);
                         $markup = '<div class="faq-group">';
                         $m = 1;

@@ -21,7 +21,7 @@
 			        <span class="icon-bar"></span>
 				</button>
 			</div>
-			<?
+			<?php 
 			$sticky = get_option('sticky_posts');
 			$nav_args = array(
 				'posts_per_page' => 1,
@@ -48,8 +48,7 @@
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav" id="nav-dropdown">
-				<?php
-				$booking_enabled  = get_option('mac_settings')['mac_booking_enabled'];	
+				<?php 				$booking_enabled  = get_option('mac_settings')['mac_booking_enabled'];	
 				if ($booking_enabled == 1) {  ?>
 					<li><a href="<?php echo get_option('mac_settings')['mac_booking_url']; ?>"><span>Book Now</span></a></li>
 					<li><a href="/"><span>Home</span></a></li>

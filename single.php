@@ -34,15 +34,15 @@
 					<?php  if (get_field('artist_facebook')){ ?>
 							<a href="<?php echo get_field('artist_facebook'); ?>" class="social-icon facebook" target="_blank">
 							</a>
-						<? };
+						<?php  };
 						   if (get_field('artist_twitter')){ ?>
 							<a href="<?php echo get_field('artist_twitter'); ?>"  class="social-icon twitter" target="_blank">
 							</a>
-						<? };
+						<?php  };
 						   if (get_field('artist_youtube')){ ?>
 							<a class="social-icon youtube" href="<?php echo get_field('artist_youtube'); ?>" class="social-icon youtube" target="_blank">
 							</a>
-						<? }; ?>
+						<?php  }; ?>
 					</div>
 			<?php endwhile; endif; ?>
 				</article>

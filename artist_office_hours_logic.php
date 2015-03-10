@@ -1,5 +1,4 @@
-<?php
-//if it's the first item
+<?php //if it's the first item
 if ($i == -4){
 	?>
 	<div class="artist_unit artists-artist" id="item-<?php echo $j; ?>">
