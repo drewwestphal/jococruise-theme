@@ -264,7 +264,7 @@ function mac_booking_url_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input type='text' name='mac_settings[mac_booking_url]' value='<?php echo $options['mac_booking_url']; ?>'>
+	<input type="text" size="80" name='mac_settings[mac_booking_url]' value='<?php echo $options['mac_booking_url']; ?>'>
 	<?php 
 }
 
@@ -272,7 +272,7 @@ function mac_contact_email_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input type='text' name='mac_settings[mac_contact_email]' value='<?php echo $options['mac_contact_email']; ?>'>
+	<input type="text" size="80" name='mac_settings[mac_contact_email]' value='<?php echo $options['mac_contact_email']; ?>'>
 	<?php 
 }
 
@@ -280,7 +280,7 @@ function mac_travel_dates_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input type='text' name='mac_settings[mac_travel_dates]' value='<?php echo $options['mac_travel_dates']; ?>'>
+	<input type="text" size="80" name='mac_settings[mac_travel_dates]' value='<?php echo $options['mac_travel_dates']; ?>'>
 	<?php 
 }
 
@@ -288,7 +288,7 @@ function mac_button_cta_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input type='text' name='mac_settings[mac_button_cta]' value='<?php echo $options['mac_button_cta']; ?>'>
+	<input type="text" size="80" name='mac_settings[mac_button_cta]' value='<?php echo $options['mac_button_cta']; ?>'>
 	<?php 
 }
 
@@ -296,7 +296,7 @@ function mac_travel_description_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<textarea cols='40' rows='5' name='mac_settings[mac_travel_description]'><?php echo $options['mac_travel_description']; ?></textarea>
+	<textarea cols='80' rows='8' name='mac_settings[mac_travel_description]'><?php echo $options['mac_travel_description']; ?></textarea>
 	<?php 
 }
 
@@ -304,7 +304,7 @@ function mac_travel_description_more_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<textarea cols='40' rows='5' name='mac_settings[mac_travel_description_more]'><?php echo $options['mac_travel_description_more']; ?></textarea>
+	<textarea cols='80' rows='8' name='mac_settings[mac_travel_description_more]'><?php echo $options['mac_travel_description_more']; ?></textarea>
 	<?php 
 }
 
@@ -313,7 +313,7 @@ function mac_mailing_list_cta_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<textarea cols='40' rows='3' name='mac_settings[mac_mailing_list_cta]'><?php echo $options['mac_mailing_list_cta']; ?></textarea>
+	<textarea cols='80' rows='3' name='mac_settings[mac_mailing_list_cta]'><?php echo $options['mac_mailing_list_cta']; ?></textarea>
 	<?php 
 }
 
@@ -322,7 +322,7 @@ function mac_facebook_url_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input type='text' name='mac_settings[mac_facebook_url]' value='<?php echo $options['mac_facebook_url']; ?>'>
+	<input type="text" size="80" name='mac_settings[mac_facebook_url]' value='<?php echo $options['mac_facebook_url']; ?>'>
 	<?php 
 }
 
@@ -331,7 +331,7 @@ function mac_twitter_url_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input type='text' name='mac_settings[mac_twitter_url]' value='<?php echo $options['mac_twitter_url']; ?>'>
+	<input type="text" size="80" name='mac_settings[mac_twitter_url]' value='<?php echo $options['mac_twitter_url']; ?>'>
 	<?php 
 }
 
@@ -339,7 +339,7 @@ function mac_feed_url_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input type='text' name='mac_settings[mac_feed_url]' value='<?php echo $options['mac_feed_url']; ?>'>
+	<input type="text" size="80" name='mac_settings[mac_feed_url]' value='<?php echo $options['mac_feed_url']; ?>'>
 	<?php 
 }
 
@@ -348,7 +348,7 @@ function mac_talent_header_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<textarea cols='40' rows='3' name='mac_settings[mac_talent_header]'><?php echo $options['mac_talent_header']; ?></textarea>
+	<textarea cols='80' rows='3' name='mac_settings[mac_talent_header]'><?php echo $options['mac_talent_header']; ?></textarea>
 	<?php 
 }
 
@@ -357,7 +357,7 @@ function mac_general_questions_header_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input name='mac_settings[mac_general_questions_header]' value='<?php echo $options['mac_general_questions_header']; ?>'>
+	<input type="text" size="80" name='mac_settings[mac_general_questions_header]' value='<?php echo $options['mac_general_questions_header']; ?>'>
 	</input>
 	<?php 
 }
@@ -366,7 +366,7 @@ function mac_general_questions_address_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input name='mac_settings[mac_general_questions_address_header]' value='<?php echo $options['mac_general_questions_address_header']; ?>'>
+	<input type="text" size="80" name='mac_settings[mac_general_questions_address_header]' value='<?php echo $options['mac_general_questions_address_header']; ?>'>
 	</input>
 	<?php 
 }
@@ -375,7 +375,7 @@ function mac_booking_questions_header_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input name='mac_settings[mac_booking_questions_header]' value='<?php echo $options['mac_booking_questions_header']; ?>'>
+	<input type="text" size="80" name='mac_settings[mac_booking_questions_header]' value='<?php echo $options['mac_booking_questions_header']; ?>'>
 	</input>
 	<?php 
 }
@@ -384,7 +384,7 @@ function mac_booking_questions_address_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input name='mac_settings[mac_booking_questions_address_header]' value='<?php echo $options['mac_booking_questions_address_header']; ?>'>
+	<input type="text" size="80" name='mac_settings[mac_booking_questions_address_header]' value='<?php echo $options['mac_booking_questions_address_header']; ?>'>
 	</input>
 	<?php 
 }
@@ -393,7 +393,7 @@ function mac_phone_questions_header_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input name='mac_settings[mac_phone_questions_header]' value='<?php echo $options['mac_phone_questions_header']; ?>'>
+	<input type="text" size="80" name='mac_settings[mac_phone_questions_header]' value='<?php echo $options['mac_phone_questions_header']; ?>'>
 	</input>
 	<?php 
 }
@@ -402,7 +402,7 @@ function mac_phone_questions_address_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input name='mac_settings[mac_phone_questions_address_header]' value='<?php echo $options['mac_phone_questions_address_header']; ?>'>
+	<input type="text" size="80" name='mac_settings[mac_phone_questions_address_header]' value='<?php echo $options['mac_phone_questions_address_header']; ?>'>
 	</input>
 	<?php 
 }
@@ -411,7 +411,7 @@ function mac_map_copy_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<textarea cols='40' rows='3' name='mac_settings[mac_map_copy]'><?php echo $options['mac_map_copy']; ?></textarea>
+	<textarea cols='80' rows='3' name='mac_settings[mac_map_copy]'><?php echo $options['mac_map_copy']; ?></textarea>
 	<?php 
 }
 //news
@@ -420,21 +420,21 @@ function mac_news_header_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<textarea cols='40' rows='3' name='mac_settings[mac_news_header]'><?php echo $options['mac_news_header']; ?></textarea>
+	<textarea cols='80' rows='3' name='mac_settings[mac_news_header]'><?php echo $options['mac_news_header']; ?></textarea>
 	<?php 
 }
 function mac_news_view_all_render(  ) { 
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input name='mac_settings[mac_news_view_all]' value='<?php echo $options['mac_news_view_all']; ?>'></input>
+	<input type="text" size="80" name='mac_settings[mac_news_view_all]' value='<?php echo $options['mac_news_view_all']; ?>'></input>
 	<?php 
 }
 function mac_news_view_all_url_render(  ) { 
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input name='mac_settings[mac_news_view_all_url]' value='<?php echo $options['mac_news_view_all_url']; ?>'></input>
+	<input type="text" size="80" name='mac_settings[mac_news_view_all_url]' value='<?php echo $options['mac_news_view_all_url']; ?>'></input>
 	<?php 
 }
 
