@@ -296,8 +296,7 @@ function mac_travel_description_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<textarea cols='40' rows='5' name='mac_settings[mac_travel_description]'><?php echo $options['mac_travel_description']; ?>
- 	</textarea>
+	<textarea cols='40' rows='5' name='mac_settings[mac_travel_description]'><?php echo $options['mac_travel_description']; ?></textarea>
 	<?php 
 }
 
@@ -305,8 +304,7 @@ function mac_travel_description_more_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<textarea cols='40' rows='5' name='mac_settings[mac_travel_description_more]'><?php echo $options['mac_travel_description_more']; ?>
- 	</textarea>
+	<textarea cols='40' rows='5' name='mac_settings[mac_travel_description_more]'><?php echo $options['mac_travel_description_more']; ?></textarea>
 	<?php 
 }
 
