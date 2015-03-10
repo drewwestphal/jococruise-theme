@@ -26,7 +26,8 @@ function cptui_register_my_cpt_artist() {
             'thumbnail',
             'author',
             'page-attributes',
-            'post-formats'
+            'post-formats',
+            'wpcom-markdown'
         ),
         'labels' => array(
             'name' => 'Artist',
@@ -43,6 +44,55 @@ function cptui_register_my_cpt_artist() {
             'not_found' => 'No Artist Found',
             'not_found_in_trash' => 'No Artist Found in Trash',
             'parent' => 'Parent Artist',
+        )
+    ));
+}
+
+add_action('init', 'cptui_register_my_cpt_faq');
+function cptui_register_my_cpt_faq() {
+    register_post_type('faq', array(
+        'label' => 'FAQ',
+        'description' => '',
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'capability_type' => 'post',
+        'map_meta_cap' => true,
+        'hierarchical' => false,
+        'rewrite' => array(
+            'slug' => 'faq',
+            'with_front' => true
+        ),
+        'query_var' => true,
+        'supports' => array(
+            'title',
+            'editor',
+            'excerpt',
+            'trackbacks',
+            'custom-fields',
+            'comments',
+            'revisions',
+            'thumbnail',
+            'author',
+            'page-attributes',
+            'post-formats',
+            'wpcom-markdown'
+        ),
+        'labels' => array(
+            'name' => 'FAQ',
+            'singular_name' => 'FAQ',
+            'menu_name' => 'FAQ',
+            'add_new' => 'Add FAQ',
+            'add_new_item' => 'Add New FAQ',
+            'edit' => 'Edit',
+            'edit_item' => 'Edit FAQ',
+            'new_item' => 'New FAQ',
+            'view' => 'View FAQ',
+            'view_item' => 'View FAQ',
+            'search_items' => 'Search FAQ',
+            'not_found' => 'No FAQ Found',
+            'not_found_in_trash' => 'No FAQ Found in Trash',
+            'parent' => 'Parent FAQ',
         )
     ));
 }
@@ -74,7 +124,8 @@ function cptui_register_my_cpt_about() {
             'thumbnail',
             'author',
             'page-attributes',
-            'post-formats'
+            'post-formats',
+            'wpcom-markdown'
         ),
         'labels' => array(
             'name' => 'About',
@@ -122,7 +173,8 @@ function cptui_register_my_cpt_sponsors() {
             'thumbnail',
             'author',
             'page-attributes',
-            'post-formats'
+            'post-formats',
+            'wpcom-markdown'
         ),
         'labels' => array(
             'name' => 'Sponsors',
