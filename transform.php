@@ -6,7 +6,7 @@
  *
  *
  *
- find . -name "*.php" -exec php -d short_open_tag=On "./transform.php" "{}"+
+ find . -name "*.php" -exec php -d short_open_tag=On "./transform.php" "{}" +
  *
  *
  */
