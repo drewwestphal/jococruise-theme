@@ -313,8 +313,7 @@ function mac_mailing_list_cta_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<textarea cols='40' rows='3' name='mac_settings[mac_mailing_list_cta]'><?php echo $options['mac_mailing_list_cta']; ?>
-	</textarea>
+	<textarea cols='40' rows='3' name='mac_settings[mac_mailing_list_cta]'><?php echo $options['mac_mailing_list_cta']; ?></textarea>
 	<?php 
 }
 
@@ -349,8 +348,7 @@ function mac_talent_header_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<textarea cols='40' rows='3' name='mac_settings[mac_talent_header]'><?php echo $options['mac_talent_header']; ?>
-	</textarea>
+	<textarea cols='40' rows='3' name='mac_settings[mac_talent_header]'><?php echo $options['mac_talent_header']; ?></textarea>
 	<?php 
 }
 
@@ -413,8 +411,7 @@ function mac_map_copy_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<textarea cols='40' rows='3' name='mac_settings[mac_map_copy]'><?php echo $options['mac_map_copy']; ?>
-	</textarea>
+	<textarea cols='40' rows='3' name='mac_settings[mac_map_copy]'><?php echo $options['mac_map_copy']; ?></textarea>
 	<?php 
 }
 //news
@@ -423,8 +420,7 @@ function mac_news_header_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<textarea cols='40' rows='3' name='mac_settings[mac_news_header]'><?php echo $options['mac_news_header']; ?>
-	</textarea>
+	<textarea cols='40' rows='3' name='mac_settings[mac_news_header]'><?php echo $options['mac_news_header']; ?></textarea>
 	<?php 
 }
 function mac_news_view_all_render(  ) { 
