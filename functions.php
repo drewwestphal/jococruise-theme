@@ -172,6 +172,7 @@ return $count;
 }
 }
 require_once(__DIR__.'/include/acf.php');
+require_once(__DIR__.'/include/cpt.php');
 
 
 
