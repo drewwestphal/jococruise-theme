@@ -6,7 +6,7 @@
  *
  *
  *
- find . -name "*.php" -exec php -d short_open_tag=On "/Users/drew/Dropbox/Library/Aptana 3 Mac/macandcruise-theme/transform.php" "{}"+
+ find . -name "*.php" -exec php -d short_open_tag=On "./transform.php" "{}"+
  *
  *
  */
@@ -20,6 +20,8 @@ if(count($argv) < 2)
 foreach(array_slice($argv,1) as $file) {
     if(__FILE__ === realpath($file))
         continue;
+    
+    echo " ... processing $file ... \n";
 
     $content = file_get_contents($file);
     $tokens = token_get_all($content);
@@ -30,7 +32,7 @@ foreach(array_slice($argv,1) as $file) {
             list($index, $code, $line) = $token;
             switch($index) {
                 case T_OPEN_TAG_WITH_ECHO :
-                    $output .= '<?php echo ';
+                    $output .= '<?= ';
                     break;
                 case T_OPEN_TAG :
                     $output .= '<?php ';
