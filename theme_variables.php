@@ -1,6 +1,6 @@
 <?php
 
-$settings = $settings;
+$settings = get_option('mac_settings');
 //variables
 $site_title = get_bloginfo('name');
 $booking_url = $settings['mac_booking_url'];
