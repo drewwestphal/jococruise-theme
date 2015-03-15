@@ -3,7 +3,7 @@
 	<div class="container-fluid headers">
 		<div class="col-xs-12 col-md-12">
 			<?php $args = array(
-				'post_type' => 'sponsors',
+				'post_type' => 'sponsor',
 				'LIMIT'	=> '1'
 			);
 			$sponsors_query = new WP_Query( $args );
