@@ -1,3 +1,5 @@
+<?php get_header(); ?>
+
 <section class="mac-page headers" id="page-faq">
 	<div class="container-fluid">
 		<div class="col-xs-12 col-md-12">
