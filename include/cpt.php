@@ -148,8 +148,8 @@ function cptui_register_my_cpt_about() {
 
 add_action('init', 'cptui_register_my_cpt_sponsors');
 function cptui_register_my_cpt_sponsors() {
-    register_post_type('sponsors', array(
-        'label' => 'sponsors',
+    register_post_type('sponsor', array(
+        'label' => 'sponsor',
         'description' => '',
         'public' => true,
         'show_ui' => true,
@@ -158,7 +158,7 @@ function cptui_register_my_cpt_sponsors() {
         'map_meta_cap' => true,
         'hierarchical' => false,
         'rewrite' => array(
-            'slug' => 'sponsors',
+            'slug' => 'sponsor',
             'with_front' => true
         ),
         'query_var' => true,
@@ -180,7 +180,7 @@ function cptui_register_my_cpt_sponsors() {
             'name' => 'Sponsors',
             'singular_name' => 'Sponsor',
             'menu_name' => 'Sponsors',
-            'add_new' => 'Add Sponsors',
+            'add_new' => 'Add Sponsor',
             'add_new_item' => 'Add New Sponsor',
             'edit' => 'Edit',
             'edit_item' => 'Edit Sponsor',
@@ -194,4 +194,53 @@ function cptui_register_my_cpt_sponsors() {
         )
     ));
 }
+add_action('init', 'cptui_register_my_cpt_cities');
+function cptui_register_my_cpt_cities() {
+    register_post_type('city', array(
+        'label' => 'city',
+        'description' => '',
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'capability_type' => 'post',
+        'map_meta_cap' => true,
+        'hierarchical' => false,
+        'rewrite' => array(
+            'slug' => 'city',
+            'with_front' => true
+        ),
+        'query_var' => true,
+        'supports' => array(
+            'title',
+            'editor',
+            'excerpt',
+            'trackbacks',
+            'custom-fields',
+            'comments',
+            'revisions',
+            'thumbnail',
+            'author',
+            'page-attributes',
+            'post-formats',
+            'wpcom-markdown'
+        ),
+        'labels' => array(
+            'name' => 'Cities',
+            'singular_name' => 'City',
+            'menu_name' => 'Cities',
+            'add_new' => 'Add City',
+            'add_new_item' => 'Add New City',
+            'edit' => 'Edit',
+            'edit_item' => 'Edit City',
+            'new_item' => 'New City',
+            'view' => 'View Cities',
+            'view_item' => 'View Cities',
+            'search_items' => 'Search Cities',
+            'not_found' => 'No Cities Found',
+            'not_found_in_trash' => 'No Cities Found in Trash',
+            'parent' => 'Parent Cities',
+        )
+    ));
+}
+
 ?>
