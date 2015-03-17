@@ -4,47 +4,60 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><?php wp_title( ' | ', true, 'right' ); ?></title>
-<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
-<link rel="stylesheet" type="text/css" href="/wp-content/themes/MacAndCruise/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="/wp-content/themes/MacAndCruise/css/custom.css" />
-<link href='http://fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
 
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<div id="wrapper" class="container-fluid hfeed">
-	<div class="container-fluid col-md-8">
-		<div class="row">
-			<header id="header" role="banner" class="col-md-offset-1">
-				<section id="branding">
-					<div id="site-title"><h1>Macaroni<br><span class="orange">&</span> Cruise</h1></div>
-					<div id="site-description">
-						<h2><?php bloginfo( 'description' ); ?></h2>
-						<h3>August 3-7, 2015</h3>
-					</div>
-					<p>Sailing from Miami to Grand Bahama Island, Nassau and Great Stirrup Cay aboard Norwegian Cruise Lines&rsquo; <span class="title">Norwegian Sky</span></p>
-					<h4>Join the mailing list to be the first to get complete details!</h4>
-					<?php if( function_exists( 'mc4wp_form' ) ) {
-					    mc4wp_form();
-					} ?>
-					<ul>
-						<h2>Featuring:</h2>
-						<li>Lucky Diaz & the Family Jam Band</li>
-						<li>Tim Kubart and The Space Cadets</li>
-						<li>Secret Agent 23 Skidoo</li>
-						<li>The Doubleclicks</li>
-						<li>Nathan Sawaya</li>
-						<li>and more!</li>
-					</ul>
-					<p id="brought-by">
-					From the people who brought you JoCo Cruise Crazy & Spare the Rock, Spoil the Child
-					</p>
-					<div class="social">
-						<a href="https://twitter.com/macandcruise"><img src="/wp-content/themes/MacAndCruise/img/twitter.png"></a>
-						<a href="https://www.facebook.com/macaroniandcruise"><img src="/wp-content/themes/MacAndCruise/img/facebook.png"></a>
-					</div>
-				</section>
-			</header>
+<div id="wrapper" class="hfeed">
+
+<nav id="nav" class="navbar-default <?php if (current_user_can('manage_options')) { echo 'logged-in'; }?>">
+	<div class="container" id="nav-container">
+		<div class="navbar-top">
+			<div id="nav-button" class="navbar-item-left">
+				<button type="button" id="nav-button-inner" class="navbar-toggle navbar-item-left collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+				</button>
+			</div>
+			<?php 
+			$sticky = get_option('sticky_posts');
+			$nav_args = array(
+				'posts_per_page' => 1,
+				'post__in'  => $sticky,
+				'ignore_sticky_posts' => 1
+			);
+			$stick_query = new WP_Query($nav_args);
+			if (isset($sticky[0]) && is_home()) { ?>
+				<a id="navbar-title-headline" href="<?php the_permalink(); ?>" class="navbar-item-left toggle">
+				<span class="nav-headline"><?php the_title(); ?></span><span class="glyphicon glyphicon glyphicon-menu-right"></span>
+				</a>
+				<a id="navbar-title" href="#wrapper" class="navbar-item-left toggle nav-hidden">
+					<img src="<?php bloginfo('template_directory'); ?>/img/hero_JoCo_LoGo.png" alt="A styled JoCo Cruise logotype." id="nav-joco-logo">
+				</a>
+	  <?php } else { ?>
+				<a id="navbar-title" href="#wrapper" class="navbar-item-left">
+					<img src="<?php bloginfo('template_directory'); ?>/img/hero_JoCo_LoGo.png" alt="A styled JoCo Cruise logotype." id="nav-joco-logo">
+				</a>
+	  <?php } ?>
+			<a href="#wrapper" id="nav-arrow-to-top" class="navbar-item-right<?php if (isset($sticky[0])) { echo ' toggle nav-hidden'; }; ?>">
+				<span class="glyphicon glyphicon-menu-up"></span>
+				<br>Top
+			</a>
 		</div>
-	</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav" id="nav-dropdown">
+				<?php 				$booking_enabled  = get_option('mac_settings')['mac_booking_enabled'];	
+				if ($booking_enabled == 1) {  ?>
+					<li><a href="<?php echo get_option('mac_settings')['mac_booking_url']; ?>"><span>Book Now</span></a></li>
+					<li><a href="/"><span>Home</span></a></li>
+				<?php 
+				}
+					mac_clean_menu();
+				?>				
+			</ul>
+		</div>
+	</div>	
+<?php wp_reset_postdata(); ?>
+</nav>

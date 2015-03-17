@@ -1,0 +1,51 @@
+.canvas {
+    background: #2a3a64;
+    padding: 25px 0 44px;
+}
+
+small, .breadcrumb {
+    color: #ccc !important;
+}
+.breadcrumb {
+    background-color: #1b2540;
+}
+.breadcrumb > .unavailable {
+    color: #aaa;
+}
+.breadcrumb > .active {
+    color: #fff;
+}
+.table-striped > tbody > tr:nth-child(odd)> td, .table-striped > tbody > tr:nth-child(odd)> th {
+    background-color: #202c4c;
+}
+p, td, th, select, input, .breadcrumb, label {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1em;
+}
+.big-price {
+    color: #faa919 !important;
+}
+.has-error .help-block, .has-error .control-label, .has-error .radio, .has-error .checkbox, .has-error .radio-inline, .has-error .checkbox-inline {
+    color: #c56c6a;
+}
+.has-success .help-block, .has-success .control-label, .has-success .radio, .has-success .checkbox, .has-success .radio-inline, .has-success .checkbox-inline {
+    color: #5bac5d;
+}
+.panel > table, .panel h5, .panel p, .panel label {
+    color: #111 !important;
+}
+.panel small {
+    color: #777 !important;
+}
+.bg-info {
+    background-color: #1b2540;
+}
+#ua-modal {
+    color: black;
+}
+.canvas header {
+    height: 100%;
+}
+.jumbotron {
+    color: #444;
+}
