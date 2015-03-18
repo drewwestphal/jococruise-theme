@@ -28,6 +28,13 @@ FONTS
     src: url(fonts/SurveyorDisplay-BookItalic-Pro.otf);
 }
 
+strong{
+	font-family: surveyorBookBold;
+}
+em{
+	font-family: surveyorBookItalic;
+}
+
 /* surveyor text */
 
 
@@ -2377,6 +2384,37 @@ SINGLE PAGE
 	}
 }
 
+/*
+	
+	
+GENERIC PAGE
+
+
+*/
+
+.joco-page .container{
+	max-width: 680px;	
+	color:#144662;
+	font-family: surveyorBook,serif;
+	padding: 36px;
+}
+.joco-page .container{
+	min-height: 500px;
+}
+@media screen and (min-width:768px){
+	.joco-page .container{
+		padding: 36px 0;
+	}
+}
+@media screen and (min-width:1100px){
+	.joco-page .container{
+		max-width:768px;
+	}
+}
+
+.joco-page p{
+	padding:.5em 0;
+}
 /*
 
 	
