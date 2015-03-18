@@ -41,7 +41,7 @@
 				</div>
 			</div>
 		</div>
-        <div class="container">
+        <div class="container headers">
             <div class="col-xs-12 col-md-12">
                 <h1><?php the_title() ?></h1>
                 <?php if (have_posts()) : while (have_posts()) : the_post();?>
