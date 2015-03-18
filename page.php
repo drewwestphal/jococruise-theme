@@ -17,6 +17,10 @@
 	</section>
 	<?php get_sidebar(); ?>
 	<?php get_footer(); ?>
+<?php } elseif ( is_page( 'Artists' ) ){ ?>
+
+		<?php include('page-artists.php'); ?>
+		
 <?php } elseif ( is_page( 'FAQ' ) ){ ?>
 
 		<?php include('page-faq.php'); ?>
