@@ -35,6 +35,9 @@ em{
 	font-family: surveyorBookItalic;
 }
 
+.hidden{
+	visibility: hidden;
+}
 /* surveyor text */
 
 
