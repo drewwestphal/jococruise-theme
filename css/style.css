@@ -786,6 +786,9 @@ ARTISTS
   height: auto;
   overflow: hidden;
 }
+.page-artists #artists-artist-container {
+	padding: 2em 0;
+}
 #overflow {
   width: auto;
   position: relative;
