@@ -2404,14 +2404,10 @@ GENERIC PAGE
 		max-width:768px;
 	}
 }
-.joco-page h1{
-	padding: .5em 0;
-}
 
-.joco-page h1:first-of-type{
-	padding: 0 0 .5em 0;
+.joco-page p{
+	padding:.5em 0;
 }
-
 /*
 
 	
