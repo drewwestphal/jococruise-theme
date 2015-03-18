@@ -49,6 +49,10 @@
                 <?php endwhile; endif; ?>
             </div>
         </div>
+        <div class="bumper container-fluid">
+			<div class="bumper-container">
+			</div>
+		</div>
         <?php get_footer(); ?>
     </section>
 
