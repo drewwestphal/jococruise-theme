@@ -2530,6 +2530,16 @@ SPONSORS
 	width:100%;
 	padding:1em;
 }
+#sponsors a{
+	color:#063953;
+	transition: color .27s,border-bottom .27s;
+	-o-transition: color .27s,border-bottom .27s;
+	-moz-transition: color .27s,border-bottom .27s;
+	-webkit-transition: color .27s,border-bottom .27s;
+}
+#sponsors a:hover{
+	color:#1A5D83;
+}
 #sponsors img{
 	width:50%;
 	height:auto;
