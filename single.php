@@ -1,15 +1,6 @@
 <?php get_header(); ?>
 <div class="page-artist container-fluid" id="page-artist-content">
-	<div class="bumper container-fluid">
-		<div class="bumper-container">
-			<div class="bumper-element bumper-left" id="bumper-home">
-				<div class="bumper-container">
-					<span class="glyphicon glyphicon-menu-left"></span>
-					<a href="/">Back to Site</a>
-				</div>
-			</div>
-		</div>
-	</div>
+	<?php include 'bumper_top.php'; ?>
 	<section id="content" class="mac-page" role="main">
 		<div class="container-fluid">
 			<div class="col-xs-12 col-md-12">
@@ -49,18 +40,7 @@
 			</div>
 		</div>
 	</section>
-	<div class="bumper container-fluid">
-		<div class="bumper-container">
-				<div class="bumper-element bumper-left" id="bumper-left">
-					<span class="glyphicon glyphicon-menu-left"></span>
-					<a href="<?php echo get_permalink( get_previous_post()->ID );?>">Previous</a>
-				</div>
-				<div class="bumper-element bumper-right" id="bumper-right">
-					<a href="<?php echo get_permalink( get_next_post()->ID );?>">Next</a>
-					<span class="glyphicon glyphicon-menu-right"></span>
-				</div>
-		</div>
-	</div>
+	<?php include 'bumper_bottom.php'; ?>
 </div>
 <?php get_footer(); ?>
 
