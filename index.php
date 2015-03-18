@@ -351,7 +351,7 @@ wp_reset_postdata();
 					$faq_count = $faq_query->post_count;
 					?>
 					
-					<div class="faq-carousel carousel visible-xs-block <?php if ($faq_count <= 3) { echo 'hidden'; } ?>" id="faq-carousel-small">
+					<div class="faq-carousel carousel visible-xs-block" id="faq-carousel-small">
 						<span class="glyphicon glyphicon-menu-left"></span>
 						<?php for ($l=0;$l<$faq_count;$l++){ ?>		
 								<a href="#faq-item-small-<?php echo $l; ?>" <?php if ($l===0) { echo 'class="orange-text unmove"'; } else { echo 'class="unmove"';};?>>&bull;</a>
