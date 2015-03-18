@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 <section id="content" role="main">
+<?php include 'bumper_top.php'; ?>
 <section class="mac-page headers" id="page-news">
 	<div class="container-fluid">
 		<div class="col-xs-12 col-md-12">
@@ -26,7 +27,9 @@
 						</article>
 				<?php  }; ?>	
 			<?php  }; ?>
+			
 		</div>
 	</div>
 </section>
+<?php include 'bumper_bottom.php'; ?>
 <?php get_footer(); ?>	
