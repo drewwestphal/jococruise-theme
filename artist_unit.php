@@ -10,7 +10,8 @@
 		<?php if ($post->post_content) {?>
 			<p><?php $content = get_the_content('Read more&raquo;'); echo $content; ?></p>
 		<?php  } else { ?>
-			<p><?php $excerpt = get_the_excerpt(); echo $excerpt; ?></p>
+			<p><?php $excerpt = preg_replace('/\s+?(\S+)?$/', '', substr(get_the_excerpt(), 0,55)); echo $excerpt; ?><?php if (strlen(get_the_excerpt()) > 55) { ?><a href="<?php the_permalink(); ?>"> more&hellip;</a>
+			<?php } ?></p>
 		<?php  }; ?>	
 	</div>
 	<div class="artists-social">
