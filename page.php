@@ -35,16 +35,7 @@
     
     
     <section class="joco-page" id="page-page">
-		<div class="bumper container-fluid">
-			<div class="bumper-container">
-				<div class="bumper-element bumper-left" id="bumper-home">
-					<div class="bumper-container">
-						<span class="glyphicon glyphicon-menu-left"></span>
-						<a href="/">Back to Site</a>
-					</div>
-				</div>
-			</div>
-		</div>
+		<?php include 'bumper_top.php'; ?>
         <div class="container headers">
             <div class="col-xs-12 col-md-12">
                 <h1><?php the_title() ?></h1>
@@ -53,10 +44,7 @@
                 <?php endwhile; endif; ?>
             </div>
         </div>
-        <div class="bumper container-fluid">
-			<div class="bumper-container">
-			</div>
-		</div>
+        <?php include 'bumper_bottom.php'; ?>
         <?php get_footer(); ?>
     </section>
 
