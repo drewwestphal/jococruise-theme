@@ -359,7 +359,7 @@ wp_reset_postdata();
 						?>	
 						<span class="glyphicon glyphicon-menu-right"></span>
 					</div>
-					<div class="faq-carousel carousel hidden-xs" id="faq-carousel-wide">
+					<div class="faq-carousel carousel hidden-xs <?php if ($faq_count <= 3) { echo 'hidden'; } ?>" id="faq-carousel-wide">
 						<span class="arrow arrow-left"></span>
 						<?php 							$wide_count = ceil($faq_count/3);
 							for ($l=0;$l<$wide_count;$l++){ ?>		
