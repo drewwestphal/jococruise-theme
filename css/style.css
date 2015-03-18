@@ -35,6 +35,12 @@ em{
 	font-family: surveyorBookItalic;
 }
 
+li{
+	list-style-type: circle;
+	margin-left: 2em;
+	text-align: left;
+}
+
 .hidden{
 	visibility: hidden;
 }
