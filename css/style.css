@@ -28,6 +28,13 @@ FONTS
     src: url(fonts/SurveyorDisplay-BookItalic-Pro.otf);
 }
 
+strong{
+	font-family: surveyorBookBold;
+}
+em{
+	font-family: surveyorBookItalic;
+}
+
 /* surveyor text */
 
 
