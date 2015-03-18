@@ -47,9 +47,9 @@
                 <?php if (have_posts()) : while (have_posts()) : the_post();?>
                     <p class="mac-page-intro"><?php the_content(); ?></p>
                 <?php endwhile; endif; ?>
-                <?php wp_footer(); ?> 
             </div>
         </div>
+        <?php get_footer(); ?>
     </section>
 
     <?php }; ?>
