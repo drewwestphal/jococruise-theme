@@ -2408,6 +2408,9 @@ GENERIC PAGE
 	padding: .5em 0;
 }
 
+.joco-page h1:first-of-type{
+	padding: 0 0 .5em 0;
+}
 
 /*
 
