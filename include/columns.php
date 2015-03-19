@@ -29,7 +29,6 @@ add_action('manage_faq_posts_custom_column', function($column, $post_id) {
 
 add_filter('manage_edit-faq_sortable_columns', function($columns) {
     $columns['faq_section_header'] = 'faq_section_header';
-
     return $columns;
 }, 10, 1);
 
@@ -41,7 +40,7 @@ add_action('pre_get_posts', function($query) {
 
     if('faq_section_header' == $orderby) {
         $query -> set('meta_key', 'faq_section_header');
-        $query -> set('orderby', 'meta_value_num');
+        $query -> set('orderby', 'meta_value');
     }
 });
 ?>
