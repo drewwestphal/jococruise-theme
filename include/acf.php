@@ -1,26 +1,20 @@
 <?php
-if(function_exists("register_field_group"))
-{
-    register_field_group(array (
+if(function_exists("register_field_group")) {
+    register_field_group(array(
         'id' => 'acf_about',
         'title' => 'About',
-        'fields' => array (
-        ),
-        'location' => array (
-            array (
-                array (
+        'fields' => array(),
+        'location' => array( array( array(
                     'param' => 'post_type',
                     'operator' => '==',
                     'value' => 'about',
                     'order_no' => 0,
                     'group_no' => 0,
-                ),
-            ),
-        ),
-        'options' => array (
+                ), ), ),
+        'options' => array(
             'position' => 'normal',
             'layout' => 'no_box',
-            'hide_on_screen' => array (
+            'hide_on_screen' => array(
                 0 => 'custom_fields',
                 1 => 'discussion',
                 2 => 'comments',
@@ -33,16 +27,16 @@ if(function_exists("register_field_group"))
         ),
         'menu_order' => 0,
     ));
-    register_field_group(array (
+    register_field_group(array(
         'id' => 'acf_artist',
         'title' => 'Artist',
-        'fields' => array (
-            array (
+        'fields' => array(
+            array(
                 'key' => 'field_54b7030175454',
                 'label' => 'Artist Type',
                 'name' => 'artist_type',
                 'type' => 'select',
-                'choices' => array (
+                'choices' => array(
                     'artist' => 'Artist',
                     'featured artist' => 'Featured Artist',
                     'office hours' => 'Office Hours',
@@ -51,7 +45,7 @@ if(function_exists("register_field_group"))
                 'allow_null' => 1,
                 'multiple' => 0,
             ),
-            array (
+            array(
                 'key' => 'field_54b95bb123e45',
                 'label' => 'Artist Subtitle',
                 'name' => 'artist_subtitle',
@@ -65,21 +59,17 @@ if(function_exists("register_field_group"))
                 'maxlength' => '',
             ),
         ),
-        'location' => array (
-            array (
-                array (
+        'location' => array( array( array(
                     'param' => 'post_type',
                     'operator' => '==',
                     'value' => 'artist',
                     'order_no' => 0,
                     'group_no' => 0,
-                ),
-            ),
-        ),
-        'options' => array (
+                ), ), ),
+        'options' => array(
             'position' => 'normal',
             'layout' => 'no_box',
-            'hide_on_screen' => array (
+            'hide_on_screen' => array(
                 0 => 'discussion',
                 1 => 'comments',
                 2 => 'revisions',
@@ -92,11 +82,11 @@ if(function_exists("register_field_group"))
         ),
         'menu_order' => 0,
     ));
-    register_field_group(array (
+    register_field_group(array(
         'id' => 'acf_city',
         'title' => 'City',
-        'fields' => array (
-            array (
+        'fields' => array(
+            array(
                 'key' => 'field_54b83b55ed730',
                 'label' => 'City X Position',
                 'name' => 'city_x_position',
@@ -111,7 +101,7 @@ if(function_exists("register_field_group"))
                 'max' => '',
                 'step' => '',
             ),
-            array (
+            array(
                 'key' => 'field_54b83bbced731',
                 'label' => 'City Y Position',
                 'name' => 'city_y_position',
@@ -126,7 +116,7 @@ if(function_exists("register_field_group"))
                 'max' => '',
                 'step' => '',
             ),
-            array (
+            array(
                 'key' => 'field_54b83bdeed732',
                 'label' => 'Invert Label Position',
                 'name' => 'invert_label_position',
@@ -135,7 +125,7 @@ if(function_exists("register_field_group"))
                 'message' => '',
                 'default_value' => 0,
             ),
-            array (
+            array(
                 'key' => 'field_54c937c66bb8a',
                 'label' => 'Invert Info Position',
                 'name' => 'invert_info_position',
@@ -143,7 +133,7 @@ if(function_exists("register_field_group"))
                 'message' => '',
                 'default_value' => 0,
             ),
-            array (
+            array(
                 'key' => 'field_54c937d96bb8b',
                 'label' => '',
                 'name' => '',
@@ -156,49 +146,42 @@ if(function_exists("register_field_group"))
                 'maxlength' => '',
             ),
         ),
-        'location' => array (
-            array (
-                array (
+        'location' => array( array( array(
                     'param' => 'post_type',
                     'operator' => '==',
                     'value' => 'city',
                     'order_no' => 0,
                     'group_no' => 0,
-                ),
-            ),
-        ),
-        'options' => array (
+                ), ), ),
+        'options' => array(
             'position' => 'normal',
             'layout' => 'no_box',
-            'hide_on_screen' => array (
-            ),
+            'hide_on_screen' => array(),
         ),
         'menu_order' => 0,
     ));
-    register_field_group(array (
+    register_field_group(array(
         'id' => 'acf_faq',
         'title' => 'FAQ',
-        'fields' => array (
-            array (
+        'fields' => array(
+            array(
                 'key' => 'field_544c2ecd0555e',
                 'label' => 'Show on Front Page',
                 'name' => 'show_on_front_page',
                 'type' => 'checkbox',
-                'choices' => array (
-                    'show on front page' => 'show on front page',
-                ),
+                'choices' => array('show on front page' => 'show on front page', ),
                 'default_value' => '',
                 'layout' => 'vertical',
             ),
-            array (
+            array(
                 'key' => 'field_54caf8c8c0de8',
                 'label' => 'FAQ Section Header',
                 'name' => 'faq_section_header',
                 'type' => 'radio',
-                'choices' => array (
-                    'About the Cruise' => 'About the Cruise',
-                    'Booking & Reservations' => 'Booking & Reservations',
-                    'Planning for Your Cruise' => 'Planning for Your Cruise',
+                'choices' => array(
+                    "What the Heck?" => "What the Heck?",
+                    "Booking Questions" => "Booking Questions",
+                    "I’m Booked! Now What?" => "I’m Booked! Now What?",
                 ),
                 'other_choice' => 0,
                 'save_other_choice' => 0,
@@ -206,22 +189,17 @@ if(function_exists("register_field_group"))
                 'layout' => 'vertical',
             ),
         ),
-        'location' => array (
-            array (
-                array (
+        'location' => array( array( array(
                     'param' => 'post_type',
                     'operator' => '==',
                     'value' => 'faq',
                     'order_no' => 0,
                     'group_no' => 0,
-                ),
-            ),
-        ),
-        'options' => array (
+                ), ), ),
+        'options' => array(
             'position' => 'acf_after_title',
             'layout' => 'no_box',
-            'hide_on_screen' => array (
-            ),
+            'hide_on_screen' => array(),
         ),
         'menu_order' => 0,
     ));
