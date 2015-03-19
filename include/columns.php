@@ -42,5 +42,7 @@ add_action('pre_get_posts', function($query) {
         $query -> set('meta_key', 'faq_section_header');
         $query -> set('orderby', 'meta_value');
     }
-});
+    return $query;
+}, PHP_INT_MAX);
+
 ?>
