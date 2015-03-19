@@ -46,9 +46,9 @@ function mac_clean_menu() {
 
 // sorry double quotes will break acf
 $faq_section_headers_ordered = array(
-    "About the Cruise'",
-    "Booking & Reservations",
-    "Planning for Your Cruise",
+    "What the Heck?",
+    "Booking Questions",
+    "I’m Booked! Now What?",
 );
 add_action( 'init', 'mac_register_theme_menu' );
 
