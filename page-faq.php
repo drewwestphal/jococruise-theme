@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-
+<?php include 'bumper_top.php'; ?>
 <section class="mac-page headers" id="page-faq">
 	<div class="container-fluid">
 		<div class="col-xs-12 col-md-12">
@@ -71,4 +71,5 @@
 		</div>
 	</div>
 </section>
+<?php include 'bumper_bottom_empty.php'; ?>
 <?php include 'footer.php'; ?>
