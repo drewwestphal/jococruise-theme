@@ -31,5 +31,5 @@
 		</div>
 	</div>
 </section>
-<?php include 'bumper_bottom.php'; ?>
+<?php include 'bumper_bottom_empty.php'; ?>
 <?php get_footer(); ?>	
