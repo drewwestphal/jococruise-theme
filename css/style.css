@@ -329,6 +329,7 @@ a:hover,a:focus,a:visited {
 
 .navbar-default .navbar-nav>li{
 	width:100%;
+	margin-left: 0;
 }
 .navbar-default .navbar-nav>li>a span{
 	color:#f6f4ec;
