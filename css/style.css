@@ -2521,6 +2521,9 @@ FAQ	and NEWS
 	-webkit-border-radius: 50%;
 	font-family: gothamBook,sans-serif;
 }
+.faq-article span:hover{
+	cursor:pointer;
+}
 .faq-content{
 	margin: 1em 0 0 0;
 }
