@@ -433,7 +433,7 @@ wp_reset_postdata();
 	    width:<?php echo $artist_count; ?>00%;
     }
 	.artists-artist{
-	    width:<?php echo 100/$artist_count; ?>%;
+	    width:<?php echo 100/($artist_count===0?1:$artist_count); ?>%;
     }
     @media screen and (min-width:768px){ 
 	    #overflow{
