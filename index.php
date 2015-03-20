@@ -13,7 +13,7 @@ get_header();
 		</div>
 	</section>
 	<?php if (isset($travel_desc) || isset($travel_desc_more) || isset($booking_enabled)){ ?>
-	<section id="about">
+	<section id="hero-about">
 		<div class="container-fluid">
 			<div class="col-xs-12 col-md-12">
 				<?php if (isset($travel_desc)){ ?>
@@ -211,6 +211,45 @@ wp_reset_postdata();
 			</div>
 		</div>
 	</section>
+<!--about-->
+<section id="about">
+	<?php 
+
+	//get the artists
+	$args = array(
+		'post_type' => 'about',
+		'orderby'	=> 'ID',
+		'order'		=> 'ASC'
+	);
+	$k=0;
+	$about_query = new WP_Query( $args );
+	if ( $about_query->have_posts() ) {
+		while ( $about_query->have_posts() ) {
+			$about_query->the_post();
+			
+			$thumb_id = get_post_thumbnail_id();
+			$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'large', true);
+			$thumb_url = $thumb_url_array[0];
+	?>
+			<div class="about-item clearfix headers <?php if ($k % 2 == 0) { echo 'right'; };?>">
+				<div class="about-image"style="background:url('<?php echo $thumb_url;?>') center center no-repeat;background-size: cover;"></div>
+				<div class="about-info">
+					<h1><?php the_title(); ?></h1>
+					<?php if (the_excerpt()){ ?>
+						<p><?php the_excerpt(); ?></p>
+					<?php } else { ?>
+						<p><?php the_content(); ?></p>
+					<?php }; ?>
+				</div>
+			</div>
+			<?php
+			$k++;
+		}
+	}
+
+	wp_reset_postdata();
+	?>
+</section>	
 <!--map-->
 	<section id="map">
 		<div class="container-fluid">

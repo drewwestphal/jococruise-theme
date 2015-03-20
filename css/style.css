@@ -388,14 +388,14 @@ Hero
 		top: 144px;
 	}
 }
-#about{
+#hero-about{
 	background:#f5f1e9;
 	font-family: surveyorBook, serif;
 	color:#144662;
 	width:100%;
 	height:auto;
 }
-#about .container-fluid{
+#hero-about .container-fluid{
 	max-width: 480px;
 	padding:24px 24px 36px;
 }
@@ -406,7 +406,7 @@ p#hero-travel-description{
 	padding: 0 0 1em;
 }
 @media screen and (min-width:768px){
-	#about .container-fluid{
+	#hero-about .container-fluid{
 		max-width: 750px;
 		padding: 64px 38px;
 	}
@@ -415,7 +415,7 @@ p#hero-travel-description{
 	}
 }
 @media screen and (min-width:1100px){
-	#about .container-fluid{
+	#hero-about .container-fluid{
 		max-width:960px;
 	}
 }
@@ -480,12 +480,12 @@ p#hero-travel-description{
 	cursor:pointer;
 	text-decoration: none;
 }
-#about .bold{
+#hero-about .bold{
 	font-family: surveyorBookBold, serif;
 	font-style: bold;
 }
 
-#about .italic{
+#hero-about .italic{
 	font-family: surveyorBookItalic, serif;
 }
 /*
@@ -1787,12 +1787,13 @@ ARTISTS
 	
 ABOUT
 
-
+*/
 
 .about-item {
   width: 100%;
   overflow: auto;
   position: relative;
+  color:#f5f1e9
 }
 @media screen and (min-width: 768px) {
   .about-item {
@@ -1812,7 +1813,7 @@ ABOUT
   }
 }
 .about-item .about-info {
-  background: url('img/bg_ocean.jpg') center bottom no-repeat;
+  background: url('img/contact_bg.jpg') center bottom no-repeat;
   background-size: cover;
   min-height: 400px;
   padding: 15px;
@@ -1826,6 +1827,7 @@ ABOUT
   text-transform: uppercase;
   font-weight: 700;
   padding: 30px 0;
+  color:#f5f1e9;
 }
 @media screen and (min-width: 768px) {
   .about-item .about-info h1 {
@@ -1835,6 +1837,10 @@ ABOUT
 .about-item .about-info p {
   line-height: 1.25em;
   margin-bottom: 10px;
+}
+
+.about-item .about-info p:last-of-type{
+	margin-bottom: 4em;
 }
 @media screen and (min-width: 768px) {
   .about-item .about-info {
@@ -1857,10 +1863,23 @@ ABOUT
   }
 }
 .about-info a {
-    color:#f1a800;
+    color:#cdc5a5;
+}
+.about-image{
+	min-height: 300px;
+}
+@media screen and (min-width: 768px) {
+.about-image{
+	width:50%; 
+	height:100%;
+	position: absolute;
+	right:0;
+}
+.right .about-image{
+	left:0;
+}
 }
 /*
-	
 	
 CONTACT
 
@@ -2391,11 +2410,11 @@ SINGLE PAGE
 	.post-artists-social{	
 		margin: 36px 0;
 	}
-	.post-left{
+	.has-image .post-left{
 		width:33%;
 		float: left;
 	}
-	.post-right{
+	.has-image .post-right{
 		width:66%;
 		float: right;
 		min-height: 500px;
