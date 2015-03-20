@@ -2332,6 +2332,7 @@ SINGLE PAGE
 	top:0;
 	height:50px;
 	line-height: 50px;
+	overflow: hidden;
 }
 .bumper-container{
 	position: relative;
@@ -2348,9 +2349,16 @@ SINGLE PAGE
 }
 .bumper-element{
 	width:49%;
+}
+.bumper-bottom span.glyphicon{
+	top:-19px;
+}
+.bumper-a-container{
+	max-width: 80%;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	display: inline-block;
 }
 .bumper-left{
 	float: left;
