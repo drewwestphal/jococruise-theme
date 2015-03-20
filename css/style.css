@@ -2332,6 +2332,7 @@ SINGLE PAGE
 	top:0;
 	height:50px;
 	line-height: 50px;
+	overflow: hidden;
 }
 .bumper-container{
 	position: relative;
@@ -2348,6 +2349,21 @@ SINGLE PAGE
 }
 .bumper-element{
 	width:49%;
+}
+.bumper-bottom span.glyphicon{
+	top:-19px;
+}
+.bumper-a-container{
+	max-width: 80%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: inline-block;
+}
+@media screen and (min-width:960px){
+	.bumper-a-container{
+		max-width: 95%;
+	}
 }
 .bumper-left{
 	float: left;
@@ -2504,6 +2520,9 @@ FAQ	and NEWS
 	-moz-border-radius: 50%;
 	-webkit-border-radius: 50%;
 	font-family: gothamBook,sans-serif;
+}
+.faq-article span:hover{
+	cursor:pointer;
 }
 .faq-content{
 	margin: 1em 0 0 0;
