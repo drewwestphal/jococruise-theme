@@ -127,7 +127,7 @@ wp_reset_postdata();
 									)
 								);
 								$artist_query = new WP_Query($args);
-								$count = $artist_query->post_count;
+								$artist_count = $artist_query->post_count;
 								if ($artist_query->have_posts()) {
 									while ($artist_query->have_posts()) {
 										$artist_query->the_post();
@@ -152,9 +152,9 @@ wp_reset_postdata();
 								);
 								$feat_artist_query = new WP_Query($args);
 								$feat_count = $feat_artist_query->post_count;
-								$count += $feat_count;
+								$artist_count += $feat_count;
 								if ($feat_count > 0) {
-									$count += 1;
+									$artist_count += 1;
 									echo '
 									<div class="artist_unit artists-artist headers featured-guests" id="item-'.$j.'">
 										<h1><span>And</span><br>Featured Guests</h1>
@@ -202,7 +202,7 @@ wp_reset_postdata();
 				</div>
 				<div class="carousel" id="artist-carousel">
 					<span class="glyphicon glyphicon-menu-left"></span>
-					<?php for ($i=0;$i<$count;$i++){ ?>		
+					<?php for ($i=0;$i<$artist_count;$i++){ ?>		
 							<a href="#item-<?php echo $i; ?>" <?php if ($i===0) { echo 'class="orange-text unmove"';} else { echo 'class="unmove"'; };?>>&bull;</a>
 					<?php 						}
 					?>	
@@ -469,10 +469,10 @@ wp_reset_postdata();
 	}
 	/* Artists */
 	#overflow{
-	    width:<?php echo $count; ?>00%;
+	    width:<?php echo $artist_count; ?>00%;
     }
 	.artists-artist{
-	    width:<?php echo 100/$count; ?>%;
+	    width:<?php echo 100/($artist_count===0?1:$artist_count); ?>%;
     }
     @media screen and (min-width:768px){ 
 	    #overflow{
