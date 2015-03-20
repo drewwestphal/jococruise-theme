@@ -2410,11 +2410,11 @@ SINGLE PAGE
 	.post-artists-social{	
 		margin: 36px 0;
 	}
-	.post-left{
+	.has-image .post-left{
 		width:33%;
 		float: left;
 	}
-	.post-right{
+	.has-image .post-right{
 		width:66%;
 		float: right;
 		min-height: 500px;
