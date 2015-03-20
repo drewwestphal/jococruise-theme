@@ -2360,6 +2360,11 @@ SINGLE PAGE
 	text-overflow: ellipsis;
 	display: inline-block;
 }
+@media screen and (min-width:960px){
+	.bumper-a-container{
+		max-width: 95%;
+	}
+}
 .bumper-left{
 	float: left;
 }
