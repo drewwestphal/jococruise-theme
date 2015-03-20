@@ -9,7 +9,7 @@
 </head>
 <body <?php body_class(); ?>>
 <div id="wrapper" class="hfeed">
-<?php if ( !current_theme_supports( 'headerless_operation' ) ) {?>
+
 <nav id="nav" class="navbar-default <?php if (current_user_can('manage_options')) { echo 'logged-in'; }?>">
 	<div class="container" id="nav-container">
 		<div class="navbar-top">
@@ -61,5 +61,3 @@
 	</div>	
 <?php wp_reset_postdata(); ?>
 </nav>
-<?php } ?>
-

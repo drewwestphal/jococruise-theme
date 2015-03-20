@@ -78,7 +78,7 @@ function blankslate_load_scripts() {
     // this is a hack for booking engine visual
     // dev speed... we don't want to load the reset
     // when the bk engine is running
-    if(!current_theme_supports('headerless_operation')) {
+    if(!current_theme_supports('cruisecontrol')) {
         $maindeps[] = 'reset';
     } else {
         // load bk styles
