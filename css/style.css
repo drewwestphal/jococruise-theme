@@ -2348,6 +2348,9 @@ SINGLE PAGE
 }
 .bumper-element{
 	width:49%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .bumper-left{
 	float: left;
