@@ -5,7 +5,7 @@
 		<div class="container-fluid">
 			<div class="col-xs-12 col-md-12">
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-				<article id="post-artist-info">
+				<article id="post-artist-info" class="<?php if ( has_post_thumbnail() ) { echo 'has-image'; }; ?>">
 					<div class="post-artist-image post-left">
 						<?php the_post_thumbnail('full'); ?>
 					</div>
