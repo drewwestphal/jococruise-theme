@@ -2494,6 +2494,10 @@ FAQ	and NEWS
 }
 #page-faq p{
 	line-height: 1.25em;
+	padding: 0 0 1em 0;
+}
+#page-faq p:last-of-type{
+	padding:0;
 }
 #page-faq a {
 	color:#144662;
