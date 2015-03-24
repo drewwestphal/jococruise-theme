@@ -2492,8 +2492,27 @@ FAQ	and NEWS
 		max-width:768px;
 	}
 }
+#page-faq p{
+	line-height: 1.25em;
+	padding: 0 0 1em 0;
+}
+#page-faq p:last-of-type{
+	padding:0;
+}
 #page-faq a {
 	color:#144662;
+}
+#page-faq p a {
+	color:#144662;
+	border-bottom: 1px solid #144662;
+	transition: color .27s,border-bottom .27s;
+	-o-transition: color .27s,border-bottom .27s;
+	-moz-transition: color .27s,border-bottom .27s;
+	-webkit-transition: color .27s,border-bottom .27s;
+}
+#page-faq p a:hover {
+	color:#6e96ab;
+	border-bottom: 1px solid #6e96ab;
 }
 .faq-section-header{
 	text-align: center;
