@@ -235,7 +235,7 @@ wp_reset_postdata();
 				<div class="about-image"style="background:url('<?php echo $thumb_url;?>') center center no-repeat;background-size: cover;"></div>
 				<div class="about-info">
 					<h1><?php the_title(); ?></h1>
-					<?php if (the_excerpt()){ ?>
+					<?php if (has_excerpt()){ ?>
 						<p><?php the_excerpt(); ?></p>
 					<?php } else { ?>
 						<p><?php the_content(); ?></p>
