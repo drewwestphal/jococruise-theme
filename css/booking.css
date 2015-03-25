@@ -92,9 +92,11 @@ strong {
  COLORS
  COLORS
  */
+body {
+    background: #d0c4af;
+}
 .canvas {
     color: #063953;
-    background: #d0c4af;
     padding: 25px 0 44px;
 }
 
