@@ -20,5 +20,6 @@
          ?>
       </div>
     </section>
+    <?php include __DIR__ . 'analytics.php'; ?>
   </body>
 </html>
