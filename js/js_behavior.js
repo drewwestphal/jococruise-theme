@@ -229,7 +229,7 @@ jQuery(document).ready(function(jQuery) {
 	
 	//menu swap behavior
 	if ($('#navbar-title-headline').length){
-		var offset = jQuery('#about').offset();
+		var offset = jQuery('#news').offset();
 		if (jQuery(document).scrollTop() > offset.top) {
 			jQuery('#navbar-title-headline').hide(function(){
 				jQuery('#navbar-title').fadeIn('slow',function(){
