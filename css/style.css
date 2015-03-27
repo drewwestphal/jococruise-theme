@@ -448,34 +448,49 @@ p#hero-travel-description{
 		right:48px;
 	}
 }
-#hero-booking{
-	width:100%;
-	height: 55px;
-	float:left;
-	text-align: center;
-	position: relative;
-	top:36px;
-}
-@media screen and (min-width:768px){
-	#hero-booking{
-		width:50%;
-		text-align: left;
+@media screen and (min-width:1100px){
+	#hero-boat{
+		max-width:270px;
+		right:48px;
+	}
+	#hero-travel-description-more {
+		width:60%;
 	}
 }
-#hero-book-now{
-	border:none;
-	color:#f5f1e9;
+#hero-booking{
+	clear: both;
+	margin: 1em auto;
+	display: block;
+	position: relative;
+	top:2em;
+	width: 200px;
+	text-align: center;
 	background:#105677;
+	padding:.75em;
 	text-transform: uppercase;
 	font-family: gothamBook, sans-serif;
 	font-size: 13px;
-	padding: .75em 1em;
 	transition: background .27s;
 	-o-transition: background .27s;
 	-moz-transition: background .27s;
 	-webkit-transition: background .27s;
 }
-#hero-book-now:hover{
+@media screen and (min-width:768px){
+	#hero-booking{
+		top:-3em;
+		margin: 0
+	}
+}
+@media screen and (min-width:1100px){
+	#hero-booking{
+		top:-9em;
+	}
+}
+#hero-book-now{
+	color:#f5f1e9;
+	line-height: 1.5em;
+}
+#hero-booking:hover{
 	background:#023C5D;
 	cursor:pointer;
 	text-decoration: none;
