@@ -23,4 +23,5 @@ $map_copy = $settings['mac_map_copy'];
 $news_header = $settings['mac_news_header'];
 $news_view_all = $settings['mac_news_view_all'];
 $news_view_url = $settings['mac_news_view_all_url'];
+$footer_text = $settings['mac_footer_text'];
 ?>
