@@ -170,6 +170,14 @@ function mac_settings_init(  ) {
 		'mac_artist_settings' 
 	);
 	
+	add_settings_field( 
+		'mac_enable_more', 
+		__( 'Enable More To Come', 'wordpress' ), 
+		'mac_enable_more_render', 
+		'pluginPage', 
+		'mac_artist_settings' 
+	);
+	
 	//contact settings
 	add_settings_section(
 		'mac_contact_settings', 
@@ -413,6 +421,14 @@ function mac_talent_header_render(  ) {
 	$options = get_option( 'mac_settings' );
 	?>
 	<textarea cols='80' rows='3' name='mac_settings[mac_talent_header]'><?php echo $options['mac_talent_header']; ?></textarea>
+	<?php 
+}
+
+function mac_enable_more_render(  ) { 
+
+	$options = get_option( 'mac_settings' );
+	?>
+	<input type='checkbox' name='mac_settings[mac_enable_more]' <?php checked( $options['mac_enable_more'], 1 ); ?> value='1'>
 	<?php 
 }
 
