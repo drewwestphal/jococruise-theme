@@ -249,6 +249,22 @@ function mac_settings_init(  ) {
 		'pluginPage', 
 		'mac_news_settings' 
 	);
+	
+	//footer settings
+	add_settings_section(
+		'mac_footer_settings', 
+		__( 'Footer Settings:', 'wordpress' ), 
+		'mac_footer_settings_callback', 
+		'pluginPage'
+	);
+	
+	add_settings_field( 
+		'mac_footer_text', 
+		__( 'Footer Text:', 'wordpress' ), 
+		'mac_footer_text_render', 
+		'pluginPage', 
+		'mac_footer_settings' 
+	);
 
 }
 
@@ -438,6 +454,16 @@ function mac_news_view_all_url_render(  ) {
 	<?php 
 }
 
+//footer
+
+function mac_footer_text_render(  ) { 
+
+	$options = get_option( 'mac_settings' );
+	?>
+	<textarea cols='80' rows='3' name='mac_settings[mac_footer_text]'><?php echo $options['mac_footer_text']; ?></textarea>
+	<?php 
+}
+
 
 function mac_site_settings_callback(  ) { 
 	echo __( 'site-wide settings', 'wordpress' );
@@ -461,6 +487,10 @@ function mac_map_settings_callback(  ) {
 
 function mac_news_settings_callback(  ) { 
 	echo __( 'settings for the map section on the homepage', 'wordpress' );
+}
+
+function mac_footer_settings_callback(  ) { 
+	echo __( 'settings for the footer section on the homepage', 'wordpress' );
 }
 
 
