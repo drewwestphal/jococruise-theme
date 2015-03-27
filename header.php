@@ -20,6 +20,7 @@
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
+        				<p class="nav-button-title hidden-xs">Menu</p>
 				</button>
 			</div>
 			<?php 
