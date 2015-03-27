@@ -336,7 +336,7 @@ function mac_hero_already_booked_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input type="text" size="80" name='mac_settings[mac_hero_already_booked_render]' value='<?php echo $options['mac_hero_already_booked_render']; ?>'>
+	<input type="text" size="80" name='mac_settings[mac_hero_already_booked]' value='<?php echo $options['mac_hero_already_booked']; ?>'>
 	<?php 
 }
 
