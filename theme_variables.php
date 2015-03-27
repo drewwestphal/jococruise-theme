@@ -20,6 +20,7 @@ $travel_desc_more = $settings['mac_travel_description_more'];
 $mailing_cta = $settings['mac_mailing_list_cta'];
 //artists
 $artists_header = $settings['mac_talent_header'];
+$artists_more = $settings['mac_enable_more'];
 //contact
 $cont_gen_q = $settings['mac_general_questions_header'];
 $cont_gen_q_addy = $settings['mac_general_questions_address_header'];
