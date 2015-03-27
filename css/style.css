@@ -291,6 +291,12 @@ a:hover,a:focus,a:visited {
 		left:10px;
 	}
 }
+@media screen and (min-width:1100px){
+	#navbar-title,#navbar-title-headline{
+		width:79%;
+		left:1em;
+	}
+}
 #navbar-title-headline .glyphicon{
 	top:2px;
 	left:2px;
