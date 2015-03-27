@@ -1813,10 +1813,10 @@ ABOUT
   }
 }
 .about-item .about-info {
-  background: url('img/contact_bg.jpg') center bottom no-repeat;
-  background-size: cover;
+  background: #E8E3D1;
   min-height: 400px;
   padding: 15px;
+  color:#144662;
 }
 @media screen and (min-width: 768px) {
   .about-item .about-info {
@@ -1827,7 +1827,6 @@ ABOUT
   text-transform: uppercase;
   font-weight: 700;
   padding: 30px 0;
-  color:#f5f1e9;
 }
 @media screen and (min-width: 768px) {
   .about-item .about-info h1 {
@@ -1850,6 +1849,7 @@ ABOUT
     float: left;
     padding-bottom: 100%;
     margin-bottom: -100%;
+    text-align: right;
   }
 }
 @media screen and (min-width: 768px) {
@@ -1860,10 +1860,20 @@ ABOUT
 @media screen and (min-width: 768px) {
   .right .about-info {
     float: right;
+    text-align: left;
   }
 }
 .about-info a {
-    color:#cdc5a5;
+	color:#144662;
+    border-bottom: 1px solid #144662;
+    	transition: color .27s,border-bottom .27s;
+	-o-transition: color .27s,border-bottom .27s;
+	-moz-transition: color .27s,border-bottom .27s;
+	-webkit-transition: color .27s,border-bottom .27s;
+}
+.about-info a:hover {
+	color:#6e96ab;
+    border-bottom: 1px solid #6e96ab;
 }
 .about-image{
 	min-height: 300px;
