@@ -96,6 +96,30 @@ function mac_settings_init(  ) {
 		'mac_hero_settings' 
 	);
 	
+	add_settings_field( 
+		'mac_hero_book_now', 
+		__( 'Hero Book Now Button', 'wordpress' ), 
+		'mac_hero_book_now_render', 
+		'pluginPage', 
+		'mac_hero_settings'
+	);
+	
+	add_settings_field( 
+		'mac_hero_already_booked', 
+		__( 'Hero Already Booked Button', 'wordpress' ), 
+		'mac_hero_already_booked_render', 
+		'pluginPage', 
+		'mac_hero_settings'
+	);
+	
+	add_settings_field( 
+		'mac_hero_already_booked_url', 
+		__( 'Hero Already Booked URL', 'wordpress' ), 
+		'mac_hero_already_booked_url_render', 
+		'pluginPage', 
+		'mac_hero_settings'
+	);
+	
 	//mailing list
 	add_settings_field( 
 		'mac_mailing_list_cta', 
@@ -308,6 +332,30 @@ function mac_button_cta_render(  ) {
 	<?php 
 }
 
+function mac_hero_already_booked_render(  ) { 
+
+	$options = get_option( 'mac_settings' );
+	?>
+	<input type="text" size="80" name='mac_settings[mac_hero_already_booked_render]' value='<?php echo $options['mac_hero_already_booked_render']; ?>'>
+	<?php 
+}
+
+function mac_hero_already_booked_url_render(  ) { 
+
+	$options = get_option( 'mac_settings' );
+	?>
+	<input type="text" size="80" name='mac_settings[mac_hero_already_booked_url]' value='<?php echo $options['mac_hero_already_booked_url']; ?>'>
+	<?php 
+}
+
+
+function mac_hero_book_now_render(  ) { 
+
+	$options = get_option( 'mac_settings' );
+	?>
+	<input type="text" size="80" name='mac_settings[mac_hero_book_now]' value='<?php echo $options['mac_hero_book_now']; ?>'>
+	<?php 
+}
 function mac_travel_description_render(  ) { 
 
 	$options = get_option( 'mac_settings' );
