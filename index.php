@@ -9,6 +9,14 @@ get_header();
 		<div class="container-fluid">
 			<div class="col-xs-12 col-md-12">
 				<img src="<?php bloginfo('template_directory'); ?>/img/hero_JoCo_LoGo.png" alt="A styled JoCo Cruise logotype." id="hero-joco-logo">
+				<?php if (isset($hero_book_now)){ ?>
+					<div class="hero-buttons">
+						<div class="hero-button"><a href="<?php echo $booking_url; ?>"><?php echo $hero_book_now; ?></a></div>
+					<?php };?>
+					<?php if (isset($booked)){ ?>
+						<div class="hero-button"><a href="<?php echo $booked_url; ?>"><?php echo $booked; ?></a></div>
+					</div>
+				<?php };?>
 			</div>
 		</div>
 	</section>
@@ -197,6 +205,12 @@ wp_reset_postdata();
 								}
 								wp_reset_postdata();
 							?>
+						
+							<?php if ($artists_more == 1) { ?>
+							<div class="artist_unit artists-artist headers featured-guests" id="item-2">
+								<h1><span>Plus</span><br>More to Come Soon!</h1>
+							</div>
+							<?php }; ?>
 						</div>
 					</div>
 				</div>

@@ -30,12 +30,17 @@ function mac_clean_menu() {
 		$menu_items = wp_get_nav_menu_items($menu->term_id);
 		$menu_list='';
 		foreach ((array) $menu_items as $key => $menu_item) {
+			$has_parent = $menu_item->menu_item_parent;
+			$child = '';
+			if ($has_parent > 0){
+				$child = ' class="child"';
+			}
 			$title = $menu_item->title;
 			$url = $menu_item->url;
 			if (is_front_page()){
-				$menu_list .= "\t\t\t\t\t". '<li><a href="'. $url .'"><span>'. $title .'</span></a></li>' ."\n";
+				$menu_list .= "\t\t\t\t\t". '<li'.$child.'><a href="'. $url .'"><span>'. $title .'</span></a></li>' ."\n";
 			} else {
-				$menu_list .= "\t\t\t\t\t". '<li><a href="/'. $url .'"><span>'. $title .'</span></a></li>' ."\n";
+				$menu_list .= "\t\t\t\t\t". '<li'.$child.'><a href="/'. $url .'"><span>'. $title .'</span></a></li>' ."\n";
 			}
 		}
 	} else {

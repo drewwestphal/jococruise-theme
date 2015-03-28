@@ -20,6 +20,7 @@
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
+        				<p class="nav-button-title hidden-xs">Menu</p>
 				</button>
 			</div>
 			<?php 
@@ -38,7 +39,7 @@
 					<img src="<?php bloginfo('template_directory'); ?>/img/hero_JoCo_LoGo.png" alt="A styled JoCo Cruise logotype." id="nav-joco-logo">
 				</a>
 	  <?php } else { ?>
-				<a id="navbar-title" href="#wrapper" class="navbar-item-left">
+				<a id="navbar-title" href="/" class="navbar-item-left">
 					<img src="<?php bloginfo('template_directory'); ?>/img/hero_JoCo_LoGo.png" alt="A styled JoCo Cruise logotype." id="nav-joco-logo">
 				</a>
 	  <?php } ?>
