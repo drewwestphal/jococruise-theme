@@ -68,7 +68,9 @@ if (current_user_can('manage_options')) {
 add_action( 'wp_enqueue_scripts', 'blankslate_load_scripts' );
 
 function blankslate_load_scripts() {
-    wp_enqueue_style('bootstrapcss', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css', array(), 1, 'screen');
+    wp_enqueue_style('bootstrapcss', //
+    get_template_directory_uri() . '/css/bootstrap.min.css',//
+     array(), 1, 'screen');
 
     wp_register_style('reset', //
     get_template_directory_uri() . '/css/reset.css', //
@@ -108,7 +110,9 @@ function blankslate_load_scripts() {
         
         // this is also just for the front-end
         //bootstrap.js is dependant on jquery
-        wp_enqueue_script('bootstrapjs', '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js', array('jquery'), 1, false);
+        wp_enqueue_script('bootstrapjs',//
+        get_template_directory_uri() . '/js/bootstrap.min.js', //
+         array('jquery'), 1, false);
         
     }
 
