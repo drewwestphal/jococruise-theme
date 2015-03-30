@@ -45,7 +45,7 @@
                 }
              ?> 
 		    <script type="text/javascript">
-            function($){ 
+            (function($){ 
 		        function toggleFaq(item,animate){
                    var mom = item.parent();
                    var bro = item.siblings('.faq-content');
