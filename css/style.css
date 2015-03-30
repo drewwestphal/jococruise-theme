@@ -934,7 +934,7 @@ ARTISTS
 }
 .artist_unit{
 	width:200px;
-	height:235px;
+	height:175px;
 	padding:0 25px;
 	margin: 0 0 35px;
 	text-align: center;
@@ -1033,7 +1033,7 @@ ARTISTS
 	position: relative;
 	max-width: 180px;
 	margin: 0 auto;
-	top:40px;
+	top:20px;
 	border-top: 1px solid #144662;
 	border-bottom: 1px solid #144662;
 	transform:skewY(170deg);
