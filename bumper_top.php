@@ -1,3 +1,4 @@
+<!--
 <div class="bumper container-fluid">
 	<div class="bumper-container">
 		<div class="bumper-element bumper-left" id="bumper-home">
@@ -8,3 +9,4 @@
 		</div>
 	</div>
 </div>
+-->
