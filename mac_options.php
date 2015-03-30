@@ -312,7 +312,7 @@ function mac_booking_url_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input type="text" size="80" name='mac_settings[mac_booking_url]' value='<?php echo $options['mac_booking_url']; ?>'>
+	<input type="text" size="80" name='mac_settings[mac_booking_url]' value='<?php echo htmlentities($options['mac_booking_url'],ENT_QUOTES); ?>'>
 	<?php 
 }
 
@@ -320,7 +320,7 @@ function mac_contact_email_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input type="text" size="80" name='mac_settings[mac_contact_email]' value='<?php echo $options['mac_contact_email']; ?>'>
+	<input type="text" size="80" name='mac_settings[mac_contact_email]' value='<?php echo htmlentities($options['mac_contact_email'],ENT_QUOTES); ?>'>
 	<?php 
 }
 
@@ -328,7 +328,7 @@ function mac_travel_dates_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input type="text" size="80" name='mac_settings[mac_travel_dates]' value='<?php echo $options['mac_travel_dates']; ?>'>
+	<input type="text" size="80" name='mac_settings[mac_travel_dates]' value='<?php echo htmlentities($options['mac_travel_dates'],ENT_QUOTES); ?>'>
 	<?php 
 }
 
@@ -336,7 +336,7 @@ function mac_button_cta_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input type="text" size="80" name='mac_settings[mac_button_cta]' value='<?php echo $options['mac_button_cta']; ?>'>
+	<input type="text" size="80" name='mac_settings[mac_button_cta]' value='<?php echo htmlentities($options['mac_button_cta'],ENT_QUOTES); ?>'>
 	<?php 
 }
 
@@ -344,7 +344,7 @@ function mac_hero_already_booked_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input type="text" size="80" name='mac_settings[mac_hero_already_booked]' value='<?php echo $options['mac_hero_already_booked']; ?>'>
+	<input type="text" size="80" name='mac_settings[mac_hero_already_booked]' value='<?php echo htmlentities($options['mac_hero_already_booked'],ENT_QUOTES); ?>'>
 	<?php 
 }
 
@@ -352,7 +352,7 @@ function mac_hero_already_booked_url_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input type="text" size="80" name='mac_settings[mac_hero_already_booked_url]' value='<?php echo $options['mac_hero_already_booked_url']; ?>'>
+	<input type="text" size="80" name='mac_settings[mac_hero_already_booked_url]' value='<?php echo htmlentities($options['mac_hero_already_booked_url'],ENT_QUOTES); ?>'>
 	<?php 
 }
 
@@ -361,7 +361,7 @@ function mac_hero_book_now_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input type="text" size="80" name='mac_settings[mac_hero_book_now]' value='<?php echo $options['mac_hero_book_now']; ?>'>
+	<input type="text" size="80" name='mac_settings[mac_hero_book_now]' value='<?php echo htmlentities($options['mac_hero_book_now'],ENT_QUOTES); ?>'>
 	<?php 
 }
 function mac_travel_description_render(  ) { 
@@ -394,7 +394,7 @@ function mac_facebook_url_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input type="text" size="80" name='mac_settings[mac_facebook_url]' value='<?php echo $options['mac_facebook_url']; ?>'>
+	<input type="text" size="80" name='mac_settings[mac_facebook_url]' value='<?php echo htmlentities($options['mac_facebook_url'],ENT_QUOTES); ?>'>
 	<?php 
 }
 
@@ -403,7 +403,7 @@ function mac_twitter_url_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input type="text" size="80" name='mac_settings[mac_twitter_url]' value='<?php echo $options['mac_twitter_url']; ?>'>
+	<input type="text" size="80" name='mac_settings[mac_twitter_url]' value='<?php echo htmlentities($options['mac_twitter_url'],ENT_QUOTES); ?>'>
 	<?php 
 }
 
@@ -411,7 +411,7 @@ function mac_feed_url_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input type="text" size="80" name='mac_settings[mac_feed_url]' value='<?php echo $options['mac_feed_url']; ?>'>
+	<input type="text" size="80" name='mac_settings[mac_feed_url]' value='<?php echo htmlentities($options['mac_feed_url'],ENT_QUOTES); ?>'>
 	<?php 
 }
 
@@ -437,7 +437,7 @@ function mac_general_questions_header_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input type="text" size="80" name='mac_settings[mac_general_questions_header]' value='<?php echo $options['mac_general_questions_header']; ?>'>
+	<input type="text" size="80" name='mac_settings[mac_general_questions_header]' value='<?php echo htmlentities($options['mac_general_questions_header'],ENT_QUOTES); ?>'>
 	</input>
 	<?php 
 }
@@ -446,7 +446,7 @@ function mac_general_questions_address_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input type="text" size="80" name='mac_settings[mac_general_questions_address_header]' value='<?php echo $options['mac_general_questions_address_header']; ?>'>
+	<input type="text" size="80" name='mac_settings[mac_general_questions_address_header]' value='<?php echo htmlentities($options['mac_general_questions_address_header'],ENT_QUOTES); ?>'>
 	</input>
 	<?php 
 }
@@ -455,7 +455,7 @@ function mac_booking_questions_header_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input type="text" size="80" name='mac_settings[mac_booking_questions_header]' value='<?php echo $options['mac_booking_questions_header']; ?>'>
+	<input type="text" size="80" name='mac_settings[mac_booking_questions_header]' value='<?php echo htmlentities($options['mac_booking_questions_header'],ENT_QUOTES); ?>'>
 	</input>
 	<?php 
 }
@@ -464,7 +464,7 @@ function mac_booking_questions_address_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input type="text" size="80" name='mac_settings[mac_booking_questions_address_header]' value='<?php echo $options['mac_booking_questions_address_header']; ?>'>
+	<input type="text" size="80" name='mac_settings[mac_booking_questions_address_header]' value='<?php echo htmlentities($options['mac_booking_questions_address_header'],ENT_QUOTES); ?>'>
 	</input>
 	<?php 
 }
@@ -473,7 +473,7 @@ function mac_phone_questions_header_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input type="text" size="80" name='mac_settings[mac_phone_questions_header]' value='<?php echo $options['mac_phone_questions_header']; ?>'>
+	<input type="text" size="80" name='mac_settings[mac_phone_questions_header]' value='<?php echo htmlentities($options['mac_phone_questions_header'],ENT_QUOTES); ?>'>
 	</input>
 	<?php 
 }
@@ -482,7 +482,7 @@ function mac_phone_questions_address_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input type="text" size="80" name='mac_settings[mac_phone_questions_address_header]' value='<?php echo $options['mac_phone_questions_address_header']; ?>'>
+	<input type="text" size="80" name='mac_settings[mac_phone_questions_address_header]' value='<?php echo htmlentities($options['mac_phone_questions_address_header'],ENT_QUOTES); ?>'>
 	</input>
 	<?php 
 }
@@ -507,14 +507,14 @@ function mac_news_view_all_render(  ) {
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input type="text" size="80" name='mac_settings[mac_news_view_all]' value='<?php echo $options['mac_news_view_all']; ?>'></input>
+	<input type="text" size="80" name='mac_settings[mac_news_view_all]' value='<?php echo htmlentities($options['mac_news_view_all'],ENT_QUOTES); ?>'></input>
 	<?php 
 }
 function mac_news_view_all_url_render(  ) { 
 
 	$options = get_option( 'mac_settings' );
 	?>
-	<input type="text" size="80" name='mac_settings[mac_news_view_all_url]' value='<?php echo $options['mac_news_view_all_url']; ?>'></input>
+	<input type="text" size="80" name='mac_settings[mac_news_view_all_url]' value='<?php echo htmlentities($options['mac_news_view_all_url'],ENT_QUOTES); ?>'></input>
 	<?php 
 }
 
