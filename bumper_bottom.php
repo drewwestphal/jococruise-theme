@@ -1,3 +1,4 @@
+<!--
 <div class="bumper bumper-bottom container-fluid">
 	<div class="bumper-container">
 			<div class="bumper-element bumper-left" id="bumper-left">
@@ -14,3 +15,4 @@
 			</div>
 	</div>
 </div>
+-->
