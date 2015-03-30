@@ -1,3 +1,5 @@
+(function($){ 
+
 $('#contact-form').submit(function(){
 	function validateEmail($email) {
 		var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
@@ -52,3 +54,5 @@ $('#contact-form').submit(function(){
 	return false; 
 
 });
+
+})(jQuery);
