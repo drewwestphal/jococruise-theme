@@ -37,11 +37,7 @@ function mac_clean_menu() {
 			}
 			$title = $menu_item->title;
 			$url = $menu_item->url;
-			if (is_front_page()){
-				$menu_list .= "\t\t\t\t\t". '<li'.$child.'><a href="'. $url .'"><span>'. $title .'</span></a></li>' ."\n";
-			} else {
-				$menu_list .= "\t\t\t\t\t". '<li'.$child.'><a href="/'. $url .'"><span>'. $title .'</span></a></li>' ."\n";
-			}
+			$menu_list .= "\t\t\t\t\t". '<li'.$child.'><a href="'. $url .'"><span>'. $title .'</span></a></li>' ."\n";
 		}
 	} else {
 		// $menu_list = '<!-- no list defined -->';
