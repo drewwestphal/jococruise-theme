@@ -6,6 +6,7 @@
 		<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 		<p><?php the_field('artist_subtitle'); ?></p>
 	</div>
+	<!--
 	<div class="artists-description">
 			<p><?php $excerpt = preg_replace('/\s+?(\S+)?$/', '', substr(get_the_excerpt(), 0,55)); echo $excerpt; ?><?php if (strlen(get_the_excerpt()) > 55) { ?><a href="<?php the_permalink(); ?>"> more&hellip;</a>
 			<?php } ?></p>
@@ -25,5 +26,6 @@
 		<?php  }; ?>
 		
 	</div>
+	-->
 </div>
 <?php $j++; ?>
