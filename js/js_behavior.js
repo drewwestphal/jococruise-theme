@@ -228,7 +228,7 @@ jQuery(document).ready(function(jQuery) {
 	});
 	
 	//menu swap behavior
-	if ($('#navbar-title-headline').length){
+	if (jQuery('#navbar-title-headline').length){
 		var offset = jQuery('#news').offset();
 		if (jQuery(document).scrollTop() > offset.top) {
 			jQuery('#navbar-title-headline').hide(function(){
