@@ -126,6 +126,12 @@ a:hover,a:focus,a:visited {
   width: 750px;
   .center-block();
 }
+@media (max-width: 749px) {
+    .container {
+        width: auto;
+    }
+}
+
 .headers h1{
 	font-family:gothamBook, sans-serif;
 	font-size: 18px;
