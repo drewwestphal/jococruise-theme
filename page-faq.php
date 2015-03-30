@@ -45,6 +45,7 @@
                 }
              ?> 
 		    <script type="text/javascript">
+            function($){ 
 		        function toggleFaq(item,animate){
                    var mom = item.parent();
                    var bro = item.siblings('.faq-content');
@@ -65,6 +66,7 @@
 			    		$(this).siblings('.faq-show-hide').click();
 			    });
                 window.location.hash.length>1 && toggleFaq($('#'+location.hash.substr(1)+' a.faq-show-hide'), false);
+            })(jQuery);
 		    </script>
 		    </section>
 			<script src="<?php bloginfo('template_directory'); ?>/js/js_behavior.js"></script>
