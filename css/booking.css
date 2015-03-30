@@ -211,11 +211,29 @@ header h1 small {
     margin-left: 0;
     list-style: none;
 }
-.checkout-pane #paypartial {
+.checkout-pane #paypartial, .checkout-pane #paygreatermindep {
     font-size: 1.4em;
 }
 .checkout-pane .your-booking-header {
     margin-top: 30px;
+}
+
+.account-home .list-group li {
+    margin-left: 0;
+}
+.account-home .payment tbody {
+    font-size:.8em;
+}
+.account-home .alert {
+    font-size:1.5em;
+}
+
+.account-register h1 small {
+    font-size:50%;
+}
+.account-edit-guest .back-link {
+    font-size:1.7em;
+    font-weight:bold;
 }
 
 /**
