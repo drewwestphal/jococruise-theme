@@ -41,8 +41,6 @@ get_header();
 						<a href="<?php echo $booking_url; ?>" id="hero-book-now">Book Now</a>
 					<?php }; ?>
 					</div>
-					<!--Make entire button clickable...-->
-					<script type="text/javascript">jQuery('#hero-booking').click(function(){jQuery(this).find('a')[0].click();})</script>
 				<?php }; ?>
 			</div>
 		</div>
@@ -507,5 +505,11 @@ wp_reset_postdata();
     }
 
 </style>
+
+<!--Make entire button clickable...-->
+<script type="text/javascript">
+    jQuery('#hero-booking').click(function(){jQuery(this).find('a')[0].click();});
+    jQuery('.hero-button').click(function(){jQuery(this).find('a')[0].click();});
+</script>
 
 <?php include 'footer.php' ?>
