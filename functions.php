@@ -26,6 +26,8 @@ function mac_register_theme_menu() {
 add_action('wp_head', function(){
 
     require_once(__DIR__.'/theme_variables.php');
+    global $travel_desc;
+    global $site_title;
     $url = 'http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . "{$_SERVER['HTTP_HOST']}/{$_SERVER['REQUEST_URI']}";
     $imgurl1 = get_template_directory_uri() . '/img/hero_boat.png';
     $imgurl2 = get_template_directory_uri() . '/img/og2.jpg';
