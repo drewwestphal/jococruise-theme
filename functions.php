@@ -22,6 +22,32 @@ function mac_register_theme_menu() {
     register_nav_menu( 'primary', 'Main Nav' );
 }
 
+// support fb embeds with proper meta tags ...
+add_action('wp_head', function(){
+
+    require_once(__DIR__.'/theme_variables.php');
+    $url = 'http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . "{$_SERVER['HTTP_HOST']}/{$_SERVER['REQUEST_URI']}";
+    $imgurl1 = get_template_directory_uri() . '/img/hero_boat.png';
+    $imgurl2 = get_template_directory_uri() . '/img/og2.jpg';
+    $desc = htmlentities(wp_strip_all_tags($travel_desc), ENT_QUOTES);
+    echo <<<EOF
+        <meta name="description" content="$desc" />
+
+        <!-- Twitter Card data -->
+        <meta name="twitter:card" value="summary">
+
+        <!-- Open Graph data -->
+        <meta property="og:title" content="$site_title" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="$url" />
+        <meta property="og:image" content="$imgurl1" />
+        <meta property="og:image" content="$imgurl2" />
+        <meta property="og:description" content="$desc" />
+
+EOF;
+});
+
+
 /*custom nav behavior*/
 function mac_clean_menu() {
 	$menu_name = 'primary';
@@ -158,8 +184,9 @@ function blankslate_custom_pings( $comment )
 {
 $GLOBALS['comment'] = $comment;
 ?>
-<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>"><?php echo comment_author_link(); ?></li>
-<?php 
+<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>"><?php echo comment_author_link(); ?><
+/li>
+<?php
 }
 add_filter( 'get_comments_number', 'blankslate_comments_number' );
 function blankslate_comments_number( $count )
@@ -175,6 +202,3 @@ return $count;
 require_once(__DIR__.'/include/acf.php');
 require_once(__DIR__.'/include/cpt.php');
 require_once(__DIR__.'/include/columns.php');
-
-
-
