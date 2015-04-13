@@ -1,12 +1,21 @@
 var mapBehavior = function(){
 	if (jQuery(window).width()>767){
-		jQuery('.point').mouseover(function() {
-			jQuery(this).siblings('.map-city-about').fadeIn('fast');
-			jQuery(this).removeClass('glyphicon-plus').addClass('glyphicon-minus');
-		}).mouseleave(function() {
-			jQuery(this).siblings('.map-city-about').fadeOut('fast');
-			jQuery(this).removeClass('glyphicon-minus').addClass('glyphicon-plus');
+		jQuery('#map').click(function() {
+			jQuery('.point').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+			jQuery('.map-city-about').fadeOut('fast');
 		});
+		jQuery('.point').mouseover(function() {
+			if (!jQuery(this).is(jQuery('.glyphicon-minus'))) {
+				jQuery('.point').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+				jQuery('.map-city-about').fadeOut('fast');
+				jQuery(this).siblings('.map-city-about').fadeIn('fast');
+				jQuery(this).removeClass('glyphicon-plus').addClass('glyphicon-minus');
+			}
+		});
+		//.mouseleave(function() {
+			//jQuery(this).siblings('.map-city-about').fadeOut('fast');
+			//jQuery(this).removeClass('glyphicon-minus').addClass('glyphicon-plus');
+		//});
 	} else {
 		jQuery('.point').click(function(){
 			jQuery('span.glyphicon.point').removeClass('glyphicon-minus').addClass('glyphicon-plus');
