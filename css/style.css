@@ -2752,6 +2752,28 @@ SPONSORS
 
 }
 
+
+/*
+ * 
+ * 404
+ * 
+ */
+
+img.failboat{
+	padding: 10px;
+}
+
+p.text404{
+	font-family:gothamBook, sans-serif;
+    color:#144662;
+    text-transform: uppercase;
+	padding: 90px 10px 90px;
+	height: 56px;
+	vertical-align: middle;
+	font-size: 42px;
+}
+
+
 /*
 	
 	
