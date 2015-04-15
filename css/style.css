@@ -39,11 +39,13 @@ ul li{
     list-style-type: circle;
     margin-left: 2em;
     text-align: left;
+    line-height: 1.6em;
 }
 ol li{
     list-style-type: decimal;
     margin-left: 2em;
     text-align: left;
+    line-height: 1.6em;
 }
 
 .hidden{
