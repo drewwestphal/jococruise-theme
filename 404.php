@@ -4,10 +4,10 @@
 	    <section class="joco-page" id="page-page">
 		<?php include 'bumper_top.php'; ?>
         <div class="container headers">
-            <div class="col-xs-4 col-md-4">
+            <div class="col-xs-12 col-md-4" style="text-align: center;">
                 <img src="<?php bloginfo('template_directory'); ?>/img/boat_sideways.png" class="failboat" />
             </div>
-            <div class="col-xs-8 col-md-8">
+            <div class="col-xs-12 col-md-8">
                 <p class="text404">404: Lost at sea!</p>
             </div>
         </div>

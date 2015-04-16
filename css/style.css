@@ -2761,6 +2761,8 @@ SPONSORS
 
 img.failboat{
 	padding: 10px;
+	margin: 0 auto;
+	text-align: center;
 }
 
 p.text404{
@@ -2770,7 +2772,9 @@ p.text404{
 	padding: 90px 10px 90px;
 	height: 56px;
 	vertical-align: middle;
+	text-align: center;
 	font-size: 42px;
+	margin: auto;
 }
 
 
