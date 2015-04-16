@@ -66,6 +66,12 @@
 			    		$(this).siblings('.faq-show-hide').click();
 			    });
                 window.location.hash.length>1 && toggleFaq($('#'+location.hash.substr(1)+' a.faq-show-hide'), false);
+                jQuery('a').click(function() {
+		    		var target = jQuery(this.hash);
+		    		if (target.length != 0 && !target.hasClass('faq-article-maximize')) {
+		    			toggleFaq($(this.hash+' a.faq-show-hide'),false);
+		    		}
+		    	});
             })(jQuery);
 		    </script>
 		    </section>
