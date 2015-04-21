@@ -43,6 +43,7 @@ var mapBehavior = function(){
 	}
 };
 
+
 jQuery(document).ready(function(jQuery) {
 	//hero
 	jQuery('#hero-more-info-button').click(function(){
@@ -114,17 +115,12 @@ jQuery(document).ready(function(jQuery) {
         jQuery('#artist-carousel a').removeClass('orange-text');
         jQuery(this).addClass('orange-text');
     });
-    jQuery('#artist-carousel span').click(function(){
-	    var overflowWidth = jQuery('#overflow').width();
-	    var overflowLeft = jQuery('#overflow').css('left');
-	    var windowWidth = jQuery(window).width();
-	    var spanPosition = jQuery(this).index();
-	    var orange = function(){
-		    jQuery('#artist-carousel a').removeClass('orange-text');
-		    jQuery('#artist-carousel a:nth-child('+(position+1)+')').addClass('orange-text');
-	    };
-		
-		if (spanPosition > 0){
+    var orange = function(){
+	    jQuery('#artist-carousel a').removeClass('orange-text');
+	    jQuery('#artist-carousel a:nth-child('+(position+1)+')').addClass('orange-text');
+    };
+    var updateArtistPosition = function(overflowWidth,overflowLeft,windowWidth,spanPosition) {
+    	if (spanPosition > 0){
 			position++;
 			if (position > count) {
 				jQuery('#overflow').css('left', 0);
@@ -145,8 +141,44 @@ jQuery(document).ready(function(jQuery) {
 				orange();
 			}
 		}
+    };
+    jQuery('#artist-carousel span').click(function(){
+	    var overflowWidth = jQuery('#overflow').width();
+	    var overflowLeft = jQuery('#overflow').css('left');
+	    var windowWidth = jQuery(window).width();
+	    var spanPosition = jQuery(this).index();
+	    updateArtistPosition(overflowWidth,overflowLeft,windowWidth,spanPosition);
+	});
+	jQuery('#artists').on('swipeleft',function() {
+		var overflowWidth = jQuery('#overflow').width();
+	    var overflowLeft = jQuery('#overflow').css('left');
+	    var windowWidth = jQuery(window).width();
+	    var spanPosition = 1;
+	    if (windowWidth<767) {
+		    updateArtistPosition(overflowWidth,overflowLeft,windowWidth,spanPosition);
+		}
+	});
+	jQuery('#artists').on('swiperight',function() {
+		var overflowWidth = jQuery('#overflow').width();
+	    var overflowLeft = jQuery('#overflow').css('left');
+	    var windowWidth = jQuery(window).width();
+	    var spanPosition = 0;
+	    if (windowWidth<767) {
+		    updateArtistPosition(overflowWidth,overflowLeft,windowWidth,spanPosition);
+		}
 	});
     
+    
+    // faq
+    var faqOrange = function(){
+    	if (jQuery(window).width() < 767) {
+		    jQuery('#faq-carousel-small a').removeClass('orange-text');
+		    jQuery('#faq-carousel-small a:nth-child('+(faqPosition+1)+')').addClass('orange-text');
+		} else {
+			jQuery('#faq-carousel-wide a').removeClass('orange-text');
+		    jQuery('#faq-carousel-wide a:nth-child('+(faqWidePosition+1)+')').addClass('orange-text');
+		}
+    };
     
     //faq small
     var faqCount = jQuery('#faq-overflow .faq-item-container').length;
@@ -160,17 +192,8 @@ jQuery(document).ready(function(jQuery) {
         
 	    event.preventDefault();
     });
-    jQuery('#faq-carousel-small span').click(function(){
-	    var faqOverflowWidth = jQuery('#faq-overflow').width();
-	    var faqOverflowLeft = jQuery('#faq-overflow').css('left');
-	    var faqWindowWidth = jQuery(window).width();
-	    var faqSpanPosition = jQuery(this).index();
-	    var faqOrange = function(){
-		    jQuery('#faq-carousel-small a').removeClass('orange-text');
-		    jQuery('#faq-carousel-small a:nth-child('+(faqPosition+1)+')').addClass('orange-text');
-	    };
-		
-		if (faqSpanPosition > 0){
+    var updateSmallFaqPosition = function(faqCount,faqSpanPosition,faqWindowWidth,faqOverflowLeft,faqOverflowWidth) {
+    	if (faqSpanPosition > 0){
 			faqPosition++;
 			if (faqPosition > faqCount) {
 				jQuery('#faq-overflow').css('left', 0);
@@ -191,6 +214,35 @@ jQuery(document).ready(function(jQuery) {
 				faqOrange();
 			}
 		}
+    };
+    jQuery('#faq-carousel-small span').click(function(){
+	    var faqOverflowWidth = jQuery('#faq-overflow').width();
+	    var faqOverflowLeft = jQuery('#faq-overflow').css('left');
+	    var faqWindowWidth = jQuery(window).width();
+	    var faqSpanPosition = jQuery(this).index();
+	    updateSmallFaqPosition(faqCount,faqSpanPosition,faqWindowWidth,faqOverflowLeft,faqOverflowWidth);
+	});
+	jQuery('#faq').on('swipeleft',function() {
+		var faqOverflowWidth = jQuery('#faq-overflow').width();
+	    var faqOverflowLeft = jQuery('#faq-overflow').css('left');
+	    var faqWindowWidth = jQuery(window).width();
+	    //var faqSpanPosition = jQuery(this).index();
+	    if (faqWindowWidth<767) {
+		    updateSmallFaqPosition(faqCount,1,faqWindowWidth,faqOverflowLeft,faqOverflowWidth);
+		} else {
+			updateWideFaqPosition(faqCount,1,faqWindowWidth,faqOverflowLeft,faqOverflowWidth);
+		}
+	});
+	jQuery('#faq').on('swiperight',function() {
+		var faqOverflowWidth = jQuery('#faq-overflow').width();
+	    var faqOverflowLeft = jQuery('#faq-overflow').css('left');
+	    var faqWindowWidth = jQuery(window).width();
+	    //var faqSpanPosition = jQuery(this).index();
+	    if (faqWindowWidth<767) {
+		    updateSmallFaqPosition(faqCount,0,faqWindowWidth,faqOverflowLeft,faqOverflowWidth);
+		} else {
+			updateWideFaqPosition(faqCount,0,faqWindowWidth,faqOverflowLeft,faqOverflowWidth);
+		}
 	});
 	//faq wide
     var faqWideCount = jQuery('#faq-overflow .faq-group').length;
@@ -203,17 +255,8 @@ jQuery(document).ready(function(jQuery) {
         jQuery(this).addClass('orange-text');        
 	    event.preventDefault();
     });
-	jQuery('#faq-carousel-wide span').click(function(){
-	    var faqOverflowWidth = jQuery('#faq-overflow').width();
-	    var faqOverflowLeft = jQuery('#faq-overflow').css('left');
-	    var faqWindowWidth = jQuery(window).width();
-	    var faqSpanPosition = jQuery(this).index();
-	    var faqOrange = function(){
-		    jQuery('#faq-carousel-wide a').removeClass('orange-text');
-		    jQuery('#faq-carousel-wide a:nth-child('+(faqWidePosition+1)+')').addClass('orange-text');
-	    };
-		
-		if (faqSpanPosition > 0){
+    var updateWideFaqPosition = function(faqWideCount,faqSpanPosition,faqWindowWidth,faqOverflowLeft,faqOverflowWidth) {
+    	if (faqSpanPosition > 0){
 			faqWidePosition++;
 			if (faqWidePosition > faqWideCount) {
 				jQuery('#faq-overflow').css('left', 0);
@@ -234,6 +277,13 @@ jQuery(document).ready(function(jQuery) {
 				faqOrange();
 			}
 		}
+    };
+	jQuery('#faq-carousel-wide span').click(function(){
+	    var faqOverflowWidth = jQuery('#faq-overflow').width();
+	    var faqOverflowLeft = jQuery('#faq-overflow').css('left');
+	    var faqWindowWidth = jQuery(window).width();
+	    var faqSpanPosition = jQuery(this).index();
+	    updateWideFaqPosition(faqWideCount,faqSpanPosition,faqWindowWidth,faqOverflowLeft,faqOverflowWidth);
 	});
 	
 	//menu swap behavior
