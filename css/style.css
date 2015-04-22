@@ -2481,7 +2481,7 @@ SINGLE PAGE
 	width:49%;
 }
 .bumper-bottom span.glyphicon{
-	top:-19px;
+	/* top:-19px; */
 }
 .bumper-a-container{
 	max-width: 80%;
