@@ -2216,6 +2216,10 @@ FAQ
   cursor: pointer;
 }
 
+.faq-carousel .glyphicon {
+	cursor: pointer;
+}
+
 .arrow{
 	background:url('img/arrow.png') center center no-repeat;
 	background-size: 33%;
