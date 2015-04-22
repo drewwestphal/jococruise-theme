@@ -198,7 +198,7 @@ jQuery(document).ready(function(jQuery) {
     
     //faq small
     var faqCount = jQuery('#faq-overflow .faq-item-container').length;
-	faqPosition = 0;
+	faqPosition = 1;
 	jQuery('.faq-carousel a').click(function(event){
 	    faqPosition = jQuery(this).index();
 	    var faqAdjusted = -(faqPosition-1)*100;
