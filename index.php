@@ -206,10 +206,11 @@ wp_reset_postdata();
 								wp_reset_postdata();
 							?>
 						
-							<?php if ($artists_more == 1) { ?>
-							<div class="artist_unit artists-artist headers featured-guests" id="item-2">
-								<h1><span>Plus</span><br>More to Come Soon!</h1>
-							</div>
+							<?php if ($artists_more == 1) { 
+								$artist_count++; ?>
+								<div class="artist_unit artists-artist headers featured-guests" id="item-<?php echo $j; ?>">
+									<h1><span>Plus</span><br>More to Come Soon!</h1>
+								</div>
 							<?php }; ?>
 						</div>
 					</div>
