@@ -64,17 +64,12 @@ jQuery(document).ready(function(jQuery) {
         jQuery('#news-carousel a').removeClass('orange-text');
         jQuery(this).addClass('orange-text');
     });
-    jQuery('#news-carousel span').click(function(){
-	    var newsOverflowWidth = jQuery('#news-items').width();
-	    var newsOverflowLeft = jQuery('#news-items').css('left');
-	    var windowWidth = jQuery(window).width();
-	    var spanNewsPosition = jQuery(this).index();
-	    var newsOrange = function(){
-		    jQuery('#news-carousel a').removeClass('orange-text');
-		    jQuery('#news-carousel a:nth-child('+(newsPosition+1)+')').addClass('orange-text');
-	    };
-		
-		if (spanNewsPosition > 0){
+    var newsOrange = function(){
+	    jQuery('#news-carousel a').removeClass('orange-text');
+	    jQuery('#news-carousel a:nth-child('+(newsPosition+1)+')').addClass('orange-text');
+    };
+    var updateNewsPosition = function(spanNewsPosition,windowWidth,newsOverflowLeft,newsOverflowWidth) {
+    	if (spanNewsPosition > 0){
 			newsPosition++;
 			if (newsPosition > newsCount) {
 				jQuery('#news-items').css('left', 0);
@@ -95,6 +90,27 @@ jQuery(document).ready(function(jQuery) {
 				newsOrange();
 			}
 		}
+    };
+    jQuery('#news-carousel span').click(function(){
+	    var newsOverflowWidth = jQuery('#news-items').width();
+	    var newsOverflowLeft = jQuery('#news-items').css('left');
+	    var windowWidth = jQuery(window).width();
+	    var spanNewsPosition = jQuery(this).index();
+	    updateNewsPosition(spanNewsPosition,windowWidth,newsOverflowLeft,newsOverflowWidth);
+	});
+    jQuery('#news').on('swipeleft',function() {
+	    var newsOverflowWidth = jQuery('#news-items').width();
+	    var newsOverflowLeft = jQuery('#news-items').css('left');
+	    var windowWidth = jQuery(window).width();
+	    var spanNewsPosition = 1;
+	    updateNewsPosition(spanNewsPosition,windowWidth,newsOverflowLeft,newsOverflowWidth);
+	});
+    jQuery('#news').on('swiperight',function() {
+	    var newsOverflowWidth = jQuery('#news-items').width();
+	    var newsOverflowLeft = jQuery('#news-items').css('left');
+	    var windowWidth = jQuery(window).width();
+	    var spanNewsPosition = 0;
+	    updateNewsPosition(spanNewsPosition,windowWidth,newsOverflowLeft,newsOverflowWidth);
 	});
 		
 	//artist
