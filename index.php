@@ -325,7 +325,7 @@ wp_reset_postdata();
 						</div>
 						<div class="contact-text headers">
 							<h1><?php echo $cont_gen_q; ?></h1>
-							<?php echo $cont_gen_q_addy; ?>
+							<a href="mailto: <?php echo $cont_gen_q_addy; ?>"><?php echo $cont_gen_q_addy; ?></a>
 						</div>
 					</div>
 					<?php  }; ?>
@@ -336,7 +336,7 @@ wp_reset_postdata();
 						</div>
 						<div class="contact-text headers">
 							<h1><?php echo $cont_book_q; ?></h1>
-							<?php echo $cont_book_q_addy; ?>
+							<a href="mailto: <?php echo $cont_book_q_addy; ?>"><?php echo $cont_book_q_addy; ?></a>
 						</div>					
 					</div>
 					<?php  }; ?>
