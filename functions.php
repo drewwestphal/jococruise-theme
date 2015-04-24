@@ -103,6 +103,7 @@ function blankslate_load_scripts() {
     if(!is_admin()) {
         wp_deregister_script('jquery');
         wp_enqueue_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', array(), 1, false);
+        wp_enqueue_script('recaptcha', '//www.google.com/recaptcha/api.js', array(), 1, false);
 		if ( wp_is_mobile() ) {
 	        wp_enqueue_script('jquery_mobile', get_template_directory_uri() . '/js/jquery.mobile.custom.min.js', array(), 1, false);
 		}

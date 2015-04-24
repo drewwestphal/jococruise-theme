@@ -1429,11 +1429,32 @@ textarea::-webkit-input-placeholder {
 	margin: 0 0 10px;
 	height: 93px;
 }
+.recaptcha-container {
+	float: left;
+	width: 300px;
+	margin-bottom: 12px;	
+}
+.g-recaptcha {
+	/* float: none;
+	width: 300px;
+	margin-bottom: 12px; */
+}
+.recaptcha-error {
+	font-family: surveyorBook,serif;
+	font-size: 12px;
+	height: 0px;
+	width: 300px;
+	padding: 0px;
+	line-height: 12px;
+}
 #contact-form button{
 	background:#6e96ab;
 	font-family: surveyorBook,serif;
-	font-size: 12px;
-	padding: 12px 24px;
+	font-size: 14px;
+	width: 76px;
+	height: 76px;
+	padding: 6px;
+	margin: 0px;
 	border:0;
 	float: right;
 	transition: background .27s;
@@ -1445,6 +1466,7 @@ textarea::-webkit-input-placeholder {
 	background:#a0b8c5;
 }
 #contact-received{
+	clear: both;
 	font-family: surveyorBook,serif;
 	font-size: 14px;
 	line-height:1.25em;

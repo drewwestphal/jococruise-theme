@@ -10,11 +10,12 @@ $('#contact-form').submit(function(){
 		}
 	}
 	
-	$('.contact-input p, .contact-comments p').remove();
+	$('.contact-input p, .contact-comments p, #contact-form p').remove();
 	$('#name,#email,#comments').removeClass('orange-border');
 	var name = false;
 	var email = false;
 	var comments = false;
+	var recaptcha = false;
 	
 	if ($('#comments').val().length == 0)  {
 		$('#comments').addClass('orange-border');
@@ -44,11 +45,23 @@ $('#contact-form').submit(function(){
 		email = true;
 	}
 	
+	if ($("#g-recaptcha-response").val().length==0) {
+		$(".g-recaptcha").after('<p class="recaptcha-error">Please assure us that you are not a robot.</p>');
+		//$(".g-recaptcha").after('<p class="recaptcha-error">Value: '+$("#g-recaptcha-response").val()+'</p>');
+		recaptcha = false;
+	} else {
+		recaptcha = true;
+	}
 	
-	if (name && email && comments) {
-		$.post(js_contact_data.contact_post_url, $("#contact-form").serialize(),function(data){console.log(data);});
+	if (name && email && comments && recaptcha) {
 		$('#name, #email').removeClass('orange-border');
-		$('#contact button').after('<div id="contact-received">Thank you! Your message has been sent.</div>');
+		$('#contact button').after('<div id="contact-received">Sending...</div>');
+		$.post(js_contact_data.contact_post_url, $("#contact-form").serialize(),function(data){
+			grecaptcha.reset();
+			console.log(data);
+			$("#contact-received").text(data);
+			// Thank you! Your message has been sent.
+			});
 	}
 	
 	return false; 
