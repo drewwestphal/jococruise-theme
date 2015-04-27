@@ -510,17 +510,10 @@ wp_reset_postdata();
 
 </style>
 
-<?php include 'footer.php';
-/*
-echo get_option('permalink_structure');
-echo "\nPRINT booking url:\n";
-var_dump($booked_url);
-echo "\nRESET with get_site_option\n";
-$settings = get_site_option('mac_settings');
-var_dump($settings);
+<!--Make entire button clickable...-->
+<script type="text/javascript">
+    jQuery('#hero-booking').click(function(){jQuery(this).find('a')[0].click();});
+    jQuery('.hero-button').click(function(){jQuery(this).find('a')[0].click();});
+</script>
 
-$string_bloop = 'a:27:{s:19:"mac_booking_enabled";s:1:"1";s:15:"mac_booking_url";s:21:"/booking-opening-soon";s:17:"mac_contact_email";s:22:"booking@jococruise.com";s:16:"mac_travel_dates";s:37:"Feb 21 - Feb 28, 2016 (Sunday-Sunday)";s:14:"mac_button_cta";s:34:"Booking for 2016 is coming Soon™";s:22:"mac_travel_description";s:199:"<span class="bold">JoCo Cruise 2016</span> is a 7-night Eastern Caribbean cruise on Royal Caribbean’s <span class="italic">Freedom of the Seas</span> celebrating music, comedy, and general nerdery.";s:27:"mac_travel_description_more";s:369:"<p>The 2016 cruise will depart from Port Canaveral, Florida on <span class="bold">Sunday, February 21</span> and return on <span class="bold">Sunday, February 28th</span>, with ports of call at CocoCay, St. Thomas, and St. Maarten.<br><br>rnPerformers include Jonathan Coulton, Paul and Storm, and friends from across the music, comedy, gaming, and writing worlds. </p>";s:17:"mac_hero_book_now";s:9:"Book Now!";s:23:"mac_hero_already_booked";s:21:”Im Booked! Now What?";s:27:"mac_hero_already_booked_url";s:13:"/faq/#prepare";s:20:"mac_mailing_list_cta";s:75:"<h1><span>Join the</span><br>JoCo Cruise Mailing List																	</h1>";s:16:"mac_facebook_url";s:40:"https://www.facebook.com/JoCoCruiseCrazy";s:15:"mac_twitter_url";s:30:"https://twitter.com/jococruise";s:12:"mac_feed_url";s:24:"jococruise.com/?feed=rss";s:17:"mac_talent_header";s:66:"<span>Enjoy the Following</span><br>Performers and Featured Guests";s:15:"mac_enable_more";s:1:"1";s:28:"mac_general_questions_header";s:17:"GENERAL QUESTIONS";s:36:"mac_general_questions_address_header";s:19:"info@jococruise.com";s:28:"mac_booking_questions_header";s:15:"CRUISE BOOKINGS";s:36:"mac_booking_questions_address_header";s:23:"bookings@jococruise.com";s:26:"mac_phone_questions_header";s:18:"LEAVE US A MESSAGE";s:34:"mac_phone_questions_address_header";s:31:"(256) 3GO-JCCC / (256) 346-5222";s:12:"mac_map_copy";s:0:"";s:15:"mac_news_header";s:0:"";s:17:"mac_news_view_all";s:8:"All News";s:21:"mac_news_view_all_url";s:6:"/news/";s:15:"mac_footer_text";s:187:"  |  <small>Agency of record for JoCo Cruise 2016 is Worldwide Travel and Cruise Associates, Inc. a licensed seller of travel in the state of Florida. License number 10505316.</small>";}';
-echo "\nUNSERIALIZE:\n".unserialize($string_bloop);
- * 
- */
- ?>
+<?php include 'footer.php' ?>
