@@ -1,4 +1,5 @@
 var mapBehavior = function(){
+	jQuery('.map-city').hide().show(0); // force redraw to gaurantee placement on window resize
 	if (jQuery(window).width()>767){
 		jQuery('#map').click(function() {
 			jQuery('.point').removeClass('glyphicon-minus').addClass('glyphicon-plus');
