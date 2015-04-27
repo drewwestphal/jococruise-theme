@@ -468,6 +468,7 @@ Hero
 	transition: background .27s;
 	-moz-transition: background .27s;
 	-webkit-transition: background .27s;
+	cursor: pointer;
 }
 .hero-button a{
 	width:100%;
@@ -2791,16 +2792,43 @@ img.failboat{
 	text-align: center;
 }
 
-p.text404{
-	font-family:gothamBook, sans-serif;
-    color:#144662;
-    text-transform: uppercase;
-	padding: 90px 10px 90px;
-	height: 56px;
-	vertical-align: middle;
+.header404 {
+	margin: 30px;
+}
+
+.text404 {
 	text-align: center;
-	font-size: 42px;
-	margin: auto;
+}
+.text404 p {
+	line-height: 1.6em;
+}
+
+.button404 {
+	width:220px;
+	height:auto;
+	background:none;	
+	margin: 30px auto;
+	padding:.5em;
+	border:1px solid #23527c;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	transition: background .27s;
+	-moz-transition: background .27s;
+	-webkit-transition: background .27s;
+	cursor: pointer;
+}
+
+.button404:hover{
+	background:rgba(255,255,255,.25);
+}
+
+.button404 a{
+	color: #23527c;
+	width:100%;
+	text-transform: uppercase;
+	font-family: gothamBook;
+	font-size: 12px;
 }
 
 
