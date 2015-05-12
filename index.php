@@ -165,7 +165,7 @@ wp_reset_postdata();
 									$artist_count += 1;
 									echo '
 									<div class="artist_unit artists-artist headers featured-guests" id="item-'.$j.'">
-										<h1><span>And</span><br>Featured Guests</h1>
+										<h1><span>2016</span><br>Featured Guests</h1>
 									</div>
 									';
 									$j++;	
