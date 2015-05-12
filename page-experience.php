@@ -63,13 +63,17 @@ if($introPostFeaturedClickthroughExists) {
     $introPostLinkWrappedImage = sprintf('<a href="%s">%s</a>', //
     $introPostFeaturedClickthroughURL, $introPostThumbnailMarkup);
 }
-$introPostContentHtml = apply_filters('the_content', $introPost -> post_content);
+$introPostContentParsed = apply_filters('the_content', $introPost -> post_content);
 
 // MAIN STAGE POST
 
 $mainStagePostHeaderParsed = parse_piped_title($mainStagePost -> post_title);
 $mainStagePostContentParsed = apply_filters('the_content', $mainStagePost -> post_content);
-//var_dump($mainStagePostHeaderParsed);
+
+// FEATURED EVENTS HEADER
+$featuredEventsHeaderPostHeaderParsed = parse_piped_title($featuredEventsHeaderPost -> post_title);
+// trim because it may well contain nothing
+$featuredEventsHeaderPostContentParsed = trim(apply_filters('the_content', $featuredEventsHeaderPost -> post_content));
 ?>
 
 <?php get_header(); ?>
@@ -86,13 +90,37 @@ include 'bumper_top.php';
                 <?=$introPostLinkWrappedImage; ?>
             </div>
             <div>
-                <?=$introPostContentHtml; ?> 
+                <?=$introPostContentParsed; ?>
             </div>
         </div>
         <div class="col-xs-12 col-md-12">
             <h1><?=$mainStagePostHeaderParsed; ?></h1>
             <div>
-                <?= $mainStagePostContentParsed; ?> 
+                <?= $mainStagePostContentParsed; ?>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-12">
+            <h1><?=$featuredEventsHeaderPostHeaderParsed; ?></h1>
+            <div>
+                <?=$featuredEventsHeaderPostContentParsed; ?>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-12">
+            <h1><?=$gamingTrackPost -> post_title; ?></h1>
+            <div>
+                <?=apply_filters('the_content', $gamingTrackPost -> post_content); ?>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-12">
+            <h1><?=$writingTrackPost -> post_title; ?></h1>
+            <div>
+                <?=apply_filters('the_content', $writingTrackPost -> post_content); ?>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-12">
+            <h1><?=parse_piped_title($shadowCruisePost -> post_title); ?></h1>
+            <div>
+                <?=apply_filters('the_content', $shadowCruisePost -> post_content); ?>
             </div>
         </div>
     </div>
