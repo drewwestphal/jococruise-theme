@@ -6,7 +6,7 @@ $captcha = $_REQUEST['g-recaptcha-response'];
 if (!$captcha || strlen($captcha)==0) {
     echo "Missing Captcha!"; // Return error if there is no captcha
 } else {
-	$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LdDyQUTAAAAAKpjbTvOXQuB0lyN9mYmqjFvPXg4&response=".$captcha);
+	$response = json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LdDyQUTAAAAAKpjbTvOXQuB0lyN9mYmqjFvPXg4&response=".$captcha));
 	//var_dump($response);
 	if ($response->success=="false") {
 	    echo "We don't believe that you're not a robot.";
