@@ -73,17 +73,7 @@ if($introPostFeaturedClickthroughExists) {
     $introPostLinkWrappedImage = sprintf('<a href="%s">%s</a>', //
     $introPostFeaturedClickthroughURL, $introPostThumbnailMarkup);
 }
-$introPostContentParsed = apply_filters('the_content', $introPost -> post_content);
 
-// MAIN STAGE POST
-
-$mainStagePostHeaderParsed = parse_piped_title($mainStagePost -> post_title);
-$mainStagePostContentParsed = apply_filters('the_content', $mainStagePost -> post_content);
-
-// FEATURED EVENTS HEADER
-$featuredEventsHeaderPostHeaderParsed = parse_piped_title($featuredEventsHeaderPost -> post_title);
-// trim because it may well contain nothing
-$featuredEventsHeaderPostContentParsed = trim(apply_filters('the_content', $featuredEventsHeaderPost -> post_content));
 ?>
 
 <?php get_header(); ?>
@@ -100,19 +90,19 @@ include 'bumper_top.php';
                 <?=$introPostLinkWrappedImage; ?>
             </div>
             <div>
-                <?=$introPostContentParsed; ?>
+                <?=apply_filters('the_content', $introPost -> post_content); ?>
             </div>
         </div>
         <div class="col-xs-12 col-md-12">
-            <h1><?=$mainStagePostHeaderParsed; ?></h1>
+            <h1><?=parse_piped_title($mainStagePost -> post_title); ?></h1>
             <div>
-                <?= $mainStagePostContentParsed; ?>
+                <?=apply_filters('the_content', $mainStagePost -> post_content);  ?>
             </div>
         </div>
         <div class="col-xs-12 col-md-12">
-            <h1><?=$featuredEventsHeaderPostHeaderParsed; ?></h1>
+            <h1><?=parse_piped_title($featuredEventsHeaderPost -> post_title); ?></h1>
             <div>
-                <?=$featuredEventsHeaderPostContentParsed; ?>
+                <?=trim(apply_filters('the_content', $featuredEventsHeaderPost -> post_content)); ?>
             </div>
         </div>
         <div class="col-xs-12 col-md-12">
@@ -140,6 +130,12 @@ include 'bumper_top.php';
             <h1><?=parse_piped_title2($photoExplPost -> post_title); ?></h1>
             <div>
               <?=apply_filters('the_content', $photoGalleryPost -> post_content); ?>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-12">
+            <h1><?=parse_piped_title($moreInfoPost -> post_title); ?></h1>
+            <div style="text-align:center;">
+                <?=apply_filters('the_content', $moreInfoPost -> post_content); ?>
             </div>
         </div>
     </div>
