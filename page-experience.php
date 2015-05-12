@@ -1,5 +1,17 @@
 <?php
 
+// UTILITY DEFS
+
+function parse_piped_title($title) {
+    $pcs = explode(" | ", $title, 2);
+    if(count($pcs) < 2) {
+        // there is no pipe here
+        return $pcs[0];
+    } else {
+        return "<span>" . $pcs[0] . "</span>" . $pcs[1];
+    }
+}
+
 /**
  * Get the experience CPT pages
  * and put them into an array
@@ -51,6 +63,13 @@ if($introPostFeaturedClickthroughExists) {
     $introPostLinkWrappedImage = sprintf('<a href="%s">%s</a>', //
     $introPostFeaturedClickthroughURL, $introPostThumbnailMarkup);
 }
+$introPostContentHtml = apply_filters('the_content', $introPost -> post_content);
+
+// MAIN STAGE POST
+
+$mainStagePostHeaderParsed = parse_piped_title($mainStagePost -> post_title);
+$mainStagePostContentParsed = apply_filters('the_content', $mainStagePost -> post_content);
+//var_dump($mainStagePostHeaderParsed);
 ?>
 
 <?php get_header(); ?>
@@ -60,13 +79,20 @@ include 'bumper_top.php';
 <section id="page-experience" class="page-experience headers">
     <div class="container-fluid">
         <div class="col-xs-12 col-md-12">
+
             <?php printf('<img class="img-responsive" src="%s" alt="JoCo Boat Profile Image"/>', get_template_directory_uri() . '/img/joco-boat-profile.png'); ?>
             <h1><?=$introPostHeaderParsed; ?></h1>
             <div>
                 <?=$introPostLinkWrappedImage; ?>
             </div>
             <div>
-                <?=apply_filters('the_content', $introPost -> post_content); ?> 
+                <?=$introPostContentHtml; ?> 
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-12">
+            <h1><?=$mainStagePostHeaderParsed; ?></h1>
+            <div>
+                <?= $mainStagePostContentParsed; ?> 
             </div>
         </div>
     </div>
