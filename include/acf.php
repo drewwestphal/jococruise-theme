@@ -4,34 +4,8 @@ if(function_exists('acf')) {
     $acf = acf();
     $acf -> settings['dir'] = plugins_url() . '/advanced-custom-fields/';
 }
+
 if(function_exists("register_field_group")) {
-    register_field_group(array(
-        'id' => 'acf_about',
-        'title' => 'About',
-        'fields' => array(),
-        'location' => array( array( array(
-                    'param' => 'post_type',
-                    'operator' => '==',
-                    'value' => 'about',
-                    'order_no' => 0,
-                    'group_no' => 0,
-                ), ), ),
-        'options' => array(
-            'position' => 'normal',
-            'layout' => 'no_box',
-            'hide_on_screen' => array(
-                0 => 'custom_fields',
-                1 => 'discussion',
-                2 => 'comments',
-                3 => 'revisions',
-                4 => 'slug',
-                5 => 'author',
-                6 => 'format',
-                7 => 'send-trackbacks',
-            ),
-        ),
-        'menu_order' => 0,
-    ));
     register_field_group(array(
         'id' => 'acf_artist',
         'title' => 'Artist',
