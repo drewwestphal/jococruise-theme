@@ -39,11 +39,13 @@ ul li{
     list-style-type: circle;
     margin-left: 2em;
     text-align: left;
+    line-height: 1.6em;
 }
 ol li{
     list-style-type: decimal;
     margin-left: 2em;
     text-align: left;
+    line-height: 1.6em;
 }
 
 .hidden{
@@ -466,6 +468,7 @@ Hero
 	transition: background .27s;
 	-moz-transition: background .27s;
 	-webkit-transition: background .27s;
+	cursor: pointer;
 }
 .hero-button a{
 	width:100%;
@@ -1427,11 +1430,32 @@ textarea::-webkit-input-placeholder {
 	margin: 0 0 10px;
 	height: 93px;
 }
+.recaptcha-container {
+	float: left;
+	width: 300px;
+	margin-bottom: 12px;	
+}
+.g-recaptcha {
+	/* float: none;
+	width: 300px;
+	margin-bottom: 12px; */
+}
+.recaptcha-error {
+	font-family: surveyorBook,serif;
+	font-size: 12px;
+	height: 0px;
+	width: 300px;
+	padding: 0px;
+	line-height: 12px;
+}
 #contact-form button{
 	background:#6e96ab;
 	font-family: surveyorBook,serif;
-	font-size: 12px;
-	padding: 12px 24px;
+	font-size: 14px;
+	width: 76px;
+	height: 76px;
+	padding: 6px;
+	margin: 0px;
 	border:0;
 	float: right;
 	transition: background .27s;
@@ -1443,6 +1467,7 @@ textarea::-webkit-input-placeholder {
 	background:#a0b8c5;
 }
 #contact-received{
+	clear: both;
 	font-family: surveyorBook,serif;
 	font-size: 14px;
 	line-height:1.25em;
@@ -2214,6 +2239,10 @@ FAQ
   cursor: pointer;
 }
 
+.faq-carousel .glyphicon {
+	cursor: pointer;
+}
+
 .arrow{
 	background:url('img/arrow.png') center center no-repeat;
 	background-size: 33%;
@@ -2475,7 +2504,7 @@ SINGLE PAGE
 	width:49%;
 }
 .bumper-bottom span.glyphicon{
-	top:-19px;
+	/* top:-19px; */
 }
 .bumper-a-container{
 	max-width: 80%;
@@ -2626,7 +2655,7 @@ FAQ	and NEWS
 #page-faq a {
 	color:#144662;
 }
-#page-faq p a {
+#page-faq p a, #page-faq li a {
 	color:#144662;
 	border-bottom: 1px solid #144662;
 	transition: color .27s,border-bottom .27s;
@@ -2634,7 +2663,7 @@ FAQ	and NEWS
 	-moz-transition: color .27s,border-bottom .27s;
 	-webkit-transition: color .27s,border-bottom .27s;
 }
-#page-faq p a:hover {
+#page-faq p a:hover, #page-faq li a:hover {
 	color:#6e96ab;
 	border-bottom: 1px solid #6e96ab;
 }
@@ -2749,6 +2778,59 @@ SPONSORS
 	}
 
 }
+
+
+/*
+ * 
+ * 404
+ * 
+ */
+
+img.failboat{
+	padding: 10px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.header404 {
+	margin: 30px;
+}
+
+.text404 {
+	text-align: center;
+}
+.text404 p {
+	line-height: 1.6em;
+}
+
+.button404 {
+	width:220px;
+	height:auto;
+	background:none;	
+	margin: 30px auto;
+	padding:.5em;
+	border:1px solid #23527c;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	transition: background .27s;
+	-moz-transition: background .27s;
+	-webkit-transition: background .27s;
+	cursor: pointer;
+}
+
+.button404:hover{
+	background:rgba(255,255,255,.25);
+}
+
+.button404 a{
+	color: #23527c;
+	width:100%;
+	text-transform: uppercase;
+	font-family: gothamBook;
+	font-size: 12px;
+}
+
 
 /*
 	

@@ -206,10 +206,11 @@ wp_reset_postdata();
 								wp_reset_postdata();
 							?>
 						
-							<?php if ($artists_more == 1) { ?>
-							<div class="artist_unit artists-artist headers featured-guests" id="item-2">
-								<h1><span>Plus</span><br>More to Come Soon!</h1>
-							</div>
+							<?php if ($artists_more == 1) { 
+								$artist_count++; ?>
+								<div class="artist_unit artists-artist headers featured-guests" id="item-<?php echo $j; ?>">
+									<h1><span>Plus</span><br>More to Come Soon!</h1>
+								</div>
 							<?php }; ?>
 						</div>
 					</div>
@@ -324,7 +325,7 @@ wp_reset_postdata();
 						</div>
 						<div class="contact-text headers">
 							<h1><?php echo $cont_gen_q; ?></h1>
-							<?php echo $cont_gen_q_addy; ?>
+							<a href="mailto: <?php echo $cont_gen_q_addy; ?>"><?php echo $cont_gen_q_addy; ?></a>
 						</div>
 					</div>
 					<?php  }; ?>
@@ -335,7 +336,7 @@ wp_reset_postdata();
 						</div>
 						<div class="contact-text headers">
 							<h1><?php echo $cont_book_q; ?></h1>
-							<?php echo $cont_book_q_addy; ?>
+							<a href="mailto: <?php echo $cont_book_q_addy; ?>"><?php echo $cont_book_q_addy; ?></a>
 						</div>					
 					</div>
 					<?php  }; ?>
@@ -373,6 +374,9 @@ wp_reset_postdata();
 						<input type="text" id="honeypot" name="honeypot" aria-hidden="true" placeholder="Please leave blank.">
 						<div class="contact-comments" id="contact-comments">
 							<textarea name="comments" id="comments" placeholder="your message*"></textarea>
+						</div>
+						<div class="recaptcha-container">
+							<div class="g-recaptcha" data-sitekey="6LdDyQUTAAAAAHpsqVuzy36d-8y5w7y7jyPvXE_d" data-theme="dark"></div>
 						</div>
 						<button type="submit" value="Submit">Submit</button>
 					</form>
