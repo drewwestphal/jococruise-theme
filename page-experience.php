@@ -60,6 +60,7 @@ include 'bumper_top.php';
 <section id="page-experience" class="page-experience headers">
     <div class="container-fluid">
         <div class="col-xs-12 col-md-12">
+            <?php printf('<img class="img-responsive" src="%s" alt="JoCo Boat Profile Image"/>', get_template_directory_uri() . '/img/joco-boat-profile.png'); ?>
             <h1><?=$introPostHeaderParsed; ?></h1>
             <div>
                 <?=$introPostLinkWrappedImage; ?>
