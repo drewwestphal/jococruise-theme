@@ -28,23 +28,50 @@ $photoExplPost = $exp_pcs_byname['exp-photos-expl'];
 $photoGalleryPost = $exp_pcs_byname['exp-photos-gallery'];
 $moreInfoPost = $exp_pcs_byname['exp-more-info'];
 
+// INTRO POST
+
+// modified header
+$introPostHeaderImageTag = sprintf('<image src="%s" alt="JoCo Cruise"/>', get_template_directory_uri() . '/img/hero_JoCo_LoGo.png');
+$introPostHeaderParsed = $introPost -> post_title;
+$introPostHeaderParsed = str_ireplace('JoCo Cruise', $introPostHeaderImageTag, $introPostHeaderParsed);
+
+// clickthru link
+// note that dims can be provided
+// https://codex.wordpress.org/Function_Reference/get_the_post_thumbnail
+$introPostThumbnailMarkup = get_the_post_thumbnail($introPost -> ID, array(
+    256,
+    256
+));
+$introPostFeaturedClickthroughObject = get_field('exp_featured_image_clickthrough_file', $introPost -> ID);
+$introPostFeaturedClickthroughExists = (bool)$introPostFeaturedClickthroughObject;
+$introPostFeaturedClickthroughURL = $introPostFeaturedClickthroughObject["url"];
+//var_dump($introPostFeaturedClickthroughObject);
+$introPostLinkWrappedImage = $introPostThumbnailMarkup;
+if($introPostFeaturedClickthroughExists) {
+    $introPostLinkWrappedImage = sprintf('<a href="%s">%s</a>', //
+    $introPostFeaturedClickthroughURL, $introPostThumbnailMarkup);
+}
 ?>
 
 <?php get_header(); ?>
 <?php
 include 'bumper_top.php';
 ?>
-<section id="the-experience" class="page-experience headers">
+<section id="page-experience" class="page-experience headers">
     <div class="container-fluid">
         <div class="col-xs-12 col-md-12">
-            <h1></h1>
-
+            <h1><?=$introPostHeaderParsed; ?></h1>
+            <div>
+                <?=$introPostLinkWrappedImage; ?>
+            </div>
+            <div>
+                <?=apply_filters('the_content', $introPost -> post_content); ?> 
+            </div>
         </div>
     </div>
+
 </section>
 <?php
 include 'bumper_bottom.php';
-?>
-<?php
 include 'footer.php';
 ?>
