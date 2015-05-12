@@ -221,5 +221,41 @@ if(function_exists("register_field_group")) {
         ),
         'menu_order' => 0,
     ));
+
+    // for the experience page
+    register_field_group(array (
+        'id' => 'acf_experience-page',
+        'title' => 'Experience Page',
+        'fields' => array (
+            array (
+                'key' => 'field_555280ec5a855',
+                'label' => 'Featured Image Clickthrough File',
+                'name' => 'exp_featured_image_clickthrough_file',
+                'type' => 'file',
+                'instructions' => 'This the file that will be displayed when people click through on the featured image. If none is provided, the image will not be clickable.',
+                'save_format' => 'object',
+                'library' => 'all',
+            ),
+        ),
+        'location' => array (
+            array (
+                array (
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'experience',
+                    'order_no' => 0,
+                    'group_no' => 0,
+                ),
+            ),
+        ),
+        'options' => array (
+            'position' => 'normal',
+            'layout' => 'no_box',
+            'hide_on_screen' => array (
+            ),
+        ),
+        'menu_order' => 0,
+    ));
+
 }
 ?>
