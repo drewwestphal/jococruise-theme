@@ -12,6 +12,16 @@ function parse_piped_title($title) {
     }
 }
 
+function parse_piped_title2($title) {
+    $pcs = explode(" | ", $title, 2);
+    if(count($pcs) < 2) {
+        // there is no pipe here
+        return $pcs[0];
+    } else {
+        return "<strong>" . $pcs[0] . "</strong>&nbsp;|&nbsp" . $pcs[1];
+    }
+}
+
 /**
  * Get the experience CPT pages
  * and put them into an array
@@ -121,6 +131,15 @@ include 'bumper_top.php';
             <h1><?=parse_piped_title($shadowCruisePost -> post_title); ?></h1>
             <div>
                 <?=apply_filters('the_content', $shadowCruisePost -> post_content); ?>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-12">
+            <div>
+                <?=apply_filters('the_content', $photoExplPost -> post_content); ?>
+            </div>
+            <h1><?=parse_piped_title2($photoExplPost -> post_title); ?></h1>
+            <div>
+              <?=apply_filters('the_content', $photoGalleryPost -> post_content); ?>
             </div>
         </div>
     </div>
