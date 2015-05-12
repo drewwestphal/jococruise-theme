@@ -27,7 +27,11 @@
 		
 <?php } elseif ( is_page( 'News' ) ){ ?>
 
-		<?php include('page-news.php'); ?>
+        <?php include('page-news.php'); ?>
+
+<?php } elseif ( is_page( 'The Experience' ) ){ ?>
+
+        <?php include('page-experience.php'); ?>
 
 <?php } else { 
     // regular old page style
