@@ -2634,7 +2634,9 @@ FAQ	and NEWS
 
 */
 #page-news .container-fluid,
-#page-faq .container-fluid{
+#page-faq .container-fluid,
+#page-experience .container-fluid
+{
 	max-width: 680px;	
 	color:#144662;
 	font-family: surveyorBook,serif;
