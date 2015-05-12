@@ -1,14 +1,14 @@
 <?php 
 //var_dump($_REQUEST);
 $captcha = $_REQUEST['g-recaptcha-response'];
+//var_dump($_REQUEST['g-recaptcha-response']);
  
 /* Check if captcha is filled */
 if (!$captcha || strlen($captcha)==0) {
     echo "Missing Captcha!"; // Return error if there is no captcha
 } else {
 	$response = json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LdDyQUTAAAAAKpjbTvOXQuB0lyN9mYmqjFvPXg4&response=".$captcha));
-	//var_dump($response);
-	if ($response->success=="false") {
+	if (!$response->success) {
 	    echo "We don't believe that you're not a robot.";
 	    http_response_code(401); // It's SPAM! RETURN SOME KIND OF ERROR
 	} else {
@@ -20,7 +20,7 @@ if (!$captcha || strlen($captcha)==0) {
 		  $email = preg_replace("/[^A-Za-z0-9 ]/", '', $name) . ' <' . $email . '>' ;
 		  $comments = $_REQUEST['comments'] ;
 		  $support = "JoCo Cruise Info <info@jococruisecrazy.com>" ;
-		    
+
 		  mail($email, "Website Inquiry: JoCo Cruise",//
 		  "Hi, thanks for writing. A real person will read this message and get back to you.
 		  \nName: $name
