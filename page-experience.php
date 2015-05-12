@@ -73,7 +73,6 @@ if($introPostFeaturedClickthroughExists) {
     $introPostLinkWrappedImage = sprintf('<a href="%s">%s</a>', //
     $introPostFeaturedClickthroughURL, $introPostThumbnailMarkup);
 }
-
 ?>
 
 <?php get_header(); ?>
@@ -96,7 +95,7 @@ include 'bumper_top.php';
         <div class="col-xs-12 col-md-12">
             <h1><?=parse_piped_title($mainStagePost -> post_title); ?></h1>
             <div>
-                <?=apply_filters('the_content', $mainStagePost -> post_content);  ?>
+                <?=apply_filters('the_content', $mainStagePost -> post_content); ?>
             </div>
         </div>
         <div class="col-xs-12 col-md-12">
