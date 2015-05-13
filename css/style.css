@@ -2738,12 +2738,29 @@ EXPERIENCE
 #featured-events .event-container {
 	width: 80%
 }
-#featured-events .event-image .artists-featured-image {
+#featured-events .event-image .featured-event-image {
 	width: 120px;
 	height: 120px;
+	margin:0 auto;
+	margin-bottom: 30px;
+	overflow: hidden;
+	position: relative;
+	border-radius: 50%;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+}
+#featured-events .featured-event-image img {
+	width: 120px;
+	height: auto;
 }
 #featured-events .event-description {
 	white-space:normal;
+}
+#featured-events .event-name {
+	font-size: 18px;
+	font-family:surveyorBookBold, serif;
+	font-weight: bold;
+	color:#144662;
 }
 #featured-events .event-description a{
 	font-family:surveyorBookBold, serif;
@@ -2763,8 +2780,6 @@ EXPERIENCE
 #featured-events .event-item {
 	padding: 20px 0px;
 	float: left;
-}
-#featured-events .event-items {
 }
 #community img {
 	width:100%;
