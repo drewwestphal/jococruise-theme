@@ -987,9 +987,13 @@ ARTISTS
 		height:90px;
 	}
 }
-.artists-featured-image img{
+.artists-featured-image img.portrait{
 	width:100%;
 	height:auto;
+}
+.artists-featured-image img.landscape{
+	height:100%;
+	width:auto;
 }
 .artists-featured-image img:hover{
 	cursor:pointer;

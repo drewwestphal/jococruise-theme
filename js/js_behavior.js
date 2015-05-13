@@ -356,7 +356,7 @@ jQuery(document).ready(function(jQuery) {
 		'margin-top' : -mapCopyHeight/2
 	});
 	
-	jQuery('#featured-events img').each(function() {
+	jQuery('#featured-events img, .artists-featured-image img').each(function() {
 		var image = jQuery(this);
 		console.log(image.attr('src')+" - "+image.width()+" x "+image.height());
 		if (image.width() > image.height()) {
