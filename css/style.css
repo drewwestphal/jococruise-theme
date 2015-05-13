@@ -2699,6 +2699,16 @@ EXPERIENCE
 	background-position: top center,center center;
 	background-repeat: repeat-x, repeat;	
 }
+#exp-intro .exp-intro-text {
+	padding-right: 15px;
+}
+#exp-intro img {
+	max-width: 100%;
+	height: auto;
+	margin: auto;
+	padding: 20px 0px;
+	vertical-align: middle;
+}
 #main-stage ul li {
 	list-style-type: none;
 	margin: 0px;

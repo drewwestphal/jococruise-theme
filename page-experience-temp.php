@@ -115,10 +115,10 @@ $lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm
 	</section>
 	<section id="exp-intro">
 		<div class="container-fluid">
-			<div class="col-xs-12 col-md-9">
+			<div class="col-xs-12 col-md-9 exp-intro-text">
 				<?=apply_filters('the_content', $introPost -> post_content); ?>
 			</div>
-			<div class="col-xs-12 col-md-3">
+			<div class="col-xs-12 col-md-3 center-block" style="text-align: center;">
 				<?=$introPostLinkWrappedImage; ?>
 			</div>
 		</div>
@@ -231,7 +231,7 @@ $lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm
 		<div class="container-fluid">
 			<div class="col-xs-12 col-md-12">
 				<?=apply_filters('the_content', $photoExplPost -> post_content); ?>
-				<h3><?=$photoExplPost -> post_title?></h3>
+				<h3><?=parse_piped_title2($photoExplPost -> post_title)?></h3>
 				<!--<h3><strong>Photos</strong> | JoCo Cruise 2014</h3>-->
 				<?=apply_filters('the_content', $photoGalleryPost -> post_content); ?>
 				<? include "exp-gallery.php"; ?>
