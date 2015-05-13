@@ -2802,7 +2802,8 @@ EXPERIENCE
 }
 #gallery-experience {
 	margin-top: 20px;
-	height: 550px;
+	height: 0px;
+	padding-bottom: 90%;
 }
 #gallery-experience a{
 	color: #144662;
@@ -2815,10 +2816,15 @@ EXPERIENCE
 #gallery-experience .arrow {
 	top: 50%;
 }
+#gallery-experience .gallery-icon {
+	width: 100%;
+}
 #gallery-experience img {
 	margin-top: 20px;
-	max-height: 500px;
+	max-height: 100%;
+	max-width: 90%;
 	width: auto;
+	height: auto;
 }
 .main-stage-button {
 	min-width: 300px;
