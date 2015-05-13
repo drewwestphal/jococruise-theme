@@ -2719,6 +2719,13 @@ EXPERIENCE
 	max-width: 750px;
 	margin: auto;
 }
+#community ul {
+	margin: 20px;
+}
+#community ul li {
+	list-style-type: none;
+	text-align: center;
+}
 #exp-photos, #exp-more {
 	text-align: center;
 }
@@ -2736,9 +2743,7 @@ FAQ	and NEWS
 
 */
 #page-news .container-fluid,
-#page-faq .container-fluid,
-#page-experience .container-fluid
-{
+#page-faq .container-fluid {
 	max-width: 680px;	
 	color:#144662;
 	font-family: surveyorBook,serif;
