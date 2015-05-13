@@ -187,7 +187,7 @@ $lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm
 								</div>
 								<div class="col-xs-12 col-md-9 event-description">
 										<a href="<?php echo get_permalink($fe -> ID); ?>"><?php echo $fe -> post_title; ?></a>
-										<p><?php echo $fe -> post_content; ?></p>
+										<p><?php echo ($fe->post_excerpt) ? $fe->post_excerpt : $fe -> post_content; ?></p>
 								</div>
 							</div>
 							<?
