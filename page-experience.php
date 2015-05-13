@@ -50,6 +50,19 @@ $photoExplPost = $exp_pcs_byname['exp-photos-expl'];
 $photoGalleryPost = $exp_pcs_byname['exp-photos-gallery'];
 $moreInfoPost = $exp_pcs_byname['exp-more-info'];
 
+/**
+ * Get the Featured Events
+ * Sort them correctly?
+ */
+$featured_events = new WP_Query( array(
+    'post_type' => 'featured-event',
+    'posts_per_page' => -1,
+    'orderby' => '_thumbnail_id',
+    'order' => 'ASC'
+));
+$featured_events = $featured_events -> get_posts();
+wp_reset_postdata();
+
 // INTRO POST
 
 // modified header
@@ -102,6 +115,16 @@ include 'bumper_top.php';
             <h1><?=parse_piped_title($featuredEventsHeaderPost -> post_title); ?></h1>
             <div>
                 <?=trim(apply_filters('the_content', $featuredEventsHeaderPost -> post_content)); ?>
+            </div>
+            <div>
+                <?php foreach($featured_events as $fe) {
+                    echo get_the_post_thumbnail($fe -> ID, array(
+                        1024,
+                        1024
+                    ));
+                    printf("<h2>%s</h2>",$fe->post_title);
+                    echo apply_filters('the_content', $fe -> post_content);
+                }?>
             </div>
         </div>
         <div class="col-xs-12 col-md-12">
