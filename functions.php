@@ -228,4 +228,7 @@ require_once(__DIR__.'/include/acf.php');
 require_once(__DIR__.'/include/cpt.php');
 require_once(__DIR__.'/include/columns.php');
 
-require_once(__DIR__.'/page-experience-gallery.php');
+if(!is_admin()) {
+	require_once(__DIR__.'/page-experience-gallery.php');
+}
+?>
