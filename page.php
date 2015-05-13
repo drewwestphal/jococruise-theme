@@ -31,7 +31,7 @@
 		
 <?php } elseif ( is_page( 'The Experience' ) ){ ?>
 
-		<?php include('page-experience.php'); ?>
+		<?php include('page-experience-temp.php'); ?>
 
 <?php } else { 
     // regular old page style

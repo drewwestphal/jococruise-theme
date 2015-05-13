@@ -1,3 +1,8 @@
+<style>
+	body {
+		background-color: #ffffff;
+	}
+</style>
 <?php get_header(); ?>
 <?php
 function split_title($title) {
