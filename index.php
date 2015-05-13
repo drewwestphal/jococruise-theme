@@ -137,8 +137,8 @@ wp_reset_postdata();
 								$artist_query = new WP_Query($args);
 								$artist_count = $artist_query->post_count;
                                 echo '
-                                <div class="artist_unit artists-artist headers featured-guests" id="item-'.$j.'">
-                                    <h1><span>2016</span><br>Featured <p style="font-size:77%">Performers</p></h1>
+                                <div class="artist_unit artists-artist headers featured-guests" id="item-0">
+                                    <h1><span>2016</span><br> <p style="font-size:77%">Performers</p></h1>
                                 </div>
                                 ';
                             
