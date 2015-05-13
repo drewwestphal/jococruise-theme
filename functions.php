@@ -103,6 +103,18 @@ function blankslate_load_scripts() {
         'bootstrapcss',
     ), 1, 'screen');
 
+
+    // magnific
+    // it is just registered here
+    // call it a dep to include it on a page
+    wp_register_script('magnificjs',//
+    get_template_directory_uri() . '/js/jquery.magnific-popup.min.js', //
+     array('jquery'), 1, true);
+    wp_register_style('magnificcss',//
+    get_template_directory_uri() . '/css/magnific-popup.css', //
+     array(), 1, true);
+
+
     
     $maindeps = array(
         'bootstrapcss',
@@ -154,6 +166,12 @@ function blankslate_load_scripts() {
         ), '1', true);
         wp_localize_script('js_contact', 'js_contact_data', //
         array('contact_post_url' => get_template_directory_uri() . '/contact.php'));
+    }
+    
+    if(is_page('The Experience')) {
+        wp_enqueue_script('js_experience',//
+        get_template_directory_uri() . '/js/js_experience.js', //
+         array('magnificjs'), 1, false);
     }
 }
 
@@ -209,3 +227,5 @@ return $count;
 require_once(__DIR__.'/include/acf.php');
 require_once(__DIR__.'/include/cpt.php');
 require_once(__DIR__.'/include/columns.php');
+
+require_once(__DIR__.'/page-experience-gallery.php');

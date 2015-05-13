@@ -13,6 +13,8 @@ FONTS
 	
 */
 
+@import url('css/magnific-popup.css');
+
 /* surveyor */
 @font-face {
     font-family: surveyorBook;
