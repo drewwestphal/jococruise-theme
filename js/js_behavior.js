@@ -356,6 +356,16 @@ jQuery(document).ready(function(jQuery) {
 		'margin-top' : -mapCopyHeight/2
 	});
 	
+	jQuery('#featured-events img').each(function() {
+		var image = jQuery(this);
+		console.log(image.attr('src')+" - "+image.width()+" x "+image.height());
+		if (image.width() > image.height()) {
+			image.addClass('landscape');        
+		} else {
+			image.addClass('portrait');        
+		}
+	});
+	
 	//initial call of mapBehavior()
 	mapBehavior();
 	

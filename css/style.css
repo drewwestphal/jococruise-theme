@@ -2749,9 +2749,13 @@ EXPERIENCE
 	-moz-border-radius: 50%;
 	-webkit-border-radius: 50%;
 }
-#featured-events .featured-event-image img {
+#featured-events .featured-event-image img.portrait {
 	width: 120px;
 	height: auto;
+}
+#featured-events .featured-event-image img.landscape {
+	height: 120px;
+	width: auto;
 }
 #featured-events .event-description {
 	white-space:normal;
