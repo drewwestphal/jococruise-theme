@@ -190,6 +190,7 @@ $lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm
 				<h3><?=$photoExplPost -> post_title?></h3>
 				<!--<h3><strong>Photos</strong> | JoCo Cruise 2014</h3>-->
 				<?=apply_filters('the_content', $photoGalleryPost -> post_content); ?>
+				<? include "exp-gallery.php"; ?>
 			</div>
 		</div>
 	</section>
