@@ -2716,7 +2716,7 @@ EXPERIENCE
 	margin: 0px;
 	line-height: 1.1em;
 }
-#tracks .container-fluid, #community .container-fluid, #featured-events .container-fluid {
+#tracks .container-fluid, #community .container-fluid, #featured-events .container-fluid, #exp-photos .container-fluid {
 	max-width: 960px;
 }
 #tracks h1 {
@@ -2800,11 +2800,6 @@ EXPERIENCE
 #exp-photos, #exp-more {
 	text-align: center;
 }
-#gallery-experience {
-	margin-top: 20px;
-	height: 0px;
-	padding-bottom: 90%;
-}
 #gallery-experience a{
 	color: #144662;
 	padding: 6px;
@@ -2813,8 +2808,26 @@ EXPERIENCE
 #gallery-experience a.orange-text {
 	color: #6e96ab;
 }
-#gallery-experience .arrow {
-	top: 50%;
+#gallery-experience .glyphicon {
+	position: absolute;
+	top:50%;
+	padding: 6px 5px 5px 6px;
+	border-radius: 50%;
+	cursor:pointer;
+}
+#gallery-experience span.glyphicon-menu-right{
+	right:0;
+}
+#gallery-experience span.glyphicon-menu-left{
+	left:0;
+}
+#gallery-experience .glyphicon:hover{
+	background:rgba(160,184,197,.1);
+}
+#gallery-experience {
+	margin-top: 20px;
+	height: 0px;
+	padding-bottom: 60%;
 }
 #gallery-experience .gallery-icon {
 	width: 100%;
@@ -2822,7 +2835,7 @@ EXPERIENCE
 #gallery-experience img {
 	margin-top: 20px;
 	max-height: 100%;
-	max-width: 90%;
+	max-width: 80%;
 	width: auto;
 	height: auto;
 }

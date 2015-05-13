@@ -108,11 +108,11 @@ add_filter('post_gallery', function($output = '', $atts, $content = false, $tag 
 
     $size_class = sanitize_html_class($atts['size']);
     $gallery_div = "<div id='$selector' class='gallery galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}'>";
-    $gallery_div .= '<span class="arrow arrow-left"></span>';
+    $gallery_div .= '<span class="glyphicon glyphicon-menu-left"></span>';
     for($i = 0; $i < count($attachments); $i++) {
         $gallery_div .= sprintf('<a href="#gallery-item-%d" class="gallery-bull %s">&bull;</a>', $i, $i === 0 ? 'orange-text' : '');
     }
-    $gallery_div .= '<span class="arrow arrow-right"></span>';
+    $gallery_div .= '<span class="glyphicon glyphicon-menu-right"></span>';
     /**
      * Filter the default gallery shortcode CSS styles.
      *
@@ -132,7 +132,7 @@ add_filter('post_gallery', function($output = '', $atts, $content = false, $tag 
         } elseif(!empty($atts['link']) && 'none' === $atts['link']) {
             $image_output = wp_get_attachment_image($id, $atts['size'], false, $attr);
         } else {
-            $image_output = wp_get_attachment_link($id, $atts['size'], true, false, false, $attr);
+            $image_output = wp_get_attachment_link($id, $atts['size'], false, false, false, $attr);
         }
         $image_meta = wp_get_attachment_metadata($id);
 

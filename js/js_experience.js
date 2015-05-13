@@ -45,7 +45,7 @@
             return false;
         });
         
-        $('#gallery-experience .arrow').click(function() {
+        $('#gallery-experience .glyphicon').click(function() {
             if ('left' === $(this).attr('class').split(/\s+/).pop().split(/-/).pop()) {
                 moveGallery("left");
             } else {
