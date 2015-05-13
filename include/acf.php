@@ -1,32 +1,11 @@
 <?php
+
+if(function_exists('acf')) {
+    $acf = acf();
+    $acf -> settings['dir'] = plugins_url() . '/advanced-custom-fields/';
+}
+
 if(function_exists("register_field_group")) {
-    register_field_group(array(
-        'id' => 'acf_about',
-        'title' => 'About',
-        'fields' => array(),
-        'location' => array( array( array(
-                    'param' => 'post_type',
-                    'operator' => '==',
-                    'value' => 'about',
-                    'order_no' => 0,
-                    'group_no' => 0,
-                ), ), ),
-        'options' => array(
-            'position' => 'normal',
-            'layout' => 'no_box',
-            'hide_on_screen' => array(
-                0 => 'custom_fields',
-                1 => 'discussion',
-                2 => 'comments',
-                3 => 'revisions',
-                4 => 'slug',
-                5 => 'author',
-                6 => 'format',
-                7 => 'send-trackbacks',
-            ),
-        ),
-        'menu_order' => 0,
-    ));
     register_field_group(array(
         'id' => 'acf_artist',
         'title' => 'Artist',
@@ -242,5 +221,41 @@ if(function_exists("register_field_group")) {
         ),
         'menu_order' => 0,
     ));
+
+    // for the experience page
+    register_field_group(array (
+        'id' => 'acf_experience-page',
+        'title' => 'Experience Page',
+        'fields' => array (
+            array (
+                'key' => 'field_555280ec5a855',
+                'label' => 'Featured Image Clickthrough File',
+                'name' => 'exp_featured_image_clickthrough_file',
+                'type' => 'file',
+                'instructions' => 'This the file that will be displayed when people click through on the featured image. If none is provided, the image will not be clickable.',
+                'save_format' => 'object',
+                'library' => 'all',
+            ),
+        ),
+        'location' => array (
+            array (
+                array (
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'experience',
+                    'order_no' => 0,
+                    'group_no' => 0,
+                ),
+            ),
+        ),
+        'options' => array (
+            'position' => 'normal',
+            'layout' => 'no_box',
+            'hide_on_screen' => array (
+            ),
+        ),
+        'menu_order' => 0,
+    ));
+
 }
 ?>

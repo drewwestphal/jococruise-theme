@@ -194,6 +194,7 @@ function cptui_register_my_cpt_sponsors() {
         )
     ));
 }
+
 add_action('init', 'cptui_register_my_cpt_cities');
 function cptui_register_my_cpt_cities() {
     register_post_type('city', array(
@@ -243,4 +244,248 @@ function cptui_register_my_cpt_cities() {
     ));
 }
 
+/**
+ * Custom Post Types Supporting the
+ * THE EXPERIENCE
+ * Page
+ *
+ */
+// dw custom
+add_action('init', function() {
+    // piecse of the experience page
+    register_post_type('experience', array(
+        'label' => 'experience',
+        'description' => '',
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'capability_type' => 'post',
+        'map_meta_cap' => true,
+        // these apparently block front end visibility
+        // along with making the creation of new posts impossible
+        'hierarchical' => false,
+        'public' => false,
+        'has_archive' => false,
+        'publicly_queryable' => false,
+        'capabilities' => array('create_posts' => false, ),
+        'rewrite' => array(
+            'slug' => 'experience',
+            'with_front' => true
+        ),
+        'query_var' => false,
+        'supports' => array(
+            'title',
+            'editor',
+            'excerpt',
+            'trackbacks',
+            'custom-fields',
+            'comments',
+            'revisions',
+            'thumbnail',
+            'author',
+            'page-attributes',
+            'post-formats',
+            'wpcom-markdown'
+        ),
+        'labels' => array(
+            'name' => 'Experience Pieces',
+            'singular_name' => 'Experience Piece',
+            'menu_name' => 'The Experience',
+            'add_new' => 'Add New Experience Piece',
+            'add_new_item' => 'Add New Experience Piece',
+            'edit' => 'Edit',
+            'edit_item' => 'Edit Experience Piece',
+            'new_item' => 'New Experience Piece',
+            'view' => 'View Experience Pieces',
+            'view_item' => 'View Experience Piece',
+            'search_items' => 'Search Experience Pieces',
+            'not_found' => 'No Experience Pieces Found',
+            'not_found_in_trash' => 'No Experience Pieces Found in Trash',
+            'parent' => 'Parent Experience Pieces',
+        )
+    ));
+
+    // featured events
+    register_post_type('featured-event', array(
+        'label' => 'featured-event',
+        'description' => '',
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'capability_type' => 'post',
+        'map_meta_cap' => true,
+        // these apparently block front end visibility
+        'hierarchical' => false,
+        'public' => false,
+        'has_archive' => false,
+        'publicly_queryable' => false,
+        'rewrite' => array(
+            'slug' => 'featured-event',
+            'with_front' => true
+        ),
+        'query_var' => false,
+        'supports' => array(
+            'title',
+            'editor',
+            'excerpt',
+            'trackbacks',
+            'custom-fields',
+            'comments',
+            'revisions',
+            'thumbnail',
+            'author',
+            'page-attributes',
+            'post-formats',
+            'wpcom-markdown'
+        ),
+        'labels' => array(
+            'name' => 'Featured Events',
+            'singular_name' => 'Featured Event',
+            'menu_name' => 'Featured Events (Exp. Pg.)',
+            'add_new' => 'Add New Featured Event',
+            'add_new_item' => 'Add New Featured Event',
+            'edit' => 'Edit',
+            'edit_item' => 'Edit Featured Event',
+            'new_item' => 'New Featured Event',
+            'view' => 'View Featured Events',
+            'view_item' => 'View Featured Event',
+            'search_items' => 'Search Featured Events',
+            'not_found' => 'No Featured Events Found',
+            'not_found_in_trash' => 'No Featured Events Found in Trash',
+            'parent' => 'Parent Featured Events',
+        )
+    ));
+});
+
+/**
+ * Prepopulate experience pieces...
+ * This array contains name, title, and content for the posts
+ * If a post with that name does not exist, it will be created
+ * and populated with the dummy content and title given here.
+ * This is partly for convenience, but also because
+ * posts cannot be created on the front end
+ */
+//var_dump(get_page_by_path('intro-post'));
+$pieces = array(//
+    array(
+        'post_name' => 'exp-intro',
+        'post_title' => 'What is the JoCo Cruise?',
+        'post_content' => "
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a sem a felis placerat egestas. In laoreet purus augue, non egestas tellus lobortis non. Proin sit amet leo ut risus pellentesque ornare in a urna.
+</p>
+
+<p>
+    Quisque rutrum, diam vitae porttitor convallis, lorem purus tempus mi, a mattis magna turpis vel nisl. Nullam ullamcorper lacinia ornare. Suspendisse potenti. Ut vel volutpat purus, in aliquam massa. Quisque convallis erat vel tortor feugiat, mollis aliquet sapien dictum. Pellentesque luctus ultricies euismod.
+</p>
+
+<p>
+    Nam viverra placerat ante non hendrerit.
+</p>
+        ",
+    ),
+    array(
+        'post_name' => 'exp-main-stage',
+        'post_title' => 'On the | Main Stage',
+        'post_content' => "
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a sem a felis placerat egestas. In laoreet purus augue, non egestas tellus lobortis non. Proin sit amet leo ut risus pellentesque ornare in a urna.
+</p>
+        ",
+    ),
+    array(
+        'post_name' => 'exp-featured-events-header',
+        'post_title' => 'JoCo Cruise 2016 | Featured Events',
+        'post_content' => "",
+    ),
+    array(
+        'post_name' => 'exp-gaming-track',
+        'post_title' => 'The Gaming Track &amp; 24/7 Game Room',
+        'post_content' => "
+        <p>
+        Discover new games, play in tournaments, be part of beta tests, and meet the game makers behind some of your favorites. Response to Official gaming events was so great in 2015 that we’ll be making even more room for them in this year’s schedule; look for details in the coming months.
+        </p>
+        ",
+    ),
+    array(
+        'post_name' => 'exp-writing-track',
+        'post_title' => 'The Writing Track',
+        'post_content' => "
+        <p>
+        Meet and learn from the greats!  Led by New York Times bestseller, handsome devil, and veteran Sea Monkey                 John Scalzi, JoCo Cruise’s Official Writing Track will feature panels, readings, and hangouts throughout the week. Look for more information in the coming months.
+        </p>
+        ",
+    ),
+    array(
+        'post_name' => 'exp-community',
+        'post_title' => 'The Shadow Cruise | Our Amazing Community',
+        'post_content' => "
+        <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+        </p>
+        <ul>
+        <li>Cocktail Parties</li><li>
+        Dance Parties</li><li>
+        Karaoke Parties</li><li>
+        Beach Parties</li><li>
+        Panel Discussions</li><li>
+        Open Mics</li><li>
+        Song Circles</li><li>
+        Meetups</li><li>
+        Movie Nights</li><li>
+        and so much more!</li>
+        </ul>
+        ",
+    ),
+    array(
+        'post_name' => 'exp-photos-expl',
+        'post_title' => 'Photos | JoCo Cruise 2016',
+        'post_content' => "
+        <p>
+        Is there any evidence you can point to that supports your theory this is fun? Why yes! Here's a little slideshow of pictures
+        from JoCo Cruise 2015!
+        </p>
+        ",
+    ),
+    array(
+        'post_name' => 'exp-photos-gallery',
+        'post_title' => 'Photos | Gallery ONLY',
+        'post_content' => "
+        insert the gallery here using the media box
+        ",
+    ),
+    array(
+        'post_name' => 'exp-more-info',
+        'post_title' => 'More Information and Links',
+        'post_content' => "
+<p>
+    Listen, we can’t possibly be lying about how much fun this thing is, because there’s no way we could plant this much stuff all over the internet.
+</p>
+<p>
+    You can see what people say in the Jonathan Coulton forums,
+    <br/>
+    Join the JCC2016 Facebook group (this is a closed group, you’ll need to request membership),
+    <br/>
+    Watch a ton of other videos on YouTube,
+    <br/>
+    or Read about past/future cruises in the Jonathan Coulton wiki.
+    <br/>
+</p>
+<p>
+    It really is great, and we really hope you join us.
+</p>
+",
+    ),
+);
+foreach($pieces as $piece) {
+    if(!get_page_by_path($piece['post_name'], OBJECT, 'experience')) {
+        wp_insert_post(array(
+            'post_name' => $piece['post_name'],
+            'post_title' => $piece['post_title'],
+            'post_content' => $piece['post_content'],
+            'post_status' => 'publish',
+            'post_type' => 'experience',
+            'ping_status' => 'closed',
+        ), true);
+    }
+
+}
 ?>
