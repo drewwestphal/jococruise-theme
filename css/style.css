@@ -2800,6 +2800,26 @@ EXPERIENCE
 #exp-photos, #exp-more {
 	text-align: center;
 }
+#gallery-experience {
+	margin-top: 20px;
+	height: 550px;
+}
+#gallery-experience a{
+	color: #144662;
+	padding: 6px;
+	font-size: 24px;
+}
+#gallery-experience a.orange-text {
+	color: #6e96ab;
+}
+#gallery-experience .arrow {
+	top: 50%;
+}
+#gallery-experience img {
+	margin-top: 20px;
+	max-height: 500px;
+	width: auto;
+}
 .main-stage-button {
 	min-width: 300px;
 	text-align: center;
