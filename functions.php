@@ -146,7 +146,7 @@ function blankslate_load_scripts() {
     }
 
     // home directory scripts
-    if(is_home()) {
+    if(is_home() || is_page( 'The Experience' )) {
         wp_enqueue_script('js_behavior', get_template_directory_uri() . '/js/js_behavior.js', array('jquery'), 1, true);
         wp_enqueue_script('js_contact', get_template_directory_uri() . '/js/js_contact.js', array(
             'jquery',

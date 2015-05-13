@@ -134,6 +134,27 @@ $lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm
 				<?=apply_filters('the_content', $mainStagePost -> post_content); ?>
 				<div class="main-stage-button button404"><a href="/#artists">See who is coming so far in 2016</a></div>
 				<p>Past cruise guests include (in no particular order, OK, it's alphabetical):</p>
+				<div class="col-xs-12 col-md-6">
+					<ul>
+					<?php
+						$past_guests = array("Jonathan Coulton","Paul and Storm","The Both (Aimee Mann and Ted Leo)","Rhea Butcher","Marian Call",
+							"Chris Collingwood (Fountains of Wayne)","Bill Corbett and Kevin Murphy (Rifftrax)","The Doubleclicks",
+							"John Flansburgh (They Might Be Giants)","MC Frontalot","Jean Grae","Hank Green","Vi Hart","John Hodgman",
+							"Grant Imahara (Mythbusters)","Mathew Inman (The Oatmeal)","Steve Jackson (Steve Jackson Games)","Zoe Keating",
+							"Hari Kondabolu","Molly Lewis","Merlin Mann","Opus Moreschi (Colbert Report)","Randall Munroe (xkcd)","Mike Phirman",
+							"Pomplamoose","David Rees","John Roderick","Pat Rothfuss","Peter Sagal","Nathan Sowaya","John Scalzi",
+							"Joseph Scrimshaw","Sara and Sean Watkins (Nickel Creek)","and Will Wheaton");
+						$i = 0;
+						foreach ($past_guests as $guest) {
+							if (abs($i*2 - count($past_guests)) <= 1) {
+								echo "</ul></div><div class='col-xs-12 col-md-6'><ul>";
+							}
+							$i++;
+					?>
+							<li><?=$guest?></li>
+					<? } ?>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -144,16 +165,41 @@ $lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm
 				<h2><?php echo $title[0] ?></h2>
 				<h1><?php echo $title[1] ?></h1>
 				<?=trim(apply_filters('the_content', $featuredEventsHeaderPost -> post_content)); ?>
-	            <div>
-	                <?php foreach($featured_events as $fe) {
-	                    echo get_the_post_thumbnail($fe -> ID, array(
-	                        1024,
-	                        1024
-	                    ));
-	                    printf("<h2>%s</h2>",$fe->post_title);
-	                    echo apply_filters('the_content', $fe -> post_content);
-	                }?>
-	            </div>
+            	<?php if (count($featured_events) > 1) { ?>
+					<div class="carousel event-carousel" id="news-carousel">
+						<span class="glyphicon glyphicon-menu-left"></span>
+						<?php for ($m=0;$m<count($featured_events);$m++){ ?>		
+								<a href="#news-item-<?php echo $m; ?>" <?php if ($m===0) { echo 'class="orange-text unmove"';} else { echo 'class="unmove"'; };?>>&bull;</a>
+						<?php 						}
+						?>	
+						<span class="glyphicon glyphicon-menu-right"></span>
+					</div>
+				<?php }; ?>
+            	<div id="news-container" class="event-container">
+					<div id="news-items" class="event-items"  style="width: <?=count($featured_events)*100?>%">
+            			<?php $j=0;
+            			foreach($featured_events as $fe) { ?>
+            				<div class="news-item event-item" style="width: <?=100/count($featured_events)?>%">
+            					<div class="event-image center-block">
+				                	<div class="artists-featured-image">
+										<a href="<?php echo get_permalink($fe -> ID); ?>"><?php echo get_the_post_thumbnail($fe -> ID); ?></a>
+									</div>
+								</div>
+								<div class="event-description">
+									<div class="">
+										<a href="<?php echo get_permalink($fe -> ID); ?>"><?php echo $fe -> post_title; ?></a>
+										<p><?php echo $fe -> post_content; ?></p>
+									</div>
+								</div>
+							</div>
+							<?
+							$j++;
+		                    //echo get_the_post_thumbnail($fe -> ID, array( 1024,1024));
+		                    //printf("<h2>%s</h2>",$fe->post_title);
+		                    //echo apply_filters('the_content', $fe -> post_content);
+            			} ?>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>

@@ -2658,6 +2658,9 @@ EXPERIENCE
 	line-height: 1.25em;
 	text-align: center;
 }
+#page-experience h4 {
+	font-size: 20px;
+}
 #page-experience p {
 	margin: 20px 0px;
 	line-height: 1.25em;
@@ -2678,6 +2681,7 @@ EXPERIENCE
 	margin: 20px auto 42px;
 }
 #what-is-logo {
+	height: 84px;
 	margin: 0px 10px;
 	display: inline;
 	line-height: 42;
@@ -2695,6 +2699,11 @@ EXPERIENCE
 	background-position: top center,center center;
 	background-repeat: repeat-x, repeat;	
 }
+#main-stage ul li {
+	list-style-type: none;
+	margin: 0px;
+	line-height: 1.1em;
+}
 #tracks .container-fluid, #community .container-fluid, #featured-events .container-fluid {
 	max-width: 960px;
 }
@@ -2709,6 +2718,60 @@ EXPERIENCE
 }
 #featured-events, #community {
 	background-color: #e2ddc6;
+}
+#featured-events .event-carousel {
+	margin: auto;
+	text-align: center;
+}
+#featured-events .event-container {
+	width: 80%
+}
+#featured-events .event-image {
+	float: left;
+	width: 20%;
+	margin: auto;
+	min-width: 120px;
+	vertical-align: middle;
+}
+#featured-events .event-image .artists-featured-image {
+	width: 120px;
+	height: 120px;
+}
+#featured-events .event-description {
+	float: left;
+	width: 70%;
+	padding: 0px 5%;
+	white-space:normal;
+}
+/*
+.artists-name{
+	width:100%;
+	height:30px;
+	white-space: nowrap;
+	font-size: 14px;
+	margin: 0 0 10px;
+}
+*/
+#featured-events .event-description a{
+	font-family:surveyorBookBold, serif;
+	font-weight: bold;
+	color:#144662;
+	border-bottom:1px solid #144662;
+	transition: color .27s,border-bottom .27s;
+	-o-transition: color .27s,border-bottom .27s;
+	-moz-transition: color .27s,border-bottom .27s;
+	-webkit-transition: color .27s,border-bottom .27s;
+}
+#featured-events .event-description a:hover{
+	text-decoration: none;
+	border-bottom:1px solid #6e96ab;
+	color:#6e96ab;
+}
+#featured-events .event-item {
+	padding: 20px 0px;
+	float: left;
+}
+#featured-events .event-items {
 }
 #community img {
 	width:100%;
