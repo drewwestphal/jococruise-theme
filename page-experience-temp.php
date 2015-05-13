@@ -179,17 +179,15 @@ $lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm
 					<div id="news-items" class="event-items"  style="width: <?=count($featured_events)*100?>%">
             			<?php $j=0;
             			foreach($featured_events as $fe) { ?>
-            				<div class="news-item event-item" style="width: <?=100/count($featured_events)?>%">
-            					<div class="event-image center-block">
+            				<div class="news-item event-item container-fluid" style="width: <?=100/count($featured_events)?>%">
+            					<div class="col-xs-12 col-md-3 event-image">
 				                	<div class="artists-featured-image">
 										<a href="<?php echo get_permalink($fe -> ID); ?>"><?php echo get_the_post_thumbnail($fe -> ID); ?></a>
 									</div>
 								</div>
-								<div class="event-description">
-									<div class="">
+								<div class="col-xs-12 col-md-9 event-description">
 										<a href="<?php echo get_permalink($fe -> ID); ?>"><?php echo $fe -> post_title; ?></a>
 										<p><?php echo $fe -> post_content; ?></p>
-									</div>
 								</div>
 							</div>
 							<?

@@ -99,14 +99,14 @@ jQuery(document).ready(function(jQuery) {
 	    var spanNewsPosition = jQuery(this).index();
 	    updateNewsPosition(spanNewsPosition,windowWidth,newsOverflowLeft,newsOverflowWidth);
 	});
-    jQuery('#news').on('swipeleft',function() {
+    jQuery('#news, #featured-events').on('swipeleft',function() {
 	    var newsOverflowWidth = jQuery('#news-items').width();
 	    var newsOverflowLeft = jQuery('#news-items').css('left');
 	    var windowWidth = jQuery(window).width();
 	    var spanNewsPosition = 1;
 	    updateNewsPosition(spanNewsPosition,windowWidth,newsOverflowLeft,newsOverflowWidth);
 	});
-    jQuery('#news').on('swiperight',function() {
+    jQuery('#news, #featured-events').on('swiperight',function() {
 	    var newsOverflowWidth = jQuery('#news-items').width();
 	    var newsOverflowLeft = jQuery('#news-items').css('left');
 	    var windowWidth = jQuery(window).width();
