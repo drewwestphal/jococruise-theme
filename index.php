@@ -171,6 +171,7 @@ wp_reset_postdata();
 								if ($feat_count > 0) {
 									$artist_count += 1;
 									echo '
+									<div class="clearfix visible-sm-block visible-md-block visible-lg-block"></div>
 									<div class="artist_unit artists-artist headers featured-guests" id="item-'.$j.'">
 										<h1><span>2016</span><br>Featured Guests</h1>
 									</div>
