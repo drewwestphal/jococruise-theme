@@ -23,6 +23,7 @@
             // show & hide the correct dealio
             $('#gallery-experience .gallery-item:visible').hide();
             $('#gallery-experience .gallery-item-' + idx).show();
+            gallery_spacing_adjust();
         }
         function moveGallery(dir) {
         	var totElem = $('#gallery-experience .gallery-item').length;

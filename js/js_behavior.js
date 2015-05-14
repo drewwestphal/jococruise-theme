@@ -358,7 +358,7 @@ jQuery(document).ready(function(jQuery) {
 	
 	jQuery('#featured-events img, .artists-featured-image img').each(function() {
 		var image = jQuery(this);
-		console.log(image.attr('src')+" - "+image.width()+" x "+image.height());
+		//console.log(image.attr('src')+" - "+image.width()+" x "+image.height());
 		if (image.width() > image.height()) {
 			image.addClass('landscape');        
 		} else {
@@ -366,7 +366,7 @@ jQuery(document).ready(function(jQuery) {
 		}
 	});
 	
-	jQuery('.gallery-item').css('height', jQuery('#gallery-experience').outerHeight() - jQuery('.gallery-bull:first').innerHeight());
+	gallery_spacing_adjust();
 	//jQuery('.gallery-item').css('height',100);
 	//jQuery('.gallery-item').addClass('testing!');
 	
@@ -375,8 +375,21 @@ jQuery(document).ready(function(jQuery) {
 	
 });
 
+function gallery_spacing_adjust() {
+	var box_height = jQuery('#gallery-experience').outerHeight() - jQuery('.gallery-bull:first').innerHeight();
+	jQuery('.gallery-item').css('height', box_height);
+	jQuery('#gallery-experience img').each(function() {
+		var image = jQuery(this);
+		var img_height = image.height();
+		//console.log(jQuery(this).attr('src')+" - "+img_height);
+		if (img_height > 0) {
+			jQuery(this).css("margin-top", (box_height-img_height)/2 + 20);
+		}
+	});
+}
+
 jQuery(window).resize(function(){
-	jQuery('.gallery-item').css('height', jQuery('#gallery-experience').outerHeight() - jQuery('.gallery-bull:first').innerHeight());
+	gallery_spacing_adjust();
     if (jQuery(window).width()>767){
 	    //artist
 	    jQuery('#overflow').css('left', 0);
