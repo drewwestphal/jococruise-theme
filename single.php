@@ -31,7 +31,11 @@
 							</a>
 						<?php  };
 						   if (get_field('artist_youtube')){ ?>
-							<a class="social-icon youtube" href="<?php echo get_field('artist_youtube'); ?>" class="social-icon youtube" target="_blank">
+							<a href="<?php echo get_field('artist_youtube'); ?>" class="social-icon youtube" target="_blank">
+							</a>
+						<?php  };
+						   if (get_field('artist_website')){ ?>
+							<a href="<?php echo get_field('artist_website'); ?>" class="social-icon website" target="_blank">
 							</a>
 						<?php  }; ?>
 					</div>

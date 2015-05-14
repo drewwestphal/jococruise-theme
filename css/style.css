@@ -1065,7 +1065,7 @@ ARTISTS
 	width:20px;
 	height:20px;
 	background-image:url('img/artist_social.png');
-	background-size: 40px 60px;
+	background-size: 40px 80px;
 	margin: 0 5px;
 	position: relative;
 	display: inline-block;
@@ -1074,19 +1074,27 @@ ARTISTS
 	background-position:0 0;
 }
 .artists-social .facebook:hover{
-	background-position:20px 0;
+	background-position:20px 0px;
 }
-.artists-social .youtube{
-	background-position:0 20px;
-}
-.artists-social .youtube:hover{
-	background-position:20px 20px;
-}
+/* Twitter and website are backwards, wtf */
 .artists-social .twitter{
-	background-position:0 40px;
+	background-position:0px 60px;
 }
 .artists-social .twitter:hover{
+	background-position:20px 60px;
+}
+.artists-social .youtube{
+	background-position:0px 40px;
+}
+.artists-social .youtube:hover{
 	background-position:20px 40px;
+}
+/* Twitter and website are backwards, wtf */
+.artists-social .website{
+	background-position:0px 20px;
+}
+.artists-social .website:hover{
+	background-position:20px 20px;
 }
 #office-hours{
 	width:95px;
