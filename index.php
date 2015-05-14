@@ -136,6 +136,12 @@ wp_reset_postdata();
 								);
 								$artist_query = new WP_Query($args);
 								$artist_count = $artist_query->post_count;
+                                echo '
+                                <div class="artist_unit artists-artist headers featured-guests" id="item-0">
+                                    <h1><span>2016</span><br> <p style="font-size:77%">Performers</p></h1>
+                                </div>
+                                ';
+                            
 								if ($artist_query->have_posts()) {
 									while ($artist_query->have_posts()) {
 										$artist_query->the_post();
