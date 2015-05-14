@@ -205,6 +205,7 @@ wp_reset_postdata();
 								if ($spotlight_count > 0) {
 									$artist_count += 1;
 									echo '
+									<div class="clearfix visible-sm-block visible-md-block visible-lg-block"></div>
 									<div class="artist_unit artists-artist headers featured-guests" id="item-'.$j.'">
 										<h1><span>plus</span><br>Even More!</h1>
 									</div>
