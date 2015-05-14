@@ -19,6 +19,7 @@ if(function_exists("register_field_group")) {
                     'artist' => 'Artist',
                     'featured artist' => 'Featured Artist',
                     'office hours' => 'Office Hours',
+                    'spotlight item' => 'Spotlight Item',
                 ),
                 'default_value' => '',
                 'allow_null' => 1,
