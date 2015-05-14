@@ -2812,6 +2812,7 @@ EXPERIENCE
 #community ul li {
 	list-style-type: none;
 	text-align: center;
+	margin: 0px;
 }
 #exp-photos, #exp-more {
 	text-align: center;
@@ -2847,6 +2848,7 @@ EXPERIENCE
 }
 #gallery-experience .gallery-icon {
 	width: 100%;
+	height: 100%;
 }
 #gallery-experience img {
 	margin-top: 20px;
