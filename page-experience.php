@@ -162,6 +162,8 @@ $lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm
 				<h2><?php echo $title[0] ?></h2>
 				<h1><?php echo $title[1] ?></h1>
 				<?= trim(apply_filters('the_content', $featuredEventsHeaderPost -> post_content)); ?>
+			</div>
+			<div class="col-xs-12 col-md-12">
             	<?php if (count($featured_events) > 1) { ?>
 					<div class="carousel event-carousel" id="news-carousel">
 						<span class="glyphicon glyphicon-menu-left"></span>
