@@ -213,7 +213,7 @@ $lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm
 			</div>
 			<div class="col-md-2"></div>
 			<div class="col-xs-12 col-md-5">
-				<img src="<?php bloginfo('template_directory'); ?>/img/typewriter.png" alt="Typewriter" class="center-block" />
+				<img src="<?php bloginfo('template_directory'); ?>/img/typewriter2x.png" alt="Typewriter" class="center-block" style="width: 190px; margin: 25px auto;" />
 				<h1><?= $writingTrackPost -> post_title; ?></h1>
 				<?= apply_filters('the_content', $writingTrackPost -> post_content); ?>
 			</div>
