@@ -366,12 +366,17 @@ jQuery(document).ready(function(jQuery) {
 		}
 	});
 	
+	jQuery('.gallery-item').css('height', jQuery('#gallery-experience').outerHeight() - jQuery('.gallery-bull:first').innerHeight());
+	//jQuery('.gallery-item').css('height',100);
+	//jQuery('.gallery-item').addClass('testing!');
+	
 	//initial call of mapBehavior()
 	mapBehavior();
 	
 });
 
 jQuery(window).resize(function(){
+	jQuery('.gallery-item').css('height', jQuery('#gallery-experience').outerHeight() - jQuery('.gallery-bull:first').innerHeight());
     if (jQuery(window).width()>767){
 	    //artist
 	    jQuery('#overflow').css('left', 0);
@@ -381,7 +386,7 @@ jQuery(window).resize(function(){
 	    jQuery('.map-city-about').hide();	    
     }else{
 	    //map
-	    jQuery('.point').unbind('click')
+	    jQuery('.point').unbind('click');
 	    jQuery('.map-narrow-info').hide();
     }
     //resize call on mapBehavior()
