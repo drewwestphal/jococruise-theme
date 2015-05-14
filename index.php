@@ -137,11 +137,12 @@ wp_reset_postdata();
 								$artist_query = new WP_Query($args);
 								$artist_count = $artist_query->post_count;
                                 echo '
-                                <div class="artist_unit artists-artist headers featured-guests" id="item-0">
+                                <div class="artist_unit artists-artist headers featured-guests" id="item-'.$j.'">
                                     <h1><span>2016</span><br> <p style="font-size:77%">Performers</p></h1>
                                 </div>
                                 ';
-                            
+                            	$j++;
+								$artist_count += 1;
 								if ($artist_query->have_posts()) {
 									while ($artist_query->have_posts()) {
 										$artist_query->the_post();
@@ -179,6 +180,40 @@ wp_reset_postdata();
 								if ($feat_artist_query->have_posts()) {
 									while ($feat_artist_query->have_posts()) {
 										$feat_artist_query->the_post();
+										
+										include 'artist_unit.php';
+									}
+								}
+			
+								wp_reset_postdata();
+								
+								//get the featured artists
+								$args = array(
+									'post_type' 	 => 'artist',
+									'posts_per_page' => -1,
+									'order'			 => 'ASC',
+									'meta_query' => array(
+										array(
+											'key' => 'artist_type',
+											'value' => 'spotlight item'
+										),
+									)
+								);
+								$spotlight_query = new WP_Query($args);
+								$spotlight_count = $spotlight_query->post_count;
+								$artist_count += $spotlight_count;
+								if ($spotlight_count > 0) {
+									$artist_count += 1;
+									echo '
+									<div class="artist_unit artists-artist headers featured-guests" id="item-'.$j.'">
+										<h1><span>plus</span><br>Even More!</h1>
+									</div>
+									';
+									$j++;	
+								};
+								if ($spotlight_query->have_posts()) {
+									while ($spotlight_query->have_posts()) {
+										$spotlight_query->the_post();
 										
 										include 'artist_unit.php';
 									}
