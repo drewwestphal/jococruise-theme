@@ -76,6 +76,12 @@ $introPostThumbnailMarkup = get_the_post_thumbnail($introPost -> ID, array(
     256,
     256
 ));
+$thumbnail_id = get_post_thumbnail_id($introPost->ID);
+$thumbnail_image = get_posts(array('p' => $thumbnail_id, 'post_type' => 'attachment'));
+
+  if ($thumbnail_image && isset($thumbnail_image[0])) {
+    $caption = '<span>'.$thumbnail_image[0]->post_excerpt.'</span>';
+  }
 $introPostFeaturedClickthroughObject = get_field('exp_featured_image_clickthrough_file', $introPost -> ID);
 $introPostFeaturedClickthroughExists = (bool)$introPostFeaturedClickthroughObject;
 $introPostFeaturedClickthroughURL = $introPostFeaturedClickthroughObject["url"];
@@ -118,6 +124,7 @@ $lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm
 			</div>
 			<div class="col-xs-12 col-md-3 center-block" style="text-align: center;">
 				<?= $introPostLinkWrappedImage; ?>
+				<div class="caption"><?=$caption; ?></div>
 			</div>
 		</div>
 	</section>
