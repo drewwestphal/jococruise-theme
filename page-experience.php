@@ -134,13 +134,18 @@ $lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm
 				<p>Past cruise guests include (in no particular order, OK, it's alphabetical):</p>
 				<div class="col-xs-12 col-md-6">
 					<ul>
-					<?php 						$past_guests = array("Jonathan Coulton","Paul and Storm","The Both (Aimee Mann and Ted Leo)","Rhea Butcher","Marian Call",
-							"Chris Collingwood (Fountains of Wayne)","Bill Corbett and Kevin Murphy (Rifftrax)","The Doubleclicks",
-							"John Flansburgh (They Might Be Giants)","MC Frontalot","Jean Grae","Hank Green","Vi Hart","John Hodgman",
-							"Grant Imahara (Mythbusters)","Mathew Inman (The Oatmeal)","Steve Jackson (Steve Jackson Games)","Zoe Keating",
-							"Hari Kondabolu","Molly Lewis","Merlin Mann","Opus Moreschi (Colbert Report)","Randall Munroe (xkcd)","Mike Phirman",
-							"Pomplamoose","David Rees","John Roderick","Pat Rothfuss","Peter Sagal","Nathan Sowaya","John Scalzi",
-							"Joseph Scrimshaw","Sara and Sean Watkins (Nickel Creek)","and Will Wheaton");
+					<?php
+						$past_guests = file_get_contents(__DIR__."/past_performers.txt");
+						$past_guests = explode(PHP_EOL, $past_guests);
+						if (count($past_guests)<=1) {
+							$past_guests = array("Jonathan Coulton","Paul and Storm","The Both (Aimee Mann and Ted Leo)","Rhea Butcher","Marian Call",
+								"Chris Collingwood (Fountains of Wayne)","Bill Corbett and Kevin Murphy (Rifftrax)","The Doubleclicks",
+								"John Flansburgh (They Might Be Giants)","MC Frontalot","Jean Grae","Hank Green","Vi Hart","John Hodgman",
+								"Grant Imahara (Mythbusters)","Mathew Inman (The Oatmeal)","Steve Jackson (Steve Jackson Games)","Zoe Keating",
+								"Hari Kondabolu","Molly Lewis","Merlin Mann","Opus Moreschi (Colbert Report)","Randall Munroe (xkcd)","Mike Phirman",
+								"Pomplamoose","David Rees","John Roderick","Pat Rothfuss","Peter Sagal","Nathan Sowaya","John Scalzi",
+								"Joseph Scrimshaw","Sara and Sean Watkins (Nickel Creek)","and Will Wheaton");
+						}
 						$i = 0;
 						foreach ($past_guests as $guest) {
 							if (abs($i*2 - count($past_guests)) <= 1) {
