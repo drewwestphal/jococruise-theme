@@ -36,6 +36,14 @@ strong{
 em{
 	font-family: surveyorBookItalic;
 }
+hr {
+    background:url(img/hr-ship.svg) no-repeat top center;
+    height:66px;
+    border:none !important;
+    width:100%;
+    background-size:110%
+    margin-bottom: 38px;
+}
 
 ul li{
     list-style-type: circle;
