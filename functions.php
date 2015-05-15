@@ -228,7 +228,11 @@ require_once(__DIR__.'/include/acf.php');
 require_once(__DIR__.'/include/cpt.php');
 require_once(__DIR__.'/include/columns.php');
 
-if(!is_admin()) {
+function is_login_page() {
+    return in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php'));
+}
+
+if(!is_admin() && !is_login_page()) {
 	require_once(__DIR__.'/page-experience-gallery.php');
 }
 ?>
