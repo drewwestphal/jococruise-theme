@@ -267,7 +267,7 @@ wp_reset_postdata();
 					<span class="glyphicon glyphicon-menu-right"></span>
 				</div>
 			</div>
-                    <p>More performers and guests TBA; watch this space for further announcements</p>
+                    <p>More performers and guests TBA; watch this space for further announcements.</p>
 		</div>
 	</section>
 <!--about-->
