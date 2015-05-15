@@ -1,5 +1,7 @@
 (function($) {
     $(document).ready(function() {
+    	$("#exp-photos").fitVids();
+    	
         $('#gallery-experience .gallery-icon a').magnificPopup({
             type : 'image',
             closeOnContentClick : true,
