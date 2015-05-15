@@ -2809,6 +2809,7 @@ EXPERIENCE
 #community p {
 	max-width: 750px;
 	margin: auto;
+    margin-bottom: 11px;
 }
 #community ul {
 	margin: 20px;
