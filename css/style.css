@@ -2741,8 +2741,11 @@ EXPERIENCE
 #tracks img {
 	margin: auto;
 }
-#main-stage, #tracks, #exp-more, #exp-photos {
+#main-stage, #tracks,  #exp-photos {
 	background-color: #f5f2e8;
+}
+#exp-more {
+    background-color: #fff;
 }
 #featured-events, #community {
 	background-color: #e2ddc6;
