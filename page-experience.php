@@ -110,7 +110,7 @@ $lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm
 	<section id="what-is">
 		<div class="container-fluid">
 			<div class="col-xs-12 col-md-12">
-				<?php printf('<img class="img-responsive" src="%s" alt="JoCo Boat Profile Image" id="what-is-ship" />', get_template_directory_uri() . '/img/joco-boat-profile.png'); ?>
+				<?php printf('<img class="img-responsive" style="width:678px;" src="%s" alt="JoCo Boat Profile Image" id="what-is-ship" />', get_template_directory_uri() . '/img/joco-boat-profile.svg'); ?>
 				<!--<img src="<?php bloginfo('template_directory'); ?>/img/sideview_boat.png" alt="Sideview of ship" id="what-is-ship" />-->
 				<h1><?= $introPostHeaderParsed; ?></h1>
 					<!--<img src="<?php bloginfo('template_directory'); ?>/img/WhatIs_JoCo_LoGo.png" id="what-is-logo" align="middle" /> ?-->
