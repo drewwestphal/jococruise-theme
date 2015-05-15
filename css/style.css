@@ -2751,6 +2751,9 @@ EXPERIENCE
 	margin: auto;
 	text-align: center;
 }
+#featured-events .event-carousel span.glyphicon {
+	top: 35%;
+}
 #featured-events .event-container {
 	width: 80%
 }
