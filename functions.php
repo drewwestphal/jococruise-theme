@@ -172,6 +172,7 @@ function blankslate_load_scripts() {
         wp_enqueue_script('js_experience',//
         get_template_directory_uri() . '/js/js_experience.js', //
          array('magnificjs'), 1, false);
+		wp_enqueue_script('fitvids', get_template_directory_uri() . '/js/jquery.fitvids.js', array(), 1, false);
     }
 }
 

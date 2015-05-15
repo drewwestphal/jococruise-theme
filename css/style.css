@@ -2866,6 +2866,9 @@ EXPERIENCE
 	width: auto;
 	height: auto;
 }
+#exp-photos p {
+	margin: 0px auto 20px;
+}
 .main-stage-button {
 	min-width: 300px;
 	text-align: center;
