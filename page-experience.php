@@ -245,7 +245,7 @@ $lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm
 	<section id="exp-photos">
 		<div class="container-fluid">
 			<div class="col-xs-12 col-md-12">
-				<?= apply_filters('the_content', $photoExplPost -> post_content); ?>
+				<?= '';//apply_filters('the_content', $photoExplPost -> post_content); ?>
 				<h3><?= parse_piped_title2($photoExplPost -> post_title)?></h3>
 				<!--<h3><strong>Photos</strong> | JoCo Cruise 2014</h3>-->
 			</div>
