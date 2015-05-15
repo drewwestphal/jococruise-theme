@@ -386,6 +386,7 @@ function gallery_spacing_adjust() {
 			jQuery(this).css("margin-top", (box_height-img_height)/2 + 20);
 		}
 	});
+	jQuery('#gallery-experience .glyphicon').css('top',box_height/2);
 }
 
 jQuery(window).resize(function(){
