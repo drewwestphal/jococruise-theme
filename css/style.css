@@ -2720,8 +2720,12 @@ EXPERIENCE
 	max-width: 100%;
 	height: auto;
 	margin: auto;
-	padding: 20px 0px;
+	padding: 30px 0px 10px;
 	vertical-align: middle;
+}
+#exp-intro .caption {
+	font-family: surveyorBookItalic;
+	font-size: 0.9em;
 }
 #main-stage ul li {
 	list-style-type: none;

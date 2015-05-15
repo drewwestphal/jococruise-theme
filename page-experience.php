@@ -76,6 +76,12 @@ $introPostThumbnailMarkup = get_the_post_thumbnail($introPost -> ID, array(
     256,
     256
 ));
+$thumbnail_id = get_post_thumbnail_id($introPost->ID);
+$thumbnail_image = get_posts(array('p' => $thumbnail_id, 'post_type' => 'attachment'));
+
+  if ($thumbnail_image && isset($thumbnail_image[0])) {
+    $caption = '<span>'.$thumbnail_image[0]->post_excerpt.'</span>';
+  }
 $introPostFeaturedClickthroughObject = get_field('exp_featured_image_clickthrough_file', $introPost -> ID);
 $introPostFeaturedClickthroughExists = (bool)$introPostFeaturedClickthroughObject;
 $introPostFeaturedClickthroughURL = $introPostFeaturedClickthroughObject["url"];
@@ -104,7 +110,7 @@ $lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm
 	<section id="what-is">
 		<div class="container-fluid">
 			<div class="col-xs-12 col-md-12">
-				<?php printf('<img class="img-responsive" src="%s" alt="JoCo Boat Profile Image" id="what-is-ship" />', get_template_directory_uri() . '/img/joco-boat-profile.png'); ?>
+				<?php printf('<img class="img-responsive" style="width:678px;" src="%s" alt="JoCo Boat Profile Image" id="what-is-ship" />', get_template_directory_uri() . '/img/joco-boat-profile.svg'); ?>
 				<!--<img src="<?php bloginfo('template_directory'); ?>/img/sideview_boat.png" alt="Sideview of ship" id="what-is-ship" />-->
 				<h1><?= $introPostHeaderParsed; ?></h1>
 					<!--<img src="<?php bloginfo('template_directory'); ?>/img/WhatIs_JoCo_LoGo.png" id="what-is-logo" align="middle" /> ?-->
@@ -118,6 +124,7 @@ $lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm
 			</div>
 			<div class="col-xs-12 col-md-3 center-block" style="text-align: center;">
 				<?= $introPostLinkWrappedImage; ?>
+				<div class="caption"><?=$caption; ?></div>
 			</div>
 		</div>
 	</section>
@@ -134,13 +141,18 @@ $lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm
 				<p>Past cruise guests include (in no particular order, OK, it's alphabetical):</p>
 				<div class="col-xs-12 col-md-6">
 					<ul>
-					<?php 						$past_guests = array("Jonathan Coulton","Paul and Storm","The Both (Aimee Mann and Ted Leo)","Rhea Butcher","Marian Call",
-							"Chris Collingwood (Fountains of Wayne)","Bill Corbett and Kevin Murphy (Rifftrax)","The Doubleclicks",
-							"John Flansburgh (They Might Be Giants)","MC Frontalot","Jean Grae","Hank Green","Vi Hart","John Hodgman",
-							"Grant Imahara (Mythbusters)","Mathew Inman (The Oatmeal)","Steve Jackson (Steve Jackson Games)","Zoe Keating",
-							"Hari Kondabolu","Molly Lewis","Merlin Mann","Opus Moreschi (Colbert Report)","Randall Munroe (xkcd)","Mike Phirman",
-							"Pomplamoose","David Rees","John Roderick","Pat Rothfuss","Peter Sagal","Nathan Sowaya","John Scalzi",
-							"Joseph Scrimshaw","Sara and Sean Watkins (Nickel Creek)","and Will Wheaton");
+					<?php
+						$past_guests = file_get_contents(__DIR__."/past_performers.txt");
+						$past_guests = explode(PHP_EOL, $past_guests);
+						if (count($past_guests)<=1) {
+							$past_guests = array("Jonathan Coulton","Paul and Storm","The Both (Aimee Mann and Ted Leo)","Rhea Butcher","Marian Call",
+								"Chris Collingwood (Fountains of Wayne)","Bill Corbett and Kevin Murphy (Rifftrax)","The Doubleclicks",
+								"John Flansburgh (They Might Be Giants)","MC Frontalot","Jean Grae","Hank Green","Vi Hart","John Hodgman",
+								"Grant Imahara (Mythbusters)","Mathew Inman (The Oatmeal)","Steve Jackson (Steve Jackson Games)","Zoe Keating",
+								"Hari Kondabolu","Molly Lewis","Merlin Mann","Opus Moreschi (Colbert Report)","Randall Munroe (xkcd)","Mike Phirman",
+								"Pomplamoose","David Rees","John Roderick","Pat Rothfuss","Peter Sagal","Nathan Sowaya","John Scalzi",
+								"Joseph Scrimshaw","Sara and Sean Watkins (Nickel Creek)","and Will Wheaton");
+						}
 						$i = 0;
 						foreach ($past_guests as $guest) {
 							if (abs($i*2 - count($past_guests)) <= 1) {
@@ -207,13 +219,13 @@ $lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm
 	<section id="tracks">
 		<div class="container-fluid">
 			<div class="col-xs-12 col-md-5">
-				<img src="<?php bloginfo('template_directory'); ?>/img/dice.png" alt="Dice" class="center-block" />
+				<img src="<?php bloginfo('template_directory'); ?>/img/D20s.svg" style="width: 255px; margin: 25px auto;" alt="Dice" class="center-block" />
 				<h1><?= $gamingTrackPost -> post_title; ?></h1>
 				<?= apply_filters('the_content', $gamingTrackPost -> post_content); ?>
 			</div>
 			<div class="col-md-2"></div>
 			<div class="col-xs-12 col-md-5">
-				<img src="<?php bloginfo('template_directory'); ?>/img/typewriter.png" alt="Typewriter" class="center-block" />
+				<img src="<?php bloginfo('template_directory'); ?>/img/typewriter.svg" alt="Typewriter" class="center-block" style="width: 190px; margin: 25px auto;" />
 				<h1><?= $writingTrackPost -> post_title; ?></h1>
 				<?= apply_filters('the_content', $writingTrackPost -> post_content); ?>
 			</div>
@@ -236,6 +248,8 @@ $lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm
 				<?= apply_filters('the_content', $photoExplPost -> post_content); ?>
 				<h3><?= parse_piped_title2($photoExplPost -> post_title)?></h3>
 				<!--<h3><strong>Photos</strong> | JoCo Cruise 2014</h3>-->
+			</div>
+			<div class="col-xs-12 col-md-12">
 				<?= apply_filters('the_content', $photoGalleryPost -> post_content); ?>
 			</div>
 		</div>
