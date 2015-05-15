@@ -50,6 +50,19 @@ add_action('wp_head', function(){
 EOF;
 });
 
+add_action('wp_footer', function(){
+        echo <<<EOF
+        <script type="text/javascript">
+            // open external links in new tab
+            jQuery('#content').find('a').filter(function() {
+                return this.hostname && this.hostname.indexOf(location.hostname)===-1
+            }).attr({
+                target : "_blank"
+            });
+        </script>
+EOF;
+});
+
 
 /*custom nav behavior*/
 function mac_clean_menu() {
