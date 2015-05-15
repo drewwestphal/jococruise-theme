@@ -250,10 +250,10 @@ wp_reset_postdata();
 							?>
 						
 							<?php if ($artists_more == 1) { 
-								$artist_count++; ?>
-								<div class="artist_unit artists-artist headers featured-guests" id="item-<?php echo $j; ?>">
+								//$artist_count++; ?>
+								<!-- <div class="artist_unit artists-artist headers featured-guests" id="item-<?php echo $j; ?>">
 									<h1><span>Plus</span><br>More to Come Soon!</h1>
-								</div>
+								</div> -->
 							<?php }; ?>
 						</div>
 					</div>
@@ -267,6 +267,7 @@ wp_reset_postdata();
 					<span class="glyphicon glyphicon-menu-right"></span>
 				</div>
 			</div>
+                    <p>More performers and guests TBA; watch this space for further announcements</p>
 		</div>
 	</section>
 <!--about-->
