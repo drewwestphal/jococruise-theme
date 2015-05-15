@@ -219,13 +219,13 @@ $lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm
 	<section id="tracks">
 		<div class="container-fluid">
 			<div class="col-xs-12 col-md-5">
-				<img src="<?php bloginfo('template_directory'); ?>/img/dice.png" alt="Dice" class="center-block" />
+				<img src="<?php bloginfo('template_directory'); ?>/img/D20s.svg" style="width: 255px; margin: 25px auto;" alt="Dice" class="center-block" />
 				<h1><?= $gamingTrackPost -> post_title; ?></h1>
 				<?= apply_filters('the_content', $gamingTrackPost -> post_content); ?>
 			</div>
 			<div class="col-md-2"></div>
 			<div class="col-xs-12 col-md-5">
-				<img src="<?php bloginfo('template_directory'); ?>/img/typewriter2x.png" alt="Typewriter" class="center-block" style="width: 190px; margin: 25px auto;" />
+				<img src="<?php bloginfo('template_directory'); ?>/img/typewriter.svg" alt="Typewriter" class="center-block" style="width: 190px; margin: 25px auto;" />
 				<h1><?= $writingTrackPost -> post_title; ?></h1>
 				<?= apply_filters('the_content', $writingTrackPost -> post_content); ?>
 			</div>
