@@ -270,6 +270,53 @@ if(function_exists("register_field_group")) {
         ),
         'menu_order' => 0,
     ));
+	
+	// Byline info for news posts
+	register_field_group(array (
+		'id' => 'acf_post-byline',
+		'title' => 'Post byline',
+		'fields' => array (
+			array (
+				'key' => 'field_555dee9bf3f57',
+				'label' => 'Byline name',
+				'name' => 'byline_name',
+				'type' => 'text',
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_555deec1f3f58',
+				'label' => 'Byline image',
+				'name' => 'byline_image',
+				'type' => 'image',
+				'save_format' => 'object',
+				'preview_size' => 'thumbnail',
+				'library' => 'all',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'post',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
 
 }
 ?>

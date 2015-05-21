@@ -15,11 +15,22 @@
 						<?php if (get_field('artist_subtitle')) {?>
 							<h2><?php the_field('artist_subtitle'); ?></h2>
 						<?php }; ?>
+					<?php if (get_field('byline_image')) {
+						$image = get_field('byline_image');
+						//var_dump($image);
+						?>
+						<div class="byline">
+						<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" width="<?=$image['sizes']['thumbnail-width']?>" />
+						<span><?=get_field('byline_name')?></span>
+						</div>
+						<?php
+					}					
+					?>
 					<?php if ($post->post_content) {?>
 						<p><?php the_content(); ?></p>
 					<?php  } else { ?>
 						<p><?php the_excerpt(); ?></p>
-					<?php  }; ?>	
+					<?php  }; ?>
 					</div>
 					<div class="post-artists-social artists-social post-left">
 					<?php  if (get_field('artist_facebook')){ ?>
