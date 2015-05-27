@@ -92,6 +92,7 @@ $faq_section_headers_ordered = array(
     "What the Heck?",
     "Booking Questions",
     "I’m Booked! Now What?",
+    "Managing my Booking",
 );
 add_action( 'init', 'mac_register_theme_menu' );
 

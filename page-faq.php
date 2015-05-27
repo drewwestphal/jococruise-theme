@@ -36,7 +36,7 @@
                 foreach($allHeadersOrdered as $header) {
                     $posts = isset($byHeader[$header]) ? $byHeader[$header] : array();
                     if(count($posts)) {
-                        printf('<h1 class="orange-text faq-section-header">%s</h1>', $header);
+                        printf('<h1 class="orange-text faq-section-header" id="%s">%s</h1>', preg_replace("/[^a-zA-Z\-]/", "", str_replace(' ', '-', strtolower($header))), $header);
                         // can't use print or echo as they are not real functions
                         array_map(function($post) {
                             file_put_contents('php://output', $post);

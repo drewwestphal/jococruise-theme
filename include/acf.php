@@ -210,11 +210,7 @@ if(function_exists("register_field_group")) {
                 'label' => 'FAQ Section Header',
                 'name' => 'faq_section_header',
                 'type' => 'radio',
-                'choices' => array(
-                    "What the Heck?" => "What the Heck?",
-                    "Booking Questions" => "Booking Questions",
-                    "I’m Booked! Now What?" => "I’m Booked! Now What?",
-                ),
+                'choices' => array_combine($faq_section_headers_ordered, $faq_section_headers_ordered),
                 'other_choice' => 0,
                 'save_other_choice' => 0,
                 'default_value' => '',
