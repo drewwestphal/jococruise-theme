@@ -731,14 +731,14 @@ NEWS
 	border-bottom: 1px solid #f5f1e9;
 	color:#f5f1e9;
 }
-.news-item p a {
+.news-item p a, .news-item li a {
 	color: #D0C4AF;
 	transition: color .27s,border-bottom .27s;
 	-o-transition: color .27s,border-bottom .27s;
 	-moz-transition: color .27s,border-bottom .27s;
 	-webkit-transition: color .27s,border-bottom .27s;
 }
-.news-item p a:hover {
+.news-item p a:hover, .news-item li a:hover {
 	color: #F5F5EB;
 }
 #news .more-link{
