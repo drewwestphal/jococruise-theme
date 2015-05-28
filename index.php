@@ -267,7 +267,13 @@ wp_reset_postdata();
 					<span class="glyphicon glyphicon-menu-right"></span>
 				</div>
 			</div>
-                    <p>More performers and guests TBA; watch this space for further announcements.</p>
+			<?php 
+			$coming_soon = "More performers and guests TBA; watch this space for further announcements.";
+			if (get_page_by_path("coming-soon")) {
+				$coming_soon = get_page_by_path("coming-soon") -> post_content;
+			}
+			if ($coming_soon != "") echo "<p>".$coming_soon."</p>";
+			?>
 		</div>
 	</section>
 <!--about-->
