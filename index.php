@@ -112,7 +112,7 @@ wp_reset_postdata();
 		<div class="container-fluid">
 			<div class="col-xs-12 col-md-12">
 				<div id="artists-header">
-					<img src="<?php bloginfo('template_directory'); ?>/img/artist_divider.png">
+					<img src="<?php bloginfo('template_directory'); ?>/img/artist_divider.svg">
 					<?php if (strlen($artists_header) > 0){ ?>
 						<h1><?php echo $artists_header; ?></h1>
 					<?php  }; ?>
