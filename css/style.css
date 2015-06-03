@@ -147,6 +147,27 @@ a:hover,a:focus,a:visited {
         width: auto;
     }
 }
+h1,h2,h3,h4,h5,h6 {
+	font-family:gothamBook, sans-serif;
+	text-transform: uppercase;
+	line-height: 1.25em;
+    margin-top: 16px;
+}
+h1 {
+	font-size: 24px;
+}
+h2 {
+	font-size: 20px;
+}
+h3 {
+	font-size: 16px;
+}
+h4 {
+	font-size: 14px;
+}
+h6 {
+	font-size: 12px;
+}
 
 .headers h1{
 	font-family:gothamBook, sans-serif;
@@ -666,7 +687,7 @@ NEWS
 		max-width:960px;
 	}
 }
-#news-header h1{
+#news h1,h2,h3,h4,h5,h6 {
 	color:#f5f1e9;
 }
 #news-container{
