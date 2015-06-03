@@ -31,7 +31,7 @@ get_header();
 					<div id="hero-travel-description-more">
 						<p ><?php echo $travel_desc_more;?></p>				
 					</div>
-					<img id="hero-boat" src="<?php bloginfo('template_directory'); ?>/img/hero_boat.png" alt="An animated cruise ship">
+					<img id="hero-boat" src="<?php bloginfo('template_directory'); ?>/img/hero_boat.svg" alt="An animated cruise ship">
 				<?php  }; ?>
 				<?php if (isset($booking_enabled)) { ?>
 					<div id="hero-booking">
