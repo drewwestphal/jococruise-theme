@@ -3026,16 +3026,17 @@ FAQ	and NEWS
 	min-height: 500px;
 }
 #page-news article{
-	margin:1em 0;
+	margin: 3em 0 1em;
 }
 
 #page-news article h2 a{
 	font-size: 20px;
 	color:#23527c;
-	font-family: surveyorBookBold,serif;
+	/* font-family: surveyorBookBold,serif; */
 	border-bottom: 1px solid #23527c;
-	line-height:2em;
+	/* line-height:2em; */
 }
+
 
 /*
 	
