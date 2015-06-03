@@ -65,7 +65,7 @@ wp_reset_postdata();
 // INTRO POST
 
 // modified header
-$introPostHeaderImageTag = sprintf('<image src="%s" alt="JoCo Cruise" id="what-is-logo"/> ', get_template_directory_uri() . '/img/WhatIs_JoCo_LoGo.png');
+$introPostHeaderImageTag = sprintf('<image src="%s" alt="JoCo Cruise" id="what-is-logo"/> ', get_template_directory_uri() . '/img/WhatIs_JoCo_LoGo.svg');
 $introPostHeaderParsed = $introPost -> post_title;
 $introPostHeaderParsed = str_ireplace('JoCo Cruise', $introPostHeaderImageTag, $introPostHeaderParsed);
 
