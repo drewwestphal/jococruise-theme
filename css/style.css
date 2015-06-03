@@ -687,7 +687,12 @@ NEWS
 		max-width:960px;
 	}
 }
-#news h1,h2,h3,h4,h5,h6 {
+#news #news-items h1,
+#news #news-items h2,
+#news #news-items h3,
+#news #news-items h4,
+#news #news-items h5,
+#news #news-items h6 {
 	color:#f5f1e9;
 }
 #news-container{
@@ -2583,6 +2588,14 @@ SINGLE PAGE
   content:"";
   display:table;
   clear:both;
+}
+#post-artist-info h1,
+#post-artist-info h2,
+#post-artist-info h3,
+#post-artist-info h4,
+#post-artist-info h5,
+#post-artist-info h6 {
+	color: #144662;
 }
 #post-artist-info img{
 	width:100%;
