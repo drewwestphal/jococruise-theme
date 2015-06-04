@@ -306,6 +306,38 @@ if(function_exists("register_field_group")) {
         ),
         'menu_order' => 0,
     ));
+    register_field_group(array(
+        'id' => 'acf_sponsor',
+        'title' => 'Sponsor',
+        'fields' => array(
+            array(
+                'key' => 'field_544c2ecd0555f',
+                'label' => 'Sponsor website',
+                'name' => 'sponsor_website',
+                'type' => 'text',
+				'instructions' => 'Link to sponsor website',
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+            ),
+        ),
+        'location' => array( array( array(
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'sponsor',
+                    'order_no' => 0,
+                    'group_no' => 0,
+                ), ), ),
+        'options' => array(
+            'position' => 'acf_after_title',
+            'layout' => 'no_box',
+            'hide_on_screen' => array(),
+        ),
+        'menu_order' => 0,
+    ));
 
     // for the experience page
     register_field_group(array (
