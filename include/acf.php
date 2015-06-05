@@ -323,6 +323,15 @@ if(function_exists("register_field_group")) {
 				'formatting' => 'html',
 				'maxlength' => '',
             ),
+            array(
+                'key' => 'field_544c2ecd05560',
+                'label' => 'Double Wide',
+                'name' => 'double_wide',
+                'type' => 'checkbox',
+                'choices' => array('double wide' => 'double wide', ),
+                'default_value' => '',
+                'layout' => 'vertical',
+            ),
         ),
         'location' => array( array( array(
                     'param' => 'post_type',

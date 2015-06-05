@@ -3118,21 +3118,28 @@ cream			: #f5f1e9
 	height: 200px;
 	background: #f5f1e9;
 	border-radius: 10px;
-	overflow: visible;
 }
-.sponsor_square a {
+.sponsor_square_double {
+	margin: 15px auto;
+	width: 430px;
+	width: calc(400px + (50% - 200px));
+	height: 200px;
+	background: #f5f1e9;
+	border-radius: 10px;
+}
+.sponsor_square a, .sponsor_square_double a {
 	display: block;
 	height: 100%;
 	width: 100%;
 	line-height: 196px;
 }
-.sponsor_square img {
+.sponsor_square img, .sponsor_square_double img {
 	max-width: 90%;
 	max-height: 300%;
 	margin: auto;
 	vertical-align: middle;
 }
-.sponsor_square.landscape img {
+.sponsor_square.landscape img, .sponsor_square_double.landscape img {
 	width: 90%;
 	height: auto;
 }
