@@ -3115,30 +3115,31 @@ cream			: #f5f1e9
 	padding-bottom:29px;
 }
 .sponsor_square {
-	margin: 15px auto;
-	height: 124px;
-	background: #f5f1e9;
-	border-radius: 10px;
+    margin: 15px auto;
+    height: 124px;
+    background: #f5f1e9;
+    border-radius: 10px;
 }
 .sponsor_square_double {
     margin: 15px auto;
-	width:90%;
+    width:90%;
     height: 124px;
-	background: #f5f1e9;
-	border-radius: 10px;
+    background: #f5f1e9;
+    border-radius: 10px;
 }
 .sponsor_square a, .sponsor_square_double a {
-	display: block;
-	height: 100%;
-	width: 100%;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    vertical-align:middle;
+    align-items: center;
+    display: flex;
+    padding:5%;
 }
 .sponsor_square img, .sponsor_square_double img {
+    max-height: 100%;
     width:auto;
-    height:auto;
-	max-width: 100%;
-	max-height: 100%;
-	vertical-align:middle;
-	padding:5%;
+    vertical-align:middle;
 }
 
 
