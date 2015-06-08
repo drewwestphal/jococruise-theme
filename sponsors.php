@@ -31,7 +31,12 @@
 			}
 			?>
 			<script type="text/javascript">
-jQuery(document).ready(function(){jQuery('.sponsor-link img').each(function(idx,img){var ih = jQuery(img).height(); var ph = jQuery(img).parent().height(); if(ph>ih+3){jQuery(img).css('margin-top',((ph-ih)/2)-2)};})});
+			// center the sponsor images
+			// safari bug is timing related... so set timeout
+			// otherwise just sorta do something that works ?
+			// ugh
+jQuery('.sponsor-link img').ready(function(){setTimeout(function(){jQuery('.sponsor-link img').each(function(idx,img){var ih = jQuery(img).height(); var ph = jQuery(img).parent().height(); /*console.log('ph'+ph+'ih'+ih);*/ if(ph>ih+3){ jQuery('#thepre').text("done"); jQuery(img).css('margin-top',((ph-ih)/2)-2)};})},11);});
 			</script>
+
 	</div>
 </section>
