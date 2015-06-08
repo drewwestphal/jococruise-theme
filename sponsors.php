@@ -20,7 +20,7 @@
 					?>
 					<div class="<?php  echo $double_wide ? "col-xs-12 col-sm-6 col-md-4" : "col-xs-6 col-sm-4 col-md-2"; ?>">
 						<div class="<?php  echo $double_wide ? "sponsor_square_double" : "sponsor_square" ?> <?php  echo $portrait ? "portrait" : "landscape"; ?>">
-							<a href="<?=  get_field('sponsor_website')?>" target="_blank">
+							<a class="sponsor-link" href="<?=  get_field('sponsor_website')?>" target="_blank">
 								<?=  the_post_thumbnail($double_wide ? 'large' : 'medium', array('class'=>'img-responsive center-block'))?>
 							</a>
 						</div>
@@ -30,5 +30,8 @@
 				wp_reset_postdata();
 			}
 			?>
+			<script type="text/javascript">
+jQuery(document).ready(function(){jQuery('.sponsor-link img').each(function(idx,img){var ih = jQuery(img).height(); var ph = jQuery(img).parent().height(); if(ph>ih+3){jQuery(img).css('margin-top',((ph-ih)/2)-2)};})});
+			</script>
 	</div>
 </section>
