@@ -33,6 +33,10 @@
 
 		<?php include('page-experience.php'); ?>
 
+<?php } elseif ( is_page( 'Sponsors' ) ){ ?>
+
+		<?php include('page-sponsors.php'); ?>
+
 <?php } else { 
     // regular old page style
     ?> 
