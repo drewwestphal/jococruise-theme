@@ -1,7 +1,7 @@
 <!--sponsors	-->
 <section id="sponsors">
 	<div class="container-fluid headers">
-		<div class="col-xs-12 col-md-12">
+			<h1>Tremendous Thanks To Our Sponsors</h1>
 			<?php $args = array(
 				'post_type' => 'sponsor',
 				'LIMIT'	=> '1'
@@ -10,13 +10,25 @@
 			if ( $sponsors_query->have_posts() ) {
 				while ( $sponsors_query->have_posts() ) {
 					$sponsors_query->the_post();
+					$image_id = get_post_thumbnail_id();
+					$image_info = wp_get_attachment_image_src($image_id,"medium");
+					//var_dump($image_info);
+					$image_src = $image_info[0];
+					//$image_html = get_the_post_thumbnail('medium');
+					$portrait = $image_info[1] < $image_info[2] ? true : false;
+					$double_wide = get_field('double_wide');
 					?>
-					<h1><?php the_title(); ?></h1>
-						<?php the_content();
+					<div class="<?php  echo $double_wide ? "col-xs-12 col-sm-8 col-md-6" : "col-xs-6 col-sm-4 col-md-3"; ?>">
+						<div class="<?php  echo $double_wide ? "sponsor_square_double" : "sponsor_square" ?> <?php  echo $portrait ? "portrait" : "landscape"; ?>">
+							<a href="<?=  get_field('sponsor_website')?>" target="_blank">
+								<?=  the_post_thumbnail($double_wide ? 'large' : 'medium')?>
+							</a>
+						</div>
+					</div>
+				<?php 
 				}
 				wp_reset_postdata();
 			}
 			?>
-		</div>
 	</div>
 </section>

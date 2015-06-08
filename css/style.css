@@ -49,13 +49,17 @@ ul li{
     list-style-type: circle;
     margin-left: 2em;
     text-align: left;
-    line-height: 1.6em;
+    line-height: 1.1em;
+    padding-top: 0.3em;
+    padding-bottom: 0.5em;
 }
 ol li{
     list-style-type: decimal;
     margin-left: 2em;
     text-align: left;
-    line-height: 1.6em;
+    line-height: 1.1em;
+    padding-top: 0.3em;
+    padding-bottom: 0.5em;
 }
 
 .hidden{
@@ -142,6 +146,27 @@ a:hover,a:focus,a:visited {
     .container {
         width: auto;
     }
+}
+h1,h2,h3,h4,h5,h6 {
+	font-family:gothamBook, sans-serif;
+	text-transform: uppercase;
+	line-height: 1.25em;
+    margin-top: 16px;
+}
+h1 {
+	font-size: 24px;
+}
+h2 {
+	font-size: 20px;
+}
+h3 {
+	font-size: 16px;
+}
+h4 {
+	font-size: 14px;
+}
+h6 {
+	font-size: 12px;
 }
 
 .headers h1{
@@ -642,12 +667,13 @@ NEWS
 #news{
 	min-height: 300px;
 	background:
-	url('img/waves.png'),
+	url('img/waves_retina.png'),
 	linear-gradient(to bottom, 
       rgba(10, 84, 121, 0) 0%,
       rgba(10, 84, 121, 0) 4%,
       rgba(10, 84, 121, 1) 4.1%
     );
+	background-size: 35px, cover;
 	background-position: top center,center center;
 	background-repeat: repeat-x, repeat;
 }
@@ -661,7 +687,12 @@ NEWS
 		max-width:960px;
 	}
 }
-#news-header h1{
+#news #news-items h1,
+#news #news-items h2,
+#news #news-items h3,
+#news #news-items h4,
+#news #news-items h5,
+#news #news-items h6 {
 	color:#f5f1e9;
 }
 #news-container{
@@ -730,14 +761,14 @@ NEWS
 	border-bottom: 1px solid #f5f1e9;
 	color:#f5f1e9;
 }
-.news-item p a {
+.news-item p a, .news-item li a {
 	color: #D0C4AF;
 	transition: color .27s,border-bottom .27s;
 	-o-transition: color .27s,border-bottom .27s;
 	-moz-transition: color .27s,border-bottom .27s;
 	-webkit-transition: color .27s,border-bottom .27s;
 }
-.news-item p a:hover {
+.news-item p a:hover, .news-item li a:hover {
 	color: #F5F5EB;
 }
 #news .more-link{
@@ -2558,6 +2589,14 @@ SINGLE PAGE
   display:table;
   clear:both;
 }
+#post-artist-info h1,
+#post-artist-info h2,
+#post-artist-info h3,
+#post-artist-info h4,
+#post-artist-info h5,
+#post-artist-info h6 {
+	color: #144662;
+}
 #post-artist-info img{
 	width:100%;
 	height:auto;
@@ -2725,12 +2764,13 @@ EXPERIENCE
 #exp-intro {
 	min-height: 300px;
 	background:
-	url('img/waves_neutral.png'),
+	url('img/waves_neutral_retina.png'),
 	linear-gradient(to bottom, 
       rgba(226, 221, 198, 0) 0%,
       rgba(226, 221, 198, 0) 4%,
       rgba(226, 221, 198, 1) 4.1%
     );
+	background-size: 35px, cover;
 	background-position: top center,center center;
 	background-repeat: repeat-x, repeat;	
 }
@@ -2986,16 +3026,17 @@ FAQ	and NEWS
 	min-height: 500px;
 }
 #page-news article{
-	margin:1em 0;
+	margin: 3em 0 1em;
 }
 
 #page-news article h2 a{
 	font-size: 20px;
 	color:#23527c;
-	font-family: surveyorBookBold,serif;
+	/* font-family: surveyorBookBold,serif; */
 	border-bottom: 1px solid #23527c;
-	line-height:2em;
+	/* line-height:2em; */
 }
+
 
 /*
 	
@@ -3015,11 +3056,13 @@ SPONSORS
 	max-width:750px;
 	margin: 0 auto;
 }
+/*
 @media screen and (min-width:1100px){
 	#sponsors .container-fluid{
 		max-width:960px;
 	}
 }
+*/
 #sponsors h1{
 	padding:0 0 1em;
 }
@@ -3037,6 +3080,7 @@ SPONSORS
 #sponsors a:hover{
 	color:#1A5D83;
 }
+/*
 #sponsors img{
 	width:50%;
 	height:auto;
@@ -3051,6 +3095,59 @@ SPONSORS
 		width:100%;
 	}
 
+}
+unwhite			: #f6f4ec
+cream			: #f5f1e9
+.sponsor_square {
+	text-align: center;
+	background: #f5f1e9;
+	width: 167px;
+	height: 167px;
+	float: left;
+	vertical-align: middle;
+	margin: 10px;
+	border-radius: 10px;
+}
+*/
+#sponsors .container-fluid {
+	max-width: 925px;
+}
+.sponsor_square {
+	margin: 15px auto;
+	width: 200px;
+	height: 200px;
+	background: #f5f1e9;
+	border-radius: 10px;
+}
+.sponsor_square_double {
+	margin: 15px auto;
+	width: 430px;
+	width: calc(400px + (50% - 200px));
+	height: 200px;
+	background: #f5f1e9;
+	border-radius: 10px;
+}
+.sponsor_square a, .sponsor_square_double a {
+	display: block;
+	height: 100%;
+	width: 100%;
+	line-height: 196px;
+}
+.sponsor_square img, .sponsor_square_double img {
+	max-width: 90%;
+	max-height: 300%;
+	margin: auto;
+	vertical-align: middle;
+}
+.sponsor_square.landscape img, .sponsor_square_double.landscape img {
+	width: 90%;
+	height: auto;
+    max-height: 90%;
+}
+.sponsor_square.portrait img, .sponsor_square_double.portrait img {
+	height: 90%;
+	width: auto;
+    max-width: 90%;
 }
 
 

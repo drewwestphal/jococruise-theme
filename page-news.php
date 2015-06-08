@@ -17,12 +17,12 @@
 				while ( $post_query->have_posts() ) {
 					$post_query->the_post();
 					?>
-						<article>
+						<article id="post-artist-info">
 							<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 						<?php if ($post->post_content) {?>
-							<p><?php the_content(); ?></p>
+							<div class="post-artist-text"><?php the_content(); ?></div>
 						<?php  } else { ?>
-							<p><?php the_excerpt(); ?></p>
+							<div class="post-artist-text"><?php the_excerpt(); ?></div>
 						<?php  }; ?>	
 						</article>
 				<?php  }; ?>	
