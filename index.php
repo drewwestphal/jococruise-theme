@@ -8,7 +8,7 @@ get_header();
 	<section id="hero">
 		<div class="container-fluid">
 			<div class="col-xs-12 col-md-12">
-				<img src="<?php bloginfo('template_directory'); ?>/img/hero_JoCo_LoGo.png" alt="A styled JoCo Cruise logotype." id="hero-joco-logo">
+				<img src="<?php bloginfo('template_directory'); ?>/img/hero_JoCo_LoGo.svg" alt="A styled JoCo Cruise logotype." id="hero-joco-logo">
 				<?php if (isset($hero_book_now)){ ?>
 					<div class="hero-buttons">
 						<div class="hero-button"><a href="<?php echo $booking_url; ?>"><?php echo $hero_book_now; ?></a></div>
@@ -31,7 +31,7 @@ get_header();
 					<div id="hero-travel-description-more">
 						<p ><?php echo $travel_desc_more;?></p>				
 					</div>
-					<img id="hero-boat" src="<?php bloginfo('template_directory'); ?>/img/hero_boat.png" alt="An animated cruise ship">
+					<img id="hero-boat" src="<?php bloginfo('template_directory'); ?>/img/hero_boat.svg" alt="An animated cruise ship">
 				<?php  }; ?>
 				<?php if (isset($booking_enabled)) { ?>
 					<div id="hero-booking">
@@ -112,7 +112,7 @@ wp_reset_postdata();
 		<div class="container-fluid">
 			<div class="col-xs-12 col-md-12">
 				<div id="artists-header">
-					<img src="<?php bloginfo('template_directory'); ?>/img/artist_divider.png">
+					<img src="<?php bloginfo('template_directory'); ?>/img/artist_divider.svg">
 					<?php if (strlen($artists_header) > 0){ ?>
 						<h1><?php echo $artists_header; ?></h1>
 					<?php  }; ?>
@@ -128,8 +128,8 @@ wp_reset_postdata();
 									'posts_per_page' => -1,
 									'order'			 => 'ASC',
 									'meta_query' => array(
-										array(
-											'key' => 'artist_type',
+										array( // made the old 'artist_type' field into the 2016 field, all other years are in field name
+											'key' => 'artist_type'.$cruise_year,
 											'value' => 'artist'
 										),
 									)
@@ -267,7 +267,13 @@ wp_reset_postdata();
 					<span class="glyphicon glyphicon-menu-right"></span>
 				</div>
 			</div>
-                    <p>More performers and guests TBA; watch this space for further announcements.</p>
+			<?php 
+			$coming_soon = "More performers and guests TBA; watch this space for further announcements.";
+			if (get_page_by_path("coming-soon")) {
+				$coming_soon = get_page_by_path("coming-soon") -> post_content;
+			}
+			if ($coming_soon != "") echo "<p>".$coming_soon."</p>";
+			?>
 		</div>
 	</section>
 <!--about-->
