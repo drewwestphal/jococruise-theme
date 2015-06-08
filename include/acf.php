@@ -113,58 +113,58 @@ if(function_exists("register_field_group")) {
                 'formatting' => 'html',
                 'maxlength' => '',
             ),
-            array (
-				'key' => 'field_55158a96020c0',
-				'label' => 'Artist Facebook',
-				'name' => 'artist_facebook',
-				'type' => 'text',
-				'instructions' => 'Link to artist Facebook',
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'formatting' => 'html',
-				'maxlength' => '',
-			),
-			array (
-				'key' => 'field_55158ad5020c1',
-				'label' => 'Artist Twitter',
-				'name' => 'artist_twitter',
-				'type' => 'text',
-				'instructions' => 'Link to artist Twitter',
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'formatting' => 'html',
-				'maxlength' => '',
-			),
-			array (
-				'key' => 'field_55158aeb020c2',
-				'label' => 'Artist YouTube',
-				'name' => 'artist_youtube',
-				'type' => 'text',
-				'instructions' => 'Link to artist YouTube',
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'formatting' => 'html',
-				'maxlength' => '',
-			),
-			array (
-				'key' => 'field_55158aeb020c3',
-				'label' => 'Artist Website',
-				'name' => 'artist_website',
-				'type' => 'text',
-				'instructions' => 'Link to artist website',
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'formatting' => 'html',
-				'maxlength' => '',
-			),
+            array(
+                'key' => 'field_55158a96020c0',
+                'label' => 'Artist Facebook',
+                'name' => 'artist_facebook',
+                'type' => 'text',
+                'instructions' => 'Link to artist Facebook',
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'formatting' => 'html',
+                'maxlength' => '',
+            ),
+            array(
+                'key' => 'field_55158ad5020c1',
+                'label' => 'Artist Twitter',
+                'name' => 'artist_twitter',
+                'type' => 'text',
+                'instructions' => 'Link to artist Twitter',
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'formatting' => 'html',
+                'maxlength' => '',
+            ),
+            array(
+                'key' => 'field_55158aeb020c2',
+                'label' => 'Artist YouTube',
+                'name' => 'artist_youtube',
+                'type' => 'text',
+                'instructions' => 'Link to artist YouTube',
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'formatting' => 'html',
+                'maxlength' => '',
+            ),
+            array(
+                'key' => 'field_55158aeb020c3',
+                'label' => 'Artist Website',
+                'name' => 'artist_website',
+                'type' => 'text',
+                'instructions' => 'Link to artist website',
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'formatting' => 'html',
+                'maxlength' => '',
+            ),
         ),
         'location' => array( array( array(
                     'param' => 'post_type',
@@ -315,13 +315,13 @@ if(function_exists("register_field_group")) {
                 'label' => 'Sponsor website',
                 'name' => 'sponsor_website',
                 'type' => 'text',
-				'instructions' => 'Link to sponsor website',
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'formatting' => 'html',
-				'maxlength' => '',
+                'instructions' => 'Link to sponsor website',
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'formatting' => 'html',
+                'maxlength' => '',
             ),
             array(
                 'key' => 'field_544c2ecd05560',
@@ -349,11 +349,10 @@ if(function_exists("register_field_group")) {
     ));
 
     // for the experience page
-    register_field_group(array (
+    register_field_group(array(
         'id' => 'acf_experience-page',
         'title' => 'Experience Page',
-        'fields' => array (
-            array (
+        'fields' => array( array(
                 'key' => 'field_555280ec5a855',
                 'label' => 'Featured Image Clickthrough File',
                 'name' => 'exp_featured_image_clickthrough_file',
@@ -361,74 +360,63 @@ if(function_exists("register_field_group")) {
                 'instructions' => 'This the file that will be displayed when people click through on the featured image. If none is provided, the image will not be clickable.',
                 'save_format' => 'object',
                 'library' => 'all',
-            ),
-        ),
-        'location' => array (
-            array (
-                array (
+            ), ),
+        'location' => array( array( array(
                     'param' => 'post_type',
                     'operator' => '==',
                     'value' => 'experience',
                     'order_no' => 0,
                     'group_no' => 0,
-                ),
-            ),
-        ),
-        'options' => array (
+                ), ), ),
+        'options' => array(
             'position' => 'normal',
             'layout' => 'no_box',
-            'hide_on_screen' => array (
-            ),
+            'hide_on_screen' => array(),
         ),
         'menu_order' => 0,
     ));
-	
-	// Byline info for news posts
-	register_field_group(array (
-		'id' => 'acf_post-byline',
-		'title' => 'Post byline',
-		'fields' => array (
-			array (
-				'key' => 'field_555dee9bf3f57',
-				'label' => 'Byline name',
-				'name' => 'byline_name',
-				'type' => 'text',
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'formatting' => 'html',
-				'maxlength' => '',
-			),
-			array (
-				'key' => 'field_555deec1f3f58',
-				'label' => 'Byline image',
-				'name' => 'byline_image',
-				'type' => 'image',
-				'save_format' => 'object',
-				'preview_size' => 'thumbnail',
-				'library' => 'all',
-			),
-		),
-		'location' => array (
-			array (
-				array (
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'post',
-					'order_no' => 0,
-					'group_no' => 0,
-				),
-			),
-		),
-		'options' => array (
-			'position' => 'normal',
-			'layout' => 'no_box',
-			'hide_on_screen' => array (
-			),
-		),
-		'menu_order' => 0,
-	));
+
+    // Byline info for news posts
+    register_field_group(array(
+        'id' => 'acf_post-byline',
+        'title' => 'Post byline',
+        'fields' => array(
+            array(
+                'key' => 'field_555dee9bf3f57',
+                'label' => 'Byline name',
+                'name' => 'byline_name',
+                'type' => 'text',
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'formatting' => 'html',
+                'maxlength' => '',
+            ),
+            array(
+                'key' => 'field_555deec1f3f58',
+                'label' => 'Byline image',
+                'name' => 'byline_image',
+                'type' => 'image',
+                'save_format' => 'object',
+                'preview_size' => 'thumbnail',
+                'library' => 'all',
+            ),
+        ),
+        'location' => array( array( array(
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'post',
+                    'order_no' => 0,
+                    'group_no' => 0,
+                ), ), ),
+        'options' => array(
+            'position' => 'normal',
+            'layout' => 'no_box',
+            'hide_on_screen' => array(),
+        ),
+        'menu_order' => 0,
+    ));
 
 }
 ?>
