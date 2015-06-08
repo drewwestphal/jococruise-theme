@@ -4,7 +4,7 @@
 			<h1>Tremendous Thanks To Our Sponsors</h1>
 			<?php $args = array(
 				'post_type' => 'sponsor',
-				'LIMIT'	=> '1'
+				'posts_per_page'	=> '-1'
 			);
 			$sponsors_query = new WP_Query( $args );
 			if ( $sponsors_query->have_posts() ) {
@@ -18,7 +18,7 @@
 					$portrait = $image_info[1] < $image_info[2] ? true : false;
 					$double_wide = get_field('double_wide');
 					?>
-					<div class="<?php  echo $double_wide ? "col-xs-12 col-sm-8 col-md-6" : "col-xs-6 col-sm-4 col-md-3"; ?>">
+					<div class="<?php  echo $double_wide ? "col-xs-12 col-sm-6 col-md-4" : "col-xs-6 col-sm-4 col-md-2"; ?>">
 						<div class="<?php  echo $double_wide ? "sponsor_square_double" : "sponsor_square" ?> <?php  echo $portrait ? "portrait" : "landscape"; ?>">
 							<a href="<?=  get_field('sponsor_website')?>" target="_blank">
 								<?=  the_post_thumbnail($double_wide ? 'large' : 'medium')?>
