@@ -122,6 +122,7 @@ wp_reset_postdata();
 						<div class="inner">
 							<?php 
 								$j=0;
+                                $targetArtistType='artist_type'.$cruise_year;
 								//get the artists
 								$args = array(
 									'post_type' 	 => 'artist',
@@ -129,7 +130,7 @@ wp_reset_postdata();
 									'order'			 => 'ASC',
 									'meta_query' => array(
 										array( // made the old 'artist_type' field into the 2016 field, all other years are in field name
-											'key' => 'artist_type'.$cruise_year,
+											'key' => $targetArtistType,
 											'value' => 'artist'
 										),
 									)
@@ -160,7 +161,7 @@ wp_reset_postdata();
 									'order'			 => 'ASC',
 									'meta_query' => array(
 										array(
-											'key' => 'artist_type',
+											'key' => $targetArtistType,
 											'value' => 'featured artist'
 										),
 									)
@@ -195,7 +196,7 @@ wp_reset_postdata();
 									'order'			 => 'ASC',
 									'meta_query' => array(
 										array(
-											'key' => 'artist_type',
+											'key' => $targetArtistType,
 											'value' => 'spotlight item'
 										),
 									)
@@ -230,7 +231,7 @@ wp_reset_postdata();
 									'order'			 => 'ASC',
 									'meta_query' => array(
 										array(
-											'key' => 'artist_type',
+											'key' => $targetArtistType,
 											'value' => 'office hours'
 										),
 									)

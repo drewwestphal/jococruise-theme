@@ -6,6 +6,15 @@ if(function_exists('acf')) {
 }
 
 if(function_exists("register_field_group")) {
+    $artistTypeChoices = array(
+        'artist' => 'Performer',
+        'featured artist' => 'Featured Guest',
+        'spotlight item' => 'Spotlight Item',
+        'did not attend' => 'Did not attend this year',
+    );
+    // upgrades
+    // UPDATE `wp__postmeta` SET meta_key='artist_type2016' WHERE `meta_key` LIKE 'artist_type';
+    // UPDATE `wp__postmeta` SET meta_key='_artist_type2016' WHERE `meta_key` LIKE '_artist_type';
     register_field_group(array(
         'id' => 'acf_artist',
         'title' => 'Artist',
@@ -13,14 +22,9 @@ if(function_exists("register_field_group")) {
             array(
                 'key' => 'field_54b7030175454',
                 'label' => 'Artist Type 2016',
-                'name' => 'artist_type', // This is the old field, so lacks a number in the name, accounted for in functions.php
+                'name' => 'artist_type2016',
                 'type' => 'select',
-                'choices' => array(
-                    'artist' => 'Artist',
-                    'featured artist' => 'Featured Artist',
-                    'spotlight item' => 'Spotlight Item',
-                    'did not attend' => 'Did not attend this year',
-                ),
+                'choices' => $artistTypeChoices,
                 'default_value' => '',
                 'allow_null' => 1,
                 'multiple' => 0,
@@ -30,12 +34,7 @@ if(function_exists("register_field_group")) {
                 'label' => 'Artist Type 2015',
                 'name' => 'artist_type2015',
                 'type' => 'select',
-                'choices' => array(
-                    'artist' => 'Artist',
-                    'featured artist' => 'Featured Artist',
-                    'spotlight item' => 'Spotlight Item',
-                    'did not attend' => 'Did not attend this year',
-                ),
+                'choices' => $artistTypeChoices,
                 'default_value' => 'did not attend',
                 'allow_null' => 1,
                 'multiple' => 0,
@@ -45,12 +44,7 @@ if(function_exists("register_field_group")) {
                 'label' => 'Artist Type 2014',
                 'name' => 'artist_type2014',
                 'type' => 'select',
-                'choices' => array(
-                    'artist' => 'Artist',
-                    'featured artist' => 'Featured Artist',
-                    'spotlight item' => 'Spotlight Item',
-                    'did not attend' => 'Did not attend this year',
-                ),
+                'choices' => $artistTypeChoices,
                 'default_value' => 'did not attend',
                 'allow_null' => 1,
                 'multiple' => 0,
@@ -60,12 +54,7 @@ if(function_exists("register_field_group")) {
                 'label' => 'Artist Type 2013',
                 'name' => 'artist_type2013',
                 'type' => 'select',
-                'choices' => array(
-                    'artist' => 'Artist',
-                    'featured artist' => 'Featured Artist',
-                    'spotlight item' => 'Spotlight Item',
-                    'did not attend' => 'Did not attend this year',
-                ),
+                'choices' => $artistTypeChoices,
                 'default_value' => 'did not attend',
                 'allow_null' => 1,
                 'multiple' => 0,
@@ -75,12 +64,7 @@ if(function_exists("register_field_group")) {
                 'label' => 'Artist Type 2012',
                 'name' => 'artist_type2012',
                 'type' => 'select',
-                'choices' => array(
-                    'artist' => 'Artist',
-                    'featured artist' => 'Featured Artist',
-                    'spotlight item' => 'Spotlight Item',
-                    'did not attend' => 'Did not attend this year',
-                ),
+                'choices' => $artistTypeChoices,
                 'default_value' => 'did not attend',
                 'allow_null' => 1,
                 'multiple' => 0,
@@ -90,12 +74,7 @@ if(function_exists("register_field_group")) {
                 'label' => 'Artist Type 2011',
                 'name' => 'artist_type2011',
                 'type' => 'select',
-                'choices' => array(
-                    'artist' => 'Artist',
-                    'featured artist' => 'Featured Artist',
-                    'spotlight item' => 'Spotlight Item',
-                    'did not attend' => 'Did not attend this year',
-                ),
+                'choices' => $artistTypeChoices,
                 'default_value' => 'did not attend',
                 'allow_null' => 1,
                 'multiple' => 0,

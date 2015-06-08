@@ -6,7 +6,6 @@ add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'post-thumbnails' );
 global $cruise_year;
 $cruise_year = "2016";
-$cruise_year = $cruise_year=="2016" ? "" : $cruise_year;
 global $content_width;
 if ( ! isset( $content_width ) ) $content_width = 640;
 
