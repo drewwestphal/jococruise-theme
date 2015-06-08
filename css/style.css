@@ -177,7 +177,7 @@ h6 {
 	letter-spacing: 1px;
 	line-height: 1.25em;
 }
-.joco-page h2,h3,h4 {
+.joco-page h2,.joco-page h3,.joco-page h4 {
     font-family:gothamBook, sans-serif;
     color:#144662;
     text-transform: uppercase;
@@ -2228,6 +2228,7 @@ FAQ
 	font-family: surveyorBook, serif;
 	color:#144662;
 	text-decoration: underline;
+	text-transform: none;
 }
 #faq a {
   font-size: 24px;
