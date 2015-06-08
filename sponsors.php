@@ -18,10 +18,10 @@
 					$portrait = $image_info[1] < $image_info[2] ? true : false;
 					$double_wide = get_field('double_wide');
 					?>
-					<div class="<? echo $double_wide ? "col-xs-12 col-sm-8 col-md-6" : "col-xs-6 col-sm-4 col-md-3"; ?>">
-						<div class="<? echo $double_wide ? "sponsor_square_double" : "sponsor_square" ?> <? echo $portrait ? "portrait" : "landscape"; ?>">
-							<a href="<?=get_field('sponsor_website')?>" target="_blank">
-								<?=the_post_thumbnail($double_wide ? 'large' : 'medium')?>
+					<div class="<?php  echo $double_wide ? "col-xs-12 col-sm-8 col-md-6" : "col-xs-6 col-sm-4 col-md-3"; ?>">
+						<div class="<?php  echo $double_wide ? "sponsor_square_double" : "sponsor_square" ?> <?php  echo $portrait ? "portrait" : "landscape"; ?>">
+							<a href="<?=  get_field('sponsor_website')?>" target="_blank">
+								<?=  the_post_thumbnail($double_wide ? 'large' : 'medium')?>
 							</a>
 						</div>
 					</div>
