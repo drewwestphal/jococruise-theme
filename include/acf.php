@@ -397,5 +397,48 @@ if(function_exists("register_field_group")) {
         'menu_order' => 0,
     ));
 
+    register_field_group(array(
+        'id' => 'acf_social-fields',
+        'title' => 'Social Fields',
+        'fields' => array(
+            array(
+                'key' => 'field_5576fca5e1be5',
+                'label' => 'Social Post Title',
+                'name' => 'social_post_title',
+                'type' => 'text',
+                'instructions' => 'What title should be shown when pasting the link to this page into social media',
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'formatting' => 'html',
+                'maxlength' => '',
+            ),
+            array(
+                'key' => 'field_5576fccee1be6',
+                'label' => 'Social Post Image',
+                'name' => 'social_post_image_url',
+                'type' => 'image',
+                'instructions' => 'What image should be used as the default image when this link is pasted into social media',
+                'save_format' => 'url',
+                'preview_size' => 'thumbnail',
+                'library' => 'all',
+            ),
+        ),
+        'location' => array( array( array(
+                    'param' => 'post_type',
+                    'operator' => '!=',
+                    'value' => 'city',
+                    'order_no' => 0,
+                    'group_no' => 0,
+                ), ), ),
+        'options' => array(
+            'position' => 'normal',
+            'layout' => 'no_box',
+            'hide_on_screen' => array(),
+        ),
+        'menu_order' => 1000,
+    ));
+
 }
 ?>

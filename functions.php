@@ -27,8 +27,20 @@ function mac_register_theme_menu() {
 // support fb embeds with proper meta tags ...
 add_action('wp_head', function(){
 
+    $post = get_post();
+
     $settings = get_option('mac_settings');
-    $site_title = get_bloginfo('name');
+    $title = get_bloginfo('name');
+    $user_img_tag = '';
+    if(!current_theme_supports('cruisecontrol')) {
+        // if in booking engine do the default
+        if($post && ($user_title=get_field('social_post_title',$post->ID))){
+            $title = $user_title;
+        }
+        if($post && ($user_image_url=get_field('social_post_image_url',$post->ID))){
+            $user_img_tag = sprintf('<meta property="og:image" content="%s" />', $user_image_url);
+        }
+    }
     $travel_desc = $settings['mac_travel_description'];
 
     $url = 'http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . "{$_SERVER['HTTP_HOST']}/{$_SERVER['REQUEST_URI']}";
@@ -42,9 +54,10 @@ add_action('wp_head', function(){
         <meta name="twitter:card" value="summary">
 
         <!-- Open Graph data -->
-        <meta property="og:title" content="$site_title" />
+        <meta property="og:title" content="$title" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="$url" />
+        $user_img_tag
         <meta property="og:image" content="$imgurl1" />
         <meta property="og:image" content="$imgurl2" />
         <meta property="og:description" content="$desc" />
