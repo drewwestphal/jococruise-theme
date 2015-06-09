@@ -164,9 +164,10 @@ function blankslate_load_scripts() {
         1, 'screen');
     }
     
+    $stylePath = __DIR__.'/css/style.css';
     wp_enqueue_style('macstyle', //
     get_template_directory_uri() . '/style.css', //
-    $maindeps, 1, 'screen');
+    $maindeps, md5(filemtime($stylePath).filesize($stylePath)), 'screen');
 
     // according to this place you don't wanna enqueue shit on the admin side...
     //http://digwp.com/2009/06/use-google-hosted-javascript-libraries-still-the-right-way/
