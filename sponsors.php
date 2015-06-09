@@ -11,11 +11,14 @@
 				while ( $sponsors_query->have_posts() ) {
 					$sponsors_query->the_post();
 					$image_id = get_post_thumbnail_id();
-					$image_info = wp_get_attachment_image_src($image_id,"medium");
-                    // don't write a tag unless image exist
-                    $image_tag = $image_info[0]?sprintf('<img src="%s" alt="%s" />', $image_info[0], get_the_title().' Logo'):'';
+					$image_info = wp_get_attachment_image_src($image_id,"large");
 					$portrait = $image_info[1] < $image_info[2] ? true : false;
 					$double_wide = get_field('double_wide');
+					if (!$double_wide) {
+						$image_info = wp_get_attachment_image_src($image_id,"medium");
+					}
+                    // don't write a tag unless image exist
+                    $image_tag = $image_info[0]?sprintf('<img src="%s" alt="%s" />', $image_info[0], get_the_title().' Logo'):'';
 					?>
 					<div class="<?php  echo $double_wide ? "col-xs-12 col-sm-6 col-md-4" : "col-xs-6 col-sm-3 col-md-2"; ?>">
 						<div class="<?php  echo $double_wide ? "sponsor_square_double" : "sponsor_square" ?> <?php  echo $portrait ? "portrait" : "landscape"; ?>">
