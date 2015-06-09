@@ -3141,17 +3141,12 @@ cream			: #f5f1e9
 	margin: auto;
 	vertical-align: middle;
 }
-.sponsor_square.landscape img, .sponsor_square_double.landscape img {
-	width: 90%;
+.sponsor_square img, .sponsor_square_double img {
+	width: auto;
 	height: auto;
     max-height: 90%;
-}
-.sponsor_square.portrait img, .sponsor_square_double.portrait img {
-	height: 90%;
-	width: auto;
     max-width: 90%;
 }
-
 
 /*
  * 
