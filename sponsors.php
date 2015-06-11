@@ -1,7 +1,7 @@
 <!--sponsors	-->
 <section id="sponsors">
 	<div class="container-fluid headers">
-			<h1>Tremendous Thanks To Our Sponsors</h1>
+			<h1>Thanks To Our Sponsors</h1>
 			<?php $args = array(
 				'post_type' => 'sponsor',
 				'posts_per_page'	=> '-1'
