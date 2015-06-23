@@ -1,0 +1,82 @@
+.container {
+  background: #ffffff;
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-bottom: 30px;
+  border-left: 10px #2a85c1 solid;
+  border-right: 10px #2a85c1 solid;
+  //border-color: #2a85c1;
+  //border-left-width: 10px;
+  //border-right-width: 10px;
+}
+h1, h2 {
+  font-variant: small-caps;
+}
+p, .indent {
+  padding-left: 2%;
+}
+ol, ul {
+  list-style-position: inside;
+  padding-left: 2%;
+}
+em {
+  font-style: italic;
+}
+.foot-border {
+  text-align: center;
+  font-size: 0.7em;
+  padding: 20px;
+  background-color: #2a85c1;
+  color: lighten(@brand-primary, 40%);
+  margin-bottom: 20px;
+}
+/*
+.carousel_non_image {
+  min-height: 150px;
+}
+.carousel-caption p {
+  padding: 0px;
+}
+.carousel-inner .item img {
+  margin: auto;
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+}
+@carousel-height: 500px;
+.carousel img {
+  margin: auto;
+  width: auto;
+  height: @carousel-height;
+  max-height: @carousel-height;
+  min-height: @carousel-height;
+}
+*/
+header h1 small {
+  margin-left:9px;
+}
+.bg-info  {
+  color: @gray-lighter;
+}
+@import "../bower_components/slick.js/slick/slick.css";
+@import "../bower_components/slick.js/slick/slick-theme.css";
+.carousel-slick {
+  margin: 20px;
+}
+.carousel-slick img {
+  padding: 1px;
+  margin: auto;
+}
+button.slick-prev::before, button.slick-next::before {
+  color: @brand-primary;
+}
+.carousel-slick-caption {
+  margin: 10px;
+  text-align: center;
+  font-style: italic;
+  font-size: 0.9em;
+  color: darken(@brand-primary,15%);
+}
+.affix {
+  top: 20px;
+}
