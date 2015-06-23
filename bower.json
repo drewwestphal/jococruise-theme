@@ -15,7 +15,8 @@
   "dependencies": {
     "jquery": "2.1.4",
     "fitvids": "~1.1.0",
-    "slick.js": "~1.5.5"
+    "slick.js": "~1.5.5",
+    "magnific-popup": "~1.0.0"
   },
   "devDependencies": {
     "bootstrap": "~3.3.4"
