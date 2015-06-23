@@ -5,7 +5,7 @@ get_header();
 
 <section id="content" role="main">
 <!--hero-->
-	<section id="hero">
+	<section id="hero" class="joco_blue">
 		<div class="container">
 			<div class="col-xs-12 col-md-12">
 				<img src="<?php bloginfo('template_directory'); ?>/img/hero_JoCo_LoGo.svg" alt="A styled JoCo Cruise logotype." id="hero-joco-logo">
@@ -58,7 +58,7 @@ $news_count = $news_query->post_count;
 
 if ($news_query->have_posts()) {
 ?>
-	<section id="news" class="headers">
+	<section id="news" class="headers joco_blue">
 		<div class="container">
 			<div class="col-xs-12 col-md-12">
 				<div id="news-header">
@@ -98,7 +98,7 @@ wp_reset_postdata();
 }; ?>
 <!--mailing list-->	
 	<?php if(function_exists('mc4wp_form')) { ?>
-	<section id="mailing-list" class="headers">
+	<section id="mailing-list" class="headers joco_beige">
 		<div class="container">
 			<div class="col-xs-12 col-md-12">
 				<h1><?php echo $mailing_cta; ?></h1>
@@ -317,7 +317,7 @@ wp_reset_postdata();
 	?>
 </section>	
 <!--map-->
-	<section id="map">
+	<section id="map" class="joco_beige">
 		<div class="container">
 			<div class="col-xs-12 col-md-12">
 				<div class="map-cities">
@@ -364,7 +364,7 @@ wp_reset_postdata();
 		</div>
 	</section>
 <!--contact-->
-	<section id="contact">
+	<section id="contact" class="joco_blue">
 		<div class="container">
 			<div class="col-xs-12 col-md-12 headers">
 				<h1 id="contact-header">Contact Us</h1>
