@@ -126,12 +126,6 @@ function blankslate_load_scripts() {
     get_template_directory_uri() . '/css/bootstrap.min.css',//
      array(), 1, 'screen');
 
-    wp_register_style('reset', //
-    get_template_directory_uri() . '/css/reset.css', //
-    array(
-        'bootstrapcss',
-    ), 1, 'screen');
-
 
     // magnific
     // it is just registered here
@@ -166,8 +160,8 @@ function blankslate_load_scripts() {
     
     $stylePath = __DIR__.'/css/style.css';
     wp_enqueue_style('macstyle', //
-    get_template_directory_uri() . '/style.css', //
-    $maindeps, md5(filemtime($stylePath).filesize($stylePath)), 'screen');
+    	get_template_directory_uri() . '/style.css', //
+    	$maindeps, md5(filemtime($stylePath).filesize($stylePath)), 'screen');
 
     // according to this place you don't wanna enqueue shit on the admin side...
     //http://digwp.com/2009/06/use-google-hosted-javascript-libraries-still-the-right-way/
