@@ -10,7 +10,7 @@ global $content_width;
 if ( ! isset( $content_width ) ) $content_width = 640;
 
 }
-include('mac_options.php');
+//include('mac_options.php');
 add_filter( 'pre_get_posts', 'my_get_posts' );
 
 function my_get_posts( $query ) {
@@ -258,6 +258,14 @@ return $count;
 require_once(__DIR__.'/include/acf.php');
 require_once(__DIR__.'/include/cpt.php');
 require_once(__DIR__.'/include/columns.php');
+
+// cmb2
+require_once(__DIR__.'/include/cmb2/init.php');
+require_once(__DIR__.'/include/cmb2/init.php');
+require_once(__DIR__.'/include/CCTheme_Admin_conf.php');
+require_once(__DIR__.'/include/CCTheme_Admin.php');
+CCTheme_Admin::getInstance();
+
 
 function is_login_page() {
     return in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php'));
