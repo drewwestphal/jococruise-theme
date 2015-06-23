@@ -6,7 +6,7 @@ get_header();
 <section id="content" role="main">
 <!--hero-->
 	<section id="hero">
-		<div class="container-fluid">
+		<div class="container">
 			<div class="col-xs-12 col-md-12">
 				<img src="<?php bloginfo('template_directory'); ?>/img/hero_JoCo_LoGo.svg" alt="A styled JoCo Cruise logotype." id="hero-joco-logo">
 				<?php if (isset($hero_book_now)){ ?>
@@ -22,7 +22,7 @@ get_header();
 	</section>
 	<?php if (isset($travel_desc) || isset($travel_desc_more) || isset($booking_enabled)){ ?>
 	<section id="hero-about">
-		<div class="container-fluid">
+		<div class="container">
 			<div class="col-xs-12 col-md-12">
 				<?php if (isset($travel_desc)){ ?>
 					<p id="hero-travel-description"><?php echo $travel_desc; ?></p>
@@ -59,7 +59,7 @@ $news_count = $news_query->post_count;
 if ($news_query->have_posts()) {
 ?>
 	<section id="news" class="headers">
-		<div class="container-fluid">
+		<div class="container">
 			<div class="col-xs-12 col-md-12">
 				<div id="news-header">
 					<?php if (strlen($news_header) > 0){ ?>
@@ -99,7 +99,7 @@ wp_reset_postdata();
 <!--mailing list-->	
 	<?php if(function_exists('mc4wp_form')) { ?>
 	<section id="mailing-list" class="headers">
-		<div class="container-fluid">
+		<div class="container">
 			<div class="col-xs-12 col-md-12">
 				<h1><?php echo $mailing_cta; ?></h1>
 				<?php mc4wp_form(); ?>
@@ -109,7 +109,7 @@ wp_reset_postdata();
 	<?php }; ?>
 <!--artists-->
 	<section id="artists" class="headers">
-		<div class="container-fluid">
+		<div class="container">
 			<div class="col-xs-12 col-md-12">
 				<div id="artists-header">
 					<img src="<?php bloginfo('template_directory'); ?>/img/artist_divider.svg">
@@ -318,7 +318,7 @@ wp_reset_postdata();
 </section>	
 <!--map-->
 	<section id="map">
-		<div class="container-fluid">
+		<div class="container">
 			<div class="col-xs-12 col-md-12">
 				<div class="map-cities">
 					<img src="<?php bloginfo('template_directory'); ?>/img/map.png" id="map-background">		
@@ -365,7 +365,7 @@ wp_reset_postdata();
 	</section>
 <!--contact-->
 	<section id="contact">
-		<div class="container-fluid">
+		<div class="container">
 			<div class="col-xs-12 col-md-12 headers">
 				<h1 id="contact-header">Contact Us</h1>
 				<div id="contact-info-container">
@@ -436,7 +436,7 @@ wp_reset_postdata();
 		</div>
 	</section>
 <!-- faq -->
-<div class="faq container-fluid">
+<div class="faq container">
 	<div class="faq col-xs-12 col-md-12">
 		<section id="faq" class="headers">
 				<h1><span>Frequently Asked</span><br>Questions</h1>
