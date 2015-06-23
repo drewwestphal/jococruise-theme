@@ -29,9 +29,9 @@ $cont_book_q_addy = $settings['mac_booking_questions_address_header'];
 $cont_tel = $settings['mac_phone_questions_header'];
 $cont_tel_addy = $settings['mac_phone_questions_address_header'];
 //map
-$map_copy = $settings['mac_map_copy'];
+$map_copy = @$settings['mac_map_copy'];
 //news
-$news_header = $settings['mac_news_header'];
+$news_header = @$settings['mac_news_header'];
 $news_view_all = $settings['mac_news_view_all'];
 $news_view_url = $settings['mac_news_view_all_url'];
 //footer
