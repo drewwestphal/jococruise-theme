@@ -20,20 +20,27 @@
 @brand-warning:         #f0ad4e;
 @brand-danger:          #d9534f;
 
+// JOCO COLORS
+
+@joco_offwhite:         #f5f5eb;
+@joco_beige:            #d0c4af;
+@joco_blue:             #1a5d83;
+@joco_darkblue:         #063953;
+
 
 //== Scaffolding
 //
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-@body-bg:               #fff;
+@body-bg:               @joco_offwhite;
 //** Global text color on `<body>`.
-@text-color:            @gray-dark;
+@text-color:            @joco_darkblue;
 
 //** Global textual link color.
-@link-color:            @brand-primary;
+@link-color:            @joco_darkblue;
 //** Link hover color set via `darken()` function.
-@link-hover-color:      darken(@link-color, 15%);
+@link-hover-color:      lighten(@joco_darkblue, 15%);
 //** Link hover decoration.
 @link-hover-decoration: underline;
 
