@@ -2,6 +2,12 @@
 // Variables
 // --------------------------------------------------
 
+// JOCO COLORS
+
+@joco_offwhite:         #f5f5eb;
+@joco_beige:            #d0c4af;
+@joco_blue:             #1a5d83;
+@joco_darkblue:         #063953;
 
 //== Colors
 //
@@ -14,18 +20,11 @@
 @gray-light:             lighten(@gray-base, 46.7%); // #777
 @gray-lighter:           lighten(@gray-base, 93.5%); // #eee
 
-@brand-primary:         darken(#428bca, 6.5%); // #337ab7
+@brand-primary:         @joco_blue;
 @brand-success:         #5cb85c;
 @brand-info:            #5bc0de;
 @brand-warning:         #f0ad4e;
 @brand-danger:          #d9534f;
-
-// JOCO COLORS
-
-@joco_offwhite:         #f5f5eb;
-@joco_beige:            #d0c4af;
-@joco_blue:             #1a5d83;
-@joco_darkblue:         #063953;
 
 
 //== Scaffolding
@@ -129,9 +128,9 @@
 @line-height-large:         1.3333333; // extra decimals for Win 8.1 Chrome
 @line-height-small:         1.5;
 
-@border-radius-base:        4px;
-@border-radius-large:       6px;
-@border-radius-small:       3px;
+@border-radius-base:        2px;
+@border-radius-large:       4px;
+@border-radius-small:       0px;
 
 //** Global color for active items (e.g., navs or dropdowns).
 @component-active-color:    #fff;
@@ -171,9 +170,9 @@
 
 @btn-font-weight:                normal;
 
-@btn-default-color:              #333;
-@btn-default-bg:                 #fff;
-@btn-default-border:             #ccc;
+@btn-default-color:              #fff;
+@btn-default-bg:                 rgba(255,255,255,0);
+@btn-default-border:             #fff;
 
 @btn-primary-color:              #fff;
 @btn-primary-bg:                 @brand-primary;

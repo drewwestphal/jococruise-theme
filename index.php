@@ -9,15 +9,17 @@ get_header();
 		<div class="container">
 			<div class="col-xs-12 col-md-12">
 				<img src="<?php bloginfo('template_directory'); ?>/img/hero_JoCo_LoGo.svg" alt="A styled JoCo Cruise logotype." id="hero-joco-logo">
+			</div>
 				<?php if (isset($hero_book_now)){ ?>
-					<div class="hero-buttons">
-						<div class="hero-button"><a href="<?php echo $booking_url; ?>"><?php echo $hero_book_now; ?></a></div>
-					<?php };?>
-					<?php if (isset($booked)){ ?>
-						<div class="hero-button"><a href="<?php echo $booked_url; ?>"><?php echo $booked; ?></a></div>
+					<div class="col-xs-12 col-sm-4 col-sm-offset-2">
+						<a class="btn btn-lg btn-default hero-button" href="<?php echo $booking_url; ?>"><?php echo $hero_book_now; ?></a>
 					</div>
 				<?php };?>
-			</div>
+				<?php if (isset($booked)){ ?>
+					<div class="col-xs-12 col-sm-4"">
+						<a class="btn btn-lg btn-default hero-button" href="<?php echo $booked_url; ?>"><?php echo $booked; ?></a>
+					</div>
+				<?php };?>
 		</div>
 	</section>
 	<?php if (isset($travel_desc) || isset($travel_desc_more) || isset($booking_enabled)){ ?>
@@ -32,11 +34,11 @@ get_header();
 				<div id="hero-travel-description-more" class="col-xs-6 col-sm-7 col-md-8 col-lg-9">
 					<p ><?php echo $travel_desc_more;?></p>
 					<?php if (isset($booking_enabled)) { ?>
-						<div id="hero-booking" class="col-xs-12">
+						<div id="hero-booking">
 						<?php if (strlen($booking_cta) > 0) { ?>
-							<a href="<?php echo $booking_url; ?>" id="hero-book-now"><?php echo get_option('mac_settings')['mac_button_cta']; ?></a>
+							<a href="<?php echo $booking_url; ?>" class="btn btn-lg btn-primary" id="hero-book-now"><?php echo get_option('mac_settings')['mac_button_cta']; ?></a>
 						<?php } else { ?>
-							<a href="<?php echo $booking_url; ?>" id="hero-book-now">Book Now</a>
+							<a href="<?php echo $booking_url; ?>" class="btn btn-lg btn-primary" id="hero-book-now">Book Now</a>
 						<?php }; ?>
 						</div>
 					<?php }; ?>			

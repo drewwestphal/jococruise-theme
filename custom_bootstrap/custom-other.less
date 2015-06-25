@@ -1,3 +1,4 @@
+// Import css from bower components
 @import "../bower_components/slick.js/slick/slick.css";
 @import "../bower_components/slick.js/slick/slick-theme.css";
 @import "../bower_components/magnific-popup/dist/magnific-popup.css";
@@ -48,6 +49,16 @@ em, .italic{
 .img-responsive {
   width: 100%;
 }
+.btn, a.btn {
+  text-transform: uppercase;
+  font-family: @font-family-sans-serif;
+  font-size: 0.7em;
+  text-decoration: none;
+  color: #fff;
+}
+.btn-default:hover {
+  background-color: rgba(255,255,255,0.2);
+}
 
 
 /*
@@ -69,7 +80,11 @@ em, .italic{
   width:75%;
   max-width: 390px;
   height: auto;
-  margin: 100px 0;
+  margin: 80px 0;
+}
+.hero-button {
+  width:220px;
+  margin: 1em auto;
 }
 #hero-about {
   padding: 42px;
