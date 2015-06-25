@@ -448,44 +448,26 @@ wp_reset_postdata();
 				if ( $faq_query->have_posts() ) {
 					$faq_count = $faq_query->post_count;
 					?>
-					
-					<div class="faq-carousel carousel visible-xs-block" id="faq-carousel-small">
-						<span class="glyphicon glyphicon-menu-left"></span>
-						<?php for ($l=0;$l<$faq_count;$l++){ ?>		
-								<a href="#faq-item-small-<?php echo $l; ?>" <?php if ($l===0) { echo 'class="orange-text unmove"'; } else { echo 'class="unmove"';};?>>&bull;</a>
-						<?php 							}
-						?>	
-						<span class="glyphicon glyphicon-menu-right"></span>
-					</div>
-					<div class="faq-carousel carousel hidden-xs <?php if ($faq_count <= 3) { echo 'hidden'; } ?>" id="faq-carousel-wide">
-						<span class="arrow arrow-left"></span>
-						<?php 							$wide_count = ceil($faq_count/3);
-							for ($l=0;$l<$wide_count;$l++){ ?>		
-								<a href="#faq-item-wide-<?php echo $l; ?>" <?php if ($l===0) { echo 'class="orange-text"'; };?>>&bull;</a>
-						<?php 							}
-						?>	
-						<span class="arrow arrow-right"></span>
-					</div>	
-					<div id="faq-overflow" style="left:0;">
-						<?php 						$faqlink = get_page_by_title('FAQ');
+					<div data-slick='{"slidesToShow": 3, "slidesToScroll": 3}' class="slick-element">
+						<?php $faqlink = get_page_by_title('FAQ');
                         $faqlink = get_permalink($faqlink -> ID);
-                        $markup = '<div class="faq-group">';
+                        $markup = '';//'<div class="faq-group">';
                         $m = 1;
                         while($faq_query -> have_posts()) {
                             $faq_query -> the_post();
-                            $markup .= sprintf('<div class="faq-item-container" id="faq-item-%d">', $m);
-                            $markup .= sprintf('<div class="faq-item-question"><a href="%s"><h2>%s</h2></a></div>', //
+                            $markup .= sprintf('<div id="faq-item-%d">', $m);
+                            $markup .= sprintf('<div class="faq-item-question"><a href="%s">%s</a></div>', //
                             $faqlink . '#' . $post -> post_name, get_the_title());
                             $markup .= sprintf('<div class="faq-item-answer">%s</div>', //
                             $post -> post_excerpt ? get_the_excerpt() : get_the_content());
                             $markup .= '</div>';
                             // close faq group && reopen every 3 faq items
                             if($m % 3 === 0) {
-                                $markup .= '</div><div class="faq-group">';
+                                //$markup .= '</div><div class="faq-group">';
                             }
                             $m++;
                         }
-                        $markup .= "</div>";
+                        //$markup .= "</div>";
                         echo $markup;
 						wp_reset_postdata();
 						?>
