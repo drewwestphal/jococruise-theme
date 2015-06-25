@@ -68,26 +68,14 @@ if ($news_query->have_posts()) {
 						<h1><?php echo $news_header; ?></h1>
 					<?php  }; ?>
 				</div>
-				<?php if ($news_count > 1) { ?>
-				<div class="carousel" id="news-carousel">
-					<span class="glyphicon glyphicon-menu-left"></span>
-					<?php for ($m=0;$m<$news_count;$m++){ ?>		
-							<a href="#news-item-<?php echo $m; ?>" <?php if ($m===0) { echo 'class="orange-text unmove"';} else { echo 'class="unmove"'; };?>>&bull;</a>
-					<?php 						}
-					?>	
-					<span class="glyphicon glyphicon-menu-right"></span>
-				</div>
-				<?php }; ?>
-				<div id="news-container">
-					<div id="news-items">
-						<?php 							while ($news_query->have_posts()) {
-								$news_query->the_post();
-								echo '<div class="news-item">';
-								include('news-unit.php');
-								echo '</div>';
-							}
-						?>
-					</div>
+				<div id="news-container" class="slick-element">
+					<?php while ($news_query->have_posts()) {
+							$news_query->the_post();
+							echo '<div class="news-item">';
+							include('news-unit.php');
+							echo '</div>';
+						}
+					?>
 				</div>
 			<?php if ($news_count > 1) { ?>
 				<a id="news-view-all" href="<?php echo $news_view_url; ?>"><?php echo $news_view_all; ?></a>

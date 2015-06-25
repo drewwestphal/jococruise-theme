@@ -46,6 +46,8 @@ var mapBehavior = function(){
 
 
 jQuery(document).ready(function(jQuery) {
+	$('.slick-element').slick({dots: true});
+	
 	//hero
 	jQuery('#hero-more-info-button').click(function(){
 		jQuery('#hero-more-info-button span').toggleClass('rotate');
