@@ -59,6 +59,15 @@ em, .italic{
 .btn-default:hover {
   background-color: rgba(255,255,255,0.2);
 }
+input, textarea {
+  background: rgba(255,255,255,0);
+  color: @joco_beige;
+  padding: 15px;
+  border: 1px solid #f6f4ec;
+  font-family: surveyorBookItalic,serif;
+  width: 100%;
+  margin-bottom: 20px;
+}
 
 
 /*
@@ -109,6 +118,73 @@ em, .italic{
   li {
     text-align: left;
   }
+}
+#contact{
+  padding: 42px;
+  background:url('../img/contact_bg.jpg') center center no-repeat;
+  background-size: cover;
+  color:#f5f1e9;
+  text-align: center;
+}
+.contact-info-group {
+  width: 100%;
+  height: auto;
+}
+.contact-icon {
+  clear: both;
+  width:50px;
+  height:50px;
+  float: left;
+  background: #FFF;
+  background: rgba(255,255,255,.25);
+  text-align: center;
+  margin: 0 20px 50px 0;
+  border-radius:50%;
+  -moz-border-radius:50%;
+  -webkit-border-radius:50%;
+  span {
+    color:#003a5d;
+    position: relative;
+    font-size: 20px;
+    top:15px;
+    left:1px;
+  }
+}
+.contact-text {
+  float: left;
+  font-size: 0.9em;
+  text-align: left;
+  h5, a {
+    text-align: left;
+  }
+}
+#honeypot{
+  display: none;
+}
+.recaptcha-container {
+  float: left;
+  width: 300px;
+  margin-bottom: 12px; 
+  margin-right: 20px; 
+}
+#contact-button {
+  float: left;
+  height: 76px;
+}
+#contact .plain-text {
+  font-family: surveyorBook,serif;
+  font-size: 12px;
+  line-height: 0;
+  position: relative;
+  top: -7px;
+}
+.recaptcha-error {
+  font-family: surveyorBook,serif;
+  font-size: 12px;
+  height: 0px;
+  width: 300px;
+  padding: 0px;
+  line-height: 12px;
 }
 .faq-item-question {
   font-size: 1.2em;
@@ -613,7 +689,6 @@ MAP
   
 CONTACT
   
-*/
 
 #contact{
   background:url('../img/contact_bg.jpg') center center no-repeat;
@@ -621,12 +696,12 @@ CONTACT
   color:#f5f1e9;
   text-align: center;
 }
-#contact .container-fluid{
+#contact .container{
   max-width: 780px;
   padding: 0px 20px 30px;
 }
 @media screen and (min-width:1100px){
-  #contact .container-fluid{
+  #contact .container{
     max-width:960px;
   }
 }
@@ -642,7 +717,7 @@ CONTACT
   text-align: left;
 }
 @media screen and (min-width:768px){
-  #contact .container-fluid{
+  #contact .container{
     padding: 50px 90px;
   }
   #contact-header{
@@ -776,11 +851,6 @@ textarea::-webkit-input-placeholder {
   float: left;
   width: 300px;
   margin-bottom: 12px;  
-}
-.g-recaptcha {
-  /* float: none;
-  width: 300px;
-  margin-bottom: 12px; */
 }
 .recaptcha-error {
   font-family: surveyorBook,serif;

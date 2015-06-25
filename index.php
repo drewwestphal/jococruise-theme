@@ -357,17 +357,16 @@ wp_reset_postdata();
 	</section>
 <!--contact-->
 	<section id="contact" class="joco_blue">
+		<h1 id="contact-header">Contact Us</h1>
 		<div class="container">
-			<div class="col-xs-12 col-md-12 headers">
-				<h1 id="contact-header">Contact Us</h1>
-				<div id="contact-info-container">
+			<div class="col-xs-12 col-sm-6 col-md-5 headers">
 					<?php if (strlen($cont_gen_q_addy) > 0){ ?>
 					<div class="contact-info-group">
 						<div class="contact-icon" id="contact-icon-info">
 							<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
 						</div>
 						<div class="contact-text headers">
-							<h1><?php echo $cont_gen_q; ?></h1>
+							<h5><?php echo $cont_gen_q; ?></h5>
 							<a href="mailto: <?php echo $cont_gen_q_addy; ?>"><?php echo $cont_gen_q_addy; ?></a>
 						</div>
 					</div>
@@ -378,7 +377,7 @@ wp_reset_postdata();
 							<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
 						</div>
 						<div class="contact-text headers">
-							<h1><?php echo $cont_book_q; ?></h1>
+							<h5><?php echo $cont_book_q; ?></h5>
 							<a href="mailto: <?php echo $cont_book_q_addy; ?>"><?php echo $cont_book_q_addy; ?></a>
 						</div>					
 					</div>
@@ -389,7 +388,7 @@ wp_reset_postdata();
 							<span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
 						</div>
 						<div class="contact-text headers">
-							<h1><?php echo $cont_tel; ?></h1>
+							<h5><?php echo $cont_tel; ?></h5>
 							<?php echo $cont_tel_addy; ?>
 						</div>
 					</div>
@@ -405,8 +404,8 @@ wp_reset_postdata();
 						<a href="<?php echo $cruise_rss; ?>" class="contact-social-icon rss" target="_blank"></a>
 						<?php  }; ?>
 					</div>
-				</div>
-				<div id="contact-form-container">
+			</div>
+			<div id="contact-form-container" class="col-xs-12 col-sm-6 col-md-7">
 					<form name="form" action="<?php bloginfo('template_directory'); ?>/contact.php" method="post" id="contact-form" novalidate class="clearfix">
 						<div class="contact-input" id="contact-input-email">
 							<input name="email" type="email" id="email" placeholder="your email address*">
@@ -421,9 +420,8 @@ wp_reset_postdata();
 						<div class="recaptcha-container">
 							<div class="g-recaptcha" data-sitekey="6LdDyQUTAAAAAHpsqVuzy36d-8y5w7y7jyPvXE_d" data-theme="dark"></div>
 						</div>
-						<button type="submit" value="Submit">Submit</button>
+						<button id="contact-button" class="btn btn-lg btn-info contact-button" type="submit" value="Submit">Submit</button>
 					</form>
-				</div>
 			</div>
 		</div>
 	</section>
