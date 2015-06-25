@@ -134,10 +134,10 @@ function blankslate_load_scripts() {
     wp_register_script('magnificjs',// 
     get_template_directory_uri() . '/js/jquery.magnific-popup.min.js', //
      array('jquery'), 1, true);
-	 */
     wp_register_style('magnificcss',//
     get_template_directory_uri() . '/css/magnific-popup.css', //
      array(), 1, true);
+	 */
 
 
     
