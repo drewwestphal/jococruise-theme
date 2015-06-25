@@ -27,14 +27,17 @@ get_header();
 				<?php if (isset($travel_desc)){ ?>
 					<p id="hero-travel-description"><?php echo $travel_desc; ?></p>
 				<?php  }; ?>
-				<?php if (isset($travel_desc_more)){ ?>
-					<div id="hero-travel-description-more">
-						<p ><?php echo $travel_desc_more;?></p>				
-					</div>
-					<img id="hero-boat" src="<?php bloginfo('template_directory'); ?>/img/hero_boat.svg" alt="An animated cruise ship">
-				<?php  }; ?>
+			</div>
+			<?php if (isset($travel_desc_more)){ ?>
+				<div id="hero-travel-description-more" class="col-xs-6 col-sm-7 col-md-8 col-lg-9">
+					<p ><?php echo $travel_desc_more;?></p>				
+				</div>
+				<div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">
+					<img id="hero-boat" class="img-responsive" src="<?php bloginfo('template_directory'); ?>/img/hero_boat.svg" alt="An animated cruise ship">
+				</div>
+			<?php  }; ?>
 				<?php if (isset($booking_enabled)) { ?>
-					<div id="hero-booking">
+					<div id="hero-booking" class="col-xs-12">
 					<?php if (strlen($booking_cta) > 0) { ?>
 						<a href="<?php echo $booking_url; ?>" id="hero-book-now"><?php echo get_option('mac_settings')['mac_button_cta']; ?></a>
 					<?php } else { ?>
