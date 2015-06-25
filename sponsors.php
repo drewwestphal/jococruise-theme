@@ -1,6 +1,6 @@
 <!--sponsors	-->
 <section id="sponsors">
-	<div class="container-fluid headers">
+	<div class="container headers">
 			<h1>Thanks To Our Sponsors</h1>
 			<?php $args = array(
 				'post_type' => 'sponsor',
@@ -17,7 +17,7 @@
                     // don't write a tag unless image exist
                     $image_tag = $image_info[0]?sprintf('<img src="%s" alt="%s" />', $image_info[0], get_the_title().' Logo'):'';
 					?>
-					<div class="<?php  echo $double_wide ? "col-xs-12 col-sm-6 col-md-4" : "col-xs-6 col-sm-3 col-md-2"; ?>">
+					<div class="<?php  echo $double_wide ? "col-xs-12 col-sm-6 col-lg-4" : "col-xs-6 col-sm-3 col-lg-2"; ?>">
 						<div class="<?php  echo $double_wide ? "sponsor_square_double" : "sponsor_square" ?> <?php  echo $portrait ? "portrait" : "landscape"; ?>">
 							<a href="<?=  get_field('sponsor_website')?>" target="_blank">
 								<?= $image_tag; ?>
