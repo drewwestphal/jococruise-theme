@@ -220,12 +220,13 @@ wp_reset_postdata();
 					</div>
 				</div>
 			</div>
+			<div class="clearfix"></div>
 			<?php 
 			$coming_soon = "More performers and guests TBA; watch this space for further announcements.";
 			if (get_page_by_path("coming-soon")) {
 				$coming_soon = get_page_by_path("coming-soon") -> post_content;
 			}
-			if ($coming_soon != "") echo "<p>".$coming_soon."</p>";
+			if ($coming_soon != "") echo "<div id='coming_soon'>".$coming_soon."</div>";
 			?>
 		</div>
 	</section>

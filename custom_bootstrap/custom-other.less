@@ -106,7 +106,7 @@ input, textarea {
   margin: 1em auto;
 }
 #hero-about {
-  padding: 42px;
+  padding: 42px 0px;
 }
 #hero-travel-description {
   font-size: 1.8em;
@@ -123,7 +123,7 @@ input, textarea {
   background-size: 35px, cover;
   background-position: top center,center center;
   background-repeat: repeat-x, repeat;
-  padding: 42px;
+  padding: 42px 0px;
   text-align: center;
   li {
     text-align: left;
@@ -154,12 +154,22 @@ input, textarea {
   -o-transform:skewY(@skew-val);
   -webkit-transform:skewY(@skew-val);
 }
+#artists {
+  padding: 42px 0px;
+}
 .artist_unit {
   text-align: center;
 }
 .artists-featured-image {
   .circle_image(120px);
   margin-bottom: 30px;
+}
+.artists-featured-image img:hover{
+  cursor:pointer;
+  opacity: .66;
+  filter: grayscale(100%) contrast(1.5);
+  -moz-filter: grayscale(100%) contrast(1.5);
+  -webkit-filter: grayscale(100%) contrast(1.5);
 }
 .artists-featured-image img.portrait{
   width:100%;
@@ -169,8 +179,13 @@ input, textarea {
   height:100%;
   width:auto;
 }
+#coming_soon {
+  text-align: center;
+  margin: 40px 0px 10px;
+  .italic;
+}
 #contact{
-  padding: 42px;
+  padding: 42px 0px;
   background:url('../img/contact_bg.jpg') center center no-repeat;
   background-size: cover;
   color:#f5f1e9;
