@@ -92,7 +92,7 @@ wp_reset_postdata();
 	<?php if(function_exists('mc4wp_form')) { ?>
 	<section id="mailing-list" class="headers joco_beige">
 		<div class="container">
-			<div class="col-xs-12 col-md-12">
+			<div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
 				<h1><?php echo $mailing_cta; ?></h1>
 				<?php mc4wp_form(); ?>
 			</div>
