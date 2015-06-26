@@ -68,6 +68,16 @@ input, textarea {
   width: 100%;
   margin-bottom: 20px;
 }
+.circle_image(@size) {
+  width: @size;
+  height: @size;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
 
 
 /*
@@ -132,6 +142,32 @@ input, textarea {
   .btn-info;
   width: 25%;
   float: left;
+}
+.slant_header {
+  width: 100%;
+  max-width: 400px;
+  margin: 50px auto 40px;
+  border-top: 1px solid @joco_darkblue;
+  border-bottom: 1px solid @joco_darkblue;
+  @skew-val: 173deg;
+  transform:skewY(@skew-val);
+  -o-transform:skewY(@skew-val);
+  -webkit-transform:skewY(@skew-val);
+}
+.artist_unit {
+  text-align: center;
+}
+.artists-featured-image {
+  .circle_image(120px);
+  margin-bottom: 30px;
+}
+.artists-featured-image img.portrait{
+  width:100%;
+  height:auto;
+}
+.artists-featured-image img.landscape{
+  height:100%;
+  width:auto;
 }
 #contact{
   padding: 42px;

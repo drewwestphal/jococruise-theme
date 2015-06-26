@@ -130,9 +130,10 @@ wp_reset_postdata();
 								$artist_query = new WP_Query($args);
 								$artist_count = $artist_query->post_count;
                                 echo '
-                                <div class="artist_unit artists-artist headers featured-guests" id="item-'.$j.'">
-                                    <h1><span>2016</span><br> <p style="font-size:77%">Performers</p></h1>
+								<div class="clearfix col-xs-12">
+                                    <h3 class="slant_header"><span>2016</span><br>Performers</h3>
                                 </div>
+                                <div class="clearfix"></div>
                                 ';
                             	$j++;
 								$artist_count += 1;
@@ -164,10 +165,10 @@ wp_reset_postdata();
 								if ($feat_count > 0) {
 									$artist_count += 1;
 									echo '
-									<div class="clearfix visible-sm-block visible-md-block visible-lg-block"></div>
-									<div class="artist_unit artists-artist headers featured-guests" id="item-'.$j.'">
-										<h1><span>2016</span><br>Featured Guests</h1>
+									<div class="clearfix col-xs-12">
+										<h3 class="slant_header"><span>2016</span><br>Featured Guests</h3>
 									</div>
+                               		<div class="clearfix"></div>
 									';
 									$j++;	
 								};
@@ -199,10 +200,10 @@ wp_reset_postdata();
 								if ($spotlight_count > 0) {
 									$artist_count += 1;
 									echo '
-									<div class="clearfix visible-sm-block visible-md-block visible-lg-block"></div>
-									<div class="artist_unit artists-artist headers featured-guests" id="item-'.$j.'">
-										<h1><span>plus</span><br>Even More!</h1>
+									<div class="clearfix col-xs-12">
+										<h3 class="slant_header"><span>plus</span><br>Even More!</h3>
 									</div>
+	                                <div class="clearfix"></div>
 									';
 									$j++;	
 								};
@@ -213,51 +214,10 @@ wp_reset_postdata();
 										include 'artist_unit.php';
 									}
 								}
-			
-								wp_reset_postdata();
-								
-								//get the office hours artists
-								$args = array(
-									'post_type' 	 => 'artist',
-									'posts_per_page' => -1,
-									'order'			 => 'ASC',
-									'meta_query' => array(
-										array(
-											'key' => $targetArtistType,
-											'value' => 'office hours'
-										),
-									)
-								);
-								$oh_artist_query = new WP_Query($args);
-								$oh_count = $oh_artist_query->post_count;
-			
-								$i=-4;
-								if ($oh_artist_query->have_posts()) {
-									while ($oh_artist_query->have_posts()) {
-										$oh_artist_query->the_post();
-										
-										include 'artist_office_hours_logic.php';
-									}
-								}
 								wp_reset_postdata();
 							?>
-						
-							<?php if ($artists_more == 1) { 
-								//$artist_count++; ?>
-								<!-- <div class="artist_unit artists-artist headers featured-guests" id="item-<?php echo $j; ?>">
-									<h1><span>Plus</span><br>More to Come Soon!</h1>
-								</div> -->
-							<?php }; ?>
 						</div>
 					</div>
-				</div>
-				<div class="carousel" id="artist-carousel">
-					<span class="glyphicon glyphicon-menu-left"></span>
-					<?php for ($i=0;$i<$artist_count;$i++){ ?>		
-							<a href="#item-<?php echo $i; ?>" <?php if ($i===0) { echo 'class="orange-text unmove"';} else { echo 'class="unmove"'; };?>>&bull;</a>
-					<?php 						}
-					?>	
-					<span class="glyphicon glyphicon-menu-right"></span>
 				</div>
 			</div>
 			<?php 
@@ -479,59 +439,6 @@ wp_reset_postdata();
 		</section>
 	</div>
 </div>	
-							
-<style type="text/css">
-    #wpadminbar{
-	    position: fixed !important;
-    }
-    /* FAQ */
-    #faq-overflow{
-	    width:<?php echo $faq_count; ?>00%;
-    }
-    .faq-item-container{
-	    width:<?php echo 100/$faq_count; ?>%;
-    }
-	@media screen and (min-width:768px){ 
-		#faq-overflow{
-		    width:<?php echo $faq_count; ?>00%;
-	    }
-	    .faq-item-container{
-		    width:<?php echo 100/$faq_count; ?>%;
-	    }
-	    #faq-overflow{
-		    width:<?php echo $wide_count; ?>00%;
-	    }
-	    .faq-group{
-		    width:<?php echo 100/$wide_count; ?>%;
-	    }
-	    .faq-item-container{
-		    width:33%;
-	    }
-	}
-	/* Artists */
-	#overflow{
-	    width:<?php echo $artist_count; ?>00%;
-    }
-	.artists-artist{
-	    width:<?php echo 100/($artist_count===0?1:$artist_count); ?>%;
-    }
-    @media screen and (min-width:768px){ 
-	    #overflow{
-	    	width:100%;
-	    }
-	    .artists-artist{
-		    width:200px;
-	    }
-    }
-    /* Artists */
-    #news-items{
-	    width:<?php echo $news_count; ?>00%;
-    }
-    .news-item{
-	    width:<?php echo 100/$news_count; ?>%;
-    }
-
-</style>
 
 <!--Make entire button clickable...-->
 <script type="text/javascript">

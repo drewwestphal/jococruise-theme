@@ -1,4 +1,4 @@
-<div class="artist_unit artists-artist" id="item-<?php echo $j; ?>">
+<div class="artist_unit hidden-xs col-sm-4 col-md-3 col-lg-2">
 	<div class="artists-featured-image">
 		<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 	</div>
