@@ -267,4 +267,12 @@ function is_login_page() {
 if(!is_admin() && !is_login_page()) {
 	require_once(__DIR__.'/page-experience-gallery.php');
 }
+
+require_once __DIR__.'/vendor/twig/twig/lib/Twig/Autoloader.php';
+Twig_Autoloader::register();
+
+$loader = new Twig_Loader_Filesystem(__DIR__.'/twig_templates');
+$twig = new Twig_Environment($loader, array(
+'cache' => false//__DIR__.'/twig_cache',
+));
 ?>
