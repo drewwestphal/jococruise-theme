@@ -339,7 +339,7 @@ wp_reset_postdata();
 		echo $twig->render('faq_frontpage.html', array('faq_link' => $faqlink,'faqs' => $faq_items));
 		}
 	?>
-	<a id="faq-view-all" href="/faq">View All FAQS</a>
+	<a id="faq-view-all" href="/faq/">View All FAQS</a>
 </div>	
 
 <!--Make entire button clickable...-->
