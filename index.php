@@ -102,124 +102,45 @@ wp_reset_postdata();
 <!--artists-->
 	<section id="artists" class="headers">
 		<div class="container">
-			<div class="col-xs-12 col-md-12">
+			<div class="col-xs-12">
 				<div id="artists-header">
 					<img src="<?php bloginfo('template_directory'); ?>/img/artist_divider.svg" class="img-responsive">
 					<?php if (strlen($artists_header) > 0){ ?>
 						<h1><?php echo $artists_header; ?></h1>
 					<?php  }; ?>
 				</div>
-				<div id="artists-artist-container">
-					<div id="overflow">
-						<div class="inner">
-							<?php 
-								$j=0;
-                                $targetArtistType='artist_type'.$cruise_year;
-								//get the artists
-								$args = array(
-									'post_type' 	 => 'artist',
-									'posts_per_page' => -1,
-									'order'			 => 'ASC',
-									'meta_query' => array(
-										array( // made the old 'artist_type' field into the 2016 field, all other years are in field name
-											'key' => $targetArtistType,
-											'value' => 'artist'
-										),
-									)
-								);
-								$artist_query = new WP_Query($args);
-								$artist_count = $artist_query->post_count;
-                                echo '
-								<div class="clearfix col-xs-12">
-                                    <h3 class="slant_header"><span>2016</span><br>Performers</h3>
-                                </div>
-                                <div class="clearfix"></div>
-                                ';
-                            	$j++;
-								$artist_count += 1;
-								if ($artist_query->have_posts()) {
-									while ($artist_query->have_posts()) {
-										$artist_query->the_post();
-			
-										include 'artist_unit.php';
-									}
-								}
-			
-								wp_reset_postdata();
-								
-								//get the featured artists
-								$args = array(
-									'post_type' 	 => 'artist',
-									'posts_per_page' => -1,
-									'order'			 => 'ASC',
-									'meta_query' => array(
-										array(
-											'key' => $targetArtistType,
-											'value' => 'featured artist'
-										),
-									)
-								);
-								$feat_artist_query = new WP_Query($args);
-								$feat_count = $feat_artist_query->post_count;
-								$artist_count += $feat_count;
-								if ($feat_count > 0) {
-									$artist_count += 1;
-									echo '
-									<div class="clearfix col-xs-12">
-										<h3 class="slant_header"><span>2016</span><br>Featured Guests</h3>
-									</div>
-                               		<div class="clearfix"></div>
-									';
-									$j++;	
-								};
-								if ($feat_artist_query->have_posts()) {
-									while ($feat_artist_query->have_posts()) {
-										$feat_artist_query->the_post();
-										
-										include 'artist_unit.php';
-									}
-								}
-			
-								wp_reset_postdata();
-								
-								//get the featured artists
-								$args = array(
-									'post_type' 	 => 'artist',
-									'posts_per_page' => -1,
-									'order'			 => 'ASC',
-									'meta_query' => array(
-										array(
-											'key' => $targetArtistType,
-											'value' => 'spotlight item'
-										),
-									)
-								);
-								$spotlight_query = new WP_Query($args);
-								$spotlight_count = $spotlight_query->post_count;
-								$artist_count += $spotlight_count;
-								if ($spotlight_count > 0) {
-									$artist_count += 1;
-									echo '
-									<div class="clearfix col-xs-12">
-										<h3 class="slant_header"><span>plus</span><br>Even More!</h3>
-									</div>
-	                                <div class="clearfix"></div>
-									';
-									$j++;	
-								};
-								if ($spotlight_query->have_posts()) {
-									while ($spotlight_query->have_posts()) {
-										$spotlight_query->the_post();
-										
-										include 'artist_unit.php';
-									}
-								}
-								wp_reset_postdata();
-							?>
-						</div>
-					</div>
-				</div>
 			</div>
+			<?php 
+				$artist_types = array('artist' => "<span>$cruise_year</span><br />Performers",
+										'featured artist' => "<span>$cruise_year</span><br />Featured Guests",
+										'spotlight item' => "<span>Plus</span><br />Even More!");
+                $targetArtistType='artist_type'.$cruise_year;
+				//get the artists
+				foreach ($artist_types as $artist_type_value => $artist_type_title) {
+					$args = array(
+						'post_type' 	 => 'artist',
+						'posts_per_page' => -1,
+						'order'			 => 'ASC',
+						'meta_query' => array(
+							array( // made the old 'artist_type' field into the 2016 field, all other years are in field name
+								'key' => $targetArtistType,
+								'value' => $artist_type_value
+							),
+						)
+					);
+					$artist_query = new WP_Query($args);
+					if ($artist_query->have_posts()) {
+						$artists = array();
+						while ($artist_query->have_posts()) {
+							$artist_query->the_post();
+							$artists[] = array('title' => get_the_title(), 'link' => get_the_permalink(), 
+											'image' => get_the_post_thumbnail(), 'subtitle' => the_field('artist_subtitle'));
+						}
+						echo $twig->render('artists_frontpage.html', array('title'=>$artist_type_title, 'artists'=>$artists));
+					}
+					wp_reset_postdata();
+				}
+			?>
 			<div class="clearfix"></div>
 			<?php 
 			$coming_soon = "More performers and guests TBA; watch this space for further announcements.";
