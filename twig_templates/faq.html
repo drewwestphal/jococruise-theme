@@ -4,7 +4,7 @@
 		{% for faq in faqs[header] %}
 			<article class="faq-article" id="{{faq.slug}}">
 				<span class="faq-button glyphicon glyphicon-plus"></span>
-				<a class="faq-show-hide faq-title" href="#">{{faq.title}}</a><br/>
+				<a class="faq-show-hide faq-title" href="#">{{faq.title}}</a>
 				<div style="display:none" class="faq-content">{{faq.content}}</div>
 			</article>
         {% endfor %}
