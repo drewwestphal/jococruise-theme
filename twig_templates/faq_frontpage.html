@@ -1,0 +1,22 @@
+{% autoescape false %}
+<div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+	<div data-slick='{"slidesToShow": 1, "slidesToScroll": 1}' class="slick-element">
+		{% for faq in faqs %}
+			<div>
+				<div class="faq-item-question"><a href="{{faq_link}}#{{faq.slug}}">{{faq.title}}</a></div>
+	            <div class="faq-item-answer">{{faq.content}}</div>
+	        </div>
+        {% endfor %}
+	</div>
+</div>
+<div class="hidden-xs col-sm-12">
+	<div data-slick='{"slidesToShow": 3, "slidesToScroll": 3}' class="slick-element">
+		{% for faq in faqs %}
+			<div>
+				<div class="faq-item-question"><a href="{{faq_link}}#{{faq.slug}}">{{faq.title}}</a></div>
+	            <div class="faq-item-answer">{{faq.content}}</div>
+	        </div>
+        {% endfor %}
+	</div>
+</div>
+{% endautoescape %}

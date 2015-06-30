@@ -389,56 +389,36 @@ wp_reset_postdata();
 <!-- faq -->
 <div class="faq container">
 	<div class="faq col-xs-12 col-md-12">
-		<section id="faq" class="headers">
-				<h1><span>Frequently Asked</span><br>Questions</h1>
-				<?php 
-				$args = array(
-					'post_type' => 'faq',
-					'orderby'	=> 'ID',
-					'order'		=> 'ASC',
-					'meta_query' => array(
-				        array(
-				            'key' => 'show_on_front_page',
-				            'value' => '"show on front page"',
-				            'compare' => 'LIKE'
-				        )
-				    )
-				);
-				$l=0;
-				$faq_query = new WP_Query( $args );
-				if ( $faq_query->have_posts() ) {
-					$faq_count = $faq_query->post_count;
-					?>
-					<div data-slick='{"slidesToShow": 3, "slidesToScroll": 3}' class="slick-element">
-						<?php $faqlink = get_page_by_title('FAQ');
-                        $faqlink = get_permalink($faqlink -> ID);
-                        $markup = '';//'<div class="faq-group">';
-                        $m = 1;
-                        while($faq_query -> have_posts()) {
-                            $faq_query -> the_post();
-                            $markup .= sprintf('<div id="faq-item-%d">', $m);
-                            $markup .= sprintf('<div class="faq-item-question"><a href="%s">%s</a></div>', //
-                            $faqlink . '#' . $post -> post_name, get_the_title());
-                            $markup .= sprintf('<div class="faq-item-answer">%s</div>', //
-                            $post -> post_excerpt ? get_the_excerpt() : get_the_content());
-                            $markup .= '</div>';
-                            // close faq group && reopen every 3 faq items
-                            if($m % 3 === 0) {
-                                //$markup .= '</div><div class="faq-group">';
-                            }
-                            $m++;
-                        }
-                        //$markup .= "</div>";
-                        echo $markup;
-						wp_reset_postdata();
-						?>
-					</div>
-					
-				<?php 				}
-				?>
-				<a id="faq-view-all" href="/faq">View All FAQS</a>
-		</section>
+		<h1><span>Frequently Asked</span><br>Questions</h1>
 	</div>
+	<?php 
+	$args = array(
+		'post_type' => 'faq',
+		'orderby'	=> 'ID',
+		'order'		=> 'ASC',
+		'meta_query' => array(
+	        array(
+	            'key' => 'show_on_front_page',
+	            'value' => '"show on front page"',
+	            'compare' => 'LIKE'
+	        )
+	    )
+	);
+	$faq_query = new WP_Query( $args );
+	if ( $faq_query->have_posts() ) {
+		$faq_count = $faq_query->post_count;
+		$faqlink = get_page_by_title('FAQ');
+        $faqlink = get_permalink($faqlink -> ID);
+        $faq_items = array();
+        while($faq_query -> have_posts()) {
+        	$faq_query -> the_post();
+        	$faq_items[] = array('title' => get_the_title(), 'slug' => $post->post_name, 'content' => $post->post_excerpt ? get_the_excerpt() : get_the_content());
+        }
+		wp_reset_postdata();
+		echo $twig->render('faq_frontpage.html', array('faq_link' => $faqlink,'faqs' => $faq_items));
+		}
+	?>
+	<a id="faq-view-all" href="/faq">View All FAQS</a>
 </div>	
 
 <!--Make entire button clickable...-->
