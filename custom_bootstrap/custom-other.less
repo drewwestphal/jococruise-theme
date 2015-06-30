@@ -84,6 +84,9 @@ input, textarea {
 .slick-prev::before, .slick-next::before {
   color: @joco_darkblue; 
 }
+.slick-dots {
+  margin-bottom: 30px;
+}
 
 
 /*
@@ -135,19 +138,37 @@ input, textarea {
     text-align: left;
   }
 }
+#mailing-list {
+  padding: 0px 0px 42px;
+}
 #mc4wp-form-1 #mc4wp_email {
   background: #fff;
-  width: 70%;
+  width: 65%;
   margin-right: 5%;
   float: left;
   height: 36px;
 }
-#mc4wp-form-1 #submit{
+#mc4wp-form-1 #submit {
   .btn;
   .btn-sm;
   .btn-info;
-  width: 25%;
+  width: 30%;
   float: left;
+}
+@media screen and (max-width: @screen-sm) {
+  #mc4wp-form-1 #submit {
+    font-size: 90%;
+    width: 40%;
+  }
+  #mc4wp-form-1 #mc4wp_email {
+    width: 55%;
+  }
+  #hero-travel-description {
+    font-size: 1.4em;
+  }
+  #hero-travel-description-more {
+    font-size: 0.8em;
+  }
 }
 .slant_header {
   width: 100%;
@@ -198,6 +219,9 @@ input, textarea {
   color:#f5f1e9;
   text-align: center;
 }
+#contact-header {
+  margin: 0px auto 32px;
+}
 .contact-info-group {
   width: 100%;
   height: auto;
@@ -231,6 +255,7 @@ input, textarea {
   }
 }
 .contact-social {
+  width: 210px;
   clear: both;
   margin-left: 50px;
   height: 85px;
