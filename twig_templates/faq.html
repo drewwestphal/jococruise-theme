@@ -1,6 +1,6 @@
 {% autoescape false %}
 	{% for header in headers %}
-		<h3>{{header}}</h3>
+		<h3 class="faq-header">{{header}}</h3>
 		{% for faq in faqs[header] %}
 			<article class="faq-article" id="{{faq.slug}}">
 				<span class="faq-button glyphicon glyphicon-plus"></span>
