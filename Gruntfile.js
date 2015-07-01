@@ -56,7 +56,7 @@ module.exports = function(grunt) {
             },
             composer : {
                 files : ['composer.json'],
-                tasks : 'composer:install'
+                tasks : 'composer:update'
             }
         },
         bower_concat : {

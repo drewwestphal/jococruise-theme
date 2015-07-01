@@ -262,11 +262,12 @@ require_once(__DIR__.'/include/columns.php');
 
 // cmb2
 require_once(__DIR__.'/include/cmb2/init.php');
-require_once(__DIR__.'/include/cmb2/init.php');
 require_once(__DIR__.'/include/CCTheme_Admin_conf.php');
 require_once(__DIR__.'/include/CCTheme_Admin.php');
 CCTheme_Admin::getInstance();
 
+
+$ThemeOptions = new CCWPOptions_Page('mac_settings','JoCo Cruise Theme Options',array());
 
 function is_login_page() {
     return in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php'));
