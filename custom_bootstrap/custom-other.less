@@ -25,6 +25,13 @@ a {
   .slick-prev::before, .slick-next::before {
     color: white; 
   }
+  .btn-default {
+    color: #fff;
+    border-color: #fff;
+  }
+}
+.joco_offwhite {
+  background-color: @joco_offwhite;
 }
 h1,h2,h3,h4,h5,h6 {
   text-transform: uppercase;
@@ -57,7 +64,6 @@ em, .italic{
   font-family: @font-family-sans-serif;
   font-size: 0.7em;
   text-decoration: none;
-  color: #fff;
 }
 .btn-default:hover {
   background-color: rgba(255,255,255,0.2);
@@ -334,6 +340,199 @@ input, textarea {
   text-transform: uppercase;
   font-family: surveyorBookItalic,serif;
 }
+
+// The Experience
+
+#page-experience {
+  background-color: #ffffff;
+}
+#what-is {
+  width:100%;
+  text-align: center;
+  margin: 80px 0 80px;
+  background-color: #ffffff;
+}
+#what-is-ship {
+  margin: 20px auto 42px;
+}
+#what-is-logo {
+  height: 84px;
+  margin: 0px 10px;
+  display: inline;
+  line-height: 42;
+  vertical-align: -21px;
+}
+#exp-intro {
+  padding: 40px 0px 30px;
+  min-height: 300px;
+  background:
+  url('../img/waves_neutral_retina.png'),
+  linear-gradient(to bottom, 
+      rgba(226, 221, 198, 0) 0%,
+      rgba(226, 221, 198, 0) 4%,
+      rgba(226, 221, 198, 1) 4.1%
+    );
+  background-size: 35px, cover;
+  background-position: top center,center center;
+  background-repeat: repeat-x, repeat;  
+}
+#exp-intro .exp-intro-text {
+  padding-right: 15px;
+}
+#exp-intro img {
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+  padding: 30px 0px 10px;
+  vertical-align: middle;
+}
+#exp-intro .caption {
+  .italic;
+  font-size: 0.9em;
+}
+#main-stage ul li {
+  list-style-type: none;
+  margin: 0px;
+  line-height: 1.1em;
+}
+.main-stage-button {
+  display: block;
+  max-width: 300px;
+  margin: 20px auto;
+}
+#tracks img {
+  margin: auto;
+}
+#featured-events .event-carousel {
+  margin: auto;
+  text-align: center;
+}
+#featured-events .event-carousel span.glyphicon {
+  top: 35%;
+}
+#featured-events .event-container {
+  width: 80%
+}
+#featured-events .event-image .featured-event-image {
+  width: 120px;
+  height: 120px;
+  margin:0 auto;
+  margin-bottom: 30px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+#featured-events .featured-event-image img.portrait {
+  width: 120px;
+  height: auto;
+}
+#featured-events .featured-event-image img.landscape {
+  height: 120px;
+  width: auto;
+}
+#featured-events .event-description {
+  white-space:normal;
+}
+#featured-events .event-name {
+  font-size: 18px;
+  font-family:surveyorBookBold, serif;
+  font-weight: bold;
+  color:#144662;
+}
+#featured-events .event-description a{
+  font-family:surveyorBookBold, serif;
+  font-weight: bold;
+  color:#144662;
+  border-bottom:1px solid #144662;
+  transition: color .27s,border-bottom .27s;
+  -o-transition: color .27s,border-bottom .27s;
+  -moz-transition: color .27s,border-bottom .27s;
+  -webkit-transition: color .27s,border-bottom .27s;
+}
+#featured-events .event-description a:hover{
+  text-decoration: none;
+  border-bottom:1px solid #6e96ab;
+  color:#6e96ab;
+}
+#featured-events .event-item {
+  padding: 20px 0px;
+  float: left;
+}
+#community {
+  padding: 42px 0px;
+}
+#community img {
+  width:100%;
+  height:auto;
+  margin: 10px 0px 20px;
+}
+#community p {
+  max-width: 750px;
+  margin: auto;
+    margin-bottom: 11px;
+}
+#community ul {
+  margin: 20px;
+}
+#community ul li {
+  list-style-type: none;
+  text-align: center;
+  margin: 0px;
+}
+#exp-photos, #exp-more {
+  text-align: center;
+}
+#gallery-experience a{
+  color: #144662;
+  padding: 6px;
+  font-size: 24px;
+}
+#gallery-experience a.orange-text {
+  color: #6e96ab;
+}
+#gallery-experience .glyphicon {
+  position: absolute;
+  top:50%;
+  padding: 6px 5px 5px 6px;
+  border-radius: 50%;
+  cursor:pointer;
+}
+#gallery-experience span.glyphicon-menu-right{
+  right:0;
+}
+#gallery-experience span.glyphicon-menu-left{
+  left:0;
+}
+#gallery-experience .glyphicon:hover{
+  background:rgba(160,184,197,.1);
+}
+#gallery-experience {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  height: 0px;
+  padding-bottom: 60%;
+}
+#gallery-experience .gallery-icon {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
+}
+#gallery-experience img {
+  margin-top: 20px;
+  max-height: 100%;
+  max-width: 80%;
+  width: auto;
+  height: auto;
+}
+#exp-photos p {
+  margin: 0px auto 20px;
+}
+#exp-more {
+  padding: 42px 0px;
+}
+
 
 // Other pages
 

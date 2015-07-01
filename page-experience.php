@@ -107,9 +107,9 @@ $lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm
 
 <?php include 'bumper_top.php'; ?>
 <section id="page-experience">
-	<section id="what-is">
-		<div class="container-fluid">
-			<div class="col-xs-12 col-md-12">
+	<section id="what-is" class="nav-spacer">
+		<div class="container">
+			<div class="col-xs-12">
 				<?php printf('<img class="img-responsive" style="width:678px;" src="%s" alt="JoCo Boat Profile Image" id="what-is-ship" />', get_template_directory_uri() . '/img/joco-boat-profile.svg'); ?>
 				<!--<img src="<?php bloginfo('template_directory'); ?>/img/sideview_boat.png" alt="Sideview of ship" id="what-is-ship" />-->
 				<h1><?= $introPostHeaderParsed; ?></h1>
@@ -117,8 +117,8 @@ $lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm
 			</div>
 		</div>
 	</section>
-	<section id="exp-intro">
-		<div class="container-fluid">
+	<section id="exp-intro" class="joco_beige">
+		<div class="container">
 			<div class="col-xs-12 col-md-9 exp-intro-text">
 				<?= apply_filters('the_content', $introPost -> post_content); ?>
 			</div>
@@ -128,16 +128,13 @@ $lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm
 			</div>
 		</div>
 	</section>
-	<section id="main-stage">
-		<div class="container-fluid">
-			<div class="col-xs-12 col-md-12">
-				<!--<h1><?= parse_piped_title($mainStagePost -> post_title); ?></h1>
-				-->
+	<section id="main-stage" class="joco_offwhite">
+		<div class="container">
+			<div class="col-xs-12">
 				<?php $title = split_title($mainStagePost -> post_title) ?>
-				<h2><?php echo $title[0] ?></h2>
-				<h1><?php echo $title[1] ?></h1>
+				<h1><span><?php echo $title[0] ?></span><br /><?php echo $title[1] ?></h1>
 				<?= apply_filters('the_content', $mainStagePost -> post_content); ?>
-				<div class="main-stage-button button404"><a href="/#artists">See who is coming so far in 2016</a></div>
+				<a href="/#artists" class="main-stage-button btn btn-lg btn-default">See who is coming so far in 2016</a>
 				<p>Past cruise guests include (in no particular order, OK, it's alphabetical):</p>
 				<div class="col-xs-12 col-md-6">
 					<ul>
@@ -167,15 +164,14 @@ $lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm
 			</div>
 		</div>
 	</section>
-	<section id="featured-events">
-		<div class="container-fluid">
-			<div class="col-xs-12 col-md-12">
+	<section id="featured-events" class="joco_beige">
+		<div class="container">
+			<div class="col-xs-12">
 				<?php $title = split_title($featuredEventsHeaderPost -> post_title) ?>
-				<h2><?php echo $title[0] ?></h2>
-				<h1><?php echo $title[1] ?></h1>
+				<h1><span><?php echo $title[0] ?></span><br /><?php echo $title[1] ?></h1>
 				<?= trim(apply_filters('the_content', $featuredEventsHeaderPost -> post_content)); ?>
 			</div>
-			<div class="col-xs-12 col-md-12">
+			<div class="col-xs-12">
             	<?php if (count($featured_events) > 1) { ?>
 					<div class="carousel event-carousel" id="news-carousel">
 						<span class="glyphicon glyphicon-menu-left"></span>
@@ -207,56 +203,52 @@ $lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm
 							</div>
 							<?php 
 							$j++;
-		                    //echo get_the_post_thumbnail($fe -> ID, array( 1024,1024));
-		                    //printf("<h2>%s</h2>",$fe->post_title);
-		                    //echo apply_filters('the_content', $fe -> post_content);
             			} ?>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<section id="tracks">
-		<div class="container-fluid">
-			<div class="col-xs-12 col-md-5">
+	<section id="tracks" class="joco_offwhite">
+		<div class="container">
+			<div class="col-xs-12 col-sm-6 col-lg-5">
 				<img src="<?php bloginfo('template_directory'); ?>/img/D20s.svg" style="width: 255px; margin: 25px auto;" alt="Dice" class="center-block" />
-				<h1><?= $gamingTrackPost -> post_title; ?></h1>
+				<h2><?= $gamingTrackPost -> post_title; ?></h2>
 				<?= apply_filters('the_content', $gamingTrackPost -> post_content); ?>
 			</div>
-			<div class="col-md-2"></div>
-			<div class="col-xs-12 col-md-5">
+			<div class="col-md-2 hidden-xs hidden-sm"></div>
+			<div class="col-xs-12 col-sm-6 col-lg-5">
 				<img src="<?php bloginfo('template_directory'); ?>/img/typewriter.svg" alt="Typewriter" class="center-block" style="width: 190px; margin: 25px auto;" />
-				<h1><?= $writingTrackPost -> post_title; ?></h1>
+				<h2><?= $writingTrackPost -> post_title; ?></h2>
 				<?= apply_filters('the_content', $writingTrackPost -> post_content); ?>
 			</div>
 		</div>
 	</section>
-	<section id="community">
-		<div class="container-fluid">
-			<div class="col-xs-12 col-md-12">
+	<section id="community" class="joco_beige">
+		<div class="container">
+			<div class="col-xs-12">
 				<img src="<?php bloginfo('template_directory'); ?>/img/artist_divider.png">
 				<?php $title = split_title($shadowCruisePost -> post_title) ?>
-				<h2><?php echo $title[0] ?></h2>
-				<h1><?php echo $title[1] ?></h1>
+				<h1><span><?php echo $title[0] ?></span><br /><?php echo $title[1] ?></h1>
 				<?= str_ireplace("<p>","<p class='center-block'>",apply_filters('the_content', $shadowCruisePost -> post_content)); ?>
 			</div>
 		</div>
 	</section>
-	<section id="exp-photos">
-		<div class="container-fluid">
-			<div class="col-xs-12 col-md-12">
+	<section id="exp-photos" class="joco_offwhite">
+		<div class="container">
+			<div class="col-xs-12">
 				<?= '';//apply_filters('the_content', $photoExplPost -> post_content); ?>
 				<h3><?= parse_piped_title2($photoExplPost -> post_title)?></h3>
 				<!--<h3><strong>Photos</strong> | JoCo Cruise 2014</h3>-->
 			</div>
-			<div class="col-xs-12 col-md-12">
+			<div class="col-xs-12">
 				<?= apply_filters('the_content', $photoGalleryPost -> post_content); ?>
 			</div>
 		</div>
 	</section>
 	<section id="exp-more">
-		<div class="container-fluid">
-			<div class="col-xs-12 col-md-12">
+		<div class="container">
+			<div class="col-xs-12">
 				<h4><?= parse_piped_title($moreInfoPost -> post_title); ?></h4>
 				<?= apply_filters('the_content', $moreInfoPost -> post_content); ?>
 			</div>
