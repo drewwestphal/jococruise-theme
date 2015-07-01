@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 <?php include 'bumper_top.php'; ?>
-<div class="container">
+<div class="container nav-spacer">
 	<div class="col-xs-12 col-md-12">
-		<h1 class="header-page"><?php the_title(); ?></h1>
+		<h1><?php the_title(); ?></h1>
 	    <?php if (have_posts()) : while (have_posts()) : the_post();?>
             <div class="mac-page-intro"><?php the_content(); ?></div>
 	    <?php endwhile; endif; 
