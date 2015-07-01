@@ -8,9 +8,6 @@
  * related to page-experience.
  */
 add_filter('post_gallery', function($output = '', $atts, $content = false, $tag = false) {
-    if(!is_page('The Experience')) {
-        return $output;
-    }
     /**
      * This is copied from
      * wp-includes/media and modified...
@@ -103,24 +100,8 @@ add_filter('post_gallery', function($output = '', $atts, $content = false, $tag 
 
     $selector = "gallery-experience";
 
-    $gallery_style = '';
     // don't include any gallery style
 
-    $size_class = sanitize_html_class($atts['size']);
-    $gallery_div = "<div id='$selector' class='gallery galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}'>";
-    $gallery_div .= '<span class="glyphicon glyphicon-menu-left"></span>';
-	$num_attachments = count($attachments);
-	$max_bullets_mobile = 14;
-	if ($num_attachments>$max_bullets_mobile) {
-		$gallery_div .= "<div class='visible-sm-block visible-md-block visible-lg-block'>";
-	}
-    for($i = 0; $i < $num_attachments; $i++) {
-        $gallery_div .= sprintf('<a href="#gallery-item-%d" class="gallery-bull %s">&bull;</a>', $i, $i === 0 ? 'orange-text' : '');
-    }
-	if ($num_attachments>$max_bullets_mobile) {
-		$gallery_div .= "</div>";
-	}
-    $gallery_div .= '<span class="glyphicon glyphicon-menu-right"></span>';
     /**
      * Filter the default gallery shortcode CSS styles.
      *
@@ -129,7 +110,7 @@ add_filter('post_gallery', function($output = '', $atts, $content = false, $tag 
      * @param string $gallery_style Default CSS styles and opening HTML div container
      *                              for the gallery shortcode output.
      */
-    $output = apply_filters('gallery_style', $gallery_style . $gallery_div);
+    $output = '<div class="slick-element">';
 
     $i = 0;
     foreach($attachments as $id => $attachment) {
@@ -144,14 +125,13 @@ add_filter('post_gallery', function($output = '', $atts, $content = false, $tag 
         }
         $image_meta = wp_get_attachment_metadata($id);
 
-        $orientation = '';
+        $orientation = 'gallery_image';
         if(isset($image_meta['height'], $image_meta['width'])) {
-            $orientation = ($image_meta['height'] > $image_meta['width']) ? 'portrait' : 'landscape';
+            $orientation .= ($image_meta['height'] > $image_meta['width']) ? ' portrait' : ' landscape';
         }
-        $display_none_or_blank=$i===0?'':'style="display:none;"';
-        $output .= "<{$itemtag} class='gallery-item gallery-item-{$i}' {$display_none_or_blank}>";
+        $output .= "<{$itemtag}>";
         $output .= "
-            <{$icontag} class='gallery-icon {$orientation}'>
+            <{$icontag} class='{$orientation}'>
                 $image_output
             </{$icontag}>";
         if($captiontag && trim($attachment -> post_excerpt)) {
@@ -161,19 +141,9 @@ add_filter('post_gallery', function($output = '', $atts, $content = false, $tag 
                 </{$captiontag}>";
         }
         $output .= "</{$itemtag}>";
-        ++$i;
-        if(!$html5 && $columns > 0 && $i % $columns == 0) {
-            $output .= '<br style="clear: both" />';
-        }
     }
 
-    if(!$html5 && $columns > 0 && $i % $columns !== 0) {
-        $output .= "
-            <br style='clear: both' />";
-    }
-
-    $output .= "
-        </div>\n";
+    $output .= "</div>\n";
 
     return $output;
 }, PHP_INT_MAX, 4);

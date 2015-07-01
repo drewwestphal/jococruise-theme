@@ -97,6 +97,25 @@ input, textarea {
   margin-top: 50px;
   margin-bottom: 40px;
 }
+@gallery_height: 500px;
+.gallery_image {
+  text-align: center;
+  vertical-align: middle;
+  line-height: @gallery_height;
+  img {
+    display: inline;
+    max-height: @gallery_height;
+    margin: auto;
+  }
+}
+.gallery_image.landscape img {
+  max-width: 100%;
+  height: auto;
+}
+.gallery_image.portrait img {
+  max-height: @gallery_height;
+  width: auto;
+}
 
 
 /*
@@ -429,30 +448,6 @@ input, textarea {
   .bold;
   margin-bottom: 20px;
 }
-/*
-#featured-events .event-description {
-  white-space:normal;
-}
-#featured-events .event-description a{
-  font-family:surveyorBookBold, serif;
-  font-weight: bold;
-  color:#144662;
-  border-bottom:1px solid #144662;
-  transition: color .27s,border-bottom .27s;
-  -o-transition: color .27s,border-bottom .27s;
-  -moz-transition: color .27s,border-bottom .27s;
-  -webkit-transition: color .27s,border-bottom .27s;
-}
-#featured-events .event-description a:hover{
-  text-decoration: none;
-  border-bottom:1px solid #6e96ab;
-  color:#6e96ab;
-}
-#featured-events .event-item {
-  padding: 20px 0px;
-  float: left;
-}
-*/
 #community {
   padding: 42px 0px;
 }
@@ -464,7 +459,7 @@ input, textarea {
 #community p {
   max-width: 750px;
   margin: auto;
-    margin-bottom: 11px;
+  margin-bottom: 11px;
 }
 #community ul {
   margin: 20px;
@@ -476,48 +471,6 @@ input, textarea {
 }
 #exp-photos, #exp-more {
   text-align: center;
-}
-#gallery-experience a{
-  color: #144662;
-  padding: 6px;
-  font-size: 24px;
-}
-#gallery-experience a.orange-text {
-  color: #6e96ab;
-}
-#gallery-experience .glyphicon {
-  position: absolute;
-  top:50%;
-  padding: 6px 5px 5px 6px;
-  border-radius: 50%;
-  cursor:pointer;
-}
-#gallery-experience span.glyphicon-menu-right{
-  right:0;
-}
-#gallery-experience span.glyphicon-menu-left{
-  left:0;
-}
-#gallery-experience .glyphicon:hover{
-  background:rgba(160,184,197,.1);
-}
-#gallery-experience {
-  margin-top: 20px;
-  margin-bottom: 50px;
-  height: 0px;
-  padding-bottom: 60%;
-}
-#gallery-experience .gallery-icon {
-  width: 100%;
-  height: 100%;
-  margin-bottom: 20px;
-}
-#gallery-experience img {
-  margin-top: 20px;
-  max-height: 100%;
-  max-width: 80%;
-  width: auto;
-  height: auto;
 }
 #exp-photos p {
   margin: 0px auto 20px;
