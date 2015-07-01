@@ -136,7 +136,7 @@ $lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm
 				<?= apply_filters('the_content', $mainStagePost -> post_content); ?>
 				<a href="/#artists" class="main-stage-button btn btn-lg btn-default">See who is coming so far in 2016</a>
 				<p>Past cruise guests include (in no particular order, OK, it's alphabetical):</p>
-				<div class="col-xs-12 col-md-6">
+				<div class="col-xs-12 col-sm-6">
 					<ul>
 					<?php
 						$past_guests = file_get_contents(__DIR__."/past_performers.txt");
@@ -153,12 +153,11 @@ $lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm
 						$i = 0;
 						foreach ($past_guests as $guest) {
 							if (abs($i*2 - count($past_guests)) <= 1) {
-								echo "</ul></div><div class='col-xs-12 col-md-6'><ul>";
+								echo "</ul></div><div class='col-xs-12 col-sm-6'><ul>";
 							}
 							$i++;
-					?>
-							<li><?= $guest?></li>
-					<?php  } ?>
+							echo "<li>$guest</li>";
+						} ?>
 					</ul>
 				</div>
 			</div>
@@ -170,41 +169,22 @@ $lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm
 				<?php $title = split_title($featuredEventsHeaderPost -> post_title) ?>
 				<h1><span><?php echo $title[0] ?></span><br /><?php echo $title[1] ?></h1>
 				<?= trim(apply_filters('the_content', $featuredEventsHeaderPost -> post_content)); ?>
-			</div>
-			<div class="col-xs-12">
-            	<?php if (count($featured_events) > 1) { ?>
-					<div class="carousel event-carousel" id="news-carousel">
-						<span class="glyphicon glyphicon-menu-left"></span>
-						<?php for ($m=0;$m<count($featured_events);$m++){ ?>		
-								<a href="#news-item-<?php echo $m; ?>" <?php if ($m===0) { echo 'class="orange-text unmove"';} else { echo 'class="unmove"'; };?>>&bull;</a>
-						<?php 						}
-						?>	
-						<span class="glyphicon glyphicon-menu-right"></span>
-					</div>
-				<?php }; ?>
-            	<div id="news-container" class="event-container">
-					<div id="news-items" class="event-items"  style="width: <?= count($featured_events)*100?>%">
-            			<?php $j=0;
-            			foreach($featured_events as $fe) { ?>
-            				<div class="news-item event-item container-fluid" style="width: <?= 100/count($featured_events)?>%">
-            					<div class="col-xs-12 col-md-3 event-image">
-				                	<div class="featured-event-image" style="cursor: default;">
-										<!--<a href="<?php echo get_permalink($fe -> ID); ?>">-->
-											<?php echo get_the_post_thumbnail($fe -> ID); ?>
-										<!--</a>-->
-									</div>
-								</div>
-								<div class="col-xs-12 col-md-9 event-description">
-										<!--<a href="<?php echo get_permalink($fe -> ID); ?>">-->
-											<span class="event-name"><?php echo $fe -> post_title; ?></span>
-										<!--</a>-->
-										<p><?php echo ($fe->post_excerpt) ? $fe->post_excerpt : $fe -> post_content; ?></p>
+            	<div class="slick-element">
+        			<?php
+        			foreach($featured_events as $fe) { ?>
+        				<div>
+        					<div class="col-xs-12 col-sm-3">
+			                	<div class="featured-event-image" style="cursor: default;">
+									<?php echo get_the_post_thumbnail($fe -> ID); ?>
 								</div>
 							</div>
-							<?php 
-							$j++;
-            			} ?>
-					</div>
+							<div class="col-xs-12 col-sm-9 event-description">
+								<div class="event-name"><?php echo $fe -> post_title; ?></div>
+								<p><?php echo ($fe->post_excerpt) ? $fe->post_excerpt : $fe -> post_content; ?></p>
+							</div>
+						</div>
+						<?php 
+        			} ?>
 				</div>
 			</div>
 		</div>

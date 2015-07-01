@@ -390,10 +390,16 @@ input, textarea {
   .italic;
   font-size: 0.9em;
 }
-#main-stage ul li {
-  list-style-type: none;
-  margin: 0px;
-  line-height: 1.1em;
+#main-stage {
+  padding: 10px 0px 42px;
+  ul { 
+    margin-bottom: 0px;
+    li {
+      list-style-type: none;
+      margin: 0px;
+      line-height: 1.1em;
+    }
+  }
 }
 .main-stage-button {
   display: block;
@@ -403,43 +409,29 @@ input, textarea {
 #tracks img {
   margin: auto;
 }
-#featured-events .event-carousel {
-  margin: auto;
-  text-align: center;
+#featured-events {
+  padding: 0px 0px 42px;
 }
-#featured-events .event-carousel span.glyphicon {
-  top: 35%;
-}
-#featured-events .event-container {
-  width: 80%
-}
-#featured-events .event-image .featured-event-image {
-  width: 120px;
-  height: 120px;
-  margin:0 auto;
+.featured-event-image {
+  .circle_image(120px);
   margin-bottom: 30px;
-  overflow: hidden;
-  position: relative;
-  border-radius: 50%;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
 }
-#featured-events .featured-event-image img.portrait {
-  width: 120px;
+.featured-event-image img.portrait {
+  width: 100%;
   height: auto;
 }
-#featured-events .featured-event-image img.landscape {
-  height: 120px;
+.featured-event-image img.landscape {
+  height: 100%;
   width: auto;
 }
+#featured-events .event-name {
+  font-size: 120%;
+  .bold;
+  margin-bottom: 20px;
+}
+/*
 #featured-events .event-description {
   white-space:normal;
-}
-#featured-events .event-name {
-  font-size: 18px;
-  font-family:surveyorBookBold, serif;
-  font-weight: bold;
-  color:#144662;
 }
 #featured-events .event-description a{
   font-family:surveyorBookBold, serif;
@@ -460,6 +452,7 @@ input, textarea {
   padding: 20px 0px;
   float: left;
 }
+*/
 #community {
   padding: 42px 0px;
 }
