@@ -6,6 +6,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     // npm install grunt-bower-task --save-dev
     grunt.loadNpmTasks('grunt-bower-task');
+    //npm install grunt-composer --save-dev
+    grunt.loadNpmTasks('grunt-composer');
 
     // Project configuration.
     grunt.initConfig({
@@ -29,7 +31,7 @@ module.exports = function(grunt) {
             }
         },
         less : {
-            development : {
+            compile : {
                 options : {
                     paths : ['custom_bootstrap/']
                 },
@@ -44,13 +46,17 @@ module.exports = function(grunt) {
             }
         },
         watch : {
-            scripts : {
+            js : {
                 files : ['bower.json'],
                 tasks : 'buildbower'
             },
             less : {
                 files : ['custom_bootstrap/**/*.less'],
-                tasks : 'less:development'
+                tasks : 'less:compile'
+            },
+            composer : {
+                files : ['composer.json'],
+                tasks : 'composer:update'
             }
         },
         bower_concat : {
@@ -72,4 +78,5 @@ module.exports = function(grunt) {
 
     grunt.registerTask('buildbower', ['bower:install', 'bower_concat', 'uglify:bower']);
 
+    grunt.registerTask('builddeps', ['buildbower', 'less:compile', 'composer:install']);
 };
