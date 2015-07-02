@@ -41,21 +41,18 @@ abstract class CCWPNavWalker_Base extends Walker_Nav_Menu {
     }
 
     public function start_lvl(&$output, $depth = 0, $args = array()) {
-        //print_r($args);
         $this -> parents[] = $this -> curel;
         $this -> levelbump = true;
     }
 
     public function end_lvl(&$output, $depth = 0, $args = array()) {
-        //print_r($args);
         $this -> curel = array_pop($this -> parents);
     }
 
-    abstract protected function createElement($object, $depth, $args, $current_object_id);
-    abstract protected function render($headElement);
+    public function end_el(&$output, $object, $depth = 0, $args = array()) {
+    }
 
     public function start_el(&$output, $object, $depth = 0, $args = array(), $current_object_id = 0) {
-        //print_r($args);
         $this -> prevel = $this -> curel;
         $this -> curel = $this -> createElement($object, $depth, $args, $current_object_id);
         if($this -> levelbump) {
@@ -70,8 +67,10 @@ abstract class CCWPNavWalker_Base extends Walker_Nav_Menu {
         }
     }
 
-    public function end_el(&$output, $object, $depth = 0, $args = array()) {
-    }
+
+    abstract protected function createElement($object, $depth, $args, $current_object_id);
+    abstract protected function render($headElement);
+
 
     public function display_element($element, &$children_elements, $max_depth, $depth, $args, &$output) {
         parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
