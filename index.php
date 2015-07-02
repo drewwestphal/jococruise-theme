@@ -64,7 +64,7 @@ if ($news_query->have_posts()) {
 ?>
 	<section id="news" class="headers joco_blue">
 		<div class="container">
-			<div class="col-xs-12 col-md-12">
+			<div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
 				<div id="news-header">
 					<?php if (strlen($news_header) > 0){ ?>
 						<h1><?php echo $news_header; ?></h1>
