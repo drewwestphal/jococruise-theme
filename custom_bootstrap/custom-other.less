@@ -41,8 +41,16 @@ h1,h2,h3,h4,h5,h6 {
     font-size: 0.5em; 
   }
 }
+@media screen and (max-width: @screen-sm) {
+  h1 {
+    font-size: floor((@font-size-base * 2.15)); // Default is @font-size-base * 2.6, 2.15 is same as h2
+  }
+  h2 {
+    font-size: floor((@font-size-base * 2)) // to put h2 between h1 and h3
+  }
+}
 hr {
-    background:url("img/hr-ship.svg") no-repeat top center;
+    background:url("../img/hr-ship.svg") no-repeat top center;
     height:66px;
     border:none !important;
     width:100%;
