@@ -45,7 +45,7 @@
     <section class="joco-page" id="page-page">
 		<?php include 'bumper_top.php'; ?>
         <div class="container nav-spacer">
-            <div class="col-xs-12">
+            <div class="col-xs-12 col-lg-10 col-lg-offset-1">
                 <h1><?php the_title() ?></h1>
                 <?php if (have_posts()) : while (have_posts()) : the_post();?>
                     <p><?php the_content(); ?></p>
