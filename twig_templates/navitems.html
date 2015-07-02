@@ -1,0 +1,11 @@
+{% autoescape false %}
+<li class="{{ item.depth>0?'child':''}}">
+    <a href="{{ item.post.url }}"><span>{{ item.post.title }}</span></a>
+</li>
+{% if item.child %}
+    {% include 'navitems.html' with { 'item': item.child } %}
+{% endif %}
+{% if item.next %}
+    {% include 'navitems.html' with { 'item': item.next } %}
+{% endif %}
+{% endautoescape %}

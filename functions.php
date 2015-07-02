@@ -77,27 +77,6 @@ EOF;
 
 
 /*custom nav behavior*/
-function mac_clean_menu() {
-	$menu_name = 'primary';
-	if (($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) {
-		$menu = wp_get_nav_menu_object($locations[$menu_name]);
-		$menu_items = wp_get_nav_menu_items($menu->term_id);
-		$menu_list='';
-		foreach ((array) $menu_items as $key => $menu_item) {
-			$has_parent = $menu_item->menu_item_parent;
-			$child = '';
-			if ($has_parent > 0){
-				$child = ' class="child"';
-			}
-			$title = $menu_item->title;
-			$url = $menu_item->url;
-			$menu_list .= "\t\t\t\t\t". '<li'.$child.'><a href="'. $url .'"><span>'. $title .'</span></a></li>' ."\n";
-		}
-	} else {
-		// $menu_list = '<!-- no list defined -->';
-	}
-	echo $menu_list;
-}
 
 add_action( 'init', 'mac_register_theme_menu' );
 
@@ -289,6 +268,10 @@ Twig_Autoloader::register();
 
 $loader = new Twig_Loader_Filesystem(__DIR__.'/twig_templates');
 $twig = new Twig_Environment($loader, array(
-'cache' => false//__DIR__.'/twig_cache',
+'cache' => false,//__DIR__.'/twig_cache',
 ));
+
+require_once(__DIR__.'/include/MaybeSensibleNavWalker.php');
+
+
 ?>
