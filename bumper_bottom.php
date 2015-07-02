@@ -1,4 +1,4 @@
-<?php if ( in_category( 'latest-news' )  ) {  ?>
+<?php if ( get_post_type() == "post"  ) {  ?>
 <div class="bumper bumper-bottom">
 	<div class="container">
 		<div class="col-xs-6 bumper-left">
