@@ -24,7 +24,7 @@
 					<?php  }; ?>
 				</div>
 			</div>
-		<? } ?>
+		<?php } ?>
 			<div class="col-xs-12 <?php echo has_post_thumbnail() ? "col-sm-7 col-md-8" : "col-sm-12"; ?>">
 				<h1><?php the_title(); ?></h1>
 				<?php if (get_field('artist_subtitle')) {?>
