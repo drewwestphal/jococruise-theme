@@ -1,13 +1,17 @@
 <?php
-$_ENV['CCTHEMEADMIN_OPTION_PAGE_KEY'] = 'mac_settings';
-$_ENV['CCTHEMEADMIN_OPTION_PAGE_METABOXID'] = 'cctheme_option_metabox';
-$_ENV['CCTHEMEADMIN_OPTION_PAGE_TITLE'] = 'JoCo Cruise Theme Options';
-$_ENV['CCTHEMEADMIN_OPTION_PAGE_FIELDS'] = array(
+return array(
     array(
         'name' => 'Sitewide Options',
         'desc' => '',
         'type' => 'title',
         'id' => 'mac_site_settings'
+    ),
+    array(
+        'name' => 'Cruise Year',
+        'desc' => '',
+        'id' => 'mac_cruise_year',
+        'type' => 'text_small',
+        'default' => false,
     ),
     array(
         'name' => 'Enable booking',
@@ -196,6 +200,19 @@ $_ENV['CCTHEMEADMIN_OPTION_PAGE_FIELDS'] = array(
         'name' => 'News "View All" URL',
         'id' => 'mac_news_view_all_url',
         'type' => 'text_medium',
+    ),
+    array(
+        'name' => 'FAQ Settings',
+        'desc' => '',
+        'type' => 'title',
+        'id' => 'mac_faq_settings'
+    ),
+    array(
+        'name' => 'FAQ Categories',
+        'desc' => 'pipe delimited categories for faqs, in order!',
+        'id' => 'mac_piped_cats',
+        'type' => 'textarea_code',
+        'default' => 'What the Heck?|Booking Questions|I’m Booked! Now What?|Managing my Booking',
     ),
     array(
         'name' => 'Footer Settings',

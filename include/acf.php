@@ -1,10 +1,5 @@
 <?php
 
-if(function_exists('acf')) {
-    $acf = acf();
-    $acf -> settings['dir'] = plugins_url() . '/advanced-custom-fields/';
-}
-
 if(function_exists("register_field_group")) {
     $artistTypeChoices = array(
         'artist' => 'Performer',
@@ -12,73 +7,40 @@ if(function_exists("register_field_group")) {
         'spotlight item' => 'Spotlight Item',
         'did not attend' => 'Did not attend this year',
     );
+    $artistYearAndTypeFields = array();
+    // we have to do the field counter stuff bc
+    // that is how they were numbered when they
+    // were created and we don't want to mess with the
+    // db
+    $fieldCounter = 5459;
+    for($year = 2011; $year <= $cruise_year; $year++) {
+        $artistYearAndTypeFields[] = array(
+            // the below is post-dec, which will dec
+            // after returning current val
+            'key' => 'field_54b703017' . $fieldCounter--,
+            'label' => 'Artist Type ' . $year,
+            'name' => 'artist_type' . $year,
+            'type' => 'select',
+            'choices' => $artistTypeChoices,
+            'default_value' => '',
+            'allow_null' => 1,
+            'multiple' => 0,
+        );
+    }
+    $faqHeaderArrForACF = array_map(function($val) {
+        return htmlentities($val, ENT_QUOTES);
+    }, $faq_section_headers_ordered);
+    $faqHeaderArrForACF = array_combine($faqHeaderArrForACF, $faqHeaderArrForACF);
+
     // upgrades
     // UPDATE `wp__postmeta` SET meta_key='artist_type2016' WHERE `meta_key` LIKE 'artist_type';
     // UPDATE `wp__postmeta` SET meta_key='_artist_type2016' WHERE `meta_key` LIKE '_artist_type';
     register_field_group(array(
         'id' => 'acf_artist',
         'title' => 'Artist',
-        'fields' => array(
-            array(
-                'key' => 'field_54b7030175454',
-                'label' => 'Artist Type 2016',
-                'name' => 'artist_type2016',
-                'type' => 'select',
-                'choices' => $artistTypeChoices,
-                'default_value' => '',
-                'allow_null' => 1,
-                'multiple' => 0,
-            ),
-            array(
-                'key' => 'field_54b7030175455',
-                'label' => 'Artist Type 2015',
-                'name' => 'artist_type2015',
-                'type' => 'select',
-                'choices' => $artistTypeChoices,
-                'default_value' => 'did not attend',
-                'allow_null' => 1,
-                'multiple' => 0,
-            ),
-            array(
-                'key' => 'field_54b7030175456',
-                'label' => 'Artist Type 2014',
-                'name' => 'artist_type2014',
-                'type' => 'select',
-                'choices' => $artistTypeChoices,
-                'default_value' => 'did not attend',
-                'allow_null' => 1,
-                'multiple' => 0,
-            ),
-            array(
-                'key' => 'field_54b7030175457',
-                'label' => 'Artist Type 2013',
-                'name' => 'artist_type2013',
-                'type' => 'select',
-                'choices' => $artistTypeChoices,
-                'default_value' => 'did not attend',
-                'allow_null' => 1,
-                'multiple' => 0,
-            ),
-            array(
-                'key' => 'field_54b7030175458',
-                'label' => 'Artist Type 2012',
-                'name' => 'artist_type2012',
-                'type' => 'select',
-                'choices' => $artistTypeChoices,
-                'default_value' => 'did not attend',
-                'allow_null' => 1,
-                'multiple' => 0,
-            ),
-            array(
-                'key' => 'field_54b7030175459',
-                'label' => 'Artist Type 2011',
-                'name' => 'artist_type2011',
-                'type' => 'select',
-                'choices' => $artistTypeChoices,
-                'default_value' => 'did not attend',
-                'allow_null' => 1,
-                'multiple' => 0,
-            ),
+        // add year and type to front of this array
+        'fields' => array_merge($artistYearAndTypeFields, //
+        array(
             array(
                 'key' => 'field_54b95bb123e45',
                 'label' => 'Artist Subtitle',
@@ -144,7 +106,7 @@ if(function_exists("register_field_group")) {
                 'formatting' => 'html',
                 'maxlength' => '',
             ),
-        ),
+        )),
         'location' => array( array( array(
                     'param' => 'post_type',
                     'operator' => '==',
@@ -264,7 +226,7 @@ if(function_exists("register_field_group")) {
                 'label' => 'FAQ Section Header',
                 'name' => 'faq_section_header',
                 'type' => 'radio',
-                'choices' => array_combine($faq_section_headers_ordered, $faq_section_headers_ordered),
+                'choices' => $faqHeaderArrForACF,
                 'other_choice' => 0,
                 'save_other_choice' => 0,
                 'default_value' => '',

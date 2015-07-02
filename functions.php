@@ -4,8 +4,6 @@ function blankslate_setup()
 load_theme_textdomain( 'blankslate', get_template_directory() . '/languages' );
 add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'post-thumbnails' );
-global $cruise_year;
-$cruise_year = "2016";
 global $content_width;
 if ( ! isset( $content_width ) ) $content_width = 640;
 
@@ -102,13 +100,6 @@ function mac_clean_menu() {
 	echo $menu_list;
 }
 
-// sorry double quotes will break acf
-$faq_section_headers_ordered = array(
-    "What the Heck?",
-    "Booking Questions",
-    "I’m Booked! Now What?",
-    "Managing my Booking",
-);
 add_action( 'init', 'mac_register_theme_menu' );
 
 
@@ -256,18 +247,36 @@ return count( $comments_by_type['comment'] );
 return $count;
 }
 }
-require_once(__DIR__.'/include/acf.php');
 require_once(__DIR__.'/include/cpt.php');
 require_once(__DIR__.'/include/columns.php');
 
 // cmb2
 require_once(__DIR__.'/include/cmb2/init.php');
-require_once(__DIR__.'/include/CCTheme_Admin_conf.php');
-require_once(__DIR__.'/include/CCTheme_Admin.php');
-CCTheme_Admin::getInstance();
+// fix CMB2 include path
+add_filter('cmb2_meta_box_url', function ($url) {
+    // this function is retardedly implemented on the cmb2 side...
+    // gives me great faith in the rest of their work!
+    return get_template_directory_uri() . '/include/cmb2';
+});
 
+require_once __DIR__.'/vendor/autoload.php';
+// yes you CAN include a file that returns a value...
+// look it up!
+$ThemeOptions = new CCWPOptions_Page('mac_settings','JoCo Cruise Theme Options',include(__DIR__.'/include/theme_options_fields_arr.php'));
+function jcctheme_get_option($key){
+    global $ThemeOptions;
+    return $ThemeOptions->get_option($key);
+}
+if(function_exists('acf')) {
+    $acf = acf();
+    $acf -> settings['dir'] = plugins_url() . '/advanced-custom-fields/';
+}
 
-$ThemeOptions = new CCWPOptions_Page('mac_settings','JoCo Cruise Theme Options',array());
+add_action('cmb2_init', function() {
+    // we wwant to have our options all set up so we can use them here
+    include __DIR__.'/theme_variables.php';
+    require_once(__DIR__.'/include/acf.php');
+});
 
 function is_login_page() {
     return in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php'));
@@ -277,7 +286,6 @@ if(!is_admin() && !is_login_page()) {
 	require_once(__DIR__.'/page-experience-gallery.php');
 }
 
-require_once __DIR__.'/vendor/twig/twig/lib/Twig/Autoloader.php';
 Twig_Autoloader::register();
 
 $loader = new Twig_Loader_Filesystem(__DIR__.'/twig_templates');
