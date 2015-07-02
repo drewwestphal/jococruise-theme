@@ -1128,18 +1128,19 @@ SPONSORS
   max-width: 925px;
   padding-bottom:29px;
 }
+@sponsor_square_size: 154px;
 .sponsor_square {
   margin: 15px auto;
-  width: 154px;
-  height: 154px;
+  width: @sponsor_square_size;
+  height: @sponsor_square_size;
   background: #f5f1e9;
   border-radius: 10px;
 }
 .sponsor_square_double {
   margin: 15px auto;
-  width: 338px;
-  width: ~"calc(308px + (50% - 154px))";
-  height: 154px;
+  width: (@sponsor_square_size * 2 + 30);
+  width: ~"calc("(@sponsor_square_size * 2)~" + (50% - "(@sponsor_square_size - 15)~"))";
+  height: @sponsor_square_size;
   background: #f5f1e9;
   border-radius: 10px;
 }
@@ -1147,7 +1148,7 @@ SPONSORS
   display: block;
   height: 100%;
   width: 100%;
-  line-height: 149px;
+  line-height: (@sponsor_square_size - 5);
 }
 .sponsor_square img, .sponsor_square_double img {
   max-width: 90%;
