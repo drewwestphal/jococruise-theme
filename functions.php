@@ -8,7 +8,6 @@ global $content_width;
 if ( ! isset( $content_width ) ) $content_width = 640;
 
 }
-//include('mac_options.php');
 add_filter( 'pre_get_posts', 'my_get_posts' );
 
 function my_get_posts( $query ) {
