@@ -119,6 +119,22 @@ input, textarea {
     margin: auto;
   }
 }
+@media (min-width: @screen-lg) {
+  .col-lg-2:nth-child(6n+1) {
+    clear: left;
+  }
+}
+@media (min-width: @screen-md) and (max-width: @screen-lg) {
+  .col-md-3:nth-child(4n+1) {
+    clear: left;
+  }
+}
+
+@media (min-width: @screen-sm) and (max-width: @screen-md) {
+  .col-sm-4:nth-child(3n+1) {
+    clear: left;
+  }
+}
 
 
 /*
