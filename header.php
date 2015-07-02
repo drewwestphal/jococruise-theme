@@ -48,13 +48,27 @@
 				<br>Top
 			</a>
 		</div>
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		      <ul class="nav navbar-nav" id="nav-dropdown">
 				<?php
-					mac_clean_menu();
+                wp_nav_menu( array( 'theme_location' => 'primary',
+                        'depth' => 2,
+                        'depth'             => 2,
+                        'container'         => 'div',
+                        'container_class'   => 'collapse navbar-collapse',
+                        'container_id'      => 'bs-example-navbar-collapse-1',
+                        'menu_class' => 'nav navbar-nav',
+                        'menu_id' => 'nav-dropdown',
+                        'fallback_cb' => 'CCWPNavWalker_CallbackWalker::fallback',
+                        //Process nav menu using our custom nav walker
+                        'walker' => new CCWPNavWalker_CallbackWalker(function($headElement){
+                                    global $twig;
+                                    //print_r($this -> startel -> toArray());
+                                    try {
+                                        return $template = $twig -> render('navitems.html', array('item' => $headElement -> toArray()));
+                                    } catch(Exception $ex) {
+                                        print_r($ex);
+                                    }
+                        }) ) );
 				?>				
-			</ul>
-		</div>
 	</div>	
 <?php wp_reset_postdata(); ?>
 </nav>
