@@ -27,6 +27,9 @@ if(function_exists("register_field_group")) {
             'multiple' => 0,
         );
     }
+    $artistYearAndTypeFields = array_reverse($artistYearAndTypeFields);
+    // share this for other pieces of theme
+    $_ENV['cc_artist_type_and_year_fields_desc'] = $artistYearAndTypeFields;
     $faqHeaderArrForACF = array_map(function($val) {
         return htmlentities($val, ENT_QUOTES);
     }, $faq_section_headers_ordered);

@@ -45,9 +45,80 @@ $featuredEventsHeaderPost = $exp_pcs_byname['exp-featured-events-header'];
 $gamingTrackPost = $exp_pcs_byname['exp-gaming-track'];
 $writingTrackPost = $exp_pcs_byname['exp-writing-track'];
 $shadowCruisePost = $exp_pcs_byname['exp-community'];
-$photoExplPost = $exp_pcs_byname['exp-photos-expl'];
 $photoGalleryPost = $exp_pcs_byname['exp-photos-gallery'];
 $moreInfoPost = $exp_pcs_byname['exp-more-info'];
+
+// get artist types by year from ACF
+$targetArtistTypes = $_ENV['cc_artist_type_and_year_fields_desc'];
+// shift off current year
+array_shift($targetArtistTypes);
+// filter down to just name of field in DB
+$targetArtistTypes = array_map(function($el){
+    return $el['name'];
+}, $targetArtistTypes);
+// set target values
+$targetArtistValues = array('artist','featured artist');
+// meta_query can take an array for values, but key has to
+// be a string, so fill up an array with a key for each
+// year we are targeting
+$mqVars = array();
+foreach($targetArtistTypes as $ta){
+    $mqVars[]=array('key'=>$ta,'value'=>$targetArtistValues);
+}
+// we want artists that were here for any
+// of the target years
+$mqVars['relation']='OR';
+// gather the posts
+$artistHistory = new WP_Query( array(
+    'post_type' => 'artist',
+    'posts_per_page' => -1,
+    'meta_query' => $mqVars
+));
+$artistHistory = $artistHistory -> get_posts();
+wp_reset_postdata();
+
+
+/**
+ * Sort the artists by Alpha order according to
+ * sorta weird rules
+ */
+$artistSortFunc = function($a,$b) {
+    $aname = $a->post_title;
+    $bname = $b->post_title;
+
+    // jonathan coulton comes first
+    if(stripos($aname,'coulton')){
+        return -2;
+    }
+    if(stripos($bname,'coulton')){
+        return 2;
+    }
+    // p&s come second
+    if(stripos($aname,'storm')){
+        return -1;
+    }
+    if(stripos($bname,'storm')){
+        return 1;
+    }
+
+    $asplit = preg_split('/\s+/', $aname);
+    $bsplit = preg_split('/\s+/', $bname);
+
+    // if there are one, two or three words in a name
+    // we'll compare based on the last word (last name?)
+    // if there are more we'll compare on word 2,
+    // which might be the name of the first artist
+    // or could just be bullshit
+    $acmpval = count($asplit)<4?array_pop($asplit):$asplit[1];
+    $bcmpval = count($bsplit)<4?array_pop($bsplit):$bsplit[1];
+
+    //printf('%s = %s ; %s = %s'."\n", $aname,$acmpval,$bname,$bcmpval);
+
+    return strcasecmp($acmpval, $bcmpval);
+};
+usort($artistHistory,$artistSortFunc);
+
+$artistHistoryNamesOnly = array_map(function($artist){return $artist->post_title;},$artistHistory);
 
 /**
  * Get the Featured Events
@@ -139,17 +210,7 @@ $lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm
 				<div class="col-xs-12 col-sm-6">
 					<ul>
 					<?php
-						$past_guests = file_get_contents(__DIR__."/past_performers.txt");
-						$past_guests = explode(PHP_EOL, $past_guests);
-						if (count($past_guests)<=1) {
-							$past_guests = array("Jonathan Coulton","Paul and Storm","The Both (Aimee Mann and Ted Leo)","Rhea Butcher","Marian Call",
-								"Chris Collingwood (Fountains of Wayne)","Bill Corbett and Kevin Murphy (Rifftrax)","The Doubleclicks",
-								"John Flansburgh (They Might Be Giants)","MC Frontalot","Jean Grae","Hank Green","Vi Hart","John Hodgman",
-								"Grant Imahara (Mythbusters)","Mathew Inman (The Oatmeal)","Steve Jackson (Steve Jackson Games)","Zoe Keating",
-								"Hari Kondabolu","Molly Lewis","Merlin Mann","Opus Moreschi (Colbert Report)","Randall Munroe (xkcd)","Mike Phirman",
-								"Pomplamoose","David Rees","John Roderick","Pat Rothfuss","Peter Sagal","Nathan Sowaya","John Scalzi",
-								"Joseph Scrimshaw","Sara and Sean Watkins (Nickel Creek)","and Will Wheaton");
-						}
+						$past_guests = $artistHistoryNamesOnly;
 						$i = 0;
 						foreach ($past_guests as $guest) {
 							if (abs($i*2 - count($past_guests)) <= 1) {
@@ -217,8 +278,7 @@ $lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm
 	<section id="exp-photos" class="joco_offwhite">
 		<div class="container">
 			<div class="col-xs-12">
-				<?= '';//apply_filters('the_content', $photoExplPost -> post_content); ?>
-				<h3><?= parse_piped_title2($photoExplPost -> post_title)?></h3>
+				<h3><?= parse_piped_title2($photoGalleryPost -> post_title)?></h3>
 				<!--<h3><strong>Photos</strong> | JoCo Cruise 2014</h3>-->
 			</div>
 			<div class="col-xs-12">

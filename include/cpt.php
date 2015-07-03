@@ -436,18 +436,8 @@ $pieces = array(//
         ",
     ),
     array(
-        'post_name' => 'exp-photos-expl',
-        'post_title' => 'Photos | JoCo Cruise 2016',
-        'post_content' => "
-        <p>
-        Is there any evidence you can point to that supports your theory this is fun? Why yes! Here's a little slideshow of pictures
-        from JoCo Cruise 2015!
-        </p>
-        ",
-    ),
-    array(
         'post_name' => 'exp-photos-gallery',
-        'post_title' => 'Photos | Gallery ONLY',
+        'post_title' => 'Photos and Videos',
         'post_content' => "
         insert the gallery here using the media box
         ",
