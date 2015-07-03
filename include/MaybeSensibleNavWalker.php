@@ -10,7 +10,7 @@
  * It overrides all output from the
  * functions, instead doing its output using the new
  * render method
- * 
+ *
  * The render method is abstract and can be implemented
  * in subclasses as necessary
  *
@@ -36,6 +36,12 @@ abstract class CCWPNavWalker_Base extends Walker_Nav_Menu {
         //traverse however wordpress wants
         parent::walk($elements, $max_depth);
         // but take our output after that is done
+        return $this -> render($this -> startel -> toArray());
+    }
+
+    // see above
+    public function paged_walk($elements, $max_depth, $page_num, $per_page) {
+        parent::paged_walk($elements, $max_depth, $page_num, $per_page);
         return $this -> render($this -> startel -> toArray());
     }
 
