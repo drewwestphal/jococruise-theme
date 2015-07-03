@@ -122,7 +122,7 @@ wp_reset_postdata();
 						'posts_per_page' => -1,
 						'order'			 => 'ASC',
 						'meta_query' => array(
-							array( // made the old 'artist_type' field into the 2016 field, all other years are in field name
+							array(
 								'key' => $targetArtistType,
 								'value' => $artist_type_value
 							),
