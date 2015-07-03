@@ -11,7 +11,43 @@
 <body <?php body_class(); ?>>
 <div id="wrapper" class="hfeed">
 
-<nav id="nav" class="navbar-default <?php if (current_user_can('manage_options')) { echo 'logged-in'; }?>">
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<div class="col-xs-3">
+			<ul class="nav">
+				<li role="presentation" class="dropdown">
+				    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+				      Menu
+				    </a>
+				    <?php
+	                wp_nav_menu( array( 
+	                		'theme_location' => 'primary',
+	                        'depth'             => 2,
+	                        'container'         => false,
+	                        'menu_class' => 'dropdown-menu',
+	                        'menu_id' => 'nav-dropdown',
+	                        'fallback_cb' => 'CCWPNavWalker_RecursiveTwigTemplate::fallback',
+	                        //Process nav menu using our custom nav walker
+	                        'walker' => new CCWPNavWalker_RecursiveTwigTemplate('navitems.html', 'item')));
+					?>
+				</li>
+			</ul>
+		</div>
+		<div class="col-xs-6 navbar-header">
+	      <a href="/">
+	        <img alt="Brand" src="<?php bloginfo('template_directory'); ?>/img/hero_JoCo_LoGo.svg">
+	      </a>
+	    </div>
+	    <div class="col-xs-3">
+	    	<a href="#wrapper" id="nav-arrow-to-top" class="navbar-item-right">
+				<span class="glyphicon glyphicon-menu-up"></span>
+				<br>Top
+			</a>
+	    </div>
+	</div>
+</nav>
+<!--
+<nav id="nav" class="navbar navbar-default navbar-static-top <?php if (current_user_can('manage_options')) { echo 'logged-in'; }?>">
 	<div class="container" id="nav-container">
 		<div class="navbar-top">
 			<div id="nav-button" class="navbar-item-left">
@@ -38,16 +74,15 @@
 				<a id="navbar-title" href="#wrapper" class="navbar-item-left toggle nav-hidden">
 					<img src="<?php bloginfo('template_directory'); ?>/img/hero_JoCo_LoGo.png" alt="A styled JoCo Cruise logotype." id="nav-joco-logo">
 				</a>
-	  <?php } else { ?>
+			<?php } else { ?>
 				<a id="navbar-title" href="/" class="navbar-item-left">
 					<img src="<?php bloginfo('template_directory'); ?>/img/hero_JoCo_LoGo.png" alt="A styled JoCo Cruise logotype." id="nav-joco-logo">
 				</a>
-	  <?php } ?>
+			<?php } ?>
 			<a href="#wrapper" id="nav-arrow-to-top" class="navbar-item-right<?php if (isset($sticky[0])) { echo ' toggle nav-hidden'; }; ?>">
 				<span class="glyphicon glyphicon-menu-up"></span>
 				<br>Top
 			</a>
-		</div>
 				<?php
                 wp_nav_menu( array( 'theme_location' => 'primary',
                         'depth' => 2,
@@ -60,7 +95,9 @@
                         'fallback_cb' => 'CCWPNavWalker_RecursiveTwigTemplate::fallback',
                         //Process nav menu using our custom nav walker
                         'walker' => new CCWPNavWalker_RecursiveTwigTemplate('navitems.html', 'item')));
-				?>				
+				?>	
+		</div>			
 	</div>	
 <?php wp_reset_postdata(); ?>
 </nav>
+-->

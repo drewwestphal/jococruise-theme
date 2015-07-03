@@ -150,6 +150,38 @@ ol li{
     clear: left;
   }
 }
+.navbar-header {
+  text-align: center;
+}
+.navbar img {
+  max-height: (@navbar-height - 10);
+  margin: 5px auto;
+}
+.navbar li {
+  margin: 0px;
+  list-style: none;
+}
+.dropdown-toggle, .navbar-item-right {
+  width: auto;
+  color: #fff;
+  text-decoration: none;
+  font-family: @font-family-sans-serif;
+  font-size: 0.8em;
+}
+.navbar-item-right {
+  float: right;
+  text-align: center;
+}
+.dropdown-menu {
+  font-family: @font-family-sans-serif;
+  font-size: 0.8em;
+  a {
+    text-decoration: none;
+  }
+  li a:hover {
+    text-decoration: underline;
+  }
+}
 
 
 /*
@@ -653,7 +685,6 @@ ol li{
   
   NAV
   
-*/
 #nav {
   position: fixed;
   width: 100%;
@@ -667,7 +698,7 @@ ol li{
 #nav.logged-in{
   top: 46px;
 }
-/* 783px is WP's menu height change breakpoint, everything else should be 768px */
+// 783px is WP's menu height change breakpoint, everything else should be 768px 
 @media screen and (min-width:783px){
   #nav.logged-in{
     top: 32px;
