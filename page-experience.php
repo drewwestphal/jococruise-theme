@@ -210,14 +210,14 @@ $lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm
 				<div class="col-xs-12 col-sm-6">
 					<ul>
 					<?php
-						$past_guests = $artistHistoryNamesOnly;
 						$i = 0;
-						foreach ($past_guests as $guest) {
-							if (abs($i*2 - count($past_guests)) <= 1) {
+                        $npast = count($artistHistory);
+						foreach ($artistHistory as $guest) {
+							if (abs($i*2 - $npast) <= 1) {
 								echo "</ul></div><div class='col-xs-12 col-sm-6'><ul>";
 							}
 							$i++;
-							echo "<li>$guest</li>";
+							printf('<li><a href="%s" target=_blank>%s</a></li>', get_permalink($guest->ID), $guest->post_title);
 						} ?>
 					</ul>
 				</div>
