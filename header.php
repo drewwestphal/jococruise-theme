@@ -16,7 +16,7 @@
 		<div class="col-xs-3">
 			<ul class="nav">
 				<li role="presentation" class="dropdown">
-				    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+				    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
 				      Menu
 				    </a>
 				    <?php
@@ -39,7 +39,7 @@
 	      </a>
 	    </div>
 	    <div class="col-xs-3">
-	    	<a href="#wrapper" id="nav-arrow-to-top" class="navbar-item-right">
+	    	<a onclick="$('body').animate({ scrollTop: 0 }, 'fast');" id="nav-arrow-to-top" class="navbar-item-right">
 				<span class="glyphicon glyphicon-menu-up"></span>
 				<br>Top
 			</a>
