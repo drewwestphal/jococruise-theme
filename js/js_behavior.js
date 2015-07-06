@@ -63,10 +63,6 @@ jQuery(document).ready(function(jQuery) {
 		}
 	});
 	
-	gallery_spacing_adjust();
-	//jQuery('.gallery-item').css('height',100);
-	//jQuery('.gallery-item').addClass('testing!');
-	
 	//initial call of mapBehavior()
 	mapBehavior();
 	
@@ -74,7 +70,6 @@ jQuery(document).ready(function(jQuery) {
 
 
 jQuery(window).resize(function(){
-	gallery_spacing_adjust();
     if (jQuery(window).width()>992){
 	    //artist
 	    jQuery('#overflow').css('left', 0);
