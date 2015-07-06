@@ -17,6 +17,7 @@
 							'content' => $post -> post_content ? apply_filters( 'the_content', $post -> post_content) : apply_filters( 'the_excerpt', $post -> post_excerpt));
         }
         
+		$faq_section_headers_ordered = array_map('trim', explode('|', jcctheme_get_option('mac_piped_cats')));
         $allHeadersOrdered = array_unique(array_merge($faq_section_headers_ordered, array_keys($faqs_by_header)));
 		echo $twig->render('faq.html', array('faqs' => $faqs_by_header, 'headers' => $allHeadersOrdered));
         ?> 
