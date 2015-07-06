@@ -55,5 +55,4 @@
 		<script src="<?php bloginfo('template_directory'); ?>/js/js_behavior.js"></script>
 	</div>
 </div>
-<?php include 'bumper_bottom_empty.php'; ?>
 <?php include 'footer.php'; ?>
