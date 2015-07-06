@@ -342,10 +342,5 @@ wp_reset_postdata();
 	<a id="faq-view-all" href="/faq/">View All FAQS</a>
 </div>	
 
-<!--Make entire button clickable...-->
-<script type="text/javascript">
-    jQuery('#hero-booking').click(function(){jQuery(this).find('a')[0].click();});
-    jQuery('.hero-button').click(function(){jQuery(this).find('a')[0].click();});
-</script>
 
 <?php include 'footer.php' ?>
