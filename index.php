@@ -223,14 +223,13 @@ wp_reset_postdata();
 				if ($cities_query->have_posts()) {
 					while ($cities_query->have_posts()) {
 						$cities_query->the_post();
-				?>
+					?>
 					<div class="map-narrow-info headers" id="info-<?php echo $post->post_name; ?>">
 						<span class="glyphicon glyphicon-remove"></span>
 						<h4><?php the_title(); ?></h4>
 						<?php the_excerpt(); ?>
 					</div>
-					
-				<?php }
+					<?php }
 				}?>
 				</div>
 				<?php wp_reset_postdata();?>
