@@ -8,5 +8,5 @@
 <div class="map-city" id="<?php echo $post->post_name; ?>" style="left:<?php echo $left_position; ?>%; top:<?php echo $top_position; ?>%;">
 	<h1 <?php if ($title_down_under){ echo 'class="down"';};?>><?php the_title(); ?></h1>
 	<span class="glyphicon glyphicon-plus point" aria-hidden="true"></span>
-	<div class="map-city-about hidden-xs <?php if ($title_down_under){ echo 'up';}; if ($info_down_under){ echo ' info-up';};?>"><span><?php the_title(); ?></span><?php the_content(); ?></div>
+	<div class="map-city-about hidden-xs hidden-sm <?php if ($title_down_under){ echo 'up';}; if ($info_down_under){ echo ' info-up';};?>"><span><?php the_title(); ?></span><?php the_content(); ?></div>
 </div>

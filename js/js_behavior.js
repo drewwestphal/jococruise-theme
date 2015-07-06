@@ -1,6 +1,6 @@
 var mapBehavior = function(){
 	jQuery('.map-city').hide().show(0); // force redraw to gaurantee placement on window resize
-	if (jQuery(window).width()>767){
+	if (jQuery(window).width()>992){
 		jQuery('#map').click(function() {
 			jQuery('.point').removeClass('glyphicon-minus').addClass('glyphicon-plus');
 			jQuery('.map-city-about').fadeOut('fast');
@@ -13,10 +13,6 @@ var mapBehavior = function(){
 				jQuery(this).removeClass('glyphicon-plus').addClass('glyphicon-minus');
 			}
 		});
-		//.mouseleave(function() {
-			//jQuery(this).siblings('.map-city-about').fadeOut('fast');
-			//jQuery(this).removeClass('glyphicon-minus').addClass('glyphicon-plus');
-		//});
 	} else {
 		jQuery('.point').click(function(){
 			jQuery('span.glyphicon.point').removeClass('glyphicon-minus').addClass('glyphicon-plus');
@@ -393,7 +389,7 @@ function gallery_spacing_adjust() {
 
 jQuery(window).resize(function(){
 	gallery_spacing_adjust();
-    if (jQuery(window).width()>767){
+    if (jQuery(window).width()>992){
 	    //artist
 	    jQuery('#overflow').css('left', 0);
 	    jQuery('#faq-overflow').css('left', 0);

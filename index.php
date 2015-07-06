@@ -193,7 +193,7 @@ wp_reset_postdata();
 <!--map-->
 	<section id="map" class="joco_beige">
 		<div class="container">
-			<div class="col-xs-12 col-md-12">
+			<div class="col-xs-12">
 				<div class="map-cities">
 					<img src="<?php bloginfo('template_directory'); ?>/img/map.png" id="map-background">		
 					<?php 					//get the cities
@@ -214,7 +214,7 @@ wp_reset_postdata();
 					}
 					?>
 				</div>
-				<div class="map-info visible-xs-block">
+				<div class="map-info visible-xs-block visible-sm-block">
 				<?php if (isset($map_copy)) { ?>
 					<p id="map-copy">
 						<?php echo $map_copy; ?>
@@ -226,7 +226,7 @@ wp_reset_postdata();
 				?>
 					<div class="map-narrow-info headers" id="info-<?php echo $post->post_name; ?>">
 						<span class="glyphicon glyphicon-remove"></span>
-						<h1><?php the_title(); ?></h1>
+						<h4><?php the_title(); ?></h4>
 						<?php the_excerpt(); ?>
 					</div>
 					
