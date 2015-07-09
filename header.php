@@ -10,7 +10,7 @@
 </head>
 <body <?php body_class(); ?>>
 <div id="wrapper" class="hfeed">
-
+<div id="mainsitenav">
 <nav class="navbar navbar-default navbar-fixed-top<?php if (is_admin_bar_showing()) echo " wp_admin_bar_showing"; ?>">
 	<div class="container">
 		<div class="col-xs-3">
@@ -46,6 +46,7 @@
 	    </div>
 	</div>
 </nav>
+</div>
 <!--
 <nav id="nav" class="navbar navbar-default navbar-static-top <?php if (current_user_can('manage_options')) { echo 'logged-in'; }?>">
 	<div class="container" id="nav-container">
