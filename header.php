@@ -11,7 +11,7 @@
 <body <?php body_class(); ?>>
 <div id="wrapper" class="hfeed">
 <div id="mainsitenav">
-<nav class="navbar navbar-default navbar-fixed-top<?php if (is_admin_bar_showing()) echo " wp_admin_bar_showing"; ?>">
+<nav class="navbar navbar-inverse navbar-fixed-top<?php if (is_admin_bar_showing()) echo " wp_admin_bar_showing"; ?>">
 	<div class="container">
 		<div class="col-xs-3">
 			<ul class="nav">
