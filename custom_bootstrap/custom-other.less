@@ -82,7 +82,6 @@ input, textarea {
   padding: 15px;
   border: 1px solid #f6f4ec;
   font-family: surveyorBookItalic,serif;
-  width: 100%;
   margin-bottom: 20px;
 }
 ul li{
@@ -943,6 +942,7 @@ SPONSORS
 }
 
 
+
 /* BOOKING PAGE STYLES */
 /* BOOKING PAGE STYLES */
 /* BOOKING PAGE STYLES */
@@ -957,6 +957,7 @@ SPONSORS
     text-align:left;
     span {
       font-size:inherit;
+      font-family:inherit;
     }
   }
 
@@ -976,4 +977,48 @@ SPONSORS
     font-size:120%;
     font-style:italic;
   }
+
+  .nav > li > a:hover,
+  .nav > li > a:focus {
+    text-decoration: none;
+    background-color: @joco_beige;
+  }
+
+  input, textarea {
+    font-family: surveyorBook;
+    margin-bottom:0;
+    color:inherit;
+    background-color:#fff;
+  }
+
+  .help-block {
+    font-size:80%;
+    color:@joco_blue;
+  }
+
+  .breadcrumb > .active {
+    color:@joco_blue;
+    font-style:italic;
+  }
+
+  ul li {
+    margin-left:0;
+    list-style-type:none;
+  }
+
+  .checkout-pane {
+    .list-group-item {
+      background-color:@panel-bg;
+    }
+    .payopts li {
+      padding-top: 0;
+    }
+  }
+
+  .account-home {
+    .back-link {
+      margin-bottom:7px;
+    }
+  }
+
 }
