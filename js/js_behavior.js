@@ -42,7 +42,7 @@ var mapBehavior = function(){
 
 
 jQuery(document).ready(function(jQuery) {
-	jQuery('.slick-element').slick({dots: true});
+	jQuery('.slick-element').slick({dots: true, focusOnSelect: false});
 	
 	//presentational map copy placement on narrow
 	var $mapCopy = jQuery('#map-copy');

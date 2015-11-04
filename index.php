@@ -298,10 +298,12 @@ wp_reset_postdata();
 						<div class="contact-comments" id="contact-comments">
 							<textarea name="comments" id="comments" placeholder="your message*"></textarea>
 						</div>
+						<div style="width:75%; margin:auto;">
 						<div class="recaptcha-container">
 							<div class="g-recaptcha" data-sitekey="6LdDyQUTAAAAAHpsqVuzy36d-8y5w7y7jyPvXE_d" data-theme="dark"></div>
 						</div>
 						<button id="contact-button" class="btn btn-lg btn-info contact-button" type="submit" value="Submit">Submit</button>
+						</div>
 					</form>
 			</div>
 		</div>
