@@ -139,10 +139,10 @@ function blankslate_load_scripts() {
     // according to this place you don't wanna enqueue shit on the admin side...
     //http://digwp.com/2009/06/use-google-hosted-javascript-libraries-still-the-right-way/
     if(!is_admin()) {
+        wp_deregister_script('jquery');
     	wp_enqueue_script('bower', get_template_directory_uri().'/js/bower.min.js', array(), 1, false);
         wp_enqueue_script('recaptcha', '//www.google.com/recaptcha/api.js', array(), 1, false);
     	/*
-        wp_deregister_script('jquery');
         wp_enqueue_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', array(), 1, false);
 		if ( wp_is_mobile() ) {
 	        wp_enqueue_script('jquery_mobile', get_template_directory_uri() . '/js/jquery.mobile.custom.min.js', array(), 1, false);
@@ -160,7 +160,7 @@ function blankslate_load_scripts() {
 
     // home directory scripts
     if(is_home() || is_page( 'The Experience' )) {
-        wp_enqueue_script('js_behavior', get_template_directory_uri() . '/js/js_behavior.js', array(), 1, true);
+        wp_enqueue_script('js_behavior', get_template_directory_uri() . '/js/js_behavior.js', array('bower'), 1, true);
         wp_enqueue_script('js_contact', get_template_directory_uri() . '/js/js_contact.js', array(
             'js_behavior'
         	), '1', true);
@@ -171,7 +171,7 @@ function blankslate_load_scripts() {
     if(is_page('The Experience')) {
         wp_enqueue_script('js_experience',//
         get_template_directory_uri() . '/js/js_experience.js', //
-         array(), 1, false);
+         array('bower'), 1, false);
 		//wp_enqueue_script('fitvids', get_template_directory_uri() . '/js/jquery.fitvids.js', array(), 1, false);
     }
 }

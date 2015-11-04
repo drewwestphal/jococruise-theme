@@ -62,7 +62,6 @@ jQuery(document).ready(function(jQuery) {
 			image.addClass('portrait');        
 		}
 	});
-	
 	//initial call of mapBehavior()
 	mapBehavior();
 	
