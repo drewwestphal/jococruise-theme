@@ -27,7 +27,7 @@ a {
     color: @joco_beige;
   }
   .slick-prev::before, .slick-next::before {
-    color: white; 
+    color: white;
   }
   .btn-default {
     color: #fff;
@@ -42,7 +42,7 @@ h1,h2,h3,h4,h5,h6 {
   text-align: center;
   span {
     font-family: surveyorBookItalic, serif;
-    font-size: 0.5em; 
+    font-size: 0.5em;
   }
 }
 @media screen and (max-width: @screen-sm) {
@@ -92,19 +92,22 @@ input, textarea {
 }
 ul li{
     list-style-type: circle;
-    margin-left: 2em;
     text-align: left;
-    line-height: 1.1em;
     padding-top: 0.3em;
     padding-bottom: 0.5em;
+  @media screen and (max-width:@screen-phone) {
+    margin-left: 0;
+  }
 }
 ol li{
     list-style-type: decimal;
     margin-left: 2em;
     text-align: left;
-    line-height: 1.1em;
     padding-top: 0.3em;
     padding-bottom: 0.5em;
+  @media screen and (max-width:@screen-phone) {
+    margin-left: 0;
+  }
 }
 .circle_image(@size) {
   width: @size;
@@ -123,7 +126,7 @@ ol li{
   outline: none
 }
 .slick-prev::before, .slick-next::before {
-  color: @joco_darkblue; 
+  color: @joco_darkblue;
 }
 .nav-spacer {
   margin-top: 80px;
@@ -256,7 +259,7 @@ ol li{
   min-height: 300px;
   background:
   url('../img/waves_retina.png'),
-  linear-gradient(to bottom, 
+  linear-gradient(to bottom,
       rgba(10, 84, 121, 0) 0px,
       rgba(10, 84, 121, 0) 50px,
       rgba(10, 84, 121, 1) 60px
@@ -310,7 +313,7 @@ ol li{
     font-size: 1.4em;
   }
   #hero-travel-description-more {
-    font-size: 0.8em;
+    font-size: 1em;
   }
 }
 .slant_header {
@@ -438,8 +441,17 @@ ol li{
 .recaptcha-container {
   float: left;
   width: 300px;
-  margin-bottom: 12px; 
-  margin-right: 20px; 
+  margin-bottom: 12px;
+  margin-right: 20px;
+}
+/* https://www.geekgoddess.com/how-to-resize-the-google-nocaptcha-recaptcha/ */
+@media screen and (max-height: 575px) {
+  #rc-imageselect, .g-recaptcha {
+    transform: scale(0.84);
+    -webkit-transform: scale(0.84);
+    transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+  }
 }
 #contact-button {
   float: left;
@@ -502,14 +514,14 @@ ol li{
   min-height: 300px;
   background:
   url('../img/waves_neutral_retina.png'),
-  linear-gradient(to bottom, 
+  linear-gradient(to bottom,
       rgba(226, 221, 198, 0) 0px,
       rgba(226, 221, 198, 0) 50px,
       rgba(226, 221, 198, 1) 60px
     );
   background-size: 35px, cover;
   background-position: top center,center center;
-  background-repeat: repeat-x, repeat;  
+  background-repeat: repeat-x, repeat;
 }
 #exp-intro .exp-intro-text {
   padding-right: 15px;
@@ -527,7 +539,7 @@ ol li{
 }
 #main-stage {
   padding: 10px 0px 42px;
-  ul { 
+  ul {
     margin-bottom: 0px;
     li {
       list-style-type: none;
@@ -720,17 +732,17 @@ ol li{
 
 
 /*
- * 
+ *
  * ******* MICHAELA STYLES ************
- * 
+ *
  */
 
 
 
 /*
-  
-MAP 
-  
+
+MAP
+
 */
 
 #map{
@@ -880,8 +892,8 @@ MAP
 
 
 /*
-  
-  
+
+
 FOOTER
 
 
@@ -904,7 +916,7 @@ FOOTER
 }
 
 /*
-  
+
 
 SPONSORS
 
@@ -1033,3 +1045,31 @@ SPONSORS
   }
 
 }
+
+
+/*
+
+MERCH STORE
+
+*/
+
+#merch {
+  padding-bottom:22px;
+
+  .navbar-brand {
+    font-style: italic;
+    vertical-align: middle;
+    text-decoration: none;
+    padding: 18px 10px;
+  }
+
+  h2 {
+    font-size: 1.6em;
+  }
+  h3 {
+    font-size: 1.3em;
+  }
+
+
+}
+
