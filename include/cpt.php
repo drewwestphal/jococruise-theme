@@ -465,6 +465,7 @@ $pieces = array(//
 ",
     ),
 );
+/**
 foreach($pieces as $piece) {
     if(!get_page_by_path($piece['post_name'], OBJECT, 'experience')) {
         wp_insert_post(array(
@@ -478,4 +479,5 @@ foreach($pieces as $piece) {
     }
 
 }
+ */
 ?>
