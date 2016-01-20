@@ -264,6 +264,39 @@ if(!is_admin() && !is_login_page()) {
 
 Timber::$locations = __DIR__.'/twig_templates';
 add_filter('timber/context', function($context) {
+    include __DIR__.'/theme_variables.php';
+
+    $context['settings'] = $settings;
+    $context['site_title'] = $site_title;
+    $context['cruise_year'] = $cruise_year;
+    $context['cruise_year'] = $cruise_year;
+    $context['faq_section_headers_ordered'] = $faq_section_headers_ordered;
+    $context['booking_url'] = $booking_url;
+    $context['hero_book_now'] = $hero_book_now;
+    $context['booked'] = $booked;
+    $context['booked_url'] = $booked_url;
+    $context['booking_enabled'] = $booking_enabled;
+    $context['booking_cta'] = $booking_cta;
+    $context['cruise_fb'] = $cruise_fb;
+    $context['cruise_twitter'] = $cruise_twitter;
+    $context['cruise_rss'] = $cruise_rss;
+    $context['travel_desc'] = $travel_desc;
+    $context['travel_desc_more'] = $travel_desc_more;
+    $context['mailing_cta'] = $mailing_cta;
+    $context['artists_header'] = $artists_header;
+    $context['artists_more'] = $artists_more;
+    $context['cont_gen_q'] = $cont_gen_q;
+    $context['cont_gen_q_addy'] = $cont_gen_q_addy;
+    $context['cont_book_q'] = $cont_book_q;
+    $context['cont_book_q_addy'] = $cont_book_q_addy;
+    $context['cont_tel'] = $cont_tel;
+    $context['cont_tel_addy'] = $cont_tel_addy;
+    $context['map_copy'] = $map_copy;
+    $context['news_header'] = $news_header;
+    $context['news_view_all'] = $news_view_all;
+    $context['news_view_url'] = $news_view_url;
+    $context['footer_text'] = $footer_text;
+
     return $context;
 });
 
