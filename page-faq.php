@@ -1,4 +1,9 @@
-<?php get_header(); ?>
+<?php
+/* Template Name: FAQ Display Page */
+
+include 'theme_variables.php';
+
+get_header(); ?>
 <?php include 'bumper_top.php'; ?>
     <div class="container nav-spacer">
         <div class="col-xs-12 col-md-12">
@@ -6,11 +11,23 @@
             <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
                 <div class="mac-page-intro"><?php the_content(); ?></div>
             <?php endwhile; endif;
+            global $post;
+            // only numbers in the page slug... to int
+            $guessYear = (int)preg_replace('/\D/', '', $post->post_name);
+            // if it's a cruise year... guess the year otherwise false
+            $guessYear = in_array($guessYear, $_ENV['cc_valid_cruise_years']) ? $guessYear : false;
+            $target_faq_year = $guessYear ? $guessYear : $cruise_year;
+            // default to current year... unless a year is in the slug
             $faq_query = new WP_Query(
                 [
                     'post_type'      => 'faq',
                     'posts_per_page' => -1,
-
+                    'meta_query'     => [
+                        [
+                            'key'   => 'faq_year',
+                            'value' => $target_faq_year,
+                        ],
+                    ],
                 ]);
             $faqs_by_header = [];
             while($faq_query->have_posts()) {

@@ -13,7 +13,7 @@ if(function_exists("register_field_group")) {
     // were created and we don't want to mess with the
     // db
     $fieldCounter = 5459;
-    $availableYears = [];
+    $availableCruiseYears = [];
     for($year = 2011; $year <= $cruise_year; $year++) {
         $artistYearAndTypeFields[] = [
             // the below is post-dec, which will dec
@@ -27,17 +27,18 @@ if(function_exists("register_field_group")) {
             'allow_null'    => 1,
             'multiple'      => 0,
         ];
-        $availableYears[] = $year;
+        $availableCruiseYears[] = $year;
     }
-    $availableYears = array_reverse($availableYears);
+    $availableCruiseYears = array_reverse($availableCruiseYears);
     $artistYearAndTypeFields = array_reverse($artistYearAndTypeFields);
     // share this for other pieces of theme
+    $_ENV['cc_valid_cruise_years'] = $availableCruiseYears;
     $_ENV['cc_artist_type_and_year_fields_desc'] = $artistYearAndTypeFields;
     $faqHeaderArrForACF = array_map(function ($val) {
         return htmlentities($val, ENT_QUOTES);
     }, $faq_section_headers_ordered);
     $faqHeaderArrForACF = array_combine($faqHeaderArrForACF, $faqHeaderArrForACF);
-    $yearArrForACF = array_combine($availableYears, $availableYears);
+    $yearArrForACF = array_combine($availableCruiseYears, $availableCruiseYears);
 
     // upgrades
     // UPDATE `wp__postmeta` SET meta_key='artist_type2016' WHERE `meta_key` LIKE 'artist_type';
