@@ -1,0 +1,25 @@
+{% extends 'page-base.twig' %}
+
+
+{% block content %}
+    <!--hero-->
+    <section id="hero" class="joco_blue">
+        <div class="container">
+            <div class="col-xs-12 col-md-12">
+                <img src="{{ template_uri }}/img/hero_JoCo_LoGo.svg" alt="A styled JoCo Cruise logotype."
+                     id="hero-joco-logo">
+            </div>
+            {% if booking_enabled %}
+                <div class="col-xs-12 col-sm-4 col-sm-offset-2">
+                    <a class="btn btn-lg btn-default hero-button"
+                       href="{{ booking_url }}">{{ hero_book_now }}</a>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <a class="btn btn-lg btn-default hero-button"
+                       href="{{ hero_already_booked_url }}">{{ hero_already_booked }}</a>
+                </div>
+            {% endif %}
+        </div>
+    </section>
+
+{% endblock %}

@@ -273,8 +273,8 @@ add_filter('timber/context', function($context) {
     $context['faq_section_headers_ordered'] = $faq_section_headers_ordered;
     $context['booking_url'] = $booking_url;
     $context['hero_book_now'] = $hero_book_now;
-    $context['booked'] = $booked;
-    $context['booked_url'] = $booked_url;
+    $context['hero_already_booked'] = $booked;
+    $context['hero_already_booked_url'] = $booked_url;
     $context['booking_enabled'] = $booking_enabled;
     $context['booking_cta'] = $booking_cta;
     $context['cruise_fb'] = $cruise_fb;

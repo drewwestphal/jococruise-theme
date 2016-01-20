@@ -1,27 +1,14 @@
-<?php include 'theme_variables.php';
-get_header(); 
+<?php
 
+$context = Timber::get_context();
+
+Timber::render('frontpage.twig', $context);
+
+return;
 ?>
 
 <section id="content" role="main">
 <!--hero-->
-	<section id="hero" class="joco_blue">
-		<div class="container">
-			<div class="col-xs-12 col-md-12">
-				<img src="<?php bloginfo('template_directory'); ?>/img/hero_JoCo_LoGo.svg" alt="A styled JoCo Cruise logotype." id="hero-joco-logo">
-			</div>
-				<?php if (isset($hero_book_now)){ ?>
-					<div class="col-xs-12 col-sm-4 col-sm-offset-2">
-						<a class="btn btn-lg btn-default hero-button" href="<?php echo $booking_url; ?>"><?php echo $hero_book_now; ?></a>
-					</div>
-				<?php };?>
-				<?php if (isset($booked)){ ?>
-					<div class="col-xs-12 col-sm-4"">
-						<a class="btn btn-lg btn-default hero-button" href="<?php echo $booked_url; ?>"><?php echo $booked; ?></a>
-					</div>
-				<?php };?>
-		</div>
-	</section>
 	<?php if (isset($travel_desc) || isset($travel_desc_more) || isset($booking_enabled)){ ?>
 	<section id="hero-about">
 		<div class="container">
