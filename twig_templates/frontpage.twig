@@ -2,7 +2,7 @@
 
 
 {% block content %}
-    <!--hero-->
+
     <section id="hero" class="joco_blue">
         <div class="container">
             <div class="col-xs-12 col-md-12">
@@ -21,5 +21,28 @@
             {% endif %}
         </div>
     </section>
+
+    {% if travel_desc or travel_desc_more %}
+        <section id="hero-about">
+            <div class="container">
+                <div class="col-xs-12 col-md-12">
+                    <p id="hero-travel-description">{{ travel_desc }}</p>
+                </div>
+                <div id="hero-travel-description-more" class="col-xs-6 col-sm-7 col-md-8 col-lg-9">
+                    <p>{{ travel_desc_more }}</p>
+                    {% if booking_enabled %}
+                        <div id="hero-booking">
+                            <a href="{{ booking_url }}" class="btn btn-lg btn-primary"
+                               id="hero-book-now">{{ booking_cta?:'Book Now' }}</a>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">
+                    <img id="hero-boat" class="img-responsive"
+                         src="{{ template_uri }}/img/hero_boat.svg" alt="An animated cruise ship">
+                </div>
+            </div>
+        </section>
+    {% endif %}
 
 {% endblock %}
