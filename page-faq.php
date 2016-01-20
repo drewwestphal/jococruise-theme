@@ -41,7 +41,7 @@ get_header(); ?>
 
             $faq_section_headers_ordered = array_map('trim', explode('|', jcctheme_get_option('mac_piped_cats')));
             $allHeadersOrdered = array_unique(array_merge($faq_section_headers_ordered, array_keys($faqs_by_header)));
-            echo $twig->render('faq.html', [
+            echo $twig->render('faq.twig', [
                 'faqs'    => $faqs_by_header,
                 'headers' => $allHeadersOrdered,
             ]);
