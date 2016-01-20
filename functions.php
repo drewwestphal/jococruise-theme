@@ -228,8 +228,6 @@ return $count;
 require_once(__DIR__.'/include/cpt.php');
 require_once(__DIR__.'/include/columns.php');
 
-// cmb2
-require_once(__DIR__.'/include/cmb2/init.php');
 // fix CMB2 include path
 add_filter('cmb2_meta_box_url', function ($url) {
     // this function is retardedly implemented on the cmb2 side...

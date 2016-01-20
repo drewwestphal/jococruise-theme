@@ -1,20 +1,30 @@
 {
-    "require": {
-        "twig/twig": "~1.0",
-        "drewwestphal/CCWPOptions": "dev-master",
-        "webdevstudios/cmb2": "2.0.*",
-        "composer/installers": "~1.0"
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/drewwestphal/CCWPOptions"
-        }
-    ],
-    "extra": {
-        "installer-paths": {
-            "include/{$name}/": ["webdevstudios/cmb2"]
-        }
+  "require": {
+    "jarednova/timber": "*",
+    "drewwestphal/CCWPOptions": "dev-master",
+    "webdevstudios/cmb2": "2.0.*",
+    "composer/installers": "~1.0"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/drewwestphal/CCWPOptions"
     }
+  ],
+  "autoload": {
+    "classmap": [
+      "vendor/plugins/timber"
+    ],
+    "files": [
+      "vendor/plugins/cmb2/init.php"
+    ]
+  },
+  "extra": {
+    "installer-paths": {
+      "vendor/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ]
+    }
+  }
 }
  
