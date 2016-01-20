@@ -1,13 +1,59 @@
-{% autoescape false %}
-    {% for header in headers %}
-        <h3 class="faq-header">{{ header }}</h3>
-        {% for faq in faqs[header] %}
-            <article class="faq-article" id="{{ faq.slug }}">
-                <span class="faq-button glyphicon glyphicon-plus"></span>
-                <a class="faq-show-hide faq-title" href="#">{{ faq.title }}</a>
+{% extends 'page-base.twig' %}
 
-                <div style="display:none" class="faq-content">{{ faq.content }}</div>
-            </article>
-        {% endfor %}
-    {% endfor %}
-{% endautoescape %}
+{% block content %}
+
+    <div class="container nav-spacer">
+        <div class="col-xs-12 col-md-12">
+            <h1>{{ post.post_title }}</h1>
+
+            <div class="mac-page-intro">
+                {{ post.content }}
+            </div>
+            {% for header, faq_items in faqs_by_header %}
+                {% if faq_items|length>0 %}
+                    <h3 class="faq-header">{{ header }}</h3>
+                    {% for faq in faq_items %}
+                        <article class="faq-article" id="{{ faq.slug }}">
+                            <span class="faq-button glyphicon glyphicon-plus"></span>
+                            <a class="faq-show-hide faq-title" href="#">{{ faq.title }}</a>
+
+                            <div style="display:none" class="faq-content">{{ faq.content }}</div>
+                        </article>
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <script src="{{ template_uri }}/js/js_behavior.js"></script>
+    <script type="text/javascript">
+        (function ($) {
+            function toggleFaq(item, animate) {
+                var mom = item.parent();
+                var bro = item.siblings('.faq-content');
+                var plus = item.siblings('span');
+                // set this now... timing will affect result later
+                var brovis = !bro.is(':visible');
+                bro.slideToggle(animate ? 200 : 0);
+                mom.toggleClass('faq-article-maximize');
+                plus.toggleClass('glyphicon-minus');
+                return mom.attr('id');
+            }
+
+            $('.faq-show-hide').click(function () {
+                history.pushState(null, null, '#' + toggleFaq($(this), true));
+                return false;
+            });
+            $('.faq-button').click(function () {
+                $(this).siblings('.faq-show-hide').click();
+            });
+            window.location.hash.length > 1 && toggleFaq($('#' + location.hash.substr(1) + ' a.faq-show-hide'), false);
+            jQuery('a').click(function () {
+                var target = jQuery(this.hash);
+                if (target.length != 0 && !target.hasClass('faq-article-maximize')) {
+                    toggleFaq($(this.hash + ' a.faq-show-hide'), false);
+                }
+            });
+        })(jQuery);
+    </script>
+{% endblock %}

@@ -109,7 +109,7 @@ function blankslate_load_scripts() {
 	 */
 
 
-    
+
     $maindeps = array(
         'bootstrapcss',
     );
@@ -128,7 +128,7 @@ function blankslate_load_scripts() {
         ),//
         1, 'screen');
     }
-    
+
 	/* STYLING DONE IN CUSTOM BOOTSTRAP
     $stylePath = __DIR__.'/css/style.css';
     wp_enqueue_style('macstyle', //
@@ -147,15 +147,15 @@ function blankslate_load_scripts() {
 		if ( wp_is_mobile() ) {
 	        wp_enqueue_script('jquery_mobile', get_template_directory_uri() . '/js/jquery.mobile.custom.min.js', array(), 1, false);
 		}
-        
+
         // this is also just for the front-end
         //bootstrap.js is dependant on jquery
         wp_enqueue_script('bootstrapjs',//
         get_template_directory_uri() . '/js/bootstrap.min.js', //
          array('jquery'), 1, false);
-		 * 
+		 *
 		 */
-        
+
     }
 
     // home directory scripts
@@ -167,7 +167,7 @@ function blankslate_load_scripts() {
         wp_localize_script('js_contact', 'js_contact_data', //
         array('contact_post_url' => get_template_directory_uri() . '/contact.php'));
     }
-    
+
     if(is_page('The Experience')) {
         wp_enqueue_script('js_experience',//
         get_template_directory_uri() . '/js/js_experience.js', //
@@ -262,8 +262,14 @@ if(!is_admin() && !is_login_page()) {
 	require_once(__DIR__.'/page-experience-gallery.php');
 }
 
+Timber::$locations = __DIR__.'/twig_templates';
+add_filter('timber/context', function($context) {
+    return $context;
+});
+
 Twig_Autoloader::register();
 
+// this for compatibility assuming we don't got timber e'rywhere
 $loader = new Twig_Loader_Filesystem(__DIR__.'/twig_templates');
 $twig = new Twig_Environment($loader, array(
 'cache' => false,//__DIR__.'/twig_cache',
