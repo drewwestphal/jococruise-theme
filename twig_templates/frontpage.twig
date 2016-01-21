@@ -4,7 +4,7 @@
 {% block content %}
     <section id="content" role="main">
 
-        <section id="hero" class="joco_blue">
+        <section id="hero" class="joco_blue {{ not booking_enabled?'booking-disable' }}">
             <div class="container">
                 <div class="col-xs-12 col-md-12">
                     <img src="{{ template_uri }}/img/hero_JoCo_LoGo.svg" alt="A styled JoCo Cruise logotype."

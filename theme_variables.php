@@ -12,7 +12,7 @@ $booking_url = jcctheme_get_option('mac_booking_url');
 $hero_book_now = jcctheme_get_option('mac_hero_book_now');
 $booked = jcctheme_get_option('mac_hero_already_booked');
 $booked_url = jcctheme_get_option('mac_hero_already_booked_url');
-$booking_enabled = jcctheme_get_option('mac_booking_enabled');
+$booking_enabled = jcctheme_get_option('mac_enable_booking');
 $booking_cta = jcctheme_get_option('mac_button_cta');
 //cruise info
 $cruise_fb = jcctheme_get_option('mac_facebook_url');

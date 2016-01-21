@@ -43,7 +43,7 @@ return [
     ],
     [
         'name'    => 'Enable booking',
-        'desc'    => '',
+        'desc'    => 'This determines wheter the two buttons show up under the header on the front page',
         'id'      => 'mac_enable_booking',
         'type'    => 'checkbox',
         'default' => false,
