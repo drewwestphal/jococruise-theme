@@ -34,6 +34,12 @@ $context['artists'] = Timber::get_posts(artistTypeQueryArray($targetArtistType, 
 $context['featured_artists'] = Timber::get_posts(artistTypeQueryArray($targetArtistType, 'featured artist'));
 $context['spotlight_items'] = Timber::get_posts(artistTypeQueryArray($targetArtistType, 'spotlight item'));
 
+$context['map_cities'] = Timber::get_posts(
+    [
+        'post_type'      => 'city',
+        'posts_per_page' => -1,
+    ], 'MapCityPost'
+);
 
 
 Timber::render('frontpage.twig', $context);
@@ -42,96 +48,6 @@ return;
 ?>
 
 <section id="content" role="main">
-    <!--about-->
-    <section id="about">
-        <?php
-
-        //get the artists
-        $args = [
-            'post_type' => 'about',
-            'orderby'   => 'ID',
-            'order'     => 'ASC',
-        ];
-        $k = 0;
-        $about_query = new WP_Query($args);
-        if($about_query->have_posts()) {
-            while($about_query->have_posts()) {
-                $about_query->the_post();
-
-                $thumb_id = get_post_thumbnail_id();
-                $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'large', true);
-                $thumb_url = $thumb_url_array[0];
-                ?>
-                <div class="about-item clearfix headers <?php if($k % 2 == 0) {
-                    echo 'right';
-                }; ?>">
-                    <div class="about-image"
-                         style="background:url('<?php echo $thumb_url; ?>') center center no-repeat;background-size: cover;"></div>
-                    <div class="about-info">
-                        <h1><?php the_title(); ?></h1>
-                        <?php if(has_excerpt()) { ?>
-                            <p><?php the_excerpt(); ?></p>
-                        <?php } else { ?>
-                            <p><?php the_content(); ?></p>
-                        <?php }; ?>
-                    </div>
-                </div>
-                <?php
-                $k++;
-            }
-        }
-
-        wp_reset_postdata();
-        ?>
-    </section>
-    <!--map-->
-    <section id="map" class="joco_beige">
-        <div class="container">
-            <div class="col-xs-12">
-                <div class="map-cities">
-                    <img src="<?php bloginfo('template_directory'); ?>/img/map.png" id="map-background">
-                    <?php //get the cities
-                    $map_width = 1650;
-                    $map_height = 860;
-                    $args = [
-                        'post_type'      => 'city',
-                        'posts_per_page' => -1,
-                    ];
-                    $cities_query = new WP_Query($args);
-
-                    if($cities_query->have_posts()) {
-                        while($cities_query->have_posts()) {
-                            $cities_query->the_post();
-
-                            include 'map-city-logic.php';
-                        }
-                    }
-                    ?>
-                </div>
-                <div class="map-info visible-xs-block visible-sm-block">
-                    <?php if(isset($map_copy)) { ?>
-                    <p id="map-copy">
-                        <?php echo $map_copy; ?>
-
-                    <p>
-                        <?php };
-                        if($cities_query->have_posts()) {
-                        while($cities_query->have_posts()) {
-                        $cities_query->the_post();
-                        ?>
-
-                    <div class="map-narrow-info headers" id="info-<?php echo $post->post_name; ?>">
-                        <span class="glyphicon glyphicon-remove"></span>
-                        <h4><?php the_title(); ?></h4>
-                        <?php the_excerpt(); ?>
-                    </div>
-                <?php }
-                } ?>
-                </div>
-                <?php wp_reset_postdata(); ?>
-            </div>
-        </div>
-    </section>
     <!--contact-->
     <section id="contact" class="joco_blue">
         <h1 id="contact-header">Contact Us</h1>
@@ -256,3 +172,47 @@ return;
 
 
     <?php include 'footer.php' ?>
+
+
+    <!--about-->
+    <section id="about">
+        <?php
+
+        //for reference... about section
+        $args = [
+            'post_type' => 'about',
+            'orderby'   => 'ID',
+            'order'     => 'ASC',
+        ];
+        $k = 0;
+        $about_query = new WP_Query($args);
+        if($about_query->have_posts()) {
+            while($about_query->have_posts()) {
+                $about_query->the_post();
+
+                $thumb_id = get_post_thumbnail_id();
+                $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'large', true);
+                $thumb_url = $thumb_url_array[0];
+                ?>
+                <div class="about-item clearfix headers <?php if($k % 2 == 0) {
+                    echo 'right';
+                }; ?>">
+                    <div class="about-image"
+                         style="background:url('<?php echo $thumb_url; ?>') center center no-repeat;background-size: cover;"></div>
+                    <div class="about-info">
+                        <h1><?php the_title(); ?></h1>
+                        <?php if(has_excerpt()) { ?>
+                            <p><?php the_excerpt(); ?></p>
+                        <?php } else { ?>
+                            <p><?php the_content(); ?></p>
+                        <?php }; ?>
+                    </div>
+                </div>
+                <?php
+                $k++;
+            }
+        }
+
+        wp_reset_postdata();
+        ?>
+    </section>

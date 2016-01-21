@@ -311,6 +311,7 @@ $twig = new Twig_Environment($loader, array(
 ));
 
 require_once(__DIR__.'/include/MaybeSensibleNavWalker.php');
+require_once(__DIR__.'/include/MapCityPost.php');
 
 
 ?>
