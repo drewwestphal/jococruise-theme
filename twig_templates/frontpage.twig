@@ -63,12 +63,7 @@
                                     this is nasty... but we are using a wp function in here to get
                                     this stuff without tags... etc
                                     #}
-                                    {{ function('setup_postdata', post)?'' }}
-                                    {% if post.post_excerpt %}
-                                        {{ function('the_excerpt') }}
-                                    {% else %}
-                                        {{ function('the_content','more...')?'':'' }}
-                                    {% endif %}
+                                    {{ post.joco_excerpt('more...') }}
                                 </div>
                             {% endfor %}
                         </div>
@@ -240,5 +235,34 @@
             </div>
         </section>
     </section>
-
+    <section id="faqs">
+        <div class="faq container">
+            <div class="faq col-xs-12 col-md-12">
+                <h1><span>Frequently Asked</span><br>Questions</h1>
+            </div>
+            <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                <div data-slick='{"slidesToShow": 1, "slidesToScroll": 1}' class="slick-element">
+                    {% for faq in front_page_faqs %}
+                        <div>
+                            <div class="faq-item-question"><a href="{{ faq_link }}#{{ faq.slug }}">{{ faq.title }}</a>
+                            </div>
+                            <div class="faq-item-answer">{{ faq.joco_excerpt() }}</div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="hidden-xs col-sm-12">
+                <div data-slick='{"slidesToShow": 3, "slidesToScroll": 1}' class="slick-element">
+                    {% for faq in front_page_faqs %}
+                        <div>
+                            <div class="faq-item-question"><a href="{{ faq_link }}#{{ faq.slug }}">{{ faq.title }}</a>
+                            </div>
+                            <div class="faq-item-answer">{{ faq.joco_excerpt() }}</div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <a id="faq-view-all" href="{{ faq_link }}">View All FAQS</a>
+        </div>
+    </section>
 {% endblock %}

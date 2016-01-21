@@ -1,6 +1,6 @@
 <?php
 
-class MapCityPost extends TimberPost {
+class MapCityPost extends JoCoCruisePost {
     public function left_position($map_width) {
         return ($this->get_field('city_x_position') / $map_width) * 100;
     }
