@@ -232,7 +232,7 @@ require_once(__DIR__.'/include/columns.php');
 add_filter('cmb2_meta_box_url', function ($url) {
     // this function is retardedly implemented on the cmb2 side...
     // gives me great faith in the rest of their work!
-    return get_template_directory_uri() . '/include/cmb2';
+    return get_template_directory_uri() . '/vendor/plugins/cmb2';
 });
 
 require_once __DIR__.'/vendor/autoload.php';
