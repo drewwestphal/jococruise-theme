@@ -15,17 +15,6 @@ return;
 ?>
 
 <section id="content" role="main">
-    <!--news-->
-    <?php $n = 0;
-    $news_args = [
-        'post_type'           => 'post',
-        'posts_per_page'      => 5,
-        'ignore_sticky_posts' => 1,
-    ];
-    $news_query = new WP_Query($news_args);
-    $news_count = $news_query->post_count;
-
-    ?>
     <!--mailing list-->
     <?php if(function_exists('mc4wp_form')) { ?>
         <section id="mailing-list" class="headers joco_beige">
