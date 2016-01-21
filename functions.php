@@ -288,7 +288,6 @@ add_filter('timber/context', function($context) {
     $context['cruise_rss'] = $cruise_rss;
     $context['travel_desc'] = $travel_desc;
     $context['travel_desc_more'] = $travel_desc_more;
-    $context['mailing_cta'] = $mailing_cta;
     $context['cont_gen_q'] = $cont_gen_q;
     $context['cont_gen_q_addy'] = $cont_gen_q_addy;
     $context['cont_book_q'] = $cont_book_q;
@@ -301,6 +300,7 @@ add_filter('timber/context', function($context) {
     $context['news_view_url'] = $news_view_url;
     $context['footer_text'] = $footer_text;
 
+    $context['mailing_cta'] = transform_piped_header(jcctheme_get_option('mac_mailing_list_cta'));
     $context['talent_header'] = transform_piped_header(jcctheme_get_option('mac_talent_header'));
     $context['talent_intro_para'] = jcctheme_get_option('mac_talent_intro_para');
     $context['talent_year'] = jcctheme_get_option('mac_talent_year');

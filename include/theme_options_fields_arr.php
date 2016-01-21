@@ -98,10 +98,10 @@ return [
     ],
     [
         'name'    => 'Mailing List Call to Action',
-        'desc'    => '',
+        'desc'    => 'split lines with pipe (|)',
         'id'      => 'mac_mailing_list_cta',
         'type'    => 'textarea_small',
-        'default' => false,
+        'default' => 'Join the | JoCo Cruise Mailing List',
     ],
     [
         'name'    => 'Link to Facebook Page',
