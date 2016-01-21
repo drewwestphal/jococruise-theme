@@ -1,7 +1,7 @@
 <?php
 
 $context = Timber::get_context();
-$cruise_year = $context['cruise_year'];
+$cruise_year = $context['talent_year'];
 
 $context['news_posts'] = $news_posts = Timber::get_posts(
     [

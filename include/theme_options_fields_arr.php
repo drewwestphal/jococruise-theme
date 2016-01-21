@@ -14,6 +14,13 @@ return array(
         'default' => false,
     ),
     array(
+        'name' => 'Talent Year',
+        'desc' => 'Which year worth of talent should we load on the front page?',
+        'id' => 'mac_talent_year',
+        'type' => 'text_small',
+        'default' => false,
+    ),
+    array(
         'name' => 'Enable booking',
         'desc' => '',
         'id' => 'mac_enable_booking',

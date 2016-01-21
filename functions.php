@@ -299,6 +299,8 @@ add_filter('timber/context', function($context) {
     $context['news_view_url'] = $news_view_url;
     $context['footer_text'] = $footer_text;
 
+    $context['talent_year'] = jcctheme_get_option('mac_talent_year');
+
     return $context;
 });
 
