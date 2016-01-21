@@ -41,13 +41,26 @@ $context['map_cities'] = Timber::get_posts(
     ], 'MapCityPost'
 );
 
+$context['front_page_faqs'] = Timber::get_posts(
+    [
+        'post_type'  => 'faq',
+        'orderby'    => 'ID',
+        'order'      => 'ASC',
+        'meta_query' => [
+            [
+                'key'     => 'show_on_front_page',
+                'value'   => '"show on front page"',
+                'compare' => 'LIKE',
+            ],
+        ],
+    ]);
+
 
 Timber::render('frontpage.twig', $context);
 
 return;
 ?>
 
-<section id="content" role="main">
     <!-- faq -->
     <div class="faq container">
         <div class="faq col-xs-12 col-md-12">

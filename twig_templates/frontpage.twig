@@ -2,242 +2,243 @@
 
 
 {% block content %}
+    <section id="content" role="main">
 
-    <section id="hero" class="joco_blue">
-        <div class="container">
-            <div class="col-xs-12 col-md-12">
-                <img src="{{ template_uri }}/img/hero_JoCo_LoGo.svg" alt="A styled JoCo Cruise logotype."
-                     id="hero-joco-logo">
-            </div>
-            {% if booking_enabled %}
-                <div class="col-xs-12 col-sm-4 col-sm-offset-2">
-                    <a class="btn btn-lg btn-default hero-button"
-                       href="{{ booking_url }}">{{ hero_book_now }}</a>
-                </div>
-                <div class="col-xs-12 col-sm-4">
-                    <a class="btn btn-lg btn-default hero-button"
-                       href="{{ hero_already_booked_url }}">{{ hero_already_booked }}</a>
-                </div>
-            {% endif %}
-        </div>
-    </section>
-
-    {% if travel_desc or travel_desc_more %}
-        <section id="hero-about">
+        <section id="hero" class="joco_blue">
             <div class="container">
                 <div class="col-xs-12 col-md-12">
-                    <p id="hero-travel-description">{{ travel_desc }}</p>
+                    <img src="{{ template_uri }}/img/hero_JoCo_LoGo.svg" alt="A styled JoCo Cruise logotype."
+                         id="hero-joco-logo">
                 </div>
-                <div id="hero-travel-description-more" class="col-xs-6 col-sm-7 col-md-8 col-lg-9">
-                    <p>{{ travel_desc_more }}</p>
-                    {% if booking_enabled %}
-                        <div id="hero-booking">
-                            <a href="{{ booking_url }}" class="btn btn-lg btn-primary"
-                               id="hero-book-now">{{ booking_cta?:'Book Now' }}</a>
-                        </div>
-                    {% endif %}
-                </div>
-                <div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">
-                    <img id="hero-boat" class="img-responsive"
-                         src="{{ template_uri }}/img/hero_boat.svg" alt="An animated cruise ship">
-                </div>
+                {% if booking_enabled %}
+                    <div class="col-xs-12 col-sm-4 col-sm-offset-2">
+                        <a class="btn btn-lg btn-default hero-button"
+                           href="{{ booking_url }}">{{ hero_book_now }}</a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <a class="btn btn-lg btn-default hero-button"
+                           href="{{ hero_already_booked_url }}">{{ hero_already_booked }}</a>
+                    </div>
+                {% endif %}
             </div>
         </section>
-    {% endif %}
 
-    {% if show_news %}
-        <section id="news" class="headers joco_blue">
-            <div class="container">
-                <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-                    <div id="news-header">
-                        <h1>{{ news_header }}</h1>
+        {% if travel_desc or travel_desc_more %}
+            <section id="hero-about">
+                <div class="container">
+                    <div class="col-xs-12 col-md-12">
+                        <p id="hero-travel-description">{{ travel_desc }}</p>
                     </div>
-                    <div id="news-container" class="slick-element">
-                        {% for post in news_posts %}
-                            <div class="news-item">
+                    <div id="hero-travel-description-more" class="col-xs-6 col-sm-7 col-md-8 col-lg-9">
+                        <p>{{ travel_desc_more }}</p>
+                        {% if booking_enabled %}
+                            <div id="hero-booking">
+                                <a href="{{ booking_url }}" class="btn btn-lg btn-primary"
+                                   id="hero-book-now">{{ booking_cta?:'Book Now' }}</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">
+                        <img id="hero-boat" class="img-responsive"
+                             src="{{ template_uri }}/img/hero_boat.svg" alt="An animated cruise ship">
+                    </div>
+                </div>
+            </section>
+        {% endif %}
 
-                                <a class="news-item-title"
-                                   href="{{ post.permalink }}"><span>{{ post.title }}</span></a>
-                                {#
-                                this is nasty... but we are using a wp function in here to get
-                                this stuff without tags... etc
-                                #}
-                                {{ function('setup_postdata', post)?'' }}
-                                {% if post.post_excerpt %}
-                                    {{ function('the_excerpt') }}
-                                {% else %}
-                                    {{ function('the_content','more...')?'':'' }}
-                                {% endif %}
+        {% if show_news %}
+            <section id="news" class="headers joco_blue">
+                <div class="container">
+                    <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+                        <div id="news-header">
+                            <h1>{{ news_header }}</h1>
+                        </div>
+                        <div id="news-container" class="slick-element">
+                            {% for post in news_posts %}
+                                <div class="news-item">
+
+                                    <a class="news-item-title"
+                                       href="{{ post.permalink }}"><span>{{ post.title }}</span></a>
+                                    {#
+                                    this is nasty... but we are using a wp function in here to get
+                                    this stuff without tags... etc
+                                    #}
+                                    {{ function('setup_postdata', post)?'' }}
+                                    {% if post.post_excerpt %}
+                                        {{ function('the_excerpt') }}
+                                    {% else %}
+                                        {{ function('the_content','more...')?'':'' }}
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                        {% if news_posts|length>0 %}
+                            <a id="news-view-all" href="{{ news_view_url }}">{{ news_view_all }}</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </section>
+        {% endif %}
+
+        {% if show_mailing_list %}
+            <section id="mailing-list" class="headers joco_beige">
+                <div class="container">
+                    <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+                        <h1>{{ mailing_cta }}</h1>
+                        {{ function('mc4wp_form') }}
+                    </div>
+                </div>
+            </section>
+        {% endif %}
+
+        <section id="artists" class="headers">
+            <div class="container">
+                <div class="col-xs-12">
+                    <div id="artists-header">
+                        <img src="{{ template_uri }}/img/artist_divider.svg" class="img-responsive">
+
+                        <h1>{{ artists_header }}</h1>
+                    </div>
+                </div>
+                <div class="clearfix col-xs-12">
+                    <h3 class="slant_header">
+                        <span>2016</span><br/>Performers
+                    </h3>
+                </div>
+                {% include 'artists_frontpage.twig' with {'artists':artists} %}
+                <div class="clearfix col-xs-12">
+                    <h3 class="slant_header">
+                        <span>2016</span><br/>Featured Guests
+                    </h3>
+                </div>
+                {% include 'artists_frontpage.twig' with {'artists':featured_artists} %}
+                <div class="clearfix col-xs-12">
+                    <h3 class="slant_header"><span>Plus</span><br>Even More!</h3>
+                </div>
+                {% include 'artists_frontpage.twig' with {'artists':spotlight_items} %}
+                <div class="clearfix"></div>
+            </div>
+        </section>
+
+        <section id="map" class="joco_beige">
+            <div class="container">
+                <div class="col-xs-12">
+                    <div class="map-cities">
+                        <img src="{{ template_uri }}/img/map.png" id="map-background">
+                        {% set map_width=1650 %}
+                        {% set map_height=860 %}
+                        {% for city in map_cities %}
+
+                            <div class="map-city" id="{{ city.post_name }}"
+                                 style="left:{{ city.left_position(map_width) }}%; top:{{ city.top_position(map_height) }}%;">
+                                <h1 class="{{ city.title_down_under()?'down' }}">{{ city.title }}</h1>
+                                <span class="glyphicon glyphicon-plus point" aria-hidden="true"></span>
+
+                                <div class="map-city-about hidden-xs hidden-sm {{ city.title_down_under()?'up' }} {{ city.info_down_under()?'info-up' }}">
+                                    <span>{{ city.title }}</span>{{ city.content }}</div>
                             </div>
                         {% endfor %}
+
                     </div>
-                    {% if news_posts|length>0 %}
-                        <a id="news-view-all" href="{{ news_view_url }}">{{ news_view_all }}</a>
-                    {% endif %}
+                    <div class="map-info visible-xs-block visible-sm-block">
+                        <p id="map-copy">
+                            {{ map_copy }}
+                        </p>
+                        {% for city in map_cities %}
+
+                            <div class="map-narrow-info headers" id="info-{{ city.post_name }}">
+                                <span class="glyphicon glyphicon-remove"></span>
+                                <h4>{{ city.title }}</h4>
+
+                                <p>{{ city.get_preview() }}</p>
+                            </div>
+
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </section>
-    {% endif %}
 
-    {% if show_mailing_list %}
-        <section id="mailing-list" class="headers joco_beige">
+        <!--contact-->
+        <section id="contact" class="joco_blue">
+            <h1 id="contact-header">Contact Us</h1>
+
             <div class="container">
-                <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-                    <h1>{{ mailing_cta }}</h1>
-                    {{ function('mc4wp_form') }}
+                <div class="col-xs-12 col-sm-6 col-md-5 headers">
+                    {% if cont_gen_q_addy %}
+                        <div class="contact-info-group">
+                            <div class="contact-icon" id="contact-icon-info">
+                                <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                            </div>
+                            <div class="contact-text headers">
+                                <h5>{{ cont_gen_q }}</h5>
+                                <a href="mailto: {{ cont_gen_q_addy }}">{{ cont_gen_q_addy }}</a>
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% if cont_book_q_addy %}
+
+                        <div class="contact-info-group">
+                            <div class="contact-icon" id="contact-icon-booking">
+                                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                            </div>
+                            <div class="contact-text headers">
+                                <h5>{{ cont_book_q }}</h5>
+                                <a href="mailto: {{ cont_book_q_addy }}">{{ cont_book_q_addy }}</a>
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% if cont_tel_addy %}
+                        <div class="contact-info-group">
+                            <div class="contact-icon" id="contact-icon-phone">
+                                <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+                            </div>
+                            <div class="contact-text headers">
+                                <h5>{{ cont_tel }}</h5>
+                                {{ cont_tel_addy }}
+                            </div>
+                        </div>
+                    {% endif %}
+                    <div class="contact-info-group contact-social">
+                        {% if cruise_fb %}
+                            <a href="{{ cruise_fb }}" class="contact-social-icon facebook" target="_blank"></a>
+                        {% endif %}
+                        {% if cruise_twitter %}
+                            <a href="{{ cruise_twitter }}" class="contact-social-icon twitter" target="_blank"></a>
+                        {% endif %}
+                        {% if cruise_rss %}
+                            <a href="{{ cruise_rss }}" class="contact-social-icon rss" target="_blank"></a>
+                        {% endif %}
+                    </div>
+                </div>
+                <div id="contact-form-container" class="col-xs-12 col-sm-6 col-md-7">
+                    <form name="form" action="{{ template_uri }}/contact.php" method="post"
+                          id="contact-form" novalidate class="clearfix">
+                        <div class="contact-input" id="contact-input-email">
+                            <input name="email" type="email" id="email" placeholder="your email address*">
+                        </div>
+                        <div class="contact-input" id="contact-input-name">
+                            <input type="text" id="name" name="name" placeholder="your name*">
+                        </div>
+                        <input type="text" id="honeypot" name="honeypot" aria-hidden="true"
+                               placeholder="Please leave blank.">
+
+                        <div class="contact-comments" id="contact-comments">
+                            <textarea name="comments" id="comments" placeholder="your message*"></textarea>
+                        </div>
+                        <div style="width:75%; margin:auto;">
+                            <div class="recaptcha-container">
+                                <div class="g-recaptcha" data-sitekey="6LdDyQUTAAAAAHpsqVuzy36d-8y5w7y7jyPvXE_d"
+                                     data-theme="dark"></div>
+                            </div>
+                            <button id="contact-button" class="btn btn-lg btn-info contact-button" type="submit"
+                                    value="Submit">Submit
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>
-    {% endif %}
-
-    <section id="artists" class="headers">
-        <div class="container">
-            <div class="col-xs-12">
-                <div id="artists-header">
-                    <img src="{{ template_uri }}/img/artist_divider.svg" class="img-responsive">
-
-                    <h1>{{ artists_header }}</h1>
-                </div>
-            </div>
-            <div class="clearfix col-xs-12">
-                <h3 class="slant_header">
-                    <span>2016</span><br/>Performers
-                </h3>
-            </div>
-            {% include 'artists_frontpage.twig' with {'artists':artists} %}
-            <div class="clearfix col-xs-12">
-                <h3 class="slant_header">
-                    <span>2016</span><br/>Featured Guests
-                </h3>
-            </div>
-            {% include 'artists_frontpage.twig' with {'artists':featured_artists} %}
-            <div class="clearfix col-xs-12">
-                <h3 class="slant_header"><span>Plus</span><br>Even More!</h3>
-            </div>
-            {% include 'artists_frontpage.twig' with {'artists':spotlight_items} %}
-            <div class="clearfix"></div>
-        </div>
-    </section>
-
-    <section id="map" class="joco_beige">
-        <div class="container">
-            <div class="col-xs-12">
-                <div class="map-cities">
-                    <img src="{{ template_uri }}/img/map.png" id="map-background">
-                    {% set map_width=1650 %}
-                    {% set map_height=860 %}
-                    {% for city in map_cities %}
-
-                        <div class="map-city" id="{{ city.post_name }}"
-                             style="left:{{ city.left_position(map_width) }}%; top:{{ city.top_position(map_height) }}%;">
-                            <h1 class="{{ city.title_down_under()?'down' }}">{{ city.title }}</h1>
-                            <span class="glyphicon glyphicon-plus point" aria-hidden="true"></span>
-
-                            <div class="map-city-about hidden-xs hidden-sm {{ city.title_down_under()?'up' }} {{ city.info_down_under()?'info-up' }}">
-                                <span>{{ city.title }}</span>{{ city.content }}</div>
-                        </div>
-                    {% endfor %}
-
-                </div>
-                <div class="map-info visible-xs-block visible-sm-block">
-                    <p id="map-copy">
-                        {{ map_copy }}
-                    </p>
-                    {% for city in map_cities %}
-
-                        <div class="map-narrow-info headers" id="info-{{ city.post_name }}">
-                            <span class="glyphicon glyphicon-remove"></span>
-                            <h4>{{ city.title }}</h4>
-
-                            <p>{{ city.get_preview() }}</p>
-                        </div>
-
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="content" role="main">
-    <!--contact-->
-    <section id="contact" class="joco_blue">
-        <h1 id="contact-header">Contact Us</h1>
-
-        <div class="container">
-            <div class="col-xs-12 col-sm-6 col-md-5 headers">
-                {% if cont_gen_q_addy %}
-                    <div class="contact-info-group">
-                        <div class="contact-icon" id="contact-icon-info">
-                            <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-                        </div>
-                        <div class="contact-text headers">
-                            <h5>{{ cont_gen_q }}</h5>
-                            <a href="mailto: {{ cont_gen_q_addy }}">{{ cont_gen_q_addy }}</a>
-                        </div>
-                    </div>
-                {% endif %}
-                {% if cont_book_q_addy %}
-
-                    <div class="contact-info-group">
-                        <div class="contact-icon" id="contact-icon-booking">
-                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                        </div>
-                        <div class="contact-text headers">
-                            <h5>{{ cont_book_q }}</h5>
-                            <a href="mailto: {{ cont_book_q_addy }}">{{ cont_book_q_addy }}</a>
-                        </div>
-                    </div>
-                {% endif %}
-                {% if cont_tel_addy %}
-                    <div class="contact-info-group">
-                        <div class="contact-icon" id="contact-icon-phone">
-                            <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
-                        </div>
-                        <div class="contact-text headers">
-                            <h5>{{ cont_tel }}</h5>
-                            {{ cont_tel_addy }}
-                        </div>
-                    </div>
-                {% endif %}
-                <div class="contact-info-group contact-social">
-                    {% if cruise_fb %}
-                        <a href="{{ cruise_fb }}" class="contact-social-icon facebook" target="_blank"></a>
-                    {% endif %}
-                    {% if cruise_twitter %}
-                        <a href="{{ cruise_twitter }}" class="contact-social-icon twitter" target="_blank"></a>
-                    {% endif %}
-                    {% if cruise_rss %}
-                        <a href="{{ cruise_rss }}" class="contact-social-icon rss" target="_blank"></a>
-                    {% endif %}
-                </div>
-            </div>
-            <div id="contact-form-container" class="col-xs-12 col-sm-6 col-md-7">
-                <form name="form" action="{{ template_uri }}/contact.php" method="post"
-                      id="contact-form" novalidate class="clearfix">
-                    <div class="contact-input" id="contact-input-email">
-                        <input name="email" type="email" id="email" placeholder="your email address*">
-                    </div>
-                    <div class="contact-input" id="contact-input-name">
-                        <input type="text" id="name" name="name" placeholder="your name*">
-                    </div>
-                    <input type="text" id="honeypot" name="honeypot" aria-hidden="true"
-                           placeholder="Please leave blank.">
-
-                    <div class="contact-comments" id="contact-comments">
-                        <textarea name="comments" id="comments" placeholder="your message*"></textarea>
-                    </div>
-                    <div style="width:75%; margin:auto;">
-                        <div class="recaptcha-container">
-                            <div class="g-recaptcha" data-sitekey="6LdDyQUTAAAAAHpsqVuzy36d-8y5w7y7jyPvXE_d"
-                                 data-theme="dark"></div>
-                        </div>
-                        <button id="contact-button" class="btn btn-lg btn-info contact-button" type="submit"
-                                value="Submit">Submit
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
     </section>
 
 {% endblock %}
