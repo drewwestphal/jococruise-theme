@@ -18,12 +18,8 @@ class JoCoCruisePost extends TimberPost {
     }
 
     // for compatibility
-    public function joco_thumbnail_markup() {
-        $prev = $GLOBALS['post'];
-        //https://codex.wordpress.org/Function_Reference/setup_postdata
-        setup_postdata($GLOBALS['post'] =& $this);
-        echo get_the_post_thumbnail();
-        setup_postdata($GLOBALS['post'] =& $prev);
+    public function joco_thumbnail_markup($size = 'post-thumbnail') {
+        echo get_the_post_thumbnail($this);
     }
 }
 
