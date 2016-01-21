@@ -148,6 +148,7 @@
                         <div class="map-narrow-info headers" id="info-{{ city.post_name }}">
                             <span class="glyphicon glyphicon-remove"></span>
                             <h4>{{ city.title }}</h4>
+
                             <p>{{ city.get_preview() }}</p>
                         </div>
 
@@ -157,6 +158,86 @@
         </div>
     </section>
 
+    <section id="content" role="main">
+    <!--contact-->
+    <section id="contact" class="joco_blue">
+        <h1 id="contact-header">Contact Us</h1>
 
+        <div class="container">
+            <div class="col-xs-12 col-sm-6 col-md-5 headers">
+                {% if cont_gen_q_addy %}
+                    <div class="contact-info-group">
+                        <div class="contact-icon" id="contact-icon-info">
+                            <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                        </div>
+                        <div class="contact-text headers">
+                            <h5>{{ cont_gen_q }}</h5>
+                            <a href="mailto: {{ cont_gen_q_addy }}">{{ cont_gen_q_addy }}</a>
+                        </div>
+                    </div>
+                {% endif %}
+                {% if cont_book_q_addy %}
+
+                    <div class="contact-info-group">
+                        <div class="contact-icon" id="contact-icon-booking">
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                        </div>
+                        <div class="contact-text headers">
+                            <h5>{{ cont_book_q }}</h5>
+                            <a href="mailto: {{ cont_book_q_addy }}">{{ cont_book_q_addy }}</a>
+                        </div>
+                    </div>
+                {% endif %}
+                {% if cont_tel_addy %}
+                    <div class="contact-info-group">
+                        <div class="contact-icon" id="contact-icon-phone">
+                            <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+                        </div>
+                        <div class="contact-text headers">
+                            <h5>{{ cont_tel }}</h5>
+                            {{ cont_tel_addy }}
+                        </div>
+                    </div>
+                {% endif %}
+                <div class="contact-info-group contact-social">
+                    {% if cruise_fb %}
+                        <a href="{{ cruise_fb }}" class="contact-social-icon facebook" target="_blank"></a>
+                    {% endif %}
+                    {% if cruise_twitter %}
+                        <a href="{{ cruise_twitter }}" class="contact-social-icon twitter" target="_blank"></a>
+                    {% endif %}
+                    {% if cruise_rss %}
+                        <a href="{{ cruise_rss }}" class="contact-social-icon rss" target="_blank"></a>
+                    {% endif %}
+                </div>
+            </div>
+            <div id="contact-form-container" class="col-xs-12 col-sm-6 col-md-7">
+                <form name="form" action="{{ template_uri }}/contact.php" method="post"
+                      id="contact-form" novalidate class="clearfix">
+                    <div class="contact-input" id="contact-input-email">
+                        <input name="email" type="email" id="email" placeholder="your email address*">
+                    </div>
+                    <div class="contact-input" id="contact-input-name">
+                        <input type="text" id="name" name="name" placeholder="your name*">
+                    </div>
+                    <input type="text" id="honeypot" name="honeypot" aria-hidden="true"
+                           placeholder="Please leave blank.">
+
+                    <div class="contact-comments" id="contact-comments">
+                        <textarea name="comments" id="comments" placeholder="your message*"></textarea>
+                    </div>
+                    <div style="width:75%; margin:auto;">
+                        <div class="recaptcha-container">
+                            <div class="g-recaptcha" data-sitekey="6LdDyQUTAAAAAHpsqVuzy36d-8y5w7y7jyPvXE_d"
+                                 data-theme="dark"></div>
+                        </div>
+                        <button id="contact-button" class="btn btn-lg btn-info contact-button" type="submit"
+                                value="Submit">Submit
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
 
 {% endblock %}
