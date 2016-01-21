@@ -1,6 +1,8 @@
 <?php
 
 $context = Timber::get_context();
+$cruise_year = $context['cruise_year'];
+
 $context['news_posts'] = $news_posts = Timber::get_posts(
     [
         'post_type'           => 'post',
@@ -9,75 +11,37 @@ $context['news_posts'] = $news_posts = Timber::get_posts(
     ]);
 $context['show_news'] = (bool)count($news_posts);
 $context['show_mailing_list'] = function_exists('mc4wp_form');
+
+$targetArtistType = 'artist_type' . $cruise_year;
+
+function artistTypeQueryArray($key, $value) {
+    return
+        [
+            'post_type'      => 'artist',
+            'posts_per_page' => -1,
+            'order'          => 'ASC',
+            'meta_query'     => [
+                [
+                    'key'   => $key,
+                    'value' => $value,
+                ],
+            ],
+        ];
+}
+
+
+$context['artists'] = Timber::get_posts(artistTypeQueryArray($targetArtistType, 'artist'));
+$context['featured_artists'] = Timber::get_posts(artistTypeQueryArray($targetArtistType, 'featured artist'));
+$context['spotlight_items'] = Timber::get_posts(artistTypeQueryArray($targetArtistType, 'spotlight item'));
+
+
+
 Timber::render('frontpage.twig', $context);
 
 return;
 ?>
 
 <section id="content" role="main">
-    <!--artists-->
-    <section id="artists" class="headers">
-        <div class="container">
-            <div class="col-xs-12">
-                <div id="artists-header">
-                    <img src="<?php bloginfo('template_directory'); ?>/img/artist_divider.svg" class="img-responsive">
-                    <?php if(strlen($artists_header) > 0) { ?>
-                        <h1><?php echo $artists_header; ?></h1>
-                    <?php }; ?>
-                </div>
-            </div>
-            <?php
-            $artist_types = [
-                'artist'          => "<span>$cruise_year</span><br />Performers",
-                'featured artist' => "<span>$cruise_year</span><br />Featured Guests",
-                'spotlight item'  => "<span>Plus</span><br />Even More!",
-            ];
-            $targetArtistType = 'artist_type' . $cruise_year;
-            //get the artists
-            foreach($artist_types as $artist_type_value => $artist_type_title) {
-                $args = [
-                    'post_type'      => 'artist',
-                    'posts_per_page' => -1,
-                    'order'          => 'ASC',
-                    'meta_query'     => [
-                        [
-                            'key'   => $targetArtistType,
-                            'value' => $artist_type_value,
-                        ],
-                    ],
-                ];
-                $artist_query = new WP_Query($args);
-                if($artist_query->have_posts()) {
-                    $artists = [];
-                    while($artist_query->have_posts()) {
-                        $artist_query->the_post();
-                        $artists[] = [
-                            'title'    => get_the_title(),
-                            'link'     => get_the_permalink(),
-                            'image'    => get_the_post_thumbnail(),
-                            'subtitle' => the_field('artist_subtitle'),
-                        ];
-                    }
-                    echo $twig->render('artists_frontpage.html', [
-                        'title'   => $artist_type_title,
-                        'artists' => $artists,
-                    ]);
-                }
-                wp_reset_postdata();
-            }
-            ?>
-            <div class="clearfix"></div>
-            <?php
-            $coming_soon = "More performers and guests TBA; watch this space for further announcements.";
-            if(get_page_by_path("coming-soon")) {
-                $coming_soon = get_page_by_path("coming-soon")->post_content;
-            }
-            if($coming_soon != "") {
-                echo "<div id='coming_soon'>" . $coming_soon . "</div>";
-            }
-            ?>
-        </div>
-    </section>
     <!--about-->
     <section id="about">
         <?php

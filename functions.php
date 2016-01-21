@@ -263,6 +263,8 @@ if(!is_admin() && !is_login_page()) {
 }
 
 Timber::$locations = __DIR__.'/twig_templates';
+Timber::$cache = false;
+
 add_filter('timber/context', function($context) {
     include __DIR__.'/theme_variables.php';
 

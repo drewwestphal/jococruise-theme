@@ -90,6 +90,34 @@
         </section>
     {% endif %}
 
+    <section id="artists" class="headers">
+        <div class="container">
+            <div class="col-xs-12">
+                <div id="artists-header">
+                    <img src="{{ template_uri }}/img/artist_divider.svg" class="img-responsive">
+
+                    <h1>{{ artists_header }}</h1>
+                </div>
+            </div>
+            <div class="clearfix col-xs-12">
+                <h3 class="slant_header">
+                    <span>2016</span><br/>Performers
+                </h3>
+            </div>
+            {% include 'artists_frontpage.twig' with {'artists':artists} %}
+            <div class="clearfix col-xs-12">
+                <h3 class="slant_header">
+                    <span>2016</span><br/>Featured Guests
+                </h3>
+            </div>
+            {% include 'artists_frontpage.twig' with {'artists':featured_artists} %}
+            <div class="clearfix col-xs-12">
+                <h3 class="slant_header"><span>Plus</span><br>Even More!</h3>
+            </div>
+            {% include 'artists_frontpage.twig' with {'artists':spotlight_items} %}
+            <div class="clearfix"></div>
+        </div>
+    </section>
 
 
 {% endblock %}
