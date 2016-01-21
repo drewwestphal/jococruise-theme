@@ -79,4 +79,17 @@
         </section>
     {% endif %}
 
+    {% if show_mailing_list %}
+        <section id="mailing-list" class="headers joco_beige">
+            <div class="container">
+                <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+                    <h1>{{ mailing_cta }}</h1>
+                    {{ function('mc4wp_form') }}
+                </div>
+            </div>
+        </section>
+    {% endif %}
+
+
+
 {% endblock %}
