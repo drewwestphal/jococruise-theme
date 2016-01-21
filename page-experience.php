@@ -76,13 +76,6 @@ $context['featured_events'] = Timber::get_posts(
 
 // INTRO POST
 
-// modified header
-$introPostHeaderImageTag =
-    sprintf('<image src="%s" alt="JoCo Cruise" id="what-is-logo"/> ', get_template_directory_uri() .
-                                                                      '/img/WhatIs_JoCo_LoGo.svg');
-$introPostHeaderParsed = $introPost->post_title;
-$introPostHeaderParsed = str_ireplace('JoCo Cruise', $introPostHeaderImageTag, $introPostHeaderParsed);
-$context['exp_intro_parsed_header'] = $introPostHeaderParsed;
 
 Timber::render('the-experience.twig', $context);
 

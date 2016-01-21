@@ -21,6 +21,15 @@ class JoCoCruisePost extends TimberPost {
     public function joco_thumbnail_markup($size = 'post-thumbnail') {
         echo get_the_post_thumbnail($this);
     }
+
+    public function joco_cruise_to_image_in_title() {
+        // modified header
+        $introPostHeaderImageTag =
+            sprintf('<image src="%s" alt="JoCo Cruise" id="what-is-logo"/> ', get_template_directory_uri() .
+                                                                              '/img/WhatIs_JoCo_LoGo.svg');
+        $introPostHeaderParsed = $this->post_title;
+        return str_ireplace('JoCo Cruise', $introPostHeaderImageTag, $introPostHeaderParsed);
+    }
 }
 
 
