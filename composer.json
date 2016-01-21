@@ -3,7 +3,8 @@
     "jarednova/timber": "*",
     "drewwestphal/CCWPOptions": "dev-master",
     "webdevstudios/cmb2": "2.0.*",
-    "composer/installers": "~1.0"
+    "composer/installers": "~1.0",
+    "erusev/parsedown-extra": "dev-master"
   },
   "repositories": [
     {

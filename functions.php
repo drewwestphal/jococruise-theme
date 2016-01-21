@@ -265,7 +265,7 @@ if(!is_admin() && !is_login_page()) {
 Timber::$locations = __DIR__.'/twig_templates';
 Timber::$cache = false;
 
-function transform_perf_header($header){
+function transform_piped_header($header){
     $pcs = explode('|',$header);
     return "<span>$pcs[0]</span><br/>$pcs[1]";
 }
@@ -289,8 +289,6 @@ add_filter('timber/context', function($context) {
     $context['travel_desc'] = $travel_desc;
     $context['travel_desc_more'] = $travel_desc_more;
     $context['mailing_cta'] = $mailing_cta;
-    $context['artists_header'] = $artists_header;
-    $context['artists_more'] = $artists_more;
     $context['cont_gen_q'] = $cont_gen_q;
     $context['cont_gen_q_addy'] = $cont_gen_q_addy;
     $context['cont_book_q'] = $cont_book_q;
@@ -303,13 +301,23 @@ add_filter('timber/context', function($context) {
     $context['news_view_url'] = $news_view_url;
     $context['footer_text'] = $footer_text;
 
+    $context['talent_header'] = transform_piped_header(jcctheme_get_option('mac_talent_header'));
+    $context['talent_intro_para'] = jcctheme_get_option('mac_talent_intro_para');
     $context['talent_year'] = jcctheme_get_option('mac_talent_year');
-    $context['performer_header'] = transform_perf_header(jcctheme_get_option('mac_performer_header'));
-    $context['featuredguest_header'] = transform_perf_header(jcctheme_get_option('mac_featuredguest_header'));
-    $context['evenmore_header'] = transform_perf_header(jcctheme_get_option('mac_evenmore_header'));
+    $context['performer_header'] = transform_piped_header(jcctheme_get_option('mac_performer_header'));
+    $context['featuredguest_header'] = transform_piped_header(jcctheme_get_option('mac_featuredguest_header'));
+    $context['evenmore_header'] = transform_piped_header(jcctheme_get_option('mac_evenmore_header'));
 
     return $context;
 });
+
+add_filter('timber/twig/filters', function (\Twig_Environment $twig) {
+    $twig->addFilter(new \Twig_SimpleFilter('markdown', function ($string) {
+        return \ParsedownExtra::instance()->parse($string);
+    }));
+    return $twig;
+}, 10, 3);
+
 
 Twig_Autoloader::register();
 

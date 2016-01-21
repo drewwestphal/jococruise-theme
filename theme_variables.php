@@ -21,9 +21,6 @@ $cruise_rss = jcctheme_get_option('mac_feed_url');
 $travel_desc = jcctheme_get_option('mac_travel_description');
 $travel_desc_more = jcctheme_get_option('mac_travel_description_more');
 $mailing_cta = jcctheme_get_option('mac_mailing_list_cta');
-//artists
-$artists_header = jcctheme_get_option('mac_talent_header');
-$artists_more = jcctheme_get_option('mac_enable_more');
 //contact
 $cont_gen_q = jcctheme_get_option('mac_general_questions_header');
 $cont_gen_q_addy = jcctheme_get_option('mac_general_questions_address_header');
