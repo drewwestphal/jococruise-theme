@@ -265,6 +265,10 @@ if(!is_admin() && !is_login_page()) {
 Timber::$locations = __DIR__.'/twig_templates';
 Timber::$cache = false;
 
+function transform_perf_header($header){
+    $pcs = explode('|',$header);
+    return "<span>$pcs[0]</span><br/>$pcs[1]";
+}
 add_filter('timber/context', function($context) {
     include __DIR__.'/theme_variables.php';
 
@@ -300,6 +304,9 @@ add_filter('timber/context', function($context) {
     $context['footer_text'] = $footer_text;
 
     $context['talent_year'] = jcctheme_get_option('mac_talent_year');
+    $context['performer_header'] = transform_perf_header(jcctheme_get_option('mac_performer_header'));
+    $context['featuredguest_header'] = transform_perf_header(jcctheme_get_option('mac_featuredguest_header'));
+    $context['evenmore_header'] = transform_perf_header(jcctheme_get_option('mac_evenmore_header'));
 
     return $context;
 });

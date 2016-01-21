@@ -97,18 +97,20 @@
                 </div>
                 <div class="clearfix col-xs-12">
                     <h3 class="slant_header">
-                        <span>2016</span><br/>Performers
+                        {{ performer_header }}
                     </h3>
                 </div>
                 {% include 'artists_frontpage.twig' with {'artists':artists} %}
                 <div class="clearfix col-xs-12">
                     <h3 class="slant_header">
-                        <span>2016</span><br/>Featured Guests
+                        {{ featuredguest_header }}
                     </h3>
                 </div>
                 {% include 'artists_frontpage.twig' with {'artists':featured_artists} %}
                 <div class="clearfix col-xs-12">
-                    <h3 class="slant_header"><span>Plus</span><br>Even More!</h3>
+                    <h3 class="slant_header">
+                        {{ evenmore_header }}
+                    </h3>
                 </div>
                 {% include 'artists_frontpage.twig' with {'artists':spotlight_items} %}
                 <div class="clearfix"></div>

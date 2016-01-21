@@ -21,6 +21,27 @@ return [
         'default' => false,
     ],
     [
+        'name'    => 'Performer Header',
+        'desc'    => 'Split lines with pipe (|)',
+        'id'      => 'mac_performer_header',
+        'type'    => 'text_medium',
+        'default' => '2016 | Performers',
+    ],
+    [
+        'name'    => 'Featured Guest Header',
+        'desc'    => 'Split lines with pipe (|)',
+        'id'      => 'mac_featuredguest_header',
+        'type'    => 'text_medium',
+        'default' => '2016 | Featured Guests',
+    ],
+    [
+        'name'    => 'Even More Header',
+        'desc'    => 'Split lines with pipe (|)',
+        'id'      => 'mac_evenmore_header',
+        'type'    => 'text_medium',
+        'default' => 'Plus | Even More!',
+    ],
+    [
         'name'    => 'Enable booking',
         'desc'    => '',
         'id'      => 'mac_enable_booking',
