@@ -120,39 +120,44 @@
 
         <section id="map" class="joco_beige">
             <div class="container">
-                <div class="col-xs-12">
-                    <div class="map-cities">
-                        <img src="{{ template_uri }}/img/map.png" id="map-background">
-                        {% set map_width=1650 %}
-                        {% set map_height=860 %}
-                        {% for city in map_cities %}
+                <div class="col-xs-12 {{ skip_map?'skip-map' }}">
+                    {% if skip_map %}
+                        <h1>{{ skip_map_post.title }}</h1>
+                        {{ skip_map_post.content }}
+                    {% else %}
+                        <div class="map-cities">
+                            <img src="{{ template_uri }}/img/map.png" id="map-background">
+                            {% set map_width=1650 %}
+                            {% set map_height=860 %}
+                            {% for city in map_cities %}
 
-                            <div class="map-city" id="{{ city.post_name }}"
-                                 style="left:{{ city.left_position(map_width) }}%; top:{{ city.top_position(map_height) }}%;">
-                                <h1 class="{{ city.title_down_under()?'down' }}">{{ city.title }}</h1>
-                                <span class="glyphicon glyphicon-plus point" aria-hidden="true"></span>
+                                <div class="map-city" id="{{ city.post_name }}"
+                                     style="left:{{ city.left_position(map_width) }}%; top:{{ city.top_position(map_height) }}%;">
+                                    <h1 class="{{ city.title_down_under()?'down' }}">{{ city.title }}</h1>
+                                    <span class="glyphicon glyphicon-plus point" aria-hidden="true"></span>
 
-                                <div class="map-city-about hidden-xs hidden-sm {{ city.title_down_under()?'up' }} {{ city.info_down_under()?'info-up' }}">
-                                    <span>{{ city.title }}</span>{{ city.content }}</div>
-                            </div>
-                        {% endfor %}
+                                    <div class="map-city-about hidden-xs hidden-sm {{ city.title_down_under()?'up' }} {{ city.info_down_under()?'info-up' }}">
+                                        <span>{{ city.title }}</span>{{ city.content }}</div>
+                                </div>
+                            {% endfor %}
 
-                    </div>
-                    <div class="map-info visible-xs-block visible-sm-block">
-                        <p id="map-copy">
-                            {{ map_copy }}
-                        </p>
-                        {% for city in map_cities %}
+                        </div>
+                        <div class="map-info visible-xs-block visible-sm-block">
+                            <p id="map-copy">
+                                {{ map_copy }}
+                            </p>
+                            {% for city in map_cities %}
 
-                            <div class="map-narrow-info headers" id="info-{{ city.post_name }}">
-                                <span class="glyphicon glyphicon-remove"></span>
-                                <h4>{{ city.title }}</h4>
+                                <div class="map-narrow-info headers" id="info-{{ city.post_name }}">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                    <h4>{{ city.title }}</h4>
 
-                                <p>{{ city.get_preview() }}</p>
-                            </div>
+                                    <p>{{ city.get_preview() }}</p>
+                                </div>
 
-                        {% endfor %}
-                    </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
                 </div>
             </div>
         </section>

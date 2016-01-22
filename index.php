@@ -64,6 +64,14 @@ $faqlink = get_page_by_title('FAQ');
 $faqlink = get_permalink($faqlink->ID);
 $context['faq_link'] = $faqlink;
 
+$context['skip_map'] = $skipPortsOfCallMap = true;
+if($skipPortsOfCallMap) {
+    $context['skip_map_post'] = Timber::get_post(
+        [
+            'name'      => 'ports-of-call',
+            'post_type' => 'page',
+        ]);
+}
 
 Timber::render('frontpage.twig', $context);
 
