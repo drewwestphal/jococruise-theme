@@ -67,7 +67,7 @@ if(!$skipFaq) {
     $faqlink = get_permalink($faqlink->ID);
     $context['faq_link'] = $faqlink;
 }
-$context['skip_map'] = $skipPortsOfCallMap = true;
+$context['skip_map'] = $skipPortsOfCallMap = false;
 if($skipPortsOfCallMap) {
     $context['skip_map_post'] = Timber::get_post(
         [
