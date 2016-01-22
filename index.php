@@ -47,7 +47,7 @@ $context['map_cities'] = Timber::get_posts(
     ], 'MapCityPost'
 );
 
-$skipFaq = true;
+$skipFaq = false;
 $context['front_page_faqs'] = null;
 if(!$skipFaq) {
     $context['front_page_faqs'] = Timber::get_posts(
