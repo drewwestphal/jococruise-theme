@@ -47,23 +47,26 @@ $context['map_cities'] = Timber::get_posts(
     ], 'MapCityPost'
 );
 
-$context['front_page_faqs'] = Timber::get_posts(
-    [
-        'post_type'  => 'faq',
-        'orderby'    => 'ID',
-        'order'      => 'ASC',
-        'meta_query' => [
-            [
-                'key'     => 'show_on_front_page',
-                'value'   => '"show on front page"',
-                'compare' => 'LIKE',
+$skipFaq = true;
+$context['front_page_faqs'] = null;
+if(!$skipFaq) {
+    $context['front_page_faqs'] = Timber::get_posts(
+        [
+            'post_type'  => 'faq',
+            'orderby'    => 'ID',
+            'order'      => 'ASC',
+            'meta_query' => [
+                [
+                    'key'     => 'show_on_front_page',
+                    'value'   => '"show on front page"',
+                    'compare' => 'LIKE',
+                ],
             ],
-        ],
-    ], 'JoCoCruisePost');
-$faqlink = get_page_by_title('FAQ');
-$faqlink = get_permalink($faqlink->ID);
-$context['faq_link'] = $faqlink;
-
+        ], 'JoCoCruisePost');
+    $faqlink = get_page_by_title('FAQ');
+    $faqlink = get_permalink($faqlink->ID);
+    $context['faq_link'] = $faqlink;
+}
 $context['skip_map'] = $skipPortsOfCallMap = true;
 if($skipPortsOfCallMap) {
     $context['skip_map_post'] = Timber::get_post(

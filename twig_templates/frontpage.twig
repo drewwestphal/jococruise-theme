@@ -243,6 +243,7 @@
             </div>
         </section>
     </section>
+    {% if front_page_faqs %}
     <section id="faqs">
         <div class="faq container">
             <div class="faq col-xs-12 col-md-12">
@@ -273,4 +274,5 @@
             <a id="faq-view-all" href="{{ faq_link }}">View All FAQS</a>
         </div>
     </section>
+    {% endif %}
 {% endblock %}
