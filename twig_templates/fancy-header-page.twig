@@ -11,9 +11,11 @@
         <section id="what-is" class="nav-spacer">
             <div class="container">
                 <div class="col-xs-12">
-                    <img class="img-responsive" style="width:678px;" src="{{ template_uri }}/img/joco-boat-profile.svg"
-                         alt="JoCo Boat Profile Image" id="what-is-ship"/>
-
+                    {% if show_boat %}
+                        <img class="img-responsive" style="width:678px;"
+                             src="{{ template_uri }}/img/joco-boat-profile.svg"
+                             alt="JoCo Boat Profile Image" id="what-is-ship"/>
+                    {% endif %}
                     <h1>{{ post.joco_cruise_to_image_in_title }}</h1>
                 </div>
             </div>
