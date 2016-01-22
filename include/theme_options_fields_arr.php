@@ -125,6 +125,13 @@ return [
         'default' => false,
     ],
     [
+        'name'    => 'Link to Instagram',
+        'desc'    => '',
+        'id'      => 'mac_insta_url',
+        'type'    => 'text_url',
+        'default' => false,
+    ],
+    [
         'name' => 'Artist Settings',
         'desc' => '',
         'type' => 'title',
