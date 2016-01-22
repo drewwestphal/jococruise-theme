@@ -39,33 +39,36 @@
                 <div class="col-xs-12">
                     <h1>{{ mainStagePost.parse_piped_title }}</h1>
                     {{ mainStagePost.content }}
-                    <a href="/#artists" class="main-stage-button btn btn-lg btn-default">See who is coming so far in
-                        2016</a>
+                    {% if show_artist_section %}
 
-                    <p>Past cruise guests include (in no particular order, OK, it's alphabetical):</p>
+                        <a href="/#artists" class="main-stage-button btn btn-lg btn-default">See who is coming so far in
+                            2016</a>
 
-                    <div class="col-xs-12 col-sm-6">
-                        <ul>
-                            {% for artist in past_artists_left %}
-                                <li>
-                                    <a href="{{ artist.permalink }}">
-                                        {{ artist.post_title }}
-                                    </a>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <ul>
-                            {% for artist in past_artists_right %}
-                                <li>
-                                    <a href="{{ artist.permalink }}">
-                                        {{ artist.post_title }}
-                                    </a>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
+                        <p>Past cruise guests include (in no particular order, OK, it's alphabetical):</p>
+
+                        <div class="col-xs-12 col-sm-6">
+                            <ul>
+                                {% for artist in past_artists_left %}
+                                    <li>
+                                        <a href="{{ artist.permalink }}">
+                                            {{ artist.post_title }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <ul>
+                                {% for artist in past_artists_right %}
+                                    <li>
+                                        <a href="{{ artist.permalink }}">
+                                            {{ artist.post_title }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
                 </div>
             </div>
         </section>
