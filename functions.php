@@ -308,6 +308,7 @@ add_filter('timber/context', function($context) {
     $context['performer_header'] = transform_piped_header(jcctheme_get_option('mac_performer_header'));
     $context['featuredguest_header'] = transform_piped_header(jcctheme_get_option('mac_featuredguest_header'));
     $context['evenmore_header'] = transform_piped_header(jcctheme_get_option('mac_evenmore_header'));
+    $context['coming_soon_header'] = transform_piped_header(jcctheme_get_option('coming_soon_header'));
     $context['cruise_insta'] = jcctheme_get_option('mac_insta_url');
 
     return $context;

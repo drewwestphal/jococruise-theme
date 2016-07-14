@@ -116,12 +116,23 @@
                 <div class="col-xs-12" style="padding-top:33px;"></div>
                 {% endif %}
                 {% include 'artists_frontpage.twig' with {'artists':featured_artists} %}
+                {% if evenmore_header is not empty %}
                 <div class="clearfix col-xs-12">
                     <h3 class="slant_header">
                         {{ evenmore_header }}
                     </h3>
                 </div>
+                {% else %}
+                <div class="col-xs-12" style="padding-top:33px;"></div>
+                {% endif %}
                 {% include 'artists_frontpage.twig' with {'artists':spotlight_items} %}
+                {% if coming_soon_header is not empty %}
+                <div class="clearfix col-xs-12">
+                    <h3 class="slant_header">
+                        {{ coming_soon_header }}
+                    </h3>
+                </div>
+                {% endif %}
                 <div class="clearfix"></div>
             </div>
         </section>
