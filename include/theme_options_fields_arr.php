@@ -170,7 +170,7 @@ return [
         'desc'    => 'Split lines with pipe (|) / Leave blank to omit',
         'id'      => 'mac_evenmore_header',
         'type'    => 'text_medium',
-        'default' => 'Plus | Even More!',
+        'default' => '',
     ],
     [
         'name'    => 'Coming Soon Header',
