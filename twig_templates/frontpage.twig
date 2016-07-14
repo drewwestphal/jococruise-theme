@@ -96,17 +96,25 @@
                         {{ talent_intro_para|markdown }}
                     </div>
                 </div>
+                {% if performer_header is not empty %}
                 <div class="clearfix col-xs-12">
                     <h3 class="slant_header">
                         {{ performer_header }}
                     </h3>
                 </div>
+                {% else %}
+                <div class="col-xs-12" style="padding-top:33px;"></div> 
+                {% endif %}
                 {% include 'artists_frontpage.twig' with {'artists':artists} %}
+                {% if featuredguest_header is not empty %}
                 <div class="clearfix col-xs-12">
                     <h3 class="slant_header">
                         {{ featuredguest_header }}
                     </h3>
                 </div>
+                {% else %}
+                <div class="col-xs-12" style="padding-top:33px;"></div>
+                {% endif %}
                 {% include 'artists_frontpage.twig' with {'artists':featured_artists} %}
                 <div class="clearfix col-xs-12">
                     <h3 class="slant_header">

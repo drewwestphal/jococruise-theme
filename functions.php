@@ -266,6 +266,7 @@ Timber::$locations = __DIR__.'/twig_templates';
 Timber::$cache = false;
 
 function transform_piped_header($header){
+    if(!trim($header)) { return ''; }
     $pcs = explode('|',$header);
     return "<span>$pcs[0]</span><br/>$pcs[1]";
 }

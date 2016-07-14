@@ -156,14 +156,14 @@ return [
         'desc'    => 'Split lines with pipe (|)',
         'id'      => 'mac_performer_header',
         'type'    => 'text_medium',
-        'default' => '2016 | Performers',
+        'default' => '',
     ],
     [
         'name'    => 'Featured Guest Header',
         'desc'    => 'Split lines with pipe (|)',
         'id'      => 'mac_featuredguest_header',
         'type'    => 'text_medium',
-        'default' => '2016 | Featured Guests',
+        'default' => '',
     ],
     [
         'name'    => 'Even More Header',
