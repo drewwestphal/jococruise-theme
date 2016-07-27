@@ -1,7 +1,8 @@
 <!--sponsors	-->
 <section id="sponsors">
 	<div class="container headers">
-			<h1>Thanks To Our Sponsors</h1>
+		<h1>Thanks To Our Sponsors</h1>
+		<div>
 			<?php $args = array(
 				'post_type' => 'sponsor',
 				'posts_per_page'	=> '-1'
@@ -29,5 +30,6 @@
 				wp_reset_postdata();
 			}
 			?>
+		</div>
 	</div>
 </section>

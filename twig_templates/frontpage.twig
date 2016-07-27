@@ -1,4 +1,4 @@
-{% extends 'page-base.twig' %}
+{% extends 'base.twig' %}
 
 
 {% block content %}
@@ -152,10 +152,10 @@
 
                                 <div class="map-city" id="{{ city.post_name }}"
                                      style="left:{{ city.left_position(map_width) }}%; top:{{ city.top_position(map_height) }}%;">
-                                    <h1 class="{{ city.title_down_under()?'down' }}">{{ city.title }}</h1>
+                                    <h1 class="{{ city.invert_label_position?'down' }}">{{ city.title }}</h1>
                                     <span class="glyphicon glyphicon-plus point" aria-hidden="true"></span>
 
-                                    <div class="map-city-about hidden-xs hidden-sm {{ city.title_down_under()?'up' }} {{ city.info_down_under()?'info-up' }}">
+                                    <div class="map-city-about hidden-xs hidden-sm {{ city.invert_label_position?'up' }} {{ city.invert_info_position?'info-up' }}">
                                         <span>{{ city.title }}</span>{{ city.content }}</div>
                                 </div>
                             {% endfor %}

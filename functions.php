@@ -303,6 +303,14 @@ add_filter('timber/context', function($context) {
     $context['news_view_all'] = $news_view_all;
     $context['news_view_url'] = $news_view_url;
     $context['footer_text'] = $footer_text;
+    $context['year'] = date("Y");
+
+    $context['sponsors'] = Timber::get_posts(
+        [
+            'post_type'      => 'sponsor',
+            'posts_per_page' => -1,
+        ], 'SponsorPost'
+    );
 
     $context['mailing_cta'] = transform_piped_header(jcctheme_get_option('mac_mailing_list_cta'));
     $context['talent_header'] = transform_piped_header(jcctheme_get_option('mac_talent_header'));
@@ -337,6 +345,7 @@ require_once(__DIR__.'/include/MaybeSensibleNavWalker.php');
 require_once(__DIR__.'/include/JoCoCruisePost.php');
 require_once(__DIR__.'/include/ExperiencePiecePost.php');
 require_once(__DIR__.'/include/MapCityPost.php');
+require_once(__DIR__.'/include/SponsorPost.php');
 
 
 ?>

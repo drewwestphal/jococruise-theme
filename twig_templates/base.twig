@@ -1,0 +1,44 @@
+{{ function("get_header") }}
+
+{% block content %}
+{% endblock %}
+
+<div class="clear"></div>
+</div>
+<footer>
+    <!--sponsors	-->
+    <section id="sponsors">
+        <div class="container headers">
+            <h1>Thanks To Our Sponsors</h1>
+            <div>
+                {% for sponsor in sponsors %}
+                    <div class="{% if sponsor.double_wide %}col-xs-12 col-sm-6 col-lg-4{% else %}col-xs-6 col-sm-3 col-lg-2{% endif %}">
+                        <div class="{% if sponsor.double_wide %}sponsor_square_double{% else %}sponsor_square{% endif %} {{ sponsor.portrait_landscape() }}">
+                            <a href="{{ sponsor.sponsor_website }}" target="_blank">
+                                <img src="{% if sponsor.double_wide %}{{ sponsor.thumbnail.src('medium') }}{% else %}{{ sponsor.thumbnail.src('large') }}{% endif %}"
+                                     alt="{{ sponsor.title }} Logo" />
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <div class="footer-info">
+        <small>&copy;{{ year }} JoCoCruise {{ footer_text }}</small>
+    </div>
+</footer>
+</div>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-56667211-2', 'auto');
+    ga('send', 'pageview');
+
+</script>
+{{ function("wp_footer") }}
+</body>
+</html>
