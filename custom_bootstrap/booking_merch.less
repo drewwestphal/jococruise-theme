@@ -1,0 +1,117 @@
+/* BOOKING PAGE STYLES */
+
+.canvas {
+  background-color:@joco_beige;
+
+  h1, h2, h3, h4, h5, h6 {
+    text-align:left;
+    span {
+      font-size:inherit;
+      font-family:inherit;
+    }
+  }
+
+  h1 > small {
+    margin-left:0.4em;
+  }
+
+  .breadcrumb > li {
+    margin-left: 0.4em;
+  }
+
+  .form-control {
+    background-color:white;
+  }
+
+  .table-condensed thead {
+    font-size:120%;
+    font-style:italic;
+  }
+
+  .nav > li > a:hover,
+  .nav > li > a:focus {
+    text-decoration: none;
+    background-color: @joco_beige;
+  }
+
+  input, textarea {
+    font-family: surveyorBook;
+    margin-bottom:0;
+    color:inherit;
+    background-color:#fff;
+  }
+
+  .help-block {
+    font-size:80%;
+    color:@joco_blue;
+  }
+
+  .breadcrumb > .active {
+    color:@joco_blue;
+    font-style:italic;
+  }
+
+  ul li {
+    margin-left:0;
+    list-style-type:none;
+  }
+
+  .checkout-pane {
+    .list-group-item {
+      background-color:@panel-bg;
+    }
+    .payopts li {
+      padding-top: 0;
+    }
+  }
+
+  .account-home {
+    .back-link {
+      margin-bottom:7px;
+    }
+  }
+
+}
+
+.cabin-shortcode-table {
+  td.sold-out {
+    text-decoration: line-through;
+    color:grey;
+  }
+  td.not-applicable {
+    color:grey;
+  }
+  tr td {
+    vertical-align:middle !important;
+  }
+
+}
+
+/* MERCH STORE */
+
+#merch {
+  padding-bottom:22px;
+
+  .navbar-brand {
+    font-style: italic;
+    vertical-align: middle;
+    text-decoration: none;
+    padding: 18px 33px;
+    color: @joco_blue;
+  }
+
+  .navbar-default .navbar-nav > li > a  {
+    color:@joco_blue;
+  }
+  .navbar-default .navbar-nav > .active > a {
+    color:darken(@joco_blue, 20%)
+  }
+
+  h2 {
+    font-size: 1.6em;
+  }
+  h3 {
+    font-size: 1.3em;
+  }
+
+}

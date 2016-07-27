@@ -1,0 +1,221 @@
+/*
+ *
+ *  ******* SITE-WIDE STYLES ******
+ *
+ */
+
+body {
+  min-width: 400px;
+}
+
+a {
+  text-decoration: underline;
+}
+
+.joco_beige {
+  background-color: @joco_beige;
+}
+.joco_blue {
+  background-color: @joco_blue;
+  color: #fff;
+  a {
+    color: @joco_beige;
+  }
+  .slick-prev::before, .slick-next::before {
+    color: white;
+  }
+  .btn-default {
+    color: #fff;
+    border-color: #fff;
+  }
+}
+.joco_offwhite {
+  background-color: @joco_offwhite;
+}
+h1,h2,h3,h4,h5,h6 {
+  text-transform: uppercase;
+  text-align: center;
+  span {
+    font-family: surveyorBookItalic, serif;
+    font-size: 0.5em;
+  }
+}
+@media screen and (max-width: @screen-sm) {
+  h1 {
+    font-size: floor((@font-size-base * 2.15)); // Default is @font-size-base * 2.6, 2.15 is same as h2
+  }
+  h2 {
+    font-size: floor((@font-size-base * 2)); // to put h2 between h1 and h3
+  }
+}
+hr {
+  background:url("../img/hr-ship.svg") no-repeat top center;
+  height:66px;
+  border:none !important;
+  width:100%;
+  background-size:110%;
+  margin-bottom: 38px;
+}
+strong, .bold{
+  font-family: surveyorBookBold, serif;
+  font-style: bold;
+}
+em, .italic{
+  font-family: surveyorBookItalic, serif;
+  font-style:normal;
+}
+.img-responsive {
+  width: 100%;
+}
+.btn, a.btn {
+  text-transform: uppercase;
+  font-family: @font-family-sans-serif;
+  font-size: 0.7em;
+  text-decoration: none;
+}
+.btn-default:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+input, textarea {
+  background: rgba(255,255,255,0);
+  color: @joco_beige;
+  padding: 15px;
+  border: 1px solid #f6f4ec;
+  font-family: surveyorBookItalic,serif;
+  margin-bottom: 20px;
+  width: 75%;
+}
+input[type="checkbox"],input[type="radio"]{
+  width:auto;
+}
+ul li{
+  list-style-type: circle;
+  text-align: left;
+  padding-top: 0.3em;
+  padding-bottom: 0.5em;
+  @media screen and (max-width:@screen-phone) {
+    margin-left: 0;
+  }
+}
+ol li{
+  list-style-type: decimal;
+  margin-left: 2em;
+  text-align: left;
+  padding-top: 0.3em;
+  padding-bottom: 0.5em;
+  @media screen and (max-width:@screen-phone) {
+    margin-left: 0;
+  }
+}
+.circle_image(@size) {
+  width: @size;
+  height: @size;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+.slick-element {
+  margin: 30px auto 60px;
+}
+.slick-slide {
+  outline: none
+}
+.slick-prev::before, .slick-next::before {
+  color: @joco_darkblue;
+}
+.nav-spacer {
+  margin-top: 80px;
+  margin-bottom: 40px;
+}
+@gallery_height: 500px;
+.gallery_image {
+  text-align: center;
+  vertical-align: middle;
+  line-height: @gallery_height;
+  img {
+    display: inline;
+    max-height: @gallery_height;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    margin: auto;
+  }
+}
+@media (min-width: @screen-lg) {
+  .col-lg-2:nth-child(6n+1) {
+    clear: left;
+  }
+}
+@media (min-width: @screen-md) and (max-width: @screen-lg) {
+  .col-md-3:nth-child(4n+1) {
+    clear: left;
+  }
+}
+@media (min-width: @screen-sm) and (max-width: @screen-md) {
+  .col-sm-4:nth-child(3n+1) {
+    clear: left;
+  }
+}
+
+#mainsitenav {
+  .navbar.wp_admin_bar_showing {
+    top: 28px;
+  }
+  .navbar-header {
+    text-align: center;
+  }
+  .navbar img {
+    max-height: (@navbar-height - 10);
+    margin: 5px auto;
+  }
+  .navbar li {
+    margin: 0px;
+    list-style: none;
+  }
+  .dropdown {
+    padding: 8px 0px;
+  }
+  .dropdown-toggle, .navbar-item-right {
+    display: block;
+    text-align: center;
+    width: 80px;
+    color: #fff;
+    text-decoration: none;
+    font-family: @font-family-sans-serif;
+    text-transform: uppercase;
+    font-size: 0.7em;
+  }
+  .dropdown-toggle:hover, .navbar-item-right:hover {
+    text-decoration: none;
+  }
+  .navbar-item-right {
+    width: 60px;
+    float: right;
+    text-align: center;
+    height: 34px;
+    margin: 8px 0px;
+    cursor: pointer;
+  }
+  .dropdown-menu {
+    font-family: @font-family-sans-serif;
+    font-size: 0.7em;
+    li {
+      text-transform: uppercase;
+    }
+    a {
+      text-decoration: none;
+    }
+    li a:hover {
+      text-decoration: underline;
+    }
+  }
+  .dropdown-menu .child {
+    padding-left: 25px;
+    a {
+      color: @joco_beige;
+    }
+  }
+}
