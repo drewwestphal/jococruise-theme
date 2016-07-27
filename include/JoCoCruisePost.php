@@ -19,7 +19,7 @@ class JoCoCruisePost extends \Timber\Post {
 
     // for compatibility
     public function joco_thumbnail_markup($size = 'post-thumbnail') {
-        echo get_the_post_thumbnail($this);
+        echo get_the_post_thumbnail($this->id);
     }
 
     public function joco_cruise_to_image_in_title() {
