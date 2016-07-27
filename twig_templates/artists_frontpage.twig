@@ -4,10 +4,10 @@
         {% for artist in artists %}
             <div class="artist_unit">
                 <div class="artists-featured-image">
-                    {{ artist.joco_thumbnail_markup() }}
+                    <img src="{{ artist.thumbnail.src }}" />
                 </div>
                 <div class="artists-name">
-                    <a href="{{ artist.permalink }}">{{ artist.title }}</a>
+                    <a href="{{ artist.link }}">{{ artist.title }}</a>
 
                     <p>{{ artist.get_field('artist_subtitle') }}</p>
                 </div>
@@ -19,12 +19,12 @@
     {% for artist in artists %}
         <div class="artist_unit hidden-xs col-sm-4 col-md-3 col-lg-2">
             <div class="artists-featured-image">
-                <a href="{{ artist.permalink }}">
-                    {{ artist.joco_thumbnail_markup() }}
+                <a href="{{ artist.link }}">
+                    <img src="{{ artist.thumbnail.src }}" />
                 </a>
             </div>
             <div class="artists-name">
-                <a href="{{ artist.permalink }}">{{ artist.title }}</a>
+                <a href="{{ artist.link }}">{{ artist.title }}</a>
 
                 <p>{{ artist.subtitle }}</p>
             </div>

@@ -7,7 +7,7 @@
         <section id="hero" class="joco_blue {{ not booking_enabled?'booking-disable' }}">
             <div class="container">
                 <div class="col-xs-12 col-md-12">
-                    <img src="{{ template_uri }}/img/hero_JoCo_LoGo4.svg" alt="A styled JoCo Cruise logotype."
+                    <img src="{{ theme.link }}/img/hero_JoCo_LoGo4.svg" alt="A styled JoCo Cruise logotype."
                          id="hero-joco-logo" style="margin:80px 0 55px;">
                 </div>
                 {% if booking_enabled %}
@@ -40,7 +40,7 @@
                     </div>
                     <div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">
                         <img id="hero-boat" class="img-responsive"
-                             src="{{ template_uri }}/img/hero_boat.svg" alt="An animated cruise ship">
+                             src="{{ theme.link }}/img/hero_boat.svg" alt="An animated cruise ship">
                     </div>
                 </div>
             </section>
@@ -90,7 +90,7 @@
             <div class="container">
                 <div class="col-xs-12">
                     <div id="artists-header">
-                        <img src="{{ template_uri }}/img/artist_divider.svg" class="img-responsive">
+                        <img src="{{ theme.link }}/img/artist_divider.svg" class="img-responsive">
 
                         <h1>{{ talent_header }}</h1>
                         {{ talent_intro_para|markdown }}
@@ -145,7 +145,7 @@
                         {{ skip_map_post.content }}
                     {% else %}
                         <div class="map-cities">
-                            <img src="{{ template_uri }}/img/map-mexico.png" id="map-background">
+                            <img src="{{ theme.link }}/img/map-mexico.png" id="map-background">
                             {% set map_width=1650 %}
                             {% set map_height=1194 %}
                             {% for city in map_cities %}
@@ -234,7 +234,7 @@
                     </div>
                 </div>
                 <div id="contact-form-container" class="col-xs-12 col-sm-6 col-md-7">
-                    <form name="form" action="{{ template_uri }}/contact.php" method="post"
+                    <form name="form" action="{{ theme.link }}/contact.php" method="post"
                           id="contact-form" novalidate class="clearfix">
                         <div class="contact-input" id="contact-input-email">
                             <input name="email" type="email" id="email" placeholder="your email address*">
