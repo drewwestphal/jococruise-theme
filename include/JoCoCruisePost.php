@@ -1,6 +1,6 @@
 <?php
 
-class JoCoCruisePost extends TimberPost {
+class JoCoCruisePost extends \Timber\Post {
     /**
      * this one people were using ...
      * timber doesn't quite replicate

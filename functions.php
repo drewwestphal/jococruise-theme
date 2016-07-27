@@ -261,14 +261,17 @@ function is_login_page() {
 if(!is_admin() && !is_login_page()) {
 	require_once(__DIR__.'/page-experience-gallery.php');
 }
-
+use \Timber\Timber;
 Timber::$locations = __DIR__.'/twig_templates';
 Timber::$cache = false;
 
 function transform_piped_header($header){
     if(!trim($header)) { return ''; }
     $pcs = explode('|',$header);
-    return "<span>$pcs[0]</span><br/>$pcs[1]";
+    if (count($pcs)>1)
+        return "<span>$pcs[0]</span><br/>$pcs[1]";
+    else
+        return $header;
 }
 add_filter('timber/context', function($context) {
     include __DIR__.'/theme_variables.php';

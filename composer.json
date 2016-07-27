@@ -1,10 +1,10 @@
 {
   "require": {
-    "jarednova/timber": "*",
     "drewwestphal/CCWPOptions": "dev-master",
     "webdevstudios/cmb2": "2.0.*",
     "composer/installers": "~1.0",
-    "erusev/parsedown-extra": "dev-master"
+    "erusev/parsedown-extra": "dev-master",
+    "timber/timber": "^1.1"
   },
   "repositories": [
     {
@@ -13,19 +13,8 @@
     }
   ],
   "autoload": {
-    "classmap": [
-      "vendor/plugins/timber"
-    ],
     "files": [
       "vendor/plugins/cmb2/init.php"
     ]
-  },
-  "extra": {
-    "installer-paths": {
-      "vendor/plugins/{$name}/": [
-        "type:wordpress-plugin"
-      ]
-    }
   }
 }
- 
