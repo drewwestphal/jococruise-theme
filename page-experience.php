@@ -1,6 +1,6 @@
 <?php
 
-use Timber\Timber;
+use \Timber\Timber;
 
 $context = Timber::get_context();
 

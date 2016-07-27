@@ -1,7 +1,6 @@
 <?php
 /* Template Name: FAQ Display Page */
-
-use Timber\Timber;
+use \Timber\Timber;
 
 include 'theme_variables.php';
 /**
