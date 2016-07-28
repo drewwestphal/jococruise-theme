@@ -25,10 +25,10 @@
                 <div class="col-xs-12 col-md-3 center-block" style="text-align: center;">
                     {% if introPost.get_field('exp_featured_image_clickthrough_file') %}
                         <a href="{{ introPost.get_field('exp_featured_image_clickthrough_file').url }}">
-                            {{ introPost.joco_thumbnail_markup([256,256]) }}
+                            {{ introPost.joco_thumbnail_markup('',[256,256]) }}
                         </a>
                     {% else %}
-                        {{ introPost.joco_thumbnail_markup([256,256]) }}
+                        {{ introPost.joco_thumbnail_markup('',[256,256]) }}
                     {% endif %}
                     <div class="caption">{{ introPost.thumbnail.caption }}</div>
                 </div>

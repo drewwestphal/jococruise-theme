@@ -9,6 +9,8 @@
     <link rel="shortcut icon" href="{{ theme.link }}/favicon.png" />
     <title>{{ function('wp_title', ' | ', true, 'right') }}</title>
 
+    {{ function('wp_head') }}
+
     <meta name="description" content="{{ meta_desc }}" />
 
     <!-- Twitter Card data -->
@@ -22,7 +24,8 @@
     <meta property="og:image" content="{{ theme.link }}/img/hero_boat.png" />
     <meta property="og:image" content="{{ theme.link }}/img/og2.jpg" />
     <meta property="og:description" content="{{ meta_desc }}" />
-    {{ function('wp_head') }}
+
+    {{ function('wp_reset_postdata') }}
 </head>
 <body {{ function('body_class') }}>
 <div id="wrapper" class="hfeed">
