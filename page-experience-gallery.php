@@ -148,4 +148,3 @@ add_filter('post_gallery', function($output = '', $atts, $content = false, $tag 
     return $output;
 }, PHP_INT_MAX, 4);
 ?>
-

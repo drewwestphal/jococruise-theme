@@ -1,0 +1,42 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+    <div class="container nav-spacer">
+	    {% if post.thumbnail %}
+			<div class="col-xs-12 col-sm-5 col-md-4">
+			    {{ post.joco_thumbnail_markup('img-responsive artist-page-image') }}
+				<?php echo str_replace('class="','class="img-responsive artist-page-image ',get_the_post_thumbnail()); ?>
+				<div class="artists-social">
+				{% if post.artist_facebook %}
+				    <a href="{{ post.artist_facebook }}" class="social-icon facebook" target="_blank"></a>
+				{% endif %}
+				{% if post.artist_twitter %}
+					<a href="{{ post.artist_twitter }}"  class="social-icon twitter" target="_blank"></a>
+				{% endif %}
+				{% if post.artist_youtube %}
+					<a href="{{ post.artist_youtube }}" class="social-icon youtube" target="_blank"></a>
+				{% endif %}
+				{% if post.artist_website %}
+					<a href="{{ post.artist_website }}" class="social-icon website" target="_blank"></a>
+				{% endif %}
+				</div>
+			</div>
+		{% endif %}
+        <div class="col-xs-12 {% if post.thumbnail %}col-sm-7 col-md-8{% else %}col-sm-12 col-lg-10 col-lg-offset-1{% endif %}">
+            <h1>{{ post.title }}</h1>
+            {% if post.artist_subtitle %}
+                <h2>{{ post.artist_subtitle }}</h2>
+            {% endif %}
+            {% if post.byline_image %}
+                <div class="byline">
+                    <img src="{{ TimberImage(post.byline_image).src('thumbnail') }}" alt="{{ TimberImage(post.byline_image).caption }}" />
+                    <span>{{ post.byline_name }}</span>
+                </div>
+            {% endif %}
+            {{ post.content }}
+        </div>
+    </div>
+    {% if post.type == 'post' %}
+        {% include 'bumper_bottom.twig' %}
+    {% endif %}
+{% endblock %}
