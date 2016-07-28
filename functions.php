@@ -21,60 +21,6 @@ function mac_register_theme_menu() {
     register_nav_menu( 'primary', 'Main Nav' );
 }
 
-// support fb embeds with proper meta tags ...
-add_action('wp_head', function(){
-
-    $post = get_post();
-
-    $settings = get_option('mac_settings');
-    $title = get_bloginfo('name');
-    $user_img_tag = '';
-    if(!current_theme_supports('cruisecontrol')) {
-        // if in booking engine do the default
-        if($post && ($user_title=get_field('social_post_title',$post->ID))){
-            $title = $user_title;
-        }
-        if($post && ($user_image_url=get_field('social_post_image_url',$post->ID))){
-            $user_img_tag = sprintf('<meta property="og:image" content="%s" />', $user_image_url);
-        }
-    }
-    $travel_desc = $settings['mac_travel_description'];
-
-    $url = 'http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . "{$_SERVER['HTTP_HOST']}/{$_SERVER['REQUEST_URI']}";
-    $imgurl1 = get_template_directory_uri() . '/img/hero_boat.png';
-    $imgurl2 = get_template_directory_uri() . '/img/og2.jpg';
-    $desc = htmlentities(wp_strip_all_tags($travel_desc), ENT_QUOTES);
-    echo <<<EOF
-        <meta name="description" content="$desc" />
-
-        <!-- Twitter Card data -->
-        <meta name="twitter:card" value="summary">
-
-        <!-- Open Graph data -->
-        <meta property="og:title" content="$title" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="$url" />
-        $user_img_tag
-        <meta property="og:image" content="$imgurl1" />
-        <meta property="og:image" content="$imgurl2" />
-        <meta property="og:description" content="$desc" />
-
-EOF;
-});
-
-add_action('wp_footer', function(){
-        echo <<<EOF
-        <script type="text/javascript">
-            // open external links in new tab
-            jQuery('#content').find('a').filter(function() {
-                return this.hostname && this.hostname.indexOf(location.hostname)===-1
-            }).attr({
-                target : "_blank"
-            });
-        </script>
-EOF;
-});
-
 
 /*custom nav behavior*/
 
@@ -304,6 +250,33 @@ add_filter('timber/context', function($context) {
     $context['news_view_url'] = $news_view_url;
     $context['footer_text'] = $footer_text;
     $context['year'] = date("Y");
+
+    $post = get_post();
+    $title = get_bloginfo('name');
+    $user_img_tag = '';
+    if(!current_theme_supports('cruisecontrol')) {
+        // if in booking engine do the default
+        if($post && ($user_title=get_field('social_post_title',$post->ID))){
+            $title = $user_title;
+        }
+        if($post && ($user_image_url=get_field('social_post_image_url',$post->ID))){
+            $user_img_tag = sprintf('<meta property="og:image" content="%s" />', $user_image_url);
+        }
+    }
+    $context['meta_title'] = $title;
+    $context['meta_user_img_tag'] = $user_img_tag;
+    $context['meta_url'] = 'http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . "{$_SERVER['HTTP_HOST']}/{$_SERVER['REQUEST_URI']}";
+    $context['meta_desc'] = htmlentities(wp_strip_all_tags($settings['mac_travel_description']), ENT_QUOTES);
+    $context['nav_menu'] = wp_nav_menu( array(
+        'theme_location' => 'primary',
+        'depth'             => 2,
+        'container'         => false,
+        'menu_class' => 'dropdown-menu',
+        'menu_id' => 'nav-dropdown',
+        'fallback_cb' => 'CCWPNavWalker_RecursiveTwigTemplate::fallback',
+        'echo' => false,
+        //Process nav menu using our custom nav walker
+        'walker' => new CCWPNavWalker_RecursiveTwigTemplate('navitems.html', 'item')));
 
     $context['sponsors'] = Timber::get_posts(
         [
