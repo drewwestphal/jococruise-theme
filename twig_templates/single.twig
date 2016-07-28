@@ -37,6 +37,8 @@
         </div>
     </div>
     {% if post.type == 'post' %}
-        {% include 'bumper_bottom.twig' %}
+		{% set next = post.next_post() %}
+		{% set prev = post.prev_post() %}
+        {% include 'bumper_bottom.twig' with {'next': next, 'prev': prev} %}
     {% endif %}
 {% endblock %}

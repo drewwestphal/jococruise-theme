@@ -1,17 +1,17 @@
 <div class="bumper bumper-bottom">
     <div class="container">
         <div class="col-xs-6 bumper-left">
-            {% if post.next_post() %}
-            <a href="{{ post.next_post().link }}">
+            {% if next.link %}
+            <a href="{{ next.link }}">
                 <span class="glyphicon glyphicon-menu-left"></span>
-                {{ post.next_post().title }}
+                {{ next.title }}
             </a>
             {% endif %}
         </div>
         <div class="col-xs-6 bumper-right">
-            {% if post.prev_post() %}
-            <a href="{{ post.prev_post().link }}">
-                {{ post.prev_post().title }}
+            {% if prev.link %}
+            <a href="{{ prev.link }}">
+                {{ prev.title }}
                 <span class="glyphicon glyphicon-menu-right"></span>
             </a>
             {% endif %}

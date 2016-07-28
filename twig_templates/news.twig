@@ -1,0 +1,22 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+    <div class="container nav-spacer">
+        <div class="col-xs-12">
+            <h1>News</h1>
+            {% if post.content %}
+                <p>{{ post.content }}</p>
+            {% endif %}
+            {% for news_post in news_posts %}
+            <article class="news-page-item">
+                <h2><a href="{{ news_post.link }}">{{ news_post.title }}</a></h2>
+                {{ news_post.joco_excerpt() }}
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+    <!--I know these look backwards, but the newer/older thing only makes sense this way-->
+    {% set next = {'link': pagination.prev.link, 'title': 'Newer'} %}
+    {% set prev = {'link': pagination.next.link, 'title': 'Older'} %}
+    {% include 'bumper_bottom.twig' with {'next': next, 'prev': prev} %}
+{% endblock %}
