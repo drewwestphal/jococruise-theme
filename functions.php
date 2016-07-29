@@ -129,31 +129,12 @@ function blankslate_load_scripts() {
 require_once(__DIR__.'/include/cpt.php');
 require_once(__DIR__.'/include/columns.php');
 
-// fix CMB2 include path
-add_filter('cmb2_meta_box_url', function ($url) {
-    // this function is retardedly implemented on the cmb2 side...
-    // gives me great faith in the rest of their work!
-    return get_template_directory_uri() . '/vendor/plugins/cmb2';
-});
-
 require_once __DIR__.'/vendor/autoload.php';
-// yes you CAN include a file that returns a value...
-// look it up!
-$ThemeOptions = new CCWPOptions_Page('mac_settings','JoCo Cruise Theme Options',include(__DIR__.'/include/theme_options_fields_arr.php'));
-function jcctheme_get_option($key){
-    global $ThemeOptions;
-    return $ThemeOptions->get_option($key);
-}
+
 if(function_exists('acf')) {
     $acf = acf();
     $acf -> settings['dir'] = plugins_url() . '/advanced-custom-fields/';
 }
-
-add_action('cmb2_init', function() {
-    // we wwant to have our options all set up so we can use them here
-    include __DIR__.'/theme_variables.php';
-    //require_once(__DIR__.'/include/acf.php');
-});
 
 function acf_load_faq_field_choices( $field ) {
     // reset choices
@@ -177,7 +158,7 @@ function acf_load_faq_field_choices( $field ) {
 }
 add_filter('acf/load_field/name=faq_section_header', 'acf_load_faq_field_choices');
 
-// Should really get rid of all this
+// Should really get rid of all this (next 35 lines)
 // But copied from acf.php to not break things
 $artistTypeChoices = [
     'artist'          => 'Performer',

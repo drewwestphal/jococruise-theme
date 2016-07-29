@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "41333df005ccef0112f46fa9147b680b",
-    "content-hash": "c98a1f291af779a76986234cb47fbcd9",
+    "hash": "41ebd6f5a944f6c57f6a487201e0abb7",
+    "content-hash": "63a78276c6fc4734137bf238edcdefda",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -213,32 +213,6 @@
                 "zikula"
             ],
             "time": "2016-07-05 06:18:20"
-        },
-        {
-            "name": "drewwestphal/CCWPOptions",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/drewwestphal/CCWPOptions.git",
-                "reference": "edf608cdc0ff1ef750e1c415fa6dca2e78fe4b76"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/drewwestphal/CCWPOptions/zipball/edf608cdc0ff1ef750e1c415fa6dca2e78fe4b76",
-                "reference": "edf608cdc0ff1ef750e1c415fa6dca2e78fe4b76",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "CCWPOptions_": "lib/"
-                }
-            },
-            "support": {
-                "source": "https://github.com/drewwestphal/CCWPOptions/tree/master",
-                "issues": "https://github.com/drewwestphal/CCWPOptions/issues"
-            },
-            "time": "2015-07-02 13:57:32"
         },
         {
             "name": "erusev/parsedown",
@@ -549,58 +523,12 @@
                 "routing"
             ],
             "time": "2016-07-06 12:53:24"
-        },
-        {
-            "name": "webdevstudios/cmb2",
-            "version": "v2.0.9",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/WebDevStudios/CMB2.git",
-                "reference": "1f582bc81a4941ba3d0c3d98d17c30bdb552a4c1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/WebDevStudios/CMB2/zipball/1f582bc81a4941ba3d0c3d98d17c30bdb552a4c1",
-                "reference": "1f582bc81a4941ba3d0c3d98d17c30bdb552a4c1",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">5.2.4"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "3.7.*"
-            },
-            "suggest": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "WebDevStudios",
-                    "email": "contact@webdevstudios.com",
-                    "homepage": "https://github.com/WebDevStudios",
-                    "role": "Developer"
-                }
-            ],
-            "description": "CMB2 is a metabox, custom fields, and forms library for WordPress that will blow your mind.",
-            "homepage": "https://github.com/WebDevStudios/CMB2",
-            "keywords": [
-                "metabox",
-                "plugin",
-                "wordpress"
-            ],
-            "time": "2015-07-28 21:17:53"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "drewwestphal/ccwpoptions": 20,
         "erusev/parsedown-extra": 20
     },
     "prefer-stable": false,
