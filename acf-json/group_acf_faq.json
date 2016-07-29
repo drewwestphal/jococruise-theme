@@ -1,0 +1,102 @@
+{
+    "key": "group_acf_faq",
+    "title": "FAQ",
+    "fields": [
+        {
+            "key": "field_544c2ecd0555e",
+            "label": "Show on Front Page",
+            "name": "show_on_front_page",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "show on front page": "show on front page"
+            },
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0
+        },
+        {
+            "key": "field_54caf8c8c0de8",
+            "label": "FAQ Section Header",
+            "name": "faq_section_header",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "What the Heck?": "What the Heck?",
+                "Booking Questions": "Booking Questions",
+                "I&rsquo;m Booked! Now What?": "I&rsquo;m Booked! Now What?",
+                "Managing my Booking": "Managing my Booking"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "allow_null": 0
+        },
+        {
+            "key": "field_569fe1ce97b8b",
+            "label": "FAQ Year",
+            "name": "faq_year",
+            "type": "select",
+            "instructions": "To which cruise-year does this FAQ item apply",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "2017": 2017,
+                "2016": 2016,
+                "2015": 2015,
+                "2014": 2014,
+                "2013": 2013,
+                "2012": 2012,
+                "2011": 2011
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "disabled": 0,
+            "readonly": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "faq"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1469825004
+}

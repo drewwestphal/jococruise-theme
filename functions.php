@@ -2,6 +2,16 @@
 
 require_once __DIR__.'/include/tgm.php';
 
+if( function_exists('acf_add_options_page') ) {
+    acf_add_options_page(array(
+        'page_title' => 'Theme General Settings',
+        'menu_title' => 'Theme Settings',
+        'menu_slug' => 'theme-general-settings',
+        'capability' => 'edit_posts',
+        'redirect' => false
+    ));
+}
+
 add_filter( 'pre_get_posts', 'my_get_posts' );
 
 function my_get_posts( $query ) {
@@ -142,7 +152,7 @@ if(function_exists('acf')) {
 add_action('cmb2_init', function() {
     // we wwant to have our options all set up so we can use them here
     include __DIR__.'/theme_variables.php';
-    require_once(__DIR__.'/include/acf.php');
+    //require_once(__DIR__.'/include/acf.php');
 });
 
 function is_login_page() {
