@@ -155,6 +155,65 @@ add_action('cmb2_init', function() {
     //require_once(__DIR__.'/include/acf.php');
 });
 
+function acf_load_faq_field_choices( $field ) {
+    // reset choices
+    $field['choices'] = array();
+    // get the textarea value from options page without any formatting
+    $choices = get_field('faq_categories', 'option', false);
+    // explode the value so that each line is a new array piece
+    $choices = explode("\n", $choices);
+    // remove any unwanted white space
+    $choices = array_map('trim', $choices);
+    // loop through array and add to field 'choices'
+    if( is_array($choices) ) {
+        foreach( $choices as $choice ) {
+            if (strlen($choice)) {
+                $field['choices'][$choice] = $choice;
+            }
+        }
+    }
+    // return the field
+    return $field;
+}
+add_filter('acf/load_field/name=faq_section_header', 'acf_load_faq_field_choices');
+
+// Should really get rid of all this
+// But copied from acf.php to not break things
+$artistTypeChoices = [
+    'artist'          => 'Performer',
+    'featured artist' => 'Featured Guest',
+    'spotlight item'  => 'Spotlight Item',
+    'did not attend'  => 'Did not attend this year',
+];
+$artistYearAndTypeFields = [];
+// we have to do the field counter stuff bc
+// that is how they were numbered when they
+// were created and we don't want to mess with the
+// db
+$fieldCounter = 5459;
+$cruise_year = get_field('cruise_year', 'option');
+$availableCruiseYears = [];
+for($year = 2011; $year <= $cruise_year; $year++) {
+    $artistYearAndTypeFields[] = [
+        // the below is post-dec, which will dec
+        // after returning current val
+        'key'           => 'field_54b703017' . $fieldCounter--,
+        'label'         => 'Artist Type ' . $year,
+        'name'          => 'artist_type' . $year,
+        'type'          => 'select',
+        'choices'       => $artistTypeChoices,
+        'default_value' => '',
+        'allow_null'    => 1,
+        'multiple'      => 0,
+    ];
+    $availableCruiseYears[] = $year;
+}
+$availableCruiseYears = array_reverse($availableCruiseYears);
+$artistYearAndTypeFields = array_reverse($artistYearAndTypeFields);
+// share this for other pieces of theme
+$_ENV['cc_valid_cruise_years'] = $availableCruiseYears;
+$_ENV['cc_artist_type_and_year_fields_desc'] = $artistYearAndTypeFields;
+
 function is_login_page() {
     return in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php'));
 }
@@ -175,35 +234,44 @@ function transform_piped_header($header){
         return $header;
 }
 add_filter('timber/context', function($context) {
-    include __DIR__.'/theme_variables.php';
+    //include __DIR__.'/theme_variables.php';
 
-    $context['settings'] = $settings;
-    $context['site_title'] = $site_title;
-    $context['cruise_year'] = $cruise_year;
-    $context['cruise_year'] = $cruise_year;
-    $context['faq_section_headers_ordered'] = $faq_section_headers_ordered;
-    $context['booking_url'] = $booking_url;
-    $context['hero_book_now'] = $hero_book_now;
-    $context['hero_already_booked'] = $booked;
-    $context['hero_already_booked_url'] = $booked_url;
-    $context['booking_enabled'] = $booking_enabled;
-    $context['booking_cta'] = $booking_cta;
-    $context['cruise_fb'] = $cruise_fb;
-    $context['cruise_twitter'] = $cruise_twitter;
-    $context['cruise_rss'] = $cruise_rss;
-    $context['travel_desc'] = $travel_desc;
-    $context['travel_desc_more'] = $travel_desc_more;
-    $context['cont_gen_q'] = $cont_gen_q;
-    $context['cont_gen_q_addy'] = $cont_gen_q_addy;
-    $context['cont_book_q'] = $cont_book_q;
-    $context['cont_book_q_addy'] = $cont_book_q_addy;
-    $context['cont_tel'] = $cont_tel;
-    $context['cont_tel_addy'] = $cont_tel_addy;
-    $context['map_copy'] = $map_copy;
-    $context['news_header'] = $news_header;
-    $context['news_view_all'] = $news_view_all;
-    $context['news_view_url'] = $news_view_url;
-    $context['footer_text'] = $footer_text;
+    $settings = $context['settings'] = get_option('mac_settings');
+    $context['site_title'] = get_bloginfo('name');
+    $cruise_year = get_field('cruise_year', 'option');
+    $context['cruise_year'] = $cruise_year<2015?2015:$cruise_year;
+    $context['talent_year'] = get_field('talent_year', 'option');
+    $context['booking_enabled'] = get_field('enable_booking', 'option');
+    $context['booking_url'] = get_field('booking_path', 'option');
+    $context['booking_cta'] = get_field('button_call_to_action', 'option');
+    $context['travel_desc'] = get_field('travel_description', 'option');
+    $context['travel_desc_more'] = get_field('travel_description_more', 'option');
+    $context['hero_book_now'] = get_field('hero_book_now_button', 'option');
+    $context['hero_already_booked'] = get_field('hero_already_booked_button', 'option');
+    $context['hero_already_booked_url'] = get_field('hero_already_booked_url', 'option');
+    $context['mailing_cta'] = transform_piped_header(get_field('mailing_list_call_to_action', 'option'));
+    $context['cruise_fb'] = get_field('link_to_facebook_page', 'option');
+    $context['cruise_twitter'] = get_field('link_to_twitter', 'option');
+    $context['cruise_rss'] = get_field('link_to_rss_feed', 'option');
+    $context['cruise_insta'] = get_field('link_to_instagram', 'option');
+    $context['talent_header'] = transform_piped_header(get_field('talent_section_header', 'option'));
+    $context['talent_intro_para'] = get_field('performer_intro_content', 'option');
+    $context['performer_header'] = transform_piped_header(get_field('performer_header', 'option'));
+    $context['featuredguest_header'] = transform_piped_header(get_field('featured_guest_header', 'option'));
+    $context['evenmore_header'] = transform_piped_header(get_field('even_more_header', 'option'));
+    $context['coming_soon_header'] = transform_piped_header(get_field('coming_soon_header', 'option'));
+    $context['cont_gen_q'] = get_field('general_questions_header', 'option');
+    $context['cont_gen_q_addy'] = get_field('general_questions_address', 'option');
+    $context['cont_book_q'] = get_field('booking_questions_header', 'option');
+    $context['cont_book_q_addy'] = get_field('booking_questions_address', 'option');
+    $context['cont_tel'] = get_field('phone_questions_header', 'option');
+    $context['cont_tel_addy'] = get_field('phone_questions_number', 'option');
+    $context['map_copy'] = get_field('map_info_copy', 'option');
+    $context['news_header'] = get_field('news_header', 'option');
+    $context['news_view_all'] = get_field('news_view_all_copy', 'option');
+    $context['news_view_url'] = get_field('news_view_all_url', 'option');
+    $context['faq_section_headers_ordered'] = array_map('trim', explode('\n', get_field('faq_categories', 'option')));
+    $context['footer_text'] = trim(get_field('footer_text', 'option'));
     $context['year'] = date("Y");
 
     $post = get_post();
@@ -239,16 +307,6 @@ add_filter('timber/context', function($context) {
             'posts_per_page' => -1,
         ], 'SponsorPost'
     );
-
-    $context['mailing_cta'] = transform_piped_header(jcctheme_get_option('mac_mailing_list_cta'));
-    $context['talent_header'] = transform_piped_header(jcctheme_get_option('mac_talent_header'));
-    $context['talent_intro_para'] = jcctheme_get_option('mac_talent_intro_para');
-    $context['talent_year'] = jcctheme_get_option('mac_talent_year');
-    $context['performer_header'] = transform_piped_header(jcctheme_get_option('mac_performer_header'));
-    $context['featuredguest_header'] = transform_piped_header(jcctheme_get_option('mac_featuredguest_header'));
-    $context['evenmore_header'] = transform_piped_header(jcctheme_get_option('mac_evenmore_header'));
-    $context['coming_soon_header'] = transform_piped_header(jcctheme_get_option('coming_soon_header'));
-    $context['cruise_insta'] = jcctheme_get_option('mac_insta_url');
 
     return $context;
 });

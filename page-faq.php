@@ -28,7 +28,7 @@ $faqPosts = Timber::get_posts(
         ],
     ]);
 // create the ordered array
-$sectionHeadersInOrder = array_map('trim', explode('|', jcctheme_get_option('mac_piped_cats')));
+$sectionHeadersInOrder = array_map('trim', explode('\n', get_field('faq_categories', 'option')));
 $faqsByHeader = array_combine($sectionHeadersInOrder, array_fill(0, count($sectionHeadersInOrder), []));
 foreach($faqPosts as $item) {
     $faqsByHeader[$item->get_field('faq_section_header')][] = $item;
