@@ -9,7 +9,7 @@ $post = Timber::get_post();
 // only numbers in the page slug... to int
 $guessYear = (int)preg_replace('/\D/', '', $post->slug);
 // if it's a cruise year... guess the year otherwise false
-$guessYear = in_array($guessYear, $_ENV['cc_valid_cruise_years']) ? $guessYear : false;
+$guessYear = in_array($guessYear, $availableCruiseYears) ? $guessYear : false;
 // default to current year... unless a year is in the slug
 $targetFaqYear = $guessYear ? $guessYear : $cruise_year;
 

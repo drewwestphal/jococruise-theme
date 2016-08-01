@@ -158,42 +158,8 @@ function acf_load_faq_field_choices( $field ) {
 }
 add_filter('acf/load_field/name=faq_section_header', 'acf_load_faq_field_choices');
 
-// Should really get rid of all this (next 35 lines)
-// But copied from acf.php to not break things
-$artistTypeChoices = [
-    'artist'          => 'Performer',
-    'featured artist' => 'Featured Guest',
-    'spotlight item'  => 'Spotlight Item',
-    'did not attend'  => 'Did not attend this year',
-];
-$artistYearAndTypeFields = [];
-// we have to do the field counter stuff bc
-// that is how they were numbered when they
-// were created and we don't want to mess with the
-// db
-$fieldCounter = 5459;
 $cruise_year = get_field('cruise_year', 'option');
-$availableCruiseYears = [];
-for($year = 2011; $year <= $cruise_year; $year++) {
-    $artistYearAndTypeFields[] = [
-        // the below is post-dec, which will dec
-        // after returning current val
-        'key'           => 'field_54b703017' . $fieldCounter--,
-        'label'         => 'Artist Type ' . $year,
-        'name'          => 'artist_type' . $year,
-        'type'          => 'select',
-        'choices'       => $artistTypeChoices,
-        'default_value' => '',
-        'allow_null'    => 1,
-        'multiple'      => 0,
-    ];
-    $availableCruiseYears[] = $year;
-}
-$availableCruiseYears = array_reverse($availableCruiseYears);
-$artistYearAndTypeFields = array_reverse($artistYearAndTypeFields);
-// share this for other pieces of theme
-$_ENV['cc_valid_cruise_years'] = $availableCruiseYears;
-$_ENV['cc_artist_type_and_year_fields_desc'] = $artistYearAndTypeFields;
+$availableCruiseYears = array_reverse(range(2011,intval($cruise_year),1));
 
 function is_login_page() {
     return in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php'));

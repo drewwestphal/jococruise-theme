@@ -30,11 +30,11 @@ $moreInfoPost = $context['moreInfoPost'] = $exp_pcs_byname['exp-more-info'];
 
 $showArtistSection = false;
 if($showArtistSection) {
-    $artistMetaQuery = array_map(function ($artistFieldDefinition) {
+    $artistMetaQuery = array_map(function ($year) {
         return [
             // name is the name of the field in
             // the acf db (e.g. artist type 2015, 2016... blah blah
-            'key'   => $artistFieldDefinition['name'],
+            'key'   => 'artist_type' . $year,
             // we want artists and featured artists
             'value' => [
                 'artist',
@@ -42,7 +42,7 @@ if($showArtistSection) {
             ],
         ];
     }, // we want everything but the first item (which is the current year)
-        array_slice($_ENV['cc_artist_type_and_year_fields_desc'], 1));
+        array_slice($availableCruiseYears, 1));
 
 // we want artists that were here for any
 // of the target years
