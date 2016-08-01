@@ -18,11 +18,15 @@ class JoCoCruisePost extends \Timber\Post {
     }
 
     public function next_post() {
-        return new JoCoCruisePost(get_next_post()->ID);
+        if ($next = get_next_post())
+            return new JoCoCruisePost($next->ID);
+        return false;
     }
 
     public function prev_post() {
-        return new JoCoCruisePost(get_previous_post()->ID);
+        if ($prev = get_previous_post())
+            return new JoCoCruisePost($prev->ID);
+        return false;
     }
 
     // for compatibility
