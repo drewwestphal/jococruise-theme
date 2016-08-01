@@ -41,50 +41,14 @@ if (current_user_can('manage_options')) {
 add_action( 'wp_enqueue_scripts', 'blankslate_load_scripts' );
 
 function blankslate_load_scripts() {
-    wp_enqueue_style('bootstrapcss', //
-    get_template_directory_uri() . '/css/bootstrap.css',//
-     array(), 1, 'screen');
 
-
-    // magnific
-    // it is just registered here
-    // call it a dep to include it on a page
-    /* JS IS INCLUDED IN BOWER
-    wp_register_script('magnificjs',// 
-    get_template_directory_uri() . '/js/jquery.magnific-popup.min.js', //
-     array('jquery'), 1, true);
-    wp_register_style('magnificcss',//
-    get_template_directory_uri() . '/css/magnific-popup.css', //
-     array(), 1, true);
-	 */
-
-
-
-    $maindeps = array(
-        'bootstrapcss',
-    );
-    // this is a hack for booking engine visual
-    // dev speed... we don't want to load the reset
-    // when the bk engine is running
-    if(!current_theme_supports('cruisecontrol')) {
-        $maindeps[] = 'reset';
-    } else {
+    // load booking styling only on booking pages
+    if(current_theme_supports('cruisecontrol')) {
         // load bk styles
         wp_enqueue_style('bookingcss', //
         get_template_directory_uri() . '/css/booking.css', //
-        array(
-            'base',
-            'macstyle'
-        ),//
-        1, 'screen');
+        array(), 1, 'screen');
     }
-
-	/* STYLING DONE IN CUSTOM BOOTSTRAP
-    $stylePath = __DIR__.'/css/style.css';
-    wp_enqueue_style('macstyle', //
-    	get_template_directory_uri() . '/style.css', //
-    	$maindeps, md5(filemtime($stylePath).filesize($stylePath)), 'screen');
-	 */
 
     // according to this place you don't wanna enqueue shit on the admin side...
     //http://digwp.com/2009/06/use-google-hosted-javascript-libraries-still-the-right-way/
@@ -92,20 +56,6 @@ function blankslate_load_scripts() {
         wp_deregister_script('jquery');
     	wp_enqueue_script('bower', get_template_directory_uri().'/js/bower.min.js', array(), 1, false);
         wp_enqueue_script('recaptcha', '//www.google.com/recaptcha/api.js', array(), 1, false);
-    	/*
-        wp_enqueue_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', array(), 1, false);
-		if ( wp_is_mobile() ) {
-	        wp_enqueue_script('jquery_mobile', get_template_directory_uri() . '/js/jquery.mobile.custom.min.js', array(), 1, false);
-		}
-
-        // this is also just for the front-end
-        //bootstrap.js is dependant on jquery
-        wp_enqueue_script('bootstrapjs',//
-        get_template_directory_uri() . '/js/bootstrap.min.js', //
-         array('jquery'), 1, false);
-		 *
-		 */
-
     }
 
     // home directory scripts
@@ -122,7 +72,6 @@ function blankslate_load_scripts() {
         wp_enqueue_script('js_experience',//
         get_template_directory_uri() . '/js/js_experience.js', //
          array('bower'), 1, false);
-		//wp_enqueue_script('fitvids', get_template_directory_uri() . '/js/jquery.fitvids.js', array(), 1, false);
     }
 }
 
@@ -174,6 +123,7 @@ Timber::$cache = false;
 
 add_filter('timber/context', function($context) {
     $context['options'] = get_fields('options');
+    $context['is_booking_page'] = !!current_theme_supports('cruisecontrol'); // Is this necessary?
     $context['year'] = date("Y");
 
     $post = get_post();
@@ -242,6 +192,5 @@ require_once(__DIR__.'/include/JoCoCruisePost.php');
 require_once(__DIR__.'/include/ExperiencePiecePost.php');
 require_once(__DIR__.'/include/MapCityPost.php');
 require_once(__DIR__.'/include/SponsorPost.php');
-
 
 ?>
