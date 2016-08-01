@@ -206,53 +206,8 @@ use \Timber\Timber;
 Timber::$locations = __DIR__.'/twig_templates';
 Timber::$cache = false;
 
-function transform_piped_header($header){
-    if(!trim($header)) { return ''; }
-    $pcs = explode('|',$header);
-    if (count($pcs)>1)
-        return "<span>$pcs[0]</span><br/>$pcs[1]";
-    else
-        return $header;
-}
 add_filter('timber/context', function($context) {
-    //include __DIR__.'/theme_variables.php';
-
-    $settings = $context['settings'] = get_option('mac_settings');
-    $context['site_title'] = get_bloginfo('name');
-    $cruise_year = get_field('cruise_year', 'option');
-    $context['cruise_year'] = $cruise_year<2015?2015:$cruise_year;
-    $context['talent_year'] = get_field('talent_year', 'option');
-    $context['booking_enabled'] = get_field('enable_booking', 'option');
-    $context['booking_url'] = get_field('booking_path', 'option');
-    $context['booking_cta'] = get_field('button_call_to_action', 'option');
-    $context['travel_desc'] = get_field('travel_description', 'option');
-    $context['travel_desc_more'] = get_field('travel_description_more', 'option');
-    $context['hero_book_now'] = get_field('hero_book_now_button', 'option');
-    $context['hero_already_booked'] = get_field('hero_already_booked_button', 'option');
-    $context['hero_already_booked_url'] = get_field('hero_already_booked_url', 'option');
-    $context['mailing_cta'] = transform_piped_header(get_field('mailing_list_call_to_action', 'option'));
-    $context['cruise_fb'] = get_field('link_to_facebook_page', 'option');
-    $context['cruise_twitter'] = get_field('link_to_twitter', 'option');
-    $context['cruise_rss'] = get_field('link_to_rss_feed', 'option');
-    $context['cruise_insta'] = get_field('link_to_instagram', 'option');
-    $context['talent_header'] = transform_piped_header(get_field('talent_section_header', 'option'));
-    $context['talent_intro_para'] = get_field('performer_intro_content', 'option');
-    $context['performer_header'] = transform_piped_header(get_field('performer_header', 'option'));
-    $context['featuredguest_header'] = transform_piped_header(get_field('featured_guest_header', 'option'));
-    $context['evenmore_header'] = transform_piped_header(get_field('even_more_header', 'option'));
-    $context['coming_soon_header'] = transform_piped_header(get_field('coming_soon_header', 'option'));
-    $context['cont_gen_q'] = get_field('general_questions_header', 'option');
-    $context['cont_gen_q_addy'] = get_field('general_questions_address', 'option');
-    $context['cont_book_q'] = get_field('booking_questions_header', 'option');
-    $context['cont_book_q_addy'] = get_field('booking_questions_address', 'option');
-    $context['cont_tel'] = get_field('phone_questions_header', 'option');
-    $context['cont_tel_addy'] = get_field('phone_questions_number', 'option');
-    $context['map_copy'] = get_field('map_info_copy', 'option');
-    $context['news_header'] = get_field('news_header', 'option');
-    $context['news_view_all'] = get_field('news_view_all_copy', 'option');
-    $context['news_view_url'] = get_field('news_view_all_url', 'option');
-    $context['faq_section_headers_ordered'] = array_map('trim', explode('\n', get_field('faq_categories', 'option')));
-    $context['footer_text'] = trim(get_field('footer_text', 'option'));
+    $context['options'] = get_fields('options');
     $context['year'] = date("Y");
 
     $post = get_post();
@@ -270,7 +225,7 @@ add_filter('timber/context', function($context) {
     $context['meta_title'] = $title;
     $context['meta_user_img_tag'] = $user_img_tag;
     $context['meta_url'] = 'http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . "{$_SERVER['HTTP_HOST']}/{$_SERVER['REQUEST_URI']}";
-    $context['meta_desc'] = htmlentities(wp_strip_all_tags($settings['mac_travel_description']), ENT_QUOTES);
+    $context['meta_desc'] = htmlentities(wp_strip_all_tags(get_field('travel_description', 'option')), ENT_QUOTES);
     $context['nav_menu'] = wp_nav_menu( array(
         'theme_location' => 'primary',
         'depth'             => 2,
@@ -295,6 +250,14 @@ add_filter('timber/context', function($context) {
 add_filter('timber/twig/filters', function (\Twig_Environment $twig) {
     $twig->addFilter(new \Twig_SimpleFilter('markdown', function ($string) {
         return \ParsedownExtra::instance()->parse($string);
+    }));
+    $twig->addFilter(new \Twig_SimpleFilter('piped_header', function ($string) {
+        if(!trim($string)) { return ''; }
+        $pcs = explode('|',$string);
+        if (count($pcs)>1)
+            return "<span>$pcs[0]</span><br/>$pcs[1]";
+        else
+            return $string;
     }));
     return $twig;
 }, 10, 3);

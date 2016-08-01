@@ -3,7 +3,7 @@
 use \Timber\Timber;
 
 $context = Timber::get_context();
-$cruise_year = $context['talent_year'];
+$cruise_year = get_field('talent_year', 'option');
 
 $context['news_posts'] = $news_posts = Timber::get_posts(
     [

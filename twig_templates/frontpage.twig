@@ -4,37 +4,37 @@
 {% block content %}
     <section id="content" role="main">
 
-        <section id="hero" class="joco_blue {{ not booking_enabled?'booking-disable' }}">
+        <section id="hero" class="joco_blue {{ not options.enable_booking?'booking-disable' }}">
             <div class="container">
                 <div class="col-xs-12 col-md-12">
                     <img src="{{ theme.link }}/img/hero_JoCo_LoGo4.svg" alt="A styled JoCo Cruise logotype."
                          id="hero-joco-logo" style="margin:80px 0 55px;">
                 </div>
-                {% if booking_enabled %}
+                {% if options.enable_booking %}
                     <div class="col-xs-12 col-sm-4 col-sm-offset-2">
                         <a class="btn btn-lg btn-default hero-button"
-                           href="{{ booking_url }}">{{ hero_book_now }}</a>
+                           href="{{ options.booking_path }}">{{ options.hero_book_now_button }}</a>
                     </div>
                     <div class="col-xs-12 col-sm-4">
                         <a class="btn btn-lg btn-default hero-button"
-                           href="{{ hero_already_booked_url }}">{{ hero_already_booked }}</a>
+                           href="{{ options.hero_already_booked_url }}">{{ options.hero_already_booked_button }}</a>
                     </div>
                 {% endif %}
             </div>
         </section>
 
-        {% if travel_desc or travel_desc_more %}
+        {% if options.travel_description or options.travel_description_more %}
             <section id="hero-about">
                 <div class="container">
                     <div class="col-xs-12 col-md-12">
-                        <p id="hero-travel-description">{{ travel_desc }}</p>
+                        <p id="hero-travel-description">{{ options.travel_description }}</p>
                     </div>
                     <div id="hero-travel-description-more" class="col-xs-6 col-sm-7 col-md-8 col-lg-9">
-                        <p>{{ travel_desc_more }}</p>
-                        {% if booking_enabled %}
+                        <p>{{ options.travel_description_more }}</p>
+                        {% if options.enable_booking %}
                             <div id="hero-booking">
-                                <a href="{{ booking_url }}" class="btn btn-lg btn-primary"
-                                   id="hero-book-now">{{ booking_cta?:'Book Now' }}</a>
+                                <a href="{{ options.booking_path }}" class="btn btn-lg btn-primary"
+                                   id="hero-book-now">{{ options.button_call_to_action?:'Book Now' }}</a>
                             </div>
                         {% endif %}
                     </div>
@@ -51,7 +51,7 @@
                 <div class="container">
                     <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
                         <div id="news-header">
-                            <h1>{{ news_header }}</h1>
+                            <h1>{{ options.news_header }}</h1>
                         </div>
                         <div id="news-container" class="slick-element">
                             {% for post in news_posts %}
@@ -68,7 +68,7 @@
                             {% endfor %}
                         </div>
                         {% if news_posts|length>0 %}
-                            <a id="news-view-all" href="{{ news_view_url }}">{{ news_view_all }}</a>
+                            <a id="news-view-all" href="{{ options.news_view_all_url }}">{{ options.news_view_all_copy }}</a>
                         {% endif %}
                     </div>
                 </div>
@@ -79,7 +79,7 @@
             <section id="mailing-list" class="headers joco_beige">
                 <div class="container">
                     <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-                        <h1>{{ mailing_cta }}</h1>
+                        <h1>{{ options.mailing_list_call_to_action }}</h1>
                         {{ function('mc4wp_form') }}
                     </div>
                 </div>
@@ -93,43 +93,43 @@
                         <img src="{{ theme.link }}/img/artist_divider.svg" class="img-responsive">
 
                         <h1>{{ talent_header }}</h1>
-                        {{ talent_intro_para|markdown }}
+                        {{ options.performer_intro_content|markdown }}
                     </div>
                 </div>
-                {% if performer_header is not empty %}
+                {% if options.performer_header is not empty %}
                 <div class="clearfix col-xs-12">
                     <h3 class="slant_header">
-                        {{ performer_header }}
+                        {{ options.performer_header|piped_header }}
                     </h3>
                 </div>
                 {% else %}
                 <div class="col-xs-12" style="padding-top:33px;"></div> 
                 {% endif %}
                 {% include 'artists_frontpage.twig' with {'artists':artists} %}
-                {% if featuredguest_header is not empty %}
+                {% if options.featured_guest_header is not empty %}
                 <div class="clearfix col-xs-12">
                     <h3 class="slant_header">
-                        {{ featuredguest_header }}
+                        {{ options.featured_guest_header|piped_header }}
                     </h3>
                 </div>
                 {% else %}
                 <div class="col-xs-12" style="padding-top:33px;"></div>
                 {% endif %}
                 {% include 'artists_frontpage.twig' with {'artists':featured_artists} %}
-                {% if evenmore_header is not empty %}
+                {% if options.even_more_header is not empty %}
                 <div class="clearfix col-xs-12">
                     <h3 class="slant_header">
-                        {{ evenmore_header }}
+                        {{ options.even_more_header|piped_header }}
                     </h3>
                 </div>
                 {% else %}
                 <div class="col-xs-12" style="padding-top:33px;"></div>
                 {% endif %}
                 {% include 'artists_frontpage.twig' with {'artists':spotlight_items} %}
-                {% if coming_soon_header is not empty %}
+                {% if options.coming_soon_header is not empty %}
                 <div class="clearfix col-xs-12">
                     <h3 class="slant_header">
-                        {{ coming_soon_header }}
+                        {{ options.coming_soon_header|piped_header }}
                     </h3>
                 </div>
                 {% endif %}
@@ -163,7 +163,7 @@
                         </div>
                         <div class="map-info visible-xs-block visible-sm-block">
                             <p id="map-copy">
-                                {{ map_copy }}
+                                {{ options.map_info_copy }}
                             </p>
                             {% for city in map_cities %}
 
@@ -187,49 +187,49 @@
 
             <div class="container">
                 <div class="col-xs-12 col-sm-6 col-md-5 headers">
-                    {% if cont_gen_q_addy %}
+                    {% if options.general_questions_address %}
                         <div class="contact-info-group">
                             <div class="contact-icon" id="contact-icon-info">
                                 <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
                             </div>
                             <div class="contact-text headers">
-                                <h5>{{ cont_gen_q }}</h5>
-                                <a href="mailto: {{ cont_gen_q_addy }}">{{ cont_gen_q_addy }}</a>
+                                <h5>{{ options.general_questions_header }}</h5>
+                                <a href="mailto: {{ options.general_questions_address }}">{{ options.general_questions_address }}</a>
                             </div>
                         </div>
                     {% endif %}
-                    {% if cont_book_q_addy %}
+                    {% if options.booking_questions_address %}
 
                         <div class="contact-info-group">
                             <div class="contact-icon" id="contact-icon-booking">
                                 <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
                             </div>
                             <div class="contact-text headers">
-                                <h5>{{ cont_book_q }}</h5>
-                                <a href="mailto: {{ cont_book_q_addy }}">{{ cont_book_q_addy }}</a>
+                                <h5>{{ options.booking_questions_header }}</h5>
+                                <a href="mailto: {{ options.booking_questions_address }}">{{ options.booking_questions_address }}</a>
                             </div>
                         </div>
                     {% endif %}
-                    {% if cont_tel_addy %}
+                    {% if options.phone_questions_number %}
                         <div class="contact-info-group">
                             <div class="contact-icon" id="contact-icon-phone">
                                 <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
                             </div>
                             <div class="contact-text headers">
-                                <h5>{{ cont_tel }}</h5>
-                                {{ cont_tel_addy }}
+                                <h5>{{ options.phone_questions_header }}</h5>
+                                {{ options.phone_questions_number }}
                             </div>
                         </div>
                     {% endif %}
                     <div class="contact-info-group contact-social">
-                        {% if cruise_fb %}
-                            <a href="{{ cruise_fb }}" class="contact-social-icon facebook" target="_blank"></a>
+                        {% if options.link_to_facebook_page %}
+                            <a href="{{ options.link_to_facebook_page }}" class="contact-social-icon facebook" target="_blank"></a>
                         {% endif %}
-                        {% if cruise_twitter %}
-                            <a href="{{ cruise_twitter }}" class="contact-social-icon twitter" target="_blank"></a>
+                        {% if options.link_to_twitter %}
+                            <a href="{{ options.link_to_twitter }}" class="contact-social-icon twitter" target="_blank"></a>
                         {% endif %}
-                        {% if cruise_insta %}
-                            <a href="{{ cruise_insta }}" class="contact-social-icon insta" target="_blank"></a>
+                        {% if options.link_to_instagram %}
+                            <a href="{{ options.link_to_instagram }}" class="contact-social-icon insta" target="_blank"></a>
                         {% endif %}
                     </div>
                 </div>
