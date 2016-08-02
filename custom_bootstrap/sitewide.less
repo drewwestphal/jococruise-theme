@@ -5,7 +5,7 @@
  */
 
 body {
-  min-width: 400px;
+  min-width: 350px;
 }
 
 a {
@@ -41,6 +41,13 @@ h1,h2,h3,h4,h5,h6 {
   }
 }
 @media screen and (max-width: @screen-sm) {
+  body {
+    word-wrap: break-word;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
   h1 {
     font-size: floor((@font-size-base * 2.15)); // Default is @font-size-base * 2.6, 2.15 is same as h2
   }

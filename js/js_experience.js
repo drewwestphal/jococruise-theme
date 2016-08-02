@@ -57,7 +57,7 @@
 
         });
         jQuery('#gallery-experience').on('swipeleft',function() {
-        	moveGallery("right"); // Touch metaphore is backwards from arrow metaphore
+        	moveGallery("right"); // Touch metaphor is backwards from arrow metaphor
         });
         jQuery('#gallery-experience').on('swiperight',function() {
         	moveGallery("left");
