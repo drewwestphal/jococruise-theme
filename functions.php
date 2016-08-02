@@ -43,11 +43,6 @@ require_once(__DIR__.'/include/cpt.php');
 require_once(__DIR__.'/include/columns.php');
 require_once __DIR__.'/vendor/autoload.php';
 
-if(function_exists('acf')) {
-    $acf = acf();
-    $acf -> settings['dir'] = plugins_url() . '/advanced-custom-fields/';
-}
-
 // Loads FAQ categories from theme page as options for FAQ post type
 function acf_load_faq_field_choices( $field ) {
     $field['choices'] = array();
