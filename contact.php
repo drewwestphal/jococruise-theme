@@ -1,4 +1,4 @@
-<?php 
+<?php
 //var_dump($_REQUEST);
 $captcha = $_REQUEST['g-recaptcha-response'];
 //var_dump($_REQUEST['g-recaptcha-response']);

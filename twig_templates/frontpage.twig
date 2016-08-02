@@ -1,6 +1,5 @@
 {% extends 'base.twig' %}
 
-
 {% block content %}
     <section id="content" role="main">
 
@@ -294,4 +293,7 @@
         </div>
     </section>
     {% endif %}
+    <!-- We might still want to concatenate these into one js file to load -->
+    <script type='text/javascript' src='{{ theme.link }}/js/js_behavior.js'></script>
+    <script type='text/javascript' src='{{ theme.link }}/js/js_contact.js'></script>
 {% endblock %}

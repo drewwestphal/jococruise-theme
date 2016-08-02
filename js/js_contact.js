@@ -56,7 +56,7 @@ $('#contact-form').submit(function(){
 	if (name && email && comments && recaptcha) {
 		$('#name, #email').removeClass('orange-border');
 		$('#contact button').after('<div id="contact-received">Sending...</div>');
-		$.post(js_contact_data.contact_post_url, $("#contact-form").serialize(),function(data){
+		$.post($('#contact-form').attr('action'), $("#contact-form").serialize(),function(data){
 			grecaptcha.reset();
 			console.log(data);
 			$("#contact-received").text(data);

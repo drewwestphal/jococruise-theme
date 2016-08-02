@@ -15,19 +15,15 @@ if( function_exists('acf_add_options_page') ) {
 add_filter( 'pre_get_posts', 'my_get_posts' );
 
 function my_get_posts( $query ) {
-
 	if ( is_home() && $query->is_main_query() || is_feed() )
 		$query->set( 'post_type', array( 'post', 'page', 'artist' ) );
-
 	return $query;
 }
+
+/*custom nav behavior*/
 function mac_register_theme_menu() {
     register_nav_menu( 'primary', 'Main Nav' );
 }
-
-
-/*custom nav behavior*/
-
 add_action( 'init', 'mac_register_theme_menu' );
 
 
@@ -38,46 +34,8 @@ if (current_user_can('manage_options')) {
 	show_admin_bar(false);
 }
 
-add_action( 'wp_enqueue_scripts', 'blankslate_load_scripts' );
-
-function blankslate_load_scripts() {
-
-    // load booking styling only on booking pages
-    if(current_theme_supports('cruisecontrol')) {
-        // load bk styles
-        wp_enqueue_style('bookingcss', //
-        get_template_directory_uri() . '/css/booking.css', //
-        array(), 1, 'screen');
-    }
-
-    // according to this place you don't wanna enqueue shit on the admin side...
-    //http://digwp.com/2009/06/use-google-hosted-javascript-libraries-still-the-right-way/
-    if(!is_admin()) {
-        wp_deregister_script('jquery');
-    	wp_enqueue_script('bower', get_template_directory_uri().'/js/bower.min.js', array(), 1, false);
-        wp_enqueue_script('recaptcha', '//www.google.com/recaptcha/api.js', array(), 1, false);
-    }
-
-    // home directory scripts
-    if(is_home() || is_page( 'The Experience' )) {
-        wp_enqueue_script('js_behavior', get_template_directory_uri() . '/js/js_behavior.js', array('bower'), 1, true);
-        wp_enqueue_script('js_contact', get_template_directory_uri() . '/js/js_contact.js', array(
-            'js_behavior'
-        	), '1', true);
-        wp_localize_script('js_contact', 'js_contact_data', //
-        array('contact_post_url' => get_template_directory_uri() . '/contact.php'));
-    }
-
-    if(is_page('The Experience')) {
-        wp_enqueue_script('js_experience',//
-        get_template_directory_uri() . '/js/js_experience.js', //
-         array('bower'), 1, false);
-    }
-}
-
 require_once(__DIR__.'/include/cpt.php');
 require_once(__DIR__.'/include/columns.php');
-
 require_once __DIR__.'/vendor/autoload.php';
 
 if(function_exists('acf')) {
@@ -85,16 +43,12 @@ if(function_exists('acf')) {
     $acf -> settings['dir'] = plugins_url() . '/advanced-custom-fields/';
 }
 
+// Loads FAQ categories from theme page as options for FAQ post type
 function acf_load_faq_field_choices( $field ) {
-    // reset choices
     $field['choices'] = array();
-    // get the textarea value from options page without any formatting
     $choices = get_field('faq_categories', 'option', false);
-    // explode the value so that each line is a new array piece
     $choices = explode("\n", $choices);
-    // remove any unwanted white space
     $choices = array_map('trim', $choices);
-    // loop through array and add to field 'choices'
     if( is_array($choices) ) {
         foreach( $choices as $choice ) {
             if (strlen($choice)) {
@@ -102,7 +56,6 @@ function acf_load_faq_field_choices( $field ) {
             }
         }
     }
-    // return the field
     return $field;
 }
 add_filter('acf/load_field/name=faq_section_header', 'acf_load_faq_field_choices');
@@ -123,7 +76,7 @@ Timber::$cache = false;
 
 add_filter('timber/context', function($context) {
     $context['options'] = get_fields('options');
-    $context['is_booking_page'] = !!current_theme_supports('cruisecontrol'); // Is this necessary?
+    $context['is_booking_page'] = !!current_theme_supports('cruisecontrol'); // Using this to load booking css in base.twig
     $context['year'] = date("Y");
 
     $post = get_post();
@@ -154,8 +107,7 @@ add_filter('timber/context', function($context) {
         'walker' => new CCWPNavWalker_RecursiveTwigTemplate('navitems.html', 'item')));
 
     $context['sponsors'] = Timber::get_posts(
-        [
-            'post_type'      => 'sponsor',
+        [   'post_type'      => 'sponsor',
             'posts_per_page' => -1,
         ], 'SponsorPost'
     );
