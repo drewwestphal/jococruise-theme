@@ -1,4 +1,9 @@
 <?php
+add_action( 'after_setup_theme', 'blankslate_setup' );
+function blankslate_setup() {
+    add_theme_support( 'automatic-feed-links' );
+    add_theme_support( 'post-thumbnails' );
+}
 
 require_once __DIR__.'/include/tgm.php';
 
