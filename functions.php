@@ -68,6 +68,15 @@ add_filter('acf/load_field/name=faq_section_header', 'acf_load_faq_field_choices
 $cruise_year = get_field('cruise_year', 'option');
 $availableCruiseYears = array_reverse(range(2011,intval($cruise_year),1));
 
+function acf_load_faq_year_choices( $field ) {
+    $availableCruiseYears = range(2011,intval(get_field('cruise_year', 'option')),1);
+    foreach ($availableCruiseYears as $year) {
+        $field['choices'][$year] = $year;
+    }
+    return $field;
+}
+add_filter('acf/load_field/name=faq_year', 'acf_load_faq_year_choices');
+
 function is_login_page() {
     return in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php'));
 }
