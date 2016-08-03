@@ -114,7 +114,9 @@
                 {% else %}
                 <div class="col-xs-12" style="padding-top:33px;"></div>
                 {% endif %}
-                {% include 'artists_frontpage.twig' with {'artists':featured_artists} %}
+                {% if featured_artists is not empty %}
+                    {% include 'artists_frontpage.twig' with {'artists':featured_artists} %}
+                {% endif %}
                 {% if options.even_more_header is not empty %}
                 <div class="clearfix col-xs-12">
                     <h3 class="slant_header">
