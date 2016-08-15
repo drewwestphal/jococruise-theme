@@ -1,4 +1,5 @@
 <?php
+/* Template Name: News Page */
 use \Timber\Timber;
 $context = Timber::get_context();
 $context['post'] = new JoCoCruisePost();
