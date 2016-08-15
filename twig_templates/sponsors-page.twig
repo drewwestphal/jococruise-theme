@@ -1,0 +1,29 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+    <div class="container nav-spacer">
+        <div class="col-xs-12">
+            <h1>{{ post.post_title }}</h1>
+
+            <div class="mac-page-intro">
+                {{ post.content }}
+            </div>
+            {% for sponsor in sponsors %}
+                <div class="row">
+						<div class="col-xs-12 col-sm-3">
+							<div class="sponsor_square {{ sponsor.portrait_landscape() }}">
+								<a href="{{ sponsor.sponsor_website }}" target="_blank">
+                                    <img src="{% if sponsor.double_wide %}{{ sponsor.thumbnail.src('medium') }}{% else %}{{ sponsor.thumbnail.src('large') }}{% endif %}"
+                                         alt="{{ sponsor.title }} Logo" />
+								</a>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-9">
+							<h2>{{ sponsor.title }}</h2>
+							<p>{{ sponsor.content }}</p>
+						</div>
+					</div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

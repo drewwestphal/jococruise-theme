@@ -1,0 +1,14 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+    <div class="container nav-spacer">
+        <div class="col-xs-12">
+            <h1>{{ post.post_title }}</h1>
+
+            <div class="mac-page-intro">
+                {{ post.content }}
+            </div>
+            {% include 'artists_frontpage.twig' with {'artists':artists} %}
+        </div>
+    </div>
+{% endblock %}
