@@ -1,0 +1,16 @@
+<div class="slick-element">
+    {% for attachment in attachments %}
+        <figure>
+            <div class='gallery_image {% if attachment.width > attachment.height %}landscape{% else %}portrait{% endif %}'>
+                <a href="{{ attachment.src }}">
+                    <img src="{{ attachment.src }}" />
+                </a>
+            </div>
+            {% if attachment.caption %}
+                <figcaption class='wp-caption-text gallery-caption'>
+                    {{ attachment.caption }}
+                </figcaption>
+            {% endif %}
+        </figure>
+    {% endfor %}
+</div>

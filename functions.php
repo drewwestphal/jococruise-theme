@@ -74,18 +74,6 @@ add_filter('acf/load_field/name=faq_year', function ($field) use ($availableCrui
     return $field;
 });
 
-function is_login_page() {
-    return in_array($GLOBALS['pagenow'], [
-        'wp-login.php',
-        'wp-register.php',
-    ]);
-}
-
-if(!is_admin() && !is_login_page()) {
-    require_once(__DIR__ . '/page-experience-gallery.php');
-}
-
-
 Timber::$locations = __DIR__ . '/twig_templates';
 Timber::$cache = false;
 
@@ -162,6 +150,7 @@ $twig = new Twig_Environment($loader, [
     //__DIR__.'/twig_cache',
 ]);
 
+require_once(__DIR__ . '/include/slick-gallery.php');
 require_once(__DIR__ . '/include/MaybeSensibleNavWalker.php');
 require_once(__DIR__ . '/include/JoCoCruisePost.php');
 require_once(__DIR__ . '/include/ExperiencePiecePost.php');
