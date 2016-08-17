@@ -97,55 +97,6 @@ function cptui_register_my_cpt_faq() {
     ));
 }
 
-add_action('init', 'cptui_register_my_cpt_about');
-function cptui_register_my_cpt_about() {
-    register_post_type('about', array(
-        'label' => 'About',
-        'description' => '',
-        'public' => true,
-        'show_ui' => true,
-        'show_in_menu' => true,
-        'capability_type' => 'post',
-        'map_meta_cap' => true,
-        'hierarchical' => false,
-        'rewrite' => array(
-            'slug' => 'about',
-            'with_front' => true
-        ),
-        'query_var' => true,
-        'supports' => array(
-            'title',
-            'editor',
-            'excerpt',
-            'trackbacks',
-            'custom-fields',
-            'comments',
-            'revisions',
-            'thumbnail',
-            'author',
-            'page-attributes',
-            'post-formats',
-            'wpcom-markdown'
-        ),
-        'labels' => array(
-            'name' => 'About',
-            'singular_name' => 'About Entry',
-            'menu_name' => 'About',
-            'add_new' => 'Add About Entry',
-            'add_new_item' => 'Add New About Entry',
-            'edit' => 'Edit',
-            'edit_item' => 'Edit About Entry',
-            'new_item' => 'New About Entry',
-            'view' => 'View About Entry',
-            'view_item' => 'View About Entry',
-            'search_items' => 'Search About',
-            'not_found' => 'No About Found',
-            'not_found_in_trash' => 'No About Found in Trash',
-            'parent' => 'Parent About Entry',
-        )
-    ));
-}
-
 add_action('init', 'cptui_register_my_cpt_sponsors');
 function cptui_register_my_cpt_sponsors() {
     register_post_type('sponsor', array(
