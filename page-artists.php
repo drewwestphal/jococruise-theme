@@ -15,6 +15,6 @@ $context['artists'] = Timber::get_posts(
             ],
         ],
     ]
-    , 'JoCoCruisePost');
+    , 'ArtistPost');
 Timber::render('artists-page.twig', $context);
 return;

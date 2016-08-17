@@ -138,6 +138,11 @@ add_filter('timber/twig/filters', function (\Twig_Environment $twig) {
             return $string;
         }
     }));
+    $twig->addFilter(new \Twig_SimpleFilter('joco_cruise_to_image', function ($string) {
+        $imageTag = sprintf('<image src="%s" alt="JoCo Cruise" id="what-is-logo"/> ',
+            get_template_directory_uri() . '/img/WhatIs_JoCo_LoGo.svg');
+        return str_ireplace('JoCo Cruise', $imageTag, $string);
+    }));
     return $twig;
 }, 10, 3);
 
@@ -153,7 +158,7 @@ $twig = new Twig_Environment($loader, [
 require_once(__DIR__ . '/include/slick-gallery.php');
 require_once(__DIR__ . '/include/MaybeSensibleNavWalker.php');
 require_once(__DIR__ . '/include/JoCoCruisePost.php');
-require_once(__DIR__ . '/include/ExperiencePiecePost.php');
+require_once(__DIR__ . '/include/ArtistPost.php');
 require_once(__DIR__ . '/include/MapCityPost.php');
 require_once(__DIR__ . '/include/SponsorPost.php');
 

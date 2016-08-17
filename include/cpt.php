@@ -252,58 +252,6 @@ function cptui_register_my_cpt_cities() {
  */
 // dw custom
 add_action('init', function() {
-    // piecse of the experience page
-    register_post_type('experience', array(
-        'label' => 'experience',
-        'description' => '',
-        'show_ui' => true,
-        'show_in_menu' => true,
-        'capability_type' => 'post',
-        'map_meta_cap' => true,
-        // these apparently block front end visibility
-        // along with making the creation of new posts impossible
-        'hierarchical' => false,
-        'public' => false,
-        'has_archive' => false,
-        'publicly_queryable' => false,
-        'capabilities' => array('create_posts' => false, ),
-        'rewrite' => array(
-            'slug' => 'experience',
-            'with_front' => true
-        ),
-        'query_var' => false,
-        'supports' => array(
-            'title',
-            'editor',
-            'excerpt',
-            'trackbacks',
-            'custom-fields',
-            'comments',
-            'revisions',
-            'thumbnail',
-            'author',
-            'page-attributes',
-            'post-formats',
-            'wpcom-markdown'
-        ),
-        'labels' => array(
-            'name' => 'Experience Pieces',
-            'singular_name' => 'Experience Piece',
-            'menu_name' => 'The Experience',
-            'add_new' => 'Add New Experience Piece',
-            'add_new_item' => 'Add New Experience Piece',
-            'edit' => 'Edit',
-            'edit_item' => 'Edit Experience Piece',
-            'new_item' => 'New Experience Piece',
-            'view' => 'View Experience Pieces',
-            'view_item' => 'View Experience Piece',
-            'search_items' => 'Search Experience Pieces',
-            'not_found' => 'No Experience Pieces Found',
-            'not_found_in_trash' => 'No Experience Pieces Found in Trash',
-            'parent' => 'Parent Experience Pieces',
-        )
-    ));
-
     // featured events
     register_post_type('featured-event', array(
         'label' => 'featured-event',

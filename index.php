@@ -34,13 +34,13 @@ function artistTypeQueryArray($key, $value) {
 
 $context['artists'] = Timber::get_posts(
     artistTypeQueryArray($targetArtistType, 'artist')
-    , 'JoCoCruisePost');
+    , 'ArtistPost');
 $context['featured_artists'] = Timber::get_posts(
     artistTypeQueryArray($targetArtistType, 'featured artist')
-    , 'JoCoCruisePost');
+    , 'ArtistPost');
 $context['spotlight_items'] = Timber::get_posts(
     artistTypeQueryArray($targetArtistType, 'spotlight item')
-    , 'JoCoCruisePost');
+    , 'ArtistPost');
 
 $context['map_cities'] = Timber::get_posts(
     [
