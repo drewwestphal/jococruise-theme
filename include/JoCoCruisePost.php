@@ -17,18 +17,6 @@ class JoCoCruisePost extends \Timber\Post {
         setup_postdata($GLOBALS['post'] =& $prev);
     }
 
-    public function next_post() {
-        if ($next = get_next_post())
-            return new JoCoCruisePost($next->ID);
-        return false;
-    }
-
-    public function prev_post() {
-        if ($prev = get_previous_post())
-            return new JoCoCruisePost($prev->ID);
-        return false;
-    }
-
     // for compatibility
     public function joco_thumbnail_markup($classes = '', $size = 'post-thumbnail') {
         $markup = get_the_post_thumbnail($this->id);
