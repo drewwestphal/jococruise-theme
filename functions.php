@@ -100,19 +100,7 @@ add_filter('timber/context', function ($context) {
     $context['meta_url'] =
         'http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . "{$_SERVER['HTTP_HOST']}/{$_SERVER['REQUEST_URI']}";
     $context['meta_desc'] = htmlentities(wp_strip_all_tags(get_field('travel_description', 'option')), ENT_QUOTES);
-    $context['nav_menu'] = wp_nav_menu(
-        [
-            'theme_location' => 'primary',
-            'depth'          => 2,
-            'container'      => false,
-            'menu_class'     => 'dropdown-menu',
-            'menu_id'        => 'nav-dropdown',
-            'fallback_cb'    => 'CCWPNavWalker_RecursiveTwigTemplate::fallback',
-            'echo'           => false,
-            //Process nav menu using our custom nav walker
-            'walker'         => new CCWPNavWalker_RecursiveTwigTemplate('navitems.html', 'item'),
-        ]);
-
+    $context['nav_menu'] = new \Timber\Menu('primary');
     $context['sponsors'] = Timber::get_posts(
         [
             'post_type'      => 'sponsor',
@@ -156,7 +144,6 @@ $twig = new Twig_Environment($loader, [
 ]);
 
 require_once(__DIR__ . '/include/slick-gallery.php');
-require_once(__DIR__ . '/include/MaybeSensibleNavWalker.php');
 require_once(__DIR__ . '/include/JoCoCruisePost.php');
 require_once(__DIR__ . '/include/ArtistPost.php');
 require_once(__DIR__ . '/include/MapCityPost.php');
