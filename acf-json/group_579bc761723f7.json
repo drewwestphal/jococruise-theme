@@ -1095,7 +1095,7 @@
             "placeholder": "",
             "maxlength": "",
             "rows": "",
-            "new_lines": "wpautop",
+            "new_lines": "",
             "readonly": 0,
             "disabled": 0
         },
@@ -1175,11 +1175,11 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "[gallery ids=\"4630,4628,4625,4627,4639,4629,4624,4626,4641,4635,4636,4623,4634,4686,4680,4681,4682,4678\"]\r\n\r\n\r\n<iframe src=\"https:\/\/www.youtube.com\/embed\/fDOur0CrQcI?feature=oembed\" frameborder=\"0\" allowfullscreen=\"\" id=\"fitvid891485\"><\/iframe>",
+            "default_value": "[gallery ids=\"4630,4628,4625,4627,4639,4629,4624,4626,4641,4635,4636,4623,4634,4686,4680,4681,4682,4678\"]\r\n\r\n\r\n<iframe src=\"https:\/\/www.youtube.com\/embed\/fDOur0CrQcI?feature=oembed\" frameborder=\"0\" allowfullscreen=\"\"><\/iframe>",
             "placeholder": "",
             "maxlength": "",
             "rows": "",
-            "new_lines": "wpautop",
+            "new_lines": "",
             "readonly": 0,
             "disabled": 0
         },
@@ -1243,5 +1243,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1471468264
+    "modified": 1471539222
 }
