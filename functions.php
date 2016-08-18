@@ -24,18 +24,6 @@ if(function_exists('acf_add_options_page')) {
                          ]);
 }
 
-add_filter('pre_get_posts', function ($query) {
-    if(is_home() && $query->is_main_query() || is_feed()) {
-        $query->set('post_type', [
-            'post',
-            'page',
-            'artist',
-        ]);
-    }
-    return $query;
-});
-
-
 /* show wordpress toolbar for admins (omit if statement to show to all logged in WP users) */
 if(current_user_can('manage_options')) {
     show_admin_bar(true);
