@@ -115,7 +115,24 @@
             </div>
         </section>
     </section>
-    <!-- We might still want to concatenate these into one js file to load -->
     <script type='text/javascript' src='{{ theme.link }}/js/js_behavior.js'></script>
-    <script type='text/javascript' src='{{ theme.link }}/js/js_experience.js'></script>
+    <script type="text/javascript" language="JavaScript">
+        (function($) {
+            $(document).ready(function() {
+                $("#exp-photos").fitVids();
+                $('.gallery a').magnificPopup({
+                    type : 'image',
+                    closeOnContentClick : true,
+                    mainClass : 'mfp-img-mobile',
+                    image : {
+                        verticalFit : true,
+                        horizontalFit : true
+                    },
+                    disableOn : function() {
+                        return !($(window).width() < 600)
+                    }
+                });
+            });
+        })(jQuery);
+    </script>
 {% endblock %}
