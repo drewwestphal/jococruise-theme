@@ -1,5 +1,7 @@
 <?php
 
+use Timber\Timber;
+
 $context = Timber::get_context();
 $cruise_year = $context['talent_year'];
 

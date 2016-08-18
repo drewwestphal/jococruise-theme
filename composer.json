@@ -1,9 +1,9 @@
 {
   "require": {
-    "jarednova/timber": "*",
+    "timber/timber": "*",
     "drewwestphal/CCWPOptions": "dev-master",
     "webdevstudios/cmb2": "2.0.*",
-    "composer/installers": "~1.0",
+    "composer/installers": "~1.1",
     "erusev/parsedown-extra": "dev-master"
   },
   "repositories": [
@@ -13,9 +13,6 @@
     }
   ],
   "autoload": {
-    "classmap": [
-      "vendor/plugins/timber"
-    ],
     "files": [
       "vendor/plugins/cmb2/init.php"
     ]
