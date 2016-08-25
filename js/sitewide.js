@@ -3,7 +3,8 @@
 
 jQuery(document).ready(function(jQuery) {
 	jQuery('.slick-element').slick({dots: true, focusOnSelect: false});
-	
+
+    // Assign circle images landscape/portrain classes to ensure they fill the cirle
 	jQuery('#featured-events img, .artists-featured-image img').each(function() {
 		var image = jQuery(this);
 		//console.log(image.attr('src')+" - "+image.width()+" x "+image.height());
@@ -15,6 +16,7 @@ jQuery(document).ready(function(jQuery) {
 	});
 });
 
+// Scroll to hash behavior
 jQuery(function() {
   jQuery('a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname && !jQuery(this).hasClass('unmove')) {
@@ -37,4 +39,11 @@ jQuery(window).load(function(){
     if(window.location.hash.length>1 && document.body.scrollTop!==scrollready){
         window.scrollTo(0,document.body.scrollTop-jQuery('.navbar-fixed-top').height()-jQuery('#wpadminbar').height());
     }
+});
+
+// open external links in new tab
+jQuery('#wrapper').find('a').filter(function() {
+    return this.hostname && this.hostname.indexOf(location.hostname)===-1
+}).attr({
+    target : "_blank"
 });
