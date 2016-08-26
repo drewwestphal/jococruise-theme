@@ -296,115 +296,113 @@
     </section>
     {% endif %}
     <script type='text/javascript'>
-        (function($){
-            // Contact form validation
-            $('#contact-form').submit(function(){
-                function validateEmail($email) {
-                    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-                    if( !emailReg.test( $email ) ) {
-                        return false;
-                    } else {
-                        return true;
-                    }
-                }
-                $('.contact-input p, .contact-comments p, #contact-form p').remove();
-                $('#name,#email,#comments').removeClass('orange-border');
-                var name = false;
-                var email = false;
-                var comments = false;
-                var recaptcha = false;
-                if ($('#comments').val().length == 0)  {
-                    $('#comments').addClass('orange-border');
-                    $('#comments').focus();
-                    $('#contact-comments').append('<p class="plain-text">Please enter your message.</p>');
-                    comments = false;
+        // Contact form validation
+        $('#contact-form').submit(function(){
+            function validateEmail($email) {
+                var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+                if( !emailReg.test( $email ) ) {
+                    return false;
                 } else {
-                    comments = true;
+                    return true;
                 }
-                if ($('#name').val().length == 0)  {
-                    $('#name').addClass('orange-border');
-                    $('#name').focus();
-                    $('#contact-input-name').append('<p class="plain-text">Please enter your name.</p>');
-                    name = false;
-                } else {
-                    name = true;
-                }
-                var emailString = $('#email').val();
-                if ((emailString.length == 0) || !validateEmail(emailString)) {
-                    $('#email').addClass('orange-border');
-                    $('#email').focus();
-                    $('#contact-input-email').append('<p class="plain-text">Please enter a valid email address.</p>');
-                    email = false;
-                } else {
-                    email = true;
-                }
-                if ($("#g-recaptcha-response").val().length==0) {
-                    $(".g-recaptcha").after('<p class="recaptcha-error">Please assure us that you are not a robot.</p>');
-                    //$(".g-recaptcha").after('<p class="recaptcha-error">Value: '+$("#g-recaptcha-response").val()+'</p>');
-                    recaptcha = false;
-                } else {
-                    recaptcha = true;
-                }
-                if (name && email && comments && recaptcha) {
-                    $('#name, #email').removeClass('orange-border');
-                    $('#contact button').after('<div id="contact-received">Sending...</div>');
-                    $.post($('#contact-form').attr('action'), $("#contact-form").serialize(),function(data){
-                        grecaptcha.reset();
-                        console.log(data);
-                        $("#contact-received").text(data);
-                        // Thank you! Your message has been sent.
-                    });
-                }
-                return false;
-            });
-        })(jQuery);
+            }
+            $('.contact-input p, .contact-comments p, #contact-form p').remove();
+            $('#name,#email,#comments').removeClass('orange-border');
+            var name = false;
+            var email = false;
+            var comments = false;
+            var recaptcha = false;
+            if ($('#comments').val().length == 0)  {
+                $('#comments').addClass('orange-border');
+                $('#comments').focus();
+                $('#contact-comments').append('<p class="plain-text">Please enter your message.</p>');
+                comments = false;
+            } else {
+                comments = true;
+            }
+            if ($('#name').val().length == 0)  {
+                $('#name').addClass('orange-border');
+                $('#name').focus();
+                $('#contact-input-name').append('<p class="plain-text">Please enter your name.</p>');
+                name = false;
+            } else {
+                name = true;
+            }
+            var emailString = $('#email').val();
+            if ((emailString.length == 0) || !validateEmail(emailString)) {
+                $('#email').addClass('orange-border');
+                $('#email').focus();
+                $('#contact-input-email').append('<p class="plain-text">Please enter a valid email address.</p>');
+                email = false;
+            } else {
+                email = true;
+            }
+            if ($("#g-recaptcha-response").val().length==0) {
+                $(".g-recaptcha").after('<p class="recaptcha-error">Please assure us that you are not a robot.</p>');
+                //$(".g-recaptcha").after('<p class="recaptcha-error">Value: '+$("#g-recaptcha-response").val()+'</p>');
+                recaptcha = false;
+            } else {
+                recaptcha = true;
+            }
+            if (name && email && comments && recaptcha) {
+                $('#name, #email').removeClass('orange-border');
+                $('#contact button').after('<div id="contact-received">Sending...</div>');
+                $.post($('#contact-form').attr('action'), $("#contact-form").serialize(),function(data){
+                    grecaptcha.reset();
+                    console.log(data);
+                    $("#contact-received").text(data);
+                    // Thank you! Your message has been sent.
+                });
+            }
+            return false;
+        });
 
         var mapBehavior = function(){
-            jQuery('.map-city').hide().show(0); // force redraw to gaurantee placement on window resize
-            if (jQuery(window).width()>992){
-                jQuery('#map').click(function() {
-                    jQuery('.point').removeClass('glyphicon-minus').addClass('glyphicon-plus');
-                    jQuery('.map-city-about').fadeOut('fast');
+            $('.map-city').hide().show(0); // force redraw to gaurantee placement on window resize
+            if ($(window).width()>992){
+                $('#map').click(function() {
+                    $('.point').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+                    $('.map-city-about').fadeOut('fast');
                 });
-                jQuery('.point').mouseover(function() {
-                    if (!jQuery(this).is(jQuery('.glyphicon-minus'))) {
-                        jQuery('.point').removeClass('glyphicon-minus').addClass('glyphicon-plus');
-                        jQuery('.map-city-about').fadeOut('fast');
-                        jQuery(this).siblings('.map-city-about').fadeIn('fast');
-                        jQuery(this).removeClass('glyphicon-plus').addClass('glyphicon-minus');
+                $('.point').mouseover(function() {
+                    if (!$(this).is($('.glyphicon-minus'))) {
+                        $('.point').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+                        $('.map-city-about').fadeOut('fast');
+                        $(this).siblings('.map-city-about').fadeIn('fast');
+                        $(this).removeClass('glyphicon-plus').addClass('glyphicon-minus');
                     }
                 });
             } else {
-                jQuery('.point').click(function(){
-                    jQuery('span.glyphicon.point').removeClass('glyphicon-minus').addClass('glyphicon-plus');
-                    var cityName = jQuery(this).parent().attr('id');
+                $('.point').click(function(){
+                    $('span.glyphicon.point').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+                    var cityName = $(this).parent().attr('id');
                     var infoCityName = '#info-'+cityName;
 
-                    if (jQuery(''+infoCityName+'').is(':visible')){
-                        jQuery(''+infoCityName+'').slideUp('fast',function(){
-                            jQuery('#'+cityName+' span.glyphicon').removeClass('glyphicon-minus').addClass('glyphicon-plus');
-                            jQuery('#map-copy').fadeIn('fast');
+                    if ($(''+infoCityName+'').is(':visible')){
+                        $(''+infoCityName+'').slideUp('fast',function(){
+                            $('#'+cityName+' span.glyphicon').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+                            $('#map-copy').fadeIn('fast');
                         });
                     } else {
-                        jQuery('.map-info').contents().hide();
-                        jQuery(''+infoCityName+'').slideDown('fast');
-                        jQuery('#'+cityName+' span.glyphicon').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+                        $('.map-info').contents().hide();
+                        $(''+infoCityName+'').slideDown('fast');
+                        $('#'+cityName+' span.glyphicon').removeClass('glyphicon-plus').addClass('glyphicon-minus');
                     }
                 });
-                jQuery('.map-narrow-info span.glyphicon').click(function(){
-                    jQuery(this).closest('.map-narrow-info').slideUp('fast',function(){
-                        jQuery('span.glyphicon.point').removeClass('glyphicon-minus').addClass('glyphicon-plus');
-                        jQuery('#map-copy').fadeIn('fast');
+                $('.map-narrow-info span.glyphicon').click(function(){
+                    $(this).closest('.map-narrow-info').slideUp('fast',function(){
+                        $('span.glyphicon.point').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+                        $('#map-copy').fadeIn('fast');
                     });
 
                 });
             }
         };
 
-        jQuery(document).ready(function(jQuery) {
+        $(document).ready(function() {
             //presentational map copy placement on narrow
-            var $mapCopy = jQuery('#map-copy');
-            var mapCopyHeight = jQuery('#map-copy').height();
+            var $mapCopy = $('#map-copy');
+            var mapCopyHeight = $('#map-copy').height();
             $mapCopy.css({
                 'position'	 : 'absolute',
                 'top'		 : '50%',
@@ -414,17 +412,17 @@
             mapBehavior();
         });
 
-        jQuery(window).resize(function(){
-            if (jQuery(window).width()>992){
+        $(window).resize(function(){
+            if ($(window).width()>992){
                 //artist
-                jQuery('#overflow').css('left', 0);
-                jQuery('#faq-overflow').css('left', 0);
+                $('#overflow').css('left', 0);
+                $('#faq-overflow').css('left', 0);
                 //map
-                jQuery('.map-city-about').hide();
+                $('.map-city-about').hide();
             }else{
                 //map
-                jQuery('.point').unbind('click');
-                jQuery('.map-narrow-info').hide();
+                $('.point').unbind('click');
+                $('.map-narrow-info').hide();
             }
             //resize call on mapBehavior()
             mapBehavior();

@@ -1,12 +1,12 @@
 // JavaScript included on every theme page
 // Code for single pages included in Twig templates
 
-jQuery(document).ready(function(jQuery) {
-	jQuery('.slick-element').slick({dots: true, focusOnSelect: false});
+$(document).ready(function() {
+	$('.slick-element').slick({dots: true, focusOnSelect: false});
 
     // Assign circle images landscape/portrain classes to ensure they fill the cirle
-	jQuery('#featured-events img, .artists-featured-image img').each(function() {
-		var image = jQuery(this);
+	$('#featured-events img, .artists-featured-image img').each(function() {
+		var image = $(this);
 		//console.log(image.attr('src')+" - "+image.width()+" x "+image.height());
 		if (image.width() > image.height()) {
 			image.addClass('landscape');        
@@ -17,14 +17,14 @@ jQuery(document).ready(function(jQuery) {
 });
 
 // Scroll to hash behavior
-jQuery(function() {
-  jQuery('a[href*=#]:not([href=#])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname && !jQuery(this).hasClass('unmove')) {
-      var target = jQuery(this.hash);
-      target = target.length ? target : jQuery('[name=' + this.hash.slice(1) +']');
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname && !$(this).hasClass('unmove')) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
       if (target.length) {
-        jQuery('html,body').animate({
-          scrollTop: target.offset().top-jQuery('.navbar-top').height()-jQuery('#wpadminbar').height()
+        $('html,body').animate({
+          scrollTop: target.offset().top-$('.navbar-top').height()-$('#wpadminbar').height()
         }, 500);
         return false;
       }
@@ -33,16 +33,16 @@ jQuery(function() {
 });
 scrollready = document.body.scrollTop; 
 
-jQuery(window).load(function(){
+$(window).load(function(){
     // scroll at doc ready is 0 if we have never been here before even though 
     // there is a hash. hash height gets computed at window load
     if(window.location.hash.length>1 && document.body.scrollTop!==scrollready){
-        window.scrollTo(0,document.body.scrollTop-jQuery('.navbar-fixed-top').height()-jQuery('#wpadminbar').height());
+        window.scrollTo(0,document.body.scrollTop-$('.navbar-fixed-top').height()-$('#wpadminbar').height());
     }
 });
 
 // open external links in new tab
-jQuery('#wrapper').find('a').filter(function() {
+$('#wrapper').find('a').filter(function() {
     return this.hostname && this.hostname.indexOf(location.hostname)===-1
 }).attr({
     target : "_blank"
