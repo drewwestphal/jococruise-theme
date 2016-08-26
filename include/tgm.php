@@ -45,6 +45,15 @@ add_action( 'tgmpa_register', function() {
             'name' => 'ACF',
             'slug' => 'advanced-custom-fields-pro',
             'source' => 'http://connect.advancedcustomfields.com/index.php?p=pro&a=download&k=b3JkZXJfaWQ9Mzc1MDd8dHlwZT1kZXZlbG9wZXJ8ZGF0ZT0yMDE0LTA4LTE2IDE5OjM0OjI3'
+        ),
+        array(
+            'name' => 'BuddyPress',
+            'slug' => 'buddypress'
+        ),
+        array(
+            'name' => 'BuddyPress for Timber',
+            'slug' => 'timber-buddypress',
+            'source' => 'https://github.com/slimndap/TimberBuddyPress/archive/master.zip'
         )
     );
 

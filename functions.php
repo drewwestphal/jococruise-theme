@@ -3,11 +3,26 @@
 add_action('init', function () {
     /*custom nav behavior*/
     register_nav_menu('primary', 'Main Nav');
+
+    /* show wordpress toolbar for admins (omit if statement to show to all logged in WP users) */
+    if(current_user_can('manage_options')) {
+        show_admin_bar(true);
+    } else {
+        show_admin_bar(false);
+    }
 });
 
 add_action('after_setup_theme', function () {
     add_theme_support('automatic-feed-links');
     add_theme_support('post-thumbnails');
+});
+
+add_action( 'wp_print_scripts', function() {
+    // BuddyPress requires jQuery to be enqueued
+    // But we are including jQuery in our bower.js file
+    // So not deregistering script means we are loading two versions of jQuery
+    // And deregistering script means BuddyPress doesn't load the rest of its JavaScript
+    //wp_deregister_script('jquery');
 });
 
 require_once(__DIR__ . '/include/tgm.php');
@@ -29,13 +44,6 @@ if(function_exists('acf_add_options_page')) {
                              'capability' => 'edit_posts',
                              'redirect'   => false,
                          ]);
-}
-
-/* show wordpress toolbar for admins (omit if statement to show to all logged in WP users) */
-if(current_user_can('manage_options')) {
-    show_admin_bar(true);
-} else {
-    show_admin_bar(false);
 }
 
 add_filter('acf/load_field/name=faq_section_header', function ($field) {
