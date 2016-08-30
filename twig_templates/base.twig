@@ -7,12 +7,7 @@
     <title>{% if post.title %}{{ post.title }} | {% endif %}{{ site.name }}</title>
 
     <link rel="shortcut icon" href="{{ theme.link }}/img/favicon.png" />
-    <link rel='stylesheet' id='bootstrapcss-css'  href='{{ theme.link }}/css/bootstrap.css' type='text/css' />
     {{ function('wp_head') }}
-
-    {% if is_booking_page %}
-        <link rel='stylesheet' id='bookingcss'  href='{{ theme.link }}/css/booking.css' type='text/css' />
-    {% endif %}
 
     <script type='text/javascript' src='{{ theme.link }}/js/bower.min.js'></script>
     <script type='text/javascript' src='//www.google.com/recaptcha/api.js'></script>
