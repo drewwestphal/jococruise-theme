@@ -79,7 +79,7 @@
                 <div class="container">
                     <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
                         <h1>{{ options.mailing_list_call_to_action }}</h1>
-                        {{ function('mc4wp_form') }}
+                        {% do function('mc4wp_show_form') %}
                     </div>
                 </div>
             </section>
@@ -102,7 +102,7 @@
                     </h3>
                 </div>
                 {% else %}
-                <div class="col-xs-12" style="padding-top:33px;"></div> 
+                <div class="col-xs-12" style="padding-top:33px;"></div>
                 {% endif %}
                 {% include 'artists_frontpage.twig' with {'artists':artists} %}
                 {% if options.featured_guest_header is not empty %}

@@ -38,33 +38,35 @@ if(current_user_can('manage_options')) {
     show_admin_bar(false);
 }
 
-add_filter('acf/load_field/name=faq_section_header', function ($field) {
+if(function_exists('get_field')) {
+
+    add_filter('acf/load_field/name=faq_section_header', function ($field) {
 // Loads FAQ categories from theme page as options for FAQ post type
-    $field['choices'] = [];
-    $choices = get_field('faq_categories', 'option', false);
-    $choices = explode("\n", $choices);
-    $choices = array_map('trim', $choices);
-    if(is_array($choices)) {
-        foreach($choices as $choice) {
-            if(strlen($choice)) {
-                $field['choices'][$choice] = $choice;
+        $field['choices'] = [];
+        $choices = get_field('faq_categories', 'option', false);
+        $choices = explode("\n", $choices);
+        $choices = array_map('trim', $choices);
+        if(is_array($choices)) {
+            foreach($choices as $choice) {
+                if(strlen($choice)) {
+                    $field['choices'][$choice] = $choice;
+                }
             }
         }
-    }
-    return $field;
-});
+        return $field;
+    });
 
-$cruise_year = get_field('cruise_year', 'option');
-$availableCruiseYears = array_reverse(range(2011, intval($cruise_year), 1));
+    $cruise_year = get_field('cruise_year', 'option');
+    $availableCruiseYears = array_reverse(range(2011, intval($cruise_year), 1));
 
-add_filter('acf/load_field/name=faq_year', function ($field) use ($availableCruiseYears) {
-    foreach($availableCruiseYears as $year) {
-        $field['choices'][$year] = $year;
-    }
-    return $field;
-});
+    add_filter('acf/load_field/name=faq_year', function ($field) use ($availableCruiseYears) {
+        foreach($availableCruiseYears as $year) {
+            $field['choices'][$year] = $year;
+        }
+        return $field;
+    });
 
-
+}
 //enqueue main styles
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('joco_main', get_template_directory_uri() . '/css/bootstrap.css');
