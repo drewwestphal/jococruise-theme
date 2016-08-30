@@ -64,4 +64,11 @@ add_filter('acf/load_field/name=faq_year', function ($field) use ($availableCrui
     return $field;
 });
 
+
+//enqueue main style
+add_action('wp_enqueue_scripts', function(){
+    wp_enqueue_style('joco_main', get_template_directory_uri() . '/css/bootstrap.css');
+});
+
+
 ?>
