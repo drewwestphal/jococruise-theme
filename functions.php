@@ -17,14 +17,6 @@ add_action('after_setup_theme', function () {
     add_theme_support('post-thumbnails');
 });
 
-add_action( 'wp_print_scripts', function() {
-    // BuddyPress requires jQuery to be enqueued
-    // But we are including jQuery in our bower.js file
-    // So not deregistering script means we are loading two versions of jQuery
-    // And deregistering script means BuddyPress doesn't load the rest of its JavaScript
-    //wp_deregister_script('jquery');
-});
-
 require_once(__DIR__ . '/include/tgm.php');
 require_once(__DIR__ . '/include/cpt.php');
 require_once(__DIR__ . '/include/columns.php');

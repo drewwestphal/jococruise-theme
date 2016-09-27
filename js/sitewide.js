@@ -18,7 +18,7 @@ $(document).ready(function() {
 
 // Scroll to hash behavior
 $(function() {
-  $('a[href*=#]:not([href=#])').click(function() {
+  jQuery('a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname && !$(this).hasClass('unmove')) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -33,7 +33,7 @@ $(function() {
 });
 scrollready = document.body.scrollTop; 
 
-$(window).load(function(){
+jQuery(window).load(function(){
     // scroll at doc ready is 0 if we have never been here before even though 
     // there is a hash. hash height gets computed at window load
     if(window.location.hash.length>1 && document.body.scrollTop!==scrollready){
