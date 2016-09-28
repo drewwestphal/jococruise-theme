@@ -1,0 +1,48 @@
+@font-face {
+    font-family: surveyorBookItalic;
+    src: url(../fonts/SurveyorDisplay-BookItalic-Pro.otf);
+}
+body.login {
+    background-color: #f5f5eb;
+    color: #063953;
+}
+body.login div#login {
+    width: 600px;
+}
+body.login div#login h1 a {
+    background-image: url("../img/hero_boat.svg");
+    height: 100px;
+}
+body.login div#login form#loginform {
+    background-color: rgb(208, 196, 175);
+}
+body.login div#login form#loginform input {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border: 1px solid #f6f4ec;
+    font-family: surveyorBookItalic, serif;
+}
+body.login div#login form#loginform p.submit input#wp-submit {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    white-space: nowrap;
+    padding: 6px 12px;
+    border-radius: 2px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-transform: uppercase;
+    font-family: gothamBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    line-height: 1.5;
+    color: #ffffff;
+    background-color: #6e96ab;
+    border-color: #5e8aa2;
+}

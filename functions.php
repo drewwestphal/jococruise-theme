@@ -72,5 +72,9 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('joco_main', get_template_directory_uri() . '/css/bootstrap.css');
 });
 
+add_action( 'login_enqueue_scripts', function() {
+    wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/css/login.css' );
+} );
+
 
 ?>
