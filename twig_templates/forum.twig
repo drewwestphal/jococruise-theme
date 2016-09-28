@@ -1,0 +1,14 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+    <style>
+        #muut {
+            background-color: #0a5479;
+        }
+    </style>
+    <div class="container nav-spacer">
+    {% if function('muut_is_forum_page') %}
+        {{ function('muut_page_embed') }}
+    {% endif %}
+    </div>
+{% endblock %}
