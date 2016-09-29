@@ -81,5 +81,11 @@ if($skipPortsOfCallMap) {
             'post_type' => 'page',
         ]);
 }
+$context['podcasts'] = Timber::get_posts(
+    [
+        'post_type'      => 'podcast',
+        'posts_per_page' => -1,
+    ], 'JoCoCruisePost'
+);
 
 Timber::render('frontpage.twig', $context);

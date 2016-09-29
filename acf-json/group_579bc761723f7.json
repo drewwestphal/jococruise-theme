@@ -795,8 +795,8 @@
         },
         {
             "key": "field_579bcb15b0a84",
-            "label": "Footer Settings",
-            "name": "footer_settings",
+            "label": "Podcasts & Footer Settings",
+            "name": "podcasts_&_footer_settings",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -808,6 +808,48 @@
             },
             "placement": "top",
             "endpoint": 0
+        },
+        {
+            "key": "field_57ed74c465343",
+            "label": "Podcast Header",
+            "name": "podcast_header",
+            "type": "text",
+            "instructions": "split lines with pipe (|)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_57ed7a710d4a5",
+            "label": "Podcast disclaimer",
+            "name": "podcast_disclaimer",
+            "type": "text",
+            "instructions": "Appears just below list of podcasts",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "(Lineup subject to change)",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
         },
         {
             "key": "field_579bcb41b0a85",
@@ -1243,5 +1285,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1471539222
+    "modified": 1475181250
 }

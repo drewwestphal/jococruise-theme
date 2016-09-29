@@ -5,6 +5,7 @@ function cptui_register_my_cpt_artist() {
         'label' => 'Artist',
         'description' => '',
         'public' => true,
+        'publicly_queryable' => true,
         'show_ui' => true,
         'show_in_menu' => true,
         'capability_type' => 'post',
@@ -44,6 +45,55 @@ function cptui_register_my_cpt_artist() {
             'not_found' => 'No Artist Found',
             'not_found_in_trash' => 'No Artist Found in Trash',
             'parent' => 'Parent Artist',
+        )
+    ));
+}
+
+add_action('init', 'cptui_register_my_cpt_podcast');
+function cptui_register_my_cpt_podcast() {
+    register_post_type('podcast', array(
+        'label' => 'Podcast',
+        'description' => '',
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'capability_type' => 'post',
+        'map_meta_cap' => true,
+        'hierarchical' => false,
+        'rewrite' => array(
+            'slug' => 'podcast',
+            'with_front' => true
+        ),
+        'query_var' => true,
+        'supports' => array(
+            'title',
+            'editor',
+            'excerpt',
+            'trackbacks',
+            'custom-fields',
+            'comments',
+            'revisions',
+            'thumbnail',
+            'author',
+            'page-attributes',
+            'post-formats',
+            'wpcom-markdown'
+        ),
+        'labels' => array(
+            'name' => 'Podcast',
+            'singular_name' => 'Podcast',
+            'menu_name' => 'Podcast',
+            'add_new' => 'Add podcast',
+            'add_new_item' => 'Add New podcast',
+            'edit' => 'Edit',
+            'edit_item' => 'Edit podcast',
+            'new_item' => 'New podcast',
+            'view' => 'View podcast',
+            'view_item' => 'View podcast',
+            'search_items' => 'Search podcast',
+            'not_found' => 'No podcast Found',
+            'not_found_in_trash' => 'No podcast Found in Trash',
+            'parent' => 'Parent podcast',
         )
     ));
 }
