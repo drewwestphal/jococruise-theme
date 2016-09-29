@@ -78,8 +78,8 @@
             <section id="mailing-list" class="headers joco_beige">
                 <div class="container">
                     <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-                        <h1>{{ options.mailing_list_call_to_action }}</h1>
-                        {% do function('mc4wp_show_form') %}
+                        <h1>{{ options.mailing_list_call_to_action|piped_header }}</h1>
+                        {% do function(show_mailing_function) %}
                     </div>
                 </div>
             </section>
