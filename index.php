@@ -13,9 +13,9 @@ $context['news_posts'] = $news_posts = Timber::get_posts(
     ], 'JoCoCruisePost');
 $context['show_news'] = (bool)count($news_posts);
 $context['show_mailing_list'] = function_exists('mc4wp_show_form') or function_exists('mc4wp_form');
-$context['show_mailing_function'] = 'mc4wp_form';
-if (!function_exists('mc4wp_form')) {
-    $context['show_mailing_function'] = 'mc4wp_show_form';
+$context['show_mailing_function'] = 'mc4wp_show_form';
+if (!function_exists('mc4wp_show_form')) {
+    $context['show_mailing_function'] = 'mc4wp_form';
 }
 
 $targetArtistType = 'artist_type' . $cruise_year;
