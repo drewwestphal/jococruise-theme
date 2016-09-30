@@ -66,15 +66,34 @@ if(function_exists('get_field')) {
         return $field;
     });
 
+    // create a year / type entry for each artist
+    foreach($availableCruiseYears as $year) {
+        acf_add_local_field([
+                                'key'           => 'field_customArtistType_' . $year,
+                                'name'          => 'artist_type' . $year,
+                                'label'         => 'Artist Type ' . $year,
+                                'type'          => 'select',
+                                'parent'        => 'group_acf_artist',
+                                'choices'       => [
+                                    'artist'          => "Performer",
+                                    'featured artist' => "Featured Guest",
+                                    'spotlight item'  => "Spotlight Item",
+                                    'podcast'         => "Podcast",
+                                    'did not attend'  => "Did not attend this year",
+                                ],
+                                'default_value' => 'did not attend',
+                            ]);
+    }
+
 }
 //enqueue main styles
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('joco_main', get_template_directory_uri() . '/css/bootstrap.css');
 });
 
-add_action( 'login_enqueue_scripts', function() {
-    wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/css/login.css' );
-} );
+add_action('login_enqueue_scripts', function () {
+    wp_enqueue_style('custom-login', get_stylesheet_directory_uri() . '/css/login.css');
+});
 
 
 ?>

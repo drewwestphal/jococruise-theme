@@ -5,7 +5,7 @@
         {
             "key": "field_579bc774c924b",
             "label": "Sitewide Options",
-            "name": "sitewide_options",
+            "name": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -122,7 +122,7 @@
         {
             "key": "field_579bc85bc9251",
             "label": "Hero Section Options",
-            "name": "hero_section_options",
+            "name": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -301,7 +301,7 @@
         {
             "key": "field_579bc998b0a70",
             "label": "Artist Settings",
-            "name": "artist_settings",
+            "name": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -399,6 +399,25 @@
             "disabled": 0
         },
         {
+            "key": "field_57eea439a0606",
+            "label": "Podcasts Header",
+            "name": "podcast_header",
+            "type": "text",
+            "instructions": "split lines with pipe (|)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_579bc9f8b0a75",
             "label": "Even More Header",
             "name": "even_more_header",
@@ -441,9 +460,28 @@
             "disabled": 0
         },
         {
+            "key": "field_57eea457a0608",
+            "label": "Artist Section Footer",
+            "name": "artist_section_footer",
+            "type": "text",
+            "instructions": "markdown",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "(Lineup subject to change)",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_579bca1cb0a77",
             "label": "Contact Settings",
-            "name": "contact_settings",
+            "name": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -643,7 +681,7 @@
         {
             "key": "field_579bca99b0a7e",
             "label": "Map Settings",
-            "name": "map_settings",
+            "name": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -680,7 +718,7 @@
         {
             "key": "field_579bcadcb0a80",
             "label": "News Settings",
-            "name": "news_settings",
+            "name": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -759,7 +797,7 @@
         {
             "key": "field_579bcd0f7e89c",
             "label": "FAQ Settings",
-            "name": "faq_settings",
+            "name": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -795,8 +833,8 @@
         },
         {
             "key": "field_579bcb15b0a84",
-            "label": "Podcasts & Footer Settings",
-            "name": "podcasts_&_footer_settings",
+            "label": "Footer Settings",
+            "name": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -808,48 +846,6 @@
             },
             "placement": "top",
             "endpoint": 0
-        },
-        {
-            "key": "field_57ed74c465343",
-            "label": "Podcast Header",
-            "name": "podcast_header",
-            "type": "text",
-            "instructions": "split lines with pipe (|)",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_57ed7a710d4a5",
-            "label": "Podcast disclaimer",
-            "name": "podcast_disclaimer",
-            "type": "text",
-            "instructions": "Appears just below list of podcasts",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "(Lineup subject to change)",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
         },
         {
             "key": "field_579bcb41b0a85",
@@ -875,7 +871,7 @@
         {
             "key": "field_57b4a3a409f3f",
             "label": "Experience Page",
-            "name": "experience_page",
+            "name": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -1285,5 +1281,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1475181250
+    "modified": 1475257474
 }

@@ -67,7 +67,8 @@
                             {% endfor %}
                         </div>
                         {% if news_posts|length>0 %}
-                            <a id="news-view-all" href="{{ options.news_view_all_url }}">{{ options.news_view_all_copy }}</a>
+                            <a id="news-view-all"
+                               href="{{ options.news_view_all_url }}">{{ options.news_view_all_copy }}</a>
                         {% endif %}
                     </div>
                 </div>
@@ -96,44 +97,59 @@
                     </div>
                 </div>
                 {% if options.performer_header is not empty %}
-                <div class="clearfix col-xs-12">
-                    <h3 class="slant_header">
-                        {{ options.performer_header|piped_header }}
-                    </h3>
-                </div>
+                    <div class="clearfix col-xs-12">
+                        <h3 class="slant_header">
+                            {{ options.performer_header|piped_header }}
+                        </h3>
+                    </div>
                 {% else %}
-                <div class="col-xs-12" style="padding-top:33px;"></div>
+                    <div class="col-xs-12" style="padding-top:33px;"></div>
                 {% endif %}
                 {% include 'artists_frontpage.twig' with {'artists':artists} %}
                 {% if options.featured_guest_header is not empty %}
-                <div class="clearfix col-xs-12">
-                    <h3 class="slant_header">
-                        {{ options.featured_guest_header|piped_header }}
-                    </h3>
-                </div>
+                    <div class="clearfix col-xs-12">
+                        <h3 class="slant_header">
+                            {{ options.featured_guest_header|piped_header }}
+                        </h3>
+                    </div>
                 {% else %}
-                <div class="col-xs-12" style="padding-top:33px;"></div>
+                    <div class="col-xs-12" style="padding-top:33px;"></div>
                 {% endif %}
                 {% if featured_artists is not empty %}
                     {% include 'artists_frontpage.twig' with {'artists':featured_artists} %}
                 {% endif %}
-                {% if options.even_more_header is not empty %}
-                <div class="clearfix col-xs-12">
-                    <h3 class="slant_header">
-                        {{ options.even_more_header|piped_header }}
-                    </h3>
-                </div>
+                {% if options.podcast_header is not empty %}
+                    <div class="clearfix col-xs-12">
+                        <h3 class="slant_header">
+                            {{ options.podcast_header|piped_header }}
+                        </h3>
+                    </div>
                 {% else %}
-                <div class="col-xs-12" style="padding-top:33px;"></div>
+                    <div class="col-xs-12" style="padding-top:33px;"></div>
+                {% endif %}
+                {% if podcasts is not empty %}
+                    {% include 'artists_frontpage.twig' with {'artists':podcasts} %}
+                {% endif %}
+                {% if options.even_more_header is not empty %}
+                    <div class="clearfix col-xs-12">
+                        <h3 class="slant_header">
+                            {{ options.even_more_header|piped_header }}
+                        </h3>
+                    </div>
+                {% else %}
+                    <div class="col-xs-12" style="padding-top:33px;"></div>
                 {% endif %}
                 {% include 'artists_frontpage.twig' with {'artists':spotlight_items} %}
                 {% if options.coming_soon_header is not empty %}
-                <div class="clearfix col-xs-12">
-                    <h3 class="slant_header">
-                        {{ options.coming_soon_header|piped_header }}
-                    </h3>
-                </div>
+                    <div class="clearfix col-xs-12">
+                        <h3 class="slant_header">
+                            {{ options.coming_soon_header|piped_header }}
+                        </h3>
+                    </div>
                 {% endif %}
+                <div class="col-xs-12" style="text-align: center; font-style: italic;">
+                    {{ options.artist_section_footer|markdown }}
+                </div>
                 <div class="clearfix"></div>
             </div>
         </section>
@@ -224,13 +240,16 @@
                     {% endif %}
                     <div class="contact-info-group contact-social">
                         {% if options.link_to_facebook_page %}
-                            <a href="{{ options.link_to_facebook_page }}" class="contact-social-icon facebook" target="_blank"></a>
+                            <a href="{{ options.link_to_facebook_page }}" class="contact-social-icon facebook"
+                               target="_blank"></a>
                         {% endif %}
                         {% if options.link_to_twitter %}
-                            <a href="{{ options.link_to_twitter }}" class="contact-social-icon twitter" target="_blank"></a>
+                            <a href="{{ options.link_to_twitter }}" class="contact-social-icon twitter"
+                               target="_blank"></a>
                         {% endif %}
                         {% if options.link_to_instagram %}
-                            <a href="{{ options.link_to_instagram }}" class="contact-social-icon insta" target="_blank"></a>
+                            <a href="{{ options.link_to_instagram }}" class="contact-social-icon insta"
+                               target="_blank"></a>
                         {% endif %}
                     </div>
                 </div>
@@ -264,70 +283,60 @@
         </section>
     </section>
     {% if front_page_faqs %}
-    <section id="faqs">
-        <div class="faq container">
-            <div class="faq col-xs-12 col-md-12">
-                <h1><span>Frequently Asked</span><br>Questions</h1>
-            </div>
-            <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
-                <div data-slick='{"slidesToShow": 1, "slidesToScroll": 1}' class="slick-element">
-                    {% for faq in front_page_faqs %}
-                        <div>
-                            <div class="faq-item-question"><a href="{{ faq_link }}#{{ faq.slug }}">{{ faq.title }}</a>
-                            </div>
-                            <div class="faq-item-answer">{{ faq.joco_excerpt() }}</div>
-                        </div>
-                    {% endfor %}
+        <section id="faqs">
+            <div class="faq container">
+                <div class="faq col-xs-12 col-md-12">
+                    <h1><span>Frequently Asked</span><br>Questions</h1>
                 </div>
-            </div>
-            <div class="hidden-xs col-sm-12">
-                <div data-slick='{"slidesToShow": 3, "slidesToScroll": 1}' class="slick-element">
-                    {% for faq in front_page_faqs %}
-                        <div>
-                            <div class="faq-item-question"><a href="{{ faq_link }}#{{ faq.slug }}">{{ faq.title }}</a>
+                <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                    <div data-slick='{"slidesToShow": 1, "slidesToScroll": 1}' class="slick-element">
+                        {% for faq in front_page_faqs %}
+                            <div>
+                                <div class="faq-item-question"><a
+                                            href="{{ faq_link }}#{{ faq.slug }}">{{ faq.title }}</a>
+                                </div>
+                                <div class="faq-item-answer">{{ faq.joco_excerpt() }}</div>
                             </div>
-                            <div class="faq-item-answer">{{ faq.joco_excerpt() }}</div>
-                        </div>
-                    {% endfor %}
+                        {% endfor %}
+                    </div>
                 </div>
+                <div class="hidden-xs col-sm-12">
+                    <div data-slick='{"slidesToShow": 3, "slidesToScroll": 1}' class="slick-element">
+                        {% for faq in front_page_faqs %}
+                            <div>
+                                <div class="faq-item-question"><a
+                                            href="{{ faq_link }}#{{ faq.slug }}">{{ faq.title }}</a>
+                                </div>
+                                <div class="faq-item-answer">{{ faq.joco_excerpt() }}</div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <a id="faq-view-all" href="{{ faq_link }}">View All FAQS</a>
             </div>
-            <a id="faq-view-all" href="{{ faq_link }}">View All FAQS</a>
-        </div>
-    </section>
-    {% endif %}
-    {% if podcasts is not empty %}
-    <section id="podcasts" class="headers joco_beige">
-        <div class="container">
-            <div class="clearfix col-xs-12">
-                <h3 class="slant_header">
-                    {{ options.podcast_header|piped_header }}
-                </h3>
-            </div>
-            {% include 'artists_frontpage.twig' with {'artists':podcasts} %}
-            <p style="text-align: center; font-size: 0.8em; margin-bottom: 40px;">{{ options.podcast_disclaimer }}</p>
-        </div>
-    </section>
+        </section>
     {% endif %}
 
     <script type='text/javascript'>
-        (function($){
+        (function ($) {
             // Contact form validation
-            $('#contact-form').submit(function(){
+            $('#contact-form').submit(function () {
                 function validateEmail($email) {
                     var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-                    if( !emailReg.test( $email ) ) {
+                    if (!emailReg.test($email)) {
                         return false;
                     } else {
                         return true;
                     }
                 }
+
                 $('.contact-input p, .contact-comments p, #contact-form p').remove();
                 $('#name,#email,#comments').removeClass('orange-border');
                 var name = false;
                 var email = false;
                 var comments = false;
                 var recaptcha = false;
-                if ($('#comments').val().length == 0)  {
+                if ($('#comments').val().length == 0) {
                     $('#comments').addClass('orange-border');
                     $('#comments').focus();
                     $('#contact-comments').append('<p class="plain-text">Please enter your message.</p>');
@@ -335,7 +344,7 @@
                 } else {
                     comments = true;
                 }
-                if ($('#name').val().length == 0)  {
+                if ($('#name').val().length == 0) {
                     $('#name').addClass('orange-border');
                     $('#name').focus();
                     $('#contact-input-name').append('<p class="plain-text">Please enter your name.</p>');
@@ -352,7 +361,7 @@
                 } else {
                     email = true;
                 }
-                if ($("#g-recaptcha-response").val().length==0) {
+                if ($("#g-recaptcha-response").val().length == 0) {
                     $(".g-recaptcha").after('<p class="recaptcha-error">Please assure us that you are not a robot.</p>');
                     //$(".g-recaptcha").after('<p class="recaptcha-error">Value: '+$("#g-recaptcha-response").val()+'</p>');
                     recaptcha = false;
@@ -362,7 +371,7 @@
                 if (name && email && comments && recaptcha) {
                     $('#name, #email').removeClass('orange-border');
                     $('#contact button').after('<div id="contact-received">Sending...</div>');
-                    $.post($('#contact-form').attr('action'), $("#contact-form").serialize(),function(data){
+                    $.post($('#contact-form').attr('action'), $("#contact-form").serialize(), function (data) {
                         grecaptcha.reset();
                         console.log(data);
                         $("#contact-received").text(data);
@@ -373,14 +382,14 @@
             });
         })(jQuery);
 
-        var mapBehavior = function(){
+        var mapBehavior = function () {
             jQuery('.map-city').hide().show(0); // force redraw to gaurantee placement on window resize
-            if (jQuery(window).width()>992){
-                jQuery('#map').click(function() {
+            if (jQuery(window).width() > 992) {
+                jQuery('#map').click(function () {
                     jQuery('.point').removeClass('glyphicon-minus').addClass('glyphicon-plus');
                     jQuery('.map-city-about').fadeOut('fast');
                 });
-                jQuery('.point').mouseover(function() {
+                jQuery('.point').mouseover(function () {
                     if (!jQuery(this).is(jQuery('.glyphicon-minus'))) {
                         jQuery('.point').removeClass('glyphicon-minus').addClass('glyphicon-plus');
                         jQuery('.map-city-about').fadeOut('fast');
@@ -389,24 +398,24 @@
                     }
                 });
             } else {
-                jQuery('.point').click(function(){
+                jQuery('.point').click(function () {
                     jQuery('span.glyphicon.point').removeClass('glyphicon-minus').addClass('glyphicon-plus');
                     var cityName = jQuery(this).parent().attr('id');
-                    var infoCityName = '#info-'+cityName;
+                    var infoCityName = '#info-' + cityName;
 
-                    if (jQuery(''+infoCityName+'').is(':visible')){
-                        jQuery(''+infoCityName+'').slideUp('fast',function(){
-                            jQuery('#'+cityName+' span.glyphicon').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+                    if (jQuery('' + infoCityName + '').is(':visible')) {
+                        jQuery('' + infoCityName + '').slideUp('fast', function () {
+                            jQuery('#' + cityName + ' span.glyphicon').removeClass('glyphicon-minus').addClass('glyphicon-plus');
                             jQuery('#map-copy').fadeIn('fast');
                         });
                     } else {
                         jQuery('.map-info').contents().hide();
-                        jQuery(''+infoCityName+'').slideDown('fast');
-                        jQuery('#'+cityName+' span.glyphicon').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+                        jQuery('' + infoCityName + '').slideDown('fast');
+                        jQuery('#' + cityName + ' span.glyphicon').removeClass('glyphicon-plus').addClass('glyphicon-minus');
                     }
                 });
-                jQuery('.map-narrow-info span.glyphicon').click(function(){
-                    jQuery(this).closest('.map-narrow-info').slideUp('fast',function(){
+                jQuery('.map-narrow-info span.glyphicon').click(function () {
+                    jQuery(this).closest('.map-narrow-info').slideUp('fast', function () {
                         jQuery('span.glyphicon.point').removeClass('glyphicon-minus').addClass('glyphicon-plus');
                         jQuery('#map-copy').fadeIn('fast');
                     });
@@ -415,27 +424,27 @@
             }
         };
 
-        jQuery(document).ready(function(jQuery) {
+        jQuery(document).ready(function (jQuery) {
             //presentational map copy placement on narrow
             var $mapCopy = jQuery('#map-copy');
             var mapCopyHeight = jQuery('#map-copy').height();
             $mapCopy.css({
-                'position'	 : 'absolute',
-                'top'		 : '50%',
-                'margin-top' : -mapCopyHeight/2
+                'position': 'absolute',
+                'top': '50%',
+                'margin-top': -mapCopyHeight / 2
             });
             //initial call of mapBehavior()
             mapBehavior();
         });
 
-        jQuery(window).resize(function(){
-            if (jQuery(window).width()>992){
+        jQuery(window).resize(function () {
+            if (jQuery(window).width() > 992) {
                 //artist
                 jQuery('#overflow').css('left', 0);
                 jQuery('#faq-overflow').css('left', 0);
                 //map
                 jQuery('.map-city-about').hide();
-            }else{
+            } else {
                 //map
                 jQuery('.point').unbind('click');
                 jQuery('.map-narrow-info').hide();

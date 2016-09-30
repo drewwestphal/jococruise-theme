@@ -45,7 +45,9 @@ $context['featured_artists'] = Timber::get_posts(
 $context['spotlight_items'] = Timber::get_posts(
     artistTypeQueryArray($targetArtistType, 'spotlight item')
     , 'ArtistPost');
-
+$context['podcasts'] = Timber::get_posts(
+    artistTypeQueryArray($targetArtistType, 'podcast')
+    , 'ArtistPost');
 $context['map_cities'] = Timber::get_posts(
     [
         'post_type'      => 'city',
@@ -81,11 +83,5 @@ if($skipPortsOfCallMap) {
             'post_type' => 'page',
         ]);
 }
-$context['podcasts'] = Timber::get_posts(
-    [
-        'post_type'      => 'podcast',
-        'posts_per_page' => -1,
-    ], 'JoCoCruisePost'
-);
 
 Timber::render('frontpage.twig', $context);
