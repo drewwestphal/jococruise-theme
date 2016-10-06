@@ -54,6 +54,10 @@ add_action( 'tgmpa_register', function() {
             'name' => 'BuddyPress for Timber',
             'slug' => 'timber-buddypress',
             'source' => 'https://github.com/slimndap/TimberBuddyPress/archive/master.zip'
+        ),
+        array(
+            'name' => 'bbPress',
+            'slug' => 'bbpress'
         )
     );
 
