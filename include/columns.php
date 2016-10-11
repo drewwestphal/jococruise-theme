@@ -24,6 +24,7 @@ add_action('manage_faq_posts_custom_column', function ($column, $post_id) {
 
 add_filter('manage_edit-faq_sortable_columns', function ($columns) {
     $columns['faq_section_header'] = 'faq_section_header';
+    $columns['faq_year'] = 'faq_year';
     return $columns;
 }, 10, 1);
 
