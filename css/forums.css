@@ -1,0 +1,14 @@
+input {
+    background-color: white;
+    padding: 5px;
+    margin: 7px;
+    width: auto;
+}
+
+textarea {
+    background-color: white;
+}
+
+#subscription-toggle {
+    padding-left: 8px;
+}
