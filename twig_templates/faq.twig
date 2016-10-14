@@ -11,7 +11,7 @@
             </div>
             {% for header, faq_items in faqs_by_header %}
                 {% if faq_items|length>0 %}
-                    <h3 class="faq-header">{{ header }}</h3>
+                    <h3 id="{{ faq_items|first.sectionHeaderSlug }}" class="faq-header">{{ header }}</h3>
                     {% for faq in faq_items %}
                         <article class="faq-article" id="{{ faq.slug }}">
                             <span class="faq-button glyphicon glyphicon-plus"></span>

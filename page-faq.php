@@ -14,7 +14,7 @@ $guessYear = in_array($guessYear, $availableCruiseYears) ? $guessYear : false;
 $targetFaqYear = $guessYear ? $guessYear : $cruise_year;
 
 /**
- * @var TimberPost[] $faqPosts
+ * @var FAQPost[] $faqPosts
  */
 $faqPosts = Timber::get_posts(
     [
@@ -26,12 +26,12 @@ $faqPosts = Timber::get_posts(
                 'value' => $targetFaqYear,
             ],
         ],
-    ]);
+    ], 'FAQPost');
 // create the ordered array
 $sectionHeadersInOrder = array_map('trim', explode('\n', get_field('faq_categories', 'option')));
 $faqsByHeader = array_combine($sectionHeadersInOrder, array_fill(0, count($sectionHeadersInOrder), []));
 foreach($faqPosts as $item) {
-    $faqsByHeader[$item->get_field('faq_section_header')][] = $item;
+    $faqsByHeader[$item->getSectionHeader()][] = $item;
 }
 
 $context = Timber::get_context();

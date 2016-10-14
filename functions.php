@@ -20,6 +20,7 @@ require_once(__DIR__ . '/include/JoCoCruisePost.php');
 require_once(__DIR__ . '/include/ArtistPost.php');
 require_once(__DIR__ . '/include/MapCityPost.php');
 require_once(__DIR__ . '/include/SponsorPost.php');
+require_once(__DIR__ . '/include/FAQPost.php');
 
 if(function_exists('acf_add_options_page')) {
     acf_add_options_page([
