@@ -105,3 +105,18 @@ a.acomment-reply span {
     height: auto;
     margin-bottom: 10px !important;
 }
+
+@media screen and (max-width: 767px) {
+    body.activity-permalink .activity-avatar {
+        float: none;
+        width: 100%;
+    }
+
+    body.activity-permalink .activity-avatar img {
+        float: none;
+    }
+
+    body.activity-permalink .activity-content, .activity-comments {
+        margin: 0 !important;
+    }
+}
