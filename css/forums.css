@@ -26,6 +26,10 @@ textarea {
     padding-left: 8px;
 }
 
+#latest-update a {
+    padding-left: 4px;
+}
+
 .bbp-header, .bbp-footer {
     background-color: #1a5d83 !important;
     color: white;
@@ -101,12 +105,21 @@ a.acomment-reply span {
     padding: 7px 13px !important;
 }
 
-.activity-meta {
-    height: auto;
+.activity-meta .bp-primary-action, .activity-meta .bp-secondary-action {
+    display: block;
+    float: left;
     margin-bottom: 10px !important;
 }
 
+img.avatar {
+    margin-bottom: 1px !important;
+}
+
 @media screen and (max-width: 767px) {
+    .bbp-header li, .bbp-footer li {
+        font-size: 0.7em !important;
+    }
+
     body.activity-permalink .activity-avatar {
         float: none;
         width: 100%;
