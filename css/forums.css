@@ -1,3 +1,12 @@
+#bbpress-forumsx {
+    font-family: surveyorBook,Georgia, "Times New Roman", Times, serif;
+    color: #063953;
+}
+
+a:hover {
+    color: #0b6a9a !important;
+}
+
 input {
     background-color: white;
     padding: 5px;
@@ -9,6 +18,40 @@ textarea {
     background-color: white;
 }
 
+.forums-col {
+    padding: 0;
+}
+
 #subscription-toggle {
     padding-left: 8px;
+}
+
+.bbp-header, .bbp-footer {
+    background-color: #1a5d83 !important;
+    color: white;
+    font-family: gothamBook,"Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 500 !important;
+}
+
+.bbp-header a, .bbp-footer a {
+    color: #f5f5eb;
+    font-family: surveyorBook,Georgia, "Times New Roman", Times, serif;
+    text-transform: capitalize;
+}
+
+.bbp-header a:hover, .bbp-footer a:hover {
+    color: #d0c4af !important;
+}
+
+.bbp-reply-header {
+    background-color: #d0c4af !important;
+}
+
+.bbp-admin-links a, .bbp-reply-permalink {
+    color: #063953 !important;
+}
+
+.bbp-admin-links a:hover, .bbp-reply-permalink:hover {
+    color: #0b6a9a !important;
 }
