@@ -1,6 +1,9 @@
-#bbpress-forumsx {
-    font-family: surveyorBook,Georgia, "Times New Roman", Times, serif;
-    color: #063953;
+body {
+    font-size: 14px;
+}
+
+#bbpress-forums, #bbpress-forums ul {
+    font-size: 14px !important;
 }
 
 a:hover {
@@ -50,8 +53,13 @@ textarea {
 
 .bbp-admin-links a, .bbp-reply-permalink {
     color: #063953 !important;
+    text-transform: capitalize !important;
 }
 
 .bbp-admin-links a:hover, .bbp-reply-permalink:hover {
     color: #0b6a9a !important;
+}
+
+#item-body p {
+    line-height: 120% !important;
 }
