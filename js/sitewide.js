@@ -16,22 +16,25 @@ $(document).ready(function() {
 	});
 });
 
+
 // Scroll to hash behavior
 $(function() {
-  $('a[href*=\\#]:not([href=\\#])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname && !$(this).hasClass('unmove')) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html,body').animate({
-          scrollTop: target.offset().top-$('.navbar-top').height()-$('#wpadminbar').height()
-        }, 500);
-        return false;
-      }
+    if (!on_forums_page) {
+        $('a[href*=\\#]:not([href=\\#])').click(function () {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname && !$(this).hasClass('unmove')) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top - $('.navbar-top').height() - $('#wpadminbar').height()
+                    }, 500);
+                    return false;
+                }
+            }
+        });
     }
-  });
 });
-scrollready = document.body.scrollTop; 
+scrollready = document.body.scrollTop;
 
 $(window).on('load', function(){
     // scroll at doc ready is 0 if we have never been here before even though 
