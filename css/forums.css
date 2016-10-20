@@ -115,6 +115,23 @@ img.avatar {
     margin-bottom: 1px !important;
 }
 
+.profile h4 {
+    margin-bottom: 30px !important;
+}
+
+.profile-fields td.label {
+    color: #063953 !important;
+    border: 0 transparent !important;
+}
+
+.profile-fields td {
+    background-color: white !important;
+}
+
+.profile-fields tr.alt td {
+    background-color: #d0c4af !important;
+}
+
 @media screen and (max-width: 767px) {
     .bbp-header li, .bbp-footer li {
         font-size: 0.7em !important;
