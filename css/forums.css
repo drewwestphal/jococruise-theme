@@ -105,6 +105,10 @@ a.acomment-reply span {
     padding: 7px 13px !important;
 }
 
+#bbpress-forums textarea, #bbpress-forums input[type=text] {
+    color: black;
+}
+
 .activity-meta .bp-primary-action, .activity-meta .bp-secondary-action {
     display: block;
     float: left;
@@ -130,6 +134,40 @@ img.avatar {
 
 .profile-fields tr.alt td {
     background-color: #d0c4af !important;
+}
+
+#wp-link-wrap {
+    height: 250px !important;
+}
+
+#wp-link-close {
+    padding: 0 !important;
+    margin: 5px !important;
+    width: 24px !important;
+    height: 24px !important;
+}
+
+#wp-link-close::before {
+    font: 400 20px/20px dashicons !important;
+}
+
+#wp-link-close .screen-reader-text {
+    display: none;
+}
+
+#wp-link input[type=text] {
+    color: #063953 !important;
+}
+
+form#wp-link .link-target, form#wp-link .howto, form#wp-link #search-panel {
+    display: none;
+}
+
+#wp-link .submitbox button, #wp-link .submitbox input[type=submit] {
+    height: 32px !important;
+    padding: 5px !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
 }
 
 @media screen and (max-width: 767px) {
