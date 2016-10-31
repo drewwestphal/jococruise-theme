@@ -124,16 +124,33 @@ img.avatar {
 }
 
 .profile-fields td.label {
-    color: #063953 !important;
+    font-family: gothamBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 1em !important;
+    font-weight: 300 !important;
     border: 0 transparent !important;
+    text-align: left !important;
+    display: block !important;
+    border-radius: 0;
+}
+
+.profile-fields {
+    color: white;
+    background-color: #1a5d83 !important;
+    border-radius: 4px;
+}
+
+.profile-fields a {
+    color: #d0c4af !important;
 }
 
 .profile-fields td {
-    background-color: white !important;
+    background-color: inherit !important;
+    padding: 12px !important;
 }
 
-.profile-fields tr.alt td {
-    background-color: #d0c4af !important;
+.profile-fields tr.alt {
+    background-color: #2a6d93 !important;
 }
 
 #wp-link-wrap {
