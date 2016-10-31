@@ -64,4 +64,56 @@ add_filter('acf/load_field/name=faq_year', function ($field) use ($availableCrui
     return $field;
 });
 
+add_action('bp_init',function() {
+    $fields = array(
+        array(
+            'field_group_id' => 1,
+            'name' => 'About',
+            'description' => 'Tell us about yourself',
+            'field_order' => 1,
+            'is_required' => false,
+            'type' => 'textbox'
+        ),
+        array(
+            'field_group_id' => 1,
+            'name' => 'Twitter',
+            'field_order' => 2,
+            'is_required' => false,
+            'type' => 'textbox'
+        ),
+        array(
+            'field_group_id' => 1,
+            'name' => 'Facebook',
+            'field_order' => 3,
+            'is_required' => false,
+            'type' => 'url'
+        ),
+        array(
+            'field_group_id' => 1,
+            'name' => 'Instagram',
+            'field_order' => 4,
+            'is_required' => false,
+            'type' => 'url'
+        ),
+        array(
+            'field_group_id' => 1,
+            'name' => 'Google+',
+            'field_order' => 5,
+            'is_required' => false,
+            'type' => 'url'
+        ),
+        array(
+            'field_group_id' => 1,
+            'name' => 'LinkedIn',
+            'field_order' => 6,
+            'is_required' => false,
+            'type' => 'url'
+        ),
+    );
+    foreach ($fields as $field)
+    if(!xprofile_get_field_id_from_name($field['name'])) {
+        xprofile_insert_field($field);
+    }
+});
+
 ?>
