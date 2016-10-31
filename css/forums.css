@@ -153,6 +153,18 @@ img.avatar {
     background-color: #2a6d93 !important;
 }
 
+#buddypress ul.item-list li {
+    border-bottom: 1px solid #d0d0d0;
+}
+
+#buddypress div.activity-comments ul li {
+    border-top: 1px solid #d0d0d0;
+}
+
+#buddypress div.activity-comments>ul>li:first-child {
+    border-top: 1px solid #d0d0d0;
+}
+
 #wp-link-wrap {
     height: 250px !important;
 }
