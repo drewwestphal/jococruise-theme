@@ -45,6 +45,11 @@ add_action( 'tgmpa_register', function() {
             'name' => 'ACF',
             'slug' => 'advanced-custom-fields-pro',
             'source' => 'http://connect.advancedcustomfields.com/index.php?p=pro&a=download&k=b3JkZXJfaWQ9Mzc1MDd8dHlwZT1kZXZlbG9wZXJ8ZGF0ZT0yMDE0LTA4LTE2IDE5OjM0OjI3'
+        ),
+        array(
+            'name' => 'Gravity Forms',
+            'slug' => 'gravity-forms',
+            'source' => 'http://s3.amazonaws.com/gravityforms/releases/gravityforms_2.1.0.3.zip?AWSAccessKeyId=1603BBK66770VCSCJSG2&Expires=1478642753&Signature=UZUmQW9G%2BrAHdnjLWVJr1rw4aOU%3D'
         )
     );
 
