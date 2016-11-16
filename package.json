@@ -6,6 +6,7 @@
     "url": "git@github.com:drewwestphal/jococruise-theme.git"
   },
   "devDependencies": {
+    "bower": "^1.8.0",
     "grunt": "^0.4.5",
     "grunt-bower-concat": "^0.4.0",
     "grunt-bower-task": "^0.4.0",
