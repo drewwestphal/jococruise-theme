@@ -53,9 +53,38 @@
         [
             {
                 "param": "post_type",
-                "operator": "!=",
-                "value": "city"
+                "operator": "==",
+                "value": "page"
             }
+        ],
+        [
+          {
+            "param": "post_type",
+            "operator": "==",
+            "value": "post"
+          }
+        ],
+        [
+          {
+            "param": "post_type",
+            "operator": "==",
+            "value": "faq"
+          }
+        ],
+
+        [
+          {
+            "param": "post_type",
+            "operator": "==",
+            "value": "artist"
+          }
+        ],
+        [
+          {
+            "param": "post_type",
+            "operator": "==",
+            "value": "sponsor"
+          }
         ]
     ],
     "menu_order": 1000,
