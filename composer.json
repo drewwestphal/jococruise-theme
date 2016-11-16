@@ -1,7 +1,6 @@
 {
   "require": {
     "erusev/parsedown-extra": "dev-master",
-    "timber/timber": "^1.1",
     "tgmpa/tgm-plugin-activation": "^2.6"
   }
 }
