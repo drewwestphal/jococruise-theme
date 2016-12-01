@@ -79,7 +79,7 @@
         <div class="container headers">
             <h1>Thanks To Our Sponsors</h1>
             <div>
-                {% for sponsor in sponsors %}
+                {% for sponsor in get_sponsors() %}
                     <div class="{% if sponsor.double_wide %}col-xs-12 col-sm-6 col-lg-4{% else %}col-xs-6 col-sm-3 col-lg-2{% endif %}">
                         <div class="{% if sponsor.double_wide %}sponsor_square_double{% else %}sponsor_square{% endif %} {{ sponsor.portrait_landscape() }}">
                             <a href="{{ sponsor.sponsor_website }}" target="_blank">

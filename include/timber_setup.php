@@ -30,16 +30,21 @@ add_action('acf/init', function () {
             "{$_SERVER['HTTP_HOST']}/{$_SERVER['REQUEST_URI']}";
         $context['meta_desc'] = htmlentities(wp_strip_all_tags(get_field('travel_description', 'option')), ENT_QUOTES);
         $context['nav_menu'] = new \Timber\Menu('primary');
-        $context['sponsors'] = Timber::get_posts(
-            [
-                'post_type'      => 'sponsor',
-                'posts_per_page' => -1,
-            ], 'SponsorPost'
-        );
 
         return $context;
     });
 });
+
+function get_sponsors() {
+    return Timber::get_posts(
+        [
+            'post_type'      => 'sponsor',
+            'posts_per_page' => -1,
+        ], 'SponsorPost'
+    );
+}
+
+TimberHelper::function_wrapper('get_sponsors', $defaults = [], $return_output_buffer = false);
 
 add_filter('timber/twig/filters', function (\Twig_Environment $twig) {
     $twig->addFilter(new \Twig_SimpleFilter('markdown', function ($string) {
