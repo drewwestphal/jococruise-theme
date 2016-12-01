@@ -116,22 +116,20 @@
         </section>
     </section>
     <script type="text/javascript" language="JavaScript">
-        (function($) {
-            $(document).ready(function() {
-                $("#exp-photos").fitVids();
-                $('.gallery a').magnificPopup({
-                    type : 'image',
-                    closeOnContentClick : true,
-                    mainClass : 'mfp-img-mobile',
-                    image : {
-                        verticalFit : true,
-                        horizontalFit : true
-                    },
-                    disableOn : function() {
-                        return !($(window).width() < 600)
-                    }
-                });
+        $(document).ready(function() {
+            $("#exp-photos").fitVids();
+            $('.gallery a').magnificPopup({
+                type : 'image',
+                closeOnContentClick : true,
+                mainClass : 'mfp-img-mobile',
+                image : {
+                    verticalFit : true,
+                    horizontalFit : true
+                },
+                disableOn : function() {
+                    return !($(window).width() < 600)
+                }
             });
-        })(jQuery);
+        });
     </script>
 {% endblock %}

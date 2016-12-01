@@ -1,0 +1,219 @@
+#bbpress-forums, #bbpress-forums ul {
+    font-size: 14px !important;
+}
+
+a:hover {
+    color: #0b6a9a !important;
+}
+
+input {
+    background-color: white;
+    padding: 5px;
+    margin: 7px;
+    width: auto;
+}
+
+textarea {
+    background-color: white;
+}
+
+.forums-col {
+    padding: 0;
+    font-size: 14px !important;
+}
+
+#subscription-toggle {
+    padding-left: 8px;
+}
+
+#latest-update a {
+    padding-left: 4px;
+}
+
+.bbp-header, .bbp-footer {
+    background-color: #1a5d83 !important;
+    color: white;
+    font-family: gothamBook,"Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 500 !important;
+}
+
+.bbp-header a, .bbp-footer a {
+    color: #f5f5eb;
+    font-family: surveyorBook,Georgia, "Times New Roman", Times, serif;
+    text-transform: capitalize;
+}
+
+.bbp-header a:hover, .bbp-footer a:hover {
+    color: #d0c4af !important;
+}
+
+.bbp-reply-header {
+    background-color: #d0c4af !important;
+}
+
+.bbp-admin-links a, .bbp-reply-permalink {
+    color: #063953 !important;
+    text-transform: capitalize !important;
+}
+
+.bbp-admin-links a:hover, .bbp-reply-permalink:hover {
+    color: #0b6a9a !important;
+}
+
+#item-body p {
+    line-height: 120% !important;
+}
+
+button, input[type=submit] {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    white-space: nowrap;
+    padding: 10px 16px !important;
+    line-height: 1.3333333;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-family: gothamBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.7em !important;
+    text-decoration: none !important;
+    color: #fff !important;
+    background-color: #6e96ab !important;
+    border-color: #5e8aa2;
+    border: 1px solid transparent !important;
+}
+
+button:hover, input[type=submit]:hover {
+    background-color: #547d92;
+}
+
+a.acomment-reply span {
+    padding: 2px 5px !important;
+    border-radius: 2px;
+}
+
+.button {
+    font-size: 0.7em !important;
+    border-radius: 4px;
+    font-family: gothamBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    padding: 7px 13px !important;
+}
+
+#bbpress-forums textarea, #bbpress-forums input[type=text] {
+    color: black;
+}
+
+.activity-meta .bp-primary-action, .activity-meta .bp-secondary-action {
+    display: block;
+    float: left;
+    margin-bottom: 10px !important;
+}
+
+img.avatar {
+    margin-bottom: 1px !important;
+}
+
+.profile h4 {
+    margin-bottom: 30px !important;
+}
+
+.profile-fields td.label {
+    font-family: gothamBook, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 1em !important;
+    font-weight: 300 !important;
+    border: 0 transparent !important;
+    text-align: left !important;
+    display: block !important;
+    border-radius: 0;
+}
+
+.profile-fields {
+    color: white;
+    background-color: #1a5d83 !important;
+    border-radius: 4px;
+}
+
+.profile-fields a {
+    color: #d0c4af !important;
+}
+
+.profile-fields td {
+    background-color: inherit !important;
+    padding: 12px !important;
+}
+
+.profile-fields tr.alt {
+    background-color: #2a6d93 !important;
+}
+
+#buddypress ul.item-list li {
+    border-bottom: 1px solid #d0d0d0;
+}
+
+#buddypress div.activity-comments ul li {
+    border-top: 1px solid #d0d0d0;
+}
+
+#buddypress div.activity-comments>ul>li:first-child {
+    border-top: 1px solid #d0d0d0;
+}
+
+#wp-link-wrap {
+    height: 250px !important;
+}
+
+#wp-link-close {
+    padding: 0 !important;
+    margin: 5px !important;
+    width: 24px !important;
+    height: 24px !important;
+}
+
+#wp-link-close::before {
+    font: 400 20px/20px dashicons !important;
+}
+
+#wp-link-close .screen-reader-text {
+    display: none;
+}
+
+#wp-link input[type=text] {
+    color: #063953 !important;
+}
+
+form#wp-link .link-target, form#wp-link .howto, form#wp-link #search-panel {
+    display: none;
+}
+
+#wp-link .submitbox button, #wp-link .submitbox input[type=submit] {
+    height: 32px !important;
+    padding: 5px !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+@media screen and (max-width: 767px) {
+    .bbp-header li, .bbp-footer li {
+        font-size: 0.7em !important;
+    }
+
+    body.activity-permalink .activity-avatar {
+        float: none;
+        width: 100%;
+    }
+
+    body.activity-permalink .activity-avatar img {
+        float: none;
+    }
+
+    body.activity-permalink .activity-content, .activity-comments {
+        margin: 0 !important;
+    }
+}
