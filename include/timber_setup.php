@@ -9,8 +9,6 @@ add_action('acf/init', function () {
     // load the context filter once we have acf installed...
     add_filter('timber/context', function ($context) {
         $context['options'] = get_fields('options');
-        $context['is_booking_page'] =
-            !!current_theme_supports('cruisecontrol'); // Using this to load booking css in base.twig
         $context['year'] = date("Y");
 
         $post = get_post();

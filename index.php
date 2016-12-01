@@ -12,10 +12,13 @@ $context['news_posts'] = $news_posts = Timber::get_posts(
         'ignore_sticky_posts' => 1,
     ], 'JoCoCruisePost');
 $context['show_news'] = (bool)count($news_posts);
-$context['show_mailing_list'] = function_exists('mc4wp_show_form') or function_exists('mc4wp_form');
-$context['show_mailing_function'] = 'mc4wp_show_form';
-if (!function_exists('mc4wp_show_form')) {
+
+if(function_exists('mc4wp_form')) {
     $context['show_mailing_function'] = 'mc4wp_form';
+}
+// use this one if it does exist
+if(function_exists('mc4wp_show_form')) {
+    $context['show_mailing_function'] = 'mc4wp_show_form';
 }
 
 $targetArtistType = 'artist_type' . $cruise_year;
