@@ -28,8 +28,8 @@ add_filter('acf/load_field/name=faq_section_header', function ($field) {
 });
 
 add_action('acf/init', function () {
-    $cruise_year = get_field('cruise_year', 'option');
-    $availableCruiseYears = array_reverse(range(2011, intval($cruise_year), 1));
+    $GLOBALS['cruise_year'] = $cruise_year = get_field('cruise_year', 'option');
+    $GLOBALS['available_cruise_years'] = $availableCruiseYears = array_reverse(range(2011, intval($cruise_year), 1));
 
     add_filter('acf/load_field/name=faq_year', function ($field) use ($availableCruiseYears) {
         foreach($availableCruiseYears as $year) {
