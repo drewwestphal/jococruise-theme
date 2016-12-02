@@ -5,7 +5,6 @@
 	    {% if post.thumbnail %}
 			<div class="col-xs-12 col-sm-5 col-md-4">
 			    {{ post.joco_thumbnail_markup('img-responsive artist-page-image') }}
-				<?php echo str_replace('class="','class="img-responsive artist-page-image ',get_the_post_thumbnail()); ?>
 				<div class="artists-social">
 				{% if post.artist_facebook %}
 				    <a href="{{ post.artist_facebook }}" class="social-icon facebook" target="_blank"></a>

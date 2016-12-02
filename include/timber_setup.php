@@ -30,6 +30,7 @@ add_action('acf/init', function () {
             "{$_SERVER['HTTP_HOST']}/{$_SERVER['REQUEST_URI']}";
         $context['meta_desc'] = htmlentities(wp_strip_all_tags(get_field('travel_description', 'option')), ENT_QUOTES);
         $context['nav_menu'] = new \Timber\Menu('primary');
+        $context['pw_url'] = site_url( 'wp-login.php?action=postpass', 'login_post' );
 
         return $context;
     });
@@ -77,3 +78,11 @@ $twig = new Twig_Environment($loader, [
     'cache' => false,
     //__DIR__.'/twig_cache',
 ]);
+
+// from https://github.com/timber/timber/pull/1170
+add_filter('timber/post/content/show_password_form_for_protected', function($maybe_show) {
+    return true;
+});
+add_filter('timber/post/content/password_form', function($form, $post){
+    return Timber::compile('twig_templates/password-form.twig', array('post' => $post));
+}, 10, 2);
