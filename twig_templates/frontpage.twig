@@ -117,6 +117,18 @@
                 {% if featured_artists is not empty %}
                     {% include 'artists_frontpage.twig' with {'artists':featured_artists} %}
                 {% endif %}
+                {% if options.podcast_header is not empty %}
+                    <div class="clearfix col-xs-12">
+                        <h3 class="slant_header">
+                            {{ options.podcast_header|piped_header }}
+                        </h3>
+                    </div>
+                {% else %}
+                    <div class="col-xs-12" style="padding-top:33px;"></div>
+                {% endif %}
+                {% if podcasts is not empty %}
+                    {% include 'artists_frontpage.twig' with {'artists':podcasts} %}
+                {% endif %}
                 {% if options.even_more_header is not empty %}
                 <div class="clearfix col-xs-12">
                     <h3 class="slant_header">
