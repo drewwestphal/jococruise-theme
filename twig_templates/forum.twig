@@ -7,6 +7,9 @@
     <link rel='stylesheet' id='forumscss'  href='{{ theme.link }}/css/forums.css' type='text/css' />
     <div class="container nav-spacer">
         <div class="col-xs-12 forums-col">
+            {% if is_guest %}
+                <p>Notice: You must be <a href="{{login_return}}">logged in</a> to post. </p>
+            {%endif%}
             {{ function('the_content') }}
         </div>
     </div>
