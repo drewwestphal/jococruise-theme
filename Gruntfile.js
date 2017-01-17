@@ -61,6 +61,7 @@ module.exports = function(grunt) {
         },
         bower_concat : {
             all : {
+                exclude: 'jquery',
                 dest : 'js/bower.js'
                 //cssDest: 'build/_bower.css'
             }
