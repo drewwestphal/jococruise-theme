@@ -150,7 +150,12 @@ img.avatar {
 }
 
 .profile-fields tr.alt {
+    color: white !important;
     background-color: #2a6d93 !important;
+}
+
+.profile-fields tr.alt td {
+    color: white !important;
 }
 
 #buddypress ul.item-list li {
