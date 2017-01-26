@@ -26,7 +26,7 @@
     </div>
 
     <script type="text/javascript">
-        (function ($) {
+        (function (jQuery) {
             function toggleFaq(item, animate) {
                 var mom = item.parent();
                 var bro = item.siblings('.faq-content');
@@ -39,18 +39,18 @@
                 return mom.attr('id');
             }
 
-            $('.faq-show-hide').click(function () {
-                history.pushState(null, null, '#' + toggleFaq($(this), true));
+            jQuery('.faq-show-hide').click(function () {
+                history.pushState(null, null, '#' + toggleFaq(jQuery(this), true));
                 return false;
             });
-            $('.faq-button').click(function () {
-                $(this).siblings('.faq-show-hide').click();
+            jQuery('.faq-button').click(function () {
+                jQuery(this).siblings('.faq-show-hide').click();
             });
-            window.location.hash.length > 1 && toggleFaq($('#' + location.hash.substr(1) + ' a.faq-show-hide'), false);
+            window.location.hash.length > 1 && toggleFaq(jQuery('#' + location.hash.substr(1) + ' a.faq-show-hide'), false);
             jQuery('a').click(function () {
                 var target = jQuery(this.hash);
                 if (target.length != 0 && !target.hasClass('faq-article-maximize')) {
-                    toggleFaq($(this.hash + ' a.faq-show-hide'), false);
+                    toggleFaq(jQuery(this.hash + ' a.faq-show-hide'), false);
                 }
             });
         })(jQuery);

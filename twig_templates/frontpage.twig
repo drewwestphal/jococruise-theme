@@ -309,60 +309,60 @@
     {% endif %}
     <script type='text/javascript'>
         // Contact form validation
-        $('#contact-form').submit(function(){
-            function validateEmail($email) {
-                var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-                if( !emailReg.test( $email ) ) {
+        jQuery('#contact-form').submit(function(){
+            function validateEmail(jQueryemail) {
+                var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?jQuery/;
+                if( !emailReg.test( jQueryemail ) ) {
                     return false;
                 } else {
                     return true;
                 }
             }
-            $('.contact-input p, .contact-comments p, #contact-form p').remove();
-            $('#name,#email,#comments').removeClass('orange-border');
+            jQuery('.contact-input p, .contact-comments p, #contact-form p').remove();
+            jQuery('#name,#email,#comments').removeClass('orange-border');
             var name = false;
             var email = false;
             var comments = false;
             var recaptcha = false;
-            if ($('#comments').val().length == 0)  {
-                $('#comments').addClass('orange-border');
-                $('#comments').focus();
-                $('#contact-comments').append('<p class="plain-text">Please enter your message.</p>');
+            if (jQuery('#comments').val().length == 0)  {
+                jQuery('#comments').addClass('orange-border');
+                jQuery('#comments').focus();
+                jQuery('#contact-comments').append('<p class="plain-text">Please enter your message.</p>');
                 comments = false;
             } else {
                 comments = true;
             }
-            if ($('#name').val().length == 0)  {
-                $('#name').addClass('orange-border');
-                $('#name').focus();
-                $('#contact-input-name').append('<p class="plain-text">Please enter your name.</p>');
+            if (jQuery('#name').val().length == 0)  {
+                jQuery('#name').addClass('orange-border');
+                jQuery('#name').focus();
+                jQuery('#contact-input-name').append('<p class="plain-text">Please enter your name.</p>');
                 name = false;
             } else {
                 name = true;
             }
-            var emailString = $('#email').val();
+            var emailString = jQuery('#email').val();
             if ((emailString.length == 0) || !validateEmail(emailString)) {
-                $('#email').addClass('orange-border');
-                $('#email').focus();
-                $('#contact-input-email').append('<p class="plain-text">Please enter a valid email address.</p>');
+                jQuery('#email').addClass('orange-border');
+                jQuery('#email').focus();
+                jQuery('#contact-input-email').append('<p class="plain-text">Please enter a valid email address.</p>');
                 email = false;
             } else {
                 email = true;
             }
-            if ($("#g-recaptcha-response").val().length==0) {
-                $(".g-recaptcha").after('<p class="recaptcha-error">Please assure us that you are not a robot.</p>');
-                //$(".g-recaptcha").after('<p class="recaptcha-error">Value: '+$("#g-recaptcha-response").val()+'</p>');
+            if (jQuery("#g-recaptcha-response").val().length==0) {
+                jQuery(".g-recaptcha").after('<p class="recaptcha-error">Please assure us that you are not a robot.</p>');
+                //jQuery(".g-recaptcha").after('<p class="recaptcha-error">Value: '+jQuery("#g-recaptcha-response").val()+'</p>');
                 recaptcha = false;
             } else {
                 recaptcha = true;
             }
             if (name && email && comments && recaptcha) {
-                $('#name, #email').removeClass('orange-border');
-                $('#contact button').after('<div id="contact-received">Sending...</div>');
-                $.post($('#contact-form').attr('action'), $("#contact-form").serialize(),function(data){
+                jQuery('#name, #email').removeClass('orange-border');
+                jQuery('#contact button').after('<div id="contact-received">Sending...</div>');
+                jQuery.post(jQuery('#contact-form').attr('action'), jQuery("#contact-form").serialize(),function(data){
                     grecaptcha.reset();
                     console.log(data);
-                    $("#contact-received").text(data);
+                    jQuery("#contact-received").text(data);
                     // Thank you! Your message has been sent.
                 });
             }
@@ -370,52 +370,52 @@
         });
 
         var mapBehavior = function(){
-            $('.map-city').hide().show(0); // force redraw to gaurantee placement on window resize
-            if ($(window).width()>992){
-                $('#map').click(function() {
-                    $('.point').removeClass('glyphicon-minus').addClass('glyphicon-plus');
-                    $('.map-city-about').fadeOut('fast');
+            jQuery('.map-city').hide().show(0); // force redraw to gaurantee placement on window resize
+            if (jQuery(window).width()>992){
+                jQuery('#map').click(function() {
+                    jQuery('.point').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+                    jQuery('.map-city-about').fadeOut('fast');
                 });
-                $('.point').mouseover(function() {
-                    if (!$(this).is($('.glyphicon-minus'))) {
-                        $('.point').removeClass('glyphicon-minus').addClass('glyphicon-plus');
-                        $('.map-city-about').fadeOut('fast');
-                        $(this).siblings('.map-city-about').fadeIn('fast');
-                        $(this).removeClass('glyphicon-plus').addClass('glyphicon-minus');
+                jQuery('.point').mouseover(function() {
+                    if (!jQuery(this).is(jQuery('.glyphicon-minus'))) {
+                        jQuery('.point').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+                        jQuery('.map-city-about').fadeOut('fast');
+                        jQuery(this).siblings('.map-city-about').fadeIn('fast');
+                        jQuery(this).removeClass('glyphicon-plus').addClass('glyphicon-minus');
                     }
                 });
             } else {
-                $('.point').click(function(){
-                    $('span.glyphicon.point').removeClass('glyphicon-minus').addClass('glyphicon-plus');
-                    var cityName = $(this).parent().attr('id');
+                jQuery('.point').click(function(){
+                    jQuery('span.glyphicon.point').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+                    var cityName = jQuery(this).parent().attr('id');
                     var infoCityName = '#info-'+cityName;
 
-                    if ($(''+infoCityName+'').is(':visible')){
-                        $(''+infoCityName+'').slideUp('fast',function(){
-                            $('#'+cityName+' span.glyphicon').removeClass('glyphicon-minus').addClass('glyphicon-plus');
-                            $('#map-copy').fadeIn('fast');
+                    if (jQuery(''+infoCityName+'').is(':visible')){
+                        jQuery(''+infoCityName+'').slideUp('fast',function(){
+                            jQuery('#'+cityName+' span.glyphicon').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+                            jQuery('#map-copy').fadeIn('fast');
                         });
                     } else {
-                        $('.map-info').contents().hide();
-                        $(''+infoCityName+'').slideDown('fast');
-                        $('#'+cityName+' span.glyphicon').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+                        jQuery('.map-info').contents().hide();
+                        jQuery(''+infoCityName+'').slideDown('fast');
+                        jQuery('#'+cityName+' span.glyphicon').removeClass('glyphicon-plus').addClass('glyphicon-minus');
                     }
                 });
-                $('.map-narrow-info span.glyphicon').click(function(){
-                    $(this).closest('.map-narrow-info').slideUp('fast',function(){
-                        $('span.glyphicon.point').removeClass('glyphicon-minus').addClass('glyphicon-plus');
-                        $('#map-copy').fadeIn('fast');
+                jQuery('.map-narrow-info span.glyphicon').click(function(){
+                    jQuery(this).closest('.map-narrow-info').slideUp('fast',function(){
+                        jQuery('span.glyphicon.point').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+                        jQuery('#map-copy').fadeIn('fast');
                     });
 
                 });
             }
         };
 
-        $(document).ready(function() {
+        jQuery(document).ready(function() {
             //presentational map copy placement on narrow
-            var $mapCopy = $('#map-copy');
-            var mapCopyHeight = $('#map-copy').height();
-            $mapCopy.css({
+            var jQuerymapCopy = jQuery('#map-copy');
+            var mapCopyHeight = jQuery('#map-copy').height();
+            jQuerymapCopy.css({
                 'position'	 : 'absolute',
                 'top'		 : '50%',
                 'margin-top' : -mapCopyHeight/2
@@ -424,17 +424,17 @@
             mapBehavior();
         });
 
-        $(window).resize(function(){
-            if ($(window).width()>992){
+        jQuery(window).resize(function(){
+            if (jQuery(window).width()>992){
                 //artist
-                $('#overflow').css('left', 0);
-                $('#faq-overflow').css('left', 0);
+                jQuery('#overflow').css('left', 0);
+                jQuery('#faq-overflow').css('left', 0);
                 //map
-                $('.map-city-about').hide();
+                jQuery('.map-city-about').hide();
             }else{
                 //map
-                $('.point').unbind('click');
-                $('.map-narrow-info').hide();
+                jQuery('.point').unbind('click');
+                jQuery('.map-narrow-info').hide();
             }
             //resize call on mapBehavior()
             mapBehavior();

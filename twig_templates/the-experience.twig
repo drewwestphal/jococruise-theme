@@ -116,9 +116,9 @@
         </section>
     </section>
     <script type="text/javascript" language="JavaScript">
-        $(document).ready(function() {
-            $("#exp-photos").fitVids();
-            $('.gallery a').magnificPopup({
+        jQuery(document).ready(function() {
+            jQuery("#exp-photos").fitVids();
+            jQuery('.gallery a').magnificPopup({
                 type : 'image',
                 closeOnContentClick : true,
                 mainClass : 'mfp-img-mobile',
@@ -127,7 +127,7 @@
                     horizontalFit : true
                 },
                 disableOn : function() {
-                    return !($(window).width() < 600)
+                    return !(jQuery(window).width() < 600)
                 }
             });
         });
