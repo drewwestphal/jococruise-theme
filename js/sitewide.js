@@ -19,7 +19,7 @@ $(document).ready(function() {
 
 // Scroll to hash behavior
 $(function() {
-    if (!on_forums_page) {
+    if (typeof on_forums_page === 'undefined' || !on_forums_page) {
         $('a[href*=\\#]:not([href=\\#])').click(function () {
             if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname && !$(this).hasClass('unmove')) {
                 var target = $(this.hash);
