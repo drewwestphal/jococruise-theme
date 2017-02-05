@@ -21,7 +21,56 @@
                 {% endif %}
             </div>
         </section>
+        {% if options.countdown_timer and options.countdown_timer_unix>date().timestamp %}
+            <section id="countdown-timer" style="display: none">
+                <div class="container">
+                    <div class="col-xs-12 col-md-12">
+                        {% set replace_array = {
+                            '%DATE%':'<span class="date">date</span>',
+                            '%TIMER%':'<span class="timer">timer</span>'
+                        } %}
+                        <h5>{{ options.countdown_timer_header_copy|replace(replace_array) }}</h5>
 
+                        <a class="btn btn-lg btn-primary"
+                           href="{{ options.countdown_timer_button_link }}">{{ options.countdown_timer_button_copy }}</a>
+
+                        <p>{{ options.countdown_timer_footer_copy|replace(replace_array) }}</p>
+                    </div>
+                </div>
+            </section>
+            <script type="text/javascript">
+                jQuery(document).ready(function () {
+                    (function ($) {
+                        var expDate = new Date({{ options.countdown_timer_unix * 1000}});
+
+                        $('#countdown-timer .date').text(expDate.toLocaleDateString() + ' at ' + expDate.toLocaleTimeString());
+
+                        var remSec = {{ options.countdown_timer_unix - date().timestamp }};
+
+                        function tick() {
+                            remSec--;
+
+                            var ndays = Math.floor(remSec / (24 * 60 * 60));
+                            var nhrs = Math.floor((remSec % (24 * 60 * 60)) / (60 * 60));
+                            var nmin = Math.floor((remSec % (60 * 60)) / (60));
+                            var nsec = Math.floor(remSec % 60);
+
+                            var timer = sprintf('%2d hour%s and %02d:%02d',
+                                    nhrs, nhrs > 1 ? 's' : '', nmin, nsec);
+
+                            if (ndays) {
+                                timer = sprintf('%d day%s, ', ndays, ndays > 1 ? 's' : '') + timer;
+                            }
+                            $('#countdown-timer .timer').text(timer);
+                        }
+
+                        tick();
+                        var intervalID = setInterval(tick, 1000);
+                        $('#countdown-timer').fadeIn(500);
+                    })(jQuery);
+                });
+            </script>
+        {% endif %}
         {% if options.travel_description or options.travel_description_more %}
             <section id="hero-about">
                 <div class="container">
