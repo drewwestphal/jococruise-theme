@@ -45,7 +45,7 @@ function get_sponsors() {
     );
 }
 
-TimberHelper::function_wrapper('get_sponsors', $defaults = [], $return_output_buffer = false);
+\Timber\Helper::function_wrapper('get_sponsors', $defaults = [], $return_output_buffer = false);
 
 add_filter('timber/twig/filters', function (\Twig_Environment $twig) {
     $twig->addFilter(new \Twig_SimpleFilter('markdown', function ($string) {

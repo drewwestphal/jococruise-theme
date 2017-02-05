@@ -41,8 +41,18 @@ require_once(__DIR__ . '/include/forums-config.php');
 
 //enqueue main styles
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_style('joco_main', get_template_directory_uri() . '/css/bootstrap.css');
+    wp_enqueue_style('joco_main', get_template_directory_uri() . '/css/bootstrap.css', [], filemtime(__DIR__ .
+                                                                                                     '/css/bootstrap.css'));
+
+    wp_enqueue_script('bower', get_template_directory_uri() . '/js/bower.min.js', ['jquery'], filemtime(__DIR__ .
+                                                                                                        '/js/bower.min.js'));
+
+    wp_enqueue_script('sitewide', get_template_directory_uri() . '/js/sitewide.js', ['bower'], filemtime(__DIR__ .
+                                                                                                         '/js/sitewide.js'), true);
+
+    wp_enqueue_script('recaptcha', '//www.google.com/recaptcha/api.js', []);
 });
+
 
 add_action('login_enqueue_scripts', function () {
     wp_enqueue_style('custom-login', get_stylesheet_directory_uri() . '/css/login.css');
