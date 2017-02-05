@@ -352,10 +352,10 @@
             "placeholder": "",
             "rows": "",
             "key": "field_589501105c2b4",
-            "label": "Countdown Timer Copy",
-            "name": "countdown_timer_copy",
+            "label": "Countdown Timer Header Copy",
+            "name": "countdown_timer_header_copy",
             "type": "text",
-            "instructions": "What should the countdown timer copy say? Insert the date using %DATE%",
+            "instructions": "What should the countdown timer copy say? Insert the date using %DATE%. Insert the countdown using %TIMER%",
             "required": 1,
             "conditional_logic": [
                 [
@@ -407,6 +407,32 @@
             "name": "countdown_timer_button_link",
             "type": "url",
             "instructions": "Where should the call to action button go?",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_589500e05c2b3",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "rows": "",
+            "key": "field_589501105c2b42",
+            "label": "Countdown Timer Footer Copy",
+            "name": "countdown_timer_footer_copy",
+            "type": "text",
+            "instructions": "What should the countdown timer copy say? Insert the date using %DATE%. Insert the countdown using %TIMER%",
             "required": 1,
             "conditional_logic": [
                 [
