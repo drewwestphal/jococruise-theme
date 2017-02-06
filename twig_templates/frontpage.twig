@@ -45,10 +45,10 @@
 
                         $('#countdown-timer .date').text(expDate.toLocaleDateString() + ' at ' + expDate.toLocaleTimeString());
 
-                        var remSec = {{ options.countdown_timer_unix - date().timestamp }};
 
                         function tick() {
-                            remSec--;
+                            var now = new Date();
+                            var remSec = (expDate.getTime() - now.getTime())/1000;
 
                             var ndays = Math.floor(remSec / (24 * 60 * 60));
                             var nhrs = Math.floor((remSec % (24 * 60 * 60)) / (60 * 60));
