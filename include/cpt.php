@@ -11,6 +11,7 @@ function cptui_register_my_cpt_artist() {
         'capability_type'    => 'post',
         'map_meta_cap'       => true,
         'hierarchical'       => false,
+        'has_archive'        => false,
         'rewrite'            => [
             'slug'       => 'artist',
             'with_front' => true,
@@ -60,6 +61,7 @@ function cptui_register_my_cpt_faq() {
         'capability_type' => 'post',
         'map_meta_cap'    => true,
         'hierarchical'    => false,
+        'has_archive'     => false,
         'rewrite'         => [
             'slug'       => 'faq',
             'with_front' => true,
@@ -109,6 +111,7 @@ function cptui_register_my_cpt_sponsors() {
         'capability_type' => 'post',
         'map_meta_cap'    => true,
         'hierarchical'    => false,
+        'has_archive'     => false,
         'rewrite'         => [
             'slug'       => 'sponsor',
             'with_front' => true,
@@ -158,6 +161,7 @@ function cptui_register_my_cpt_cities() {
         'capability_type' => 'post',
         'map_meta_cap'    => true,
         'hierarchical'    => false,
+        'has_archive'     => false,
         'rewrite'         => [
             'slug'       => 'city',
             'with_front' => true,
