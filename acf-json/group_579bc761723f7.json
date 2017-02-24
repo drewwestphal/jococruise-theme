@@ -69,7 +69,7 @@
             "label": "Enable booking",
             "name": "enable_booking",
             "type": "true_false",
-            "instructions": "This determines wheter the two buttons show up under the header on the front page",
+            "instructions": "This determines whether the two buttons show up under the header on the front page",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -860,6 +860,22 @@
             },
             "placement": "top",
             "endpoint": 0
+        },
+        {
+            "key": "field_8tz9FMAfqliZ",
+            "label": "Don't Display Map",
+            "name": "skip_ports_of_call_map",
+            "type": "true_false",
+            "instructions": "Instead of showing the map, show a PAGE whose URL is EXACTLY ports-of-call",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0
         },
         {
             "key": "field_579bcac5b0a7f",
