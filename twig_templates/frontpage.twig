@@ -366,7 +366,7 @@
         // Contact form validation
         jQuery('#contact-form').submit(function () {
             function validateEmail(jQueryemail) {
-                var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?jQuery/;
+                var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
                 if (!emailReg.test(jQueryemail)) {
                     return false;
                 } else {
