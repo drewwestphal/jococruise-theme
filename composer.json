@@ -1,6 +1,6 @@
 {
   "require": {
     "erusev/parsedown-extra": "dev-master",
-    "tgmpa/tgm-plugin-activation": "^2.6"
+    "tgmpa/tgm-plugin-activation": "^2.6.1"
   }
 }

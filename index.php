@@ -2,6 +2,12 @@
 
 use \Timber\Timber;
 
+if(!(class_exists('\Timber') && function_exists('get_field'))) {
+    echo "Theme plugin requirements not met";
+    return;
+}
+
+
 $context = Timber::get_context();
 $cruise_year = get_field('talent_year', 'option');
 
@@ -78,7 +84,7 @@ if(!$skipFaq) {
     $faqlink = get_permalink($faqlink->ID);
     $context['faq_link'] = $faqlink;
 }
-$context['skip_map'] = $skipPortsOfCallMap = $context['options']['skip_ports_of_call_map'];
+$context['skip_map'] = $skipPortsOfCallMap = $context['options']['skip_ports_of_call_map']??false;
 if($skipPortsOfCallMap) {
     $context['skip_map_post'] = Timber::get_post(
         [

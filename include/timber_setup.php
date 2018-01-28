@@ -30,22 +30,26 @@ add_action('acf/init', function () {
             "{$_SERVER['HTTP_HOST']}/{$_SERVER['REQUEST_URI']}";
         $context['meta_desc'] = htmlentities(wp_strip_all_tags(get_field('travel_description', 'option')), ENT_QUOTES);
         $context['nav_menu'] = new \Timber\Menu('primary');
-        $context['pw_url'] = site_url( 'wp-login.php?action=postpass', 'login_post' );
+        $context['pw_url'] = site_url('wp-login.php?action=postpass', 'login_post');
 
         return $context;
     });
 });
 
-function get_sponsors() {
-    return Timber::get_posts(
-        [
-            'post_type'      => 'sponsor',
-            'posts_per_page' => -1,
-        ], 'SponsorPost'
-    );
-}
 
-\Timber\Helper::function_wrapper('get_sponsors', $defaults = [], $return_output_buffer = false);
+//\Timber\Helper::function_wrapper('get_sponsors', $defaults = [], $return_output_buffer = false);
+add_filter('timber/twig', function (\Twig_Environment $twig) {
+    $twig->addFunction(new \Timber\Twig_Function('get_sponsors', function () {
+        return Timber::get_posts(
+            [
+                'post_type'      => 'sponsor',
+                'posts_per_page' => -1,
+            ], 'SponsorPost'
+        );
+    }));
+    return $twig;
+
+});
 
 add_filter('timber/twig/filters', function (\Twig_Environment $twig) {
     $twig->addFilter(new \Twig_SimpleFilter('markdown', function ($string) {
@@ -80,9 +84,9 @@ $twig = new Twig_Environment($loader, [
 ]);
 
 // from https://github.com/timber/timber/pull/1170
-add_filter('timber/post/content/show_password_form_for_protected', function($maybe_show) {
+add_filter('timber/post/content/show_password_form_for_protected', function ($maybe_show) {
     return true;
 });
-add_filter('timber/post/content/password_form', function($form, $post){
-    return Timber::compile('twig_templates/password-form.twig', array('post' => $post));
+add_filter('timber/post/content/password_form', function ($form, $post) {
+    return Timber::compile('twig_templates/password-form.twig', ['post' => $post]);
 }, 10, 2);
