@@ -80,4 +80,6 @@ module.exports = function(grunt) {
     grunt.registerTask('buildbower', ['bower:install', 'bower_concat', 'uglify:bower']);
 
     grunt.registerTask('builddeps', ['buildbower', 'less:compile', 'composer:install']);
+
+    grunt.registerTask('jsbuild', ['buildbower', 'less:compile']);
 };
