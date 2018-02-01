@@ -102,7 +102,11 @@ function sf_red_options() {
 function sf_red_validate($in) {
 	$out=array();
 	$url=get_home_url();
-	$in=json_decode($in,true);
+	if(!is_array($in)){
+	    // some other plugin is automatically decoding json jesus fucking chris
+        $in=json_decode($in,true);
+    }
+
 	if (is_array($in)) for ($i=0;$i<count($in);$i++) if (is_array($in[$i])&&$in[$i][0]) {
 		$tmp=strpos($in[$i][0],substr(strstr($url,'//'),2));
 		if ($tmp!==false) $in[$i][0]=substr($in[$i][0],$tmp+strlen(strstr($url,'//'))-2);
