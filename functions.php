@@ -21,6 +21,7 @@ add_action('after_setup_theme', function () {
 require_once(__DIR__ . '/include/tgm.php');
 require_once(__DIR__ . '/include/cpt.php');
 require_once(__DIR__ . '/include/columns.php');
+require_once(__DIR__ . '/include/redirectlist.php');
 require_once(__DIR__ . '/vendor/autoload.php');
 // if timber is not loaded this will crash the admin interface...
 if(!class_exists('Timber\Timber')) {

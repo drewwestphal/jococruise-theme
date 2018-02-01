@@ -101,7 +101,7 @@ function sf_red_options() {
 
 function sf_red_validate($in) {
 	$out=array();
-	$url=get_site_url();
+	$url=get_home_url();
 	$in=json_decode($in,true);
 	if (is_array($in)) for ($i=0;$i<count($in);$i++) if (is_array($in[$i])&&$in[$i][0]) {
 		$tmp=strpos($in[$i][0],substr(strstr($url,'//'),2));
