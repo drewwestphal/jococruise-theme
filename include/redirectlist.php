@@ -161,6 +161,6 @@ function sf_red_go() {
 		}
 	}
 }
-add_action('plugins_loaded','sf_red_go');
+add_action('after_setup_theme','sf_red_go');
 
 ?>
