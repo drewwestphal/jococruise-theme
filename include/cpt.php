@@ -1,4 +1,26 @@
 <?php
+
+// http://www.jaredatchison.com/code/disable-custom-post-type-rss-feed/
+add_action('pre_get_posts', function ($query) {
+    if($query->is_feed()) {
+        $cpts_to_block = [
+            'artist',
+            'faq',
+            'sponsor',
+            'city',
+            'featured-event',
+        ];
+
+
+        $queried_post_type_array = (array)$query->get('post_type');
+        foreach($cpts_to_block as $cpt) {
+            if(in_array($cpt, $queried_post_type_array)) {
+                die();
+            }
+        }
+    }
+});
+
 add_action('init', 'cptui_register_my_cpt_artist');
 function cptui_register_my_cpt_artist() {
     register_post_type('artist', [
