@@ -108,6 +108,19 @@
     ga('create', 'UA-56667211-2', 'auto');
     ga('send', 'pageview');
 </script>
+<script type="text/javascript">
+    // Perfect Audience
+    (function() {
+        window._pa = window._pa || {};
+        // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+        // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+        // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+        var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+        pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/5a79352832263283840000b5.js";
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+    })();
+</script>
+
 {{ function("wp_footer") }}
 </body>
 </html>
