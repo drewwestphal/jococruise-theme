@@ -1,1468 +1,1468 @@
 {
-    "key": "group_579bc761723f7",
-    "title": "Theme options",
-    "fields": [
-        {
-            "key": "field_579bc774c924b",
-            "label": "Sitewide Options",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_579bc798c924c",
-            "label": "Cruise Year",
-            "name": "cruise_year",
-            "type": "number",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 2017,
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "min": 2011,
-            "max": "",
-            "step": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_579bc7ccc924d",
-            "label": "Talent Year",
-            "name": "talent_year",
-            "type": "number",
-            "instructions": "Which year worth of talent should we load on the front page?",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 2017,
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "min": 2011,
-            "max": "",
-            "step": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_579bc7e7c924e",
-            "label": "Enable booking",
-            "name": "enable_booking",
-            "type": "true_false",
-            "instructions": "This determines whether the two buttons show up under the header on the front page",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 1
-        },
-        {
-            "key": "field_579bc826c924f",
-            "label": "Booking Path",
-            "name": "booking_path",
-            "type": "text",
-            "instructions": "Root relative URL for booking site",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "\/2017\/book\/",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_579bc843c9250",
-            "label": "Contact Form Email Address",
-            "name": "contact_form_email_address",
-            "type": "email",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "booking@jococruise.com",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_579bc85bc9251",
-            "label": "Hero Section Options",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_579bc875c9252",
-            "label": "Travel Dates",
-            "name": "travel_dates",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Mar 4 - Mar 11, 2017 (Saturday-Saturday)",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_579bc8a7b0a65",
-            "label": "Button Call to action",
-            "name": "button_call_to_action",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Book Now!",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_579bc8bab0a66",
-            "label": "Travel Description",
-            "name": "travel_description",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "<span class=\"bold\">JoCo Cruise 2017<\/span> is a whole cruise ship (Holland America's <span class=\"italic\">ms Westerdam<\/span>) full of music, comedy, and general nerdery, departing from San Diego, CA for a 7-night adventure along the Sea of Cortez.",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_579bc8d5b0a67",
-            "label": "Travel Description More",
-            "name": "travel_description_more",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "<p>The 2017 cruise will depart from San Diego, CA on <span class=\"bold\">Saturday, March 4th<\/span> and return on <span class=\"bold\">Saturday, March 11th<\/span>, with ports of call at Cabo San Lucas, Pichilingue and Loreto.<br><br>\r\nPerformers include Jonathan Coulton, Paul and Storm, and friends from across the music, comedy, gaming, and writing worlds. <\/p>",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_579bc8eeb0a68",
-            "label": "Hero Book Now Button",
-            "name": "hero_book_now_button",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Book Now!",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_579bc8feb0a69",
-            "label": "Hero Already Booked Button",
-            "name": "hero_already_booked_button",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "I'm Booked! Now What?",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_579bc916b0a6a",
-            "label": "Hero Already Booked URL",
-            "name": "hero_already_booked_url",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "https:\/\/jococruise.com\/im-booked-now-what\/",
-            "placeholder": ""
-        },
-        {
-            "key": "field_579bc933b0a6b",
-            "label": "Mailing List Call to action",
-            "name": "mailing_list_call_to_action",
-            "type": "text",
-            "instructions": "split lines with pipe (|)",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Join the | JoCo Cruise Mailing List",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "default_value": 0,
-            "message": "",
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": "",
-            "key": "field_589500e05c2b3",
-            "label": "Booking Countdown Timer?",
-            "name": "countdown_timer",
-            "type": "true_false",
-            "instructions": "Should we show a countdown timer on the front page?",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
-            "default_value": "",
-            "min": "",
-            "max": "",
-            "step": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "key": "field_589500485c2b2",
-            "label": "Countdown Timer Timestamp",
-            "name": "countdown_timer_unix",
-            "type": "number",
-            "instructions": "Unix Timestamp for the date in question. You can get such a timestamp from http:\/\/www.epochconverter.com\/",
-            "required": 1,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_589500e05c2b3",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "rows": "",
-            "key": "field_589501105c2b4",
-            "label": "Countdown Timer Header Copy",
-            "name": "countdown_timer_header_copy",
-            "type": "text",
-            "instructions": "What should the countdown timer copy say? Insert the date using %DATE%. Insert the countdown using %TIMER%",
-            "required": 1,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_589500e05c2b3",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "key": "field_58950142325b8",
-            "label": "Countdown Timer Button Copy",
-            "name": "countdown_timer_button_copy",
-            "type": "text",
-            "instructions": "What should the Call to action button say?",
-            "required": 1,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_589500e05c2b3",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
-            "default_value": "",
-            "placeholder": "",
-            "key": "field_5895015b325b9",
-            "label": "Countdown Timer Button Link",
-            "name": "countdown_timer_button_link",
-            "type": "url",
-            "instructions": "Where should the call to action button go?",
-            "required": 1,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_589500e05c2b3",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "rows": "",
-            "key": "field_589501105c2b42",
-            "label": "Countdown Timer Footer Copy",
-            "name": "countdown_timer_footer_copy",
-            "type": "text",
-            "instructions": "What should the countdown timer copy say? Insert the date using %DATE%. Insert the countdown using %TIMER%",
-            "required": 1,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_589500e05c2b3",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
-            "placement": "top",
-            "endpoint": 0,
-            "key": "field_579bc998b0a70",
-            "label": "Artist Settings",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
-            "key": "field_579bc998b0a70",
-            "label": "Artist Settings",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_579bc9a6b0a71",
-            "label": "Talent Section Header",
-            "name": "talent_section_header",
-            "type": "text",
-            "instructions": "split lines with pipe (|)",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "2017 | Performers and Featured Guests",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_579bc9c0b0a72",
-            "label": "Performer Intro Content",
-            "name": "performer_intro_content",
-            "type": "textarea",
-            "instructions": "(Markdown)",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_579bc9dab0a73",
-            "label": "Performer Header",
-            "name": "performer_header",
-            "type": "text",
-            "instructions": "split lines with pipe (|)",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_579bc9e9b0a74",
-            "label": "Featured Guest Header",
-            "name": "featured_guest_header",
-            "type": "text",
-            "instructions": "split lines with pipe (|)",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_57eea439a0606",
-            "label": "Podcasts Header",
-            "name": "podcast_header",
-            "type": "text",
-            "instructions": "split lines with pipe (|)",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_579bc9f8b0a75",
-            "label": "Even More Header",
-            "name": "even_more_header",
-            "type": "text",
-            "instructions": "split lines with pipe (|)",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Plus | Even More!",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_579bca01b0a76",
-            "label": "Coming Soon Header",
-            "name": "coming_soon_header",
-            "type": "text",
-            "instructions": "split lines with pipe (|)",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "More | Coming Soon\u2122!",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_57eea457a0608",
-            "label": "Artist Section Footer",
-            "name": "artist_section_footer",
-            "type": "text",
-            "instructions": "markdown",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "(Lineup subject to change)",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_579bca1cb0a77",
-            "label": "Contact Settings",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_579bca2ab0a78",
-            "label": "General Questions Header",
-            "name": "general_questions_header",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "GENERAL QUESTIONS",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_579bca3eb0a79",
-            "label": "General Questions Address",
-            "name": "general_questions_address",
-            "type": "email",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "info@jococruise.com",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_579bca52b0a7a",
-            "label": "Booking Questions Header",
-            "name": "booking_questions_header",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "CRUISE BOOKINGS",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_579bca61b0a7b",
-            "label": "Booking Questions Address",
-            "name": "booking_questions_address",
-            "type": "email",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "bookings@jococruise.com",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_579bca79b0a7c",
-            "label": "Phone Questions Header",
-            "name": "phone_questions_header",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "LEAVE US A MESSAGE",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_579bca8cb0a7d",
-            "label": "Phone Questions Number",
-            "name": "phone_questions_number",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "(256) 3GO-JCCC \/ (256) 346-5222",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_579bc94db0a6c",
-            "label": "Link to Facebook Page",
-            "name": "link_to_facebook_page",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "https:\/\/www.facebook.com\/JoCoCruise",
-            "placeholder": ""
-        },
-        {
-            "key": "field_579bc964b0a6d",
-            "label": "Link to Twitter",
-            "name": "link_to_twitter",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "https:\/\/twitter.com\/jococruise",
-            "placeholder": ""
-        },
-        {
-            "key": "field_579bc975b0a6e",
-            "label": "Link to RSS feed",
-            "name": "link_to_rss_feed",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "http:\/\/jococruise.com\/?feed=rss",
-            "placeholder": ""
-        },
-        {
-            "key": "field_579bc985b0a6f",
-            "label": "Link to Instagram",
-            "name": "link_to_instagram",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "https:\/\/www.instagram.com\/jococruise\/",
-            "placeholder": ""
-        },
-        {
-            "key": "field_579bca99b0a7e",
-            "label": "Map Settings",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_8tz9FMAfqliZ",
-            "label": "Don't Display Map",
-            "name": "skip_ports_of_call_map",
-            "type": "true_false",
-            "instructions": "Instead of showing the map, show a PAGE whose URL is EXACTLY ports-of-call",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0
-        },
-        {
-            "key": "field_579bcac5b0a7f",
-            "label": "Map Info Copy",
-            "name": "map_info_copy",
-            "type": "textarea",
-            "instructions": "(narrow-width-only)",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_579bcadcb0a80",
-            "label": "News Settings",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_579bcae8b0a81",
-            "label": "News Header",
-            "name": "news_header",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_579bcaf0b0a82",
-            "label": "News View All Copy",
-            "name": "news_view_all_copy",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "All News",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_579bcb03b0a83",
-            "label": "News View All URL",
-            "name": "news_view_all_url",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "\/news\/",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_579bcd0f7e89c",
-            "label": "FAQ Settings",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_579bcd1b7e89d",
-            "label": "FAQ Categories",
-            "name": "faq_categories",
-            "type": "textarea",
-            "instructions": "One category per line, in order",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "What the Heck?\r\nBooking Questions\r\nI\u2019m Booked! Now What?\r\nManaging my Booking",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_579bcb15b0a84",
-            "label": "Footer Settings",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_579bcb41b0a85",
-            "label": "Footer Text",
-            "name": "footer_text",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "\u00a0\u00a0|\u00a0\u00a0<small>Agency of record for JoCo Cruise 2017 is Worldwide Travel and Cruise Associates, Inc. a licensed seller of travel in the state of Florida. License number 10505316.<\/small>",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_57b4a3a409f3f",
-            "label": "Experience Page",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_57b4a3b909f40",
-            "label": "Exp Intro Header",
-            "name": "exp_intro_header",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "What is JoCo Cruise?",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_57b4a44409f41",
-            "label": "Exp Intro Content",
-            "name": "exp_intro_content",
-            "type": "textarea",
-            "instructions": "Markdown",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Summer camp for nerds? The greatest vacation you\u2019ll ever have? All the best parts of cons and music festivals\u2014gaming, concerts, comedy, hanging out with your tribe\u2014with absolute dominion over an entire cruise ship filled with free food, fruity drinks and swimming pools? Yes, yes, and yes.\r\n\r\nJoin our annual gathering of creative makers, artists and technorati, celebrating their favorite things and discovering new ones. All week long there are live performances large and small, parties and hangouts, writing and gaming events, and much, much more\u2014all hosted by singer-songwriter and Internet-famous person [Jonathan Coulton](http:\/\/www.jonathancoulton.com\/). (a.k.a. \"JoCo.\")",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_57b4aa7935629",
-            "label": "Exp Intro Image",
-            "name": "exp_intro_image",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "id",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_57b4acbc7aae8",
-            "label": "Exp Featured Image Clickthrough File",
-            "name": "exp_featured_image_clickthrough_file",
-            "type": "file",
-            "instructions": "Optional. No link if left blank.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "library": "all",
-            "min_size": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_57b4af6f44373",
-            "label": "Exp Main Stage Header",
-            "name": "exp_main_stage_header",
-            "type": "text",
-            "instructions": "split lines with pipe (|)",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "JoCo Cruise 2017 | Live Shows",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_57b4afba44374",
-            "label": "Exp Main Stage Content",
-            "name": "exp_main_stage_content",
-            "type": "textarea",
-            "instructions": "HTML, not markdown",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "A central feature of JoCo Cruise is daily live performances, both large-scale (in the ship's main theater) and smaller-scale (in the ship's various other lounges and public spaces). Every year we assemble an eclectic mix of entertainers, experts and personalities: musicians, comedians, authors, game designers, webcomics, and more.\r\n\r\n<p style=\"margin-bottom:20px;\"> JoCo Cruise has had all types of performers, including:<\/p>\r\n\r\n<div class=\"col-md-6\">\r\n<h4>Musicians<\/h4>\r\n<ul>\r\n<li>Jonathan Coulton<\/li>\r\n<li>John Flansburgh (from They Might Be Giants)<\/li>\r\n<li>Jean Grae<\/li>\r\n<li>Imogen Heap<\/li>\r\n<li>Zo\u00eb Keating<\/li>\r\n<li>Ted Leo<\/li>\r\n<li>Aimee Mann<\/li>\r\n<li>Paul and Storm<\/li>\r\n<li>John Roderick<\/li>\r\n<li>Sara &amp; Sean Watkins (from Nickel Creek)<\/li>\r\n<\/ul>\r\n\r\n<\/div><div class=\"col-md-6\">\r\n<h4>Comedians\/Performers<\/h4>\r\n<ul>\r\n<li>Michael Ian Black<\/li>\r\n<li>Rhea Butcher<\/li>\r\n<li>Cameron Esposito<\/li>\r\n<li>Hank Green<\/li>\r\n<li>John Hodgman<\/li>\r\n<li>Grant Imahara<\/li>\r\n<li>Hari Kondabolu<\/li>\r\n<li>Peter Sagal<\/li>\r\n<li>Wil Wheaton<\/li>\r\n<\/ul>\r\n\r\n<\/div>\r\n<div class=\"clearfix\"><\/div>\r\n<div  style=\"margin-top:15px;\" class=\"col-md-6\">\r\n<h4>Authors\/Writers<\/h4>\r\n<ul>\r\n<li>Allie Brosh <em>(Hyperbole and a Half)<\/em><\/li>\r\n<li>Matt Inman <em>(The Oatmeal)<\/em><\/li>\r\n<li>N.K. Jemison <em>(The Hundred Thousand Kingdoms)<\/em><\/li>\r\n<li>Randall Munroe <em>(xkcd)<\/em><\/li>\r\n<li>Patrick Rothfuss (The <em>Kingkiller Chronicles<\/em> series)<\/li>\r\n<li>John Scalzi <em>(Old Man\u2019s War; Redshirts)<\/em><\/li>\r\n<\/ul>\r\n\r\n<\/div><div style=\"margin-top:15px;\" class=\"col-md-6\">\r\n<h4>Podcasts<\/h4>\r\n<ul>\r\n<li>The Thrilling Adventure Hour<\/li>\r\n<li>SPONTANEANATION<\/li>\r\n<li>Roderick on the Line<\/li>\r\n<li>I Was There Too<\/li>\r\n<li>The JV Club<\/li>\r\n<\/ul>\r\n<\/div>",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_57b4b2bf2191b",
-            "label": "Exp Featured Events Header",
-            "name": "exp_featured_events_header",
-            "type": "text",
-            "instructions": "split lines with pipe (|)",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Many Hangouts | Featured Events",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_57b4b2e92191c",
-            "label": "Exp Featured Events Content",
-            "name": "exp_featured_events_content",
-            "type": "textarea",
-            "instructions": "Markdown. The events themselves get added in the Featured Events post type.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Beyond the daily main performances, there's LOTS more to occupy your time while you're on JoCo Cruise. Below is just a sampling of the many other exclusive events we offer our attendees:",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_57b4c795f9eee",
-            "label": "Exp Gaming Track Header",
-            "name": "exp_gaming_track_header",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Gaming",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_57b4c7d6f9eef",
-            "label": "Exp Gaming Track Content",
-            "name": "exp_gaming_track_content",
-            "type": "textarea",
-            "instructions": "Markdown",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "JoCo Cruise 2017 will feature a vast array of tabletop, RPG and card gaming opportunities: in addition to a dedicated, 24-hour gaming area with an enormous library of games, there\u2019s free play throughout the ship, plus tournaments, new game playtesting, Q&amp;A sessions, and meetups with some of the top game creators currently working. (In previous years, attendees got early access to [Exploding Kittens](http:\/\/www.explodingkittens.com\/), [Sentinels of the Multiverse](http:\/\/sentinelsofthemultiverse.com\/) and [Phoenix: Dawn Command](https:\/\/www.kickstarter.com\/projects\/twogetherstudios\/phoenix-dawn-command\/video_share), to name a few.) You will be SO SICK OF GAMES by the time you are done with this cruise!\r\n\r\nGame companies\/folks who\u2019ve sailed with us include:\r\n\r\n* Steve Jackson Games\r\n* Breaking Games\r\n* Cards Against Humanity\r\n* Cheapass Games\r\n* Exploding Kittens\r\n* Greater Than Games\r\n* Green Ronin\r\n* Lone Shark Games\r\n* Looney Labs\r\n* Twogether Studios\r\n* Ultra PRO \/ Jolly Roger\r\n* Wizards of the Coast",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_57b4c81ff9ef0",
-            "label": "Exp Writing Track Header",
-            "name": "exp_writing_track_header",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Writing Events",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_57b4c83cf9ef1",
-            "label": "Exp Writing Track Content",
-            "name": "exp_writing_track_content",
-            "type": "textarea",
-            "instructions": "Markdown",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Meet and learn from the greats! Curated by New York Times bestselling authors John Scalzi and Patrick Rothfuss, JoCo Cruise\u2019s Writing Track will feature panels, readings, and hangouts throughout the week with some of the most creative minds currently working in fiction, comics, webcomics, music, film and television, and more.\r\n\r\nWriting Track event participants in the past have included:\r\n\r\n* John Scalzi\r\n* Pat Rothfuss\r\n* Keith Baker\r\n* Allie Brosh *(Hyperbole and a Half)*\r\n* Jonathan Coulton\r\n* Kelly Sue DeConnick\r\n* Matt Fraction\r\n* Matt Inman *(The Oatmeal)*\r\n* Ted Leo\r\n* N. K. Jemisin\r\n* Aimee Mann\r\n* Opus Moreschi",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_57b4c9ad44363",
-            "label": "Exp Shadow Cruise Header",
-            "name": "exp_shadow_cruise_header",
-            "type": "text",
-            "instructions": "split lines with pipe (|)",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Our Amazing Community | \"The Shadow Cruise\"",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_57b4c9d644364",
-            "label": "Exp Shadow Cruise Content",
-            "name": "exp_shadow_cruise_content",
-            "type": "textarea",
-            "instructions": "HTML, not markdown",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "JoCo Cruise attendees are an amazing and creative bunch of people. Just in case our official programming isn\u2019t enough for you, many of our attendees organize and host their own own events, creating what we like to call the \u201cShadow Cruise.\u201d You know that group of great friends you met at that one crazy ukulele jam party? That happened on the JoCo Cruise. \r\n\r\nA sampling of past Shadow Cruise events:\r\n\r\n<div class=\"col-md-6\">\r\n<ul>\r\n<li>Jam sessions and song circles<\/li>\r\n<li>Music and comedy concerts<\/li>\r\n<li>Artemis starship bridge simulator<\/li>\r\n<li>Improv classes<\/li>\r\n<li>Cosplay (and non-cosplay) photo shoots<\/li>\r\n<li>Speed meeting<\/li>\r\n<li>Book clubs<\/li>\r\n<li>Song circles and jam sessions<\/li>\r\n<\/ul>\r\n<\/div><div class=\"col-md-6\">\r\n<ul>\r\n<li>Group meditation, yoga, and tai chi<\/li>\r\n<li>Video shoots<\/li>\r\n<li>Puzzle hunts<\/li>\r\n<li>Culinary-interest events<\/li>\r\n<li>Crafting and knitting<\/li>\r\n<li>Podcasting<\/li>\r\n<li>Ballroom dance lessons<\/li>\r\n<li>Zumba classes<\/li>\r\n<\/ul>\r\n<\/div>",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_57b4ca14fe107",
-            "label": "Exp Photo Gallery Header",
-            "name": "exp_photo_gallery_header",
-            "type": "text",
-            "instructions": "split lines with pipe (|)",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Photos and Videos",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_57b4ca33fe108",
-            "label": "Exp Photo Gallery Content",
-            "name": "exp_photo_gallery_content",
-            "type": "textarea",
-            "instructions": "WP shortcodes",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "[gallery ids=\"4630,4628,4625,4627,4639,4629,4624,4626,4641,4635,4636,4623,4634,4686,4680,4681,4682,4678\"]\r\n\r\n\r\n<iframe src=\"https:\/\/www.youtube.com\/embed\/fDOur0CrQcI?feature=oembed\" frameborder=\"0\" allowfullscreen=\"\"><\/iframe>",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_57b4d2a2b3665",
-            "label": "Exp More Info Header",
-            "name": "exp_more_info_header",
-            "type": "text",
-            "instructions": "split lines with pipe (|)",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "More Information and Links",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_57b4d2c9b3666",
-            "label": "Exp More Info Content",
-            "name": "exp_more_info_content",
-            "type": "textarea",
-            "instructions": "Markdown",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Listen, we can\u2019t possibly be lying about how much fun this thing is, because there\u2019s no way we could plant [this much stuff](https:\/\/www.google.com\/search?q=%22joco+cruise%22&safe=off&hl=en&biw=1015&bih=624&source=lnms&sa=X&ei=BH9VVe7vK_a1sQT2pYDgCw&ved=0CAYQ_AUoAA&dpr=1.1) [all over the internet](https:\/\/www.google.com\/search?q=%22joco+cruise%22&safe=off&hl=en&biw=1015&bih=624&source=lnms&tbm=isch&sa=X&ei=0X5VVbHyAuzlsASu4IHwCA&ved=0CAkQ_AUoBDgK).\r\nIf you\u2019re interested and want further details, here\u2019s a few places to get them:\r\n\r\n* [The JoCo Cruise 2017 FAQ](https:\/\/jococruise.com\/faq\/). Answers to questions that are asked frequently. Perhaps your questions.\r\n* [The JoCo Cruise 2017 Facebook group](https:\/\/www.facebook.com\/groups\/jococruise2017). Fan-run, active group where you can usually find veteran cruisers who are happy to let you know the skinny and talk all things JoCo Cruisical. (Closed group; you'll need to request membership to view content.)\r\n* [The Jonathan Coulton Forums](http:\/\/www.jonathancoulton.com\/forums\/). No account necessary to view, only to post. A great place to start and find like-minded individuals.\r\n* Holland America\u2019s [comprehensive web page for Cruise Preparation](http:\/\/www.hollandamerica.com\/cruise-vacation-planning\/PlanningAndAdvice.action?tabName=Cruise+Preparation&WT.ac=pnav_NTC_PlanningAhead#), which covers a wide range of topics, including documentation, baggage policy information and packing advice, dress code, childcare and youth activities, and much more.\r\n* [The Sea Monkey Primer](https:\/\/docs.google.com\/document\/d\/1YUN7GSAhch3rpT2ePpMd-HedVQQm651TWsOMD56i5wk\/edit): For the curious, a document developed by Sea Monkeys especially for new Sea Monkeys (what JoCo Cruise attendees call themselves), where you can learn about many of the traditions and \"inside references\" from previous JoCo Cruises.\r\n\r\nSeriously, this is the most fun thing we do all year, and we\u2019re professional entertainers. We really hope you\u2019ll join us.",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "",
-            "readonly": 0,
-            "disabled": 0
-        }
-    ],
-    "location": [
+  "key": "group_579bc761723f7",
+  "title": "Theme options",
+  "fields": [
+    {
+      "key": "field_579bc774c924b",
+      "label": "Sitewide Options",
+      "name": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_579bc798c924c",
+      "label": "Cruise Year",
+      "name": "cruise_year",
+      "type": "number",
+      "instructions": "",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": 2017,
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "min": 2011,
+      "max": "",
+      "step": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_579bc7ccc924d",
+      "label": "Talent Year",
+      "name": "talent_year",
+      "type": "number",
+      "instructions": "Which year worth of talent should we load on the front page?",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": 2017,
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "min": 2011,
+      "max": "",
+      "step": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_579bc7e7c924e",
+      "label": "Enable booking",
+      "name": "enable_booking",
+      "type": "true_false",
+      "instructions": "This determines whether the two buttons show up under the header on the front page",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "message": "",
+      "default_value": 1
+    },
+    {
+      "key": "field_579bc826c924f",
+      "label": "Booking Path",
+      "name": "booking_path",
+      "type": "text",
+      "instructions": "Root relative URL for booking site",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "\/2017\/book\/",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_579bc843c9250",
+      "label": "Contact Form Email Address",
+      "name": "contact_form_email_address",
+      "type": "email",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "booking@jococruise.com",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_579bc85bc9251",
+      "label": "Hero Section Options",
+      "name": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_579bc875c9252",
+      "label": "Travel Dates",
+      "name": "travel_dates",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "Mar 4 - Mar 11, 2017 (Saturday-Saturday)",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_579bc8a7b0a65",
+      "label": "Button Call to action",
+      "name": "button_call_to_action",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "Book Now!",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_579bc8bab0a66",
+      "label": "Travel Description",
+      "name": "travel_description",
+      "type": "textarea",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "<span class=\"bold\">JoCo Cruise 2017<\/span> is a whole cruise ship (Holland America's <span class=\"italic\">ms Westerdam<\/span>) full of music, comedy, and general nerdery, departing from San Diego, CA for a 7-night adventure along the Sea of Cortez.",
+      "placeholder": "",
+      "maxlength": "",
+      "rows": "",
+      "new_lines": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_579bc8d5b0a67",
+      "label": "Travel Description More",
+      "name": "travel_description_more",
+      "type": "textarea",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "<p>The 2017 cruise will depart from San Diego, CA on <span class=\"bold\">Saturday, March 4th<\/span> and return on <span class=\"bold\">Saturday, March 11th<\/span>, with ports of call at Cabo San Lucas, Pichilingue and Loreto.<br><br>\r\nPerformers include Jonathan Coulton, Paul and Storm, and friends from across the music, comedy, gaming, and writing worlds. <\/p>",
+      "placeholder": "",
+      "maxlength": "",
+      "rows": "",
+      "new_lines": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_579bc8eeb0a68",
+      "label": "Hero Book Now Button",
+      "name": "hero_book_now_button",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "Book Now!",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_579bc8feb0a69",
+      "label": "Hero Already Booked Button",
+      "name": "hero_already_booked_button",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "I'm Booked! Now What?",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_579bc916b0a6a",
+      "label": "Hero Already Booked URL",
+      "name": "hero_already_booked_url",
+      "type": "url",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "https:\/\/jococruise.com\/im-booked-now-what\/",
+      "placeholder": ""
+    },
+    {
+      "key": "field_579bc933b0a6b",
+      "label": "Mailing List Call to action",
+      "name": "mailing_list_call_to_action",
+      "type": "text",
+      "instructions": "split lines with pipe (|)",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "Join the | JoCo Cruise Mailing List",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "default_value": 0,
+      "message": "",
+      "ui": 0,
+      "ui_on_text": "",
+      "ui_off_text": "",
+      "key": "field_589500e05c2b3",
+      "label": "Booking Countdown Timer?",
+      "name": "countdown_timer",
+      "type": "true_false",
+      "instructions": "Should we show a countdown timer on the front page?",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      }
+    },
+    {
+      "default_value": "",
+      "min": "",
+      "max": "",
+      "step": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "key": "field_589500485c2b2",
+      "label": "Countdown Timer Timestamp",
+      "name": "countdown_timer_unix",
+      "type": "number",
+      "instructions": "Unix Timestamp for the date in question. You can get such a timestamp from http:\/\/www.epochconverter.com\/",
+      "required": 1,
+      "conditional_logic": [
         [
-            {
-                "param": "options_page",
-                "operator": "==",
-                "value": "theme-general-settings"
-            }
+          {
+            "field": "field_589500e05c2b3",
+            "operator": "==",
+            "value": "1"
+          }
         ]
-    ],
-    "menu_order": 0,
-    "position": "normal",
-    "style": "default",
-    "label_placement": "top",
-    "instruction_placement": "label",
-    "hide_on_screen": "",
-    "active": 1,
-    "description": "",
-    "modified": 1475257474
+      ],
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      }
+    },
+    {
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "rows": "",
+      "key": "field_589501105c2b4",
+      "label": "Countdown Timer Header Copy",
+      "name": "countdown_timer_header_copy",
+      "type": "text",
+      "instructions": "What should the countdown timer copy say? Insert the date using %DATE%. Insert the countdown using %TIMER%",
+      "required": 1,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_589500e05c2b3",
+            "operator": "==",
+            "value": "1"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      }
+    },
+    {
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "key": "field_58950142325b8",
+      "label": "Countdown Timer Button Copy",
+      "name": "countdown_timer_button_copy",
+      "type": "text",
+      "instructions": "What should the Call to action button say?",
+      "required": 1,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_589500e05c2b3",
+            "operator": "==",
+            "value": "1"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      }
+    },
+    {
+      "default_value": "",
+      "placeholder": "",
+      "key": "field_5895015b325b9",
+      "label": "Countdown Timer Button Link",
+      "name": "countdown_timer_button_link",
+      "type": "url",
+      "instructions": "Where should the call to action button go?",
+      "required": 1,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_589500e05c2b3",
+            "operator": "==",
+            "value": "1"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      }
+    },
+    {
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "rows": "",
+      "key": "field_589501105c2b42",
+      "label": "Countdown Timer Footer Copy",
+      "name": "countdown_timer_footer_copy",
+      "type": "text",
+      "instructions": "What should the countdown timer copy say? Insert the date using %DATE%. Insert the countdown using %TIMER%",
+      "required": 1,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_589500e05c2b3",
+            "operator": "==",
+            "value": "1"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      }
+    },
+    {
+      "placement": "top",
+      "endpoint": 0,
+      "key": "field_579bc998b0a70",
+      "label": "Artist Settings",
+      "name": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      }
+    },
+    {
+      "key": "field_579bc998b0a70",
+      "label": "Artist Settings",
+      "name": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_579bc9a6b0a71",
+      "label": "Talent Section Header",
+      "name": "talent_section_header",
+      "type": "text",
+      "instructions": "split lines with pipe (|)",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "2017 | Performers and Featured Guests",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_579bc9c0b0a72",
+      "label": "Performer Intro Content",
+      "name": "performer_intro_content",
+      "type": "textarea",
+      "instructions": "(Markdown)",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "placeholder": "",
+      "maxlength": "",
+      "rows": "",
+      "new_lines": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_579bc9dab0a73",
+      "label": "Performer Header",
+      "name": "performer_header",
+      "type": "text",
+      "instructions": "split lines with pipe (|)",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_579bc9e9b0a74",
+      "label": "Featured Guest Header",
+      "name": "featured_guest_header",
+      "type": "text",
+      "instructions": "split lines with pipe (|)",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_57eea439a0606",
+      "label": "Podcasts Header",
+      "name": "podcast_header",
+      "type": "text",
+      "instructions": "split lines with pipe (|)",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": ""
+    },
+    {
+      "key": "field_579bc9f8b0a75",
+      "label": "Even More Header",
+      "name": "even_more_header",
+      "type": "text",
+      "instructions": "split lines with pipe (|)",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "Plus | Even More!",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_579bca01b0a76",
+      "label": "Coming Soon Header",
+      "name": "coming_soon_header",
+      "type": "text",
+      "instructions": "split lines with pipe (|)",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "More | Coming Soon\u2122!",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_57eea457a0608",
+      "label": "Artist Section Footer",
+      "name": "artist_section_footer",
+      "type": "text",
+      "instructions": "markdown",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "(Lineup subject to change)",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": ""
+    },
+    {
+      "key": "field_579bca1cb0a77",
+      "label": "Contact Settings",
+      "name": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_579bca2ab0a78",
+      "label": "General Questions Header",
+      "name": "general_questions_header",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "GENERAL QUESTIONS",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_579bca3eb0a79",
+      "label": "General Questions Address",
+      "name": "general_questions_address",
+      "type": "email",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "info@jococruise.com",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_579bca52b0a7a",
+      "label": "Booking Questions Header",
+      "name": "booking_questions_header",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "CRUISE BOOKINGS",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_579bca61b0a7b",
+      "label": "Booking Questions Address",
+      "name": "booking_questions_address",
+      "type": "email",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "bookings@jococruise.com",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_579bca79b0a7c",
+      "label": "Phone Questions Header",
+      "name": "phone_questions_header",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "LEAVE US A MESSAGE",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_579bca8cb0a7d",
+      "label": "Phone Questions Number",
+      "name": "phone_questions_number",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "(256) 3GO-JCCC \/ (256) 346-5222",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_579bc94db0a6c",
+      "label": "Link to Facebook Page",
+      "name": "link_to_facebook_page",
+      "type": "url",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "https:\/\/www.facebook.com\/JoCoCruise",
+      "placeholder": ""
+    },
+    {
+      "key": "field_579bc964b0a6d",
+      "label": "Link to Twitter",
+      "name": "link_to_twitter",
+      "type": "url",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "https:\/\/twitter.com\/jococruise",
+      "placeholder": ""
+    },
+    {
+      "key": "field_579bc975b0a6e",
+      "label": "Link to RSS feed",
+      "name": "link_to_rss_feed",
+      "type": "url",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "http:\/\/jococruise.com\/?feed=rss",
+      "placeholder": ""
+    },
+    {
+      "key": "field_579bc985b0a6f",
+      "label": "Link to Instagram",
+      "name": "link_to_instagram",
+      "type": "url",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "https:\/\/www.instagram.com\/jococruise\/",
+      "placeholder": ""
+    },
+    {
+      "key": "field_579bca99b0a7e",
+      "label": "Map Settings",
+      "name": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_8tz9FMAfqliZ",
+      "label": "Don't Display Map",
+      "name": "skip_ports_of_call_map",
+      "type": "true_false",
+      "instructions": "Instead of showing the map, show a PAGE whose URL is EXACTLY ports-of-call",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "message": "",
+      "default_value": 0
+    },
+    {
+      "key": "field_579bcac5b0a7f",
+      "label": "Map Info Copy",
+      "name": "map_info_copy",
+      "type": "textarea",
+      "instructions": "(narrow-width-only)",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "placeholder": "",
+      "maxlength": "",
+      "rows": "",
+      "new_lines": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_579bcadcb0a80",
+      "label": "News Settings",
+      "name": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_579bcae8b0a81",
+      "label": "News Header",
+      "name": "news_header",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_579bcaf0b0a82",
+      "label": "News View All Copy",
+      "name": "news_view_all_copy",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "All News",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_579bcb03b0a83",
+      "label": "News View All URL",
+      "name": "news_view_all_url",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "\/news\/",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_579bcd0f7e89c",
+      "label": "FAQ Settings",
+      "name": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_579bcd1b7e89d",
+      "label": "FAQ Categories",
+      "name": "faq_categories",
+      "type": "textarea",
+      "instructions": "One category per line, in order",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "What the Heck?\r\nBooking Questions\r\nI\u2019m Booked! Now What?\r\nManaging my Booking",
+      "placeholder": "",
+      "maxlength": "",
+      "rows": "",
+      "new_lines": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_579bcb15b0a84",
+      "label": "Footer Settings",
+      "name": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_579bcb41b0a85",
+      "label": "Footer Text",
+      "name": "footer_text",
+      "type": "textarea",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "\u00a0\u00a0|\u00a0\u00a0<small>Agency of record for JoCo Cruise 2017 is Worldwide Travel and Cruise Associates, Inc. a licensed seller of travel in the state of Florida. License number 10505316.<\/small>",
+      "placeholder": "",
+      "maxlength": "",
+      "rows": "",
+      "new_lines": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_57b4a3a409f3f",
+      "label": "Experience Page",
+      "name": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_57b4a3b909f40",
+      "label": "Exp Intro Header",
+      "name": "exp_intro_header",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "What is JoCo Cruise?",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_57b4a44409f41",
+      "label": "Exp Intro Content",
+      "name": "exp_intro_content",
+      "type": "textarea",
+      "instructions": "Markdown",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "Summer camp for nerds? The greatest vacation you\u2019ll ever have? All the best parts of cons and music festivals\u2014gaming, concerts, comedy, hanging out with your tribe\u2014with absolute dominion over an entire cruise ship filled with free food, fruity drinks and swimming pools? Yes, yes, and yes.\r\n\r\nJoin our annual gathering of creative makers, artists and technorati, celebrating their favorite things and discovering new ones. All week long there are live performances large and small, parties and hangouts, writing and gaming events, and much, much more\u2014all hosted by singer-songwriter and Internet-famous person [Jonathan Coulton](http:\/\/www.jonathancoulton.com\/). (a.k.a. \"JoCo.\")",
+      "placeholder": "",
+      "maxlength": "",
+      "rows": "",
+      "new_lines": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_57b4aa7935629",
+      "label": "Exp Intro Image",
+      "name": "exp_intro_image",
+      "type": "image",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "id",
+      "preview_size": "thumbnail",
+      "library": "all",
+      "min_width": "",
+      "min_height": "",
+      "min_size": "",
+      "max_width": "",
+      "max_height": "",
+      "max_size": "",
+      "mime_types": ""
+    },
+    {
+      "key": "field_57b4acbc7aae8",
+      "label": "Exp Featured Image Clickthrough File",
+      "name": "exp_featured_image_clickthrough_file",
+      "type": "file",
+      "instructions": "Optional. No link if left blank.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "array",
+      "library": "all",
+      "min_size": "",
+      "max_size": "",
+      "mime_types": ""
+    },
+    {
+      "key": "field_57b4af6f44373",
+      "label": "Exp Main Stage Header",
+      "name": "exp_main_stage_header",
+      "type": "text",
+      "instructions": "split lines with pipe (|)",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "JoCo Cruise 2017 | Live Shows",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_57b4afba44374",
+      "label": "Exp Main Stage Content",
+      "name": "exp_main_stage_content",
+      "type": "textarea",
+      "instructions": "HTML, not markdown",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "A central feature of JoCo Cruise is daily live performances, both large-scale (in the ship's main theater) and smaller-scale (in the ship's various other lounges and public spaces). Every year we assemble an eclectic mix of entertainers, experts and personalities: musicians, comedians, authors, game designers, webcomics, and more.\r\n\r\n<p style=\"margin-bottom:20px;\"> JoCo Cruise has had all types of performers, including:<\/p>\r\n\r\n<div class=\"col-md-6\">\r\n<h4>Musicians<\/h4>\r\n<ul>\r\n<li>Jonathan Coulton<\/li>\r\n<li>John Flansburgh (from They Might Be Giants)<\/li>\r\n<li>Jean Grae<\/li>\r\n<li>Imogen Heap<\/li>\r\n<li>Zo\u00eb Keating<\/li>\r\n<li>Ted Leo<\/li>\r\n<li>Aimee Mann<\/li>\r\n<li>Paul and Storm<\/li>\r\n<li>John Roderick<\/li>\r\n<li>Sara &amp; Sean Watkins (from Nickel Creek)<\/li>\r\n<\/ul>\r\n\r\n<\/div><div class=\"col-md-6\">\r\n<h4>Comedians\/Performers<\/h4>\r\n<ul>\r\n<li>Michael Ian Black<\/li>\r\n<li>Rhea Butcher<\/li>\r\n<li>Cameron Esposito<\/li>\r\n<li>Hank Green<\/li>\r\n<li>John Hodgman<\/li>\r\n<li>Grant Imahara<\/li>\r\n<li>Hari Kondabolu<\/li>\r\n<li>Peter Sagal<\/li>\r\n<li>Wil Wheaton<\/li>\r\n<\/ul>\r\n\r\n<\/div>\r\n<div class=\"clearfix\"><\/div>\r\n<div  style=\"margin-top:15px;\" class=\"col-md-6\">\r\n<h4>Authors\/Writers<\/h4>\r\n<ul>\r\n<li>Allie Brosh <em>(Hyperbole and a Half)<\/em><\/li>\r\n<li>Matt Inman <em>(The Oatmeal)<\/em><\/li>\r\n<li>N.K. Jemison <em>(The Hundred Thousand Kingdoms)<\/em><\/li>\r\n<li>Randall Munroe <em>(xkcd)<\/em><\/li>\r\n<li>Patrick Rothfuss (The <em>Kingkiller Chronicles<\/em> series)<\/li>\r\n<li>John Scalzi <em>(Old Man\u2019s War; Redshirts)<\/em><\/li>\r\n<\/ul>\r\n\r\n<\/div><div style=\"margin-top:15px;\" class=\"col-md-6\">\r\n<h4>Podcasts<\/h4>\r\n<ul>\r\n<li>The Thrilling Adventure Hour<\/li>\r\n<li>SPONTANEANATION<\/li>\r\n<li>Roderick on the Line<\/li>\r\n<li>I Was There Too<\/li>\r\n<li>The JV Club<\/li>\r\n<\/ul>\r\n<\/div>",
+      "placeholder": "",
+      "maxlength": "",
+      "rows": "",
+      "new_lines": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_57b4b2bf2191b",
+      "label": "Exp Featured Events Header",
+      "name": "exp_featured_events_header",
+      "type": "text",
+      "instructions": "split lines with pipe (|)",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "Many Hangouts | Featured Events",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_57b4b2e92191c",
+      "label": "Exp Featured Events Content",
+      "name": "exp_featured_events_content",
+      "type": "textarea",
+      "instructions": "Markdown. The events themselves get added in the Featured Events post type.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "Beyond the daily main performances, there's LOTS more to occupy your time while you're on JoCo Cruise. Below is just a sampling of the many other exclusive events we offer our attendees:",
+      "placeholder": "",
+      "maxlength": "",
+      "rows": "",
+      "new_lines": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_57b4c795f9eee",
+      "label": "Exp Gaming Track Header",
+      "name": "exp_gaming_track_header",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "Gaming",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_57b4c7d6f9eef",
+      "label": "Exp Gaming Track Content",
+      "name": "exp_gaming_track_content",
+      "type": "textarea",
+      "instructions": "Markdown",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "JoCo Cruise 2017 will feature a vast array of tabletop, RPG and card gaming opportunities: in addition to a dedicated, 24-hour gaming area with an enormous library of games, there\u2019s free play throughout the ship, plus tournaments, new game playtesting, Q&amp;A sessions, and meetups with some of the top game creators currently working. (In previous years, attendees got early access to [Exploding Kittens](http:\/\/www.explodingkittens.com\/), [Sentinels of the Multiverse](http:\/\/sentinelsofthemultiverse.com\/) and [Phoenix: Dawn Command](https:\/\/www.kickstarter.com\/projects\/twogetherstudios\/phoenix-dawn-command\/video_share), to name a few.) You will be SO SICK OF GAMES by the time you are done with this cruise!\r\n\r\nGame companies\/folks who\u2019ve sailed with us include:\r\n\r\n* Steve Jackson Games\r\n* Breaking Games\r\n* Cards Against Humanity\r\n* Cheapass Games\r\n* Exploding Kittens\r\n* Greater Than Games\r\n* Green Ronin\r\n* Lone Shark Games\r\n* Looney Labs\r\n* Twogether Studios\r\n* Ultra PRO \/ Jolly Roger\r\n* Wizards of the Coast",
+      "placeholder": "",
+      "maxlength": "",
+      "rows": "",
+      "new_lines": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_57b4c81ff9ef0",
+      "label": "Exp Writing Track Header",
+      "name": "exp_writing_track_header",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "Writing Events",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_57b4c83cf9ef1",
+      "label": "Exp Writing Track Content",
+      "name": "exp_writing_track_content",
+      "type": "textarea",
+      "instructions": "Markdown",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "Meet and learn from the greats! Curated by New York Times bestselling authors John Scalzi and Patrick Rothfuss, JoCo Cruise\u2019s Writing Track will feature panels, readings, and hangouts throughout the week with some of the most creative minds currently working in fiction, comics, webcomics, music, film and television, and more.\r\n\r\nWriting Track event participants in the past have included:\r\n\r\n* John Scalzi\r\n* Pat Rothfuss\r\n* Keith Baker\r\n* Allie Brosh *(Hyperbole and a Half)*\r\n* Jonathan Coulton\r\n* Kelly Sue DeConnick\r\n* Matt Fraction\r\n* Matt Inman *(The Oatmeal)*\r\n* Ted Leo\r\n* N. K. Jemisin\r\n* Aimee Mann\r\n* Opus Moreschi",
+      "placeholder": "",
+      "maxlength": "",
+      "rows": "",
+      "new_lines": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_57b4c9ad44363",
+      "label": "Exp Shadow Cruise Header",
+      "name": "exp_shadow_cruise_header",
+      "type": "text",
+      "instructions": "split lines with pipe (|)",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "Our Amazing Community | \"The Shadow Cruise\"",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_57b4c9d644364",
+      "label": "Exp Shadow Cruise Content",
+      "name": "exp_shadow_cruise_content",
+      "type": "textarea",
+      "instructions": "HTML, not markdown",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "JoCo Cruise attendees are an amazing and creative bunch of people. Just in case our official programming isn\u2019t enough for you, many of our attendees organize and host their own own events, creating what we like to call the \u201cShadow Cruise.\u201d You know that group of great friends you met at that one crazy ukulele jam party? That happened on the JoCo Cruise. \r\n\r\nA sampling of past Shadow Cruise events:\r\n\r\n<div class=\"col-md-6\">\r\n<ul>\r\n<li>Jam sessions and song circles<\/li>\r\n<li>Music and comedy concerts<\/li>\r\n<li>Artemis starship bridge simulator<\/li>\r\n<li>Improv classes<\/li>\r\n<li>Cosplay (and non-cosplay) photo shoots<\/li>\r\n<li>Speed meeting<\/li>\r\n<li>Book clubs<\/li>\r\n<li>Song circles and jam sessions<\/li>\r\n<\/ul>\r\n<\/div><div class=\"col-md-6\">\r\n<ul>\r\n<li>Group meditation, yoga, and tai chi<\/li>\r\n<li>Video shoots<\/li>\r\n<li>Puzzle hunts<\/li>\r\n<li>Culinary-interest events<\/li>\r\n<li>Crafting and knitting<\/li>\r\n<li>Podcasting<\/li>\r\n<li>Ballroom dance lessons<\/li>\r\n<li>Zumba classes<\/li>\r\n<\/ul>\r\n<\/div>",
+      "placeholder": "",
+      "maxlength": "",
+      "rows": "",
+      "new_lines": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_57b4ca14fe107",
+      "label": "Exp Photo Gallery Header",
+      "name": "exp_photo_gallery_header",
+      "type": "text",
+      "instructions": "split lines with pipe (|)",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "Photos and Videos",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_57b4ca33fe108",
+      "label": "Exp Photo Gallery Content",
+      "name": "exp_photo_gallery_content",
+      "type": "textarea",
+      "instructions": "WP shortcodes",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "[gallery ids=\"4630,4628,4625,4627,4639,4629,4624,4626,4641,4635,4636,4623,4634,4686,4680,4681,4682,4678\"]\r\n\r\n\r\n<iframe src=\"https:\/\/www.youtube.com\/embed\/fDOur0CrQcI?feature=oembed\" frameborder=\"0\" allowfullscreen=\"\"><\/iframe>",
+      "placeholder": "",
+      "maxlength": "",
+      "rows": "",
+      "new_lines": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_57b4d2a2b3665",
+      "label": "Exp More Info Header",
+      "name": "exp_more_info_header",
+      "type": "text",
+      "instructions": "split lines with pipe (|)",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "More Information and Links",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_57b4d2c9b3666",
+      "label": "Exp More Info Content",
+      "name": "exp_more_info_content",
+      "type": "textarea",
+      "instructions": "Markdown",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "Listen, we can\u2019t possibly be lying about how much fun this thing is, because there\u2019s no way we could plant [this much stuff](https:\/\/www.google.com\/search?q=%22joco+cruise%22&safe=off&hl=en&biw=1015&bih=624&source=lnms&sa=X&ei=BH9VVe7vK_a1sQT2pYDgCw&ved=0CAYQ_AUoAA&dpr=1.1) [all over the internet](https:\/\/www.google.com\/search?q=%22joco+cruise%22&safe=off&hl=en&biw=1015&bih=624&source=lnms&tbm=isch&sa=X&ei=0X5VVbHyAuzlsASu4IHwCA&ved=0CAkQ_AUoBDgK).\r\nIf you\u2019re interested and want further details, here\u2019s a few places to get them:\r\n\r\n* [The JoCo Cruise 2017 FAQ](https:\/\/jococruise.com\/faq\/). Answers to questions that are asked frequently. Perhaps your questions.\r\n* [The JoCo Cruise 2017 Facebook group](https:\/\/www.facebook.com\/groups\/jococruise2017). Fan-run, active group where you can usually find veteran cruisers who are happy to let you know the skinny and talk all things JoCo Cruisical. (Closed group; you'll need to request membership to view content.)\r\n* [The Jonathan Coulton Forums](http:\/\/www.jonathancoulton.com\/forums\/). No account necessary to view, only to post. A great place to start and find like-minded individuals.\r\n* Holland America\u2019s [comprehensive web page for Cruise Preparation](http:\/\/www.hollandamerica.com\/cruise-vacation-planning\/PlanningAndAdvice.action?tabName=Cruise+Preparation&WT.ac=pnav_NTC_PlanningAhead#), which covers a wide range of topics, including documentation, baggage policy information and packing advice, dress code, childcare and youth activities, and much more.\r\n* [The Sea Monkey Primer](https:\/\/docs.google.com\/document\/d\/1YUN7GSAhch3rpT2ePpMd-HedVQQm651TWsOMD56i5wk\/edit): For the curious, a document developed by Sea Monkeys especially for new Sea Monkeys (what JoCo Cruise attendees call themselves), where you can learn about many of the traditions and \"inside references\" from previous JoCo Cruises.\r\n\r\nSeriously, this is the most fun thing we do all year, and we\u2019re professional entertainers. We really hope you\u2019ll join us.",
+      "placeholder": "",
+      "maxlength": "",
+      "rows": "",
+      "new_lines": "",
+      "readonly": 0,
+      "disabled": 0
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "options_page",
+        "operator": "==",
+        "value": "theme-general-settings"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": 1,
+  "description": "",
+  "modified": 1475257474
 }
