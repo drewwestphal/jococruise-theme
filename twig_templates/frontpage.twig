@@ -1,5 +1,26 @@
 {% extends 'base.twig' %}
 
+{% macro artist_group_header(raw_header_or_blank) %}
+    {% if raw_header_or_blank is not empty %}
+        <div class="clearfix col-xs-12">
+            <h3 class="slant_header">
+                {{ raw_header_or_blank|piped_header }}
+            </h3>
+        </div>
+    {% else %}
+        <div class="col-xs-12" style="padding-top:33px;"></div>
+    {% endif %}
+{% endmacro %}
+
+{% macro artist_group(raw_header_or_blank, artist_list) %}
+    {{ _self.artist_group_header(raw_header_or_blank) }}
+    {% if artist_list is not empty %}
+        {% include 'artists_frontpage.twig' with {'artists':artist_list} %}
+    {% endif %}
+{% endmacro %}
+
+{% import _self as m %}
+
 {% block content %}
     <section id="content" role="main">
 
@@ -26,8 +47,8 @@
                 <div class="container">
                     <div class="col-xs-12 col-md-12">
                         {% set replace_array = {
-                            '%DATE%':'<span class="date">date</span>',
-                            '%TIMER%':'<span class="timer">timer</span>'
+                        '%DATE%':'<span class="date">date</span>',
+                        '%TIMER%':'<span class="timer">timer</span>'
                         } %}
                         <h5>{{ options.countdown_timer_header_copy|replace(replace_array) }}</h5>
 
@@ -41,14 +62,14 @@
             <script type="text/javascript">
                 jQuery(document).ready(function () {
                     (function ($) {
-                        var expDate = new Date({{ options.countdown_timer_unix * 1000}});
+                        var expDate = new Date({{ options.countdown_timer_unix * 1000 }});
 
                         $('#countdown-timer .date').text(expDate.toLocaleDateString() + ' at ' + expDate.toLocaleTimeString());
 
 
                         function tick() {
                             var now = new Date();
-                            var remSec = (expDate.getTime() - now.getTime())/1000;
+                            var remSec = (expDate.getTime() - now.getTime()) / 1000;
 
                             var ndays = Math.floor(remSec / (24 * 60 * 60));
                             var nhrs = Math.floor((remSec % (24 * 60 * 60)) / (60 * 60));
@@ -56,7 +77,7 @@
                             var nsec = Math.floor(remSec % 60);
 
                             var timer = sprintf('%2d hour%s and %02d:%02d',
-                                    nhrs, nhrs > 1 ? 's' : '', nmin, nsec);
+                                nhrs, nhrs > 1 ? 's' : '', nmin, nsec);
 
                             if (ndays) {
                                 timer = sprintf('%d day%s, ', ndays, ndays > 1 ? 's' : '') + timer;
@@ -141,60 +162,26 @@
                     <div id="artists-header">
                         <img src="{{ theme.link }}/img/artist_divider.svg" class="img-responsive">
 
-                        <h1>{{ talent_header }}</h1>
-                        {{ options.performer_intro_content|markdown }}
+                        <h1>{{ options.talent_header }}</h1>
+                        <div style="text-align:center; font-size: 133%;">{{ options.performer_intro_content|markdown }}</div>
                     </div>
                 </div>
-                {% if options.performer_header is not empty %}
-                    <div class="clearfix col-xs-12">
-                        <h3 class="slant_header">
-                            {{ options.performer_header|piped_header }}
-                        </h3>
-                    </div>
-                {% else %}
-                    <div class="col-xs-12" style="padding-top:33px;"></div>
-                {% endif %}
-                {% include 'artists_frontpage.twig' with {'artists':artists} %}
-                {% if options.featured_guest_header is not empty %}
-                    <div class="clearfix col-xs-12">
-                        <h3 class="slant_header">
-                            {{ options.featured_guest_header|piped_header }}
-                        </h3>
-                    </div>
-                {% else %}
-                    <div class="col-xs-12" style="padding-top:33px;"></div>
-                {% endif %}
-                {% if featured_artists is not empty %}
-                    {% include 'artists_frontpage.twig' with {'artists':featured_artists} %}
-                {% endif %}
-                {% if options.podcast_header is not empty %}
-                    <div class="clearfix col-xs-12">
-                        <h3 class="slant_header">
-                            {{ options.podcast_header|piped_header }}
-                        </h3>
-                    </div>
-                {% else %}
-                    <div class="col-xs-12" style="padding-top:33px;"></div>
-                {% endif %}
-                {% if podcasts is not empty %}
-                    {% include 'artists_frontpage.twig' with {'artists':podcasts} %}
-                {% endif %}
-                {% if options.even_more_header is not empty %}
-                    <div class="clearfix col-xs-12">
-                        <h3 class="slant_header">
-                            {{ options.even_more_header|piped_header }}
-                        </h3>
-                    </div>
-                {% else %}
-                    <div class="col-xs-12" style="padding-top:33px;"></div>
-                {% endif %}
-                {% include 'artists_frontpage.twig' with {'artists':spotlight_items} %}
-                {% if options.coming_soon_header is not empty %}
-                    <div class="clearfix col-xs-12">
-                        <h3 class="slant_header">
-                            {{ options.coming_soon_header|piped_header }}
-                        </h3>
-                    </div>
+                {{ m.artist_group(options.performer_header, artists) }}
+                {{ m.artist_group(options.featured_guest_header, featured_artists) }}
+                {{ m.artist_group(options.podcast_header,podcasts) }}
+                {{ m.artist_group(options.even_more_header,spotlight_items) }}
+                {{ m.artist_group_header(options.coming_soon_header) }}
+                <div class="clearfix"></div>
+
+                {% if options.show_previous_year_guests_too %}
+                    <div style="margin-top:39px; text-align:center; font-size: 133%;">{{ options.previous_year_guests_intro_content|markdown }}</div>
+
+                    {{ m.artist_group(options.performer_header_prev, artists_prev) }}
+                    {{ m.artist_group(options.featured_guest_header_prev, featured_artists_prev) }}
+                    {{ m.artist_group(options.podcast_header_prev,podcasts_prev) }}
+                    {% if options.show_previous_year_even_more %}
+                        {{ m.artist_group(options.even_more_header_prev,spotlight_items_prev) }}
+                    {% endif %}
                 {% endif %}
                 <div class="clearfix"></div>
             </div>

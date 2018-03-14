@@ -9,7 +9,9 @@ if(!(class_exists('\Timber') && function_exists('get_field'))) {
 
 
 $context = Timber::get_context();
-$cruise_year = get_field('talent_year', 'option');
+$talent_year = intval(get_field('talent_year', 'option'));
+$previous_talent_year = $talent_year - 1;
+$populate_prior_cruise_artists = get_field('show_previous_year_guests_too', 'option');
 
 $context['news_posts'] = $news_posts = Timber::get_posts(
     [
@@ -27,36 +29,34 @@ if(function_exists('mc4wp_show_form')) {
     $context['show_mailing_function'] = 'mc4wp_show_form';
 }
 
-$targetArtistType = 'artist_type' . $cruise_year;
-
-function artistTypeQueryArray($key, $value) {
+function getArtistPosts($key, $value) {
     return
-        [
-            'post_type'      => 'artist',
-            'posts_per_page' => -1,
-            'order'          => 'ASC',
-            'meta_query'     => [
-                [
-                    'key'   => $key,
-                    'value' => $value,
-                ],
-            ],
-        ];
+        Timber::get_posts([
+                              'post_type'      => 'artist',
+                              'posts_per_page' => -1,
+                              'order'          => 'ASC',
+                              'meta_query'     => [
+                                  [
+                                      'key'   => $key,
+                                      'value' => $value,
+                                  ],
+                              ],
+                          ], 'ArtistPost');
 }
 
+function populateArtistContext(&$ctx, $target_type, $append_to_key) {
+    $ctx['artists' . $append_to_key] = getArtistPosts($target_type, 'artist');
+    $ctx['featured_artists' . $append_to_key] = getArtistPosts($target_type, 'featured artist');
+    $ctx['spotlight_items' . $append_to_key] = getArtistPosts($target_type, 'spotlight item');
+    $ctx['podcasts' . $append_to_key] = getArtistPosts($target_type, 'podcast');
+}
 
-$context['artists'] = Timber::get_posts(
-    artistTypeQueryArray($targetArtistType, 'artist')
-    , 'ArtistPost');
-$context['featured_artists'] = Timber::get_posts(
-    artistTypeQueryArray($targetArtistType, 'featured artist')
-    , 'ArtistPost');
-$context['spotlight_items'] = Timber::get_posts(
-    artistTypeQueryArray($targetArtistType, 'spotlight item')
-    , 'ArtistPost');
-$context['podcasts'] = Timber::get_posts(
-    artistTypeQueryArray($targetArtistType, 'podcast')
-    , 'ArtistPost');
+// create variables for this year
+populateArtistContext($context, 'artist_type' . $talent_year, '');
+if($populate_prior_cruise_artists) {
+    populateArtistContext($context, 'artist_type' . $previous_talent_year, '_prev');
+}
+
 $context['map_cities'] = Timber::get_posts(
     [
         'post_type'      => 'city',
