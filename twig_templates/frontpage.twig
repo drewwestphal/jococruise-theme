@@ -13,8 +13,8 @@
 {% endmacro %}
 
 {% macro artist_group(raw_header_or_blank, artist_list) %}
-    {{ _self.artist_group_header(raw_header_or_blank) }}
-    {% if artist_list is not empty %}
+    {% if raw_header_or_blank is not empty and artist_list is not empty %}
+        {{ _self.artist_group_header(raw_header_or_blank) }}
         {% include 'artists_frontpage.twig' with {'artists':artist_list} %}
     {% endif %}
 {% endmacro %}
@@ -171,6 +171,7 @@
                 {{ m.artist_group(options.podcast_header,podcasts) }}
                 {{ m.artist_group(options.even_more_header,spotlight_items) }}
                 {{ m.artist_group_header(options.coming_soon_header) }}
+                <div style="margin-top:39px; text-align:center; font-size: 133%;">{{ options.artist_section_footer|markdown }}</div>
                 <div class="clearfix"></div>
 
                 {% if options.show_previous_year_guests_too %}
@@ -179,11 +180,10 @@
                     {{ m.artist_group(options.performer_header_prev, artists_prev) }}
                     {{ m.artist_group(options.featured_guest_header_prev, featured_artists_prev) }}
                     {{ m.artist_group(options.podcast_header_prev,podcasts_prev) }}
-                    {% if options.show_previous_year_even_more %}
-                        {{ m.artist_group(options.even_more_header_prev,spotlight_items_prev) }}
-                    {% endif %}
+                    {{ m.artist_group(options.even_more_header_prev,spotlight_items_prev) }}
                 {% endif %}
                 <div class="clearfix"></div>
+
             </div>
         </section>
 

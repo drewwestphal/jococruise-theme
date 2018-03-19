@@ -798,34 +798,6 @@
       "disabled": 0
     },
     {
-      "key": "field_5aa98050ee6a21",
-      "label": "Show The Even More Section (Previous Year)",
-      "name": "show_previous_year_even_more",
-      "type": "true_false",
-      "instructions": "Seems like we'd want to hide this. If you want to show it, check yes.",
-      "required": 0,
-      "conditional_logic": [
-        [
-          {
-            "field": "field_5aa98050ee6a2",
-            "operator": "==",
-            "value": "1"
-          }
-        ]
-      ],
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "message": "",
-      "default_value": 0,
-      "ui": 0,
-      "ui_on_text": "",
-      "ui_off_text": ""
-    },
-
-    {
       "key": "field_579bca1cb0a77",
       "label": "Contact Settings",
       "name": "",
