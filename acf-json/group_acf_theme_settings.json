@@ -123,6 +123,175 @@
       "append": ""
     },
     {
+      "key": "field_5afdb961819cb",
+      "label": "Orange Section",
+      "name": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_589500e05c2b3",
+      "label": "Booking Countdown Timer?",
+      "name": "countdown_timer",
+      "type": "true_false",
+      "instructions": "Should we show an orange section on the front page?",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "message": "",
+      "default_value": 0,
+      "ui": 0,
+      "ui_on_text": "",
+      "ui_off_text": ""
+    },
+    {
+      "key": "field_589500485c2b2",
+      "label": "Countdown Timer Timestamp",
+      "name": "countdown_timer_unix",
+      "type": "number",
+      "instructions": "If you plan to show a countdown timer, put a timestamp in here. Otherwise, put 0. Unix Timestamp for the date in question. You can get such a timestamp from http:\/\/www.epochconverter.com\/",
+      "required": 1,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_589500e05c2b3",
+            "operator": "==",
+            "value": "1"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "min": "",
+      "max": "",
+      "step": ""
+    },
+    {
+      "key": "field_589501105c2b4",
+      "label": "Countdown Timer Header Copy",
+      "name": "countdown_timer_header_copy",
+      "type": "text",
+      "instructions": "Orange section copy say? Insert the date using %DATE%. Insert the countdown using %TIMER%",
+      "required": 1,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_589500e05c2b3",
+            "operator": "==",
+            "value": "1"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": ""
+    },
+    {
+      "key": "field_58950142325b8",
+      "label": "Countdown Timer Button Copy",
+      "name": "countdown_timer_button_copy",
+      "type": "text",
+      "instructions": "What should the Call to action button say?",
+      "required": 1,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_589500e05c2b3",
+            "operator": "==",
+            "value": "1"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_5895015b325b9",
+      "label": "Countdown Timer Button Link",
+      "name": "countdown_timer_button_link",
+      "type": "url",
+      "instructions": "Where should the call to action button go?",
+      "required": 1,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_589500e05c2b3",
+            "operator": "==",
+            "value": "1"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "placeholder": ""
+    },
+    {
+      "key": "field_589501105c2b42",
+      "label": "Countdown Timer Footer Copy",
+      "name": "countdown_timer_footer_copy",
+      "type": "text",
+      "instructions": "What should footer copy say? Insert the date using %DATE%. Insert the countdown using %TIMER%",
+      "required": 1,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_589500e05c2b3",
+            "operator": "==",
+            "value": "1"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": ""
+    },
+    {
       "key": "field_579bc85bc9251",
       "label": "Hero Section Options",
       "name": "",
@@ -300,161 +469,6 @@
       "maxlength": "",
       "readonly": 0,
       "disabled": 0
-    },
-    {
-      "key": "field_589500e05c2b3",
-      "label": "Booking Countdown Timer?",
-      "name": "countdown_timer",
-      "type": "true_false",
-      "instructions": "Should we show a countdown timer on the front page?",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": 0,
-      "message": "",
-      "ui": 0,
-      "ui_on_text": "",
-      "ui_off_text": ""
-    },
-    {
-      "key": "field_589500485c2b2",
-      "label": "Countdown Timer Timestamp",
-      "name": "countdown_timer_unix",
-      "type": "number",
-      "instructions": "Unix Timestamp for the date in question. You can get such a timestamp from http:\/\/www.epochconverter.com\/",
-      "required": 1,
-      "conditional_logic": [
-        [
-          {
-            "field": "field_589500e05c2b3",
-            "operator": "==",
-            "value": "1"
-          }
-        ]
-      ],
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "min": "",
-      "max": "",
-      "step": "",
-      "placeholder": "",
-      "prepend": "",
-      "append": ""
-    },
-    {
-      "key": "field_589501105c2b4",
-      "label": "Countdown Timer Header Copy",
-      "name": "countdown_timer_header_copy",
-      "type": "text",
-      "instructions": "What should the countdown timer copy say? Insert the date using %DATE%. Insert the countdown using %TIMER%",
-      "required": 1,
-      "conditional_logic": [
-        [
-          {
-            "field": "field_589500e05c2b3",
-            "operator": "==",
-            "value": "1"
-          }
-        ]
-      ],
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "placeholder": "",
-      "rows": "",
-      "prepend": "",
-      "append": ""
-    },
-    {
-      "key": "field_58950142325b8",
-      "label": "Countdown Timer Button Copy",
-      "name": "countdown_timer_button_copy",
-      "type": "text",
-      "instructions": "What should the Call to action button say?",
-      "required": 1,
-      "conditional_logic": [
-        [
-          {
-            "field": "field_589500e05c2b3",
-            "operator": "==",
-            "value": "1"
-          }
-        ]
-      ],
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "placeholder": "",
-      "prepend": "",
-      "append": ""
-    },
-    {
-      "key": "field_5895015b325b9",
-      "label": "Countdown Timer Button Link",
-      "name": "countdown_timer_button_link",
-      "type": "url",
-      "instructions": "Where should the call to action button go?",
-      "required": 1,
-      "conditional_logic": [
-        [
-          {
-            "field": "field_589500e05c2b3",
-            "operator": "==",
-            "value": "1"
-          }
-        ]
-      ],
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "placeholder": ""
-    },
-    {
-      "key": "field_589501105c2b42",
-      "label": "Countdown Timer Footer Copy",
-      "name": "countdown_timer_footer_copy",
-      "type": "text",
-      "instructions": "What should the countdown timer copy say? Insert the date using %DATE%. Insert the countdown using %TIMER%",
-      "required": 1,
-      "conditional_logic": [
-        [
-          {
-            "field": "field_589500e05c2b3",
-            "operator": "==",
-            "value": "1"
-          }
-        ]
-      ],
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "placeholder": "",
-      "rows": "",
-      "prepend": "",
-      "append": ""
     },
     {
       "key": "field_579bc998b0a70",
@@ -711,7 +725,6 @@
       "readonly": 0,
       "disabled": 0
     },
-
     {
       "key": "field_579bc9e9b0a741",
       "label": "Featured Guest Header Previous Cruise Year",
