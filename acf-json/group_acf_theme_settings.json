@@ -1257,6 +1257,22 @@
       "disabled": 0
     },
     {
+      "key": "field_57b4aa7935629",
+      "label": "Exp Youtube Opener",
+      "name": "exp_youtube_opener",
+      "type": "url",
+      "instructions": "Put in JUST the url from the youtube embed settings here",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "placeholder": ""
+    },
+    {
       "key": "field_57b4a44409f41",
       "label": "Exp Intro Content",
       "name": "exp_intro_content",
@@ -1276,30 +1292,6 @@
       "new_lines": "",
       "readonly": 0,
       "disabled": 0
-    },
-    {
-      "key": "field_57b4aa7935629",
-      "label": "Exp Intro Image",
-      "name": "exp_intro_image",
-      "type": "image",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "return_format": "id",
-      "preview_size": "thumbnail",
-      "library": "all",
-      "min_width": "",
-      "min_height": "",
-      "min_size": "",
-      "max_width": "",
-      "max_height": "",
-      "max_size": "",
-      "mime_types": ""
     },
     {
       "key": "field_57b4acbc7aae8",

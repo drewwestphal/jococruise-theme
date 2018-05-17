@@ -19,9 +19,16 @@
         </section>
         <section id="exp-intro" class="joco_beige">
             <div class="container">
-                <div class="col-xs-12 col-md-9 exp-intro-text">
+                {% if options.exp_youtube_opener %}
+                <div class="col-xs-8 col-xs-offset-2 exp-intro-text" style="padding-bottom: 15px;">
+                    <iframe src="{{ options.exp_youtube_opener }}" frameborder="0" allowfullscreen=""></iframe>
+                </div>
+                {% endif %}
+
+                <div class="col-xs-12 exp-intro-text">
                     {{ options.exp_intro_content|markdown }}
                 </div>
+                {#
                 <div class="col-xs-12 col-md-3 center-block" style="text-align: center;">
                     {% if options.exp_featured_image_clickthrough_file %}
                         <a href="{{ options.exp_featured_image_clickthrough_file.url }}">
@@ -32,6 +39,7 @@
                     {% endif %}
                     <div class="caption">{{ exp_intro_image.caption }}</div>
                 </div>
+                #}
             </div>
         </section>
         <section id="main-stage" class="joco_offwhite">
@@ -118,6 +126,7 @@
     <script type="text/javascript" language="JavaScript">
         jQuery(document).ready(function() {
             jQuery("#exp-photos").fitVids();
+            jQuery("#exp-intro").fitVids();
             jQuery('.gallery a').magnificPopup({
                 type : 'image',
                 closeOnContentClick : true,
