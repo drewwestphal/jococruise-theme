@@ -2,6 +2,9 @@
 //var_dump($_REQUEST);
 $captcha = $_REQUEST['g-recaptcha-response'];
 //var_dump($_REQUEST['g-recaptcha-response']);
+
+echo "This feature has been disabled. Visit jococruise.com. This front page is not up to date.";
+die();
  
 /* Check if captcha is filled */
 if (!$captcha || strlen($captcha)==0) {
