@@ -40,6 +40,20 @@ require_once(__DIR__ . '/include/acf-custom.php');
 // customize forums
 require_once(__DIR__ . '/include/forums-config.php');
 
+add_filter('template_include', function ($template) {
+    switch (pathinfo($template, PATHINFO_FILENAME)) {
+        case 'emptiness':
+        case 'no-hide':
+            return $template;
+
+        default :
+            return pathinfo($template, PATHINFO_DIRNAME) . '/migration.php';
+
+    }
+
+    echo $template;
+});
+
 //enqueue main styles
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('joco_main', get_template_directory_uri() . '/css/bootstrap.css', [], filemtime(__DIR__ .

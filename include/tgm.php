@@ -34,10 +34,6 @@ add_action( 'tgmpa_register', function() {
             'slug' => 'disable-google-fonts',
         ),
         array(
-            'name' => 'JP Markdown',
-            'slug' => 'jetpack-markdown',
-        ),
-        array(
             'name' => 'MailChimp for WordPress Lite',
             'slug' => 'mailchimp-for-wp',
         ),
@@ -55,19 +51,6 @@ add_action( 'tgmpa_register', function() {
             'name'   => 'Timber',
             'slug'   => 'timber-library',
         ),
-        array(
-            'name' => 'BuddyPress',
-             'slug' => 'buddypress'
-        ),
-        array(
-            'name' => 'BuddyPress for Timber',
-            'slug' => 'timber-buddypress',
-            'source' => 'https://github.com/slimndap/TimberBuddyPress/archive/master.zip'
-        ),
-        array(
-            'name' => 'bbPress',
-            'slug' => 'bbpress'
-        )
     );
 
     /*
