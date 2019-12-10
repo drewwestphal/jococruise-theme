@@ -13,6 +13,8 @@
 <ul>
     <li><a href="/2020/book/">Book JoCo Cruise 2020</a></li>
     <li><a href="/2020/account/">View Your 2020 User Account</a></li>
+    <li><a href="/2021/book/">Book JoCo Cruise 2021</a></li>
+    <li><a href="/2021/account/">View Your 2021 User Account</a></li>
 </ul>
 
 
