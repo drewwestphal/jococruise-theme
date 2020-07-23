@@ -11,16 +11,13 @@
     passage on one of our cruises, or view your account. What do you want to do?</p>
 
 <ul>
-    <li><a href="/2020/book/">Book JoCo Cruise 2020</a></li>
-    <li><a href="/2020/account/">View Your 2020 User Account</a></li>
-    <li><a href="/2021/book/">Book JoCo Cruise 2021</a></li>
-    <li><a href="/2021/account/">View Your 2021 User Account</a></li>
+    <li><a href="/2022/book/">Book JoCo Cruise 2022</a></li>
+    <li><a href="/2022/account/">View Your 2022 User Account</a></li>
 </ul>
 
 
 <p>Is something missing? Please email us at
     <a href="mailto:booking@jococruise.com">booking@jococruise.com</a>
     if you are having trouble finding what you are looking for.</p>
-
 </body>
 </html>
