@@ -11,6 +11,8 @@
     passage on one of our cruises, or view your account. What do you want to do?</p>
 
 <ul>
+    <li><a href="/2025/#/book/">Book JoCo Cruise 2025</a></li>
+    <li><a href="/2025/#/account/">View Your 2025 User Account</a></li>
     <li><a href="/2024/#/book/">Book JoCo Cruise 2024</a></li>
     <li><a href="/2024/#/account/">View Your 2024 User Account</a></li>
 </ul>
